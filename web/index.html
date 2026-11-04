@@ -44,6 +44,11 @@
           <span>🍇</span> <span id="nav-grapes-text">Grape Varieties</span>
         </a>
 
+        <!-- Toggle World Climate Zones Layer -->
+        <button class="btn-toggle-climate" id="btn-toggle-climate" title="Toggle World Climate Zones Layer">
+          <span>⛅</span> <span id="txt-climate-toggle">World Climate Layer</span>
+        </button>
+
         <button class="lang-btn" data-lang="es">ES</button>
         <button class="lang-btn active" data-lang="en">EN</button>
         <a href="https://app.atlas.co/projects/iRfhgtNFAbVm6zHZL3bN?loc=-2.7334%2C39.9785%2C6.0441z" target="_blank" rel="noopener noreferrer" class="btn-link btn-atlas">
@@ -62,6 +67,22 @@
     <main class="main-content">
       <!-- Interactive Map -->
       <div id="map"></div>
+
+      <!-- Floating Climate Layer Map Legend -->
+      <div class="climate-map-legend" id="climate-map-legend" style="display: none;">
+        <div class="climate-legend-header">
+          <span class="climate-legend-title" id="lbl-climate-legend-title">⛅ World Viticultural Climates</span>
+          <button class="climate-legend-close" id="btn-close-climate-legend" title="Hide Legend">&times;</button>
+        </div>
+        <div class="climate-legend-body">
+          <div class="clim-leg-item"><span class="clim-swatch" style="background: #38BDF8;"></span><span id="leg-clim-atlantic">🌊 Atlantic / Maritime</span></div>
+          <div class="clim-leg-item"><span class="clim-swatch" style="background: #FBBF24;"></span><span id="leg-clim-med-coastal">☀️ Coastal Mediterranean</span></div>
+          <div class="clim-leg-item"><span class="clim-swatch" style="background: #FB923C;"></span><span id="leg-clim-med-cont">🏜️ Continental Mediterranean</span></div>
+          <div class="clim-leg-item"><span class="clim-swatch" style="background: #34D399;"></span><span id="leg-clim-cont">❄️ Continental</span></div>
+          <div class="clim-leg-item"><span class="clim-swatch" style="background: #A78BFA;"></span><span id="leg-clim-alpine">🏔️ Alpine / High Altitude</span></div>
+          <div class="clim-leg-item"><span class="clim-swatch" style="background: #FB7185;"></span><span id="leg-clim-subtrop">🌋 Subtropical / Volcanic</span></div>
+        </div>
+      </div>
 
       <!-- Left Sidebar Search & Explorer -->
       <aside class="sidebar" id="sidebar">
@@ -105,6 +126,15 @@
             <select id="region-filter" class="filter-select">
               <option value="" id="reg-all-opt">All Regions</option>
             </select>
+            <select id="climate-filter" class="filter-select">
+              <option value="" id="clim-all-opt">All Climates</option>
+              <option value="mediterranean_coastal" id="clim-med-coastal-opt">☀️ Mediterranean Coastal</option>
+              <option value="mediterranean_continental" id="clim-med-cont-opt">🏜️ Mediterranean Continental / Meseta</option>
+              <option value="atlantic" id="clim-atlantic-opt">🌊 Atlantic / Maritime</option>
+              <option value="continental" id="clim-cont-opt">❄️ Continental</option>
+              <option value="alpine" id="clim-alpine-opt">🏔️ Alpine / High Altitude</option>
+              <option value="subtropical_volcanic" id="clim-subtrop-opt">🌋 Subtropical / Volcanic</option>
+            </select>
           </div>
         </div>
 
@@ -139,6 +169,13 @@
               </div>
             </details>
           </div>
+          <div class="info-item" id="detail-climate-item" style="display: none;">
+            <div class="info-label" id="lbl-climate">Climate & Terroir</div>
+            <div class="detail-climate-wrap">
+              <span class="detail-climate-badge" id="detail-climate-badge">☀️ Mediterranean</span>
+            </div>
+            <div class="detail-climate-desc" id="detail-climate-desc"></div>
+          </div>
           <div class="info-item">
             <div class="info-label" id="lbl-grapes-red">Key Red Varieties</div>
             <div class="info-value" id="detail-grapes-red"></div>
@@ -158,7 +195,8 @@
   </div>
 
   <!-- Capa de datos (compatible directamente con doble clic file:// y con servidor web http://) -->
-  <script src="data/spain_wine_regions.js?v=20261104c"></script>
-  <script src="app.js?v=20261104c"></script>
+  <script src="data/world_climate_zones.js?v=20261104d"></script>
+  <script src="data/spain_wine_regions.js?v=20261104d"></script>
+  <script src="app.js?v=20261104d"></script>
 </body>
 </html>

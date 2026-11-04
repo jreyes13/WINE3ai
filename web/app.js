@@ -38,7 +38,18 @@ const I18N = {
     bmOsm: "OpenStreetMap",
     toggleSidebarHide: "Ocultar panel lateral",
     toggleSidebarShow: "Mostrar panel lateral",
-    navGrapes: "Variedades de Uva"
+    navGrapes: "Variedades de Uva",
+    climateToggle: "Capa Climas",
+    climateToggleTitle: "Activar/desactivar capa climática mundial",
+    allClimates: "Todos los Climas",
+    climateLabel: "Clima y Terruño",
+    climateLegendTitle: "Climas Vitivinícolas Mundiales",
+    climAtlantic: "🌊 Atlántico / Marítimo",
+    climMedCoastal: "☀️ Mediterráneo Costero",
+    climMedCont: "🏜️ Mediterráneo Continental / Meseta",
+    climCont: "❄️ Continental",
+    climAlpine: "🏔️ Alpino / Gran Altitud",
+    climSubtrop: "🌋 Subtropical / Volcánico"
   },
   en: {
     title: "World Wine Wide",
@@ -77,7 +88,18 @@ const I18N = {
     bmOsm: "OpenStreetMap",
     toggleSidebarHide: "Hide sidebar",
     toggleSidebarShow: "Show sidebar",
-    navGrapes: "Grape Varieties"
+    navGrapes: "Grape Varieties",
+    climateToggle: "World Climate Layer",
+    climateToggleTitle: "Toggle world climate zones layer",
+    allClimates: "All Climates",
+    climateLabel: "Climate & Terroir",
+    climateLegendTitle: "World Viticultural Climates",
+    climAtlantic: "🌊 Atlantic / Maritime",
+    climMedCoastal: "☀️ Coastal Mediterranean",
+    climMedCont: "🏜️ Continental Mediterranean",
+    climCont: "❄️ Continental",
+    climAlpine: "🏔️ Alpine / High Altitude",
+    climSubtrop: "🌋 Subtropical / Volcanic"
   }
 };
 
@@ -110,6 +132,8 @@ let allFeatures = [];
 let filteredFeatures = [];
 let selectedFeature = null;
 let currentMunisList = [];
+let climateLayerVisible = false;
+let climatePopup = null;
 
 const BASEMAP_STYLES = {
   voyager: 'https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json',
@@ -259,9 +283,152 @@ function onRegionLeave() {
   map.getCanvas().style.cursor = '';
 }
 
+function setupClimateLayers() {
+  if (!map.isStyleLoaded()) return;
+
+  const climateData = (typeof window.WORLD_CLIMATE_ZONES !== 'undefined' && window.WORLD_CLIMATE_ZONES)
+    ? window.WORLD_CLIMATE_ZONES
+    : ((typeof WORLD_CLIMATE_ZONES !== 'undefined' && WORLD_CLIMATE_ZONES) ? WORLD_CLIMATE_ZONES : null);
+
+  if (!climateData) return;
+
+  if (!map.getSource('world-climate-zones')) {
+    map.addSource('world-climate-zones', {
+      type: 'geojson',
+      data: climateData
+    });
+  }
+
+  // Insert climate fill BEFORE wine-regions-fill if it exists so wine regions sit on top
+  const beforeLayer = map.getLayer('wine-regions-fill') ? 'wine-regions-fill' : undefined;
+
+  if (!map.getLayer('climate-zones-fill')) {
+    map.addLayer({
+      id: 'climate-zones-fill',
+      type: 'fill',
+      source: 'world-climate-zones',
+      layout: {
+        'visibility': climateLayerVisible ? 'visible' : 'none'
+      },
+      paint: {
+        'fill-color': ['get', 'color'],
+        'fill-opacity': 0.32
+      }
+    }, beforeLayer);
+  }
+
+  if (!map.getLayer('climate-zones-line')) {
+    map.addLayer({
+      id: 'climate-zones-line',
+      type: 'line',
+      source: 'world-climate-zones',
+      layout: {
+        'visibility': climateLayerVisible ? 'visible' : 'none'
+      },
+      paint: {
+        'line-color': ['get', 'color'],
+        'line-width': 0.75,
+        'line-opacity': 0.55
+      }
+    }, beforeLayer);
+  }
+
+  bindClimateInteractions();
+}
+
+function bindClimateInteractions() {
+  map.off('click', 'climate-zones-fill', onClimateClick);
+  map.off('mouseenter', 'climate-zones-fill', onClimateEnter);
+  map.off('mouseleave', 'climate-zones-fill', onClimateLeave);
+
+  map.on('click', 'climate-zones-fill', onClimateClick);
+  map.on('mouseenter', 'climate-zones-fill', onClimateEnter);
+  map.on('mouseleave', 'climate-zones-fill', onClimateLeave);
+}
+
+function onClimateClick(e) {
+  if (!climateLayerVisible) return;
+  // If user clicked inside a wine region polygon, prioritize wine region detail
+  if (map.getLayer('wine-regions-fill')) {
+    const wineFeats = map.queryRenderedFeatures(e.point, { layers: ['wine-regions-fill'] });
+    if (wineFeats && wineFeats.length > 0) return;
+  }
+
+  if (e.features && e.features.length > 0) {
+    const feat = e.features[0];
+    const p = feat.properties;
+    const name = currentLang === 'es' ? (p.name_es || p.name) : (p.name_en || p.name);
+    const desc = currentLang === 'es' ? (p.desc_es || '') : (p.desc_en || '');
+    const icon = p.icon || '⛅';
+    const color = p.color || '#0284C7';
+    const koppen = p.koppen_code ? `<span style="display:inline-block; font-size:0.7rem; background:#F1F5F9; border:1px solid #CBD5E1; border-radius:4px; padding:1px 5px; color:#475569; margin-left:6px;">Köppen: ${p.koppen_code}</span>` : '';
+
+    if (climatePopup) climatePopup.remove();
+
+    climatePopup = new maplibregl.Popup({ offset: 12, closeButton: true })
+      .setLngLat(e.lngLat)
+      .setHTML(`
+        <div style="font-family: inherit; max-width: 260px; padding: 2px;">
+          <div style="display: flex; align-items: center; gap: 6px; font-weight: 700; color: ${color}; font-size: 0.95rem; margin-bottom: 4px;">
+            <span>${icon}</span> <span>${name}</span> ${koppen}
+          </div>
+          <div style="font-size: 0.78rem; color: #334155; line-height: 1.35; margin-top: 4px;">
+            ${desc}
+          </div>
+        </div>
+      `)
+      .addTo(map);
+  }
+}
+
+function onClimateEnter() {
+  if (climateLayerVisible) {
+    map.getCanvas().style.cursor = 'pointer';
+  }
+}
+
+function onClimateLeave() {
+  if (climateLayerVisible) {
+    map.getCanvas().style.cursor = '';
+  }
+}
+
+function toggleClimateLayer() {
+  climateLayerVisible = !climateLayerVisible;
+  const btn = document.getElementById('btn-toggle-climate');
+  const legend = document.getElementById('climate-map-legend');
+
+  if (!map.getLayer('climate-zones-fill')) {
+    setupClimateLayers();
+  }
+
+  const vis = climateLayerVisible ? 'visible' : 'none';
+  if (map.getLayer('climate-zones-fill')) {
+    map.setLayoutProperty('climate-zones-fill', 'visibility', vis);
+  }
+  if (map.getLayer('climate-zones-line')) {
+    map.setLayoutProperty('climate-zones-line', 'visibility', vis);
+  }
+
+  if (btn) {
+    btn.classList.toggle('active', climateLayerVisible);
+  }
+  if (legend) {
+    legend.style.display = climateLayerVisible ? 'block' : 'none';
+  }
+  if (!climateLayerVisible && climatePopup) {
+    climatePopup.remove();
+  }
+}
+
 function checkAndRestoreLayers() {
-  if (map.isStyleLoaded() && allFeatures.length > 0 && !map.getLayer('wine-regions-fill')) {
-    setupWineLayers();
+  if (map.isStyleLoaded()) {
+    if (allFeatures.length > 0 && !map.getLayer('wine-regions-fill')) {
+      setupClimateLayers();
+      setupWineLayers();
+    } else if (!map.getLayer('climate-zones-fill')) {
+      setupClimateLayers();
+    }
   }
 }
 
@@ -277,12 +444,13 @@ map.on('load', async () => {
     } else if (typeof SPAIN_WINE_DATA !== 'undefined' && SPAIN_WINE_DATA) {
       data = SPAIN_WINE_DATA;
     } else {
-      const resp = await fetch('data/spain_wine_regions.geojson?v=20261104c');
+      const resp = await fetch('data/spain_wine_regions.geojson?v=20261104d');
       data = await resp.json();
     }
     allFeatures = data.features;
     filteredFeatures = allFeatures;
 
+    setupClimateLayers();
     setupWineLayers();
     setLanguage(currentLang);
 
@@ -364,12 +532,14 @@ function applyFilters() {
   const country = document.getElementById('country-filter').value;
   const cat = document.getElementById('category-filter').value;
   const reg = document.getElementById('region-filter').value;
+  const climate = document.getElementById('climate-filter') ? document.getElementById('climate-filter').value : '';
 
   filteredFeatures = allFeatures.filter(f => {
     const p = f.properties;
     const matchCountry = !country || p.country === country;
     const matchCat = !cat || p.category === cat;
     const matchReg = !reg || p.region === reg;
+    const matchClimate = !climate || p.climate === climate;
     const cInfo = COUNTRY_NAMES[p.country];
     const cEn = cInfo ? cInfo.en.toLowerCase() : '';
     const cEs = cInfo ? cInfo.es.toLowerCase() : '';
@@ -379,11 +549,13 @@ function applyFilters() {
       (p.country && p.country.toLowerCase().includes(search)) ||
       cEn.includes(search) ||
       cEs.includes(search) ||
+      (p.climate_name_en && p.climate_name_en.toLowerCase().includes(search)) ||
+      (p.climate_name_es && p.climate_name_es.toLowerCase().includes(search)) ||
       (p.grapes_red && p.grapes_red.toLowerCase().includes(search)) ||
       (p.grapes_white && p.grapes_white.toLowerCase().includes(search)) ||
       (p.munis && p.munis.some(m => m.toLowerCase().includes(search)));
 
-    return matchCountry && matchCat && matchReg && matchSearch;
+    return matchCountry && matchCat && matchReg && matchClimate && matchSearch;
   });
 
   // Update map filter
@@ -459,6 +631,28 @@ function selectDO(inputProps) {
   document.getElementById('detail-munis').textContent = `${muniCount} ${t.munis}`;
   document.getElementById('detail-grapes-red').textContent = props.grapes_red || t.na;
   document.getElementById('detail-grapes-white').textContent = props.grapes_white || t.na;
+
+  // Update Climate in Detail Panel
+  const climateItem = document.getElementById('detail-climate-item');
+  const climateBadge = document.getElementById('detail-climate-badge');
+  const climateDesc = document.getElementById('detail-climate-desc');
+
+  if (climateBadge && climateDesc) {
+    if (props.climate) {
+      const climName = currentLang === 'es' ? (props.climate_name_es || props.climate) : (props.climate_name_en || props.climate);
+      const climDesc = currentLang === 'es' ? (props.climate_desc_es || '') : (props.climate_desc_en || '');
+      const climIcon = props.climate_icon || '⛅';
+      const climColor = props.climate_color || '#0284C7';
+
+      climateBadge.innerHTML = `<span>${climIcon}</span> <span>${climName}</span>`;
+      climateBadge.style.borderColor = climColor;
+      climateBadge.style.backgroundColor = climColor + '18';
+      climateDesc.textContent = climDesc;
+      if (climateItem) climateItem.style.display = 'flex';
+    } else {
+      if (climateItem) climateItem.style.display = 'none';
+    }
+  }
 
   // Setup Municipalities list safely
   let munis = props.munis;
@@ -591,6 +785,46 @@ function setLanguage(lang) {
   const optRegAll = document.getElementById('reg-all-opt');
   if (optRegAll) optRegAll.textContent = t.allRegions;
 
+  // Climate filter options
+  const optClimAll = document.getElementById('clim-all-opt');
+  if (optClimAll) optClimAll.textContent = t.allClimates;
+  const optClimMedCo = document.getElementById('clim-med-coastal-opt');
+  if (optClimMedCo) optClimMedCo.textContent = t.climMedCoastal;
+  const optClimMedCt = document.getElementById('clim-med-cont-opt');
+  if (optClimMedCt) optClimMedCt.textContent = t.climMedCont;
+  const optClimAtl = document.getElementById('clim-atlantic-opt');
+  if (optClimAtl) optClimAtl.textContent = t.climAtlantic;
+  const optClimCont = document.getElementById('clim-cont-opt');
+  if (optClimCont) optClimCont.textContent = t.climCont;
+  const optClimAlp = document.getElementById('clim-alpine-opt');
+  if (optClimAlp) optClimAlp.textContent = t.climAlpine;
+  const optClimSub = document.getElementById('clim-subtrop-opt');
+  if (optClimSub) optClimSub.textContent = t.climSubtrop;
+
+  const txtClimateToggle = document.getElementById('txt-climate-toggle');
+  if (txtClimateToggle) txtClimateToggle.textContent = t.climateToggle;
+  const btnClimateToggle = document.getElementById('btn-toggle-climate');
+  if (btnClimateToggle) btnClimateToggle.title = t.climateToggleTitle;
+
+  const lblClimate = document.getElementById('lbl-climate');
+  if (lblClimate) lblClimate.textContent = t.climateLabel;
+
+  // Climate Legend elements
+  const lblClimateLegTitle = document.getElementById('lbl-climate-legend-title');
+  if (lblClimateLegTitle) lblClimateLegTitle.textContent = `⛅ ${t.climateLegendTitle}`;
+  const legAtl = document.getElementById('leg-clim-atlantic');
+  if (legAtl) legAtl.textContent = t.climAtlantic;
+  const legMedCo = document.getElementById('leg-clim-med-coastal');
+  if (legMedCo) legMedCo.textContent = t.climMedCoastal;
+  const legMedCt = document.getElementById('leg-clim-med-cont');
+  if (legMedCt) legMedCt.textContent = t.climMedCont;
+  const legCont = document.getElementById('leg-clim-cont');
+  if (legCont) legCont.textContent = t.climCont;
+  const legAlp = document.getElementById('leg-clim-alpine');
+  if (legAlp) legAlp.textContent = t.climAlpine;
+  const legSub = document.getElementById('leg-clim-subtrop');
+  if (legSub) legSub.textContent = t.climSubtrop;
+
   document.getElementById('lbl-territory').textContent = t.territory;
   document.getElementById('lbl-grapes-red').textContent = t.grapesRed;
   document.getElementById('lbl-grapes-white').textContent = t.grapesWhite;
@@ -608,6 +842,16 @@ function setLanguage(lang) {
     const flag = countryInfo ? countryInfo.flag : '';
     const countryLabel = countryInfo ? countryInfo[currentLang] : selectedFeature.country;
     document.getElementById('detail-region').innerHTML = `<span style="font-size: 1.05rem;">📍</span> ${selectedFeature.region} ${flag ? `(${flag} ${countryLabel})` : ''}`;
+
+    if (selectedFeature.climate) {
+      const climateBadge = document.getElementById('detail-climate-badge');
+      const climateDesc = document.getElementById('detail-climate-desc');
+      const climName = lang === 'es' ? (selectedFeature.climate_name_es || selectedFeature.climate) : (selectedFeature.climate_name_en || selectedFeature.climate);
+      const climDesc = lang === 'es' ? (selectedFeature.climate_desc_es || '') : (selectedFeature.climate_desc_en || '');
+      const climIcon = selectedFeature.climate_icon || '⛅';
+      if (climateBadge) climateBadge.innerHTML = `<span>${climIcon}</span> <span>${climName}</span>`;
+      if (climateDesc) climateDesc.textContent = climDesc;
+    }
   }
 
   const basemapSelect = document.getElementById('basemap-select');
@@ -740,5 +984,26 @@ if (sidebarToggleBtn && sidebarEl) {
         map.resize();
       }
     }, 360);
+  });
+}
+
+// World Climate Layer Toggle
+const btnToggleClimate = document.getElementById('btn-toggle-climate');
+if (btnToggleClimate) {
+  btnToggleClimate.addEventListener('click', toggleClimateLayer);
+}
+
+// Climate Filter Selector
+const climateFilterEl = document.getElementById('climate-filter');
+if (climateFilterEl) {
+  climateFilterEl.addEventListener('change', applyFilters);
+}
+
+// Climate Legend Close Button
+const btnCloseClimateLegend = document.getElementById('btn-close-climate-legend');
+if (btnCloseClimateLegend) {
+  btnCloseClimateLegend.addEventListener('click', () => {
+    const legend = document.getElementById('climate-map-legend');
+    if (legend) legend.style.display = 'none';
   });
 }
