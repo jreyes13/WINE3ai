@@ -162,7 +162,7 @@ Estado cartográfico y documental de todas las Denominaciones de Origen Protegid
 
 | DO / DOP | Pliego Oficial en Repositorio | Capa GPKG | Municipios | Subzonas / Notas |
 | :--- | :--- | :--- | :--- | :--- |
-| **Vinos de Madrid** | `Vinos_de_Madrid_2024_10_25.pdf` | `Vinos_de_Madrid.gpkg` | 72 | 4 subzonas: Arganda, Navalcarnero, San Martín, El Molar |
+| **Vinos de Madrid** | `Vinos_de_Madrid_2024_10_25.pdf` | `Vinos_de_Madrid.gpkg` | 70 | 4 subzonas: Arganda, Navalcarnero, San Martín, El Molar |
 
 ---
 
