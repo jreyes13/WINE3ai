@@ -38,7 +38,7 @@ Estado cartográfico y documental de todas las Denominaciones de Origen Protegid
 | **Campo de Borja** | `Campo_de_Borja_2024_12_13.pdf` | `Campo_de_Borja.gpkg` | 18 | El imperio de la Garnacha |
 | **Cariñena** | `Cariñena_2025_06_07.pdf` | `Cariñena.gpkg` | 16 | Campo de Cariñena |
 | **Somontano** | `Somontano_2011_01_01.pdf` | `Somontano.gpkg` | 43 | *Nombre de capa y archivo corregido* |
-| **Urbezo** (Vino de Pago) | `Urbezo_2024_10_25.pdf` | `Urbezo.gpkg` | 1 | Cariñena |
+| **Urbezo** | `Urbezo_2024_10_25.pdf` | `Urbezo.gpkg` | 1 | DO oficial MAPA / UE (exp. PDO-ES-02585, Cariñena) |
 
 ---
 
@@ -241,7 +241,6 @@ Estado cartográfico y documental de todas las Denominaciones de Origen Protegid
 | **Prado de Irache** | Navarra | `Vinos_de_Pago/Prado_de_Irache.gpkg` | Ayegui/Aiegi (Navarra) | Monasterio de Irache |
 | **Pago de Otazu** | Navarra | `Vinos_de_Pago/Pago_de_Otazu.gpkg` | Etxauri (Navarra) | Señorío de Otazu |
 | **Pago Aylés** | Aragón | `Vinos_de_Pago/Pago_Ayles.gpkg` | Mezalocha (Zaragoza) | Finca Aylés |
-| **Pago Urbezo** | Aragón | `Aragón/Urbezo.gpkg` | Cariñena (Zaragoza) | Paraje Monte Urbezo |
 | **Abadía Retuerta** | Castilla y León | `Vinos_de_Pago/Abadia_Retuerta.gpkg` | Sardón de Duero (Valladolid) | Monasterio de Retuerta |
 | **Heredad de Urueña** | Castilla y León | `Vinos_de_Pago/Heredad_de_Uruena.gpkg` | Urueña (Valladolid) | Finca Heredad de Urueña |
 | **Dehesa Peñalba** | Castilla y León | `Vinos_de_Pago/Dehesa_Penalba.gpkg` | Villabáñez (Valladolid) | Valle del río Duero |
