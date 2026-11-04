@@ -88,9 +88,6 @@
 -- DOP Pago Aylés (Zaragoza)
 "NAMEUNIT" = 'Mezalocha'
 
--- DOP Pago Urbezo (Zaragoza)
-"NAMEUNIT" = 'Cariñena'
-
 
 /* ============================================================
    5. CASTILLA Y LEÓN
