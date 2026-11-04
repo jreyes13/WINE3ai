@@ -89,7 +89,7 @@ Estado cartográfico y documental de todas las Denominaciones de Origen Protegid
 | **León** | `Leon_2023_11_15.pdf` | `Leon.gpkg` | 88 | Sur de León y Valladolid |
 | **Ribera del Duero** | `Ribera_del_Duero_2023_07_31.pdf`| `Ribera_del_Duero.gpkg` | 82 | Burgos, Segovia, Soria, Valladolid |
 | **Rueda** | `Rueda_2025_06_12.pdf` | `Rueda.gpkg` | 66 | Valladolid, Segovia, Ávila |
-| **Tierra del Vino de Zamora** | `Tierra_del_vino_de_Zamora_2011_01_01.pdf` | `Tierra_del_Vino_de_Zamora.gpkg` | 57 | Zamora y Salamanca |
+| **Tierra del Vino de Zamora** | `Tierra_del_vino_de_Zamora_2011_01_01.pdf` | `Tierra_del_Vino_de_Zamora.gpkg` | 56 | Zamora (46) y Salamanca (10) |
 | **Toro** | `Toro_2025_01_03.pdf` | `Toro.gpkg` | 15 | Zamora y Valladolid |
 
 ---

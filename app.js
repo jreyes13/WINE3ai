@@ -277,7 +277,7 @@ map.on('load', async () => {
     } else if (typeof SPAIN_WINE_DATA !== 'undefined' && SPAIN_WINE_DATA) {
       data = SPAIN_WINE_DATA;
     } else {
-      const resp = await fetch('data/spain_wine_regions.geojson?v=20261104b');
+      const resp = await fetch('data/spain_wine_regions.geojson?v=20261104c');
       data = await resp.json();
     }
     allFeatures = data.features;

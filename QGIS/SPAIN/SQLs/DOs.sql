@@ -1793,7 +1793,7 @@
 -- DO Tierra del Vino de Zamora (56 municipios)
 -- Fichero: Tierra_del_Vino_de_Zamora.gpkg
 -- ============================================================
-"NAMEUNIT" IN (
+"CODNUT3" IN ('ES419', 'ES415') AND "NAMEUNIT" IN (
 'Aldeanueva de Figueroa',
 'Aldearrodrigo',
 'Algodre',
