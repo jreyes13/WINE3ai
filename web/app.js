@@ -49,7 +49,17 @@ const I18N = {
     climMedCont: "🏜️ Mediterráneo Continental / Meseta",
     climCont: "❄️ Continental",
     climAlpine: "🏔️ Alpino / Gran Altitud",
-    climSubtrop: "🌋 Subtropical / Volcánico"
+    climSubtrop: "🌋 Subtropical / Volcánico",
+    layersTitle: "Capas del Mapa",
+    layersBtn: "Capas",
+    layerDO: "DO / DOCa",
+    layerVP: "Vinos de Pago (VP)",
+    layerVC: "Vinos de Calidad (VC)",
+    layerClimate: "Climas Mundiales",
+    layerAll: "Todas",
+    layerOnlyVP: "Sólo VP",
+    layerOnlyDO: "Sólo DO",
+    layerOnlyVC: "Sólo VC"
   },
   en: {
     title: "World Wine Wide",
@@ -99,7 +109,17 @@ const I18N = {
     climMedCont: "🏜️ Continental Mediterranean",
     climCont: "❄️ Continental",
     climAlpine: "🏔️ Alpine / High Altitude",
-    climSubtrop: "🌋 Subtropical / Volcanic"
+    climSubtrop: "🌋 Subtropical / Volcanic",
+    layersTitle: "Map Layers",
+    layersBtn: "Layers",
+    layerDO: "DO / DOCa",
+    layerVP: "Single Estate Wines (VP)",
+    layerVC: "Quality Wines (VC)",
+    layerClimate: "World Climate",
+    layerAll: "All",
+    layerOnlyVP: "Only VP",
+    layerOnlyDO: "Only DO",
+    layerOnlyVC: "Only VC"
   }
 };
 
@@ -134,6 +154,95 @@ let selectedFeature = null;
 let currentMunisList = [];
 let climateLayerVisible = false;
 let climatePopup = null;
+
+const activeLayers = {
+  do: true,
+  vp: true,
+  vc: true
+};
+
+function getFeatureLayerType(cat) {
+  if (cat === 'Vino de Pago' || cat === 'VP') return 'vp';
+  if (cat === 'Vino de Calidad' || cat === 'VC') return 'vc';
+  return 'do';
+}
+
+function isFeatureLayerActive(properties) {
+  const layerType = getFeatureLayerType(properties.category);
+  return !!activeLayers[layerType];
+}
+
+function updateLayerCounts() {
+  const selCountry = document.getElementById('country-filter') ? document.getElementById('country-filter').value : '';
+  const scope = selCountry ? allFeatures.filter(f => f.properties.country === selCountry) : allFeatures;
+
+  let countDo = 0, countVp = 0, countVc = 0;
+  scope.forEach(f => {
+    const t = getFeatureLayerType(f.properties.category);
+    if (t === 'do') countDo++;
+    else if (t === 'vp') countVp++;
+    else if (t === 'vc') countVc++;
+  });
+
+  const countDoEl = document.getElementById('count-layer-do');
+  if (countDoEl) countDoEl.textContent = countDo;
+  const countVpEl = document.getElementById('count-layer-vp');
+  if (countVpEl) countVpEl.textContent = countVp;
+  const countVcEl = document.getElementById('count-layer-vc');
+  if (countVcEl) countVcEl.textContent = countVc;
+
+  const spillDoEl = document.getElementById('spill-num-do');
+  if (spillDoEl) spillDoEl.textContent = countDo;
+  const spillVpEl = document.getElementById('spill-num-vp');
+  if (spillVpEl) spillVpEl.textContent = countVp;
+  const spillVcEl = document.getElementById('spill-num-vc');
+  if (spillVcEl) spillVcEl.textContent = countVc;
+}
+
+function syncLayerUI() {
+  const chkDo = document.getElementById('chk-layer-do');
+  if (chkDo) chkDo.checked = activeLayers.do;
+  const chkVp = document.getElementById('chk-layer-vp');
+  if (chkVp) chkVp.checked = activeLayers.vp;
+  const chkVc = document.getElementById('chk-layer-vc');
+  if (chkVc) chkVc.checked = activeLayers.vc;
+
+  const chkClimate = document.getElementById('chk-layer-climate');
+  if (chkClimate) chkClimate.checked = climateLayerVisible;
+
+  const spillAll = document.getElementById('spill-all');
+  const spillDo = document.getElementById('spill-do');
+  const spillVp = document.getElementById('spill-vp');
+  const spillVc = document.getElementById('spill-vc');
+
+  const allActive = activeLayers.do && activeLayers.vp && activeLayers.vc;
+  if (spillAll) spillAll.classList.toggle('active', allActive);
+  if (spillDo) spillDo.classList.toggle('active', activeLayers.do);
+  if (spillVp) spillVp.classList.toggle('active', activeLayers.vp);
+  if (spillVc) spillVc.classList.toggle('active', activeLayers.vc);
+}
+
+function setLayerActive(type, active) {
+  activeLayers[type] = active;
+  syncLayerUI();
+  applyFilters();
+}
+
+function isolateLayer(type) {
+  activeLayers.do = (type === 'do');
+  activeLayers.vp = (type === 'vp');
+  activeLayers.vc = (type === 'vc');
+  syncLayerUI();
+  applyFilters();
+}
+
+function showAllLayers() {
+  activeLayers.do = true;
+  activeLayers.vp = true;
+  activeLayers.vc = true;
+  syncLayerUI();
+  applyFilters();
+}
 
 const BASEMAP_STYLES = {
   voyager: 'https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json',
@@ -419,6 +528,7 @@ function toggleClimateLayer() {
   if (!climateLayerVisible && climatePopup) {
     climatePopup.remove();
   }
+  syncLayerUI();
 }
 
 function checkAndRestoreLayers() {
@@ -444,7 +554,7 @@ map.on('load', async () => {
     } else if (typeof SPAIN_WINE_DATA !== 'undefined' && SPAIN_WINE_DATA) {
       data = SPAIN_WINE_DATA;
     } else {
-      const resp = await fetch('data/spain_wine_regions.geojson?v=20261104d');
+      const resp = await fetch('data/spain_wine_regions.geojson?v=20261104e');
       data = await resp.json();
     }
     allFeatures = data.features;
@@ -452,6 +562,8 @@ map.on('load', async () => {
 
     setupClimateLayers();
     setupWineLayers();
+    updateLayerCounts();
+    syncLayerUI();
     setLanguage(currentLang);
 
   } catch (err) {
@@ -536,6 +648,7 @@ function applyFilters() {
 
   filteredFeatures = allFeatures.filter(f => {
     const p = f.properties;
+    const matchLayer = isFeatureLayerActive(p);
     const matchCountry = !country || p.country === country;
     const matchCat = !cat || p.category === cat;
     const matchReg = !reg || p.region === reg;
@@ -555,7 +668,7 @@ function applyFilters() {
       (p.grapes_white && p.grapes_white.toLowerCase().includes(search)) ||
       (p.munis && p.munis.some(m => m.toLowerCase().includes(search)));
 
-    return matchCountry && matchCat && matchReg && matchClimate && matchSearch;
+    return matchLayer && matchCountry && matchCat && matchReg && matchClimate && matchSearch;
   });
 
   // Update map filter
@@ -825,6 +938,32 @@ function setLanguage(lang) {
   const legSub = document.getElementById('leg-clim-subtrop');
   if (legSub) legSub.textContent = t.climSubtrop;
 
+  // Layer Control elements
+  const lblLayersBtn = document.getElementById('lbl-layers-btn');
+  if (lblLayersBtn) lblLayersBtn.textContent = t.layersBtn;
+  const lblLayersCardTitle = document.getElementById('lbl-layers-card-title');
+  if (lblLayersCardTitle) lblLayersCardTitle.textContent = `📑 ${t.layersTitle}`;
+  const lblChkDo = document.getElementById('lbl-chk-do');
+  if (lblChkDo) lblChkDo.textContent = t.layerDO;
+  const lblChkVp = document.getElementById('lbl-chk-vp');
+  if (lblChkVp) lblChkVp.textContent = t.layerVP;
+  const lblChkVc = document.getElementById('lbl-chk-vc');
+  if (lblChkVc) lblChkVc.textContent = t.layerVC;
+  const lblChkClimate = document.getElementById('lbl-chk-climate');
+  if (lblChkClimate) lblChkClimate.textContent = t.layerClimate;
+
+  const btnQuickAll = document.getElementById('btn-quick-all');
+  if (btnQuickAll) btnQuickAll.textContent = t.layerAll;
+  const btnQuickVp = document.getElementById('btn-quick-vp');
+  if (btnQuickVp) btnQuickVp.textContent = t.layerOnlyVP;
+  const btnQuickDo = document.getElementById('btn-quick-do');
+  if (btnQuickDo) btnQuickDo.textContent = t.layerOnlyDO;
+  const btnQuickVc = document.getElementById('btn-quick-vc');
+  if (btnQuickVc) btnQuickVc.textContent = t.layerOnlyVC;
+
+  const txtSpillAll = document.getElementById('txt-spill-all');
+  if (txtSpillAll) txtSpillAll.textContent = t.layerAll;
+
   document.getElementById('lbl-territory').textContent = t.territory;
   document.getElementById('lbl-grapes-red').textContent = t.grapesRed;
   document.getElementById('lbl-grapes-white').textContent = t.grapesWhite;
@@ -916,6 +1055,7 @@ document.getElementById('country-filter').addEventListener('change', (e) => {
   const selCountry = e.target.value;
   populateCategoryFilter(selCountry);
   populateRegionFilter(selCountry);
+  updateLayerCounts();
   applyFilters();
   if (COUNTRY_CENTERS[selCountry]) {
     map.flyTo({
@@ -1007,3 +1147,102 @@ if (btnCloseClimateLegend) {
     if (legend) legend.style.display = 'none';
   });
 }
+
+// Map Layer Control (Panel Toggle & Close)
+const btnToggleLayerPanel = document.getElementById('btn-toggle-layer-panel');
+const mapLayerControl = document.getElementById('map-layer-control');
+if (btnToggleLayerPanel && mapLayerControl) {
+  btnToggleLayerPanel.addEventListener('click', () => {
+    mapLayerControl.classList.toggle('expanded');
+  });
+}
+
+const btnCloseLayerCard = document.getElementById('btn-close-layer-card');
+if (btnCloseLayerCard && mapLayerControl) {
+  btnCloseLayerCard.addEventListener('click', () => {
+    mapLayerControl.classList.remove('expanded');
+  });
+}
+
+// Map Layer Checkboxes (DO, VP, VC, Climate)
+const chkLayerDo = document.getElementById('chk-layer-do');
+if (chkLayerDo) {
+  chkLayerDo.addEventListener('change', (e) => {
+    activeLayers.do = e.target.checked;
+    if (!activeLayers.do && !activeLayers.vp && !activeLayers.vc) {
+      activeLayers.do = true;
+      e.target.checked = true;
+    }
+    syncLayerUI();
+    applyFilters();
+  });
+}
+
+const chkLayerVp = document.getElementById('chk-layer-vp');
+if (chkLayerVp) {
+  chkLayerVp.addEventListener('change', (e) => {
+    activeLayers.vp = e.target.checked;
+    if (!activeLayers.do && !activeLayers.vp && !activeLayers.vc) {
+      activeLayers.vp = true;
+      e.target.checked = true;
+    }
+    syncLayerUI();
+    applyFilters();
+  });
+}
+
+const chkLayerVc = document.getElementById('chk-layer-vc');
+if (chkLayerVc) {
+  chkLayerVc.addEventListener('change', (e) => {
+    activeLayers.vc = e.target.checked;
+    if (!activeLayers.do && !activeLayers.vp && !activeLayers.vc) {
+      activeLayers.vc = true;
+      e.target.checked = true;
+    }
+    syncLayerUI();
+    applyFilters();
+  });
+}
+
+const chkLayerClimate = document.getElementById('chk-layer-climate');
+if (chkLayerClimate) {
+  chkLayerClimate.addEventListener('change', () => {
+    toggleClimateLayer();
+  });
+}
+
+// Quick Layer Action Buttons
+const btnQuickAll = document.getElementById('btn-quick-all');
+if (btnQuickAll) btnQuickAll.addEventListener('click', showAllLayers);
+
+const btnQuickVp = document.getElementById('btn-quick-vp');
+if (btnQuickVp) btnQuickVp.addEventListener('click', () => isolateLayer('vp'));
+
+const btnQuickDo = document.getElementById('btn-quick-do');
+if (btnQuickDo) btnQuickDo.addEventListener('click', () => isolateLayer('do'));
+
+const btnQuickVc = document.getElementById('btn-quick-vc');
+if (btnQuickVc) btnQuickVc.addEventListener('click', () => isolateLayer('vc'));
+
+// Sidebar Category Layer Pills
+document.querySelectorAll('.side-layer-pill').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    const pill = e.currentTarget;
+    const type = pill.dataset.layer;
+    if (type === 'all') {
+      showAllLayers();
+    } else {
+      const allActive = activeLayers.do && activeLayers.vp && activeLayers.vc;
+      if (allActive) {
+        isolateLayer(type);
+      } else {
+        activeLayers[type] = !activeLayers[type];
+        if (!activeLayers.do && !activeLayers.vp && !activeLayers.vc) {
+          activeLayers[type] = true;
+        }
+        syncLayerUI();
+        applyFilters();
+      }
+    }
+  });
+});
