@@ -50,16 +50,15 @@ const I18N = {
     climCont: "❄️ Continental",
     climAlpine: "🏔️ Alpino / Gran Altitud",
     climSubtrop: "🌋 Subtropical / Volcánico",
-    layersTitle: "Capas del Mapa",
-    layersBtn: "Capas",
-    layerDO: "DO / DOCa",
-    layerVP: "Vinos de Pago (VP)",
-    layerVC: "Vinos de Calidad (VC)",
-    layerClimate: "Climas Mundiales",
-    layerAll: "Todas",
-    layerOnlyVP: "Sólo VP",
-    layerOnlyDO: "Sólo DO",
-    layerOnlyVC: "Sólo VC"
+    regionsToggle: "Regiones Vitícolas",
+    regionsToggleTitle: "Activar/desactivar capa de regiones vitivinícolas",
+    climateToggle: "Capa Climas",
+    climateToggleTitle: "Activar/desactivar capa climática mundial",
+    showAllRegions: "Mostrar todas",
+    hideAllRegions: "Ocultar todas",
+    onMap: "en mapa",
+    showOnMap: "Mostrar en el mapa",
+    hideFromMap: "Ocultar del mapa"
   },
   en: {
     title: "World Wine Wide",
@@ -99,6 +98,8 @@ const I18N = {
     toggleSidebarHide: "Hide sidebar",
     toggleSidebarShow: "Show sidebar",
     navGrapes: "Grape Varieties",
+    regionsToggle: "Wine Regions",
+    regionsToggleTitle: "Toggle wine regions layer",
     climateToggle: "World Climate Layer",
     climateToggleTitle: "Toggle world climate zones layer",
     allClimates: "All Climates",
@@ -110,16 +111,11 @@ const I18N = {
     climCont: "❄️ Continental",
     climAlpine: "🏔️ Alpine / High Altitude",
     climSubtrop: "🌋 Subtropical / Volcanic",
-    layersTitle: "Map Layers",
-    layersBtn: "Layers",
-    layerDO: "DO / DOCa",
-    layerVP: "Single Estate Wines (VP)",
-    layerVC: "Quality Wines (VC)",
-    layerClimate: "World Climate",
-    layerAll: "All",
-    layerOnlyVP: "Only VP",
-    layerOnlyDO: "Only DO",
-    layerOnlyVC: "Only VC"
+    showAllRegions: "Show All",
+    hideAllRegions: "Hide All",
+    onMap: "on map",
+    showOnMap: "Show on map",
+    hideFromMap: "Hide from map"
   }
 };
 
@@ -152,96 +148,110 @@ let allFeatures = [];
 let filteredFeatures = [];
 let selectedFeature = null;
 let currentMunisList = [];
+let wineRegionsLayerVisible = true;
 let climateLayerVisible = false;
 let climatePopup = null;
+const visibleRegionIds = new Set();
 
-const activeLayers = {
-  do: true,
-  vp: true,
-  vc: true
-};
+function toggleWineRegionsLayer() {
+  wineRegionsLayerVisible = !wineRegionsLayerVisible;
+  const btn = document.getElementById('btn-toggle-regions');
+  const vis = wineRegionsLayerVisible ? 'visible' : 'none';
 
-function getFeatureLayerType(cat) {
-  if (cat === 'Vino de Pago' || cat === 'VP') return 'vp';
-  if (cat === 'Vino de Calidad' || cat === 'VC') return 'vc';
-  return 'do';
+  if (map.getLayer('wine-regions-fill')) {
+    map.setLayoutProperty('wine-regions-fill', 'visibility', vis);
+  }
+  if (map.getLayer('wine-regions-line')) {
+    map.setLayoutProperty('wine-regions-line', 'visibility', vis);
+  }
+  if (map.getLayer('wine-regions-highlight')) {
+    map.setLayoutProperty('wine-regions-highlight', 'visibility', vis);
+  }
+
+  if (btn) {
+    btn.classList.toggle('active', wineRegionsLayerVisible);
+  }
+  updateVisibilityCountUI();
 }
 
-function isFeatureLayerActive(properties) {
-  const layerType = getFeatureLayerType(properties.category);
-  return !!activeLayers[layerType];
+function toggleRegionVisibility(id, e) {
+  if (e) e.stopPropagation();
+  if (visibleRegionIds.has(id)) {
+    visibleRegionIds.delete(id);
+  } else {
+    visibleRegionIds.add(id);
+  }
+  updateMapVisibilityFilter();
+  updateRegionCardsUI();
+  updateVisibilityCountUI();
 }
 
-function updateLayerCounts() {
-  const selCountry = document.getElementById('country-filter') ? document.getElementById('country-filter').value : '';
-  const scope = selCountry ? allFeatures.filter(f => f.properties.country === selCountry) : allFeatures;
+function showAllFilteredRegions() {
+  filteredFeatures.forEach(f => visibleRegionIds.add(f.properties.id));
+  updateMapVisibilityFilter();
+  updateRegionCardsUI();
+  updateVisibilityCountUI();
+}
 
-  let countDo = 0, countVp = 0, countVc = 0;
-  scope.forEach(f => {
-    const t = getFeatureLayerType(f.properties.category);
-    if (t === 'do') countDo++;
-    else if (t === 'vp') countVp++;
-    else if (t === 'vc') countVc++;
+function hideAllFilteredRegions() {
+  filteredFeatures.forEach(f => visibleRegionIds.delete(f.properties.id));
+  updateMapVisibilityFilter();
+  updateRegionCardsUI();
+  updateVisibilityCountUI();
+}
+
+function updateMapVisibilityFilter() {
+  if (!map.getLayer('wine-regions-fill')) return;
+  const ids = filteredFeatures
+    .map(f => f.properties.id)
+    .filter(id => visibleRegionIds.has(id));
+
+  map.setFilter('wine-regions-fill', ['in', 'id', ...ids]);
+  if (map.getLayer('wine-regions-line')) {
+    map.setFilter('wine-regions-line', ['in', 'id', ...ids]);
+  }
+}
+
+function updateVisibilityCountUI() {
+  const t = I18N[currentLang];
+  const badge = document.getElementById('count-visible-badge');
+  if (!badge) return;
+  const filteredTotal = filteredFeatures.length;
+  const visibleCount = filteredFeatures.filter(f => visibleRegionIds.has(f.properties.id)).length;
+
+  if (!wineRegionsLayerVisible) {
+    badge.textContent = `(0 ${t.onMap})`;
+    badge.style.background = '#FEE2E2';
+    badge.style.color = '#B91C1C';
+  } else {
+    badge.textContent = `(${visibleCount} ${t.onMap})`;
+    if (visibleCount === 0) {
+      badge.style.background = '#FEE2E2';
+      badge.style.color = '#B91C1C';
+    } else if (visibleCount === filteredTotal) {
+      badge.style.background = '#DCFCE7';
+      badge.style.color = '#15803D';
+    } else {
+      badge.style.background = '#FEF3C7';
+      badge.style.color = '#B45309';
+    }
+  }
+}
+
+function updateRegionCardsUI() {
+  const t = I18N[currentLang];
+  document.querySelectorAll('.region-card').forEach(card => {
+    const id = card.dataset.id;
+    const isVis = visibleRegionIds.has(id);
+    card.classList.toggle('region-hidden', !isVis);
+    const visBtn = card.querySelector('.btn-card-visibility');
+    if (visBtn) {
+      visBtn.classList.toggle('active', isVis);
+      visBtn.title = isVis ? t.hideFromMap : t.showOnMap;
+      const iconSpan = visBtn.querySelector('.vis-icon');
+      if (iconSpan) iconSpan.textContent = isVis ? '👁️' : '👁️‍🗨️';
+    }
   });
-
-  const countDoEl = document.getElementById('count-layer-do');
-  if (countDoEl) countDoEl.textContent = countDo;
-  const countVpEl = document.getElementById('count-layer-vp');
-  if (countVpEl) countVpEl.textContent = countVp;
-  const countVcEl = document.getElementById('count-layer-vc');
-  if (countVcEl) countVcEl.textContent = countVc;
-
-  const spillDoEl = document.getElementById('spill-num-do');
-  if (spillDoEl) spillDoEl.textContent = countDo;
-  const spillVpEl = document.getElementById('spill-num-vp');
-  if (spillVpEl) spillVpEl.textContent = countVp;
-  const spillVcEl = document.getElementById('spill-num-vc');
-  if (spillVcEl) spillVcEl.textContent = countVc;
-}
-
-function syncLayerUI() {
-  const chkDo = document.getElementById('chk-layer-do');
-  if (chkDo) chkDo.checked = activeLayers.do;
-  const chkVp = document.getElementById('chk-layer-vp');
-  if (chkVp) chkVp.checked = activeLayers.vp;
-  const chkVc = document.getElementById('chk-layer-vc');
-  if (chkVc) chkVc.checked = activeLayers.vc;
-
-  const chkClimate = document.getElementById('chk-layer-climate');
-  if (chkClimate) chkClimate.checked = climateLayerVisible;
-
-  const spillAll = document.getElementById('spill-all');
-  const spillDo = document.getElementById('spill-do');
-  const spillVp = document.getElementById('spill-vp');
-  const spillVc = document.getElementById('spill-vc');
-
-  const allActive = activeLayers.do && activeLayers.vp && activeLayers.vc;
-  if (spillAll) spillAll.classList.toggle('active', allActive);
-  if (spillDo) spillDo.classList.toggle('active', activeLayers.do);
-  if (spillVp) spillVp.classList.toggle('active', activeLayers.vp);
-  if (spillVc) spillVc.classList.toggle('active', activeLayers.vc);
-}
-
-function setLayerActive(type, active) {
-  activeLayers[type] = active;
-  syncLayerUI();
-  applyFilters();
-}
-
-function isolateLayer(type) {
-  activeLayers.do = (type === 'do');
-  activeLayers.vp = (type === 'vp');
-  activeLayers.vc = (type === 'vc');
-  syncLayerUI();
-  applyFilters();
-}
-
-function showAllLayers() {
-  activeLayers.do = true;
-  activeLayers.vp = true;
-  activeLayers.vc = true;
-  syncLayerUI();
-  applyFilters();
 }
 
 const BASEMAP_STYLES = {
@@ -321,6 +331,9 @@ function setupWineLayers() {
       id: 'wine-regions-fill',
       type: 'fill',
       source: 'wine-regions',
+      layout: {
+        'visibility': wineRegionsLayerVisible ? 'visible' : 'none'
+      },
       paint: {
         'fill-color': ['get', 'color'],
         'fill-opacity': 0.65
@@ -333,6 +346,9 @@ function setupWineLayers() {
       id: 'wine-regions-line',
       type: 'line',
       source: 'wine-regions',
+      layout: {
+        'visibility': wineRegionsLayerVisible ? 'visible' : 'none'
+      },
       paint: {
         'line-color': '#FFFFFF',
         'line-width': 1.5,
@@ -346,6 +362,9 @@ function setupWineLayers() {
       id: 'wine-regions-highlight',
       type: 'line',
       source: 'wine-regions',
+      layout: {
+        'visibility': wineRegionsLayerVisible ? 'visible' : 'none'
+      },
       paint: {
         'line-color': '#FFD700',
         'line-width': 3.5,
@@ -358,12 +377,8 @@ function setupWineLayers() {
   // Bind layer interaction events
   bindMapInteractions();
 
-  // Re-apply filter
-  if (map.getLayer('wine-regions-fill') && map.getLayer('wine-regions-line')) {
-    const ids = filteredFeatures.map(f => f.properties.id);
-    map.setFilter('wine-regions-fill', ['in', 'id', ...ids]);
-    map.setFilter('wine-regions-line', ['in', 'id', ...ids]);
-  }
+  // Re-apply visibility filter
+  updateMapVisibilityFilter();
 }
 
 function bindMapInteractions() {
@@ -528,7 +543,6 @@ function toggleClimateLayer() {
   if (!climateLayerVisible && climatePopup) {
     climatePopup.remove();
   }
-  syncLayerUI();
 }
 
 function checkAndRestoreLayers() {
@@ -554,17 +568,17 @@ map.on('load', async () => {
     } else if (typeof SPAIN_WINE_DATA !== 'undefined' && SPAIN_WINE_DATA) {
       data = SPAIN_WINE_DATA;
     } else {
-      const resp = await fetch('data/spain_wine_regions.geojson?v=20261104e');
+      const resp = await fetch('data/spain_wine_regions.geojson?v=20261105a');
       data = await resp.json();
     }
     allFeatures = data.features;
+    allFeatures.forEach(f => visibleRegionIds.add(f.properties.id));
     filteredFeatures = allFeatures;
 
     setupClimateLayers();
     setupWineLayers();
-    updateLayerCounts();
-    syncLayerUI();
     setLanguage(currentLang);
+    updateVisibilityCountUI();
 
   } catch (err) {
     console.error("Error loading GeoJSON:", err);
@@ -648,7 +662,6 @@ function applyFilters() {
 
   filteredFeatures = allFeatures.filter(f => {
     const p = f.properties;
-    const matchLayer = isFeatureLayerActive(p);
     const matchCountry = !country || p.country === country;
     const matchCat = !cat || p.category === cat;
     const matchReg = !reg || p.region === reg;
@@ -668,19 +681,12 @@ function applyFilters() {
       (p.grapes_white && p.grapes_white.toLowerCase().includes(search)) ||
       (p.munis && p.munis.some(m => m.toLowerCase().includes(search)));
 
-    return matchLayer && matchCountry && matchCat && matchReg && matchClimate && matchSearch;
+    return matchCountry && matchCat && matchReg && matchClimate && matchSearch;
   });
 
-  // Update map filter
-  const ids = filteredFeatures.map(f => f.properties.id);
-  if (map.getLayer('wine-regions-fill')) {
-    map.setFilter('wine-regions-fill', ['in', 'id', ...ids]);
-  }
-  if (map.getLayer('wine-regions-line')) {
-    map.setFilter('wine-regions-line', ['in', 'id', ...ids]);
-  }
-
+  updateMapVisibilityFilter();
   renderRegionsList();
+  updateVisibilityCountUI();
 }
 
 function renderRegionsList() {
@@ -693,9 +699,11 @@ function renderRegionsList() {
 
   filteredFeatures.forEach(f => {
     const p = f.properties;
+    const isVis = visibleRegionIds.has(p.id);
+    const isSel = selectedFeature && selectedFeature.id === p.id;
     const card = document.createElement('div');
-    card.className = `region-card ${selectedFeature && selectedFeature.id === p.id ? 'selected' : ''}`;
-    card.onclick = () => selectDO(p);
+    card.className = `region-card ${isSel ? 'selected' : ''} ${isVis ? '' : 'region-hidden'}`;
+    card.dataset.id = p.id;
 
     const muniCount = p.munis_count || p.muni_count || (p.munis ? p.munis.length : 0);
     const cInfo = COUNTRY_NAMES[p.country];
@@ -703,12 +711,20 @@ function renderRegionsList() {
     const cDisplayName = cInfo ? cInfo[currentLang] : (p.country || '');
 
     card.innerHTML = `
-      <div>
-        <div class="card-title">${flag} ${p.name}</div>
-        <div class="card-meta">${p.region}${cDisplayName ? ` (${cDisplayName})` : ''} • ${muniCount} ${t.munis}</div>
+      <div class="region-card-main">
+        <div>
+          <div class="card-title">${flag} ${p.name}</div>
+          <div class="card-meta">${p.region}${cDisplayName ? ` (${cDisplayName})` : ''} • ${muniCount} ${t.munis}</div>
+        </div>
+        <span class="card-badge" style="background-color: ${p.color};">${p.category}</span>
       </div>
-      <span class="card-badge" style="background-color: ${p.color};">${p.category}</span>
+      <button class="btn-card-visibility ${isVis ? 'active' : ''}" title="${isVis ? t.hideFromMap : t.showOnMap}" aria-label="Toggle region visibility on map">
+        <span class="vis-icon">${isVis ? '👁️' : '👁️‍🗨️'}</span>
+      </button>
     `;
+
+    card.querySelector('.region-card-main').onclick = () => selectDO(p);
+    card.querySelector('.btn-card-visibility').onclick = (e) => toggleRegionVisibility(p.id, e);
     container.appendChild(card);
   });
 }
@@ -718,6 +734,22 @@ function selectDO(inputProps) {
   const props = feat ? feat.properties : inputProps;
   selectedFeature = props;
   const t = I18N[currentLang];
+
+  // If region is currently hidden, make it visible on map
+  if (!visibleRegionIds.has(props.id)) {
+    visibleRegionIds.add(props.id);
+    if (!wineRegionsLayerVisible) {
+      wineRegionsLayerVisible = true;
+      const btn = document.getElementById('btn-toggle-regions');
+      if (btn) btn.classList.add('active');
+      if (map.getLayer('wine-regions-fill')) map.setLayoutProperty('wine-regions-fill', 'visibility', 'visible');
+      if (map.getLayer('wine-regions-line')) map.setLayoutProperty('wine-regions-line', 'visibility', 'visible');
+      if (map.getLayer('wine-regions-highlight')) map.setLayoutProperty('wine-regions-highlight', 'visibility', 'visible');
+    }
+    updateMapVisibilityFilter();
+    updateRegionCardsUI();
+    updateVisibilityCountUI();
+  }
 
   // Highlight on map
   map.setFilter('wine-regions-highlight', ['==', 'id', props.id]);
@@ -914,6 +946,12 @@ function setLanguage(lang) {
   const optClimSub = document.getElementById('clim-subtrop-opt');
   if (optClimSub) optClimSub.textContent = t.climSubtrop;
 
+  // Topnav Layer Toggles
+  const txtRegionsToggle = document.getElementById('txt-regions-toggle');
+  if (txtRegionsToggle) txtRegionsToggle.textContent = t.regionsToggle;
+  const btnRegionsToggle = document.getElementById('btn-toggle-regions');
+  if (btnRegionsToggle) btnRegionsToggle.title = t.regionsToggleTitle;
+
   const txtClimateToggle = document.getElementById('txt-climate-toggle');
   if (txtClimateToggle) txtClimateToggle.textContent = t.climateToggle;
   const btnClimateToggle = document.getElementById('btn-toggle-climate');
@@ -938,31 +976,18 @@ function setLanguage(lang) {
   const legSub = document.getElementById('leg-clim-subtrop');
   if (legSub) legSub.textContent = t.climSubtrop;
 
-  // Layer Control elements
-  const lblLayersBtn = document.getElementById('lbl-layers-btn');
-  if (lblLayersBtn) lblLayersBtn.textContent = t.layersBtn;
-  const lblLayersCardTitle = document.getElementById('lbl-layers-card-title');
-  if (lblLayersCardTitle) lblLayersCardTitle.textContent = `📑 ${t.layersTitle}`;
-  const lblChkDo = document.getElementById('lbl-chk-do');
-  if (lblChkDo) lblChkDo.textContent = t.layerDO;
-  const lblChkVp = document.getElementById('lbl-chk-vp');
-  if (lblChkVp) lblChkVp.textContent = t.layerVP;
-  const lblChkVc = document.getElementById('lbl-chk-vc');
-  if (lblChkVc) lblChkVc.textContent = t.layerVC;
-  const lblChkClimate = document.getElementById('lbl-chk-climate');
-  if (lblChkClimate) lblChkClimate.textContent = t.layerClimate;
+  // Visibility action buttons
+  const txtShowAll = document.getElementById('txt-show-all');
+  if (txtShowAll) txtShowAll.textContent = t.showAllRegions;
+  const btnShowAll = document.getElementById('btn-show-all-regions');
+  if (btnShowAll) btnShowAll.title = t.showAllRegions;
 
-  const btnQuickAll = document.getElementById('btn-quick-all');
-  if (btnQuickAll) btnQuickAll.textContent = t.layerAll;
-  const btnQuickVp = document.getElementById('btn-quick-vp');
-  if (btnQuickVp) btnQuickVp.textContent = t.layerOnlyVP;
-  const btnQuickDo = document.getElementById('btn-quick-do');
-  if (btnQuickDo) btnQuickDo.textContent = t.layerOnlyDO;
-  const btnQuickVc = document.getElementById('btn-quick-vc');
-  if (btnQuickVc) btnQuickVc.textContent = t.layerOnlyVC;
+  const txtHideAll = document.getElementById('txt-hide-all');
+  if (txtHideAll) txtHideAll.textContent = t.hideAllRegions;
+  const btnHideAll = document.getElementById('btn-hide-all-regions');
+  if (btnHideAll) btnHideAll.title = t.hideAllRegions;
 
-  const txtSpillAll = document.getElementById('txt-spill-all');
-  if (txtSpillAll) txtSpillAll.textContent = t.layerAll;
+  updateVisibilityCountUI();
 
   document.getElementById('lbl-territory').textContent = t.territory;
   document.getElementById('lbl-grapes-red').textContent = t.grapesRed;
@@ -1055,7 +1080,6 @@ document.getElementById('country-filter').addEventListener('change', (e) => {
   const selCountry = e.target.value;
   populateCategoryFilter(selCountry);
   populateRegionFilter(selCountry);
-  updateLayerCounts();
   applyFilters();
   if (COUNTRY_CENTERS[selCountry]) {
     map.flyTo({
@@ -1127,7 +1151,13 @@ if (sidebarToggleBtn && sidebarEl) {
   });
 }
 
-// World Climate Layer Toggle
+// Wine Regions Layer Toggle (Topnav)
+const btnToggleRegions = document.getElementById('btn-toggle-regions');
+if (btnToggleRegions) {
+  btnToggleRegions.addEventListener('click', toggleWineRegionsLayer);
+}
+
+// World Climate Layer Toggle (Topnav)
 const btnToggleClimate = document.getElementById('btn-toggle-climate');
 if (btnToggleClimate) {
   btnToggleClimate.addEventListener('click', toggleClimateLayer);
@@ -1148,101 +1178,13 @@ if (btnCloseClimateLegend) {
   });
 }
 
-// Map Layer Control (Panel Toggle & Close)
-const btnToggleLayerPanel = document.getElementById('btn-toggle-layer-panel');
-const mapLayerControl = document.getElementById('map-layer-control');
-if (btnToggleLayerPanel && mapLayerControl) {
-  btnToggleLayerPanel.addEventListener('click', () => {
-    mapLayerControl.classList.toggle('expanded');
-  });
+// Show All / Hide All Wine Regions (Sidebar)
+const btnShowAllRegions = document.getElementById('btn-show-all-regions');
+if (btnShowAllRegions) {
+  btnShowAllRegions.addEventListener('click', showAllFilteredRegions);
 }
 
-const btnCloseLayerCard = document.getElementById('btn-close-layer-card');
-if (btnCloseLayerCard && mapLayerControl) {
-  btnCloseLayerCard.addEventListener('click', () => {
-    mapLayerControl.classList.remove('expanded');
-  });
+const btnHideAllRegions = document.getElementById('btn-hide-all-regions');
+if (btnHideAllRegions) {
+  btnHideAllRegions.addEventListener('click', hideAllFilteredRegions);
 }
-
-// Map Layer Checkboxes (DO, VP, VC, Climate)
-const chkLayerDo = document.getElementById('chk-layer-do');
-if (chkLayerDo) {
-  chkLayerDo.addEventListener('change', (e) => {
-    activeLayers.do = e.target.checked;
-    if (!activeLayers.do && !activeLayers.vp && !activeLayers.vc) {
-      activeLayers.do = true;
-      e.target.checked = true;
-    }
-    syncLayerUI();
-    applyFilters();
-  });
-}
-
-const chkLayerVp = document.getElementById('chk-layer-vp');
-if (chkLayerVp) {
-  chkLayerVp.addEventListener('change', (e) => {
-    activeLayers.vp = e.target.checked;
-    if (!activeLayers.do && !activeLayers.vp && !activeLayers.vc) {
-      activeLayers.vp = true;
-      e.target.checked = true;
-    }
-    syncLayerUI();
-    applyFilters();
-  });
-}
-
-const chkLayerVc = document.getElementById('chk-layer-vc');
-if (chkLayerVc) {
-  chkLayerVc.addEventListener('change', (e) => {
-    activeLayers.vc = e.target.checked;
-    if (!activeLayers.do && !activeLayers.vp && !activeLayers.vc) {
-      activeLayers.vc = true;
-      e.target.checked = true;
-    }
-    syncLayerUI();
-    applyFilters();
-  });
-}
-
-const chkLayerClimate = document.getElementById('chk-layer-climate');
-if (chkLayerClimate) {
-  chkLayerClimate.addEventListener('change', () => {
-    toggleClimateLayer();
-  });
-}
-
-// Quick Layer Action Buttons
-const btnQuickAll = document.getElementById('btn-quick-all');
-if (btnQuickAll) btnQuickAll.addEventListener('click', showAllLayers);
-
-const btnQuickVp = document.getElementById('btn-quick-vp');
-if (btnQuickVp) btnQuickVp.addEventListener('click', () => isolateLayer('vp'));
-
-const btnQuickDo = document.getElementById('btn-quick-do');
-if (btnQuickDo) btnQuickDo.addEventListener('click', () => isolateLayer('do'));
-
-const btnQuickVc = document.getElementById('btn-quick-vc');
-if (btnQuickVc) btnQuickVc.addEventListener('click', () => isolateLayer('vc'));
-
-// Sidebar Category Layer Pills
-document.querySelectorAll('.side-layer-pill').forEach(btn => {
-  btn.addEventListener('click', (e) => {
-    const pill = e.currentTarget;
-    const type = pill.dataset.layer;
-    if (type === 'all') {
-      showAllLayers();
-    } else {
-      const allActive = activeLayers.do && activeLayers.vp && activeLayers.vc;
-      if (allActive) {
-        isolateLayer(type);
-      } else {
-        activeLayers[type] = !activeLayers[type];
-        if (!activeLayers.do && !activeLayers.vp && !activeLayers.vc) {
-          activeLayers[type] = true;
-        }
-        syncLayerUI();
-        applyFilters();
-      }
-    }
-  });
-});

@@ -44,8 +44,13 @@
           <span>🍇</span> <span id="nav-grapes-text">Grape Varieties</span>
         </a>
 
+        <!-- Toggle Wine Regions Layer -->
+        <button class="btn-toggle-layer btn-toggle-regions active" id="btn-toggle-regions" title="Toggle Wine Regions Layer">
+          <span>🍷</span> <span id="txt-regions-toggle">Wine Regions</span>
+        </button>
+
         <!-- Toggle World Climate Zones Layer -->
-        <button class="btn-toggle-climate" id="btn-toggle-climate" title="Toggle World Climate Zones Layer">
+        <button class="btn-toggle-layer btn-toggle-climate" id="btn-toggle-climate" title="Toggle World Climate Zones Layer">
           <span>⛅</span> <span id="txt-climate-toggle">World Climate Layer</span>
         </button>
 
@@ -67,53 +72,6 @@
     <main class="main-content">
       <!-- Interactive Map -->
       <div id="map"></div>
-
-      <!-- Floating Map Layer Control -->
-      <div class="map-layer-control" id="map-layer-control">
-        <button class="layer-control-toggle-btn" id="btn-toggle-layer-panel" title="Toggle Map Layers Panel">
-          <span class="layer-icon">📑</span>
-          <span class="layer-title-text" id="lbl-layers-btn">Layers</span>
-          <span class="layer-chevron" id="layer-chevron">▾</span>
-        </button>
-        <div class="layer-control-card" id="layer-control-card">
-          <div class="layer-card-header">
-            <span class="layer-card-title" id="lbl-layers-card-title">📑 Map Layers</span>
-            <button class="layer-card-close" id="btn-close-layer-card" title="Close">&times;</button>
-          </div>
-          <div class="layer-card-body">
-            <label class="layer-checkbox-item">
-              <input type="checkbox" id="chk-layer-do" checked>
-              <span class="layer-color-dot" style="background: #722F37;"></span>
-              <span class="layer-label-text" id="lbl-chk-do">DO / DOCa</span>
-              <span class="layer-count-tag" id="count-layer-do">72</span>
-            </label>
-            <label class="layer-checkbox-item">
-              <input type="checkbox" id="chk-layer-vp" checked>
-              <span class="layer-color-dot" style="background: #8E44AD;"></span>
-              <span class="layer-label-text" id="lbl-chk-vp">Vinos de Pago (VP)</span>
-              <span class="layer-count-tag" id="count-layer-vp">24</span>
-            </label>
-            <label class="layer-checkbox-item">
-              <input type="checkbox" id="chk-layer-vc" checked>
-              <span class="layer-color-dot" style="background: #DDA15E;"></span>
-              <span class="layer-label-text" id="lbl-chk-vc">Vinos de Calidad (VC)</span>
-              <span class="layer-count-tag" id="count-layer-vc">4</span>
-            </label>
-            <div class="layer-card-divider"></div>
-            <label class="layer-checkbox-item">
-              <input type="checkbox" id="chk-layer-climate">
-              <span class="layer-climate-icon">⛅</span>
-              <span class="layer-label-text" id="lbl-chk-climate">World Climate</span>
-            </label>
-            <div class="layer-quick-buttons">
-              <button class="btn-quick-layer" id="btn-quick-all">All</button>
-              <button class="btn-quick-layer" id="btn-quick-vp">Only VP</button>
-              <button class="btn-quick-layer" id="btn-quick-do">Only DO</button>
-              <button class="btn-quick-layer" id="btn-quick-vc">Only VC</button>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <!-- Floating Climate Layer Map Legend -->
       <div class="climate-map-legend" id="climate-map-legend" style="display: none;">
@@ -183,32 +141,21 @@
               <option value="subtropical_volcanic" id="clim-subtrop-opt">🌋 Subtropical / Volcanic</option>
             </select>
           </div>
-
-          <!-- Quick Category Layer Pills (DO, VP, VC) -->
-          <div class="sidebar-layer-pills" id="sidebar-layer-pills">
-            <button class="side-layer-pill active" id="spill-all" data-layer="all" title="Show all classifications">
-              <span id="txt-spill-all">All</span>
-            </button>
-            <button class="side-layer-pill active" id="spill-do" data-layer="do" title="Toggle Denominaciones de Origen (DO / DOCa)">
-              <span class="pill-dot" style="background: #722F37;"></span>
-              <span>DO</span>
-              <span class="pill-num" id="spill-num-do">72</span>
-            </button>
-            <button class="side-layer-pill active" id="spill-vp" data-layer="vp" title="Toggle Vinos de Pago (VP)">
-              <span class="pill-dot" style="background: #8E44AD;"></span>
-              <span>VP</span>
-              <span class="pill-num" id="spill-num-vp">24</span>
-            </button>
-            <button class="side-layer-pill active" id="spill-vc" data-layer="vc" title="Toggle Vinos de Calidad (VC)">
-              <span class="pill-dot" style="background: #DDA15E;"></span>
-              <span>VC</span>
-              <span class="pill-num" id="spill-num-vc">4</span>
-            </button>
-          </div>
         </div>
 
         <div class="regions-counter">
-          <span id="count-badge">Loading appellations...</span>
+          <div class="counter-text-wrap">
+            <span id="count-badge">Loading appellations...</span>
+            <span class="count-visible-pill" id="count-visible-badge"></span>
+          </div>
+          <div class="vis-btn-group">
+            <button class="btn-vis-action" id="btn-show-all-regions" title="Show all filtered wine regions on the map">
+              <span>👁️</span> <span id="txt-show-all">Show All</span>
+            </button>
+            <button class="btn-vis-action" id="btn-hide-all-regions" title="Hide all wine regions from the map">
+              <span>🚫</span> <span id="txt-hide-all">Hide All</span>
+            </button>
+          </div>
         </div>
 
         <div class="regions-list" id="regions-list"></div>
@@ -264,8 +211,8 @@
   </div>
 
   <!-- Capa de datos (compatible directamente con doble clic file:// y con servidor web http://) -->
-  <script src="data/world_climate_zones.js?v=20261104e"></script>
-  <script src="data/spain_wine_regions.js?v=20261104e"></script>
-  <script src="app.js?v=20261104e"></script>
+  <script src="data/world_climate_zones.js?v=20261105a"></script>
+  <script src="data/spain_wine_regions.js?v=20261105a"></script>
+  <script src="app.js?v=20261105a"></script>
 </body>
 </html>
