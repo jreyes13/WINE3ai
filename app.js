@@ -58,7 +58,10 @@ const I18N = {
     hideAllRegions: "Ocultar todas",
     onMap: "en mapa",
     showOnMap: "Mostrar en el mapa",
-    hideFromMap: "Ocultar del mapa"
+    hideFromMap: "Ocultar del mapa",
+    exportPDF: "Exportar PDF",
+    exportPDFTitle: "Exportar vista actual del mapa en PDF A4 Horizontal",
+    exportingPDF: "Generando PDF..."
   },
   en: {
     title: "World Wine Wide",
@@ -115,7 +118,10 @@ const I18N = {
     hideAllRegions: "Hide All",
     onMap: "on map",
     showOnMap: "Show on map",
-    hideFromMap: "Hide from map"
+    hideFromMap: "Hide from map",
+    exportPDF: "Export PDF",
+    exportPDFTitle: "Export current map view to A4 Landscape PDF",
+    exportingPDF: "Generating PDF..."
   }
 };
 
@@ -307,7 +313,8 @@ const map = new maplibregl.Map({
   container: 'map',
   style: BASEMAP_STYLES.voyager,
   center: [2.5, 43.5],
-  zoom: 5.0
+  zoom: 5.0,
+  preserveDrawingBuffer: true
 });
 
 map.addControl(new maplibregl.NavigationControl(), 'bottom-right');
@@ -987,6 +994,12 @@ function setLanguage(lang) {
   const btnHideAll = document.getElementById('btn-hide-all-regions');
   if (btnHideAll) btnHideAll.title = t.hideAllRegions;
 
+  // Export PDF action button
+  const txtExportPdf = document.getElementById('txt-export-pdf');
+  if (txtExportPdf) txtExportPdf.textContent = t.exportPDF;
+  const btnExportPdf = document.getElementById('btn-export-pdf');
+  if (btnExportPdf) btnExportPdf.title = t.exportPDFTitle;
+
   updateVisibilityCountUI();
 
   document.getElementById('lbl-territory').textContent = t.territory;
@@ -1187,4 +1200,251 @@ if (btnShowAllRegions) {
 const btnHideAllRegions = document.getElementById('btn-hide-all-regions');
 if (btnHideAllRegions) {
   btnHideAllRegions.addEventListener('click', hideAllFilteredRegions);
+}
+
+// Export Map to PDF (A4 Landscape)
+async function exportMapToPDF() {
+  const jsPDFClass = (window.jspdf && window.jspdf.jsPDF) || window.jsPDF;
+  if (!jsPDFClass) {
+    alert(currentLang === 'es' ? 'La librería de exportación a PDF no se encuentra disponible.' : 'PDF export library is not available.');
+    return;
+  }
+
+  const btnExport = document.getElementById('btn-export-pdf');
+  const txtExport = document.getElementById('txt-export-pdf');
+  const origTxt = txtExport ? txtExport.textContent : '';
+
+  try {
+    if (btnExport) btnExport.disabled = true;
+    if (txtExport) txtExport.textContent = I18N[currentLang].exportingPDF;
+
+    // Force map render to populate WebGL canvas buffer
+    map.triggerRepaint();
+    await new Promise(resolve => map.once('render', resolve));
+
+    const canvas = map.getCanvas();
+    const imgData = canvas.toDataURL('image/jpeg', 0.95);
+
+    // Initialize A4 landscape PDF (297 x 210 mm)
+    const pdf = new jsPDFClass({
+      orientation: 'landscape',
+      unit: 'mm',
+      format: 'a4'
+    });
+
+    const isEs = currentLang === 'es';
+    const pageWidth = 297;
+    const pageHeight = 210;
+    const margin = 10;
+    const contentWidth = pageWidth - (margin * 2); // 277 mm
+
+    // Header Background Accent Bar
+    pdf.setFillColor(114, 47, 55); // Burgundy #722F37
+    pdf.rect(margin, 8, 3.5, 13, 'F');
+
+    // Title & Subtitle
+    pdf.setFont('helvetica', 'bold');
+    pdf.setFontSize(16);
+    pdf.setTextColor(114, 47, 55);
+    pdf.text('WORLD WINE WIDE', margin + 6, 14);
+
+    pdf.setFont('helvetica', 'normal');
+    pdf.setFontSize(8.5);
+    pdf.setTextColor(100, 100, 100);
+    const subText = isEs 
+      ? 'Atlas Mundial de Regiones Vitivinicilas, Denominaciones y Zonas Climaticas'
+      : 'World Atlas of Wine Regions, Appellations and Climate Zones';
+    pdf.text(subText, margin + 6, 19);
+
+    // Metadata Right Column
+    pdf.setFontSize(8);
+    pdf.setTextColor(80, 80, 80);
+
+    const countrySelect = document.getElementById('country-filter');
+    const selectedCountryVal = countrySelect ? countrySelect.value : 'all';
+    let scopeText = isEs ? 'Ambito: Todos los Paises' : 'Scope: All Countries';
+    if (selectedCountryVal !== 'all' && COUNTRY_NAMES[selectedCountryVal]) {
+      const cLabel = COUNTRY_NAMES[selectedCountryVal][currentLang] || selectedCountryVal;
+      scopeText = (isEs ? 'Pais: ' : 'Country: ') + cLabel;
+    }
+
+    const visibleCount = visibleRegionsIds.size;
+    const totalCount = allFeatures.length;
+    const regionsStatus = wineRegionsLayerVisible
+      ? `${visibleCount}/${totalCount} ${isEs ? 'regiones visibles' : 'visible regions'}`
+      : (isEs ? 'Capa Regiones oculta' : 'Regions Layer hidden');
+
+    const climateStatus = climateLayerVisible
+      ? (isEs ? 'Capa Clima activa' : 'Climate Layer active')
+      : (isEs ? 'Capa Clima oculta' : 'Climate Layer hidden');
+
+    const dateStr = new Date().toLocaleDateString(isEs ? 'es-ES' : 'en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric'
+    });
+
+    const metaLine1 = `${scopeText}  •  ${regionsStatus}`;
+    const metaLine2 = `${climateStatus}  •  ${dateStr}`;
+
+    pdf.text(metaLine1, pageWidth - margin, 13.5, { align: 'right' });
+    pdf.text(metaLine2, pageWidth - margin, 18.5, { align: 'right' });
+
+    // Divider line
+    pdf.setDrawColor(210, 200, 195);
+    pdf.setLineWidth(0.3);
+    pdf.line(margin, 23.5, pageWidth - margin, 23.5);
+
+    // Map Area bounds: y = 25.5 to y = 199.5 (height = 174 mm)
+    const maxMapH = 174;
+    const maxMapW = contentWidth;
+    const canvasAspect = canvas.width / canvas.height;
+
+    let drawW = maxMapW;
+    let drawH = drawW / canvasAspect;
+    if (drawH > maxMapH) {
+      drawH = maxMapH;
+      drawW = drawH * canvasAspect;
+    }
+    const drawX = margin + (maxMapW - drawW) / 2;
+    const drawY = 25.5 + (maxMapH - drawH) / 2;
+
+    // Render Map snapshot
+    pdf.addImage(imgData, 'JPEG', drawX, drawY, drawW, drawH);
+
+    // Frame border
+    pdf.setDrawColor(180, 180, 180);
+    pdf.setLineWidth(0.35);
+    pdf.rect(drawX, drawY, drawW, drawH);
+
+    // If Climate Layer is active, draw Climate Legend inside map overlay
+    if (climateLayerVisible) {
+      const legW = 68;
+      const legH = 26;
+      const legX = drawX + 3.5;
+      const legY = drawY + drawH - legH - 3.5;
+
+      // Card Background with border
+      pdf.setFillColor(255, 255, 255);
+      pdf.setDrawColor(190, 190, 190);
+      pdf.setLineWidth(0.25);
+      pdf.roundedRect(legX, legY, legW, legH, 1.5, 1.5, 'FD');
+
+      // Card Title
+      pdf.setFont('helvetica', 'bold');
+      pdf.setFontSize(7.5);
+      pdf.setTextColor(40, 40, 40);
+      pdf.text(isEs ? 'ZONAS CLIMATICAS' : 'CLIMATE ZONES', legX + 3, legY + 4.5);
+
+      // Climate items
+      const climItems = [
+        { label: isEs ? 'Atlantico / Maritimo' : 'Atlantic / Maritime', rgb: [56, 189, 248] },
+        { label: isEs ? 'Continental' : 'Continental', rgb: [52, 211, 153] },
+        { label: isEs ? 'Medit. Costero' : 'Coastal Med.', rgb: [251, 191, 36] },
+        { label: isEs ? 'Alpino / Altitud' : 'Alpine / Altitude', rgb: [167, 139, 250] },
+        { label: isEs ? 'Medit. Continental' : 'Continental Med.', rgb: [251, 146, 60] },
+        { label: isEs ? 'Subtropical / Volc.' : 'Subtropical / Volc.', rgb: [251, 113, 133] }
+      ];
+
+      pdf.setFont('helvetica', 'normal');
+      pdf.setFontSize(6.5);
+
+      climItems.forEach((item, idx) => {
+        const col = idx % 2;
+        const row = Math.floor(idx / 2);
+        const ix = legX + 3 + (col * 33);
+        const iy = legY + 8 + (row * 5.5);
+
+        // Color box
+        pdf.setFillColor(item.rgb[0], item.rgb[1], item.rgb[2]);
+        pdf.setDrawColor(120, 120, 120);
+        pdf.setLineWidth(0.15);
+        pdf.rect(ix, iy - 2.2, 3, 3, 'FD');
+
+        // Label
+        pdf.setTextColor(60, 60, 60);
+        pdf.text(item.label, ix + 4.5, iy);
+      });
+    }
+
+    // If a Region is selected, draw Selected Region Callout overlay
+    if (selectedFeature) {
+      const cardW = 75;
+      const cardH = selectedFeature.climate ? 25 : 20;
+      const cardX = drawX + drawW - cardW - 3.5;
+      const cardY = drawY + 3.5;
+
+      pdf.setFillColor(255, 255, 255);
+      pdf.setDrawColor(114, 47, 55);
+      pdf.setLineWidth(0.3);
+      pdf.roundedRect(cardX, cardY, cardW, cardH, 1.5, 1.5, 'FD');
+
+      // Top colored badge bar
+      pdf.setFillColor(114, 47, 55);
+      pdf.rect(cardX, cardY, cardW, 2.5, 'F');
+
+      pdf.setFont('helvetica', 'bold');
+      pdf.setFontSize(8);
+      pdf.setTextColor(114, 47, 55);
+      const nameTxt = pdf.splitTextToSize(selectedFeature.name || '', cardW - 6);
+      pdf.text(nameTxt, cardX + 3, cardY + 6.5);
+
+      pdf.setFont('helvetica', 'normal');
+      pdf.setFontSize(7);
+      pdf.setTextColor(80, 80, 80);
+
+      const countryInfo = COUNTRY_NAMES[selectedFeature.country];
+      const cName = countryInfo ? countryInfo[currentLang] : (selectedFeature.country || '');
+      const catName = selectedFeature.category || '';
+      pdf.text(`${catName} • ${selectedFeature.region || ''} (${cName})`, cardX + 3, cardY + 11);
+
+      if (selectedFeature.climate) {
+        const cTitle = isEs ? (selectedFeature.climate_name_es || selectedFeature.climate) : (selectedFeature.climate_name_en || selectedFeature.climate);
+        pdf.setFont('helvetica', 'italic');
+        pdf.setTextColor(90, 90, 90);
+        pdf.text(`${isEs ? 'Clima' : 'Climate'}: ${cTitle}`, cardX + 3, cardY + 15.5);
+      }
+
+      if (selectedFeature.varieties_red || selectedFeature.varieties_white) {
+        pdf.setFont('helvetica', 'normal');
+        pdf.setFontSize(6.5);
+        pdf.setTextColor(110, 110, 110);
+        const grapesTxt = isEs ? 'Variedades documentadas en ficha' : 'Varieties documented in detail card';
+        pdf.text(grapesTxt, cardX + 3, cardY + (selectedFeature.climate ? 20 : 16));
+      }
+    }
+
+    // Footer
+    pdf.setFont('helvetica', 'normal');
+    pdf.setFontSize(7);
+    pdf.setTextColor(120, 120, 120);
+    const footerLeft = isEs
+      ? 'World Wine Wide • Formato A4 Horizontal (297 x 210 mm) • Proyeccion Web Mercator'
+      : 'World Wine Wide • Standard A4 Landscape (297 x 210 mm) • Web Mercator Projection';
+    const footerRight = isEs
+      ? 'Fuente: MAPA Espana / Elaboracion propia • github.com/jreyes13/wine_world_wide'
+      : 'Source: MAPA Spain / Own compilation • github.com/jreyes13/wine_world_wide';
+
+    pdf.text(footerLeft, margin, 204.5);
+    pdf.text(footerRight, pageWidth - margin, 204.5, { align: 'right' });
+
+    // File download
+    const dateFileStr = new Date().toISOString().slice(0, 10);
+    const scopeSlug = selectedCountryVal !== 'all' ? selectedCountryVal : 'World';
+    const cleanFilename = `WorldWineWide_Map_${scopeSlug}_${dateFileStr}.pdf`;
+    pdf.save(cleanFilename);
+
+  } catch (err) {
+    console.error('Error generating PDF:', err);
+    alert((currentLang === 'es' ? 'Error al generar el PDF: ' : 'Error generating PDF: ') + (err.message || err));
+  } finally {
+    if (btnExport) btnExport.disabled = false;
+    if (txtExport) txtExport.textContent = origTxt || I18N[currentLang].exportPDF;
+  }
+}
+
+// Export PDF Button Listener
+const btnExportPdf = document.getElementById('btn-export-pdf');
+if (btnExportPdf) {
+  btnExportPdf.addEventListener('click', exportMapToPDF);
 }

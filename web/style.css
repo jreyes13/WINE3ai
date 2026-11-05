@@ -201,6 +201,34 @@ body, html {
   box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.25);
 }
 
+/* Export PDF Button (A4 Landscape) */
+.btn-export-pdf {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: #1E293B;
+  border: 1px solid #334155;
+  color: #F8FAFC;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.btn-export-pdf:hover {
+  background: #0F172A;
+  border-color: var(--primary);
+  color: #FFFFFF;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+.btn-export-pdf:active {
+  transform: translateY(1px);
+}
+
 /* Main Workspace */
 .main-content {
   flex: 1;

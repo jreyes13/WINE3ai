@@ -54,6 +54,11 @@
           <span>⛅</span> <span id="txt-climate-toggle">World Climate Layer</span>
         </button>
 
+        <!-- Export Map to A4 Landscape PDF -->
+        <button class="btn-export-pdf" id="btn-export-pdf" title="Export current map view to A4 Landscape PDF">
+          <span>🖨️</span> <span id="txt-export-pdf">Export PDF</span>
+        </button>
+
         <button class="lang-btn" data-lang="es">ES</button>
         <button class="lang-btn active" data-lang="en">EN</button>
         <a href="https://app.atlas.co/projects/iRfhgtNFAbVm6zHZL3bN?loc=-2.7334%2C39.9785%2C6.0441z" target="_blank" rel="noopener noreferrer" class="btn-link btn-atlas">
@@ -210,9 +215,12 @@
     </main>
   </div>
 
+  <!-- PDF Generation Library (A4 Landscape Export) -->
+  <script src="libs/jspdf.umd.min.js"></script>
+
   <!-- Capa de datos (compatible directamente con doble clic file:// y con servidor web http://) -->
-  <script src="data/world_climate_zones.js?v=20261105a"></script>
-  <script src="data/spain_wine_regions.js?v=20261105a"></script>
-  <script src="app.js?v=20261105a"></script>
+  <script src="data/world_climate_zones.js?v=20261105b"></script>
+  <script src="data/spain_wine_regions.js?v=20261105b"></script>
+  <script src="app.js?v=20261105b"></script>
 </body>
 </html>
