@@ -1271,7 +1271,9 @@ async function exportMapToPDF() {
       scopeText = (isEs ? 'Pais: ' : 'Country: ') + cLabel;
     }
 
-    const visibleCount = visibleRegionsIds.size;
+    const visibleCount = (typeof visibleRegionIds !== 'undefined')
+      ? filteredFeatures.filter(f => visibleRegionIds.has(f.properties.id)).length
+      : 0;
     const totalCount = allFeatures.length;
     const regionsStatus = wineRegionsLayerVisible
       ? `${visibleCount}/${totalCount} ${isEs ? 'regiones visibles' : 'visible regions'}`
