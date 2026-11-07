@@ -2,7 +2,7 @@
 
 **English** | [Versión en Español](EXPANSION_GLOBAL.md)
 
-This document establishes the modular, technical, and collaborative architecture for scaling **World Wine Wide** globally, documenting the milestone already achieved across the **Old World** and providing a clear roadmap for integrating the wine regions of the **New World**.
+This document establishes the modular, technical, and collaborative architecture for scaling **WINE³ai** (formerly *World Wine Wide*) globally, documenting the milestone already achieved across the **Old World** and providing a clear roadmap for integrating the wine regions of the **New World**.
 
 ---
 
@@ -22,7 +22,7 @@ The project has achieved 100% complete official census coverage across **21 sove
 The repository organizes all assets within a clean, country-by-country modular structure:
 
 ```
-wine_world_wide/
+wine3ai/
 ├── index.html                   # Primary interactive wine map viewer (MapLibre GL JS)
 ├── grapes.html                  # Grape Varieties Global Explorer (circular charts & blend typology)
 ├── README.md                    # Main project documentation in English (summary table & links)

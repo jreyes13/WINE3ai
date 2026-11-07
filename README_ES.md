@@ -1,14 +1,18 @@
-# World Wine Wide — Proyecto Cartográfico Global de Regiones Vitivinícolas 🍷
+<p align="center">
+  <img src="assets/logo_horizontal.svg" alt="WINE³ai — Mapas Vitivinícolas Mundiales e Inteligencia Territorial" width="480">
+</p>
+
+# WINE³ai — Atlas Cartográfico Global de Regiones Vitivinícolas y Terruño 🍷
 
 [English Version](README.md) | **Versión en Español**
 
 ## Visión General del Proyecto
 
-**World Wine Wide** es un proyecto geoespacial abierto y colaborativo con un objetivo claro y ambicioso: **crear mapas precisos, fidedignos e interactivos de todas las regiones vitivinícolas del mundo**.
+**WINE³ai** (anteriormente *World Wine Wide*) es un proyecto geoespacial abierto y colaborativo con un objetivo claro y ambicioso: **crear mapas precisos, fidedignos e interactivos de todas las regiones vitivinícolas del mundo, integrando capas climáticas y análisis varietal**.
 
-Desde las colinas de Burdeos hasta los valles de Napa, pasando por las laderas de la Toscana, las terrazas del Priorat o las llanuras de Mendoza, el proyecto busca ofrecer una referencia visual rigurosa para entusiastas, estudiantes, sumilleres y profesionales del vino.
+Desde las colinas de Burdeos y Borgoña hasta los valles de Napa y Rioja, pasando por las terrazas del Priorat o las llanuras de Mendoza, el proyecto busca ofrecer una referencia visual rigurosa para entusiastas, estudiantes, sumilleres y profesionales del vino.
 
-Para lograrlo, combinamos **dos fuentes oficiales indiscutibles**:
+Para lograrlo, combinamos **fuentes oficiales indiscutibles**:
 1. Los **Pliegos de Condiciones oficiales** aprobados por los Consejos Reguladores, Ministerios de Agricultura y la Unión Europea (*eAmbrosia*).
 2. La **cartografía de delimitaciones territoriales oficiales** de los institutos geográficos nacionales (en España, el **IGN** bajo directiva europea **INSPIRE**).
 
@@ -16,11 +20,11 @@ Para lograrlo, combinamos **dos fuentes oficiales indiscutibles**:
 
 ## 🗺️ Visualización Interactiva
 
-El resultado del proyecto son **mapas web interactivos** que muestran con total precisión los límites de cada denominación de origen y sus subzonas, optimizados para explorar, compartir e incrustar:
+El resultado del proyecto son **mapas web interactivos** que muestran con total precisión los límites de cada denominación de origen, zonas climáticas mundiales y variedades de uva:
 
-👉 **Aplicación Web Interactiva Oficial:** [https://jreyes13.github.io/wine_world_wide/](https://jreyes13.github.io/wine_world_wide/)  
-👉 **Explorador Global de Variedades de Uva:** [https://jreyes13.github.io/wine_world_wide/grapes.html](https://jreyes13.github.io/wine_world_wide/grapes.html)  
-👉 **Explorar el proyecto en Atlas:** [World Wine Wide Map en Atlas.co](https://app.atlas.co/projects/iRfhgtNFAbVm6zHZL3bN?loc=-2.7334%2C39.9785%2C6.0441z)
+👉 **Aplicación Web Interactiva Oficial:** [https://jreyes13.github.io/wine3ai/](https://jreyes13.github.io/wine3ai/)  
+👉 **Explorador Global de Variedades de Uva:** [https://jreyes13.github.io/wine3ai/grapes.html](https://jreyes13.github.io/wine3ai/grapes.html)  
+👉 **Explorar el proyecto en Atlas:** [WINE³ai Map en Atlas.co](https://app.atlas.co/projects/iRfhgtNFAbVm6zHZL3bN?loc=-2.7334%2C39.9785%2C6.0441z)
 
 ---
 

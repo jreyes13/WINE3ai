@@ -1,20 +1,24 @@
-# World Wine Wide — A Global Wine Region Mapping Project 🍷
+<p align="center">
+  <img src="assets/logo_horizontal.svg" alt="WINE³ai — World Wine Maps & Terroir Intelligence" width="480">
+</p>
+
+# WINE³ai — Global Wine Regions & Terroir Intelligence 🍷
 
 **English** | [Versión en Español](README_ES.md)
 
 ## Project Overview
 
-**World Wine Wide** is a geospatial project with a simple but ambitious goal: **to create accurate, interactive maps of every major wine region on the planet**.
+**WINE³ai** (formerly *World Wine Wide*) is an open geospatial and viticultural intelligence project with a clear, ambitious mission: **to create authoritative, interactive maps and climate intelligence for every wine region on Earth**.
 
-From the hills of Bordeaux to the valleys of Napa, from the slopes of Tuscany to the plains of Mendoza, this project aims to provide a clear, visual reference for wine enthusiasts, students, and professionals. By using official geographic data and open-source tools, we can create maps that are both beautiful and authoritative.
+From the slopes of Bordeaux and Burgundy to the valleys of Napa and Rioja, from the terraces of Priorat to the volcanic soils of the Canary Islands, **WINE³ai** provides a rigorous, visual reference for winemakers, sommeliers, students, and enthusiasts.
 
 ## The Result
 
-This project produces **interactive web maps** that show the precise boundaries of wine regions. Each map can be viewed, shared, and embedded.
+This project produces **interactive web maps** and terroir analytics that show the precise boundaries of wine appellations, world climate zones, and grape varietal distribution:
 
-👉 **Official Interactive Web Map:** [https://jreyes13.github.io/wine_world_wide/](https://jreyes13.github.io/wine_world_wide/)  
-👉 **Grape Varieties Global Explorer:** [https://jreyes13.github.io/wine_world_wide/grapes.html](https://jreyes13.github.io/wine_world_wide/grapes.html)  
-👉 **Atlas.co Project:** [World Wine Wide Map on Atlas](https://app.atlas.co/shared/iRfhgtNFAbVm6zHZL3bN?loc=-3.8121%2C41.8957%2C6.2431z&public=true)
+👉 **Official Interactive Web Map:** [https://jreyes13.github.io/wine3ai/](https://jreyes13.github.io/wine3ai/)  
+👉 **Grape Varieties Global Explorer:** [https://jreyes13.github.io/wine3ai/grapes.html](https://jreyes13.github.io/wine3ai/grapes.html)  
+👉 **Atlas.co Project:** [WINE³ai Map on Atlas](https://app.atlas.co/shared/iRfhgtNFAbVm6zHZL3bN?loc=-3.8121%2C41.8957%2C6.2431z&public=true)
 
 ## The Challenge: Sourcing Global Data
 

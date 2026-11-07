@@ -1,9 +1,9 @@
-// World Wine Wide — Grape Varieties Explorer Application Logic
+// WINE³ai — Grape Varieties Explorer Application Logic
 
 const I18N = {
   en: {
-    brandTitle: "World Wine Wide",
-    brandSubtitle: "Grape Varieties Global Explorer",
+    brandTitle: "WINE³ai",
+    brandSubtitle: "Grape Varieties & Terroir Explorer",
     navMap: "Wine Regions Map",
     lblBasemap: "Reference Basemap",
     lblColorFilter: "Grape Color:",
@@ -74,8 +74,8 @@ const I18N = {
     noRegionsFound: "No appellations found for this selection."
   },
   es: {
-    brandTitle: "World Wine Wide",
-    brandSubtitle: "Explorador Global de Variedades de Uva",
+    brandTitle: "WINE³ai",
+    brandSubtitle: "Explorador de Variedades de Uva y Terruño",
     navMap: "Mapa de Regiones Vitivinícolas",
     lblBasemap: "Mapa de referencia",
     lblColorFilter: "Color de Uva:",
@@ -1282,7 +1282,10 @@ function setLanguage(lang) {
 
   const t = I18N[lang];
 
-  document.getElementById('brand-title').textContent = t.brandTitle;
+  const brandTitleEl = document.getElementById('brand-title');
+  if (brandTitleEl) {
+    brandTitleEl.innerHTML = `WINE<span class="brand-exp">³</span><span class="brand-ai">ai</span>`;
+  }
   document.getElementById('brand-subtitle').textContent = t.brandSubtitle;
   document.getElementById('nav-map-text').textContent = t.navMap;
   document.getElementById('lbl-basemap').title = t.lblBasemap;

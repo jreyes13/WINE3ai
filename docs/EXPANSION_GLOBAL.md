@@ -2,7 +2,7 @@
 
 [English Version](GLOBAL_EXPANSION.md) | **Versión en Español**
 
-Este documento establece la arquitectura modular, técnica y colaborativa para continuar escalando **World Wine Wide** a escala planetaria, documentando los hitos ya consolidados en el **Viejo Mundo** y guiando la integración sistemática de las regiones vitivinícolas del **Nuevo Mundo**.
+Este documento establece la arquitectura modular, técnica y colaborativa para continuar escalando **WINE³ai** (anteriormente *World Wine Wide*) a escala planetaria, documentando los hitos ya consolidados en el **Viejo Mundo** y guiando la integración sistemática de las regiones vitivinícolas del **Nuevo Mundo**.
 
 ---
 
@@ -22,7 +22,7 @@ El proyecto ha completado de forma exhaustiva el censo oficial de **21 naciones 
 El repositorio organiza todos sus activos conforme a una jerarquía modular por país:
 
 ```
-wine_world_wide/
+wine3ai/
 ├── index.html                   # Visor cartográfico web principal (MapLibre GL JS)
 ├── grapes.html                  # Analizador global de variedades de uva (gráficos circulares y tipología)
 ├── README.md                    # Documentación general en inglés (con tabla resumen y enlaces)

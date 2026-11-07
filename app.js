@@ -1425,8 +1425,8 @@ async function exportMapToPDF() {
       ? 'WINE3ai • Formato A4 Horizontal (297 x 210 mm) • Proyeccion Web Mercator'
       : 'WINE3ai • Standard A4 Landscape (297 x 210 mm) • Web Mercator Projection';
     const footerRight = isEs
-      ? 'WINE3ai • Fuente: MAPA Espana / Elaboracion propia • github.com/jreyes13/wine_world_wide'
-      : 'WINE3ai • Source: MAPA Spain / Own compilation • github.com/jreyes13/wine_world_wide';
+      ? 'WINE3ai • Fuente: MAPA Espana / Elaboracion propia • github.com/jreyes13/wine3ai'
+      : 'WINE3ai • Source: MAPA Spain / Own compilation • github.com/jreyes13/wine3ai';
 
     pdf.text(footerLeft, margin, 204.5);
     pdf.text(footerRight, pageWidth - margin, 204.5, { align: 'right' });
