@@ -1,9 +1,9 @@
-// World Wine Wide - Interactive Map App
+// WINE³ai - Interactive Wine Maps & Terroir Intelligence
 
 const I18N = {
   es: {
-    title: "World Wine Wide",
-    subtitle: "Mapas Oficiales de Regiones Vitivinícolas",
+    title: "WINE³ai",
+    subtitle: "Atlas Cartográfico Vitivinícola e Inteligencia Territorial",
     searchPlaceholder: "Buscar por DO, País, Región, Uva o Municipio...",
     allCountries: "Todos los Países",
     allCategories: "Todas las Categorías",
@@ -64,8 +64,8 @@ const I18N = {
     exportingPDF: "Generando PDF..."
   },
   en: {
-    title: "World Wine Wide",
-    subtitle: "Official Wine Region Maps",
+    title: "WINE³ai",
+    subtitle: "World Wine Maps & Terroir Intelligence",
     searchPlaceholder: "Search by Appellation, Country, Region, Grape or Municipality...",
     allCountries: "All Countries",
     allCategories: "All Classifications",
@@ -905,7 +905,10 @@ function setLanguage(lang) {
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
   const t = I18N[lang];
 
-  document.getElementById('brand-title').textContent = t.title;
+  const brandTitleEl = document.getElementById('brand-title');
+  if (brandTitleEl) {
+    brandTitleEl.innerHTML = `WINE<span class="brand-exp">³</span><span class="brand-ai">ai</span>`;
+  }
   document.getElementById('brand-subtitle').textContent = t.subtitle;
   document.getElementById('search-input').placeholder = t.searchPlaceholder;
   
@@ -1246,14 +1249,14 @@ async function exportMapToPDF() {
     pdf.setFont('helvetica', 'bold');
     pdf.setFontSize(16);
     pdf.setTextColor(114, 47, 55);
-    pdf.text('WORLD WINE WIDE', margin + 6, 14);
+    pdf.text('WINE3ai', margin + 6, 14);
 
     pdf.setFont('helvetica', 'normal');
     pdf.setFontSize(8.5);
     pdf.setTextColor(100, 100, 100);
     const subText = isEs 
-      ? 'Atlas Mundial de Regiones Vitivinicilas, Denominaciones y Zonas Climaticas'
-      : 'World Atlas of Wine Regions, Appellations and Climate Zones';
+      ? 'Atlas Mundial de Regiones Vitivinicilas, Climas y Terruño'
+      : 'World Atlas of Wine Regions, Climates & Terroir Intelligence';
     pdf.text(subText, margin + 6, 19);
 
     // Metadata Right Column
@@ -1419,11 +1422,11 @@ async function exportMapToPDF() {
     pdf.setFontSize(7);
     pdf.setTextColor(120, 120, 120);
     const footerLeft = isEs
-      ? 'World Wine Wide • Formato A4 Horizontal (297 x 210 mm) • Proyeccion Web Mercator'
-      : 'World Wine Wide • Standard A4 Landscape (297 x 210 mm) • Web Mercator Projection';
+      ? 'WINE3ai • Formato A4 Horizontal (297 x 210 mm) • Proyeccion Web Mercator'
+      : 'WINE3ai • Standard A4 Landscape (297 x 210 mm) • Web Mercator Projection';
     const footerRight = isEs
-      ? 'Fuente: MAPA Espana / Elaboracion propia • github.com/jreyes13/wine_world_wide'
-      : 'Source: MAPA Spain / Own compilation • github.com/jreyes13/wine_world_wide';
+      ? 'WINE3ai • Fuente: MAPA Espana / Elaboracion propia • github.com/jreyes13/wine_world_wide'
+      : 'WINE3ai • Source: MAPA Spain / Own compilation • github.com/jreyes13/wine_world_wide';
 
     pdf.text(footerLeft, margin, 204.5);
     pdf.text(footerRight, pageWidth - margin, 204.5, { align: 'right' });
@@ -1431,7 +1434,7 @@ async function exportMapToPDF() {
     // File download
     const dateFileStr = new Date().toISOString().slice(0, 10);
     const scopeSlug = selectedCountryVal !== 'all' ? selectedCountryVal : 'World';
-    const cleanFilename = `WorldWineWide_Map_${scopeSlug}_${dateFileStr}.pdf`;
+    const cleanFilename = `WINE3ai_Map_${scopeSlug}_${dateFileStr}.pdf`;
     pdf.save(cleanFilename);
 
   } catch (err) {

@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgH" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#1E293B" />
+    </linearGradient>
+
+    <linearGradient id="wineGradH" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#BE123C" />
+      <stop offset="60%" stop-color="#881337" />
+      <stop offset="100%" stop-color="#4C0519" />
+    </linearGradient>
+
+    <linearGradient id="goldGradH" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE68A" />
+      <stop offset="50%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#B45309" />
+    </linearGradient>
+
+    <linearGradient id="facetTopH" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#818CF8" stop-opacity="0.2" />
+    </linearGradient>
+
+    <linearGradient id="facetLeftH" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9F1239" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#4C0519" stop-opacity="0.65" />
+    </linearGradient>
+
+    <linearGradient id="facetRightH" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D97706" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#78350F" stop-opacity="0.6" />
+    </linearGradient>
+
+    <filter id="glowH" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background container -->
+  <rect width="320" height="80" rx="14" fill="url(#bgH)" stroke="#334155" stroke-width="1" />
+
+  <!-- Logo Icon Mark (left side, 60x60 centered vertically) -->
+  <g transform="translate(14, 10) scale(0.6)">
+    <!-- Base container for icon -->
+    <rect width="96" height="96" rx="20" fill="#18181B" stroke="url(#goldGradH)" stroke-width="1.8" stroke-opacity="0.5" />
+
+    <!-- Isometric 3D Cube (3 dimensions of terroir) -->
+    <polygon points="48,16 76,32 48,48 20,32" fill="url(#facetTopH)" stroke="#67E8F9" stroke-width="0.8" stroke-opacity="0.6" />
+    <polygon points="20,32 48,48 48,80 20,64" fill="url(#facetLeftH)" stroke="#FDA4AF" stroke-width="0.8" stroke-opacity="0.5" />
+    <polygon points="48,48 76,32 76,64 48,80" fill="url(#facetRightH)" stroke="#FDE68A" stroke-width="0.8" stroke-opacity="0.5" />
+
+    <!-- Wine Glass -->
+    <path d="M36,36 C36,53 45,58 48,58 C51,58 60,53 60,36 Z" fill="url(#wineGradH)" stroke="url(#goldGradH)" stroke-width="1.2" />
+    <ellipse cx="48" cy="39" rx="10" ry="2.8" fill="#F43F5E" fill-opacity="0.75" />
+    <line x1="48" y1="58" x2="48" y2="73" stroke="url(#goldGradH)" stroke-width="1.8" stroke-linecap="round" />
+    <line x1="39" y1="73" x2="57" y2="73" stroke="url(#goldGradH)" stroke-width="2" stroke-linecap="round" />
+
+    <!-- AI Network Nodes -->
+    <line x1="48" y1="46" x2="20" y2="32" stroke="#FDE68A" stroke-width="0.8" stroke-dasharray="1.5,1.5" stroke-opacity="0.7" />
+    <line x1="48" y1="46" x2="76" y2="32" stroke="#FDE68A" stroke-width="0.8" stroke-dasharray="1.5,1.5" stroke-opacity="0.7" />
+    <line x1="48" y1="46" x2="48" y2="16" stroke="#67E8F9" stroke-width="0.8" stroke-dasharray="1.5,1.5" stroke-opacity="0.7" />
+    <line x1="48" y1="46" x2="48" y2="80" stroke="#FBBF24" stroke-width="0.8" stroke-dasharray="1.5,1.5" stroke-opacity="0.7" />
+
+    <circle cx="48" cy="16" r="2.2" fill="#38BDF8" filter="url(#glowH)" />
+    <circle cx="20" cy="32" r="2.2" fill="#F43F5E" />
+    <circle cx="76" cy="32" r="2.2" fill="#FBBF24" />
+    <circle cx="48" cy="80" r="2.2" fill="#D97706" />
+
+    <circle cx="48" cy="46" r="3.2" fill="url(#goldGradH)" filter="url(#glowH)" />
+    <circle cx="48" cy="46" r="1.4" fill="#FFFFFF" />
+
+    <!-- Sparkle -->
+    <path d="M70,20 L71.2,24.2 L75.4,25.4 L71.2,26.6 L70,30.8 L68.8,26.6 L64.6,25.4 L68.8,24.2 Z" fill="#FDE68A" opacity="0.9" filter="url(#glowH)" />
+  </g>
+
+  <!-- Typography: WINE³ai -->
+  <text x="86" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="28" fill="#FFFFFF" letter-spacing="1">WINE</text>
+  
+  <!-- Exponent ³ in Champagne Gold -->
+  <text x="166" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="19" fill="url(#goldGradH)" filter="url(#glowH)">³</text>
+  
+  <!-- ai badge in cyan/gold -->
+  <rect x="180" y="24" width="28" height="22" rx="6" fill="#1E1B4B" stroke="url(#goldGradH)" stroke-width="1.2" />
+  <text x="186" y="40" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="14" fill="#38BDF8">ai</text>
+
+  <!-- Subtitle -->
+  <text x="87" y="60" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-weight="500" font-size="9" fill="#94A3B8" letter-spacing="1.5">WORLD WINE MAPS &amp; TERROIR INTELLIGENCE</text>
+</svg>
