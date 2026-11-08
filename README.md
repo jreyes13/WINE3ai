@@ -24,7 +24,7 @@ This project produces **interactive web maps** and terroir analytics that show t
 
 Every country manages its own geographic data. There is no single, global source for administrative boundaries. The core principle of **World Wine Wide** is to identify and process the most **authoritative official public sources** for both regulatory viticultural decrees and geographic demarcations:
 
-### A. Authoritative Sources for Completed Nations (29 Countries)
+### A. Authoritative Sources for Completed Nations (30 Countries)
 
 | Country | Official Cartographic Agency / Portal | Base Administrative Level | Native Coordinate System (CRS) | Regulatory Wine Authority |
 | :--- | :--- | :--- | :--- | :--- |
@@ -57,14 +57,12 @@ Every country manages its own geographic data. There is no single, global source
 | 🇨🇭 **Switzerland** | swisstopo (Federal Office of Topography) | Cantons / Communes | CH1903+ / LV95 (EPSG:2056) | OFAG / BLW |
 | 🇹🇷 **Turkey** | Harita Genel Müdürlüğü (HGM) / Natural Earth | İller (Provinces) / İlçeler | TUREF (EPSG:5254) / WGS84 | Tarım ve Orman Bak. / TÜRKPATENT |
 | 🇬🇧 **United Kingdom** | Ordnance Survey (OS Boundary-Line™) | Counties / Unitary Authorities / Districts | British National Grid (EPSG:27700) | DEFRA / Food Standards Agency |
+| 🇺🇸 **United States** | US Census Bureau (TIGER/Line) | Counties / TTB AVA Boundaries | NAD83 / WGS84 | TTB (Alcohol and Tobacco Tax and Trade Bureau) |
 
 ### B. Roadmap Sources for Upcoming New World Expansion
 
 | Country | Primary Cartographic Agency | Base Geographic Unit | Coordinate Reference System | Viticultural Authority |
 | :--- | :--- | :--- | :--- | :--- |
-| 🇺🇸 **USA** | US Census Bureau (TIGER/Line) | Counties / TTB Boundaries | NAD83 (EPSG:4269) | TTB (Alcohol and Tobacco Tax Bureau) |
-| 🇦🇷 **Argentina** | IGN Argentina | Departamentos | POSGAR 2007 (EPSG:5343) | INV (Instituto Nacional de Vitivinicultura) |
-| 🇨🇱 **Chile** | IDE Chile / IGM | Comunas / Provincias | SIRGAS-Chile (EPSG:5360) | SAG (Servicio Agrícola y Ganadero) |
 | 🇦🇺 **Australia** | Geoscience Australia | GIs / Local Government Areas | GDA2020 (EPSG:7844) | Wine Australia |
 | 🇳🇿 **New Zealand** | LINZ (Land Information New Zealand) | GIs / Territorial Authorities | NZGD2000 (EPSG:2193) | New Zealand Winegrowers |
 | 🇿🇦 **South Africa** | NGI (National Geo-spatial Information) | Municipalities / WOs | Hartebeesthoek94 (EPSG:2048) | SAWIS (Wine Industry Information) |
@@ -149,7 +147,7 @@ For comprehensive technical specifications, official cartographic agencies acros
 
 ## Multi-Country Coverage Status 🌍
 
-The **WINE³ai** project has completed full, authoritative census coverage across **29 sovereign wine nations**, encompassing **793 official wine regions**, **821+ QGIS vector layers**, and **685+ official legal specification documents (PDFs)**:
+The **WINE³ai** project has completed full, authoritative census coverage across **30 sovereign wine nations**, encompassing **808 official wine regions**, **836+ QGIS vector layers**, and **700+ official legal specification documents (PDFs)**:
 
 | Country | Status | Appellations / Regions | Key Official Classifications | Primary Cartographic Agency | National Registry |
 | :--- | :---: | :---: | :--- | :--- | :---: |
@@ -182,11 +180,12 @@ The **WINE³ai** project has completed full, authoritative census coverage acros
 | 🇨🇭 **Switzerland** | 100% | 6 | AOC / DOC (Valais, Vaud, Genève, Ticino, etc.) | Natural Earth / OFAG | [Registry](docs/SWITZERLAND/REGISTRO_REGIONS.md) |
 | 🇹🇷 **Turkey** | 100% | 9 | Bölge / GI (Trakya, Urla, Denizli, Kapadokya, etc.) | Natural Earth / TÜRKPATENT | [Registry](docs/TURKEY/REGISTRO_REGIONS.md) |
 | 🇬🇧 **United Kingdom** | 100% | 3 | PDO (Sussex, English Wine, Welsh Wine) | OS / DEFRA | [Registry](docs/COVERAGE.md) |
+| 🇺🇸 **United States** | 100% | 15 | AVA (Napa Valley, Sonoma County, Paso Robles, Willamette, Columbia Valley, etc.) | US Census Bureau / TTB | [Registry](docs/COVERAGE.md) |
 
 👉 **For the complete regional descriptions, territorial notes, and wine profiles of each country, see the full [Multi-Country Coverage Report](docs/COVERAGE.md) (or [Versión en Español](docs/COBERTURA.md)).**
 
 **Key metrics:**
-* **793 official wine regions** interactive in the web applications with commune-level search, basemap switcher, multi-country and regional filters, and official PDF specification viewers.
+* **808 official wine regions** interactive in the web applications with commune-level search, basemap switcher, multi-country and regional filters, and official PDF specification viewers.
 * **791 vector layers** systematically arranged in the primary QGIS project (`QGIS/wine_world_wine.qgz`) partitioned into twenty-two national groups: `SPAIN`, `FRANCE`, `PORTUGAL`, `ITALY`, `GERMANY`, `AUSTRIA`, `GREECE`, `HUNGARY`, `GEORGIA`, `CZECH_REPUBLIC`, `SWITZERLAND`, `SLOVENIA`, `CROATIA`, `SLOVAKIA`, `ROMANIA`, `BULGARIA`, `MOLDOVA`, `ARMENIA`, `CYPRUS`, `LEBANON`, `TURKEY`, and `Google`.
 * **670 official legal specification documents (PDFs)** archived locally in [`DOWNs/DOCs/`](DOWNs/DOCs/).
 * **Dedicated SQL filter libraries** available under `QGIS/<COUNTRY>/SQLs/`.

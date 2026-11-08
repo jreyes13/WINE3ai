@@ -32,7 +32,7 @@ El resultado del proyecto son **mapas web interactivos** que muestran con total 
 
 Cada país gestiona su propia cartografía oficial de forma soberana. No existe una fuente única mundial para las delimitaciones administrativas y vitivinícolas. El principio fundacional de **World Wine Wide** es identificar y procesar exclusivamente las **fuentes oficiales gubernamentales e institucionales más autorizadas**:
 
-### A. Fuentes Oficiales de los 29 Países Consolidados
+### A. Fuentes Oficiales de los 30 Países Consolidados
 
 | País | Organismo Cartográfico Oficial / Portal | Nivel de Entidad Base | Sistema de Coordenadas Nativo (CRS) | Autoridad Vitivinícola Reguladora |
 | :--- | :--- | :--- | :--- | :--- |
@@ -48,6 +48,7 @@ Cada país gestiona su propia cartografía oficial de forma soberana. No existe 
 | 🇸🇰 **Eslovaquia** | ÚGKK SR / Eurostat | Kraje / Okresy | S-JTSK (EPSG:5514) | Min. Pôdohospodárstva |
 | 🇸🇮 **Eslovenia** | GURS (Autoridad Cartográfica y Geodésica) | Občine / Upravne enote | D96/TM (EPSG:3794) | MKGP / eAmbrosia |
 | 🇪🇸 **España** | IGN España (INSPIRE) | Municipios (`recintos_municipales`) | ETRS89 (EPSG:4258) / REGCAN95 | MAPA / Consejos Reguladores |
+| 🇺🇸 **Estados Unidos** | US Census Bureau (TIGER/Line) | Condados / Límites TTB AVA | NAD83 / WGS84 | TTB (Alcohol and Tobacco Tax and Trade Bureau) |
 | 🇫🇷 **Francia** | IGN France (BD CARTO® / Géoportail) | Communes / Cantons | RGF93 / Lambert-93 (EPSG:2154) | INAO (*Cahiers des charges*) |
 | 🇬🇪 **Georgia** | NAPR (Agencia Nacional del Registro Público) | Municipios / Rayones | WGS84 / UTM 38N (EPSG:32638) | Agencia Nacional del Vino / Sakpatenti |
 | 🇬🇷 **Grecia** | ELSTAT (Autoridad Estadística Helénica) | Prefecturas / Municipios | GGRS87 (EPSG:2100) | YPAAT (Min. de Desarrollo Rural) |
@@ -70,9 +71,6 @@ Cada país gestiona su propia cartografía oficial de forma soberana. No existe 
 
 | País | Organismo Cartográfico Principal | Nivel Geográfico Base | Sistema de Coordenadas Nativo | Autoridad Reguladora Vitivinícola |
 | :--- | :--- | :--- | :--- | :--- |
-| 🇺🇸 **EE.UU.** | US Census Bureau (TIGER/Line) | Condados / Límites TTB | NAD83 (EPSG:4269) | TTB (Alcohol and Tobacco Tax and Trade Bureau) |
-| 🇦🇷 **Argentina** | IGN Argentina | Departamentos | POSGAR 2007 (EPSG:5343) | INV (Instituto Nacional de Vitivinicultura) |
-| 🇨🇱 **Chile** | IDE Chile / IGM | Comunas / Provincias | SIRGAS-Chile (EPSG:5360) | SAG (Servicio Agrícola y Ganadero) |
 | 🇦🇺 **Australia** | Geoscience Australia | GIs / Zonas de Gobierno Local | GDA2020 (EPSG:7844) | Wine Australia |
 | 🇳🇿 **Nueva Zelanda** | LINZ (Land Information New Zealand) | GIs / Distritos Territoriales | NZGD2000 (EPSG:2193) | New Zealand Winegrowers |
 | 🇿🇦 **Sudáfrica** | NGI (National Geo-spatial Information) | Municipios / WOs | Hartebeesthoek94 (EPSG:2048) | SAWIS (Wine Industry Information) |
@@ -100,7 +98,7 @@ Para ver los detalles técnicos y particularidades cartográficas (pedanías, no
 
 ## 📊 Estado Actual: Cobertura Multipaís
 
-El proyecto **WINE³ai** cuenta con una cobertura censal oficial completada al 100% en **29 naciones vitivinícolas soberanas**, que integran **793 regiones vitivinícolas oficiales**, **821+ capas vectoriales SIG** y **685+ pliegos oficiales de condiciones (PDFs)**:
+El proyecto **WINE³ai** cuenta con una cobertura censal oficial completada al 100% en **30 naciones vitivinícolas soberanas**, que integran **808 regiones vitivinícolas oficiales**, **836+ capas vectoriales SIG** y **700+ pliegos oficiales de condiciones (PDFs)**:
 
 | País | Estado | Denominaciones / Regiones | Figuras Oficiales Clave | Organismo Cartográfico Base | Registro Nacional |
 | :--- | :---: | :---: | :--- | :--- | :---: |
@@ -116,6 +114,7 @@ El proyecto **WINE³ai** cuenta con una cobertura censal oficial completada al 1
 | 🇸🇰 **Eslovaquia** | 100% | 6 | CHOP (Malokarpatská, Tokaj, etc.) | Natural Earth / eAmbrosia | [Registro](docs/SLOVAKIA/REGISTRO_OBLASTI.md) |
 | 🇸🇮 **Eslovenia** | 100% | 9 | ZGP (Goriška Brda, Vipavska dolina, Kras, etc.) | Natural Earth / eAmbrosia | [Registro](docs/SLOVENIA/REGISTRO_ZGP.md) |
 | 🇪🇸 **España** | 100% | 101 | DOCa, DO, VP, VC (Rioja, Ribera, Priorat, etc.) | IGN España / MAPA | [Registro](docs/SPAIN/REGISTRO_DOS.md) |
+| 🇺🇸 **Estados Unidos** | 100% | 15 | AVA (Napa Valley, Sonoma County, Paso Robles, Willamette, Columbia Valley, etc.) | US Census Bureau / TTB | [Registro](docs/COBERTURA.md) |
 | 🇫🇷 **Francia** | 100% | 325 | AOC (Burdeos, Borgoña, Ródano, Loira, etc.) | IGN France / INAO | [Registro](docs/FRANCE/REGISTRO_AOCS.md) |
 | 🇬🇪 **Georgia** | 100% | 29 | PDO (Mukuzani, Kindzmarauli, Tsinandali, etc.) | Natural Earth / Sakpatenti | [Registro](docs/GEORGIA/REGISTRO_PDOS.md) |
 | 🇬🇷 **Grecia** | 100% | 33 | POP (Naoussa, Nemea, Santorini, etc.) | Natural Earth / YPAAT | [Registro](docs/GREECE/REGISTRO_POPS.md) |
@@ -137,7 +136,7 @@ El proyecto **WINE³ai** cuenta con una cobertura censal oficial completada al 1
 👉 **Para consultar las fichas descriptivas completas, zonificaciones y notas vitivinícolas de cada país, accede al [Informe Detallado de Cobertura Multipaís](docs/COBERTURA.md) (o [English Version](docs/COVERAGE.md)).**
 
 **En números:**
-* **793 regiones vitivinícolas oficiales** integradas en el visor web interactivo con filtros dinámicos en cascada por país, categoría y buscador instantáneo de municipios.
+* **808 regiones vitivinícolas oficiales** integradas en el visor web interactivo con filtros dinámicos en cascada por país, categoría y buscador instantáneo de municipios.
 * **791 capas vectoriales** estructuradas en el proyecto maestro QGIS (`QGIS/wine_world_wine.qgz`) divididas en veintidós grupos nacionales: `SPAIN`, `FRANCE`, `PORTUGAL`, `ITALY`, `GERMANY`, `AUSTRIA`, `GREECE`, `HUNGARY`, `GEORGIA`, `CZECH_REPUBLIC`, `SWITZERLAND`, `SLOVENIA`, `CROATIA`, `SLOVAKIA`, `ROMANIA`, `BULGARIA`, `MOLDOVA`, `ARMENIA`, `CYPRUS`, `LEBANON`, `TURKEY` y `Google`.
 * **670 pliegos oficiales (PDFs)** archivados en local en [`DOWNs/DOCs/`](DOWNs/DOCs/).
 * **Librerías SQL completas** para cada país en `QGIS/<PAIS>/SQLs/`.

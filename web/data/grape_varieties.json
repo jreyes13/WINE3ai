@@ -116401,5 +116401,341 @@
       "monovarietal_pct": 100.0,
       "blend_pct": 0.0
     }
+  },
+  {
+    "id": "zinfandel",
+    "name": "Zinfandel",
+    "color": "red",
+    "origin": "Croatia (Tribidrag) / USA (California Heritage)",
+    "synonyms": [
+      "Tribidrag",
+      "Crljenak Kaštelanski",
+      "Primitivo",
+      "Zin"
+    ],
+    "desc_en": "California's historic signature red grape, adopted during the 1850s Gold Rush. Centenarian, gnarly ungrafted bush vines across Lodi, Sonoma's Dry Creek Valley, Paso Robles, Sierra Foothills, and Napa produce opulent, bold, brambly red wines brimming with blackberry jam, sweet fig, cracked black pepper, exotic spice, and rich velvety power.",
+    "desc_es": "La uva tinta histórica y patrimonial de California, adoptada con fervor durante la Fiebre del Oro de 1850. Viñas centenarias en vaso en Lodi, Dry Creek Valley (Sonoma), Paso Robles y Sierra Foothills dan tintos opulentos y especiados de mermelada de mora, higos, pimienta negra, canela y una potencia golosa incomparable.",
+    "regions": [
+      {
+        "id": "usa-ava-lodi",
+        "name": "Lodi",
+        "country": "Estados Unidos",
+        "country_flag": "🇺🇸",
+        "country_en": "United States",
+        "country_es": "Estados Unidos",
+        "category": "AVA",
+        "region": "California (Central Valley - San Joaquin County)",
+        "color": "#D97706",
+        "pliego": "DOWNs/DOCs/USA/Lodi_AVA.pdf",
+        "centroid": [
+          -121.25,
+          38.15
+        ],
+        "pct": null,
+        "role": "World Capital of Ancient-Vine Zinfandel",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "mediterranean_continental",
+        "climate_icon": "🏜️",
+        "climate_name_en": "Delta-Cooled Mediterranean",
+        "climate_name_es": "Mediterráneo Dulcificado por el Delta"
+      },
+      {
+        "id": "usa-ava-sonoma-county",
+        "name": "Sonoma County (Russian River, Alexander, Sonoma Coast)",
+        "country": "Estados Unidos",
+        "country_flag": "🇺🇸",
+        "country_en": "United States",
+        "country_es": "Estados Unidos",
+        "category": "AVA",
+        "region": "California (North Coast - Sonoma County)",
+        "color": "#991B1B",
+        "pliego": "DOWNs/DOCs/USA/Sonoma_County_AVA.pdf",
+        "centroid": [
+          -122.85,
+          38.52
+        ],
+        "pct": null,
+        "role": "Heritage Benchmark (Dry Creek Valley)",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "mediterranean_coastal",
+        "climate_icon": "🌊",
+        "climate_name_en": "Cool Maritime & Coastal Fog",
+        "climate_name_es": "Marítimo Fresco con Nieblas Costeras"
+      },
+      {
+        "id": "usa-ava-sierra-foothills",
+        "name": "Sierra Foothills (Amador, El Dorado, Shenandoah Valley)",
+        "country": "Estados Unidos",
+        "country_flag": "🇺🇸",
+        "country_en": "United States",
+        "country_es": "Estados Unidos",
+        "category": "AVA",
+        "region": "California (Sierra Nevada Foothills)",
+        "color": "#7C2D12",
+        "pliego": "DOWNs/DOCs/USA/Sierra_Foothills_AVA.pdf",
+        "centroid": [
+          -120.65,
+          38.55
+        ],
+        "pct": null,
+        "role": "Gold Rush Heritage Old Vines",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "mediterranean_continental",
+        "climate_icon": "🏜️",
+        "climate_name_en": "Mountain Mediterranean Foothills",
+        "climate_name_es": "Mediterráneo de Laderas de Alta Montaña"
+      },
+      {
+        "id": "usa-ava-paso-robles",
+        "name": "Paso Robles",
+        "country": "Estados Unidos",
+        "country_flag": "🇺🇸",
+        "country_en": "United States",
+        "country_es": "Estados Unidos",
+        "category": "AVA",
+        "region": "California (Central Coast - San Luis Obispo)",
+        "color": "#B45309",
+        "pliego": "DOWNs/DOCs/USA/Paso_Robles_AVA.pdf",
+        "centroid": [
+          -120.72,
+          35.62
+        ],
+        "pct": null,
+        "role": "Opulent Calcareous Terroir Variety",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "mediterranean_continental",
+        "climate_icon": "🏜️",
+        "climate_name_en": "Continental Mediterranean with Marine Influx",
+        "climate_name_es": "Mediterráneo Continentalizado con Paso Marino"
+      },
+      {
+        "id": "usa-ava-napa-valley",
+        "name": "Napa Valley",
+        "country": "Estados Unidos",
+        "country_flag": "🇺🇸",
+        "country_en": "United States",
+        "country_es": "Estados Unidos",
+        "category": "AVA",
+        "region": "California (North Coast - Napa County)",
+        "color": "#7F1D1D",
+        "pliego": "DOWNs/DOCs/USA/Napa_Valley_AVA.pdf",
+        "centroid": [
+          -122.42,
+          38.48
+        ],
+        "pct": null,
+        "role": "Historic Mountain Variety (Howell Mtn)",
+        "blend_type": "blend",
+        "styles": [
+          "still"
+        ],
+        "climate": "mediterranean_coastal",
+        "climate_icon": "☀️",
+        "climate_name_en": "Coastal Mediterranean with Valley Fog",
+        "climate_name_es": "Mediterráneo Costero con Nieblas Matinales"
+      },
+      {
+        "id": "usa-ava-mendocino-county",
+        "name": "Mendocino County (Anderson Valley, Mendocino Ridge)",
+        "country": "Estados Unidos",
+        "country_flag": "🇺🇸",
+        "country_en": "United States",
+        "country_es": "Estados Unidos",
+        "category": "AVA",
+        "region": "California (North Coast - Mendocino County)",
+        "color": "#059669",
+        "pliego": "DOWNs/DOCs/USA/Mendocino_County_AVA.pdf",
+        "centroid": [
+          -123.35,
+          39.15
+        ],
+        "pct": null,
+        "role": "Old-Vine Redwood Variety",
+        "blend_type": "blend",
+        "styles": [
+          "still"
+        ],
+        "climate": "mediterranean_coastal",
+        "climate_icon": "🌊",
+        "climate_name_en": "Redwood Coastal Belt Cool-Climate",
+        "climate_name_es": "Marítimo Fresco del Bosque de Secuoyas"
+      }
+    ],
+    "total_regions": 6,
+    "countries_count": 1,
+    "countries_breakdown": [
+      {
+        "country": "Estados Unidos",
+        "country_en": "United States",
+        "country_es": "Estados Unidos",
+        "flag": "🇺🇸",
+        "count": 6,
+        "percentage": 100.0
+      }
+    ],
+    "styles_breakdown": {
+      "still": 6,
+      "sparkling": 0,
+      "fortified_sweet": 0
+    },
+    "blend_breakdown": {
+      "monovarietal": 4,
+      "blend": 2,
+      "monovarietal_pct": 66.7,
+      "blend_pct": 33.3
+    }
+  },
+  {
+    "id": "petite-sirah",
+    "name": "Petite Sirah",
+    "color": "red",
+    "origin": "France (Rhône - Durif) / USA (California)",
+    "synonyms": [
+      "Durif",
+      "Petite Syrah"
+    ],
+    "desc_en": "Originally bred in France by François Durif as a crossing of Syrah and Peloursin, Petite Sirah discovered its true spiritual glory in California. Revered for monumental structure, impenetrable inky blue-black color, rich blackberry and blueberry compote, espresso, dark baker's chocolate, and astonishing aging potential.",
+    "desc_es": "Obtenida en Francia por François Durif mediante el cruce de Syrah y Peloursin, la Petite Sirah encontró su gloria en California. Célebre por su monumental estructura tánica, color azul-negro impenetrable, compota de mora y arándano, chocolate negro, espresso y colosal capacidad de guarda.",
+    "regions": [
+      {
+        "id": "usa-ava-lodi",
+        "name": "Lodi",
+        "country": "Estados Unidos",
+        "country_flag": "🇺🇸",
+        "country_en": "United States",
+        "country_es": "Estados Unidos",
+        "category": "AVA",
+        "region": "California (Central Valley - San Joaquin County)",
+        "color": "#D97706",
+        "pliego": "DOWNs/DOCs/USA/Lodi_AVA.pdf",
+        "centroid": [
+          -121.25,
+          38.15
+        ],
+        "pct": null,
+        "role": "Benchmark Single Varietal & Blend Partner",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "mediterranean_continental",
+        "climate_icon": "🏜️",
+        "climate_name_en": "Delta-Cooled Mediterranean",
+        "climate_name_es": "Mediterráneo Dulcificado por el Delta"
+      },
+      {
+        "id": "usa-ava-paso-robles",
+        "name": "Paso Robles",
+        "country": "Estados Unidos",
+        "country_flag": "🇺🇸",
+        "country_en": "United States",
+        "country_es": "Estados Unidos",
+        "category": "AVA",
+        "region": "California (Central Coast - San Luis Obispo)",
+        "color": "#B45309",
+        "pliego": "DOWNs/DOCs/USA/Paso_Robles_AVA.pdf",
+        "centroid": [
+          -120.72,
+          35.62
+        ],
+        "pct": null,
+        "role": "Key Rhône & Heritage Variety",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "mediterranean_continental",
+        "climate_icon": "🏜️",
+        "climate_name_en": "Continental Mediterranean with Marine Influx",
+        "climate_name_es": "Mediterráneo Continentalizado con Paso Marino"
+      },
+      {
+        "id": "usa-ava-sierra-foothills",
+        "name": "Sierra Foothills (Amador, El Dorado, Shenandoah Valley)",
+        "country": "Estados Unidos",
+        "country_flag": "🇺🇸",
+        "country_en": "United States",
+        "country_es": "Estados Unidos",
+        "category": "AVA",
+        "region": "California (Sierra Nevada Foothills)",
+        "color": "#7C2D12",
+        "pliego": "DOWNs/DOCs/USA/Sierra_Foothills_AVA.pdf",
+        "centroid": [
+          -120.65,
+          38.55
+        ],
+        "pct": null,
+        "role": "High-Elevation Structured Variety",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "mediterranean_continental",
+        "climate_icon": "🏜️",
+        "climate_name_en": "Mountain Mediterranean Foothills",
+        "climate_name_es": "Mediterráneo de Laderas de Alta Montaña"
+      },
+      {
+        "id": "usa-ava-napa-valley",
+        "name": "Napa Valley",
+        "country": "Estados Unidos",
+        "country_flag": "🇺🇸",
+        "country_en": "United States",
+        "country_es": "Estados Unidos",
+        "category": "AVA",
+        "region": "California (North Coast - Napa County)",
+        "color": "#7F1D1D",
+        "pliego": "DOWNs/DOCs/USA/Napa_Valley_AVA.pdf",
+        "centroid": [
+          -122.42,
+          38.48
+        ],
+        "pct": null,
+        "role": "Historic Calistoga & St. Helena Variety",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "mediterranean_coastal",
+        "climate_icon": "☀️",
+        "climate_name_en": "Coastal Mediterranean with Valley Fog",
+        "climate_name_es": "Mediterráneo Costero con Nieblas Matinales"
+      }
+    ],
+    "total_regions": 4,
+    "countries_count": 1,
+    "countries_breakdown": [
+      {
+        "country": "Estados Unidos",
+        "country_en": "United States",
+        "country_es": "Estados Unidos",
+        "flag": "🇺🇸",
+        "count": 4,
+        "percentage": 100.0
+      }
+    ],
+    "styles_breakdown": {
+      "still": 4,
+      "sparkling": 0,
+      "fortified_sweet": 0
+    },
+    "blend_breakdown": {
+      "monovarietal": 4,
+      "blend": 0,
+      "monovarietal_pct": 100.0,
+      "blend_pct": 0.0
+    }
   }
 ]

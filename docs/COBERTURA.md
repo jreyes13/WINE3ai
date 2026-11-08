@@ -8,10 +8,10 @@ Este documento recoge el censo exhaustivo, técnico y cartográfico de los **21 
 
 ## Métricas Globales del Proyecto 📊
 
-* **21 Naciones Vitivinícolas Soberanas** con censo oficial completado al 100%.
-* **763 Regiones Vitivinícolas Demarcadas** interactivas en la aplicación web con búsqueda y filtrado a nivel de municipio/comuna.
-* **791 Capas Vectoriales QGIS** estructuradas en 22 grupos nacionales dentro del proyecto maestro ([`QGIS/wine_world_wine.qgz`](../QGIS/wine_world_wine.qgz)).
-* **670 Pliegos Oficiales de Condiciones (PDFs)** archivados localmente en [`DOWNs/DOCs/`](../DOWNs/DOCs/).
+* **30 Naciones Vitivinícolas Soberanas** con censo oficial completado al 100%.
+* **808 Regiones Vitivinícolas Demarcadas** interactivas en la aplicación web con búsqueda y filtrado a nivel de municipio/comuna.
+* **836+ Capas Vectoriales QGIS** estructuradas en grupos nacionales dentro del proyecto maestro ([`QGIS/wine_world_wine.qgz`](../QGIS/wine_world_wine.qgz)).
+* **700+ Pliegos Oficiales de Condiciones (PDFs)** archivados localmente en [`DOWNs/DOCs/`](../DOWNs/DOCs/).
 * **2 Aplicaciones Web Interactivas:**
   * 🗺️ **Mapa Oficial de Regiones Vitivinícolas:** [https://jreyes13.github.io/wine_world_wide/](https://jreyes13.github.io/wine_world_wide/)
   * 🍇 **Explorador Global de Variedades de Uva:** [https://jreyes13.github.io/wine_world_wide/grapes.html](https://jreyes13.github.io/wine_world_wide/grapes.html)
@@ -272,3 +272,23 @@ Las 9 regiones vitivinícolas oficiales e históricas de la República de Turqu�
 * **Valle de Aconcagua D.O.:** Valle soleado a los pies del monte Aconcagua; terrazas de Panquehue y Los Andes produciendo tintos concentrados y equilibrados.
 * **Valle del Itata D.O.:** Cuna de la viticultura chilena desde el siglo XVI. Paisaje de secano interior con viñedos centenarios en pie franco de las cepas patrimoniales País y Cinsault.
 * **Valle del Bío-Bío D.O.:** Terruño meridional fresco con alta pluviometría y suelos volcánicos (*trumao*); vinos vibrantes de Pinot Noir, Riesling y Chardonnay.
+
+---
+
+### 🇺🇸 Estados Unidos (100% Censo Fase 2 Nuevo Mundo Completado)
+15 Áreas Vitícolas Americanas (AVAs - *American Viticultural Areas*) de referencia histórica y prestigio mundial delimitadas por la **Alcohol and Tobacco Tax and Trade Bureau (TTB)**:
+* **Napa Valley AVA (California):** El referente supremo del gran vino estadounidense, enmarcado por las cadenas montañosas de Mayacamas y Vaca. Reúne sub-AVAs míticas como Rutherford (famoso por sus taninos minerales de *polvo de Rutherford*), Oakville, Stags Leap District, Howell Mountain y Mount Veeder. Hogar de monumentales Cabernet Sauvignon, Merlot y opulentos Chardonnay.
+* **Sonoma County AVA (California):** Extraordinario mosaico de terruños litorales esculpidos por la niebla y las brisas del Pacífico. Engloba Russian River Valley (paraíso frío para Pinot Noir y Chardonnay), Alexander Valley (suntuoso Cabernet Sauvignon), Dry Creek Valley (patrimonio de viñas viejas de Zinfandel) y Sonoma Coast (refinamiento atlántico-marítimo).
+* **Paso Robles AVA (California):** Vibrante región de la Costa Central con drásticas oscilaciones térmicas día/noche y colinas de margas calcáreas de origen marino. Atravesada por el paso de brisas marinas del *Templeton Gap* en los distritos de Adelaida y Willow Creek; capital del Nuevo Mundo para opulentos ensamblajes de Syrah, Garnacha, Mourvèdre, Cabernet Sauvignon y Zinfandel centenario.
+* **Santa Barbara County AVA (California):** Excepcional orientación transversal este-oeste de sus sierras que canaliza directamente las nieblas y vientos gélidos del Pacífico. Alberga Sta. Rita Hills (suelos de diatomita y caliza para Pinot Noir etéreos y Chardonnay afilados), Santa Maria Valley y Ballard Canyon (Syrah especiado).
+* **Monterey AVA (California):** Flanqueada por el colosal cañón submarino de la bahía de Monterey (*Blue Grand Canyon*), que actúa como un gigantesco refrigerador atrayendo niebla marina y rachas de viento sobre el valle de Salinas. Destacan los terruños de Santa Lucia Highlands para Chardonnay mineral, Pinot Noir y Syrah de clima frío.
+* **Lodi AVA (California):** Capital mundial del viñedo ancestral en el delta del río San Joaquín, refrescado por las brisas de la bahía de San Francisco. Sus suelos franco-arenosos profundos a orillas del río Mokelumne no fueron afectados por la filoxera, conservando viñas centenarias en vaso en pie franco de Zinfandel, Petite Sirah y Cariñena plantadas a finales del siglo XIX.
+* **Mendocino County AVA (California):** La frontera septentrional entre bosques de secuoyas centenarias. Incluye el frío Anderson Valley (afamado por espumosos de método tradicional y perfumados Pinot Noir) y Mendocino Ridge (islas de viñedo de montaña por encima del mar de nubes).
+* **Sierra Foothills AVA (California):** Terruño histórico de la Fiebre del Oro en las laderas occidentales de Sierra Nevada (Amador, El Dorado, Shenandoah Valley). Suelos de granito descompuesto y rocas volcánicas entre 350 y 900 m de altitud cultivando cepas centenarias de Zinfandel, Barbera y variedades del Ródano.
+* **Willamette Valley AVA (Oregón):** La joya indiscutible de Oregón para la viticultura de clima frío, cobijada entre la cordillera de las Cascadas y los montes de la Costa. Sus subzonas como Dundee Hills (arcillas volcánicas rojas *Jory*), Eola-Amity Hills (suelos marinos refrescados por el corredor Van Duzer) y Yamhill-Carlton elaboran Pinot Noir, Chardonnay y Pinot Gris de clase mundial.
+* **Southern Oregon AVA (Oregón):** Región más meridional, cálida y diversa que abarca los valles de Rogue, Applegate y Umpqua, con compleja geología de montaña para Syrah, Cabernet Franc, Tempranillo y Viognier.
+* **Columbia Valley AVA (Washington):** Inmenso terruño continental y desértico del este de Washington, a resguardo de la sombra de lluvia de las Cascadas (apenas 150-200 mm de lluvia anual). Días cálidos de abundante sol y noches gélidas sobre sedimentos glaciares de las inundaciones de Missoula; cuna de estructurados Cabernet Sauvignon, Merlot y Syrah en Wahluke Slope y Horse Heaven Hills.
+* **Yakima Valley AVA (Washington):** La primera AVA histórica reconocida en Washington (1983). Integra la célebre Red Mountain AVA (calor intenso, pendientes suroeste y Cabernet Sauvignon de gran concentración y longevidad) y Snipes Mountain.
+* **Walla Walla Valley AVA (Washington / Oregón):** A los pies de las Blue Mountains en la frontera entre Washington y Oregón. Célebre por sus suelos de loess eólico y el singular terruño de cantos rodados basálticos de *The Rocks District of Milton-Freewater*, que imprime a sus Syrah y Cabernet notas carnosas, minerales y especiadas únicas.
+* **Finger Lakes AVA (Nueva York):** Profundos lagos glaciares con forma de dedos (Seneca, Cayuga, Keuka) que crean un efecto amortiguador térmico esencial frente a los duros inviernos neoyorquinos. Reconocida como el gran templo norteamericano del Riesling seco, vibrante y de gran longevidad, Cabernet Franc y espumosos.
+* **Texas Hill Country AVA (Texas):** La tercera AVA más extensa de EE.UU., asentada sobre la meseta calcárea y cerros de granito del Edwards Plateau. Sol generoso y noches frescas que favorecen cepas mediterráneas resistentes a la sequía: Tempranillo, Mourvèdre, Viognier y Tannat.
