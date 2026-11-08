@@ -185,10 +185,32 @@ Consulta nuestra [Guía de Expansión Global](docs/EXPANSION_GLOBAL.md) (o [Engl
 
 ---
 
-## 📄 Licencia y Atribución
+## 🏛️ Fuentes Académicas, Referencias y Atribución Legal
+
+WINE³ai es un proyecto independiente de investigación, educación y divulgación del terruño vitivinícola creado por **Jesús Reyes**. No distribuye ni comercializa obras protegidas por copyright; sintetiza principios de cata analítica y leyes de maridaje de dominio público bajo el amparo de la cita académica y el *fair use*.
+
+Reconocemos explícitamente el magisterio de las siguientes instituciones oficiales y sus directrices públicas:
+
+1. **UDIMA (Universidad a Distancia de Madrid) & CIFP San Gabriel (Ciudad de la Educación):**
+   * [Curso Superior / Máster en Enología, Sumillería y Enoturismo](https://www.udima.es/curso-superior-enologia-sumilleria-enoturismo) y [ciudaddelaeducacion.es](https://www.ciudaddelaeducacion.es/).
+   * Marco formativo cursado por el autor en Aranda de Duero. Mención académica a la docencia en armonías enogastronómicas del profesor y sumiller Diego González Barbolla.
+2. **WSET (Wine & Spirit Education Trust):**
+   * [wsetglobal.com](https://www.wsetglobal.com) — Canon de cualificaciones WSET® Level 3 Award in Wines y Systematic Approach to Tasting (SAT). *WSET® es una marca registrada de Wine & Spirit Education Trust.*
+3. **Court of Master Sommeliers (CMS Europe & Americas):**
+   * [courtofmastersommeliers.org](https://www.courtofmastersommeliers.org) y [mastersommeliers.org](https://www.mastersommeliers.org) — Deductive Blind Tasting Grid, Grape Markers y pautas de *Food and Wine Matching*. *Court of Master Sommeliers® es una marca registrada.*
+4. **ASI (Association de la Sommellerie Internationale):**
+   * [asi.info](https://www.asi.info) — Directrices internacionales de sumillería de sala, servicio y concursos mundiales.
+5. **Le Nez du Vin (Éditions Jean Lenoir):**
+   * [lenez.com](https://www.lenez.com) — Matriz de los 54 aromas de referencia olfativa para la cata. *Le Nez du Vin® es una marca registrada.*
+6. **Wine Folly (Madeline Puckette):**
+   * [winefolly.com](https://winefolly.com) — Inspiración en el diseño infográfico de fichas de estudio sensorial. *Wine Folly® es una marca registrada.*
+
+---
+
+## 📄 Licencia y Atribución Geográfica
 
 Este proyecto tiene fines educativos, divulgativos y de investigación geográfica abierta. Todos los datos geográficos se basan en fuentes públicas oficiales:
-- Cartografía municipal: *© Instituto Geográfico Nacional de España (IGN)*.
-- Pliegos de condiciones: *Ministerio de Agricultura, Pesca y Alimentación (MAPA) y Consejos Reguladores*.
+- Cartografía municipal y límites: *© Instituto Geográfico Nacional de España (IGN), Natural Earth y organismos catastrales nacionales*.
+- Pliegos de condiciones y reglamentos: *Ministerio de Agricultura, Pesca y Alimentación (MAPA), Comisión Europea (eAmbrosia) y Consejos Reguladores oficiales*.
 
 ¡Salud y buen vino! 🍷

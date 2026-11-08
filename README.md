@@ -234,6 +234,28 @@ See our [Global Expansion Guide](docs/GLOBAL_EXPANSION.md) (or [Versión en Espa
 
 ---
 
+## 🏛️ Academic Sources, Official References & Legal Attribution
+
+WINE³ai is an independent, non-commercial research and educational initiative engineered by **Jesús Reyes**. It does not redistribute or sell copyrighted material. All sensory principles and culinary pairing engines represent computational distillations of public scientific principles protected under fair use and academic citation.
+
+We gratefully acknowledge the official methodologies, pedagogical canons, and public guidelines established by:
+
+1. **UDIMA (Universidad a Distancia de Madrid) & CIFP San Gabriel (Ciudad de la Educación):**
+   * [Official Postgraduate Master in Enology, Sommelier & Wine Tourism](https://www.udima.es/curso-superior-enologia-sumilleria-enoturismo) and [ciudaddelaeducacion.es](https://www.ciudaddelaeducacion.es/).
+   * Academic curriculum completed by the author in Aranda de Duero (Burgos). Academic credit to Professor & Sommelier Diego González Barbolla for the culinary pairing frameworks.
+2. **Wine & Spirit Education Trust (WSET):**
+   * [wsetglobal.com](https://www.wsetglobal.com) — WSET® Level 3 Award in Wines and the Systematic Approach to Tasting (SAT). *WSET® is a registered trademark of the Wine & Spirit Education Trust.*
+3. **Court of Master Sommeliers (CMS Europe & Americas):**
+   * [courtofmastersommeliers.org](https://www.courtofmastersommeliers.org) and [mastersommeliers.org](https://www.mastersommeliers.org) — Deductive Blind Tasting Grid, Grape Markers, and *Food and Wine Matching* directives. *Court of Master Sommeliers® is a registered trademark.*
+4. **Association de la Sommellerie Internationale (ASI):**
+   * [asi.info](https://www.asi.info) — Global sommelier standards, service protocols, and international competition directives.
+5. **Le Nez du Vin (Éditions Jean Lenoir):**
+   * [lenez.com](https://www.lenez.com) — The 54 aroma masterkit reference used for the sensory ampelography matrix. *Le Nez du Vin® is a registered trademark.*
+6. **Wine Folly (Madeline Puckette):**
+   * [winefolly.com](https://winefolly.com) — Visual design and infographic inspiration for sensory study cards. *Wine Folly® is a registered trademark.*
+
+---
+
 ## License and Attribution
 
 This project is for educational and informational purposes. All data used is from official public sources. Please respect the individual licenses of the data providers.
