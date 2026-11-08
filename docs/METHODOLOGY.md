@@ -2,7 +2,7 @@
 
 **English** | [Versión en Español](METODOLOGIA.md)
 
-This document details the standardized technical, cartographic, and analytical workflow utilized across **World Wine Wide** to transform official regulatory specifications (*cahiers des charges*, product specifications, ministerial decrees) into georeferenced GIS layers, optimized vector databases, and interactive web visual analytics.
+This document details the standardized technical, cartographic, and analytical workflow utilized across **WINE³ai** (*World Wide Wine*) to transform official regulatory specifications (*cahiers des charges*, product specifications, ministerial decrees) into georeferenced GIS layers, optimized vector databases, and interactive web visual analytics.
 
 ---
 

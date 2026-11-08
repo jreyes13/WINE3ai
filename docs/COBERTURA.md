@@ -1,21 +1,21 @@
-# World Wine Wide — Informe Detallado de Cobertura Multipaís 🌍
+# WINE³ai — World Wide Wine: Informe Detallado de Cobertura Multipaís 🌍
 
 [English Version](COVERAGE.md) | **Versión en Español**
 
-Este documento recoge el censo exhaustivo, técnico y cartográfico de los **33 países** y **827 regiones vitivinícolas oficiales** integradas en el proyecto **WINE³ai**.
+Este documento recoge el censo exhaustivo, técnico y cartográfico de los **39 países** y **844 regiones vitivinícolas oficiales** integradas en el proyecto **WINE³ai**.
 
 ---
 
 ## Métricas Globales del Proyecto 📊
 
-* **33 Naciones Vitivinícolas Soberanas** con censo oficial completado al 100%.
-* **827 Regiones Vitivinícolas Demarcadas** interactivas en la aplicación web con búsqueda y filtrado a nivel de municipio/comuna.
-* **855+ Capas Vectoriales QGIS** estructuradas en grupos nacionales dentro del proyecto maestro ([`QGIS/wine_world_wine.qgz`](../QGIS/wine_world_wine.qgz)).
-* **720+ Pliegos Oficiales de Condiciones (PDFs)** archivados localmente en [`DOWNs/DOCs/`](../DOWNs/DOCs/).
+* **39 Naciones Vitivinícolas Soberanas** con censo oficial completado al 100%.
+* **844 Regiones Vitivinícolas Demarcadas** interactivas en la aplicación web con búsqueda y filtrado a nivel de municipio/comuna.
+* **875+ Capas Vectoriales QGIS** estructuradas en grupos nacionales dentro del proyecto maestro ([`QGIS/wine_world_wine.qgz`](../QGIS/wine_world_wine.qgz)).
+* **740+ Pliegos Oficiales de Condiciones (PDFs)** archivados localmente en [`DOWNs/DOCs/`](../DOWNs/DOCs/).
 * **2 Aplicaciones Web Interactivas:**
-  * 🗺️ **Mapa Oficial de Regiones Vitivinícolas:** [https://jreyes13.github.io/wine_world_wide/](https://jreyes13.github.io/wine_world_wide/)
-  * 🍇 **Explorador Global de Variedades de Uva:** [https://jreyes13.github.io/wine_world_wide/grapes.html](https://jreyes13.github.io/wine_world_wide/grapes.html)
-  * 🌐 **Proyecto en Atlas.co:** [World Wine Wide en Atlas](https://app.atlas.co/shared/iRfhgtNFAbVm6zHZL3bN?loc=-3.8121%2C41.8957%2C6.2431z&public=true)
+  * 🗺️ **Mapa Oficial de Regiones Vitivinícolas:** [https://jreyes13.github.io/wine3ai/](https://jreyes13.github.io/wine3ai/)
+  * 🍇 **Explorador Global de Variedades de Uva:** [https://jreyes13.github.io/wine3ai/grapes.html](https://jreyes13.github.io/wine3ai/grapes.html)
+  * 🌐 **Proyecto en Atlas.co:** [World Wide Wine en Atlas](https://app.atlas.co/shared/iRfhgtNFAbVm6zHZL3bN?loc=-3.8121%2C41.8957%2C6.2431z&public=true)
 
 ---
 
@@ -326,3 +326,50 @@ Las 9 regiones vitivinícolas oficiales e históricas de la República de Turqu�
 * **Central Otago GI (Isla Sur):** La región vitícola más austral del planeta y el único terruño continental verdadero de Nueva Zelanda, rodeado de sobrecogedores picos alpinos (The Remarkables). Subzonas legendarias (Bannockburn, Gibbston, Bendigo, Wanaka) sobre esquistos micáceos, cuarzo y sedimentos glaciares; consagrada por su Pinot Noir vibrante, carnoso, de frutos negros y tomillo silvestre de portentosa estructura.
 * **Hawke's Bay GI (Isla Norte):** La región vitivinícola más veterana de Nueva Zelanda (fundada en 1851), favorecida por un clima marítimo templado y luminoso. Alberga los célebres Gimblett Gravels y Bridge Pa Triangle—antiguos lechos fluviales de gravas profundas drenantes—donde nacen elegantes ensamblajes bordeleses (Cabernet Sauvignon, Merlot, Malbec), Syrah aromático y voluptuosos Chardonnay.
 * **Martinborough / Wairarapa GI (Isla Norte):** Exclusivo enclave boutique en el extremo sur de la Isla Norte, azotado por los vientos del estrecho de Cook. Terrazas aluviales profundas de gravas; referente de culto para Pinot Noir de estilo borgoñón, complejo, terroso, con cereza negra, sotobosque y taninos sedosos y precisos.
+
+---
+
+### 🇺🇾 Uruguay (100% Censo Panamericano de Calidad Completado)
+4 Grandes Regiones Vitivinícolas reguladas por el **Instituto Nacional de Vitivinicultura (INAVI)**:
+* **Canelones (Río de la Plata):** El epicentro histórico indiscutible de la viticultura uruguaya, albergando más del 60% del viñedo nacional. Suelos arcillosos pesados y calcáreos atemperados por las brisas atlánticas y del Río de la Plata; hogar espiritual y patria de adopción de la Tannat (introducida en 1870 por Pascual Harriague), con tintos aterciopelados, densos y fragantes de mora, violetas y chocolate.
+* **Maldonado (Costa Atlántica):** La vanguardia oceánica de Sudamérica (Garzón, Punta del Este, José Ignacio). Colinas de balastro granítico meteorizado a escasos kilómetros del oleaje atlántico; cuna de Albariños salinos y minerales, Tannat de perfil afilado y Pinot Noir marítimo.
+* **Colonia (Carmelo):** Pintoresco terruño fluvial en la confluencia de los ríos Uruguay y Paraná. Acantilados y sedimentos calcáreos que configuran microclimas amables para Tannat aterciopelado, Cabernet Franc y Sauvignon Blanc.
+* **Rivera (Cerro Chapicuy):** Región continental en la frontera norte con la Campanha Gaúcha de Brasil. Suelos arenosos y lateritas rojas sobre suaves colinas (*coxilhas*) con marcada amplitud térmica; tintos estructurados de Tannat, Cabernet Sauvignon y Merlot.
+
+---
+
+### 🇧🇷 Brasil (100% Censo Panamericano de Calidad Completado)
+3 Indicaciones Geográficas emblemáticas (D.O. / I.P.) certificadas por **Embrapa Uva e Vinho** y el **Ministério da Agricultura e Pecuária (MAPA)**:
+* **Vale dos Vinhedos D.O. (Rio Grande do Sul):** La primera y más célebre Denominação de Origem de Brasil (2012), colonizada por inmigrantes italianos en la Serra Gaúcha. Laderas escarpadas de basalto (500-700 m) que producen espumosos método tradicional de referencia, Merlot aromático y Cabernet Franc.
+* **Campanha Gaúcha I.P. (Rio Grande do Sul):** Las dilatadas pampas onduladas junto a la frontera uruguaya. Suelos areno-arcillosos y graníticos con menor pluviometría, veranos secos y noches frescas; terruño predilecto para Tannat, Cabernet Sauvignon y Touriga Nacional.
+* **Altos de Pinto Bandeira D.O. (Rio Grande do Sul):** La primera Denominación de Origen exclusiva para vinos espumosos de método tradicional en toda América. Laderas basálticas a 600-800 m de altitud con acidez natural deslumbrante; referente continental de espumantes *millésimé* de Chardonnay y Pinot Noir.
+
+---
+
+### 🇧🇴 Bolivia (100% Censo Panamericano de Calidad Completado)
+2 Indicaciones Geográficas (G.I.) de extrema altitud reconocidas por el **Centro Nacional Vitivinícola (Cenavit)** y el **MDRyT**:
+* **Valle Central de Tarija G.I.:** Una de las cuencas vitícolas comerciales a mayor altitud del mundo (1.850 - 2.200 msnm). Radiación ultravioleta extrema, suelos aluviales pedregosos y aire puro andino que dan el insigne Singani (destilado 100% de Moscatel de Alejandría) y tintos de gran concentración y color impenetrable de Tannat, Syrah y Cabernet Sauvignon.
+* **Valle de Cinti G.I. (Chuquisaca):** Cañón colonial milenario entre 2.200 y 2.450 m de altitud. Viñas centenarias en pie franco que trepan por árboles autóctonos de molle y chañar; santuario de cepas criollas prefiloxéricas (Negra Criolla / Misión, Vicchoqueña) y singanis ancestrales.
+
+---
+
+### 🇵🇪 Perú (100% Censo Panamericano de Calidad Completado)
+2 Denominaciones de Origen (D.O.) de oasis costero desértico y valles preandinos bajo tutela de **INDECOPI**:
+* **Valle de Ica D.O.:** Oasis hiperárido legendario en el desierto costero del Pacífico, donde en la década de 1540 se plantaron los primeros sarmientos del Virreinato del Perú. Cuna indiscutible del Pisco puro y vinos tranquilos históricos, dominados por la uva nativa *Quebranta*, junto a Negra Criolla, Mollar e Italia.
+* **Valle de Moquegua D.O.:** Valle preandino soleado (1.400 msnm) célebre por sus bodegas coloniales de sillería y tinajas de barro cocido. Cultivo tradicional de Quebranta y Moscatel en aluviones volcánicos minerales.
+
+---
+
+### 🇲🇽 México (100% Censo Panamericano de Calidad Completado)
+3 Regiones Vitivinícolas emblemáticas reconocidas por el **Consejo Mexicano Vitivinícola (CMV)** y la **SADER**:
+* **Valle de Guadalupe (Baja California):** La gran capital del vino de calidad mexicano, arropada por el chaparral mediterráneo de Ensenada. Suelos graníticos meteorizados y aluviales refrescados por las nieblas matinales del Pacífico; epicentro de Nebbiolo, Cabernet Sauvignon, Tempranillo, Chenin Blanc y mezclas de estilo Ródano.
+* **Valle de Parras (Coahuila):** El terruño vitivinícola continuo más antiguo de América, donde se fundó *Casa Madero* en 1597. Oasis semidesértico de altura (1.500 msnm) sobre calizas cretácicas; vinos finos de Shiraz, Cabernet Sauvignon y Malbec.
+* **Querétaro (Valle de Tequisquiapan y Ezequiel Montes):** Altiplano semidesértico central a 1.900 - 2.000 msnm. Considerada la capital del vino espumoso método tradicional en México (elaborado con Macabeo, Xarel-lo y Pinot Noir) y frescos vinos blancos y tintos.
+
+---
+
+### 🇨🇦 Canadá (100% Censo Panamericano de Calidad Completado)
+3 Denominaciones de prestigio Vintners Quality Alliance (VQA) certificadas por **VQA Ontario** y **BC VQA**:
+* **Niagara Peninsula VQA (Ontario):** Terruño de jerarquía mundial junto al lago Ontario y la escarpa calcárea dolomítica de Niágara (Reserva de la Biosfera UNESCO). Capital mundial del Icewine (vino de hielo cosechado bajo cero) de Vidal Blanc y Riesling, y cuna de distinguidos Chardonnay, Pinot Noir y Cabernet Franc de clima frío.
+* **Okanagan Valley VQA (Columbia Británica):** Espectacular valle glaciar con lagos de origen fiordo, desde el norte alpino fresco (Kelowna) hasta el calor desértico del sur (Oliver/Osoyoos). Suelos de gravas glaciares y arenas con Riesling afilado, Pinot Noir, Syrah y mezclas bordelesas de gran pureza frutal.
+* **Prince Edward County VQA (Ontario):** Península lacustre que se adentra en el lago Ontario con lecho de roca caliza de Trenton muy superficial y fracturada. Región de culto por sus Chardonnay calcáreos y afilados y su sutil Pinot Noir de perfil borgoñón.

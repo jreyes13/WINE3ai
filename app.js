@@ -3,7 +3,7 @@
 const I18N = {
   es: {
     title: "WINE³ai",
-    subtitle: "Atlas Cartográfico Vitivinícola e Inteligencia Territorial",
+    subtitle: "World Wide Wine — Atlas e Inteligencia de Terruños",
     searchPlaceholder: "Buscar por DO, País, Región, Uva o Municipio...",
     allCountries: "Todos los Países",
     allCategories: "Todas las Categorías",
@@ -65,7 +65,7 @@ const I18N = {
   },
   en: {
     title: "WINE³ai",
-    subtitle: "World Wine Maps & Terroir Intelligence",
+    subtitle: "World Wide Wine — Maps & Terroir Intelligence",
     searchPlaceholder: "Search by Appellation, Country, Region, Grape or Municipality...",
     allCountries: "All Countries",
     allCategories: "All Classifications",
@@ -158,7 +158,13 @@ const COUNTRY_NAMES = {
   'Estados Unidos': { es: 'Estados Unidos', en: 'United States', flag: '🇺🇸' },
   'Sudáfrica': { es: 'Sudáfrica', en: 'South Africa', flag: '🇿🇦' },
   'Australia': { es: 'Australia', en: 'Australia', flag: '🇦🇺' },
-  'Nueva Zelanda': { es: 'Nueva Zelanda', en: 'New Zealand', flag: '🇳🇿' }
+  'Nueva Zelanda': { es: 'Nueva Zelanda', en: 'New Zealand', flag: '🇳🇿' },
+  'Uruguay': { es: 'Uruguay', en: 'Uruguay', flag: '🇺🇾' },
+  'Brasil': { es: 'Brasil', en: 'Brazil', flag: '🇧🇷' },
+  'Bolivia': { es: 'Bolivia', en: 'Bolivia', flag: '🇧🇴' },
+  'Perú': { es: 'Perú', en: 'Peru', flag: '🇵🇪' },
+  'México': { es: 'México', en: 'Mexico', flag: '🇲🇽' },
+  'Canadá': { es: 'Canadá', en: 'Canada', flag: '🇨🇦' }
 };
 
 let currentLang = 'en';
@@ -1105,7 +1111,13 @@ const COUNTRY_CENTERS = {
   'Estados Unidos': { center: [-119.5, 38.5], zoom: 5.2 },
   'Sudáfrica': { center: [19.5, -33.8], zoom: 7.5 },
   'Australia': { center: [136.0, -32.5], zoom: 4.8 },
-  'Nueva Zelanda': { center: [173.5, -41.5], zoom: 5.6 }
+  'Nueva Zelanda': { center: [173.5, -41.5], zoom: 5.6 },
+  'Uruguay': { center: [-56.0, -33.0], zoom: 6.8 },
+  'Brasil': { center: [-52.0, -29.0], zoom: 6.5 },
+  'Bolivia': { center: [-65.0, -20.5], zoom: 6.8 },
+  'Perú': { center: [-75.0, -14.0], zoom: 6.5 },
+  'México': { center: [-102.0, 26.0], zoom: 5.0 },
+  'Canadá': { center: [-85.0, 46.0], zoom: 4.8 }
 };
 
 // Event Listeners

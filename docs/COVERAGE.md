@@ -1,21 +1,21 @@
-# World Wine Wide — Complete Multi-Country Coverage Report 🌍
+# WINE³ai — World Wide Wine: Complete Multi-Country Coverage Report 🌍
 
 **English** | [Versión en Español](COBERTURA.md)
 
-This document provides the exhaustive technical, viticultural, and cartographic census for all **33 countries** and **827 official wine regions** included in the **WINE³ai** project.
+This document provides the exhaustive technical, viticultural, and cartographic census for all **39 countries** and **844 official wine regions** included in the **WINE³ai** project.
 
 ---
 
 ## Global Summary Metrics 📊
 
-* **33 Sovereign Wine Nations** with 100% completed official census.
-* **827 Demarcated Wine Regions** interactive in the web applications with commune-level search and filtering.
-* **855+ QGIS Vector Layers** organized into national groups in the primary QGIS project ([`QGIS/wine_world_wine.qgz`](../QGIS/wine_world_wine.qgz)).
-* **720+ Official Legal Specification Documents (PDFs)** archived locally in [`DOWNs/DOCs/`](../DOWNs/DOCs/).
+* **39 Sovereign Wine Nations** with 100% completed official census.
+* **844 Demarcated Wine Regions** interactive in the web applications with commune-level search and filtering.
+* **875+ QGIS Vector Layers** organized into national groups in the primary QGIS project ([`QGIS/wine_world_wine.qgz`](../QGIS/wine_world_wine.qgz)).
+* **740+ Official Legal Specification Documents (PDFs)** archived locally in [`DOWNs/DOCs/`](../DOWNs/DOCs/).
 * **2 Interactive Web Applications:**
-  * 🗺️ **Official Wine Regions Map:** [https://jreyes13.github.io/wine_world_wide/](https://jreyes13.github.io/wine_world_wide/)
-  * 🍇 **Grape Varieties Global Explorer:** [https://jreyes13.github.io/wine_world_wide/grapes.html](https://jreyes13.github.io/wine_world_wide/grapes.html)
-  * 🌐 **Atlas.co Project:** [World Wine Wide on Atlas](https://app.atlas.co/shared/iRfhgtNFAbVm6zHZL3bN?loc=-3.8121%2C41.8957%2C6.2431z&public=true)
+  * 🗺️ **Official Wine Regions Map:** [https://jreyes13.github.io/wine3ai/](https://jreyes13.github.io/wine3ai/)
+  * 🍇 **Grape Varieties Global Explorer:** [https://jreyes13.github.io/wine3ai/grapes.html](https://jreyes13.github.io/wine3ai/grapes.html)
+  * 🌐 **Atlas.co Project:** [World Wide Wine on Atlas](https://app.atlas.co/shared/iRfhgtNFAbVm6zHZL3bN?loc=-3.8121%2C41.8957%2C6.2431z&public=true)
 
 ---
 
@@ -326,3 +326,50 @@ All 9 official viticultural regions and terroirs of the Republic of Turkey (*Tü
 * **Central Otago GI (South Island):** The world's southernmost commercial wine region and New Zealand's sole inland continental terroir, ringed by majestic snow-capped alpine ranges (The Remarkables). Spectacular sub-zones (Bannockburn, Gibbston, Bendigo, Wanaka) on mica schist, quartz, and glacial outwash gravels; globally revered for intense, dark-fruited, thyme-infused, structured Pinot Noir of astonishing vitality.
 * **Hawke's Bay GI (North Island):** New Zealand's oldest wine region (established 1851), blessed with a warm, sunny maritime climate. Encompasses the world-famous Gimblett Gravels and Bridge Pa Triangle—ancient dry riverbeds of free-draining greywacke stones—producing benchmark, age-worthy Bordeaux-style red blends (Cabernet Sauvignon, Merlot, Malbec), aromatic Syrah, and opulent Chardonnay.
 * **Martinborough / Wairarapa GI (North Island):** Boutique, wind-battered viticultural sanctuary at the southern tip of the North Island, swept by cool Cook Strait gales. Deep, free-draining alluvial river terraces with greywacke gravels; international benchmark for Burgundian-styled, savory, structured Pinot Noir with dark cherry, savory forest floor, and fine, mineral tannins.
+
+---
+
+### 🇺🇾 Uruguay (100% Pan-American Quality Census Completed)
+4 Major Viticultural Regions under the **Instituto Nacional de Vitivinicultura (INAVI)**:
+* **Canelones (Río de la Plata):** The undisputed historic epicenter of Uruguayan viticulture, concentrating over 60% of the nation's vineyards. Heavy calcareous clay soils tempered by humid Atlantic and Río de la Plata breezes; the spiritual world home of Tannat (Harriague), yielding dark, velvety, concentrated reds with blackberry, violet, and dark chocolate.
+* **Maldonado (Costa Atlántica):** The oceanic vanguard of South America (Garzón, Punta del Este, José Ignacio). Weathered granitic ballast (*balastro*) hills just kilometers from the roaring Atlantic Ocean, producing saline, knife-edge Albariño, mineral Tannat, and coastal Pinot Noir.
+* **Colonia (Carmelo):** Picturesque western terroir along the confluence of the Uruguay and Paraná rivers. Calcareous limestone bluffs and river-tempered microclimates crafting aromatic Tannat blends, Cabernet Franc, and Sauvignon Blanc.
+* **Rivera (Cerro Chapicuy):** Northern continental border region adjoining Brazil's Campanha Gaúcha. Red lateritic and sandy soils on gentle rolling hills with wide diurnal shifts, producing robust Tannat, Cabernet Sauvignon, and Merlot.
+
+---
+
+### 🇧🇷 Brazil (100% Pan-American Quality Census Completed)
+3 Benchmark Geographic Indications (D.O. / I.P.) certified by **Embrapa Uva e Vinho** and the **Ministério da Agricultura e Pecuária (MAPA)**:
+* **Vale dos Vinhedos D.O. (Rio Grande do Sul):** Brazil's first and most prestigious Denominação de Origem (2012), settled by Italian immigrants in the Serra Gaúcha. Steep basaltic hills (500-700 m) crafting benchmark traditional method sparkling wines, aromatic Merlot, and Cabernet Franc.
+* **Campanha Gaúcha I.P. (Rio Grande do Sul):** The vast rolling pampas along the Uruguayan border. Sandy loam and granite soils with low rainfall, sunny summers, and cold nights, yielding structured Tannat, Cabernet Sauvignon, and Touriga Nacional.
+* **Altos de Pinto Bandeira D.O. (Rio Grande do Sul):** The Americas' first exclusive Denominação de Origem for traditional method sparkling wines (DO Pinto Bandeira). Volcanic basalt slopes at 600-800 m elevation with high natural acidity, crafting pristine Chardonnay and Pinot Noir vintage sparklers (*espumantes*).
+
+---
+
+### 🇧🇴 Bolivia (100% Pan-American Quality Census Completed)
+2 Extreme High-Altitude Indicaciones Geográficas (G.I.) recognized by the **Centro Nacional Vitivinícola (Cenavit)** and **MDRyT**:
+* **Valle Central de Tarija G.I.:** One of the highest commercial viticultural basins in the world (1,850 - 2,200 meters above sea level). Intense ultraviolet radiation, gravelly alluvial soils, and clear mountain air producing Bolivia's flagship high-altitude Singani (distilled from 100% Muscat of Alexandria) alongside ink-dark, intense Tannat, Syrah, and Cabernet Sauvignon.
+* **Valle de Cinti G.I. (Chuquisaca):** Ancient, canyon-locked colonial valley at 2,200 - 2,450 meters elevation. Centenarian ungrafted vines trained up native molle trees (*chañar* and *molle*), home to pre-phylloxera Criolla varieties (Negra Criolla / Mission, Vicchoqueña) and artisanal singanis.
+
+---
+
+### 🇵🇪 Peru (100% Pan-American Quality Census Completed)
+2 Ancestral Pacific Coast & Pre-Andean Oasis Denominaciones de Origen (D.O.) overseen by **INDECOPI**:
+* **Valle de Ica D.O.:** Legendary hyper-arid Pacific coastal desert oasis, where vine cuttings arrived in the 1540s to establish the first vineyards of the Viceroyalty of Peru. Cradle of authentic Pisco and ancestral still wines, dominated by the indigenous *Quebranta*, alongside Negra Criolla, Mollar, and Italia.
+* **Valle de Moquegua D.O.:** Sunny pre-Andean valley (1,400 m elevation) renowned for colonial stone wineries (*bodegas coloniales*) and clay amphorae (*tinajas*). Cultivating Quebranta, Moscatel, and modern vinifera in mineral volcanic wash.
+
+---
+
+### 🇲🇽 Mexico (100% Pan-American Quality Census Completed)
+3 Premier Viticultural Regions recognized by the **Consejo Mexicano Vitivinícola (CMV)** and **SADER**:
+* **Valle de Guadalupe (Baja California):** The undisputed capital of Mexican fine wine, nestled in the Mediterranean chaparral hills of Ensenada. Decomposed granitic and alluvial soils cooled by Pacific ocean morning fogs; vibrant hub of Nebbiolo, Cabernet Sauvignon, Tempranillo, Chenin Blanc, and GSM blends.
+* **Valle de Parras (Coahuila):** The oldest continuous viticultural valley in the Americas, home to *Casa Madero* (founded 1597). High-altitude semi-desert oasis (1,500 m) on calcareous limestone soils, producing elegant Shiraz, Cabernet Sauvignon, and Malbec.
+* **Querétaro (Valle de Tequisquiapan & Ezequiel Montes):** High-altitude central semi-desert plateau (1,900 - 2,000 m). Renowned as Mexico's capital for traditional method sparkling wine (Cava style: Macabeo, Xarel-lo, Pinot Noir) and vibrant still whites and reds.
+
+---
+
+### 🇨🇦 Canada (100% Pan-American Quality Census Completed)
+3 World-Class Vintners Quality Alliance (VQA) appellations certified under **VQA Ontario** and **BC VQA**:
+* **Niagara Peninsula VQA (Ontario):** World benchmark terroir along Lake Ontario and the dolomitic limestone bench of the Niagara Escarpment (UNESCO Biosphere). Acclaimed globally as the world capital of luscious Vidal Blanc and Riesling Icewine, alongside world-class cool-climate Chardonnay, Pinot Noir, and Cabernet Franc.
+* **Okanagan Valley VQA (British Columbia):** Spectacular semi-arid glacial fjord valley stretching from cool alpine northern shores (Kelowna) to the desert heat of the south (Oliver/Osoyoos). Diverse glacial gravels and sand cultivating pristine Riesling, Pinot Noir, Syrah, and Bordeaux-style red blends.
+* **Prince Edward County VQA (Ontario):** Island-like peninsula jutting into Lake Ontario with shallow, fractured Trenton limestone bedrock and cool lake-effect breezes. International cult following for flinty, mineral Chardonnay and ethereal Pinot Noir.

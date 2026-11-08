@@ -116878,5 +116878,331 @@
       "monovarietal_pct": 100.0,
       "blend_pct": 0.0
     }
+  },
+  {
+    "id": "tannat",
+    "name": "Tannat",
+    "color": "red",
+    "origin": "France (Madiran) / Uruguay",
+    "synonyms": [
+      "Harriague",
+      "Moustrou"
+    ],
+    "desc_en": "Originally hailing from Madiran in South West France, Tannat found its spiritual second home and national emblem in Uruguay, introduced in 1870 by Pascual Harriague. Renowned for impenetrable inky color, monumental polyphenolic structure, antioxidant power, and dark fruit compote, softened by maritime breezes into supple, cellar-worthy majesty.",
+    "desc_es": "Originaria de Madiran en el Sudoeste francés, la Tannat encontró su segunda patria y emblema nacional en Uruguay, introducida en 1870 por Pascual Harriague. Célebre por su color negro impenetrable, monumental carga polifenólica y antioxidante, mora silvestre y chocolate, domesticada por las brisas atlánticas en tintos de guarda majestuosos.",
+    "regions": [
+      {
+        "id": "ury-reg-canelones",
+        "name": "Canelones",
+        "country": "Uruguay",
+        "country_flag": "🇺🇾",
+        "country_en": "Uruguay",
+        "country_es": "Uruguay",
+        "category": "Región",
+        "region": "Canelones (Río de la Plata)",
+        "color": "#7F1D1D",
+        "pliego": "DOWNs/DOCs/URUGUAY/Canelones_Reg.pdf",
+        "centroid": [
+          -56.1,
+          -34.55
+        ],
+        "pct": null,
+        "role": "National Flagship Cultivar & Capital",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "mediterranean_coastal",
+        "climate_icon": "🌊",
+        "climate_name_en": "Maritime Atlantic with River Plate Influence",
+        "climate_name_es": "Marítimo Atlántico con Influencia del Río de la Plata"
+      },
+      {
+        "id": "ury-reg-maldonado",
+        "name": "Maldonado (Garzón, Punta del Este)",
+        "country": "Uruguay",
+        "country_flag": "🇺🇾",
+        "country_en": "Uruguay",
+        "country_es": "Uruguay",
+        "category": "Región",
+        "region": "Maldonado (Costa Atlántica)",
+        "color": "#991B1B",
+        "pliego": "DOWNs/DOCs/URUGUAY/Maldonado_Reg.pdf",
+        "centroid": [
+          -54.8,
+          -34.7
+        ],
+        "pct": null,
+        "role": "Oceanic Ballast Mineral Benchmark",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "mediterranean_coastal",
+        "climate_icon": "🌊",
+        "climate_name_en": "Direct Atlantic Coastal Oceanic",
+        "climate_name_es": "Oceánico Costero Atlántico Directo"
+      },
+      {
+        "id": "ury-reg-colonia",
+        "name": "Colonia (Carmelo)",
+        "country": "Uruguay",
+        "country_flag": "🇺🇾",
+        "country_en": "Uruguay",
+        "country_es": "Uruguay",
+        "category": "Región",
+        "region": "Colonia (Río Uruguay / Río de la Plata)",
+        "color": "#B45309",
+        "pliego": "DOWNs/DOCs/URUGUAY/Colonia_Reg.pdf",
+        "centroid": [
+          -57.8,
+          -34.2
+        ],
+        "pct": null,
+        "role": "Riparian Limestone Terroir Cultivar",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "mediterranean_coastal",
+        "climate_icon": "☀️",
+        "climate_name_en": "Warm Riparian Maritime",
+        "climate_name_es": "Marítimo Ribereño Templado"
+      },
+      {
+        "id": "bol-gi-valle-de-tarija",
+        "name": "Valle Central de Tarija (Vinos y Singani)",
+        "country": "Bolivia",
+        "country_flag": "🇧🇴",
+        "country_en": "Bolivia",
+        "country_es": "Bolivia",
+        "category": "G.I.",
+        "region": "Tarija (Valles Andinos)",
+        "color": "#722F37",
+        "pliego": "DOWNs/DOCs/BOLIVIA/Valle_de_Tarija_GI.pdf",
+        "centroid": [
+          -64.65,
+          -21.6
+        ],
+        "pct": null,
+        "role": "Extreme High-Altitude Fine Red Emblem",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "alpine",
+        "climate_icon": "🏔️",
+        "climate_name_en": "Extreme High-Altitude Semi-Arid Valley (1,850 - 2,200 m)",
+        "climate_name_es": "Valle Semiárido de Extrema Altitud (1.850 - 2.200 m)"
+      }
+    ],
+    "total_regions": 4,
+    "countries_count": 2,
+    "countries_breakdown": [
+      {
+        "country": "Uruguay",
+        "country_en": "Uruguay",
+        "country_es": "Uruguay",
+        "flag": "🇺🇾",
+        "count": 3,
+        "percentage": 75.0
+      },
+      {
+        "country": "Bolivia",
+        "country_en": "Bolivia",
+        "country_es": "Bolivia",
+        "flag": "🇧🇴",
+        "count": 1,
+        "percentage": 25.0
+      }
+    ],
+    "styles_breakdown": {
+      "still": 4,
+      "sparkling": 0,
+      "fortified_sweet": 0
+    },
+    "blend_breakdown": {
+      "monovarietal": 4,
+      "blend": 0,
+      "monovarietal_pct": 100.0,
+      "blend_pct": 0.0
+    }
+  },
+  {
+    "id": "quebranta",
+    "name": "Quebranta",
+    "color": "red",
+    "origin": "Peru (Ica)",
+    "synonyms": [
+      "Uva Negra de Ica",
+      "Quebranta Criolla"
+    ],
+    "desc_en": "The undisputed queen of Peruvian Creole grapes, a natural spontaneous cross of Listán Prieto (Mission) and Negramoll born in Peru during the 16th century. Historically the heart and soul of authentic Puro Pisco, yielding non-aromatic, intensely savory, and structured spirits and ancestral still red wines.",
+    "desc_es": "La reina indiscutible de las uvas criollas peruanas, cruce natural espontáneo de Listán Prieto y Negramoll nacido en Perú en el siglo XVI. Históricamente el alma del Pisco Puro no aromático, ofrece aguardientes y vinos tranquilos de gran estructura, notas de heno, frutos secos, pasas y carácter terroso.",
+    "regions": [
+      {
+        "id": "per-do-valle-de-ica",
+        "name": "Valle de Ica (Pisco & Vinos)",
+        "country": "Perú",
+        "country_flag": "🇵🇪",
+        "country_en": "Peru",
+        "country_es": "Perú",
+        "category": "D.O.",
+        "region": "Ica (Costa Desértica)",
+        "color": "#B45309",
+        "pliego": "DOWNs/DOCs/PERU/Valle_de_Ica_DO.pdf",
+        "centroid": [
+          -75.7,
+          -14.05
+        ],
+        "pct": null,
+        "role": "Native Flagship & Soul of Pisco",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "mediterranean_coastal",
+        "climate_icon": "🏜️",
+        "climate_name_en": "Hyper-Arid Pacific Desert Oasis",
+        "climate_name_es": "Oasis Desértico Hiperárido del Pacífico"
+      },
+      {
+        "id": "per-do-moquegua",
+        "name": "Valle de Moquegua",
+        "country": "Perú",
+        "country_flag": "🇵🇪",
+        "country_en": "Peru",
+        "country_es": "Perú",
+        "category": "D.O.",
+        "region": "Moquegua (Sur Andino)",
+        "color": "#D97706",
+        "pliego": "DOWNs/DOCs/PERU/Valle_de_Moquegua_DO.pdf",
+        "centroid": [
+          -70.95,
+          -17.2
+        ],
+        "pct": null,
+        "role": "Ancestral Tinaja Pisco & Wine Cultivar",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "mediterranean_continental",
+        "climate_icon": "☀️",
+        "climate_name_en": "Warm Sunny Pre-Andean Oasis (1,400 m)",
+        "climate_name_es": "Oasis Preandino Soleado y Templado (1.400 m)"
+      }
+    ],
+    "total_regions": 2,
+    "countries_count": 1,
+    "countries_breakdown": [
+      {
+        "country": "Perú",
+        "country_en": "Peru",
+        "country_es": "Perú",
+        "flag": "🇵🇪",
+        "count": 2,
+        "percentage": 100.0
+      }
+    ],
+    "styles_breakdown": {
+      "still": 2,
+      "sparkling": 0,
+      "fortified_sweet": 0
+    },
+    "blend_breakdown": {
+      "monovarietal": 2,
+      "blend": 0,
+      "monovarietal_pct": 100.0,
+      "blend_pct": 0.0
+    }
+  },
+  {
+    "id": "vidal-blanc",
+    "name": "Vidal Blanc (Vidal)",
+    "color": "white",
+    "origin": "France (Jean Louis Vidal) / Canada",
+    "synonyms": [
+      "Vidal 256"
+    ],
+    "desc_en": "A French-American hybrid created by Jean Louis Vidal from Ugni Blanc and Rayon d'Or, achieving legendary worldwide fame in Canada. Its remarkably thick, rot-resistant skin withstands sub-zero freezes on the vine down to -8°C and below, yielding monumental Icewines packed with luscious candied apricot, peach marmalade, honey, and electrifying natural acidity.",
+    "desc_es": "Híbrido creado en Francia por Jean Louis Vidal (Ugni Blanc x Rayon d'Or) que alcanzó la gloria mundial en Canadá. Su hollejo extremadamente grueso y resistente al frío permite la vendimia a -8°C o menos bajo cero, dando célebres Icewines (vinos de hielo) de albaricoque escarchado, miel, mango y acidez electrizante.",
+    "regions": [
+      {
+        "id": "can-vqa-niagara-peninsula",
+        "name": "Niagara Peninsula",
+        "country": "Canadá",
+        "country_flag": "🇨🇦",
+        "country_en": "Canada",
+        "country_es": "Canadá",
+        "category": "VQA",
+        "region": "Ontario (Lake Ontario & Niagara Escarpment)",
+        "color": "#0284C7",
+        "pliego": "DOWNs/DOCs/CANADA/Niagara_Peninsula_VQA.pdf",
+        "centroid": [
+          -79.25,
+          43.15
+        ],
+        "pct": null,
+        "role": "Global Icewine Benchmark Cultivar",
+        "blend_type": "monovarietal",
+        "styles": [
+          "fortified_sweet"
+        ],
+        "climate": "continental",
+        "climate_icon": "❄️",
+        "climate_name_en": "Great Lakes Maritime-Buffered Continental",
+        "climate_name_es": "Continental Amortiguado por los Grandes Lagos"
+      },
+      {
+        "id": "can-vqa-prince-edward-county",
+        "name": "Prince Edward County",
+        "country": "Canadá",
+        "country_flag": "🇨🇦",
+        "country_en": "Canada",
+        "country_es": "Canadá",
+        "category": "VQA",
+        "region": "Ontario (Lake Ontario Limestone Peninsula)",
+        "color": "#4F46E5",
+        "pliego": "DOWNs/DOCs/CANADA/Prince_Edward_County_VQA.pdf",
+        "centroid": [
+          -77.3,
+          44.0
+        ],
+        "pct": null,
+        "role": "Cold-Hardy Icewine & Late Harvest Cultivar",
+        "blend_type": "monovarietal",
+        "styles": [
+          "fortified_sweet"
+        ],
+        "climate": "continental",
+        "climate_icon": "❄️",
+        "climate_name_en": "Cool Maritime-Influenced Lake Peninsula with Trenton Limestone",
+        "climate_name_es": "Península Lacustre Fresca con Suelos Calizos de Trenton"
+      }
+    ],
+    "total_regions": 2,
+    "countries_count": 1,
+    "countries_breakdown": [
+      {
+        "country": "Canadá",
+        "country_en": "Canada",
+        "country_es": "Canadá",
+        "flag": "🇨🇦",
+        "count": 2,
+        "percentage": 100.0
+      }
+    ],
+    "styles_breakdown": {
+      "still": 0,
+      "sparkling": 0,
+      "fortified_sweet": 2
+    },
+    "blend_breakdown": {
+      "monovarietal": 2,
+      "blend": 0,
+      "monovarietal_pct": 100.0,
+      "blend_pct": 0.0
+    }
   }
 ]

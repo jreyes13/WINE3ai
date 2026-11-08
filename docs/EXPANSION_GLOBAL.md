@@ -2,7 +2,7 @@
 
 [English Version](GLOBAL_EXPANSION.md) | **Versión en Español**
 
-Este documento establece la arquitectura modular, técnica y colaborativa para continuar escalando **WINE³ai** (anteriormente *World Wine Wide*) a escala planetaria, documentando los hitos ya consolidados en el **Viejo Mundo** y guiando la integración sistemática de las regiones vitivinícolas del **Nuevo Mundo**.
+Este documento establece la arquitectura modular, técnica y colaborativa para continuar escalando **WINE³ai** (*World Wide Wine*) a escala planetaria, documentando los hitos ya consolidados en el **Viejo Mundo** y guiando la integración sistemática de las regiones vitivinícolas del **Nuevo Mundo**.
 
 ---
 

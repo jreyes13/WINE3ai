@@ -2,7 +2,7 @@
 
 [English Version](METHODOLOGY.md) | **Versión en Español**
 
-Este documento detalla el flujo de trabajo técnico, cartográfico y analítico estandarizado utilizado en **World Wine Wide** para transformar pliegos normativos oficiales en capas SIG georreferenciadas, bases de datos vectoriales optimizadas y visualizaciones analíticas web interactivas.
+Este documento detalla el flujo de trabajo técnico, cartográfico y analítico estandarizado utilizado en **WINE³ai** (*World Wide Wine*) para transformar pliegos normativos oficiales en capas SIG georreferenciadas, bases de datos vectoriales optimizadas y visualizaciones analíticas web interactivas.
 
 ---
 

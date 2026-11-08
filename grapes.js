@@ -11,7 +11,7 @@ const I18N = {
     colorRed: "🔴 Red",
     colorWhite: "⚪ White",
     lblCountryFilter: "Country:",
-    optCountryAll: "🌍 All Countries (33)",
+    optCountryAll: "🌍 All Countries (39)",
     lblStyleFilter: "Wine Style:",
     optStyleAll: "All Wine Styles",
     optStyleStill: "🍷 Still Wine (Tranquilo)",
@@ -83,7 +83,7 @@ const I18N = {
     colorRed: "🔴 Tinta",
     colorWhite: "⚪ Blanca",
     lblCountryFilter: "País:",
-    optCountryAll: "🌍 Todos los Países (33)",
+    optCountryAll: "🌍 Todos los Países (39)",
     lblStyleFilter: "Estilo de Vino:",
     optStyleAll: "Todos los Estilos",
     optStyleStill: "🍷 Vino Tranquilo",
@@ -187,8 +187,11 @@ const ALL_COUNTRIES = [
   { key: 'Armenia', en: 'Armenia', es: 'Armenia', flag: '🇦🇲' },
   { key: 'Australia', en: 'Australia', es: 'Australia', flag: '🇦🇺' },
   { key: 'Austria', en: 'Austria', es: 'Austria', flag: '🇦🇹' },
+  { key: 'Bolivia', en: 'Bolivia', es: 'Bolivia', flag: '🇧🇴' },
   { key: 'Bosnia y Herzegovina', en: 'Bosnia and Herzegovina', es: 'Bosnia y Herzegovina', flag: '🇧🇦' },
+  { key: 'Brasil', en: 'Brazil', es: 'Brasil', flag: '🇧🇷' },
   { key: 'Bulgaria', en: 'Bulgaria', es: 'Bulgaria', flag: '🇧🇬' },
+  { key: 'Canadá', en: 'Canada', es: 'Canadá', flag: '🇨🇦' },
   { key: 'Chile', en: 'Chile', es: 'Chile', flag: '🇨🇱' },
   { key: 'Chipre', en: 'Cyprus', es: 'Chipre', flag: '🇨🇾' },
   { key: 'Croacia', en: 'Croatia', es: 'Croacia', flag: '🇭🇷' },
@@ -204,9 +207,11 @@ const ALL_COUNTRIES = [
   { key: 'Líbano', en: 'Lebanon', es: 'Líbano', flag: '🇱🇧' },
   { key: 'Luxemburgo', en: 'Luxembourg', es: 'Luxemburgo', flag: '🇱🇺' },
   { key: 'Macedonia del Norte', en: 'North Macedonia', es: 'Macedonia del Norte', flag: '🇲🇰' },
+  { key: 'México', en: 'Mexico', es: 'México', flag: '🇲🇽' },
   { key: 'Moldavia', en: 'Moldova', es: 'Moldavia', flag: '🇲🇩' },
   { key: 'Montenegro', en: 'Montenegro', es: 'Montenegro', flag: '🇲🇪' },
   { key: 'Nueva Zelanda', en: 'New Zealand', es: 'Nueva Zelanda', flag: '🇳🇿' },
+  { key: 'Perú', en: 'Peru', es: 'Perú', flag: '🇵🇪' },
   { key: 'Portugal', en: 'Portugal', es: 'Portugal', flag: '🇵🇹' },
   { key: 'Reino Unido', en: 'United Kingdom', es: 'Reino Unido', flag: '🇬🇧' },
   { key: 'República Checa', en: 'Czech Republic', es: 'República Checa', flag: '🇨🇿' },
@@ -214,7 +219,8 @@ const ALL_COUNTRIES = [
   { key: 'Serbia', en: 'Serbia', es: 'Serbia', flag: '🇷🇸' },
   { key: 'Sudáfrica', en: 'South Africa', es: 'Sudáfrica', flag: '🇿🇦' },
   { key: 'Suiza', en: 'Switzerland', es: 'Suiza', flag: '🇨🇭' },
-  { key: 'Turquía', en: 'Turkey', es: 'Turquía', flag: '🇹🇷' }
+  { key: 'Turquía', en: 'Turkey', es: 'Turquía', flag: '🇹🇷' },
+  { key: 'Uruguay', en: 'Uruguay', es: 'Uruguay', flag: '🇺🇾' }
 ];
 
 let currentLang = 'en';
