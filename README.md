@@ -24,12 +24,13 @@ This project produces **interactive web maps** and terroir analytics that show t
 
 Every country manages its own geographic data. There is no single, global source for administrative boundaries. The core principle of **World Wine Wide** is to identify and process the most **authoritative official public sources** for both regulatory viticultural decrees and geographic demarcations:
 
-### A. Authoritative Sources for Completed Nations (21 Countries)
+### A. Authoritative Sources for Completed Nations (27 Countries)
 
 | Country | Official Cartographic Agency / Portal | Base Administrative Level | Native Coordinate System (CRS) | Regulatory Wine Authority |
 | :--- | :--- | :--- | :--- | :--- |
 | 🇦🇲 **Armenia** | Cadastre Committee / Natural Earth | Marzer (Provinces) | ArmRef02 / WGS84 | VWFA / Min. of Economy |
 | 🇦🇹 **Austria** | BEV (Bundesamt für Eich- und Vermessungswesen) | Gemeinden / Bezirke | MGI / Austria Lambert (EPSG:31287) | BML / eAmbrosia |
+| 🇧🇦 **Bosnia & Herzegovina** | Federal Administration for Geodetic and Real Property Affairs (FGU) | Opštine / Gradovi | MGI 1901 / Balkans (EPSG:31276) | Agency for Food Safety / Min. of Agriculture |
 | 🇧🇬 **Bulgaria** | AGKK / Natural Earth | Oblasti / Obshtini | BGS2005 (EPSG:7801) | EAVW (Bulgarian Wine Agency) |
 | 🇭🇷 **Croatia** | DGU (Državna geodetska uprava) | Županije / Gradovi | HTRS96/TM (EPSG:3765) | Min. Poljoprivrede / eAmbrosia |
 | 🇨🇾 **Cyprus** | Dept. of Lands and Surveys / Natural Earth | Eparchies / Communities | CGRS93 (EPSG:6312) | Department of Agriculture |
@@ -41,14 +42,19 @@ Every country manages its own geographic data. There is no single, global source
 | 🇭🇺 **Hungary** | Lechner Tudásközpont / FÖMI | Counties / Settlements | EOV / HD72 (EPSG:23700) | HNT / NÉBIH |
 | 🇮🇹 **Italy** | ISTAT (Istituto Nazionale di Statistica) | Comuni | Roma40 / Gauss-Boaga (EPSG:3003) | MASAF (*Disciplinari*) |
 | 🇱🇧 **Lebanon** | Directorate of Geographic Affairs (DAG) | Governorates / Districts | Deir ez Zor / Levant (EPSG:22770) | Union Vinicole du Liban (UVL) |
+| 🇱🇺 **Luxembourg** | ACT (Administration du Cadastre et de la Topographie) | Communes / Cantons | LUREF (EPSG:2169) | Min. de l'Agriculture / Institut Viti-Vinicole (IVV) |
 | 🇲🇩 **Moldova** | ARFC (Cadastre Agency) / Natural Earth | Raioane | Moldref 99 (EPSG:4026) | ONVV |
+| 🇲🇪 **Montenegro** | Real Estate Directorate (Uprava za nekretnine) | Opštine | MGI 1901 / Balkans (EPSG:31276) | Ministry of Agriculture and Rural Development |
+| 🇲🇰 **North Macedonia** | AREC (Agency for Real Estate Cadastre) | Opštini (Municipalities) | MGI 1901 / Balkans (EPSG:31277) | Min. of Agriculture, Forestry and Water Economy |
 | 🇵🇹 **Portugal** | DGT (Direção-Geral do Território - CAOP) | Concelhos / Freguesias | ETRS89 / PT-TM06 (EPSG:3763) | IVV (*Cadernos de especificações*) |
 | 🇷🇴 **Romania** | ANCPI / Eurostat | Județe / Comuni | Dealul Piscului 1970 (EPSG:31700) | ONVPV |
+| 🇷🇸 **Serbia** | Republic Geodetic Authority (RGZ) | Opštine / Gradovi | MGI 1901 / Balkans (EPSG:31277) | Min. Poljoprivrede, Šumarstva i Vodoprivrede |
 | 🇸🇰 **Slovakia** | ÚGKK SR (Geodesy Authority) / Eurostat | Kraje / Okresy | S-JTSK (EPSG:5514) | Min. Pôdohospodárstva |
 | 🇸🇮 **Slovenia** | GURS (Surveying and Mapping Authority) | Občine / Upravne enote | D96/TM (EPSG:3794) | MKGP / eAmbrosia |
 | 🇪🇸 **Spain** | IGN España (INSPIRE) | Municipios (`recintos_municipales`) | ETRS89 (EPSG:4258) / REGCAN95 | MAPA / Consejos Reguladores |
 | 🇨🇭 **Switzerland** | swisstopo (Federal Office of Topography) | Cantons / Communes | CH1903+ / LV95 (EPSG:2056) | OFAG / BLW |
 | 🇹🇷 **Turkey** | Harita Genel Müdürlüğü (HGM) / Natural Earth | İller (Provinces) / İlçeler | TUREF (EPSG:5254) / WGS84 | Tarım ve Orman Bak. / TÜRKPATENT |
+| 🇬🇧 **United Kingdom** | Ordnance Survey (OS Boundary-Line™) | Counties / Unitary Authorities / Districts | British National Grid (EPSG:27700) | DEFRA / Food Standards Agency |
 
 ### B. Roadmap Sources for Upcoming New World Expansion
 
@@ -141,12 +147,13 @@ For comprehensive technical specifications, official cartographic agencies acros
 
 ## Multi-Country Coverage Status 🌍
 
-The **World Wine Wide** project has completed full, authoritative census coverage across **21 sovereign wine nations**, encompassing **763 official wine regions**, **791 QGIS vector layers**, and **670 official legal specification documents (PDFs)**:
+The **WINE³ai** project has completed full, authoritative census coverage across **27 sovereign wine nations**, encompassing **778 official wine regions**, **806+ QGIS vector layers**, and **670+ official legal specification documents (PDFs)**:
 
 | Country | Status | Appellations / Regions | Key Official Classifications | Primary Cartographic Agency | National Registry |
 | :--- | :---: | :---: | :--- | :--- | :---: |
 | 🇦🇲 **Armenia** | 100% | 5 | PDO (Vayots Dzor, Aragatsotn, Armavir, etc.) | Natural Earth / VWFA | [Registry](docs/ARMENIA/REGISTRO_REGIONS.md) |
 | 🇦🇹 **Austria** | 100% | 18 | DAC (Wachau, Kremstal, Kamptal, etc.) | BEV / eAmbrosia | [Registry](docs/AUSTRIA/REGISTRO_DACS.md) |
+| 🇧🇦 **Bosnia & Herzegovina** | 100% | 1 | ZOI (Hercegovina) | FGU / eAmbrosia | [Registry](docs/COVERAGE.md) |
 | 🇧🇬 **Bulgaria** | 100% | 5 | PGI (Danubian Plain, Thracian Lowland, etc.) | Natural Earth / EAVW | [Registry](docs/BULGARIA/REGISTRO_REGIONS.md) |
 | 🇭🇷 **Croatia** | 100% | 4 (16 ZOI) | ZOI (Dalmacija, Istra, Slavonija, Bregovita) | Natural Earth / eAmbrosia | [Registry](docs/CROATIA/REGISTRO_ZOI.md) |
 | 🇨🇾 **Cyprus** | 100% | 5 | PDO (Commandaria, Krasochoria, etc.) | Natural Earth / eAmbrosia | [Registry](docs/CYPRUS/REGISTRO_PDOS.md) |
@@ -158,19 +165,24 @@ The **World Wine Wide** project has completed full, authoritative census coverag
 | 🇭🇺 **Hungary** | 100% | 22 | OEM Borvidékek (Tokaj, Villány, Eger, etc.) | Natural Earth / HNT | [Registry](docs/HUNGARY/REGISTRO_OEMS.md) |
 | 🇮🇹 **Italy** | 100% | 121 | DOCG & DOC (Barolo, Chianti, Brunello, etc.) | ISTAT / MASAF | [Registry](docs/ITALY/REGISTRO_DOCS.md) |
 | 🇱🇧 **Lebanon** | 100% | 4 | GI (Bekaa Valley, Mount Lebanon, Batroun, etc.) | Natural Earth / UVL | [Registry](docs/LEBANON/REGISTRO_TERROIRS.md) |
+| 🇱🇺 **Luxembourg** | 100% | 1 | AOP (Moselle Luxembourgeoise) | ACT / IVV | [Registry](docs/COVERAGE.md) |
 | 🇲🇩 **Moldova** | 100% | 4 | IGP (Valul lui Traian, Ștefan Vodă, Codru, Divin) | Natural Earth / ONVV | [Registry](docs/MOLDOVA/REGISTRO_IGP.md) |
+| 🇲🇪 **Montenegro** | 100% | 2 | ZOI / GI (Skadarsko jezero, Crnogorsko primorje) | Uprava za nekretnine / Min. Agr. | [Registry](docs/COVERAGE.md) |
+| 🇲🇰 **North Macedonia** | 100% | 3 | PDO / ZOI (Tikveš, Pčinja-Osogovo, Pelagonija-Polog) | AREC / Min. of Agriculture | [Registry](docs/COVERAGE.md) |
 | 🇵🇹 **Portugal** | 100% | 31 | DOC / DOP (Douro, Dão, Alentejo, Vinho Verde) | DGT / IVV | [Registry](docs/PORTUGAL/REGISTRO_DOCS.md) |
 | 🇷🇴 **Romania** | 100% | 8 (37 DOC) | DOC (Dealurile Moldovei, Munteniei, etc.) | Natural Earth / ONVPV | [Registry](docs/ROMANIA/REGISTRO_REGIUNI.md) |
+| 🇷🇸 **Serbia** | 100% | 5 | KPK / PDO (Fruška Gora, Šumadija, Župa, etc.) | RGZ / Min. Poljoprivrede | [Registry](docs/COVERAGE.md) |
 | 🇸🇰 **Slovakia** | 100% | 6 | CHOP (Malokarpatská, Tokaj, Južnoslovenská, etc.) | Natural Earth / eAmbrosia | [Registry](docs/SLOVAKIA/REGISTRO_OBLASTI.md) |
 | 🇸🇮 **Slovenia** | 100% | 9 | ZGP (Goriška Brda, Vipavska dolina, Kras, etc.) | Natural Earth / eAmbrosia | [Registry](docs/SLOVENIA/REGISTRO_ZGP.md) |
 | 🇪🇸 **Spain** | 100% | 101 | DOCa, DO, VP, VC (Rioja, Ribera, Priorat, etc.) | IGN Spain / MAPA | [Registry](docs/SPAIN/REGISTRO_DOS.md) |
 | 🇨🇭 **Switzerland** | 100% | 6 | AOC / DOC (Valais, Vaud, Genève, Ticino, etc.) | Natural Earth / OFAG | [Registry](docs/SWITZERLAND/REGISTRO_REGIONS.md) |
 | 🇹🇷 **Turkey** | 100% | 9 | Bölge / GI (Trakya, Urla, Denizli, Kapadokya, etc.) | Natural Earth / TÜRKPATENT | [Registry](docs/TURKEY/REGISTRO_REGIONS.md) |
+| 🇬🇧 **United Kingdom** | 100% | 3 | PDO (Sussex, English Wine, Welsh Wine) | OS / DEFRA | [Registry](docs/COVERAGE.md) |
 
 👉 **For the complete regional descriptions, territorial notes, and wine profiles of each country, see the full [Multi-Country Coverage Report](docs/COVERAGE.md) (or [Versión en Español](docs/COBERTURA.md)).**
 
 **Key metrics:**
-* **763 official wine regions** interactive in the web applications with commune-level search, basemap switcher, multi-country and regional filters, and official PDF specification viewers.
+* **778 official wine regions** interactive in the web applications with commune-level search, basemap switcher, multi-country and regional filters, and official PDF specification viewers.
 * **791 vector layers** systematically arranged in the primary QGIS project (`QGIS/wine_world_wine.qgz`) partitioned into twenty-two national groups: `SPAIN`, `FRANCE`, `PORTUGAL`, `ITALY`, `GERMANY`, `AUSTRIA`, `GREECE`, `HUNGARY`, `GEORGIA`, `CZECH_REPUBLIC`, `SWITZERLAND`, `SLOVENIA`, `CROATIA`, `SLOVAKIA`, `ROMANIA`, `BULGARIA`, `MOLDOVA`, `ARMENIA`, `CYPRUS`, `LEBANON`, `TURKEY`, and `Google`.
 * **670 official legal specification documents (PDFs)** archived locally in [`DOWNs/DOCs/`](DOWNs/DOCs/).
 * **Dedicated SQL filter libraries** available under `QGIS/<COUNTRY>/SQLs/`.

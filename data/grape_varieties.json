@@ -115102,5 +115102,562 @@
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
     }
+  },
+  {
+    "id": "vranac",
+    "name": "Vranac",
+    "color": "red",
+    "origin": "Montenegro / Western Balkans",
+    "synonyms": [
+      "Vranec",
+      "Vranać"
+    ],
+    "desc_en": "The sovereign red grape of Montenegro and North Macedonia (known as Vranec), delivering deep black-purple wines packed with sour cherry, wild bramble, dark chocolate, and muscular age-worthy tannins.",
+    "desc_es": "La uva tinta reina de Montenegro y Macedonia del Norte (donde se conoce como Vranec), caracterizada por vinos de color negro azulado, densos, con notas de mora silvestre, cacao y taninos nobles de gran longevidad.",
+    "regions": [
+      {
+        "id": "mne-gi-skadarsko-jezero",
+        "name": "Crnogorski sliv Skadarskog jezera",
+        "country": "Montenegro",
+        "country_flag": "🇲🇪",
+        "country_en": "Montenegro",
+        "country_es": "Montenegro",
+        "category": "ZOI / PDO",
+        "region": "Basin of Skadar Lake",
+        "color": "#881337",
+        "pliego": "",
+        "centroid": [
+          19.24,
+          42.27
+        ],
+        "pct": null,
+        "role": "Flagship Native Variety",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "mediterranean_coastal",
+        "climate_icon": "☀️",
+        "climate_name_en": "Coastal Mediterranean",
+        "climate_name_es": "Mediterráneo Costero"
+      },
+      {
+        "id": "mkd-pdo-tikves",
+        "name": "Tikveš",
+        "country": "Macedonia del Norte",
+        "country_flag": "🇲🇰",
+        "country_en": "North Macedonia",
+        "country_es": "Macedonia del Norte",
+        "category": "PDO / ZOI",
+        "region": "Povardarie",
+        "color": "#9F1239",
+        "pliego": "",
+        "centroid": [
+          22.02,
+          41.43
+        ],
+        "pct": null,
+        "role": "Flagship Native Variety",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "mediterranean_continental",
+        "climate_icon": "🏜️",
+        "climate_name_en": "Continental Mediterranean (Meseta)",
+        "climate_name_es": "Mediterráneo Continentalizado (Meseta)"
+      },
+      {
+        "id": "bih-gi-hercegovina",
+        "name": "Hercegovina",
+        "country": "Bosnia y Herzegovina",
+        "country_flag": "🇧🇦",
+        "country_en": "Bosnia and Herzegovina",
+        "country_es": "Bosnia y Herzegovina",
+        "category": "ZOI / PDO",
+        "region": "Herzegovina",
+        "color": "#831843",
+        "pliego": "",
+        "centroid": [
+          17.82,
+          43.15
+        ],
+        "pct": null,
+        "role": "Authorized Traditional",
+        "blend_type": "blend",
+        "styles": [
+          "still"
+        ],
+        "climate": "mediterranean_coastal",
+        "climate_icon": "☀️",
+        "climate_name_en": "Coastal Mediterranean",
+        "climate_name_es": "Mediterráneo Costero"
+      },
+      {
+        "id": "srb-gi-tri-morave",
+        "name": "Tri Morave",
+        "country": "Serbia",
+        "country_flag": "🇷🇸",
+        "country_en": "Serbia",
+        "country_es": "Serbia",
+        "category": "KPK / PDO",
+        "region": "Central Serbia",
+        "color": "#9F1239",
+        "pliego": "",
+        "centroid": [
+          21.05,
+          43.85
+        ],
+        "pct": null,
+        "role": "Authorized Traditional",
+        "blend_type": "blend",
+        "styles": [
+          "still"
+        ],
+        "climate": "continental",
+        "climate_icon": "❄️",
+        "climate_name_en": "Continental / Central European",
+        "climate_name_es": "Continental Templado / Frío"
+      }
+    ],
+    "total_regions": 4,
+    "countries_count": 4,
+    "countries_breakdown": [
+      {
+        "country": "Montenegro",
+        "country_en": "Montenegro",
+        "country_es": "Montenegro",
+        "flag": "🇲🇪",
+        "count": 1,
+        "percentage": 25.0
+      },
+      {
+        "country": "Macedonia del Norte",
+        "country_en": "North Macedonia",
+        "country_es": "Macedonia del Norte",
+        "flag": "🇲🇰",
+        "count": 1,
+        "percentage": 25.0
+      },
+      {
+        "country": "Bosnia y Herzegovina",
+        "country_en": "Bosnia and Herzegovina",
+        "country_es": "Bosnia y Herzegovina",
+        "flag": "🇧🇦",
+        "count": 1,
+        "percentage": 25.0
+      },
+      {
+        "country": "Serbia",
+        "country_en": "Serbia",
+        "country_es": "Serbia",
+        "flag": "🇷🇸",
+        "count": 1,
+        "percentage": 25.0
+      }
+    ],
+    "styles_breakdown": {
+      "still": 4,
+      "sparkling": 0,
+      "fortified_sweet": 0
+    },
+    "blend_breakdown": {
+      "monovarietal": 2,
+      "blend": 2,
+      "monovarietal_pct": 50.0,
+      "blend_pct": 50.0
+    }
+  },
+  {
+    "id": "prokupac",
+    "name": "Prokupac",
+    "color": "red",
+    "origin": "Serbia (Župa)",
+    "synonyms": [
+      "Rskavac",
+      "Kameničarka"
+    ],
+    "desc_en": "The historical heart of Serbian winemaking, native to the rolling slopes of Župa. It produces bright, ruby wines with wild cherry, dried plum, rose hip, and fresh lively acidity reminiscent of fine Cru Beaujolais or vibrant Garnacha.",
+    "desc_es": "El corazón histórico de la viticultura serbia, autóctona de los valles de Župa. Produce tintos de brillante color rubí, notas de guinda silvestre, ciruela pasa, escaramujo y una refrescante acidez que evoca a los mejores crus de Beaujolais o a una Garnacha viva.",
+    "regions": [
+      {
+        "id": "srb-gi-zupa",
+        "name": "Župa",
+        "country": "Serbia",
+        "country_flag": "🇷🇸",
+        "country_en": "Serbia",
+        "country_es": "Serbia",
+        "category": "KPK / PDO",
+        "region": "Central Serbia",
+        "color": "#881337",
+        "pliego": "",
+        "centroid": [
+          20.94,
+          43.48
+        ],
+        "pct": null,
+        "role": "Flagship Native Variety",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "continental",
+        "climate_icon": "❄️",
+        "climate_name_en": "Continental / Central European",
+        "climate_name_es": "Continental Templado / Frío"
+      },
+      {
+        "id": "srb-gi-sumadija",
+        "name": "Šumadija",
+        "country": "Serbia",
+        "country_flag": "🇷🇸",
+        "country_en": "Serbia",
+        "country_es": "Serbia",
+        "category": "KPK / PDO",
+        "region": "Šumadija and Western Serbia",
+        "color": "#7C2D12",
+        "pliego": "",
+        "centroid": [
+          20.72,
+          44.25
+        ],
+        "pct": null,
+        "role": "Authorized Native Variety",
+        "blend_type": "blend",
+        "styles": [
+          "still"
+        ],
+        "climate": "continental",
+        "climate_icon": "❄️",
+        "climate_name_en": "Continental / Central European",
+        "climate_name_es": "Continental Templado / Frío"
+      },
+      {
+        "id": "srb-gi-tri-morave",
+        "name": "Tri Morave",
+        "country": "Serbia",
+        "country_flag": "🇷🇸",
+        "country_en": "Serbia",
+        "country_es": "Serbia",
+        "category": "KPK / PDO",
+        "region": "Central Serbia",
+        "color": "#9F1239",
+        "pliego": "",
+        "centroid": [
+          21.05,
+          43.85
+        ],
+        "pct": null,
+        "role": "Authorized Native Variety",
+        "blend_type": "blend",
+        "styles": [
+          "still"
+        ],
+        "climate": "continental",
+        "climate_icon": "❄️",
+        "climate_name_en": "Continental / Central European",
+        "climate_name_es": "Continental Templado / Frío"
+      }
+    ],
+    "total_regions": 3,
+    "countries_count": 1,
+    "countries_breakdown": [
+      {
+        "country": "Serbia",
+        "country_en": "Serbia",
+        "country_es": "Serbia",
+        "flag": "🇷🇸",
+        "count": 3,
+        "percentage": 100.0
+      }
+    ],
+    "styles_breakdown": {
+      "still": 3,
+      "sparkling": 0,
+      "fortified_sweet": 0
+    },
+    "blend_breakdown": {
+      "monovarietal": 1,
+      "blend": 2,
+      "monovarietal_pct": 33.3,
+      "blend_pct": 66.7
+    }
+  },
+  {
+    "id": "zilavka",
+    "name": "Žilavka",
+    "color": "white",
+    "origin": "Bosnia and Herzegovina (Herzegovina)",
+    "synonyms": [
+      "Mostarska Žilavka"
+    ],
+    "desc_en": "The noble white grape of Herzegovina's karst stone plateaus, famed for its extraordinary resistance to summer drought and its radiant aromas of white peach, wild herbs, Mediterranean stone fruit, and saline mineral finish.",
+    "desc_es": "La noble variedad blanca de las mesetas cársticas de Herzegovina, famosa por su gran resistencia a la sequía estival y sus aromas minerales salinos, melocotón blanco, hierbas silvestres y acidez vibrante.",
+    "regions": [
+      {
+        "id": "bih-gi-hercegovina",
+        "name": "Hercegovina",
+        "country": "Bosnia y Herzegovina",
+        "country_flag": "🇧🇦",
+        "country_en": "Bosnia and Herzegovina",
+        "country_es": "Bosnia y Herzegovina",
+        "category": "ZOI / PDO",
+        "region": "Herzegovina",
+        "color": "#831843",
+        "pliego": "",
+        "centroid": [
+          17.82,
+          43.15
+        ],
+        "pct": null,
+        "role": "Flagship Native White Variety",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "mediterranean_coastal",
+        "climate_icon": "☀️",
+        "climate_name_en": "Coastal Mediterranean",
+        "climate_name_es": "Mediterráneo Costero"
+      }
+    ],
+    "total_regions": 1,
+    "countries_count": 1,
+    "countries_breakdown": [
+      {
+        "country": "Bosnia y Herzegovina",
+        "country_en": "Bosnia and Herzegovina",
+        "country_es": "Bosnia y Herzegovina",
+        "flag": "🇧🇦",
+        "count": 1,
+        "percentage": 100.0
+      }
+    ],
+    "styles_breakdown": {
+      "still": 1,
+      "sparkling": 0,
+      "fortified_sweet": 0
+    },
+    "blend_breakdown": {
+      "monovarietal": 1,
+      "blend": 0,
+      "monovarietal_pct": 100.0,
+      "blend_pct": 0.0
+    }
+  },
+  {
+    "id": "blatina",
+    "name": "Blatina",
+    "color": "red",
+    "origin": "Bosnia and Herzegovina (Herzegovina)",
+    "synonyms": [
+      "Tribidrag crni",
+      "Praznobačva"
+    ],
+    "desc_en": "An ancient indigenous red variety of Herzegovina with functionally female flowers requiring companion pollinators (like Trnjak and Vranac). It yields velvety, garnet-red wines filled with red currants, forest herbs, spice, and gentle acidity.",
+    "desc_es": "Variedad tinta autóctona milenaria de Herzegovina con flor funcionalmente femenina que necesita polinizadores acompañantes como Trnjak o Vranac. Da tintos sedosos, de color rubí granate, con grosella roja, hierbas de monte y elegancia contenida.",
+    "regions": [
+      {
+        "id": "bih-gi-hercegovina",
+        "name": "Hercegovina",
+        "country": "Bosnia y Herzegovina",
+        "country_flag": "🇧🇦",
+        "country_en": "Bosnia and Herzegovina",
+        "country_es": "Bosnia y Herzegovina",
+        "category": "ZOI / PDO",
+        "region": "Herzegovina",
+        "color": "#831843",
+        "pliego": "",
+        "centroid": [
+          17.82,
+          43.15
+        ],
+        "pct": null,
+        "role": "Flagship Native Red Variety",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "mediterranean_coastal",
+        "climate_icon": "☀️",
+        "climate_name_en": "Coastal Mediterranean",
+        "climate_name_es": "Mediterráneo Costero"
+      }
+    ],
+    "total_regions": 1,
+    "countries_count": 1,
+    "countries_breakdown": [
+      {
+        "country": "Bosnia y Herzegovina",
+        "country_en": "Bosnia and Herzegovina",
+        "country_es": "Bosnia y Herzegovina",
+        "flag": "🇧🇦",
+        "count": 1,
+        "percentage": 100.0
+      }
+    ],
+    "styles_breakdown": {
+      "still": 1,
+      "sparkling": 0,
+      "fortified_sweet": 0
+    },
+    "blend_breakdown": {
+      "monovarietal": 1,
+      "blend": 0,
+      "monovarietal_pct": 100.0,
+      "blend_pct": 0.0
+    }
+  },
+  {
+    "id": "auxerrois",
+    "name": "Auxerrois",
+    "color": "white",
+    "origin": "Luxembourg / Lorraine / Alsace",
+    "synonyms": [
+      "Auxerrois Blanc",
+      "Pinot Auxerrois"
+    ],
+    "desc_en": "A natural cross of Pinot and Gouais Blanc, Auxerrois finds its greatest modern European expression along the Moselle Luxembourgeoise. It creates rich, gently aromatic white wines with white blossom, melon, soft pear, and round supple acidity.",
+    "desc_es": "Cruce natural entre Pinot y Gouais Blanc, la Auxerrois encuentra su expresión europea más destacada en el valle del Mosela luxemburgués, produciendo blancos amables, redondos, con flores blancas, melón, pera fresca y untuosa textura.",
+    "regions": [
+      {
+        "id": "lux-aop-moselle-luxembourgeoise",
+        "name": "Moselle Luxembourgeoise",
+        "country": "Luxemburgo",
+        "country_flag": "🇱🇺",
+        "country_en": "Luxembourg",
+        "country_es": "Luxemburgo",
+        "category": "AOP",
+        "region": "Moselle",
+        "color": "#0284C7",
+        "pliego": "",
+        "centroid": [
+          6.36,
+          49.62
+        ],
+        "pct": null,
+        "role": "Key Moselle Variety",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still",
+          "sparkling"
+        ],
+        "climate": "continental",
+        "climate_icon": "❄️",
+        "climate_name_en": "Continental / Central European",
+        "climate_name_es": "Continental Templado / Frío"
+      }
+    ],
+    "total_regions": 1,
+    "countries_count": 1,
+    "countries_breakdown": [
+      {
+        "country": "Luxemburgo",
+        "country_en": "Luxembourg",
+        "country_es": "Luxemburgo",
+        "flag": "🇱🇺",
+        "count": 1,
+        "percentage": 100.0
+      }
+    ],
+    "styles_breakdown": {
+      "still": 1,
+      "sparkling": 1,
+      "fortified_sweet": 0
+    },
+    "blend_breakdown": {
+      "monovarietal": 1,
+      "blend": 0,
+      "monovarietal_pct": 100.0,
+      "blend_pct": 0.0
+    }
+  },
+  {
+    "id": "bacchus",
+    "name": "Bacchus",
+    "color": "white",
+    "origin": "United Kingdom / Germany",
+    "synonyms": [
+      "Geilweilerhof 33-13-113"
+    ],
+    "desc_en": "Widely hailed as the flagship still white grape of the United Kingdom, often nicknamed 'the English Sauvignon Blanc'. It delivers intense elderflower, hedgerow, nettle, gooseberry, and crisp lime acidity shaped by England's cool maritime terroir.",
+    "desc_es": "Aclamada como la uva blanca emblemática de los vinos tranquilos del Reino Unido, a menudo apodada el 'Sauvignon Blanc inglés'. Ofrece intensos aromas de flor de saúco, grosella espinosa, hierba fresca y una crujiente acidez atlántica.",
+    "regions": [
+      {
+        "id": "uk-pdo-sussex",
+        "name": "Sussex",
+        "country": "Reino Unido",
+        "country_flag": "🇬🇧",
+        "country_en": "United Kingdom",
+        "country_es": "Reino Unido",
+        "category": "PDO",
+        "region": "South East England",
+        "color": "#1D4ED8",
+        "pliego": "",
+        "centroid": [
+          -0.34,
+          50.94
+        ],
+        "pct": null,
+        "role": "Authorized Still Wine Variety",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "atlantic",
+        "climate_icon": "🌊",
+        "climate_name_en": "Atlantic / Maritime",
+        "climate_name_es": "Atlántico / Oceánico"
+      },
+      {
+        "id": "uk-pdo-english-wine",
+        "name": "English Wine",
+        "country": "Reino Unido",
+        "country_flag": "🇬🇧",
+        "country_en": "United Kingdom",
+        "country_es": "Reino Unido",
+        "category": "PDO",
+        "region": "England",
+        "color": "#2563EB",
+        "pliego": "",
+        "centroid": [
+          -0.55,
+          51.35
+        ],
+        "pct": null,
+        "role": "Flagship White Variety",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "atlantic",
+        "climate_icon": "🌊",
+        "climate_name_en": "Atlantic / Maritime",
+        "climate_name_es": "Atlántico / Oceánico"
+      }
+    ],
+    "total_regions": 2,
+    "countries_count": 1,
+    "countries_breakdown": [
+      {
+        "country": "Reino Unido",
+        "country_en": "United Kingdom",
+        "country_es": "Reino Unido",
+        "flag": "🇬🇧",
+        "count": 2,
+        "percentage": 100.0
+      }
+    ],
+    "styles_breakdown": {
+      "still": 2,
+      "sparkling": 0,
+      "fortified_sweet": 0
+    },
+    "blend_breakdown": {
+      "monovarietal": 2,
+      "blend": 0,
+      "monovarietal_pct": 100.0,
+      "blend_pct": 0.0
+    }
   }
 ]

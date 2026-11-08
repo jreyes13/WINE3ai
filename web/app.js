@@ -146,7 +146,13 @@ const COUNTRY_NAMES = {
   'Armenia': { es: 'Armenia', en: 'Armenia', flag: '🇦🇲' },
   'Chipre': { es: 'Chipre', en: 'Cyprus', flag: '🇨🇾' },
   'Líbano': { es: 'Líbano', en: 'Lebanon', flag: '🇱🇧' },
-  'Turquía': { es: 'Turquía', en: 'Turkey', flag: '🇹🇷' }
+  'Turquía': { es: 'Turquía', en: 'Turkey', flag: '🇹🇷' },
+  'Luxemburgo': { es: 'Luxemburgo', en: 'Luxembourg', flag: '🇱🇺' },
+  'Reino Unido': { es: 'Reino Unido', en: 'United Kingdom', flag: '🇬🇧' },
+  'Serbia': { es: 'Serbia', en: 'Serbia', flag: '🇷🇸' },
+  'Macedonia del Norte': { es: 'Macedonia del Norte', en: 'North Macedonia', flag: '🇲🇰' },
+  'Montenegro': { es: 'Montenegro', en: 'Montenegro', flag: '🇲🇪' },
+  'Bosnia y Herzegovina': { es: 'Bosnia y Herzegovina', en: 'Bosnia and Herzegovina', flag: '🇧🇦' }
 };
 
 let currentLang = 'en';
@@ -1081,7 +1087,13 @@ const COUNTRY_CENTERS = {
   'Armenia': { center: [44.8, 40.2], zoom: 7.5 },
   'Chipre': { center: [33.1, 35.0], zoom: 8.5 },
   'Líbano': { center: [35.8, 33.9], zoom: 8.3 },
-  'Turquía': { center: [35.2, 39.0], zoom: 5.8 }
+  'Turquía': { center: [35.2, 39.0], zoom: 5.8 },
+  'Luxemburgo': { center: [6.35, 49.6], zoom: 9.0 },
+  'Reino Unido': { center: [-0.5, 51.2], zoom: 6.8 },
+  'Serbia': { center: [20.9, 44.2], zoom: 7.2 },
+  'Macedonia del Norte': { center: [22.0, 41.5], zoom: 7.8 },
+  'Montenegro': { center: [19.2, 42.4], zoom: 8.5 },
+  'Bosnia y Herzegovina': { center: [17.8, 43.3], zoom: 8.0 }
 };
 
 // Event Listeners
