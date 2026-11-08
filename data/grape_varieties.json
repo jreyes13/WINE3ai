@@ -116738,5 +116738,146 @@
       "monovarietal_pct": 100.0,
       "blend_pct": 0.0
     }
+  },
+  {
+    "id": "pinotage",
+    "name": "Pinotage",
+    "color": "red",
+    "origin": "South Africa (Stellenbosch - 1925 Abraham Izak Perold crossing of Pinot Noir x Cinsault)",
+    "synonyms": [
+      "Perold Crossing"
+    ],
+    "desc_en": "South Africa's indigenous signature red grape, created in 1925 by Professor Abraham Izak Perold by crossing Pinot Noir and Cinsault (Hermitage). Produces deeply colored wines with smoky, bramble berry, tobacco, and earthy aromas, spanning modern fruit-driven styles to structured cellar-worthy Cape Blends.",
+    "desc_es": "La uva tinta autóctona y emblemática de Sudáfrica, nacida en 1925 en Stellenbosch por el profesor Abraham Izak Perold como cruce de Pinot Noir y Cinsault (Hermitage). Brinda vinos de color profundo, aromas a frutos negros silvestres, notas ahumadas, cacao y tierra, tanto en varietales puros como en los prestigiosos Cape Blends.",
+    "regions": [
+      {
+        "id": "zaf-wo-stellenbosch",
+        "name": "Stellenbosch",
+        "country": "Sudáfrica",
+        "country_flag": "🇿🇦",
+        "country_en": "South Africa",
+        "country_es": "Sudáfrica",
+        "category": "WO",
+        "region": "Western Cape (Coastal Region)",
+        "color": "#7F1D1D",
+        "pliego": "DOWNs/DOCs/SouthAfrica/Stellenbosch_WO.pdf",
+        "centroid": [
+          18.86,
+          -33.93
+        ],
+        "pct": null,
+        "role": "Signature Indigenous Variety & Birthplace",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "mediterranean_coastal",
+        "climate_icon": "☀️",
+        "climate_name_en": "Coastal Mediterranean (False Bay cooling breeze)",
+        "climate_name_es": "Mediterráneo Costero con Brisas de False Bay"
+      },
+      {
+        "id": "zaf-wo-swartland",
+        "name": "Swartland",
+        "country": "Sudáfrica",
+        "country_flag": "🇿🇦",
+        "country_en": "South Africa",
+        "country_es": "Sudáfrica",
+        "category": "WO",
+        "region": "Western Cape (Coastal Region)",
+        "color": "#991B1B",
+        "pliego": "DOWNs/DOCs/SouthAfrica/Swartland_WO.pdf",
+        "centroid": [
+          18.72,
+          -33.45
+        ],
+        "pct": null,
+        "role": "Bush Vine Old-Vine Heritage",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "mediterranean_continental",
+        "climate_icon": "🏜️",
+        "climate_name_en": "Warm Dry Mediterranean",
+        "climate_name_es": "Mediterráneo Seco y Cálido"
+      },
+      {
+        "id": "zaf-wo-paarl",
+        "name": "Paarl",
+        "country": "Sudáfrica",
+        "country_flag": "🇿🇦",
+        "country_en": "South Africa",
+        "country_es": "Sudáfrica",
+        "category": "WO",
+        "region": "Western Cape (Coastal Region)",
+        "color": "#B45309",
+        "pliego": "DOWNs/DOCs/SouthAfrica/Paarl_WO.pdf",
+        "centroid": [
+          18.96,
+          -33.73
+        ],
+        "pct": null,
+        "role": "Core Cultivar & Cape Blend Component",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "mediterranean_coastal",
+        "climate_icon": "☀️",
+        "climate_name_en": "Warm Mediterranean with Berg River Valley influence",
+        "climate_name_es": "Mediterráneo Templado Valle del Río Berg"
+      },
+      {
+        "id": "zaf-wo-robertson",
+        "name": "Robertson",
+        "country": "Sudáfrica",
+        "country_flag": "🇿🇦",
+        "country_en": "South Africa",
+        "country_es": "Sudáfrica",
+        "category": "WO",
+        "region": "Western Cape (Breede River Valley)",
+        "color": "#059669",
+        "pliego": "DOWNs/DOCs/SouthAfrica/Robertson_WO.pdf",
+        "centroid": [
+          19.88,
+          -33.8
+        ],
+        "pct": null,
+        "role": "Limestone Soil Cultivar",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still",
+          "fortified_sweet"
+        ],
+        "climate": "mediterranean_continental",
+        "climate_icon": "🏜️",
+        "climate_name_en": "Continental Mediterranean Valley with Calcareous Soils",
+        "climate_name_es": "Mediterráneo Continental de Valle Calizo"
+      }
+    ],
+    "total_regions": 4,
+    "countries_count": 1,
+    "countries_breakdown": [
+      {
+        "country": "Sudáfrica",
+        "country_en": "South Africa",
+        "country_es": "Sudáfrica",
+        "flag": "🇿🇦",
+        "count": 4,
+        "percentage": 100.0
+      }
+    ],
+    "styles_breakdown": {
+      "still": 4,
+      "sparkling": 0,
+      "fortified_sweet": 1
+    },
+    "blend_breakdown": {
+      "monovarietal": 4,
+      "blend": 0,
+      "monovarietal_pct": 100.0,
+      "blend_pct": 0.0
+    }
   }
 ]

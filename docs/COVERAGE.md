@@ -2,16 +2,16 @@
 
 **English** | [Versión en Español](COBERTURA.md)
 
-This document provides the exhaustive technical, viticultural, and cartographic census for all **21 countries** and **763 official wine regions** included in the **World Wine Wide** project.
+This document provides the exhaustive technical, viticultural, and cartographic census for all **33 countries** and **827 official wine regions** included in the **WINE³ai** project.
 
 ---
 
 ## Global Summary Metrics 📊
 
-* **30 Sovereign Wine Nations** with 100% completed official census.
-* **808 Demarcated Wine Regions** interactive in the web applications with commune-level search and filtering.
-* **836+ QGIS Vector Layers** organized into national groups in the primary QGIS project ([`QGIS/wine_world_wine.qgz`](../QGIS/wine_world_wine.qgz)).
-* **700+ Official Legal Specification Documents (PDFs)** archived locally in [`DOWNs/DOCs/`](../DOWNs/DOCs/).
+* **33 Sovereign Wine Nations** with 100% completed official census.
+* **827 Demarcated Wine Regions** interactive in the web applications with commune-level search and filtering.
+* **855+ QGIS Vector Layers** organized into national groups in the primary QGIS project ([`QGIS/wine_world_wine.qgz`](../QGIS/wine_world_wine.qgz)).
+* **720+ Official Legal Specification Documents (PDFs)** archived locally in [`DOWNs/DOCs/`](../DOWNs/DOCs/).
 * **2 Interactive Web Applications:**
   * 🗺️ **Official Wine Regions Map:** [https://jreyes13.github.io/wine_world_wide/](https://jreyes13.github.io/wine_world_wide/)
   * 🍇 **Grape Varieties Global Explorer:** [https://jreyes13.github.io/wine_world_wide/grapes.html](https://jreyes13.github.io/wine_world_wide/grapes.html)
@@ -292,3 +292,37 @@ All 9 official viticultural regions and terroirs of the Republic of Turkey (*Tü
 * **Walla Walla Valley AVA (Washington / Oregon):** Bounded by the Blue Mountains, straddling the Washington-Oregon state line. Known for deep wind-blown loess and the singular cobblestone terroir of "The Rocks District of Milton-Freewater", yielding gamey, savory, world-class Syrah and plush Cabernet Sauvignon.
 * **Finger Lakes AVA (New York):** Glacially carved, deep fjord-like lakes (Seneca Lake, Cayuga Lake, Keuka Lake) generating an essential macroclimatic "lake effect" that buffers extreme upstate New York winters. Acclaimed globally as North America's benchmark terroir for bone-dry, mineral, age-worthy Riesling, crisp Cabernet Franc, and sparkling wine.
 * **Texas Hill Country AVA (Texas):** The third-largest AVA in the United States, spanning the uplifted limestone plateaus and granite hills of the Edwards Plateau. Searing summer sunshine and cool hill nights producing powerful, heat-resilient Mediterranean varieties: Tempranillo, Mourvèdre, Viognier, and Tannat.
+
+---
+
+### 🇿🇦 South Africa (100% Phase 3 New World Census Completed)
+7 Iconic Wine of Origin (WO) districts under the **Wine and Spirit Board / SAWIS (South African Wine Industry Information and Systems)**:
+* **Stellenbosch WO:** The historic and aristocratic capital of South African fine wine, framed by the Simonsberg, Stellenbosch, and Helderberg mountain ranges. Deep decomposed granite and Table Mountain sandstone soils; birthplace of Pinotage (created in 1925 by Professor Abraham Izak Perold) and global benchmark for structured Cabernet Sauvignon, Bordeaux blends, and Chenin Blanc.
+* **Swartland WO:** Dynamic epicenter of the South African fine-wine renaissance. Rolling hills of weathered granite, Malmesbury shale, and iron-rich ferricrete; dry-farmed heritage bush vines yielding world-class Chenin Blanc, Syrah, Cinsault, and Rhône-inspired Cape Blends.
+* **Walker Bay WO (Hemel-en-Aarde):** Elite cool-climate maritime haven cooled by the icy Benguela Current and Antarctic sea breezes. Decomposed Bokkeveld shale and weathered granite soils throughout the Hemel-en-Aarde Valley ("Heaven and Earth") crafting internationally renowned Pinot Noir and flinty, mineral Chardonnay.
+* **Paarl WO:** Warm, sun-drenched valley framed by the colossal granite dome of Paarl Rock and the Berg River. Highly diverse terroirs producing generous, concentrated Shiraz, Chenin Blanc, Pinotage, and Viognier.
+* **Franschhoek Valley WO:** The historic French Huguenot valley established in 1688, enclosed by towering mountain walls. Celebrated for old-vine Semillon (dating to 1902), elegant Chardonnay, Cabernet Sauvignon, and Cap Classique traditional method sparkling wines.
+* **Constantia WO:** The legendary historic cradle of southern hemisphere viticulture (dating to 1685). Perched on the decomposed granite slopes of the Constantiaberg facing False Bay; world-famous home of *Vin de Constance* (sweet natural Muscat de Frontignan) and crisp, saline Sauvignon Blanc.
+* **Robertson WO:** "Valley of Vines and Roses" along the Breede River, distinguished by South Africa's rarest alkaline terroir: rich natural limestone and calcareous red clay. Low annual rainfall and wide diurnal range make it the nation's premier zone for chalky Chardonnay, Cap Classique sparkling wines, Syrah, and fortified Muscadels.
+
+---
+
+### 🇦🇺 Australia (100% Phase 3 New World Census Completed)
+8 World-Class Geographical Indications (GIs) regulated under the **Wine Australia Act** and **Wine Australia**:
+* **Barossa Valley GI (South Australia):** Australia's spiritual home of fine wine and epicentre of ancient viticulture. Deep red-brown clay, loam, and ironstone sands harboring the oldest continuously producing, ungrafted Shiraz, Grenache, and Mourvèdre vineyards on Earth (dating to 1843). Produces monumentally rich, cellar-worthy Shiraz with opulent dark fruit, espresso, and dark chocolate.
+* **McLaren Vale GI (South Australia):** Picturesque coastal Mediterranean region between the Mount Lofty Ranges and Gulf St Vincent. Exceptionally intricate geology spanning over 500 million years (40+ distinct soil profiles); world leader in biodynamics and benchmark producer of silky Shiraz, century-old bush-vine Grenache, and emerging Italian/Iberian varietals.
+* **Coonawarra GI (South Australia):** The legendary narrow "cigar" ridge of vivid red *terra rossa* topsoil over porous Gambier limestone. Cooled by Southern Ocean breezes; globally revered for aristocratic Cabernet Sauvignon distinguished by blackcurrant, cedar, crushed mint, and refined architectural tannins.
+* **Eden Valley GI (South Australia):** Wind-swept, high-altitude plateau (400-600 m) in the Barossa Ranges. Rocky schist and quartz soils with cold nights; worldwide benchmark alongside Clare Valley for bone-dry, lime-zesty, mineral Riesling that ages gracefully for decades, as well as ethereal, peppery Shiraz (home to the legendary Hill of Grace).
+* **Clare Valley GI (South Australia):** Rolling northern hills and sheltered valleys (Polish Hill River, Watervale) featuring red terra rossa and slate over limestone bedrock. Extreme diurnal temperature shifts deliver Australia's ultimate expression of steely, bone-dry, laser-sharp Riesling and powerful, structural Cabernet Sauvignon.
+* **Margaret River GI (Western Australia):** Breathtaking coastal peninsula flanked by the Indian and Southern Oceans. Deep, gravelly ironstone loam (*Forest Grove soils*) and mild maritime climate tempered by the warm Leeuwin Current; international gold standard for aristocratic Cabernet Sauvignon-Merlot blends and complex, age-worthy, Gingin-clone Chardonnay.
+* **Yarra Valley GI (Victoria):** Victoria's oldest and most prestigious cool-climate viticultural zone, divided into the alluvial floor of the Lower Yarra and the steep red volcanic basalt hills of the Upper Yarra. Celebrated globally for ethereal, perfumed Pinot Noir, pristine, tension-filled Chardonnay, and fragrant, peppery Syrah.
+* **Hunter Valley GI (New South Wales):** Historic cradle of commercial Australian wine (dating to the 1820s) framed by the Brokenback Range. Unique subtropical-maritime microclimate producing an inimitable vinous marvel: Hunter Valley Semillon (harvested early at 10-11% ABV with bracing acidity, magically transforming into rich, toasty, beeswax-and-lemon-curd complexity after 10-20 years in bottle without ever touching oak).
+
+---
+
+### 🇳🇿 New Zealand (100% Phase 3 New World Census Completed)
+4 Globally Acclaimed Geographical Indications (GIs) registered with the **Intellectual Property Office of New Zealand (IPONZ)** and **New Zealand Winegrowers**:
+* **Marlborough GI (South Island):** The world-famous viticultural engine at the northern tip of the South Island that revolutionized modern wine perception. Glacially carved alluvial plains along the Wairau and Awatere rivers with stony, free-draining greywacke gravels. High sunshine, cool Antarctic breezes, and dramatic diurnal shifts forge the explosive, unmistakable Marlborough Sauvignon Blanc (passionfruit, crushed gooseberry, lime zest, herbal intensity) alongside vibrant Pinot Noir.
+* **Central Otago GI (South Island):** The world's southernmost commercial wine region and New Zealand's sole inland continental terroir, ringed by majestic snow-capped alpine ranges (The Remarkables). Spectacular sub-zones (Bannockburn, Gibbston, Bendigo, Wanaka) on mica schist, quartz, and glacial outwash gravels; globally revered for intense, dark-fruited, thyme-infused, structured Pinot Noir of astonishing vitality.
+* **Hawke's Bay GI (North Island):** New Zealand's oldest wine region (established 1851), blessed with a warm, sunny maritime climate. Encompasses the world-famous Gimblett Gravels and Bridge Pa Triangle—ancient dry riverbeds of free-draining greywacke stones—producing benchmark, age-worthy Bordeaux-style red blends (Cabernet Sauvignon, Merlot, Malbec), aromatic Syrah, and opulent Chardonnay.
+* **Martinborough / Wairarapa GI (North Island):** Boutique, wind-battered viticultural sanctuary at the southern tip of the North Island, swept by cool Cook Strait gales. Deep, free-draining alluvial river terraces with greywacke gravels; international benchmark for Burgundian-styled, savory, structured Pinot Noir with dark cherry, savory forest floor, and fine, mineral tannins.

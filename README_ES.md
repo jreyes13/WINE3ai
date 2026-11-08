@@ -32,13 +32,14 @@ El resultado del proyecto son **mapas web interactivos** que muestran con total 
 
 Cada país gestiona su propia cartografía oficial de forma soberana. No existe una fuente única mundial para las delimitaciones administrativas y vitivinícolas. El principio fundacional de **World Wine Wide** es identificar y procesar exclusivamente las **fuentes oficiales gubernamentales e institucionales más autorizadas**:
 
-### A. Fuentes Oficiales de los 30 Países Consolidados
+### A. Fuentes Oficiales de los 33 Países Consolidados
 
 | País | Organismo Cartográfico Oficial / Portal | Nivel de Entidad Base | Sistema de Coordenadas Nativo (CRS) | Autoridad Vitivinícola Reguladora |
 | :--- | :--- | :--- | :--- | :--- |
 | 🇩🇪 **Alemania** | BKG (Bundesamt für Kartographie und Geodäsie) | Gemeinden / Kreise | ETRS89 / UTM 32N (EPSG:25832) | BLE / *Weinverordnung* |
 | 🇦🇷 **Argentina** | IGN Argentina | Departamentos / Distritos | POSGAR 2007 (EPSG:5343) | INV (Instituto Nacional de Vitivinicultura) |
 | 🇦🇲 **Armenia** | Cadastre Committee / Natural Earth | Marzer (Provincias) | ArmRef02 / WGS84 | VWFA / Min. de Economía |
+| 🇦🇺 **Australia** | Geoscience Australia / Natural Earth | GIs / Zonas de Gobierno Local | GDA2020 (EPSG:7844) | Wine Australia |
 | 🇦🇹 **Austria** | BEV (Bundesamt für Eich- und Vermessungswesen) | Gemeinden / Bezirke | MGI / Austria Lambert (EPSG:31287) | BML / eAmbrosia |
 | 🇧🇦 **Bosnia y Herzegovina** | FGU / RGU / Eurostat | Opštine / Gradovi | MGI 1901 / Balcanes (EPSG:31276) | Agencia de Seguridad Alimentaria / eAmbrosia |
 | 🇧🇬 **Bulgaria** | AGKK / Natural Earth | Oblasti / Obshtini | BGS2005 (EPSG:7801) | EAVW (Agencia Búlgara de la Viña y el Vino) |
@@ -59,21 +60,15 @@ Cada país gestiona su propia cartografía oficial de forma soberana. No existe 
 | 🇲🇰 **Macedonia del Norte** | AREC (Catastro de Bienes Inmuebles) | Opštini (Municipios) | MGI 1901 / Balcanes (EPSG:31277) | Ministerio de Agricultura |
 | 🇲🇩 **Moldavia** | ARFC (Agencia de Catastro) / Natural Earth | Raioane | Moldref 99 (EPSG:4026) | ONVV |
 | 🇲🇪 **Montenegro** | Uprava za nekretnine / Eurostat | Opštine (Municipios) | MGI 1901 / Balcanes (EPSG:31276) | Ministerio de Agricultura y Desarrollo Rural |
+| 🇳🇿 **Nueva Zelanda** | LINZ (Land Information New Zealand) / Natural Earth | GIs / Distritos Territoriales | NZGD2000 (EPSG:2193) | New Zealand Winegrowers |
 | 🇵🇹 **Portugal** | DGT (Direção-Geral do Território - CAOP) | Concelhos / Freguesias | ETRS89 / PT-TM06 (EPSG:3763) | IVV (*Cadernos de especificações*) |
 | 🇬🇧 **Reino Unido** | Ordnance Survey (OS Boundary-Line™) | Counties / Unitary Authorities | British National Grid (EPSG:27700) | DEFRA / Food Standards Agency |
 | 🇨🇿 **República Checa** | ČÚZK (Administración Estatal de Agrimensura) | Okresy / Kraje | S-JTSK (EPSG:5514) | ÚKZÚZ |
 | 🇷🇴 **Rumanía** | ANCPI / Eurostat | Județe / Comuni | Dealul Piscului 1970 (EPSG:31700) | ONVPV |
 | 🇷🇸 **Serbia** | RGZ (Autoridad Geodésica de la República) | Opštine / Gradovi | MGI 1901 / Balcanes (EPSG:31277) | Min. Poljoprivrede, Šumarstva i Vodoprivrede |
+| 🇿🇦 **Sudáfrica** | NGI (National Geo-spatial Information) / Natural Earth | Municipios / WOs | Hartebeesthoek94 (EPSG:2048) | SAWIS (Wine Industry Information) |
 | 🇨🇭 **Suiza** | swisstopo (Oficina Federal de Topografía) | Cantones / Comunas | CH1903+ / LV95 (EPSG:2056) | OFAG / BLW |
 | 🇹🇷 **Turquía** | Harita Genel Müdürlüğü (HGM) / Natural Earth | İller (Provincias) / İlçeler | TUREF (EPSG:5254) / WGS84 | Tarım ve Orman Bak. / TÜRKPATENT |
-
-### B. Fuentes Planificadas para la Expansión al Nuevo Mundo
-
-| País | Organismo Cartográfico Principal | Nivel Geográfico Base | Sistema de Coordenadas Nativo | Autoridad Reguladora Vitivinícola |
-| :--- | :--- | :--- | :--- | :--- |
-| 🇦🇺 **Australia** | Geoscience Australia | GIs / Zonas de Gobierno Local | GDA2020 (EPSG:7844) | Wine Australia |
-| 🇳🇿 **Nueva Zelanda** | LINZ (Land Information New Zealand) | GIs / Distritos Territoriales | NZGD2000 (EPSG:2193) | New Zealand Winegrowers |
-| 🇿🇦 **Sudáfrica** | NGI (National Geo-spatial Information) | Municipios / WOs | Hartebeesthoek94 (EPSG:2048) | SAWIS (Wine Industry Information) |
 
 > **Estándar Cartográfico:** Todas las capas vectoriales se exportan y publican reproyectadas al sistema universal **WGS84 (EPSG:4326)** para garantizar interoperabilidad SIG y rendimiento web.
 
@@ -98,13 +93,14 @@ Para ver los detalles técnicos y particularidades cartográficas (pedanías, no
 
 ## 📊 Estado Actual: Cobertura Multipaís
 
-El proyecto **WINE³ai** cuenta con una cobertura censal oficial completada al 100% en **30 naciones vitivinícolas soberanas**, que integran **808 regiones vitivinícolas oficiales**, **836+ capas vectoriales SIG** y **700+ pliegos oficiales de condiciones (PDFs)**:
+El proyecto **WINE³ai** cuenta con una cobertura censal oficial completada al 100% en **33 naciones vitivinícolas soberanas**, que integran **827 regiones vitivinícolas oficiales**, **855+ capas vectoriales SIG** y **720+ pliegos oficiales de condiciones (PDFs)**:
 
 | País | Estado | Denominaciones / Regiones | Figuras Oficiales Clave | Organismo Cartográfico Base | Registro Nacional |
 | :--- | :---: | :---: | :--- | :--- | :---: |
 | 🇩🇪 **Alemania** | 100% | 13 | g.U. Anbaugebiete (Mosel, Rheingau, Pfalz, etc.) | BKG / BLE | [Registro](docs/GERMANY/REGISTRO_ANBAUGEBIETE.md) |
 | 🇦🇷 **Argentina** | 100% | 7 | IG / DOC (Valle de Uco, Luján de Cuyo, Maipú, Cafayate, etc.) | IGN Argentina / INV | [Registro](docs/COBERTURA.md) |
 | 🇦🇲 **Armenia** | 100% | 5 | PDO (Vayots Dzor, Aragatsotn, Armavir, etc.) | Natural Earth / VWFA | [Registro](docs/ARMENIA/REGISTRO_REGIONS.md) |
+| 🇦🇺 **Australia** | 100% | 8 | GI (Barossa Valley, McLaren Vale, Margaret River, Yarra Valley, Coonawarra, etc.) | Geoscience Australia / Wine Australia | [Registro](docs/COBERTURA.md) |
 | 🇦🇹 **Austria** | 100% | 18 | DAC (Wachau, Kremstal, Kamptal, etc.) | BEV / eAmbrosia | [Registro](docs/AUSTRIA/REGISTRO_DACS.md) |
 | 🇧🇦 **Bosnia y Herzegovina** | 100% | 1 | ZOI (Hercegovina) | FGU / eAmbrosia | [Registro](docs/COBERTURA.md) |
 | 🇧🇬 **Bulgaria** | 100% | 5 | PGI (Llanura Danubiana, Tracia, etc.) | Natural Earth / EAVW | [Registro](docs/BULGARIA/REGISTRO_REGIONS.md) |
@@ -125,31 +121,29 @@ El proyecto **WINE³ai** cuenta con una cobertura censal oficial completada al 1
 | 🇲🇰 **Macedonia del Norte** | 100% | 3 | PDO / ZOI (Tikveš, Pčinja-Osogovo, Pelagonija) | AREC / Min. de Agricultura | [Registro](docs/COBERTURA.md) |
 | 🇲🇩 **Moldavia** | 100% | 4 | IGP (Valul lui Traian, Ștefan Vodă, Codru, Divin) | Natural Earth / ONVV | [Registro](docs/MOLDOVA/REGISTRO_IGP.md) |
 | 🇲🇪 **Montenegro** | 100% | 2 | ZOI / GI (Skadarsko jezero, Crnogorsko primorje) | Uprava za nekretnine / Min. Agr. | [Registro](docs/COBERTURA.md) |
+| 🇳🇿 **Nueva Zelanda** | 100% | 4 | GI (Marlborough, Central Otago, Hawke's Bay, Martinborough) | LINZ / NZ Winegrowers | [Registro](docs/COBERTURA.md) |
 | 🇵🇹 **Portugal** | 100% | 31 | DOC / DOP (Douro, Dão, Alentejo, Vinho Verde) | DGT / IVV | [Registro](docs/PORTUGAL/REGISTRO_DOCS.md) |
 | 🇬🇧 **Reino Unido** | 100% | 3 | PDO (Sussex, English Wine, Welsh Wine) | OS / DEFRA | [Registro](docs/COBERTURA.md) |
 | 🇨🇿 **República Checa** | 100% | 6 | CHOP / VOC (Znojemská, Mikulovská, etc.) | Natural Earth / ÚKZÚZ | [Registro](docs/CZECH_REPUBLIC/REGISTRO_PODOBLASTI.md) |
 | 🇷🇴 **Rumanía** | 100% | 8 (37 DOC) | DOC (Dealurile Moldovei, Munteniei, etc.) | Natural Earth / ONVPV | [Registro](docs/ROMANIA/REGISTRO_REGIUNI.md) |
 | 🇷🇸 **Serbia** | 100% | 5 | KPK / PDO (Fruška Gora, Šumadija, Župa, etc.) | RGZ / Min. Poljoprivrede | [Registro](docs/COBERTURA.md) |
+| 🇿🇦 **Sudáfrica** | 100% | 7 | WO (Stellenbosch, Swartland, Paarl, Walker Bay, Franschhoek, etc.) | NGI / SAWIS | [Registro](docs/COBERTURA.md) |
 | 🇨🇭 **Suiza** | 100% | 6 | AOC / DOC (Valais, Vaud, Genève, Ticino, etc.) | Natural Earth / OFAG | [Registry](docs/SWITZERLAND/REGISTRO_REGIONS.md) |
 | 🇹🇷 **Turquía** | 100% | 9 | Bölge / GI (Trakya, Urla, Denizli, Kapadokya, etc.) | Natural Earth / TÜRKPATENT | [Registro](docs/TURKEY/REGISTRO_REGIONS.md) |
 
 👉 **Para consultar las fichas descriptivas completas, zonificaciones y notas vitivinícolas de cada país, accede al [Informe Detallado de Cobertura Multipaís](docs/COBERTURA.md) (o [English Version](docs/COVERAGE.md)).**
 
 **En números:**
-* **808 regiones vitivinícolas oficiales** integradas en el visor web interactivo con filtros dinámicos en cascada por país, categoría y buscador instantáneo de municipios.
-* **791 capas vectoriales** estructuradas en el proyecto maestro QGIS (`QGIS/wine_world_wine.qgz`) divididas en veintidós grupos nacionales: `SPAIN`, `FRANCE`, `PORTUGAL`, `ITALY`, `GERMANY`, `AUSTRIA`, `GREECE`, `HUNGARY`, `GEORGIA`, `CZECH_REPUBLIC`, `SWITZERLAND`, `SLOVENIA`, `CROATIA`, `SLOVAKIA`, `ROMANIA`, `BULGARIA`, `MOLDOVA`, `ARMENIA`, `CYPRUS`, `LEBANON`, `TURKEY` y `Google`.
-* **670 pliegos oficiales (PDFs)** archivados en local en [`DOWNs/DOCs/`](DOWNs/DOCs/).
+* **827 regiones vitivinícolas oficiales** integradas en el visor web interactivo con filtros dinámicos en cascada por país, categoría y buscador instantáneo de municipios.
+* **855+ capas vectoriales** estructuradas en el proyecto maestro QGIS (`QGIS/wine_world_wine.qgz`) divididas en grupos nacionales.
+* **720+ pliegos oficiales (PDFs)** archivados en local en [`DOWNs/DOCs/`](DOWNs/DOCs/).
 * **Librerías SQL completas** para cada país en `QGIS/<PAIS>/SQLs/`.
 
 ---
 
 ## 🌍 Expansión Global y Próximas Fronteras 🚀
 
-Tras culminar la cartografía del **Viejo Mundo vinícola en 21 países**, la siguiente etapa de **World Wine Wide** aborda las regiones del Nuevo Mundo:
-* **América del Norte:** Estados Unidos (AVAs de California — Napa Valley, Sonoma, Paso Robles, Santa Barbara; Oregón — Willamette Valley; Washington — Columbia Valley).
-* **América del Sur:** Argentina (Mendoza — Valle de Uco, Luján de Cuyo; Salta — Cafayate) y Chile (Maipo, Colchagua, Casablanca).
-* **Oceanía:** Australia (Barossa Valley, McLaren Vale, Margaret River, Yarra Valley) y Nueva Zelanda (Marlborough, Central Otago).
-* **Sudáfrica:** Western Cape (Stellenbosch, Swartland, Walker Bay).
+Tras consolidar la cartografía del **Viejo Mundo y las grandes potencias vitivinícolas del Nuevo Mundo en 33 países** (incluyendo España, Francia, Italia, EE.UU., Argentina, Chile, Sudáfrica, Australia y Nueva Zelanda), **WINE³ai** proporciona una cobertura integral y unificada de la viticultura mundial.
 
 Consulta nuestra [Guía de Expansión Global](docs/EXPANSION_GLOBAL.md) (o [English Version](docs/GLOBAL_EXPANSION.md)) para conocer la arquitectura modular y las pautas para proponer o incorporar nuevas regiones.
 

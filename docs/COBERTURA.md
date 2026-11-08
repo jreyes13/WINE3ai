@@ -2,16 +2,16 @@
 
 [English Version](COVERAGE.md) | **Versión en Español**
 
-Este documento recoge el censo exhaustivo, técnico y cartográfico de los **21 países** y **763 regiones vitivinícolas oficiales** integradas en el proyecto **World Wine Wide**.
+Este documento recoge el censo exhaustivo, técnico y cartográfico de los **33 países** y **827 regiones vitivinícolas oficiales** integradas en el proyecto **WINE³ai**.
 
 ---
 
 ## Métricas Globales del Proyecto 📊
 
-* **30 Naciones Vitivinícolas Soberanas** con censo oficial completado al 100%.
-* **808 Regiones Vitivinícolas Demarcadas** interactivas en la aplicación web con búsqueda y filtrado a nivel de municipio/comuna.
-* **836+ Capas Vectoriales QGIS** estructuradas en grupos nacionales dentro del proyecto maestro ([`QGIS/wine_world_wine.qgz`](../QGIS/wine_world_wine.qgz)).
-* **700+ Pliegos Oficiales de Condiciones (PDFs)** archivados localmente en [`DOWNs/DOCs/`](../DOWNs/DOCs/).
+* **33 Naciones Vitivinícolas Soberanas** con censo oficial completado al 100%.
+* **827 Regiones Vitivinícolas Demarcadas** interactivas en la aplicación web con búsqueda y filtrado a nivel de municipio/comuna.
+* **855+ Capas Vectoriales QGIS** estructuradas en grupos nacionales dentro del proyecto maestro ([`QGIS/wine_world_wine.qgz`](../QGIS/wine_world_wine.qgz)).
+* **720+ Pliegos Oficiales de Condiciones (PDFs)** archivados localmente en [`DOWNs/DOCs/`](../DOWNs/DOCs/).
 * **2 Aplicaciones Web Interactivas:**
   * 🗺️ **Mapa Oficial de Regiones Vitivinícolas:** [https://jreyes13.github.io/wine_world_wide/](https://jreyes13.github.io/wine_world_wide/)
   * 🍇 **Explorador Global de Variedades de Uva:** [https://jreyes13.github.io/wine_world_wide/grapes.html](https://jreyes13.github.io/wine_world_wide/grapes.html)
@@ -292,3 +292,37 @@ Las 9 regiones vitivinícolas oficiales e históricas de la República de Turqu�
 * **Walla Walla Valley AVA (Washington / Oregón):** A los pies de las Blue Mountains en la frontera entre Washington y Oregón. Célebre por sus suelos de loess eólico y el singular terruño de cantos rodados basálticos de *The Rocks District of Milton-Freewater*, que imprime a sus Syrah y Cabernet notas carnosas, minerales y especiadas únicas.
 * **Finger Lakes AVA (Nueva York):** Profundos lagos glaciares con forma de dedos (Seneca, Cayuga, Keuka) que crean un efecto amortiguador térmico esencial frente a los duros inviernos neoyorquinos. Reconocida como el gran templo norteamericano del Riesling seco, vibrante y de gran longevidad, Cabernet Franc y espumosos.
 * **Texas Hill Country AVA (Texas):** La tercera AVA más extensa de EE.UU., asentada sobre la meseta calcárea y cerros de granito del Edwards Plateau. Sol generoso y noches frescas que favorecen cepas mediterráneas resistentes a la sequía: Tempranillo, Mourvèdre, Viognier y Tannat.
+
+---
+
+### 🇿🇦 Sudáfrica (100% Censo Fase 3 Nuevo Mundo Completado)
+7 Distritos Oficiales de Origen (*Wine of Origin - WO*) regulados por la **Wine and Spirit Board** y **SAWIS (South African Wine Industry Information and Systems)**:
+* **Stellenbosch WO:** La capital histórica y aristocrática del gran vino sudafricano, abrazada por las sierras de Simonsberg, Stellenbosch y Helderberg. Suelos de granito descompuesto profundo y areniscas de Table Mountain; cuna natal del Pinotage (cruce creado en 1925 por el profesor Abraham Izak Perold) y referente mundial para Cabernet Sauvignon estructurado, ensamblajes bordeleses y Chenin Blanc.
+* **Swartland WO:** El epicentro dinámico de la revolución vinícola sudafricana moderna. Suelos ondulados de granito meteorizado, esquistos de Malmesbury y ferricreta; viñas viejas de secano en vaso que dan Chenin Blanc, Syrah, Cinsault y Cape Blends de autenticidad insuperable.
+* **Walker Bay WO (Hemel-en-Aarde):** Santuario marítimo de clima frío refrescado por la gélida corriente antártica de Benguela y los vientos del Atlántico Sur. Suelos de pizarras de Bokkeveld y granito en el valle de Hemel-en-Aarde ("Cielo y Tierra"); prestigio internacional absoluto para Pinot Noir sedoso y Chardonnay afilado y mineral.
+* **Paarl WO:** Valle cálido y luminoso dominado por la colosal cúpula monolítica de granito de Paarl Rock y la vega del río Berg. Terruño idóneo para generosos Syrah, Chenin Blanc, Pinotage y Viognier.
+* **Franschhoek Valley WO:** El histórico rincón de los hugonotes franceses establecido en 1688, encajonado en un anfiteatro montañoso majestuoso. Afamado por cepas centenarias de Semillón (plantadas en 1902), elegantes Chardonnay, Cabernet Sauvignon y espumosos método tradicional Cap Classique.
+* **Constantia WO:** La cuna histórica de la viticultura del hemisferio sur (fundada en 1685 por Simon van der Stel) en las laderas de granito del Constantiaberg abiertas a la bahía de False Bay. Hogar inmortal del legendario *Vin de Constance* (vino dulce natural de Moscatel de Frontignan que cautivó a Napoleón y las cortes europeas) y Sauvignon Blanc crujiente y salino.
+* **Robertson WO:** El "Valle de las Viñas y las Rosas" junto al río Breede, caracterizado por el terruño alcalino más singular de Sudáfrica: colinas de caliza pura y arcillas calcáreas rojas. Clima seco con gran amplitud térmica; templo de los Chardonnay minerales, Cap Classique, Syrah y dulces generosos de Moscatel.
+
+---
+
+### 🇦🇺 Australia (100% Censo Fase 3 Nuevo Mundo Completado)
+8 Indicaciones Geográficas (*Geographical Indications - GIs*) de prestigio y jerarquía mundial reconocidas por **Wine Australia**:
+* **Barossa Valley GI (Australia del Sur):** El santuario espiritual del vino australiano y baluarte de viñedos prefiloxéricos del planeta. Arcillas rojas profundas, margas y arenas ferruginosas que atesoran las viñas en pie franco ininterrumpidas más ancianas del mundo de Shiraz, Garnacha y Mourvèdre (plantadas en la década de 1840). Cuna de tintos Shiraz monumentales, ricos en compota de mora, café torrefacto y chocolate negro.
+* **McLaren Vale GI (Australia del Sur):** Fascinante terruño marítimo mediterráneo entre los montes Lofty y el golfo St Vincent. Complejidad geológica asombrosa con más de 40 formaciones diferenciadas a lo largo de 500 millones de años; líder mundial en biodinámica y referente de Shiraz aterciopelado, Garnachas centenarias y variedades ibéricas e italianas.
+* **Coonawarra GI (Australia del Sur):** La mítica franja estrecha en forma de "cigarro" (15 km de longitud por 1-2 km de ancho) de tierra roja (*terra rossa*) sobre roca caliza permeable de Gambier. Brisas antárticas del Océano Austral; reverenciada en todo el mundo por un Cabernet Sauvignon aristocrático, distinguido por casis, cedro, eucalipto/menta y taninos arquitectónicos de grano fino.
+* **Eden Valley GI (Australia del Sur):** Altiplano ventoso y escarpado (400-600 m de altitud) en las sierras de Barossa. Suelos de esquistos rocosos y cuarzo con noches gélidas; canon mundial junto con Clare Valley para el Riesling seco, cítrico, de lima y mineralidad cortante con décadas de guarda, además del etéreo Shiraz de altura (como el mítico Hill of Grace).
+* **Clare Valley GI (Australia del Sur):** Colinas del norte y valles protegidos (Polish Hill River, Watervale) con pizarras, calizas y terra rossa. Marcada amplitud térmica que alumbra la cumbre australiana del Riesling seco, acerado y longevo, así como Cabernet Sauvignon de gran potencia y estructura.
+* **Margaret River GI (Australia Occidental):** Espectacular península costera rodeada por los océanos Índico y Austral. Suelos profundos de gravas ferruginosas con limo y clima marítimo templado por la corriente cálida de Leeuwin; referente internacional para ensamblajes estilo Burdeos de Cabernet Sauvignon-Merlot y majestuosos Chardonnay (clon Gingin) de gran complejidad borgoñona.
+* **Yarra Valley GI (Victoria):** La zona vitícola histórica de clima frío más prestigiosa de Victoria, diferenciada entre el fondo aluvial más templado del Lower Yarra y las empinadas laderas de basaltos volcánicos rojos del Upper Yarra. Celebrada por Pinot Noir etéreo y fragante, Chardonnay de mineralidad cristalina y Syrah especiado.
+* **Hunter Valley GI (Nueva Gales del Sur):** La cuna comercial más antigua de Australia (década de 1820) al abrigo de la cordillera Brokenback. Microclima subtropical-marítimo que engendra un milagro enológico sin parangón: el Hunter Valley Semillon (vendimiado temprano con bajo grado alcohólico y viva acidez, que tras 10 a 20 años en botella sin tocar jamás el roble adquiere notas untuosas de cera de abeja, miel, avellana y crema de limón) y Shiraz especiado con recuerdos terrosos y cuero.
+
+---
+
+### 🇳🇿 Nueva Zelanda (100% Censo Fase 3 Nuevo Mundo Completado)
+4 Indicaciones Geográficas (*Geographical Indications - GIs*) inscritas en el registro oficial de la **Intellectual Property Office of New Zealand (IPONZ)** y amparadas por **New Zealand Winegrowers**:
+* **Marlborough GI (Isla Sur):** El fenómeno enológico global que en los años 80 redefinió el concepto del Sauvignon Blanc. Llanuras aluviales glaciares modeladas por los ríos Wairau y Awatere con suelos pedregosos de gravas de grauvaca (*greywacke*). Máxima insolación diurna, brisas del estrecho y noches frías que imprimen su inconfundible explosión aromática (maracuyá, grosella espinosa, corteza de lima, hierba recién cortada y acidez electrizante), junto a finos Pinot Noir.
+* **Central Otago GI (Isla Sur):** La región vitícola más austral del planeta y el único terruño continental verdadero de Nueva Zelanda, rodeado de sobrecogedores picos alpinos (The Remarkables). Subzonas legendarias (Bannockburn, Gibbston, Bendigo, Wanaka) sobre esquistos micáceos, cuarzo y sedimentos glaciares; consagrada por su Pinot Noir vibrante, carnoso, de frutos negros y tomillo silvestre de portentosa estructura.
+* **Hawke's Bay GI (Isla Norte):** La región vitivinícola más veterana de Nueva Zelanda (fundada en 1851), favorecida por un clima marítimo templado y luminoso. Alberga los célebres Gimblett Gravels y Bridge Pa Triangle—antiguos lechos fluviales de gravas profundas drenantes—donde nacen elegantes ensamblajes bordeleses (Cabernet Sauvignon, Merlot, Malbec), Syrah aromático y voluptuosos Chardonnay.
+* **Martinborough / Wairarapa GI (Isla Norte):** Exclusivo enclave boutique en el extremo sur de la Isla Norte, azotado por los vientos del estrecho de Cook. Terrazas aluviales profundas de gravas; referente de culto para Pinot Noir de estilo borgoñón, complejo, terroso, con cereza negra, sotobosque y taninos sedosos y precisos.

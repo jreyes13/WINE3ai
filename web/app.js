@@ -155,7 +155,10 @@ const COUNTRY_NAMES = {
   'Bosnia y Herzegovina': { es: 'Bosnia y Herzegovina', en: 'Bosnia and Herzegovina', flag: '🇧🇦' },
   'Argentina': { es: 'Argentina', en: 'Argentina', flag: '🇦🇷' },
   'Chile': { es: 'Chile', en: 'Chile', flag: '🇨🇱' },
-  'Estados Unidos': { es: 'Estados Unidos', en: 'United States', flag: '🇺🇸' }
+  'Estados Unidos': { es: 'Estados Unidos', en: 'United States', flag: '🇺🇸' },
+  'Sudáfrica': { es: 'Sudáfrica', en: 'South Africa', flag: '🇿🇦' },
+  'Australia': { es: 'Australia', en: 'Australia', flag: '🇦🇺' },
+  'Nueva Zelanda': { es: 'Nueva Zelanda', en: 'New Zealand', flag: '🇳🇿' }
 };
 
 let currentLang = 'en';
@@ -1099,7 +1102,10 @@ const COUNTRY_CENTERS = {
   'Bosnia y Herzegovina': { center: [17.8, 43.3], zoom: 8.0 },
   'Argentina': { center: [-68.8, -33.5], zoom: 5.5 },
   'Chile': { center: [-71.2, -34.5], zoom: 5.8 },
-  'Estados Unidos': { center: [-119.5, 38.5], zoom: 5.2 }
+  'Estados Unidos': { center: [-119.5, 38.5], zoom: 5.2 },
+  'Sudáfrica': { center: [19.5, -33.8], zoom: 7.5 },
+  'Australia': { center: [136.0, -32.5], zoom: 4.8 },
+  'Nueva Zelanda': { center: [173.5, -41.5], zoom: 5.6 }
 };
 
 // Event Listeners
