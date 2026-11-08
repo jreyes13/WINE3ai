@@ -1,19 +1,19 @@
 /* WINE³ai — World Wide Wine: Grape Varieties Explorer Stylesheet */
 
 :root {
-  --primary: #7C2D12;
-  --primary-hover: #9A3412;
+  --primary: #be123c;
+  --primary-hover: #e11d48;
   --primary-light: #FFEDD5;
   --accent-red: #DC2626;
   --accent-white: #D97706;
   --accent-sparkling: #EAB308;
   --accent-fortified: #854D0E;
   --accent-blue: #2563EB;
-  --bg-main: #F8FAFC;
-  --panel-bg: rgba(255, 255, 255, 0.98);
-  --panel-border: #E2E8F0;
-  --text-main: #0F172A;
-  --text-muted: #64748B;
+  --bg-main: #07090e;
+  --panel-bg: rgba(14, 18, 28, 0.95);
+  --panel-border: rgba(190, 18, 60, 0.25);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
@@ -26,7 +26,7 @@
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   background-color: var(--bg-main);
   color: var(--text-main);
   line-height: 1.5;
@@ -173,8 +173,8 @@ body {
   display: flex;
   align-items: center;
   gap: 0.3rem;
-  background: #F1F5F9;
-  border: 1px solid #CBD5E1;
+  background: #0f172a;
+  border: 1px solid #1e293b;
   border-radius: 6px;
   padding: 0.25rem 0.5rem;
 }
@@ -190,8 +190,8 @@ body {
 }
 
 .lang-btn {
-  background: #F1F5F9;
-  border: 1px solid #CBD5E1;
+  background: #0f172a;
+  border: 1px solid #1e293b;
   border-radius: 6px;
   padding: 0.35rem 0.65rem;
   font-size: 0.75rem;
@@ -220,7 +220,7 @@ body {
 
 /* Controls Toolbar */
 .controls-toolbar {
-  background: #FFFFFF;
+  background: #0d121e;
   border: 1px solid var(--panel-border);
   border-radius: 12px;
   padding: 1.25rem;
@@ -265,10 +265,10 @@ body {
 
 .segmented-control {
   display: flex;
-  background: #F1F5F9;
+  background: #0f172a;
   border-radius: 8px;
   padding: 0.2rem;
-  border: 1px solid #E2E8F0;
+  border: 1px solid #1e293b;
 }
 
 .seg-btn {
@@ -285,7 +285,7 @@ body {
 }
 
 .seg-btn.active {
-  background: #FFFFFF;
+  background: #0d121e;
   color: var(--primary);
   box-shadow: var(--shadow-sm);
 }
@@ -294,7 +294,7 @@ body {
   padding: 0.5rem 0.75rem;
   border: 1px solid var(--panel-border);
   border-radius: 8px;
-  background: #FFFFFF;
+  background: #0d121e;
   font-size: 0.825rem;
   color: var(--text-main);
   font-weight: 500;
@@ -343,7 +343,7 @@ body {
   top: calc(100% + 4px);
   left: 0;
   right: 0;
-  background: #FFFFFF;
+  background: #0d121e;
   border: 1px solid var(--panel-border);
   border-radius: 8px;
   box-shadow: var(--shadow-lg);
@@ -364,7 +364,7 @@ body {
   align-items: center;
   justify-content: space-between;
   font-size: 0.85rem;
-  border-bottom: 1px solid #F1F5F9;
+  border-bottom: 1px solid #1e293b;
 }
 
 .autocomplete-item:hover, .autocomplete-item.highlighted {
@@ -378,7 +378,7 @@ body {
   flex-direction: column;
   gap: 0.75rem;
   padding-top: 0.85rem;
-  border-top: 1px solid #F1F5F9;
+  border-top: 1px solid #1e293b;
 }
 
 .matrix-header {
@@ -410,11 +410,11 @@ body {
 .matrix-counter {
   font-size: 0.75rem;
   font-weight: 600;
-  color: #475569;
-  background: #F1F5F9;
+  color: #94a3b8;
+  background: #0f172a;
   padding: 0.2rem 0.65rem;
   border-radius: 12px;
-  border: 1px solid #E2E8F0;
+  border: 1px solid #1e293b;
 }
 
 .matrix-actions {
@@ -424,8 +424,8 @@ body {
 }
 
 .matrix-sort-select {
-  background: #F8FAFC;
-  border: 1px solid #E2E8F0;
+  background: #0a0d14;
+  border: 1px solid #1e293b;
   border-radius: 6px;
   padding: 0.25rem 0.5rem;
   font-size: 0.75rem;
@@ -438,12 +438,12 @@ body {
 
 .matrix-sort-select:hover {
   background: #EDF2F7;
-  border-color: #CBD5E1;
+  border-color: #1e293b;
 }
 
 .btn-matrix-toggle {
-  background: #F8FAFC;
-  border: 1px solid #E2E8F0;
+  background: #0a0d14;
+  border: 1px solid #1e293b;
   border-radius: 6px;
   padding: 0.25rem 0.6rem;
   font-size: 0.75rem;
@@ -456,7 +456,7 @@ body {
 .btn-matrix-toggle:hover {
   background: #EDF2F7;
   color: var(--text-main);
-  border-color: #CBD5E1;
+  border-color: #1e293b;
 }
 
 .variety-matrix-grid {
@@ -475,8 +475,8 @@ body {
 }
 
 .variety-card {
-  background: #F8FAFC;
-  border: 1px solid #E2E8F0;
+  background: #0a0d14;
+  border: 1px solid #1e293b;
   border-radius: 8px;
   padding: 0.5rem 0.65rem;
   display: flex;
@@ -489,8 +489,8 @@ body {
 }
 
 .variety-card:hover {
-  border-color: #CBD5E1;
-  background: #F1F5F9;
+  border-color: #1e293b;
+  background: #0f172a;
   transform: translateY(-1px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
@@ -552,7 +552,7 @@ body {
 
 .vcard-regions {
   font-weight: 600;
-  color: #475569;
+  color: #94a3b8;
 }
 
 .vcard-flags {
@@ -586,7 +586,7 @@ body {
 
 /* Hero Banner Card */
 .grape-hero-card {
-  background: #FFFFFF;
+  background: #0d121e;
   border: 1px solid var(--panel-border);
   border-radius: 12px;
   padding: 1.5rem;
@@ -647,8 +647,8 @@ body {
 }
 
 .stat-box {
-  background: #F8FAFC;
-  border: 1px solid #E2E8F0;
+  background: #0a0d14;
+  border: 1px solid #1e293b;
   border-radius: 8px;
   padding: 0.65rem 1rem;
   text-align: center;
@@ -672,7 +672,7 @@ body {
 
 .hero-description {
   font-size: 0.95rem;
-  color: #334155;
+  color: #cbd5e1;
   line-height: 1.6;
 }
 
@@ -683,7 +683,7 @@ body {
   flex-wrap: wrap;
   margin-top: 0.5rem;
   padding-top: 0.75rem;
-  border-top: 1px solid #F1F5F9;
+  border-top: 1px solid #1e293b;
 }
 
 .synonyms-title {
@@ -699,13 +699,13 @@ body {
 }
 
 .syn-chip {
-  background: #F1F5F9;
-  border: 1px solid #E2E8F0;
+  background: #0f172a;
+  border: 1px solid #1e293b;
   border-radius: 4px;
   padding: 0.15rem 0.5rem;
   font-size: 0.75rem;
   font-weight: 500;
-  color: #475569;
+  color: #94a3b8;
 }
 
 /* Analytics Grid & Charts */
@@ -716,7 +716,7 @@ body {
 }
 
 .chart-card {
-  background: #FFFFFF;
+  background: #0d121e;
   border: 1px solid var(--panel-border);
   border-radius: 12px;
   padding: 1.25rem;
@@ -744,8 +744,8 @@ body {
 }
 
 .btn-chart-reset {
-  background: #F1F5F9;
-  border: 1px solid #CBD5E1;
+  background: #0f172a;
+  border: 1px solid #1e293b;
   border-radius: 6px;
   padding: 0.25rem 0.5rem;
   font-size: 0.7rem;
@@ -839,7 +839,7 @@ body {
 }
 
 .legend-row:hover, .legend-row.active {
-  background: #F1F5F9;
+  background: #0f172a;
 }
 
 .legend-left {
@@ -892,7 +892,7 @@ body {
 
 .multi-progress-bar {
   height: 14px;
-  background: #E2E8F0;
+  background: #1e293b;
   border-radius: 7px;
   overflow: hidden;
   display: flex;
@@ -966,7 +966,7 @@ body {
 
 /* Map Section Card */
 .map-section-card {
-  background: #FFFFFF;
+  background: #0d121e;
   border: 1px solid var(--panel-border);
   border-radius: 12px;
   overflow: hidden;
@@ -1171,7 +1171,7 @@ body {
 
 /* Regions Directory Table */
 .regions-table-section {
-  background: #FFFFFF;
+  background: #0d121e;
   border: 1px solid var(--panel-border);
   border-radius: 12px;
   padding: 1.25rem;
@@ -1204,8 +1204,8 @@ body {
 }
 
 .table-counter-badge {
-  background: #F1F5F9;
-  border: 1px solid #CBD5E1;
+  background: #0f172a;
+  border: 1px solid #1e293b;
   border-radius: 6px;
   padding: 0.35rem 0.6rem;
   font-size: 0.75rem;
@@ -1226,7 +1226,7 @@ body {
 }
 
 .regions-table th {
-  background: #F8FAFC;
+  background: #0a0d14;
   padding: 0.75rem 1rem;
   font-weight: 700;
   color: var(--text-muted);
@@ -1239,12 +1239,12 @@ body {
 
 .regions-table td {
   padding: 0.75rem 1rem;
-  border-bottom: 1px solid #F1F5F9;
+  border-bottom: 1px solid #1e293b;
   vertical-align: middle;
 }
 
 .regions-table tr:hover td {
-  background: #F8FAFC;
+  background: #0a0d14;
 }
 
 .td-cat-badge {
@@ -1264,8 +1264,8 @@ body {
   border-radius: 4px;
   font-size: 0.75rem;
   font-weight: 600;
-  background: #F1F5F9;
-  color: #334155;
+  background: #0f172a;
+  color: #cbd5e1;
   white-space: nowrap;
 }
 
@@ -1290,8 +1290,8 @@ body {
 .btn-table-action {
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
-  border: 1px solid #CBD5E1;
-  background: #FFFFFF;
+  border: 1px solid #1e293b;
+  background: #0d121e;
   font-size: 0.75rem;
   font-weight: 600;
   color: var(--text-main);
@@ -1309,7 +1309,7 @@ body {
 /* Footer */
 .app-footer {
   margin-top: auto;
-  background: #FFFFFF;
+  background: #0d121e;
   border-top: 1px solid var(--panel-border);
   padding: 1.25rem 1.5rem;
   font-size: 0.8rem;

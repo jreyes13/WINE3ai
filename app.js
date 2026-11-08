@@ -341,7 +341,7 @@ const BASEMAP_STYLES = {
 // Initialize MapLibre
 const map = new maplibregl.Map({
   container: 'map',
-  style: BASEMAP_STYLES.voyager,
+  style: BASEMAP_STYLES.dark,
   center: [2.5, 43.5],
   zoom: 5.0,
   preserveDrawingBuffer: true

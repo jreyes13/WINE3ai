@@ -297,7 +297,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 function initMap() {
   map = new maplibregl.Map({
     container: 'grape-map',
-    style: BASEMAP_STYLES.voyager,
+    style: BASEMAP_STYLES.dark,
     center: [10.0, 47.0],
     zoom: 4.2
   });
