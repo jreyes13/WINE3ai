@@ -247,3 +247,28 @@ Las 9 regiones vitivinícolas oficiales e históricas de la República de Turqu�
 * **Valle de Tokat (Transición Mar Negro):** Valles fluviales a orillas del río Yeşilırmak y los Montes Pónticos. Hogar exclusivo de la reina blanca turca *Narince* ("La Delicada"), célebre por su equilibrio cítrico, flor de tilo y aptitud para la crianza en roble.
 * **Montes Tauro - Elmalı (Mediterráneo Altiplano):** Viñedos de extrema altitud a más de 1.100 m en la meseta de Elmalı (Montes Tauro de Licia). Fuerte oscilación térmica que favorece el rescate de uvas ancestrales como la tinta *Acıkara* y la *Merzifon Karası*.
 * 👉 *Registro Detallado:* [Registro de Turquía](TURKEY/REGISTRO_REGIONS.md)
+
+---
+
+### 🇦🇷 Argentina (100% Censo Fase 1 Nuevo Mundo Completado)
+7 Regiones e Indicaciones Geográficas emblemáticas bajo la tutela del **Instituto Nacional de Vitivinicultura (INV)** y los decretos de denominación de origen:
+* **Valle de Uco IG / DOC:** Terruño andino de extrema altitud (900 m - 1.500 m) que engloba Tupungato, Tunuyán y San Carlos, con microterruños icónicos como Gualtallary y Paraje Altamira. Suelos aluviales pedregosos con carbonato cálcico, cuna de Malbec y Cabernet Franc de fama mundial.
+* **Luján de Cuyo DOC / IG:** Primera DOC vitícola de América Latina (Las Compuertas, Vistalba, Agrelo, Perdriel). Cuna histórica del Malbec argentino junto al río Mendoza sobre suelos franco-limosos con gravas.
+* **Maipú IG:** Histórica Primera Zona mendocina (Barrancas, Lunlunta, Russell). Terruño cálido de gravas profundas, famoso por Malbecs corpulentos y viñedos centenarios de Bonarda.
+* **San Rafael DOC / IG:** Oasis vitícola del sur mendocino regado por los ríos Diamante y Atuel (Rama Caída, Las Paredes), con frescura continental y cepas Chenin Blanc y Bonarda.
+* **Valles Calchaquíes IG (Cafayate):** Viñedos extremos de alta montaña en Salta, Catamarca y Tucumán (1.700 m - 3.100 m). Radiación solar intensa, cuna indiscutible del aromático Torrontés Riojano y de tintos estructurados de Tannat y Malbec.
+* **Valle de Pedernal IG:** Valle precordillerano aislado de San Juan a 1.400 m de altitud, con singulares suelos de sílex (pedernal) y caliza marina, origen de Malbec y Syrah minerales de gran tensión y frescura.
+* **Patagonia IG:** El extremo austral (Alto Valle del Río Negro, San Patricio del Chañar en Neuquén). Vientos constantes, noches frías y gran pureza para Pinot Noir, Merlot, Malbec y Semillón.
+
+---
+
+### 🇨🇱 Chile (100% Censo Fase 1 Nuevo Mundo Completado)
+8 Denominaciones de Origen oficiales del Decreto Supremo de Zonificación Vitícola amparadas por el **Servicio Agrícola y Ganadero (SAG)**:
+* **Valle del Maipo D.O.:** Cuna histórica del Cabernet Sauvignon chileno (Maipo Alto, Pirque, Puente Alto). Terrazas aluviales pedregosas del río Maipo y brisas nocturnas andinas.
+* **Valle de Colchagua D.O.:** Renombre internacional por grandes tintos en Apalta, Marchigüe y Peralillo; microclimas mediterráneos abrigados para Carmenère, Syrah y Cabernet Sauvignon.
+* **Valle de Casablanca D.O.:** Pionero del clima frío costero chileno. Nieblas matutinas del océano Pacífico (*camanchaca*) y granito meteorizado; referente mundial en Sauvignon Blanc y Pinot Noir.
+* **Valle de Leyda D.O. (San Antonio):** Colinas a escasos kilómetros del Pacífico frío (Corriente de Humboldt). Vinos de acusada salinidad, acidez cortante y mineralidad en Sauvignon Blanc, Chardonnay y Syrah costero.
+* **Valle de Cachapoal D.O.:** Hogar de Peumo, el terruño de referencia mundial para la variedad Carmenère, sobre arcillas profundas a orillas del río Cachapoal.
+* **Valle de Aconcagua D.O.:** Valle soleado a los pies del monte Aconcagua; terrazas de Panquehue y Los Andes produciendo tintos concentrados y equilibrados.
+* **Valle del Itata D.O.:** Cuna de la viticultura chilena desde el siglo XVI. Paisaje de secano interior con viñedos centenarios en pie franco de las cepas patrimoniales País y Cinsault.
+* **Valle del Bío-Bío D.O.:** Terruño meridional fresco con alta pluviometría y suelos volcánicos (*trumao*); vinos vibrantes de Pinot Noir, Riesling y Chardonnay.

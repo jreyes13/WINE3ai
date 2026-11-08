@@ -247,3 +247,28 @@ All 9 official viticultural regions and terroirs of the Republic of Turkey (*Tü
 * **Valle de Tokat (Black Sea Transition):** Protected river valleys along the Yeşilırmak River and Pontic Mountains. Exclusive homeland of Turkey's noble white *Narince* ("The Delicate"), praised for mineral tension, citrus blossom, and oak-aging potential.
 * **Montes Tauro - Elmalı (Mediterranean Highlands):** Extreme-altitude vineyards over 1,100 m in the Elmalı plateau of Lycia. Giant day/night thermal shifts foster the revival of ancestral pre-phylloxeric grapes such as *Acıkara* and *Merzifon Karası*.
 * 👉 *Detailed Registry:* [Turkey Regions Registry](TURKEY/REGISTRO_REGIONS.md)
+
+---
+
+### 🇦🇷 Argentina (100% Phase 1 New World Census Completed)
+7 Iconic Appellations and Geographical Indications regulated by the **Instituto Nacional de Vitivinicultura (INV)**:
+* **Valle de Uco IG / DOC:** Extreme high-altitude Andean terroir (900 m - 1,500 m) encompassing Tupungato, Tunuyán, and San Carlos, including iconic sub-zones Gualtallary and Paraje Altamira. Stony alluvial soils rich in calcium carbonate deposits, producing internationally acclaimed Malbec and Cabernet Franc.
+* **Luján de Cuyo DOC / IG:** The first wine DOC in South America (Las Compuertas, Vistalba, Agrelo, Perdriel). Historic cradle of Argentine Malbec along the alluvial loam terraces of the Mendoza River.
+* **Maipú IG:** Historic Primera Zona of Mendoza (Barrancas, Lunlunta, Russell). Sun-drenched gravel beds famous for ripe, velvety, concentrated Malbec and old-vine heritage Bonarda.
+* **San Rafael DOC / IG:** Southern Mendoza oasis nourished by the Atuel and Diamante rivers (Rama Caída, Las Paredes), delivering continental freshness for Chenin Blanc, Bonarda, and Malbec.
+* **Valles Calchaquíes IG (Cafayate):** Dramatic high-altitude vineyards in Salta, Catamarca, and Tucumán (1,700 m - 3,100 m). High UV radiation and low humidity, the undisputed golden cradle for floral Torrontés Riojano and deep, spicy Tannat and Malbec.
+* **Valle de Pedernal IG:** Isolated pre-cordillera valley in San Juan at 1,400 m with rare marine limestone and flint (*pedernal*) soils; sharp acidity, chalky tannins, and intense minerality in Malbec and Syrah.
+* **Patagonia IG:** The cool southern frontier (Alto Valle del Río Negro and San Patricio del Chañar in Neuquén). Constant dry winds, long sun hours, and wide thermal amplitude; benchmark for Pinot Noir, Merlot, and mineral whites.
+
+---
+
+### 🇨🇱 Chile (100% Phase 1 New World Census Completed)
+8 Official Denominations of Origin under the Supreme Viticultural Zoning Decree administered by the **Servicio Agrícola y Ganadero (SAG)**:
+* **Valle del Maipo D.O.:** The historical heart of Chilean Cabernet Sauvignon (Maipo Alto, Pirque, Puente Alto). Stony alluvial terraces along the Maipo River cooled by night breezes descending from the Andes.
+* **Valle de Colchagua D.O.:** Renowned worldwide for powerful, complex red wines in Apalta, Marchigüe, and Peralillo; warm Mediterranean amphitheaters for Carmenère, Syrah, and Cabernet Sauvignon.
+* **Valle de Casablanca D.O.:** Pioneer cool-climate coastal valley in Chile. Morning Pacific fog (*camanchaca*) and decomposed granitic soils; global benchmark for crisp Sauvignon Blanc and elegant Pinot Noir.
+* **Valle de Leyda D.O. (San Antonio):** Rolling hills just 4-12 km from the cold Pacific Ocean (Humboldt Current). Saline, laser-focused Sauvignon Blanc, Chardonnay, and peppery cool-climate Syrah.
+* **Valle de Cachapoal D.O.:** Home to Peumo, the world's benchmark terroir for Carmenère, situated along the Cachapoal River with deep moisture-retaining alluvial clays.
+* **Valle de Aconcagua D.O.:** Sun-drenched valley beneath Mount Aconcagua; warm gravel terraces in Panquehue and Los Andes crafting concentrated, structured red wines.
+* **Valle del Itata D.O.:** Cradle of Chilean viticulture dating to 1551. Dry-farmed bush vines on decomposed granitic and quartz hillsides, home to heritage old-vine País and Cinsault.
+* **Valle del Bío-Bío D.O.:** Southern cool-climate region with high rainfall and red volcanic clay (*trumao*); exciting origin for vibrant Pinot Noir, Riesling, and Chardonnay.

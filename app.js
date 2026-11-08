@@ -152,7 +152,9 @@ const COUNTRY_NAMES = {
   'Serbia': { es: 'Serbia', en: 'Serbia', flag: '🇷🇸' },
   'Macedonia del Norte': { es: 'Macedonia del Norte', en: 'North Macedonia', flag: '🇲🇰' },
   'Montenegro': { es: 'Montenegro', en: 'Montenegro', flag: '🇲🇪' },
-  'Bosnia y Herzegovina': { es: 'Bosnia y Herzegovina', en: 'Bosnia and Herzegovina', flag: '🇧🇦' }
+  'Bosnia y Herzegovina': { es: 'Bosnia y Herzegovina', en: 'Bosnia and Herzegovina', flag: '🇧🇦' },
+  'Argentina': { es: 'Argentina', en: 'Argentina', flag: '🇦🇷' },
+  'Chile': { es: 'Chile', en: 'Chile', flag: '🇨🇱' }
 };
 
 let currentLang = 'en';
@@ -1093,7 +1095,9 @@ const COUNTRY_CENTERS = {
   'Serbia': { center: [20.9, 44.2], zoom: 7.2 },
   'Macedonia del Norte': { center: [22.0, 41.5], zoom: 7.8 },
   'Montenegro': { center: [19.2, 42.4], zoom: 8.5 },
-  'Bosnia y Herzegovina': { center: [17.8, 43.3], zoom: 8.0 }
+  'Bosnia y Herzegovina': { center: [17.8, 43.3], zoom: 8.0 },
+  'Argentina': { center: [-68.8, -33.5], zoom: 5.5 },
+  'Chile': { center: [-71.2, -34.5], zoom: 5.8 }
 };
 
 // Event Listeners

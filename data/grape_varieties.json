@@ -60856,11 +60856,275 @@
     "id": "malbec",
     "name": "Malbec",
     "color": "red",
-    "origin": "España",
-    "synonyms": [],
-    "desc_en": "Distinguished red grape variety authorized in official Protected Designations of Origin across España and Europe.",
-    "desc_es": "Variedad de uva tinta autorizada en las Denominaciones de Origen oficiales de España y Europa.",
+    "origin": "Argentina / France (Cahors)",
+    "synonyms": [
+      "Côt",
+      "Auxerrois",
+      "Pressac"
+    ],
+    "desc_en": "The undisputed red superstar of Argentina and historic black grape of Cahors (France). In the high altitudes of Mendoza, Uco Valley, and Cafayate, Malbec reaches unequaled heights with lush black fruits, violets, cocoa, velvety round tannins, and limestone-driven mineral elegance.",
+    "desc_es": "La superestrella tinta indiscutible de Argentina y uva histórica de Cahors (Francia). En las alturas andinas de Mendoza, Valle de Uco y Cafayate, el Malbec alcanza cumbres insuperables de mora, violetas, cacao, taninos aterciopelados y elegancia mineral calcárea.",
     "regions": [
+      {
+        "id": "arg-ig-valle-de-uco",
+        "name": "Valle de Uco (Tupungato, Tunuyán, San Carlos)",
+        "country": "Argentina",
+        "country_flag": "🇦🇷",
+        "country_en": "Argentina",
+        "country_es": "Argentina",
+        "category": "IG / DOC",
+        "region": "Mendoza (Valle de Uco)",
+        "color": "#722F37",
+        "pliego": "DOWNs/DOCs/ARGENTINA/Valle_de_Uco_IG.pdf",
+        "centroid": [
+          -69.05,
+          -33.65
+        ],
+        "pct": null,
+        "role": "Flagship High-Altitude Variety",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "alpine",
+        "climate_icon": "🏔️",
+        "climate_name_en": "High Altitude Continental / Alpine",
+        "climate_name_es": "Continental de Altura / Alpino Andino"
+      },
+      {
+        "id": "arg-doc-lujan-de-cuyo",
+        "name": "Luján de Cuyo",
+        "country": "Argentina",
+        "country_flag": "🇦🇷",
+        "country_en": "Argentina",
+        "country_es": "Argentina",
+        "category": "DOC / IG",
+        "region": "Mendoza (Primera Zona)",
+        "color": "#991B1B",
+        "pliego": "DOWNs/DOCs/ARGENTINA/Lujan_de_Cuyo_DOC.pdf",
+        "centroid": [
+          -68.85,
+          -33.08
+        ],
+        "pct": null,
+        "role": "Historic Flagship Variety (DOC)",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "mediterranean_continental",
+        "climate_icon": "🏜️",
+        "climate_name_en": "Semi-Arid Continental",
+        "climate_name_es": "Continental Semiárido de Meseta"
+      },
+      {
+        "id": "arg-ig-maipu",
+        "name": "Maipú",
+        "country": "Argentina",
+        "country_flag": "🇦🇷",
+        "country_en": "Argentina",
+        "country_es": "Argentina",
+        "category": "IG",
+        "region": "Mendoza (Primera Zona)",
+        "color": "#B45309",
+        "pliego": "DOWNs/DOCs/ARGENTINA/Maipu_IG.pdf",
+        "centroid": [
+          -68.7,
+          -33.02
+        ],
+        "pct": null,
+        "role": "Primary Red Variety",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "mediterranean_continental",
+        "climate_icon": "🏜️",
+        "climate_name_en": "Semi-Arid Continental",
+        "climate_name_es": "Continental Semiárido"
+      },
+      {
+        "id": "arg-ig-san-rafael",
+        "name": "San Rafael",
+        "country": "Argentina",
+        "country_flag": "🇦🇷",
+        "country_en": "Argentina",
+        "country_es": "Argentina",
+        "category": "DOC / IG",
+        "region": "Mendoza Sur",
+        "color": "#D97706",
+        "pliego": "DOWNs/DOCs/ARGENTINA/San_Rafael_DOC.pdf",
+        "centroid": [
+          -68.35,
+          -34.6
+        ],
+        "pct": null,
+        "role": "Key Red Variety",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "mediterranean_continental",
+        "climate_icon": "🏜️",
+        "climate_name_en": "Continental Oasis",
+        "climate_name_es": "Continental de Oasis Sur"
+      },
+      {
+        "id": "arg-ig-valles-calchaquies",
+        "name": "Valles Calchaquíes (Cafayate)",
+        "country": "Argentina",
+        "country_flag": "🇦🇷",
+        "country_en": "Argentina",
+        "country_es": "Argentina",
+        "category": "IG",
+        "region": "Noroeste Argentino (Salta, Catamarca, Tucumán)",
+        "color": "#C026D3",
+        "pliego": "DOWNs/DOCs/ARGENTINA/Valles_Calchaquies_IG.pdf",
+        "centroid": [
+          -65.95,
+          -25.95
+        ],
+        "pct": null,
+        "role": "Extreme Altitude Flagship",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "alpine",
+        "climate_icon": "🏔️",
+        "climate_name_en": "Extreme High-Altitude Alpine Semi-Arid",
+        "climate_name_es": "Alpino Semiárido de Extrema Altitud"
+      },
+      {
+        "id": "arg-ig-valle-de-pedernal",
+        "name": "Valle de Pedernal",
+        "country": "Argentina",
+        "country_flag": "🇦🇷",
+        "country_en": "Argentina",
+        "country_es": "Argentina",
+        "category": "IG",
+        "region": "San Juan (Precordillera)",
+        "color": "#4F46E5",
+        "pliego": "DOWNs/DOCs/ARGENTINA/Valle_de_Pedernal_IG.pdf",
+        "centroid": [
+          -68.72,
+          -31.95
+        ],
+        "pct": null,
+        "role": "Limestone Terroir Benchmark",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "alpine",
+        "climate_icon": "🏔️",
+        "climate_name_en": "High Mountain Cold Continental",
+        "climate_name_es": "Continental Frío de Alta Montaña"
+      },
+      {
+        "id": "arg-ig-patagonia",
+        "name": "Patagonia (Alto Valle del Río Negro y Neuquén)",
+        "country": "Argentina",
+        "country_flag": "🇦🇷",
+        "country_en": "Argentina",
+        "country_es": "Argentina",
+        "category": "IG",
+        "region": "Patagonia (Río Negro, Neuquén, La Pampa, Chubut)",
+        "color": "#0284C7",
+        "pliego": "DOWNs/DOCs/ARGENTINA/Patagonia_IG.pdf",
+        "centroid": [
+          -67.9,
+          -38.95
+        ],
+        "pct": null,
+        "role": "Cool-Climate Red Variety",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "continental",
+        "climate_icon": "❄️",
+        "climate_name_en": "Cool Windy Continental",
+        "climate_name_es": "Continental Austral Ventoso"
+      },
+      {
+        "id": "chl-do-valle-de-colchagua",
+        "name": "Valle de Colchagua",
+        "country": "Chile",
+        "country_flag": "🇨🇱",
+        "country_en": "Chile",
+        "country_es": "Chile",
+        "category": "D.O.",
+        "region": "Región del Libertador Bernardo O'Higgins (Rapel)",
+        "color": "#9F1239",
+        "pliego": "DOWNs/DOCs/CHILE/Valle_de_Colchagua_DO.pdf",
+        "centroid": [
+          -71.35,
+          -34.58
+        ],
+        "pct": null,
+        "role": "Premium Red Variety",
+        "blend_type": "blend",
+        "styles": [
+          "still"
+        ],
+        "climate": "mediterranean_coastal",
+        "climate_icon": "☀️",
+        "climate_name_en": "Warm Mediterranean with Coastal Influx",
+        "climate_name_es": "Mediterráneo Cálido con Influencia Marina"
+      },
+      {
+        "id": "chl-do-valle-del-itata",
+        "name": "Valle del Itata",
+        "country": "Chile",
+        "country_flag": "🇨🇱",
+        "country_en": "Chile",
+        "country_es": "Chile",
+        "category": "D.O.",
+        "region": "Región de Ñuble (Secano Interior)",
+        "color": "#047857",
+        "pliego": "DOWNs/DOCs/CHILE/Valle_del_Itata_DO.pdf",
+        "centroid": [
+          -72.45,
+          -36.6
+        ],
+        "pct": null,
+        "role": "Heritage Old-Vine Variety",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "mediterranean_coastal",
+        "climate_icon": "☀️",
+        "climate_name_en": "Sub-Humid Mediterranean with Coastal Influence",
+        "climate_name_es": "Mediterráneo Subhúmedo Costero"
+      },
+      {
+        "id": "chl-do-valle-del-bio-bio",
+        "name": "Valle del Bío-Bío",
+        "country": "Chile",
+        "country_flag": "🇨🇱",
+        "country_en": "Chile",
+        "country_es": "Chile",
+        "category": "D.O.",
+        "region": "Región del Bío-Bío (Yumbel, Mulchén)",
+        "color": "#059669",
+        "pliego": "DOWNs/DOCs/CHILE/Valle_del_Bio_Bio_DO.pdf",
+        "centroid": [
+          -72.5,
+          -37.45
+        ],
+        "pct": null,
+        "role": "Cool-Climate Variety",
+        "blend_type": "blend",
+        "styles": [
+          "still"
+        ],
+        "climate": "continental",
+        "climate_icon": "❄️",
+        "climate_name_en": "Cool Temperate Southern Maritime",
+        "climate_name_es": "Templado Frío Austral"
+      },
       {
         "id": "do_54",
         "name": "Ribera del Duero",
@@ -61070,16 +61334,32 @@
         "climate_name_es": "Continental Templado / Frío"
       }
     ],
-    "total_regions": 8,
-    "countries_count": 5,
+    "total_regions": 18,
+    "countries_count": 7,
     "countries_breakdown": [
+      {
+        "country": "Argentina",
+        "country_en": "Argentina",
+        "country_es": "Argentina",
+        "flag": "🇦🇷",
+        "count": 7,
+        "percentage": 38.9
+      },
       {
         "country": "Francia",
         "country_en": "France",
         "country_es": "Francia",
         "flag": "🇫🇷",
         "count": 4,
-        "percentage": 50.0
+        "percentage": 22.2
+      },
+      {
+        "country": "Chile",
+        "country_en": "Chile",
+        "country_es": "Chile",
+        "flag": "🇨🇱",
+        "count": 3,
+        "percentage": 16.7
       },
       {
         "country": "España",
@@ -61087,7 +61367,7 @@
         "country_es": "España",
         "flag": "🇪🇸",
         "count": 1,
-        "percentage": 12.5
+        "percentage": 5.6
       },
       {
         "country": "Moldavia",
@@ -61095,7 +61375,7 @@
         "country_es": "Moldavia",
         "flag": "🇲🇩",
         "count": 1,
-        "percentage": 12.5
+        "percentage": 5.6
       },
       {
         "country": "Armenia",
@@ -61103,7 +61383,7 @@
         "country_es": "Armenia",
         "flag": "🇦🇲",
         "count": 1,
-        "percentage": 12.5
+        "percentage": 5.6
       },
       {
         "country": "Turquía",
@@ -61111,19 +61391,19 @@
         "country_es": "Turquía",
         "flag": "🇹🇷",
         "count": 1,
-        "percentage": 12.5
+        "percentage": 5.6
       }
     ],
     "styles_breakdown": {
-      "still": 8,
+      "still": 18,
       "sparkling": 0,
       "fortified_sweet": 0
     },
     "blend_breakdown": {
-      "monovarietal": 0,
-      "blend": 8,
-      "monovarietal_pct": 0.0,
-      "blend_pct": 100.0
+      "monovarietal": 8,
+      "blend": 10,
+      "monovarietal_pct": 44.4,
+      "blend_pct": 55.6
     }
   },
   {
@@ -111021,13 +111301,120 @@
   },
   {
     "id": "carmenere",
-    "name": "Carmenere",
+    "name": "Carmenère",
     "color": "red",
-    "origin": "Italia",
-    "synonyms": [],
-    "desc_en": "Distinguished red grape variety authorized in official Protected Designations of Origin across Italia and Europe.",
-    "desc_es": "Variedad de uva tinta autorizada en las Denominaciones de Origen oficiales de Italia y Europa.",
+    "origin": "Chile / France (Bordeaux)",
+    "synonyms": [
+      "Grande Vidure",
+      "Cabernet Gernischt"
+    ],
+    "desc_en": "Chile's signature flagship red, famously rediscovered in 1994 in the Maipo and Rapel valleys after vanishing from European vineyards post-phylloxera. Revered for deep velvety texture, ripe black plum, roasted red pepper, tobacco, and cocoa notes, reaching world supremacy in Cachapoal (Peumo) and Colchagua (Apalta).",
+    "desc_es": "La uva tinta insignia de Chile, célebremente redescubierta en 1994 en los valles de Maipo y Rapel tras desaparecer de Europa postfiloxera. Destaca por su textura aterciopelada, ciruela negra, pimiento rojo asado, tabaco dulce y taninos de cacao, con supremacía mundial en Cachapoal (Peumo) y Colchagua (Apalta).",
     "regions": [
+      {
+        "id": "chl-do-valle-de-cachapoal",
+        "name": "Valle de Cachapoal",
+        "country": "Chile",
+        "country_flag": "🇨🇱",
+        "country_en": "Chile",
+        "country_es": "Chile",
+        "category": "D.O.",
+        "region": "Región del Libertador Bernardo O'Higgins (Rapel)",
+        "color": "#991B1B",
+        "pliego": "DOWNs/DOCs/CHILE/Valle_de_Cachapoal_DO.pdf",
+        "centroid": [
+          -71.05,
+          -34.25
+        ],
+        "pct": null,
+        "role": "World Benchmark Variety (Peumo)",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "mediterranean_continental",
+        "climate_icon": "🏜️",
+        "climate_name_en": "Sheltered Mediterranean",
+        "climate_name_es": "Mediterráneo Abrigado"
+      },
+      {
+        "id": "chl-do-valle-de-colchagua",
+        "name": "Valle de Colchagua",
+        "country": "Chile",
+        "country_flag": "🇨🇱",
+        "country_en": "Chile",
+        "country_es": "Chile",
+        "category": "D.O.",
+        "region": "Región del Libertador Bernardo O'Higgins (Rapel)",
+        "color": "#9F1239",
+        "pliego": "DOWNs/DOCs/CHILE/Valle_de_Colchagua_DO.pdf",
+        "centroid": [
+          -71.35,
+          -34.58
+        ],
+        "pct": null,
+        "role": "Flagship Cult Variety (Apalta)",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "mediterranean_coastal",
+        "climate_icon": "☀️",
+        "climate_name_en": "Warm Mediterranean with Coastal Influx",
+        "climate_name_es": "Mediterráneo Cálido con Influencia Marina"
+      },
+      {
+        "id": "chl-do-valle-del-maipo",
+        "name": "Valle del Maipo",
+        "country": "Chile",
+        "country_flag": "🇨🇱",
+        "country_en": "Chile",
+        "country_es": "Chile",
+        "category": "D.O.",
+        "region": "Región Metropolitana (Santiago, Maipo Alto)",
+        "color": "#881337",
+        "pliego": "DOWNs/DOCs/CHILE/Valle_del_Maipo_DO.pdf",
+        "centroid": [
+          -70.75,
+          -33.65
+        ],
+        "pct": null,
+        "role": "Prestige Red Variety",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "mediterranean_continental",
+        "climate_icon": "🏜️",
+        "climate_name_en": "Mediterranean with Andean Influence",
+        "climate_name_es": "Mediterráneo con Influencia Andina"
+      },
+      {
+        "id": "chl-do-valle-de-aconcagua",
+        "name": "Valle de Aconcagua",
+        "country": "Chile",
+        "country_flag": "🇨🇱",
+        "country_en": "Chile",
+        "country_es": "Chile",
+        "category": "D.O.",
+        "region": "Región de Valparaíso (San Felipe, Los Andes)",
+        "color": "#7C2D12",
+        "pliego": "DOWNs/DOCs/CHILE/Valle_de_Aconcagua_DO.pdf",
+        "centroid": [
+          -70.9,
+          -32.8
+        ],
+        "pct": null,
+        "role": "High-End Red Variety",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "mediterranean_continental",
+        "climate_icon": "🏜️",
+        "climate_name_en": "Sun-Drenched Mediterranean",
+        "climate_name_es": "Mediterráneo Luminoso de Valle Interior"
+      },
       {
         "id": "it-lombardia-curtefranca",
         "name": "Curtefranca",
@@ -111055,28 +111442,36 @@
         "climate_name_es": "Continental Templado / Frío"
       }
     ],
-    "total_regions": 1,
-    "countries_count": 1,
+    "total_regions": 5,
+    "countries_count": 2,
     "countries_breakdown": [
+      {
+        "country": "Chile",
+        "country_en": "Chile",
+        "country_es": "Chile",
+        "flag": "🇨🇱",
+        "count": 4,
+        "percentage": 80.0
+      },
       {
         "country": "Italia",
         "country_en": "Italy",
         "country_es": "Italia",
         "flag": "🇮🇹",
         "count": 1,
-        "percentage": 100.0
+        "percentage": 20.0
       }
     ],
     "styles_breakdown": {
-      "still": 1,
+      "still": 5,
       "sparkling": 0,
       "fortified_sweet": 0
     },
     "blend_breakdown": {
-      "monovarietal": 0,
+      "monovarietal": 4,
       "blend": 1,
-      "monovarietal_pct": 0.0,
-      "blend_pct": 100.0
+      "monovarietal_pct": 80.0,
+      "blend_pct": 20.0
     }
   },
   {
@@ -115644,6 +116039,354 @@
         "country_en": "United Kingdom",
         "country_es": "Reino Unido",
         "flag": "🇬🇧",
+        "count": 2,
+        "percentage": 100.0
+      }
+    ],
+    "styles_breakdown": {
+      "still": 2,
+      "sparkling": 0,
+      "fortified_sweet": 0
+    },
+    "blend_breakdown": {
+      "monovarietal": 2,
+      "blend": 0,
+      "monovarietal_pct": 100.0,
+      "blend_pct": 0.0
+    }
+  },
+  {
+    "id": "torrontes",
+    "name": "Torrontés Riojano",
+    "color": "white",
+    "origin": "Argentina",
+    "synonyms": [
+      "Torrontés",
+      "Malvasía Riojana"
+    ],
+    "desc_en": "Argentina's native white emblem, an indigenous natural crossing of Criolla Chica and Muscat of Alexandria. Famous for explosive floral perfumes of white rose petals, jasmine, orange blossom, and juicy white peach, backed by crisp, dry, and vibrant mountain acidity, reaching world renown in the extreme high-altitude vineyards of Cafayate (Valles Calchaquíes).",
+    "desc_es": "El emblema blanco autóctono de Argentina, cruce natural de Criolla Chica y Moscatel de Alejandría. Célebre por sus explosivos aromas a pétalos de rosa blanca, jazmín, azahar y melocotón blanco, respaldados por una acidez crujiente, seca y vibrante, con cumbre mundial en los viñedos de extrema altitud de Cafayate (Valles Calchaquíes).",
+    "regions": [
+      {
+        "id": "arg-ig-valles-calchaquies",
+        "name": "Valles Calchaquíes (Cafayate)",
+        "country": "Argentina",
+        "country_flag": "🇦🇷",
+        "country_en": "Argentina",
+        "country_es": "Argentina",
+        "category": "IG",
+        "region": "Noroeste Argentino (Salta, Catamarca, Tucumán)",
+        "color": "#C026D3",
+        "pliego": "DOWNs/DOCs/ARGENTINA/Valles_Calchaquies_IG.pdf",
+        "centroid": [
+          -65.95,
+          -25.95
+        ],
+        "pct": null,
+        "role": "Native White Emblem & Benchmark",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "alpine",
+        "climate_icon": "🏔️",
+        "climate_name_en": "Extreme High-Altitude Alpine Semi-Arid",
+        "climate_name_es": "Alpino Semiárido de Extrema Altitud"
+      },
+      {
+        "id": "arg-ig-valle-de-uco",
+        "name": "Valle de Uco (Tupungato, Tunuyán, San Carlos)",
+        "country": "Argentina",
+        "country_flag": "🇦🇷",
+        "country_en": "Argentina",
+        "country_es": "Argentina",
+        "category": "IG / DOC",
+        "region": "Mendoza (Valle de Uco)",
+        "color": "#722F37",
+        "pliego": "DOWNs/DOCs/ARGENTINA/Valle_de_Uco_IG.pdf",
+        "centroid": [
+          -69.05,
+          -33.65
+        ],
+        "pct": null,
+        "role": "High-Altitude White Variety",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "alpine",
+        "climate_icon": "🏔️",
+        "climate_name_en": "High Altitude Continental / Alpine",
+        "climate_name_es": "Continental de Altura / Alpino Andino"
+      },
+      {
+        "id": "arg-ig-maipu",
+        "name": "Maipú",
+        "country": "Argentina",
+        "country_flag": "🇦🇷",
+        "country_en": "Argentina",
+        "country_es": "Argentina",
+        "category": "IG",
+        "region": "Mendoza (Primera Zona)",
+        "color": "#B45309",
+        "pliego": "DOWNs/DOCs/ARGENTINA/Maipu_IG.pdf",
+        "centroid": [
+          -68.7,
+          -33.02
+        ],
+        "pct": null,
+        "role": "Authorized White Variety",
+        "blend_type": "blend",
+        "styles": [
+          "still"
+        ],
+        "climate": "mediterranean_continental",
+        "climate_icon": "🏜️",
+        "climate_name_en": "Semi-Arid Continental",
+        "climate_name_es": "Continental Semiárido"
+      }
+    ],
+    "total_regions": 3,
+    "countries_count": 1,
+    "countries_breakdown": [
+      {
+        "country": "Argentina",
+        "country_en": "Argentina",
+        "country_es": "Argentina",
+        "flag": "🇦🇷",
+        "count": 3,
+        "percentage": 100.0
+      }
+    ],
+    "styles_breakdown": {
+      "still": 3,
+      "sparkling": 0,
+      "fortified_sweet": 0
+    },
+    "blend_breakdown": {
+      "monovarietal": 2,
+      "blend": 1,
+      "monovarietal_pct": 66.7,
+      "blend_pct": 33.3
+    }
+  },
+  {
+    "id": "bonarda-argentina",
+    "name": "Bonarda Argentina",
+    "color": "red",
+    "origin": "France (Savoie - Corbeau / Douce Noir) / Argentina",
+    "synonyms": [
+      "Douce Noir",
+      "Corbeau",
+      "Charbono"
+    ],
+    "desc_en": "The second most planted red grape in Argentina, originally hailing from Savoie. Historically revered for giving depth and juicy vitality to Mendoza blends, old-vine Bonarda now produces exceptional single-varietal wines full of ripe blackberry, sour cherry, subtle smoke, and silky, soft tannins with refreshing natural acidity.",
+    "desc_es": "La segunda uva tinta más plantada de Argentina, originaria de Saboya (Douce Noir). Históricamente el alma jugosa de los ensamblajes mendocinos, sus cepas viejas hoy dan vinos varietales excepcionales de mora fresca, cereza ácida, taninos sedosos y una vivacidad frutal cautivadora.",
+    "regions": [
+      {
+        "id": "arg-ig-maipu",
+        "name": "Maipú",
+        "country": "Argentina",
+        "country_flag": "🇦🇷",
+        "country_en": "Argentina",
+        "country_es": "Argentina",
+        "category": "IG",
+        "region": "Mendoza (Primera Zona)",
+        "color": "#B45309",
+        "pliego": "DOWNs/DOCs/ARGENTINA/Maipu_IG.pdf",
+        "centroid": [
+          -68.7,
+          -33.02
+        ],
+        "pct": null,
+        "role": "Old-Vine Benchmark Terroir (Barrancas)",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "mediterranean_continental",
+        "climate_icon": "🏜️",
+        "climate_name_en": "Semi-Arid Continental",
+        "climate_name_es": "Continental Semiárido"
+      },
+      {
+        "id": "arg-doc-lujan-de-cuyo",
+        "name": "Luján de Cuyo",
+        "country": "Argentina",
+        "country_flag": "🇦🇷",
+        "country_en": "Argentina",
+        "country_es": "Argentina",
+        "category": "DOC / IG",
+        "region": "Mendoza (Primera Zona)",
+        "color": "#991B1B",
+        "pliego": "DOWNs/DOCs/ARGENTINA/Lujan_de_Cuyo_DOC.pdf",
+        "centroid": [
+          -68.85,
+          -33.08
+        ],
+        "pct": null,
+        "role": "Key Mendoza Red Variety",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "mediterranean_continental",
+        "climate_icon": "🏜️",
+        "climate_name_en": "Semi-Arid Continental",
+        "climate_name_es": "Continental Semiárido de Meseta"
+      },
+      {
+        "id": "arg-ig-san-rafael",
+        "name": "San Rafael",
+        "country": "Argentina",
+        "country_flag": "🇦🇷",
+        "country_en": "Argentina",
+        "country_es": "Argentina",
+        "category": "DOC / IG",
+        "region": "Mendoza Sur",
+        "color": "#D97706",
+        "pliego": "DOWNs/DOCs/ARGENTINA/San_Rafael_DOC.pdf",
+        "centroid": [
+          -68.35,
+          -34.6
+        ],
+        "pct": null,
+        "role": "Traditional Southern Oasis Variety",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "mediterranean_continental",
+        "climate_icon": "🏜️",
+        "climate_name_en": "Continental Oasis",
+        "climate_name_es": "Continental de Oasis Sur"
+      },
+      {
+        "id": "arg-ig-valles-calchaquies",
+        "name": "Valles Calchaquíes (Cafayate)",
+        "country": "Argentina",
+        "country_flag": "🇦🇷",
+        "country_en": "Argentina",
+        "country_es": "Argentina",
+        "category": "IG",
+        "region": "Noroeste Argentino (Salta, Catamarca, Tucumán)",
+        "color": "#C026D3",
+        "pliego": "DOWNs/DOCs/ARGENTINA/Valles_Calchaquies_IG.pdf",
+        "centroid": [
+          -65.95,
+          -25.95
+        ],
+        "pct": null,
+        "role": "High-Altitude Red Variety",
+        "blend_type": "blend",
+        "styles": [
+          "still"
+        ],
+        "climate": "alpine",
+        "climate_icon": "🏔️",
+        "climate_name_en": "Extreme High-Altitude Alpine Semi-Arid",
+        "climate_name_es": "Alpino Semiárido de Extrema Altitud"
+      }
+    ],
+    "total_regions": 4,
+    "countries_count": 1,
+    "countries_breakdown": [
+      {
+        "country": "Argentina",
+        "country_en": "Argentina",
+        "country_es": "Argentina",
+        "flag": "🇦🇷",
+        "count": 4,
+        "percentage": 100.0
+      }
+    ],
+    "styles_breakdown": {
+      "still": 4,
+      "sparkling": 0,
+      "fortified_sweet": 0
+    },
+    "blend_breakdown": {
+      "monovarietal": 3,
+      "blend": 1,
+      "monovarietal_pct": 75.0,
+      "blend_pct": 25.0
+    }
+  },
+  {
+    "id": "pais",
+    "name": "País (Criolla Chica)",
+    "color": "red",
+    "origin": "Spain (Listán Prieto) / Chile",
+    "synonyms": [
+      "Criolla Chica",
+      "Mission",
+      "Listán Prieto",
+      "Rosa del Perú"
+    ],
+    "desc_en": "Brought by Spanish missionaries in the mid-16th century, País is the ancestral soul of Chilean viticulture. Centuries-old ungrafted dry-farmed bush vines in the rolling hills of the Itata and Bío-Bío valleys produce light-bodied, crunchy, and rustic red wines (including traditional Pipeño) brimming with wild strawberries, dried herbs, earthy spices, and laser-focused granitic minerality.",
+    "desc_es": "Introducida por los misioneros españoles en el siglo XVI, la cepa País es el alma patrimonial del vino chileno. Viñas centenarias en pie franco y vaso de secano en las colinas graníticas de Itata y Bío-Bío dan tintos vibrantes y crujientes (incluyendo el ancestral Pipeño), con fresas silvestres, tomillo, rusticidad noble y mineralidad eléctrica.",
+    "regions": [
+      {
+        "id": "chl-do-valle-del-itata",
+        "name": "Valle del Itata",
+        "country": "Chile",
+        "country_flag": "🇨🇱",
+        "country_en": "Chile",
+        "country_es": "Chile",
+        "category": "D.O.",
+        "region": "Región de Ñuble (Secano Interior)",
+        "color": "#047857",
+        "pliego": "DOWNs/DOCs/CHILE/Valle_del_Itata_DO.pdf",
+        "centroid": [
+          -72.45,
+          -36.6
+        ],
+        "pct": null,
+        "role": "Centuries-Old Heritage Flagship",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "mediterranean_coastal",
+        "climate_icon": "☀️",
+        "climate_name_en": "Sub-Humid Mediterranean with Coastal Influence",
+        "climate_name_es": "Mediterráneo Subhúmedo Costero"
+      },
+      {
+        "id": "chl-do-valle-del-bio-bio",
+        "name": "Valle del Bío-Bío",
+        "country": "Chile",
+        "country_flag": "🇨🇱",
+        "country_en": "Chile",
+        "country_es": "Chile",
+        "category": "D.O.",
+        "region": "Región del Bío-Bío (Yumbel, Mulchén)",
+        "color": "#059669",
+        "pliego": "DOWNs/DOCs/CHILE/Valle_del_Bio_Bio_DO.pdf",
+        "centroid": [
+          -72.5,
+          -37.45
+        ],
+        "pct": null,
+        "role": "Ancestral Bush-Vine Variety",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "continental",
+        "climate_icon": "❄️",
+        "climate_name_en": "Cool Temperate Southern Maritime",
+        "climate_name_es": "Templado Frío Austral"
+      }
+    ],
+    "total_regions": 2,
+    "countries_count": 1,
+    "countries_breakdown": [
+      {
+        "country": "Chile",
+        "country_en": "Chile",
+        "country_es": "Chile",
+        "flag": "🇨🇱",
         "count": 2,
         "percentage": 100.0
       }
