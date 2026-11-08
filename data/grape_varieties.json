@@ -117205,5 +117205,274 @@
       "monovarietal_pct": 100.0,
       "blend_pct": 0.0
     }
+  },
+  {
+    "id": "koshu",
+    "name": "Koshu (甲州)",
+    "color": "white",
+    "origin": "Japan (Caucasus via Silk Road / Yamanashi)",
+    "synonyms": [
+      "Koshu Budo",
+      "Koshu Sanjaku"
+    ],
+    "desc_en": "Japan's iconic signature grape, grown for over a millennium in Yamanashi at the foot of Mount Fuji. Derived from Vitis vinifera with East Asian wild vine introgression, its dusky pink-purple grapes produce delicate, luminous dry white wines with pristine notes of yuzu, white peach, ginger, wet stones, and a distinctive crystalline mineral finish.",
+    "desc_es": "La uva insignia milenaria de Japón, cultivada a los pies del Monte Fuji en Yamanashi. Variedad híbrida natural de Vitis vinifera e introgresiones silvestres asiáticas, de hollejo rosado violáceo que produce blancos límpidos, etéreos y minerales con notas de yuzu, jengibre fresco, melocotón blanco y delicada salinidad cristalina.",
+    "regions": [
+      {
+        "id": "jpn-gi-yamanashi",
+        "name": "Yamanashi",
+        "country": "Japón",
+        "country_flag": "🇯🇵",
+        "country_en": "Japan",
+        "country_es": "Japón",
+        "category": "GI (Geographical Indication)",
+        "region": "Chūbu / Honshu (Mount Fuji Foothills & Kofu Basin)",
+        "color": "rgba(180, 80, 140, 0.85)",
+        "pliego": "DOWNs/DOCs/JAPAN/Yamanashi_GI_Specification.pdf",
+        "centroid": [
+          138.57,
+          35.66
+        ],
+        "pct": null,
+        "role": "Signature Flagship White Grape",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still",
+          "sparkling"
+        ],
+        "climate": "alpine",
+        "climate_icon": "🏔️",
+        "climate_name_en": "Alpine / High Altitude Valley",
+        "climate_name_es": "Alpino / Valle de Gran Altitud"
+      },
+      {
+        "id": "jpn-gi-nagano",
+        "name": "Nagano",
+        "country": "Japón",
+        "country_flag": "🇯🇵",
+        "country_en": "Japan",
+        "country_es": "Japón",
+        "category": "GI (Geographical Indication)",
+        "region": "Chūbu / Japanese Alps (Shinshu)",
+        "color": "rgba(120, 160, 60, 0.85)",
+        "pliego": "DOWNs/DOCs/JAPAN/Nagano_GI_Specification.pdf",
+        "centroid": [
+          138.18,
+          36.65
+        ],
+        "pct": null,
+        "role": "Authorized High-Altitude White Grape",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "alpine",
+        "climate_icon": "🏔️",
+        "climate_name_en": "Alpine / High Altitude Valley",
+        "climate_name_es": "Alpino / Valle de Gran Altitud"
+      }
+    ],
+    "total_regions": 2,
+    "countries_count": 1,
+    "countries_breakdown": [
+      {
+        "country": "Japón",
+        "country_en": "Japan",
+        "country_es": "Japón",
+        "flag": "🇯🇵",
+        "count": 2,
+        "percentage": 100.0
+      }
+    ],
+    "styles_breakdown": {
+      "still": 2,
+      "sparkling": 1,
+      "fortified_sweet": 0
+    },
+    "blend_breakdown": {
+      "monovarietal": 2,
+      "blend": 0,
+      "monovarietal_pct": 100.0,
+      "blend_pct": 0.0
+    }
+  },
+  {
+    "id": "marselan",
+    "name": "Marselan",
+    "color": "red",
+    "origin": "France (INRA Vassal, Paul Truel 1961: Cabernet Sauvignon x Grenache Noir) / China",
+    "synonyms": [
+      "INRA 1810-68"
+    ],
+    "desc_en": "A French cross created in 1961 by Paul Truel (Cabernet Sauvignon x Grenache) that has become China's defining red grape variety. Thriving in the arid continental climates of Ningxia, Xinjiang, and Shandong, it yields deeply pigmented, aromatic wines combining Cabernet's blackcurrant structure and fine-grained tannins with Grenache's opulent blackberry, spiced plum, and velvety texture.",
+    "desc_es": "Cruce creado en 1961 por Paul Truel en Francia (Cabernet Sauvignon x Garnacha Tinta) adoptado como la gran uva tinta bandera de China. Perfectamente adaptada a la aridez continental de Ningxia, Xinjiang y Shandong, entrega vinos de color rubí profundo, taninos sedosos y aromas embriagadores de cassis, mora madura, regaliz, té negro y especias finas.",
+    "regions": [
+      {
+        "id": "chn-reg-ningxia",
+        "name": "Ningxia - Helan Mountain East Foothills",
+        "country": "China",
+        "country_flag": "🇨🇳",
+        "country_en": "China",
+        "country_es": "China",
+        "category": "National GI / Protected Wine Region",
+        "region": "Ningxia Hui Autonomous Region (Helan Mountains & Yellow River)",
+        "color": "rgba(180, 40, 50, 0.85)",
+        "pliego": "DOWNs/DOCs/CHINA/Ningxia_Helan_Mountain_GI.pdf",
+        "centroid": [
+          106.15,
+          38.45
+        ],
+        "pct": null,
+        "role": "Signature National Red Variety",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "continental",
+        "climate_icon": "❄️",
+        "climate_name_en": "Continental Semi-Arid Steppe",
+        "climate_name_es": "Continental Semiárido de Estepa"
+      },
+      {
+        "id": "chn-reg-shandong-yantai",
+        "name": "Shandong - Yantai & Penglai",
+        "country": "China",
+        "country_flag": "🇨🇳",
+        "country_en": "China",
+        "country_es": "China",
+        "category": "National GI / Protected Wine Region",
+        "region": "Shandong Peninsula (Bohai Bay & Yellow Sea Maritime)",
+        "color": "rgba(200, 60, 40, 0.85)",
+        "pliego": "DOWNs/DOCs/CHINA/Shandong_Yantai_GI.pdf",
+        "centroid": [
+          121.39,
+          37.52
+        ],
+        "pct": null,
+        "role": "Authorized Maritime Red Grape",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "atlantic",
+        "climate_icon": "🌊",
+        "climate_name_en": "Maritime Monsoon Influenced",
+        "climate_name_es": "Marítimo con Influencia Monzónica"
+      },
+      {
+        "id": "chn-reg-xinjiang",
+        "name": "Xinjiang - Yanqi Basin & Turpan",
+        "country": "China",
+        "country_flag": "🇨🇳",
+        "country_en": "China",
+        "country_es": "China",
+        "category": "National GI / Protected Wine Region",
+        "region": "Xinjiang Uyghur Autonomous Region (Tian Shan & Silk Road Basins)",
+        "color": "rgba(160, 50, 70, 0.85)",
+        "pliego": "DOWNs/DOCs/CHINA/Xinjiang_Turpan_Yanqi_GI.pdf",
+        "centroid": [
+          86.56,
+          42.06
+        ],
+        "pct": null,
+        "role": "High Solar Radiation Red Grape",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "continental",
+        "climate_icon": "❄️",
+        "climate_name_en": "Extreme Continental Arid Desert Oasis",
+        "climate_name_es": "Continental Extremo Árido de Oasis"
+      }
+    ],
+    "total_regions": 3,
+    "countries_count": 1,
+    "countries_breakdown": [
+      {
+        "country": "China",
+        "country_en": "China",
+        "country_es": "China",
+        "flag": "🇨🇳",
+        "count": 3,
+        "percentage": 100.0
+      }
+    ],
+    "styles_breakdown": {
+      "still": 3,
+      "sparkling": 0,
+      "fortified_sweet": 0
+    },
+    "blend_breakdown": {
+      "monovarietal": 3,
+      "blend": 0,
+      "monovarietal_pct": 100.0,
+      "blend_pct": 0.0
+    }
+  },
+  {
+    "id": "madrasa",
+    "name": "Madrasa (Mədrəsə)",
+    "color": "red",
+    "origin": "Azerbaijan (Shamakhi / Ganja-Qazakh, South Caucasus)",
+    "synonyms": [
+      "Matrassa",
+      "Madrese",
+      "Kara Shirvan",
+      "Shirvany"
+    ],
+    "desc_en": "One of the oldest autochthonous red grape varieties of the South Caucasus, native to the historic village of Mədrəsə in the Shirvan foothills of Azerbaijan. Highly expressive and resilient, it produces deep ruby reds and delicate rosés marked by wild raspberries, dried pomegranate, mountain herbs, dark cherry, and balanced, savory tannins.",
+    "desc_es": "Variedad tinta autóctona milenaria del sur del Cáucaso, originaria del pueblo histórico de Mədrəsə en Azerbaiyán. Muy apreciada por su resistencia y singular tipicidad, da lugar a tintos estructurados y rosados aromáticos con notas de granada silvestre, frambuesa, ciruela negra, hierbas de montaña y taninos sabrosos y elegantes.",
+    "regions": [
+      {
+        "id": "aze-reg-ganja",
+        "name": "Ganja & Goygol",
+        "country": "Azerbaiyán",
+        "country_flag": "🇦🇿",
+        "country_en": "Azerbaijan",
+        "country_es": "Azerbaiyán",
+        "category": "Qorunan Coğrafi Göstərici / GI",
+        "region": "Lesser Caucasus Foothills & Kura River Basin",
+        "color": "rgba(160, 40, 80, 0.85)",
+        "pliego": "DOWNs/DOCs/AZERBAIJAN/Ganja_Goygol_GI.pdf",
+        "centroid": [
+          46.36,
+          40.68
+        ],
+        "pct": null,
+        "role": "Indigenous Signature Red Variety",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "continental",
+        "climate_icon": "❄️",
+        "climate_name_en": "Continental Caucasian Foothill",
+        "climate_name_es": "Continental Prealpino del Cáucaso"
+      }
+    ],
+    "total_regions": 1,
+    "countries_count": 1,
+    "countries_breakdown": [
+      {
+        "country": "Azerbaiyán",
+        "country_en": "Azerbaijan",
+        "country_es": "Azerbaiyán",
+        "flag": "🇦🇿",
+        "count": 1,
+        "percentage": 100.0
+      }
+    ],
+    "styles_breakdown": {
+      "still": 1,
+      "sparkling": 0,
+      "fortified_sweet": 0
+    },
+    "blend_breakdown": {
+      "monovarietal": 1,
+      "blend": 0,
+      "monovarietal_pct": 100.0,
+      "blend_pct": 0.0
+    }
   }
 ]

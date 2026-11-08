@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WINE³ai — World Wide Wine: Maps & Terroir Intelligence</title>
+  <meta name="description" content="WINE³ai — Interactive atlas of official wine regions across the world built from authoritative geographic boundaries, climate zones, and viticultural specifications.">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  
+  <!-- MapLibre GL JS -->
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" />
+  <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- Header / Navbar -->
+    <header class="top-nav">
+      <div class="brand">
+        <a href="." class="brand-link" title="WINE³ai">
+          <img src="assets/logo.svg" alt="WINE³ai Logo" class="brand-logo-img" width="34" height="34" />
+        </a>
+        <div>
+          <h1 class="brand-title" id="brand-title">WINE<span class="brand-exp">³</span><span class="brand-ai">ai</span></h1>
+          <div class="brand-subtitle" id="brand-subtitle">World Wide Wine — Maps &amp; Terroir Intelligence</div>
+        </div>
+      </div>
+      <div class="nav-actions">
+        <!-- Selector de Mapa de Referencia (Basemap) -->
+        <div class="basemap-selector-wrap">
+          <span class="basemap-label" id="lbl-basemap" title="Reference Basemap">🗺️</span>
+          <select id="basemap-select" class="basemap-select" title="Change reference basemap">
+            <option value="voyager" id="bm-voyager-opt">Voyager (Color)</option>
+            <option value="positron" id="bm-positron-opt">Light (Positron)</option>
+            <option value="dark" id="bm-dark-opt">Dark (Dark Matter)</option>
+            <option value="satellite" id="bm-satellite-opt">Satellite (ESRI)</option>
+            <option value="topo" id="bm-topo-opt">Topographic (Relief)</option>
+            <option value="osm" id="bm-osm-opt">OpenStreetMap</option>
+          </select>
+        </div>
+
+        <!-- Link to Grape Varieties Explorer -->
+        <a href="grapes.html" class="btn-link btn-grapes" id="nav-btn-grapes" title="Grape Varieties Explorer">
+          <span>🍇</span> <span id="nav-grapes-text">Grape Varieties</span>
+        </a>
+
+        <!-- Link to WINEp3dIA Portal -->
+        <a href="index.html#winepedia" class="btn-link btn-winepedia" id="nav-btn-winepedia" title="WINEp3dIA & Knowledge Hub">
+          <span>📚</span> <span id="nav-winepedia-text">WINEp3dIA</span>
+        </a>
+
+        <!-- Toggle Wine Regions Layer -->
+        <button class="btn-toggle-layer btn-toggle-regions active" id="btn-toggle-regions" title="Toggle Wine Regions Layer">
+          <span>🍷</span> <span id="txt-regions-toggle">Wine Regions</span>
+        </button>
+
+        <!-- Toggle World Climate Zones Layer -->
+        <button class="btn-toggle-layer btn-toggle-climate" id="btn-toggle-climate" title="Toggle World Climate Zones Layer">
+          <span>⛅</span> <span id="txt-climate-toggle">World Climate Layer</span>
+        </button>
+
+        <!-- Export Map to A4 Landscape PDF -->
+        <button class="btn-export-pdf" id="btn-export-pdf" title="Export current map view to A4 Landscape PDF">
+          <span>🖨️</span> <span id="txt-export-pdf">Export PDF</span>
+        </button>
+
+        <button class="lang-btn" data-lang="es">ES</button>
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <a href="https://app.atlas.co/projects/iRfhgtNFAbVm6zHZL3bN?loc=-2.7334%2C39.9785%2C6.0441z" target="_blank" rel="noopener noreferrer" class="btn-link btn-atlas">
+          <span>🗺️</span> Atlas.co
+        </a>
+        <a href="https://github.com/jreyes13/wine3ai" target="_blank" rel="noopener noreferrer" class="btn-link btn-github">
+          <svg height="16" width="16" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+          </svg>
+          GitHub
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Workspace -->
+    <main class="main-content">
+      <!-- Interactive Map -->
+      <div id="map"></div>
+
+      <!-- Floating Climate Layer Map Legend -->
+      <div class="climate-map-legend" id="climate-map-legend" style="display: none;">
+        <div class="climate-legend-header">
+          <span class="climate-legend-title" id="lbl-climate-legend-title">⛅ World Viticultural Climates</span>
+          <button class="climate-legend-close" id="btn-close-climate-legend" title="Hide Legend">&times;</button>
+        </div>
+        <div class="climate-legend-body">
+          <div class="clim-leg-item"><span class="clim-swatch" style="background: #38BDF8;"></span><span id="leg-clim-atlantic">🌊 Atlantic / Maritime</span></div>
+          <div class="clim-leg-item"><span class="clim-swatch" style="background: #FBBF24;"></span><span id="leg-clim-med-coastal">☀️ Coastal Mediterranean</span></div>
+          <div class="clim-leg-item"><span class="clim-swatch" style="background: #FB923C;"></span><span id="leg-clim-med-cont">🏜️ Continental Mediterranean</span></div>
+          <div class="clim-leg-item"><span class="clim-swatch" style="background: #34D399;"></span><span id="leg-clim-cont">❄️ Continental</span></div>
+          <div class="clim-leg-item"><span class="clim-swatch" style="background: #A78BFA;"></span><span id="leg-clim-alpine">🏔️ Alpine / High Altitude</span></div>
+          <div class="clim-leg-item"><span class="clim-swatch" style="background: #FB7185;"></span><span id="leg-clim-subtrop">🌋 Subtropical / Volcanic</span></div>
+        </div>
+      </div>
+
+      <!-- Left Sidebar Search & Explorer -->
+      <aside class="sidebar" id="sidebar">
+        <!-- Sidebar Collapse / Expand Toggle Button -->
+        <button class="sidebar-toggle" id="sidebar-toggle" title="Hide sidebar" aria-label="Toggle Sidebar">
+          <span class="toggle-icon" id="sidebar-toggle-icon">◀</span>
+        </button>
+
+        <div class="sidebar-header">
+          <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="search-input" class="search-input" placeholder="Search by Appellation, Country, Region, Grape or Municipality..." autocomplete="off">
+          </div>
+          <div class="filters-row">
+            <select id="country-filter" class="filter-select">
+              <option value="" id="country-all-opt">All Countries</option>
+              <option value="Argentina" id="country-ar-opt">🇦🇷 Argentina</option>
+              <option value="Armenia" id="country-am-opt">🇦🇲 Armenia</option>
+              <option value="Australia" id="country-au-opt">🇦🇺 Australia</option>
+              <option value="Austria" id="country-at-opt">🇦🇹 Austria</option>
+              <option value="Azerbaiyán" id="country-az-opt">🇦🇿 Azerbaijan</option>
+              <option value="Bélgica" id="country-be-opt">🇧🇪 Belgium</option>
+              <option value="Bolivia" id="country-bo-opt">🇧🇴 Bolivia</option>
+              <option value="Bosnia y Herzegovina" id="country-ba-opt">🇧🇦 Bosnia and Herzegovina</option>
+              <option value="Brasil" id="country-br-opt">🇧🇷 Brazil</option>
+              <option value="Bulgaria" id="country-bg-opt">🇧🇬 Bulgaria</option>
+              <option value="Canadá" id="country-ca-opt">🇨🇦 Canada</option>
+              <option value="Chile" id="country-cl-opt">🇨🇱 Chile</option>
+              <option value="China" id="country-cn-opt">🇨🇳 China</option>
+              <option value="Croacia" id="country-hr-opt">🇭🇷 Croatia</option>
+              <option value="Chipre" id="country-cy-opt">🇨🇾 Cyprus</option>
+              <option value="República Checa" id="country-cz-opt">🇨🇿 Czech Republic</option>
+              <option value="Francia" id="country-fr-opt">🇫🇷 France</option>
+              <option value="Georgia" id="country-ge-opt">🇬🇪 Georgia</option>
+              <option value="Alemania" id="country-de-opt">🇩🇪 Germany</option>
+              <option value="Grecia" id="country-gr-opt">🇬🇷 Greece</option>
+              <option value="Hungría" id="country-hu-opt">🇭🇺 Hungary</option>
+              <option value="India" id="country-in-opt">🇮🇳 India</option>
+              <option value="Israel" id="country-il-opt">🇮🇱 Israel</option>
+              <option value="Italia" id="country-it-opt">🇮🇹 Italy</option>
+              <option value="Japón" id="country-jp-opt">🇯🇵 Japan</option>
+              <option value="Líbano" id="country-lb-opt">🇱🇧 Lebanon</option>
+              <option value="Luxemburgo" id="country-lu-opt">🇱🇺 Luxembourg</option>
+              <option value="Malta" id="country-mt-opt">🇲🇹 Malta</option>
+              <option value="México" id="country-mx-opt">🇲🇽 Mexico</option>
+              <option value="Moldavia" id="country-md-opt">🇲🇩 Moldova</option>
+              <option value="Montenegro" id="country-me-opt">🇲🇪 Montenegro</option>
+              <option value="Marruecos" id="country-ma-opt">🇲🇦 Morocco</option>
+              <option value="Países Bajos" id="country-nl-opt">🇳🇱 Netherlands</option>
+              <option value="Nueva Zelanda" id="country-nz-opt">🇳🇿 New Zealand</option>
+              <option value="Macedonia del Norte" id="country-mk-opt">🇲🇰 North Macedonia</option>
+              <option value="Perú" id="country-pe-opt">🇵🇪 Peru</option>
+              <option value="Polonia" id="country-pl-opt">🇵🇱 Poland</option>
+              <option value="Portugal" id="country-pt-opt">🇵🇹 Portugal</option>
+              <option value="Rumanía" id="country-ro-opt">🇷🇴 Romania</option>
+              <option value="Serbia" id="country-rs-opt">🇷🇸 Serbia</option>
+              <option value="Eslovaquia" id="country-sk-opt">🇸🇰 Slovakia</option>
+              <option value="Eslovenia" id="country-si-opt">🇸🇮 Slovenia</option>
+              <option value="Sudáfrica" id="country-za-opt">🇿🇦 South Africa</option>
+              <option value="España" id="country-es-opt">🇪🇸 Spain</option>
+              <option value="Suiza" id="country-ch-opt">🇨🇭 Switzerland</option>
+              <option value="Túnez" id="country-tn-opt">🇹🇳 Tunisia</option>
+              <option value="Turquía" id="country-tr-opt">🇹🇷 Turkey</option>
+              <option value="Ucrania" id="country-ua-opt">🇺🇦 Ukraine</option>
+              <option value="Reino Unido" id="country-uk-opt">🇬🇧 United Kingdom</option>
+              <option value="Estados Unidos" id="country-us-opt">🇺🇸 United States</option>
+              <option value="Uruguay" id="country-uy-opt">🇺🇾 Uruguay</option>
+            </select>
+            <select id="category-filter" class="filter-select">
+              <option value="" id="cat-all-opt">All Classifications</option>
+            </select>
+            <select id="region-filter" class="filter-select">
+              <option value="" id="reg-all-opt">All Regions</option>
+            </select>
+            <select id="climate-filter" class="filter-select">
+              <option value="" id="clim-all-opt">All Climates</option>
+              <option value="mediterranean_coastal" id="clim-med-coastal-opt">☀️ Mediterranean Coastal</option>
+              <option value="mediterranean_continental" id="clim-med-cont-opt">🏜️ Mediterranean Continental / Meseta</option>
+              <option value="atlantic" id="clim-atlantic-opt">🌊 Atlantic / Maritime</option>
+              <option value="continental" id="clim-cont-opt">❄️ Continental</option>
+              <option value="alpine" id="clim-alpine-opt">🏔️ Alpine / High Altitude</option>
+              <option value="subtropical_volcanic" id="clim-subtrop-opt">🌋 Subtropical / Volcanic</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="regions-counter">
+          <div class="counter-text-wrap">
+            <span id="count-badge">Loading appellations...</span>
+            <span class="count-visible-pill" id="count-visible-badge"></span>
+          </div>
+          <div class="vis-btn-group">
+            <button class="btn-vis-action" id="btn-show-all-regions" title="Show all filtered wine regions on the map">
+              <span>👁️</span> <span id="txt-show-all">Show All</span>
+            </button>
+            <button class="btn-vis-action" id="btn-hide-all-regions" title="Hide all wine regions from the map">
+              <span>🚫</span> <span id="txt-hide-all">Hide All</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="regions-list" id="regions-list"></div>
+      </aside>
+
+      <!-- Right Detail Panel (Floating) -->
+      <section class="detail-panel" id="detail-panel" aria-label="Appellation Details">
+        <button class="detail-close" id="btn-close-detail" title="Close">&times;</button>
+        <div class="detail-header">
+          <span class="detail-badge" id="detail-badge">DO</span>
+          <h2 class="detail-title" id="detail-title"></h2>
+          <div class="detail-region" id="detail-region"></div>
+        </div>
+        <div class="detail-body">
+          <div class="info-item">
+            <div class="info-label" id="lbl-territory">Territorial Scope</div>
+            <div class="info-value" id="detail-munis"></div>
+            <!-- Desplegable interactivo de municipios -->
+            <details class="munis-dropdown" id="munis-dropdown">
+              <summary class="munis-summary" id="munis-summary">
+                <span id="lbl-toggle-munis">View municipalities / communes</span>
+                <span class="summary-arrow">▾</span>
+              </summary>
+              <div class="munis-container">
+                <input type="text" id="munis-search" class="munis-search-input" placeholder="Search municipality / commune..." autocomplete="off">
+                <div class="munis-chips" id="munis-chips"></div>
+              </div>
+            </details>
+          </div>
+          <div class="info-item" id="detail-climate-item" style="display: none;">
+            <div class="info-label" id="lbl-climate">Climate & Terroir</div>
+            <div class="detail-climate-wrap">
+              <span class="detail-climate-badge" id="detail-climate-badge">☀️ Mediterranean</span>
+            </div>
+            <div class="detail-climate-desc" id="detail-climate-desc"></div>
+          </div>
+          <div class="info-item">
+            <div class="info-label" id="lbl-grapes-red">Key Red Varieties</div>
+            <div class="info-value" id="detail-grapes-red"></div>
+          </div>
+          <div class="info-item">
+            <div class="info-label" id="lbl-grapes-white">Key White Varieties</div>
+            <div class="info-value" id="detail-grapes-white"></div>
+          </div>
+        </div>
+        <div class="detail-actions">
+          <a href="#" target="_blank" rel="noopener noreferrer" class="btn-action btn-pliego" id="btn-pliego">
+            <span id="btn-pliego-txt">📄 View Official Specifications (PDF)</span>
+          </a>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- PDF Generation Library (A4 Landscape Export) -->
+  <script src="libs/jspdf.umd.min.js"></script>
+
+  <!-- Capa de datos (compatible directamente con doble clic file:// y con servidor web http://) -->
+  <script src="data/world_climate_zones.js?v=20261107c"></script>
+  <script src="data/spain_wine_regions.js?v=20261107c"></script>
+  <script src="app.js?v=20261107c"></script>
+</body>
+</html>

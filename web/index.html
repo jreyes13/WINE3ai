@@ -1,247 +1,479 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" class="dark scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WINE³ai — World Wide Wine: Maps & Terroir Intelligence</title>
-  <meta name="description" content="WINE³ai — Interactive atlas of official wine regions across the world built from authoritative geographic boundaries, climate zones, and viticultural specifications.">
+  <title>WINE³ai — World Wide Wine: Terroir, Ampelografía & WINEp3dIA</title>
+  <meta name="description" content="Plataforma de inteligencia vitivinícola que une cartografía geoespacial de terruño, catálogo ampelográfico de variedades y la WINEp3dIA basada en WSET 3, CMS y ASI.">
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
   
-  <!-- MapLibre GL JS -->
-  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" />
-  <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            wine: {
+              950: '#1a050b',
+              900: '#2b0711',
+              800: '#4c0c1e',
+              700: '#72122c',
+              600: '#9b183b',
+              500: '#be123c',
+              400: '#e11d48',
+              100: '#ffe4e6'
+            },
+            terroir: {
+              gold: '#d4af37',
+              earth: '#8b5a2b',
+              sand: '#d97706'
+            }
+          }
+        }
+      }
+    }
+  </script>
 
-  <!-- Custom Styles -->
-  <link rel="stylesheet" href="style.css" />
+  <!-- Typography: Cinzel + Plus Jakarta Sans + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800;900&family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0d13; color: #e2e8f0; }
+    .font-serif-wine { font-family: 'Cinzel', serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    .wine-glow { text-shadow: 0 0 30px rgba(190, 18, 60, 0.4); }
+    .gold-glow { text-shadow: 0 0 20px rgba(212, 175, 55, 0.35); }
+    .card-hover:hover {
+      border-color: rgba(190, 18, 60, 0.45);
+      box-shadow: 0 10px 30px -10px rgba(190, 18, 60, 0.25);
+      transform: translateY(-2px);
+    }
+  </style>
 </head>
-<body>
-  <div id="app">
-    <!-- Header / Navbar -->
-    <header class="top-nav">
-      <div class="brand">
-        <a href="." class="brand-link" title="WINE³ai">
-          <img src="assets/logo.svg" alt="WINE³ai Logo" class="brand-logo-img" width="34" height="34" />
-        </a>
+<body class="selection:bg-wine-600 selection:text-white min-h-screen flex flex-col justify-between">
+
+  <!-- Top Sticky Navigation -->
+  <header class="border-b border-white/10 bg-[#0b0d13]/90 backdrop-blur-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 h-18 flex items-center justify-between">
+      <a href="." class="flex items-center gap-3.5 group">
+        <img src="assets/logo.svg" alt="WINE³ai Logo" class="w-10 h-10 group-hover:scale-105 transition-transform">
         <div>
-          <h1 class="brand-title" id="brand-title">WINE<span class="brand-exp">³</span><span class="brand-ai">ai</span></h1>
-          <div class="brand-subtitle" id="brand-subtitle">World Wide Wine — Maps &amp; Terroir Intelligence</div>
+          <div class="text-xl font-bold tracking-tight text-white font-serif-wine flex items-center gap-0.5">
+            WINE<span class="text-rose-500 font-sans text-sm align-super font-black">³</span><span class="text-amber-400 font-sans text-sm font-black">ai</span>
+          </div>
+          <div class="text-[10px] tracking-wider uppercase text-slate-400 font-mono">Terroir · Ampelografía · WINEp3dIA</div>
         </div>
-      </div>
-      <div class="nav-actions">
-        <!-- Selector de Mapa de Referencia (Basemap) -->
-        <div class="basemap-selector-wrap">
-          <span class="basemap-label" id="lbl-basemap" title="Reference Basemap">🗺️</span>
-          <select id="basemap-select" class="basemap-select" title="Change reference basemap">
-            <option value="voyager" id="bm-voyager-opt">Voyager (Color)</option>
-            <option value="positron" id="bm-positron-opt">Light (Positron)</option>
-            <option value="dark" id="bm-dark-opt">Dark (Dark Matter)</option>
-            <option value="satellite" id="bm-satellite-opt">Satellite (ESRI)</option>
-            <option value="topo" id="bm-topo-opt">Topographic (Relief)</option>
-            <option value="osm" id="bm-osm-opt">OpenStreetMap</option>
-          </select>
-        </div>
+      </a>
 
-        <!-- Link to Grape Varieties Explorer -->
-        <a href="grapes.html" class="btn-link btn-grapes" id="nav-btn-grapes" title="Grape Varieties Explorer">
-          <span>🍇</span> <span id="nav-grapes-text">Grape Varieties</span>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium">
+        <a href="#pilares" class="text-slate-300 hover:text-rose-400 transition-colors">Los 3 Pilares</a>
+        <a href="map.html" class="text-slate-300 hover:text-amber-400 transition-colors flex items-center gap-1.5">
+          <span>🗺️</span> Mapa de Regiones
         </a>
-
-        <!-- Toggle Wine Regions Layer -->
-        <button class="btn-toggle-layer btn-toggle-regions active" id="btn-toggle-regions" title="Toggle Wine Regions Layer">
-          <span>🍷</span> <span id="txt-regions-toggle">Wine Regions</span>
-        </button>
-
-        <!-- Toggle World Climate Zones Layer -->
-        <button class="btn-toggle-layer btn-toggle-climate" id="btn-toggle-climate" title="Toggle World Climate Zones Layer">
-          <span>⛅</span> <span id="txt-climate-toggle">World Climate Layer</span>
-        </button>
-
-        <!-- Export Map to A4 Landscape PDF -->
-        <button class="btn-export-pdf" id="btn-export-pdf" title="Export current map view to A4 Landscape PDF">
-          <span>🖨️</span> <span id="txt-export-pdf">Export PDF</span>
-        </button>
-
-        <button class="lang-btn" data-lang="es">ES</button>
-        <button class="lang-btn active" data-lang="en">EN</button>
-        <a href="https://app.atlas.co/projects/iRfhgtNFAbVm6zHZL3bN?loc=-2.7334%2C39.9785%2C6.0441z" target="_blank" rel="noopener noreferrer" class="btn-link btn-atlas">
-          <span>🗺️</span> Atlas.co
+        <a href="grapes.html" class="text-slate-300 hover:text-rose-400 transition-colors flex items-center gap-1.5">
+          <span>🍇</span> Variedades
         </a>
-        <a href="https://github.com/jreyes13/wine3ai" target="_blank" rel="noopener noreferrer" class="btn-link btn-github">
-          <svg height="16" width="16" viewBox="0 0 16 16" fill="currentColor">
-            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
-          </svg>
-          GitHub
+        <a href="#winepedia" class="text-slate-300 hover:text-amber-400 transition-colors flex items-center gap-1.5">
+          <span>📚</span> WINEp3dIA
+        </a>
+        <a href="#fichas" class="text-slate-300 hover:text-rose-400 transition-colors">Fichas de Estudio</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="https://github.com/jreyes13/wine3ai" target="_blank" rel="noopener noreferrer" class="px-3.5 py-1.5 rounded-lg bg-white/5 border border-white/10 text-slate-300 hover:bg-white/10 transition-colors text-xs font-mono flex items-center gap-2">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          <span class="hidden sm:inline">GitHub</span>
+        </a>
+        <a href="https://jreyes13.net" class="px-3.5 py-1.5 rounded-lg bg-rose-950/60 border border-rose-800/40 text-rose-300 hover:bg-rose-900/50 transition-colors text-xs font-mono">
+          jreyes13.net
         </a>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <!-- Main Workspace -->
-    <main class="main-content">
-      <!-- Interactive Map -->
-      <div id="map"></div>
-
-      <!-- Floating Climate Layer Map Legend -->
-      <div class="climate-map-legend" id="climate-map-legend" style="display: none;">
-        <div class="climate-legend-header">
-          <span class="climate-legend-title" id="lbl-climate-legend-title">⛅ World Viticultural Climates</span>
-          <button class="climate-legend-close" id="btn-close-climate-legend" title="Hide Legend">&times;</button>
-        </div>
-        <div class="climate-legend-body">
-          <div class="clim-leg-item"><span class="clim-swatch" style="background: #38BDF8;"></span><span id="leg-clim-atlantic">🌊 Atlantic / Maritime</span></div>
-          <div class="clim-leg-item"><span class="clim-swatch" style="background: #FBBF24;"></span><span id="leg-clim-med-coastal">☀️ Coastal Mediterranean</span></div>
-          <div class="clim-leg-item"><span class="clim-swatch" style="background: #FB923C;"></span><span id="leg-clim-med-cont">🏜️ Continental Mediterranean</span></div>
-          <div class="clim-leg-item"><span class="clim-swatch" style="background: #34D399;"></span><span id="leg-clim-cont">❄️ Continental</span></div>
-          <div class="clim-leg-item"><span class="clim-swatch" style="background: #A78BFA;"></span><span id="leg-clim-alpine">🏔️ Alpine / High Altitude</span></div>
-          <div class="clim-leg-item"><span class="clim-swatch" style="background: #FB7185;"></span><span id="leg-clim-subtrop">🌋 Subtropical / Volcanic</span></div>
-        </div>
-      </div>
-
-      <!-- Left Sidebar Search & Explorer -->
-      <aside class="sidebar" id="sidebar">
-        <!-- Sidebar Collapse / Expand Toggle Button -->
-        <button class="sidebar-toggle" id="sidebar-toggle" title="Hide sidebar" aria-label="Toggle Sidebar">
-          <span class="toggle-icon" id="sidebar-toggle-icon">◀</span>
-        </button>
-
-        <div class="sidebar-header">
-          <div class="search-box">
-            <span class="search-icon">🔍</span>
-            <input type="text" id="search-input" class="search-input" placeholder="Search by Appellation, Country, Region, Grape or Municipality..." autocomplete="off">
-          </div>
-          <div class="filters-row">
-            <select id="country-filter" class="filter-select">
-              <option value="" id="country-all-opt">All Countries</option>
-              <option value="Argentina" id="country-ar-opt">🇦🇷 Argentina</option>
-              <option value="Armenia" id="country-am-opt">🇦🇲 Armenia</option>
-              <option value="Australia" id="country-au-opt">🇦🇺 Australia</option>
-              <option value="Austria" id="country-at-opt">🇦🇹 Austria</option>
-              <option value="Bolivia" id="country-bo-opt">🇧🇴 Bolivia</option>
-              <option value="Bosnia y Herzegovina" id="country-ba-opt">🇧🇦 Bosnia and Herzegovina</option>
-              <option value="Brasil" id="country-br-opt">🇧🇷 Brazil</option>
-              <option value="Bulgaria" id="country-bg-opt">🇧🇬 Bulgaria</option>
-              <option value="Canadá" id="country-ca-opt">🇨🇦 Canada</option>
-              <option value="Chile" id="country-cl-opt">🇨🇱 Chile</option>
-              <option value="Croacia" id="country-hr-opt">🇭🇷 Croatia</option>
-              <option value="Chipre" id="country-cy-opt">🇨🇾 Cyprus</option>
-              <option value="República Checa" id="country-cz-opt">🇨🇿 Czech Republic</option>
-              <option value="Francia" id="country-fr-opt">🇫🇷 France</option>
-              <option value="Georgia" id="country-ge-opt">🇬🇪 Georgia</option>
-              <option value="Alemania" id="country-de-opt">🇩🇪 Germany</option>
-              <option value="Grecia" id="country-gr-opt">🇬🇷 Greece</option>
-              <option value="Hungría" id="country-hu-opt">🇭🇺 Hungary</option>
-              <option value="Italia" id="country-it-opt">🇮🇹 Italy</option>
-              <option value="Líbano" id="country-lb-opt">🇱🇧 Lebanon</option>
-              <option value="Luxemburgo" id="country-lu-opt">🇱🇺 Luxembourg</option>
-              <option value="México" id="country-mx-opt">🇲🇽 Mexico</option>
-              <option value="Moldavia" id="country-md-opt">🇲🇩 Moldova</option>
-              <option value="Montenegro" id="country-me-opt">🇲🇪 Montenegro</option>
-              <option value="Macedonia del Norte" id="country-mk-opt">🇲🇰 North Macedonia</option>
-              <option value="Nueva Zelanda" id="country-nz-opt">🇳🇿 New Zealand</option>
-              <option value="Perú" id="country-pe-opt">🇵🇪 Peru</option>
-              <option value="Portugal" id="country-pt-opt">🇵🇹 Portugal</option>
-              <option value="Rumanía" id="country-ro-opt">🇷🇴 Romania</option>
-              <option value="Serbia" id="country-rs-opt">🇷🇸 Serbia</option>
-              <option value="Eslovaquia" id="country-sk-opt">🇸🇰 Slovakia</option>
-              <option value="Eslovenia" id="country-si-opt">🇸🇮 Slovenia</option>
-              <option value="Sudáfrica" id="country-za-opt">🇿🇦 South Africa</option>
-              <option value="España" id="country-es-opt">🇪🇸 Spain</option>
-              <option value="Suiza" id="country-ch-opt">🇨🇭 Switzerland</option>
-              <option value="Turquía" id="country-tr-opt">🇹🇷 Turkey</option>
-              <option value="Reino Unido" id="country-uk-opt">🇬🇧 United Kingdom</option>
-              <option value="Estados Unidos" id="country-us-opt">🇺🇸 United States</option>
-              <option value="Uruguay" id="country-uy-opt">🇺🇾 Uruguay</option>
-            </select>
-            <select id="category-filter" class="filter-select">
-              <option value="" id="cat-all-opt">All Classifications</option>
-            </select>
-            <select id="region-filter" class="filter-select">
-              <option value="" id="reg-all-opt">All Regions</option>
-            </select>
-            <select id="climate-filter" class="filter-select">
-              <option value="" id="clim-all-opt">All Climates</option>
-              <option value="mediterranean_coastal" id="clim-med-coastal-opt">☀️ Mediterranean Coastal</option>
-              <option value="mediterranean_continental" id="clim-med-cont-opt">🏜️ Mediterranean Continental / Meseta</option>
-              <option value="atlantic" id="clim-atlantic-opt">🌊 Atlantic / Maritime</option>
-              <option value="continental" id="clim-cont-opt">❄️ Continental</option>
-              <option value="alpine" id="clim-alpine-opt">🏔️ Alpine / High Altitude</option>
-              <option value="subtropical_volcanic" id="clim-subtrop-opt">🌋 Subtropical / Volcanic</option>
-            </select>
-          </div>
+  <!-- Hero Section -->
+  <main class="flex-1">
+    <section class="relative overflow-hidden py-20 sm:py-28 border-b border-white/5 bg-gradient-to-b from-[#14060b] via-[#0d0a11] to-[#0b0d13]">
+      <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-rose-950/80 border border-rose-800/50 text-rose-300 text-xs font-mono mb-8 shadow-inner">
+          <span class="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span>
+          Geoclimatología · Ampelografía · Estándares WSET 3 · CMS · ASI
         </div>
 
-        <div class="regions-counter">
-          <div class="counter-text-wrap">
-            <span id="count-badge">Loading appellations...</span>
-            <span class="count-visible-pill" id="count-visible-badge"></span>
-          </div>
-          <div class="vis-btn-group">
-            <button class="btn-vis-action" id="btn-show-all-regions" title="Show all filtered wine regions on the map">
-              <span>👁️</span> <span id="txt-show-all">Show All</span>
-            </button>
-            <button class="btn-vis-action" id="btn-hide-all-regions" title="Hide all wine regions from the map">
-              <span>🚫</span> <span id="txt-hide-all">Hide All</span>
-            </button>
-          </div>
-        </div>
+        <h1 class="text-4xl sm:text-7xl font-extrabold tracking-tight text-white mb-6 font-serif-wine">
+          WINE<span class="text-rose-500 text-3xl sm:text-5xl align-super">3</span><span class="text-amber-400 text-3xl sm:text-5xl">ai</span>
+        </h1>
+        <p class="text-xl sm:text-2xl text-rose-200/90 font-serif-wine max-w-3xl mx-auto mb-6 wine-glow leading-relaxed">
+          La confluencia de la Viticultura, la Inteligencia Geoespacial y la Sumillería Científica.
+        </p>
+        <p class="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed mb-10">
+          Inspirado en la claridad visual y deductiva de <strong>Wine Folly</strong>, estructurando el conocimiento del vino en tres dimensiones: el terruño físico y su clima, la biología de la vid y el método analítico internacional.
+        </p>
 
-        <div class="regions-list" id="regions-list"></div>
-      </aside>
-
-      <!-- Right Detail Panel (Floating) -->
-      <section class="detail-panel" id="detail-panel" aria-label="Appellation Details">
-        <button class="detail-close" id="btn-close-detail" title="Close">&times;</button>
-        <div class="detail-header">
-          <span class="detail-badge" id="detail-badge">DO</span>
-          <h2 class="detail-title" id="detail-title"></h2>
-          <div class="detail-region" id="detail-region"></div>
-        </div>
-        <div class="detail-body">
-          <div class="info-item">
-            <div class="info-label" id="lbl-territory">Territorial Scope</div>
-            <div class="info-value" id="detail-munis"></div>
-            <!-- Desplegable interactivo de municipios -->
-            <details class="munis-dropdown" id="munis-dropdown">
-              <summary class="munis-summary" id="munis-summary">
-                <span id="lbl-toggle-munis">View municipalities / communes</span>
-                <span class="summary-arrow">▾</span>
-              </summary>
-              <div class="munis-container">
-                <input type="text" id="munis-search" class="munis-search-input" placeholder="Search municipality / commune..." autocomplete="off">
-                <div class="munis-chips" id="munis-chips"></div>
-              </div>
-            </details>
-          </div>
-          <div class="info-item" id="detail-climate-item" style="display: none;">
-            <div class="info-label" id="lbl-climate">Climate & Terroir</div>
-            <div class="detail-climate-wrap">
-              <span class="detail-climate-badge" id="detail-climate-badge">☀️ Mediterranean</span>
-            </div>
-            <div class="detail-climate-desc" id="detail-climate-desc"></div>
-          </div>
-          <div class="info-item">
-            <div class="info-label" id="lbl-grapes-red">Key Red Varieties</div>
-            <div class="info-value" id="detail-grapes-red"></div>
-          </div>
-          <div class="info-item">
-            <div class="info-label" id="lbl-grapes-white">Key White Varieties</div>
-            <div class="info-value" id="detail-grapes-white"></div>
-          </div>
-        </div>
-        <div class="detail-actions">
-          <a href="#" target="_blank" rel="noopener noreferrer" class="btn-action btn-pliego" id="btn-pliego">
-            <span id="btn-pliego-txt">📄 View Official Specifications (PDF)</span>
+        <!-- Main Action Launchers -->
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a href="map.html" class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-rose-700 to-rose-600 text-white font-semibold shadow-lg shadow-rose-900/40 hover:brightness-110 transition-all font-mono text-sm flex items-center gap-2.5">
+            <span>🗺️</span> Abrir Mapa de Regiones y Clima
+          </a>
+          <a href="grapes.html" class="px-7 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/15 transition-all font-mono text-sm flex items-center gap-2.5">
+            <span>🍇</span> Explorador de Uvas
+          </a>
+          <a href="#winepedia" class="px-7 py-3.5 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 transition-all font-mono text-sm flex items-center gap-2.5">
+            <span>📚</span> WINEp3dIA
           </a>
         </div>
-      </section>
-    </main>
-  </div>
+      </div>
+    </section>
 
-  <!-- PDF Generation Library (A4 Landscape Export) -->
-  <script src="libs/jspdf.umd.min.js"></script>
+    <!-- The 3 Pillars Section -->
+    <section id="pilares" class="py-20 border-b border-white/5 max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-xs font-mono uppercase tracking-widest text-amber-400 mb-2">Arquitectura Fundamental</h2>
+        <h3 class="text-3xl sm:text-4xl font-bold font-serif-wine text-white">Los Tres Pilares de WINE³ai</h3>
+        <p class="text-slate-400 text-sm mt-3">
+          Cada dimensión responde a una pregunta esencial del vino: ¿dónde nace?, ¿qué uva lo expresa? y ¿cómo se analiza con rigor internacional?
+        </p>
+      </div>
 
-  <!-- Capa de datos (compatible directamente con doble clic file:// y con servidor web http://) -->
-  <script src="data/world_climate_zones.js?v=20261107c"></script>
-  <script src="data/spain_wine_regions.js?v=20261107c"></script>
-  <script src="app.js?v=20261107c"></script>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Pilar 1 -->
+        <div class="bg-[#12141c] border border-white/10 rounded-2xl p-8 flex flex-col justify-between card-hover transition-all">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-2xl mb-6 border border-blue-500/20">
+              🗺️
+            </div>
+            <div class="text-xs font-mono text-blue-400 uppercase tracking-wider mb-2">Pilar I · Geografía & Terroir</div>
+            <h4 class="text-xl font-bold font-serif-wine text-white mb-3">WINE³ Maps</h4>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              Atlas cartográfico con delimitación oficial de denominaciones de origen (D.O.P., DOCa, Vinos de Pago), zonas climáticas Köppen-Geiger mundiales, curvas de nivel y pliegos de condiciones normativos.
+            </p>
+            <ul class="text-xs font-mono text-slate-300 space-y-2.5 mb-8">
+              <li class="flex items-center gap-2"><span class="text-blue-400">●</span> Capas vectoriales oficiales IGN y Ministerio</li>
+              <li class="flex items-center gap-2"><span class="text-blue-400">●</span> Climatología macro, meso y micro-terroir</li>
+              <li class="flex items-center gap-2"><span class="text-blue-400">●</span> Búsqueda interactiva por 40+ países vitivinícolas</li>
+            </ul>
+          </div>
+          <a href="map.html" class="w-full py-2.5 px-4 rounded-xl bg-blue-500/10 hover:bg-blue-500/20 text-blue-300 border border-blue-500/30 text-xs font-mono font-semibold text-center transition-colors">
+            Explorar Mapa Interactivo →
+          </a>
+        </div>
+
+        <!-- Pilar 2 -->
+        <div class="bg-[#12141c] border border-white/10 rounded-2xl p-8 flex flex-col justify-between card-hover transition-all">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-rose-500/10 text-rose-400 flex items-center justify-center text-2xl mb-6 border border-rose-500/20">
+              🍇
+            </div>
+            <div class="text-xs font-mono text-rose-400 uppercase tracking-wider mb-2">Pilar II · Biología & Botánica</div>
+            <h4 class="text-xl font-bold font-serif-wine text-white mb-3">WINE³ Ampelography</h4>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              Catálogo ampelográfico exhaustivo de variedades autóctonas e internacionales. Análisis botánico, ciclo vegetativo, acidez, concentración polifenólica y respuesta al estrés hídrico.
+            </p>
+            <ul class="text-xs font-mono text-slate-300 space-y-2.5 mb-8">
+              <li class="flex items-center gap-2"><span class="text-rose-400">●</span> Ruedas sensoriales de aromas primarios y terciarios</li>
+              <li class="flex items-center gap-2"><span class="text-rose-400">●</span> Escalas cuantitativas: tanino, acidez y alcohol</li>
+              <li class="flex items-center gap-2"><span class="text-rose-400">●</span> Adaptación frente al cambio climático</li>
+            </ul>
+          </div>
+          <a href="grapes.html" class="w-full py-2.5 px-4 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 text-rose-300 border border-rose-500/30 text-xs font-mono font-semibold text-center transition-colors">
+            Ver Catálogo de Uvas →
+          </a>
+        </div>
+
+        <!-- Pilar 3 -->
+        <div class="bg-[#12141c] border border-white/10 rounded-2xl p-8 flex flex-col justify-between card-hover transition-all">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-2xl mb-6 border border-amber-500/20">
+              📚
+            </div>
+            <div class="text-xs font-mono text-amber-400 uppercase tracking-wider mb-2">Pilar III · Sumillería & Ciencia</div>
+            <h4 class="text-xl font-bold font-serif-wine text-white mb-3">WINEp3dIA</h4>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              La enciclopedia viva que sintetiza los tres grandes estándares mundiales de la sumillería internacional: <strong>WSET 3</strong>, <strong>CMS</strong> y <strong>ASI</strong>, con fichas de estudio de precisión.
+            </p>
+            <ul class="text-xs font-mono text-slate-300 space-y-2.5 mb-8">
+              <li class="flex items-center gap-2"><span class="text-amber-400">●</span> WSET 3: Factores viñedo y cata SAT</li>
+              <li class="flex items-center gap-2"><span class="text-amber-400">●</span> CMS: Método de cata deductiva a ciegas</li>
+              <li class="flex items-center gap-2"><span class="text-amber-400">●</span> ASI: Estándares internacionales de sumillería</li>
+            </ul>
+          </div>
+          <a href="#winepedia" class="w-full py-2.5 px-4 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs font-mono font-semibold text-center transition-colors">
+            Descubrir la WINEp3dIA →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WINEp3dIA Deep Dive: The 3 Standards -->
+    <section id="winepedia" class="py-20 border-b border-white/5 bg-[#0e111a]">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-mono mb-4">
+            Los 3 Referentes Mundiales
+          </div>
+          <h3 class="text-3xl sm:text-5xl font-bold font-serif-wine text-white mb-4">
+            WINE<span class="text-amber-400">p3dIA</span>
+          </h3>
+          <p class="text-slate-400 text-base leading-relaxed">
+            La formación sumiller y el conocimiento del vino estructurados bajo los tres cánones globales más exigentes, complementados con inteligencia artificial para consultas directas sobre pliegos, estilos y maridajes.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <!-- WSET 3 -->
+          <div class="p-8 rounded-2xl bg-white/[0.02] border border-white/10 relative overflow-hidden group">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-rose-600/10 rounded-full blur-2xl group-hover:bg-rose-600/20 transition-all"></div>
+            <div class="text-xs font-mono text-rose-400 uppercase tracking-widest mb-3">01 · Certificación Académica</div>
+            <h4 class="text-2xl font-bold font-serif-wine text-white mb-2">WSET 3</h4>
+            <div class="text-xs text-slate-400 font-mono mb-4">Wine & Spirit Education Trust — Level 3 Award</div>
+            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+              El canon académico de referencia mundial. Analiza cómo los <strong>factores naturales</strong> (clima, suelo, orografía, insolación) y los <strong>factores humanos</strong> (conducción, densidad, poda, vendimia, vinificación, envejecimiento) definen el estilo, la calidad y el precio de cada vino.
+            </p>
+            <div class="p-4 rounded-xl bg-black/40 border border-white/5 text-xs font-mono text-slate-300 space-y-1.5">
+              <div class="text-rose-400 font-bold">Herramienta Clave: SAT</div>
+              <div>Systematic Approach to Tasting: evaluación objetiva de color, intensidad aromática, nivel de acidez, tanino, alcohol, cuerpo y persistencia.</div>
+            </div>
+          </div>
+
+          <!-- CMS -->
+          <div class="p-8 rounded-2xl bg-white/[0.02] border border-white/10 relative overflow-hidden group">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-amber-600/10 rounded-full blur-2xl group-hover:bg-amber-600/20 transition-all"></div>
+            <div class="text-xs font-mono text-amber-400 uppercase tracking-widest mb-3">02 · Cata Deductiva & Maestría</div>
+            <h4 class="text-2xl font-bold font-serif-wine text-white mb-2">CMS</h4>
+            <div class="text-xs text-slate-400 font-mono mb-4">Court of Master Sommeliers — Americas & Europe</div>
+            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+              El pináculo de la cata a ciegas deductiva y el servicio de sala. Proporciona una metodología de lógica formal estricta donde cada pista sensorial en copa conduce paso a paso hacia la variedad, el país, la región precisa y el rango de añada.
+            </p>
+            <div class="p-4 rounded-xl bg-black/40 border border-white/5 text-xs font-mono text-slate-300 space-y-1.5">
+              <div class="text-amber-400 font-bold">Herramienta Clave: Deductive Grid</div>
+              <div>Vista (color, menisco, viscosidad) ➔ Nariz (fruta, tierra, madera) ➔ Boca (estructura) ➔ Conclusión inicial y deducción final sin titubeos.</div>
+            </div>
+          </div>
+
+          <!-- ASI -->
+          <div class="p-8 rounded-2xl bg-white/[0.02] border border-white/10 relative overflow-hidden group">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-emerald-600/10 rounded-full blur-2xl group-hover:bg-emerald-600/20 transition-all"></div>
+            <div class="text-xs font-mono text-emerald-400 uppercase tracking-widest mb-3">03 · Estándar Global & Concurso</div>
+            <h4 class="text-2xl font-bold font-serif-wine text-white mb-2">ASI</h4>
+            <div class="text-xs text-slate-400 font-mono mb-4">Association de la Sommellerie Internationale</div>
+            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+              La federación internacional que agrupa a más de 60 asociaciones de sumilleres de todo el mundo y organiza el *Mejor Sumiller del Mundo*. Establece las directrices éticas, el servicio de precisión, la gestión de bodegas y los estándares universales.
+            </p>
+            <div class="p-4 rounded-xl bg-black/40 border border-white/5 text-xs font-mono text-slate-300 space-y-1.5">
+              <div class="text-emerald-400 font-bold">Herramienta Clave: Directrices ASI</div>
+              <div>Armonización enogastronómica internacional, servicio de destilados, temperaturas de servicio y vocabulario sommelier armonizado.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- WINEp3dIA Knowledge Engine Box -->
+        <div class="rounded-2xl bg-gradient-to-r from-rose-950/60 via-purple-950/40 to-black p-8 sm:p-10 border border-rose-800/40 flex flex-col md:flex-row items-center justify-between gap-8">
+          <div class="max-w-2xl">
+            <div class="text-xs font-mono text-rose-400 uppercase tracking-wider mb-2">Próxima Integración Documental</div>
+            <h4 class="text-2xl font-bold font-serif-wine text-white mb-3">Base de Conocimiento Semántica e IA</h4>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Preparada para indexar los manuales completos de <strong>WSET 3</strong>, <strong>CMS</strong> y directrices <strong>ASI</strong>, permitiendo búsquedas semánticas y razonamiento sommelier sobre cualquier uva, comarca vinícola o ejercicio de cata deductiva.
+            </p>
+          </div>
+          <div class="flex-shrink-0">
+            <span class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/10 border border-white/20 text-white font-mono text-xs font-semibold">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+              Indexador WSET3 / CMS Listo
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fichas de Estudio Interactivas (Wine Folly Inspired) -->
+    <section id="fichas" class="py-20 border-b border-white/5 max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-xs font-mono uppercase tracking-widest text-rose-400 mb-2">Metodología Visual estilo Wine Folly</h2>
+        <h3 class="text-3xl sm:text-4xl font-bold font-serif-wine text-white">Fichas de Estudio y Deducción</h3>
+        <p class="text-slate-400 text-sm mt-3">
+          Tarjetas interactivas diseñadas para fijar el conocimiento: perfil sensorial, factores ambientales del terruño y la cuadrícula de cata a ciegas.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Ficha 1: Tempranillo -->
+        <div class="bg-[#12141c] border border-white/10 rounded-2xl p-6 relative">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-[10px] font-mono px-2.5 py-1 rounded bg-rose-950 text-rose-300 border border-rose-800/40 uppercase">Ficha Variedad</span>
+            <span class="text-xs font-mono text-slate-400">#01</span>
+          </div>
+          <h4 class="text-xl font-bold font-serif-wine text-white">Tempranillo</h4>
+          <div class="text-xs text-slate-400 font-mono mb-6">Tinto Fino · Tinta del País · Cencibel</div>
+
+          <!-- Scales -->
+          <div class="space-y-3.5 mb-6 text-xs font-mono">
+            <div>
+              <div class="flex justify-between text-slate-300 mb-1">
+                <span>Cuerpo</span>
+                <span class="text-rose-400">Medio (+)</span>
+              </div>
+              <div class="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
+                <div class="h-full bg-rose-500 rounded-full" style="width: 75%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-slate-300 mb-1">
+                <span>Tanino</span>
+                <span class="text-rose-400">Medio (+) a Alto</span>
+              </div>
+              <div class="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
+                <div class="h-full bg-rose-500 rounded-full" style="width: 80%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-slate-300 mb-1">
+                <span>Acidez</span>
+                <span class="text-rose-400">Media a Media (+)</span>
+              </div>
+              <div class="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
+                <div class="h-full bg-rose-500 rounded-full" style="width: 65%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-slate-300 mb-1">
+                <span>Alcohol</span>
+                <span class="text-rose-400">13.5% – 15.0%</span>
+              </div>
+              <div class="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
+                <div class="h-full bg-rose-500 rounded-full" style="width: 85%"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aroma wheel chips -->
+          <div class="text-xs font-mono text-slate-300 mb-2">Descriptores Típicos:</div>
+          <div class="flex flex-wrap gap-1.5 mb-6 text-[11px] font-mono">
+            <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-rose-300">Cereza negra</span>
+            <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-rose-300">Ciruela pasa</span>
+            <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-amber-300">Cuero</span>
+            <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-amber-300">Tabaco</span>
+            <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-yellow-300">Vainilla / Coco</span>
+          </div>
+
+          <a href="grapes.html" class="block w-full py-2 text-center rounded-xl bg-white/5 hover:bg-white/10 text-xs font-mono text-slate-300 transition-colors">
+            Ver Ficha Completa en Uvas →
+          </a>
+        </div>
+
+        <!-- Ficha 2: Terroir Ribera del Duero -->
+        <div class="bg-[#12141c] border border-white/10 rounded-2xl p-6 relative">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-[10px] font-mono px-2.5 py-1 rounded bg-blue-950 text-blue-300 border border-blue-800/40 uppercase">Ficha Terroir</span>
+            <span class="text-xs font-mono text-slate-400">#02</span>
+          </div>
+          <h4 class="text-xl font-bold font-serif-wine text-white">Ribera del Duero</h4>
+          <div class="text-xs text-slate-400 font-mono mb-6">Castilla y León · Meseta Norte</div>
+
+          <div class="space-y-3.5 mb-6 text-xs leading-relaxed text-slate-300">
+            <div class="p-3 rounded-lg bg-black/40 border border-white/5">
+              <span class="font-bold text-amber-400 font-mono block mb-0.5">Clima Continental Extremo:</span>
+              Inviernos rigurosos y veranos muy secos con oscilaciones térmicas día/noche de hasta 20°C que retienen la acidez en el hollejo.
+            </div>
+            <div class="p-3 rounded-lg bg-black/40 border border-white/5">
+              <span class="font-bold text-amber-400 font-mono block mb-0.5">Altimetría:</span>
+              Viñedos situados entre 750 y más de 900 metros sobre el nivel del mar en terrazas fluviales y páramos calizos.
+            </div>
+            <div class="p-3 rounded-lg bg-black/40 border border-white/5">
+              <span class="font-bold text-amber-400 font-mono block mb-0.5">Suelos:</span>
+              Capas alternas de margas calizas, arenas calcáreas, arcillas sedimentarias y cascajos aluviales.
+            </div>
+          </div>
+
+          <a href="map.html" class="block w-full py-2 text-center rounded-xl bg-white/5 hover:bg-white/10 text-xs font-mono text-slate-300 transition-colors">
+            Localizar en el Mapa →
+          </a>
+        </div>
+
+        <!-- Ficha 3: Deductive Tasting Matrix -->
+        <div class="bg-[#12141c] border border-white/10 rounded-2xl p-6 relative">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-[10px] font-mono px-2.5 py-1 rounded bg-amber-950 text-amber-300 border border-amber-800/40 uppercase">Matriz de Cata</span>
+            <span class="text-xs font-mono text-slate-400">#03</span>
+          </div>
+          <h4 class="text-xl font-bold font-serif-wine text-white">Cata Deductiva CMS</h4>
+          <div class="text-xs text-slate-400 font-mono mb-6">Secuencia Deductiva a Ciegas</div>
+
+          <div class="space-y-3 mb-6 text-xs font-mono">
+            <div class="flex items-start gap-2.5">
+              <span class="w-5 h-5 rounded bg-rose-500/20 text-rose-400 flex items-center justify-center font-bold text-[10px]">1</span>
+              <div>
+                <strong class="text-white block">Vista (Sight):</strong>
+                <span class="text-slate-400">Claridad, color central, evolución del menisco, densidad de lágrimas.</span>
+              </div>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <span class="w-5 h-5 rounded bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-[10px]">2</span>
+              <div>
+                <strong class="text-white block">Nariz (Nose):</strong>
+                <span class="text-slate-400">Condición, intensidad, fruta (fresca/madura), flores, tierra/mineral, crianza en roble.</span>
+              </div>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <span class="w-5 h-5 rounded bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold text-[10px]">3</span>
+              <div>
+                <strong class="text-white block">Boca (Palate):</strong>
+                <span class="text-slate-400">Seco/dulzor, acidez, tanino (grano fino/grueso), alcohol, cuerpo, persistencia (finish).</span>
+              </div>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <span class="w-5 h-5 rounded bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-[10px]">4</span>
+              <div>
+                <strong class="text-white block">Conclusión (Conclusion):</strong>
+                <span class="text-slate-400">Clima (frío/cálido), variedad probable, mundo (viejo/nuevo), país, región, añada estimada.</span>
+              </div>
+            </div>
+          </div>
+
+          <a href="#winepedia" class="block w-full py-2 text-center rounded-xl bg-white/5 hover:bg-white/10 text-xs font-mono text-slate-300 transition-colors">
+            Explorar Método Completo →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Terroir & Science Callout -->
+    <section class="py-16 bg-[#07090e] border-b border-white/5">
+      <div class="max-w-5xl mx-auto px-6 text-center">
+        <h4 class="text-xs font-mono uppercase tracking-widest text-slate-400 mb-3">La Filosofía</h4>
+        <p class="text-xl sm:text-2xl font-serif-wine text-stone-200 italic leading-relaxed mb-6">
+          «El buen vino es un diálogo entre la geología profunda de la tierra, la atmósfera que lo desafía y la inteligencia del hombre que interpreta su fruto.»
+        </p>
+        <div class="text-xs font-mono text-slate-500">
+          WINE³ai Project · En Fuentecén, Ribera del Duero y el Mundo
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 py-10 bg-[#05060a] text-xs text-slate-500 font-mono">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <img src="assets/logo.svg" alt="WINE³ai" class="w-6 h-6">
+        <span class="text-slate-300 font-serif-wine font-bold text-sm">WINE<span class="text-rose-500">³</span>ai</span>
+        <span>•</span>
+        <span>World Wide Wine Terroir Intelligence</span>
+      </div>
+
+      <div class="flex items-center gap-6">
+        <a href="map.html" class="hover:text-rose-400 transition-colors">Mapa</a>
+        <a href="grapes.html" class="hover:text-rose-400 transition-colors">Uvas</a>
+        <a href="#winepedia" class="hover:text-amber-400 transition-colors">WINEp3dIA</a>
+        <a href="https://github.com/jreyes13/wine3ai" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">GitHub</a>
+        <a href="https://jreyes13.net" class="hover:text-white transition-colors">jreyes13.net</a>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>

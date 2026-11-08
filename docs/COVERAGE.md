@@ -2,16 +2,16 @@
 
 **English** | [Versión en Español](COBERTURA.md)
 
-This document provides the exhaustive technical, viticultural, and cartographic census for all **39 countries** and **844 official wine regions** included in the **WINE³ai** project.
+This document provides the exhaustive technical, viticultural, and cartographic census for all **51 countries** and **867 official wine regions** included in the **WINE³ai** project.
 
 ---
 
 ## Global Summary Metrics 📊
 
-* **39 Sovereign Wine Nations** with 100% completed official census.
-* **844 Demarcated Wine Regions** interactive in the web applications with commune-level search and filtering.
-* **875+ QGIS Vector Layers** organized into national groups in the primary QGIS project ([`QGIS/wine_world_wine.qgz`](../QGIS/wine_world_wine.qgz)).
-* **740+ Official Legal Specification Documents (PDFs)** archived locally in [`DOWNs/DOCs/`](../DOWNs/DOCs/).
+* **51 Sovereign Wine Nations** with 100% completed official census.
+* **867 Demarcated Wine Regions** interactive in the web applications with commune-level search and filtering.
+* **900+ QGIS Vector Layers** organized into national groups in the primary QGIS project ([`QGIS/wine_world_wine.qgz`](../QGIS/wine_world_wine.qgz)).
+* **760+ Official Legal Specification Documents (PDFs)** archived locally in [`DOWNs/DOCs/`](../DOWNs/DOCs/).
 * **2 Interactive Web Applications:**
   * 🗺️ **Official Wine Regions Map:** [https://jreyes13.github.io/wine3ai/](https://jreyes13.github.io/wine3ai/)
   * 🍇 **Grape Varieties Global Explorer:** [https://jreyes13.github.io/wine3ai/grapes.html](https://jreyes13.github.io/wine3ai/grapes.html)
@@ -373,3 +373,86 @@ All 9 official viticultural regions and terroirs of the Republic of Turkey (*Tü
 * **Niagara Peninsula VQA (Ontario):** World benchmark terroir along Lake Ontario and the dolomitic limestone bench of the Niagara Escarpment (UNESCO Biosphere). Acclaimed globally as the world capital of luscious Vidal Blanc and Riesling Icewine, alongside world-class cool-climate Chardonnay, Pinot Noir, and Cabernet Franc.
 * **Okanagan Valley VQA (British Columbia):** Spectacular semi-arid glacial fjord valley stretching from cool alpine northern shores (Kelowna) to the desert heat of the south (Oliver/Osoyoos). Diverse glacial gravels and sand cultivating pristine Riesling, Pinot Noir, Syrah, and Bordeaux-style red blends.
 * **Prince Edward County VQA (Ontario):** Island-like peninsula jutting into Lake Ontario with shallow, fractured Trenton limestone bedrock and cool lake-effect breezes. International cult following for flinty, mineral Chardonnay and ethereal Pinot Noir.
+
+---
+
+### 🇨🇳 China (100% Continental East Asian Expansion Completed)
+4 National Protected Wine Regions / Geographical Indications recognized by the **State Administration for Market Regulation (SAMR)** and regional wine bureaus:
+* **Ningxia - Helan Mountain East Foothills (宁夏贺兰山东麓):** China's premier viticultural region and world-renowned terroir. Situated on the alluvial gravelly plains between the Yellow River and the majestic Helan Mountains (1,100 - 1,200 m). Extreme continental climate with over 3,000 hours of intense sunshine and low humidity; the global epicenter of Marselan, Cabernet Sauvignon, and Merlot, where vines are buried under soil each winter (*ta mai*) to survive Siberian frosts.
+* **Shandong - Yantai & Penglai (山东烟台蓬莱):** The historical cradle of modern Chinese winemaking (home of Changyu, founded 1892) on the Shandong Peninsula. Maritime monsoon climate tempered by Bohai Bay and Yellow Sea breezes, with decomposed granite and sandy loam soils. Famed for Cabernet Gernischt (Carmenère), Cabernet Sauvignon, Chardonnay, and elegant coastal Marselan.
+* **Xinjiang - Yanqi Basin & Turpan (新疆焉耆吐鲁番):** Deep within Central Asia at the foot of the snow-capped Tian Shan mountains. Desert oasis viticulture utilizing ancient *karez* meltwater canals; extreme diurnal shifts and volcanic/alluvial gravels producing concentrated, fruit-forward Cabernet Sauvignon, Syrah, and aromatic white wines.
+* **Yunnan - Shangri-La & Deqin (云南香格里拉德钦):** Dramatic high-altitude alpine terraced vineyards (2,000 - 2,600 m elevation) in the Hengduan Mountains along the upper Mekong and Yangtze river valleys. Unique glacial microclimate with intense UV radiation, crafting benchmark high-altitude Cabernet Sauvignon (Ao Yun) with silky tannins and exquisite fresh acidity.
+
+---
+
+### 🇯🇵 Japan (100% National GI Expansion Completed)
+2 Iconic Geographical Indications (GI) certified by the **National Tax Agency (NTA)** and **GI Japan**:
+* **Yamanashi GI (山梨):** The spiritual and historical capital of Japanese viticulture, nestled in the Kofu Basin beneath Mount Fuji. Surrounded by the Japanese Alps, alluvial fans and volcanic ash soils nurture the indigenous, millennial pink-skinned *Koshu* grape (producing crystalline, delicate whites with yuzu and mineral notes) alongside elegant Muscat Bailey A.
+* **Nagano GI (長野 / Shinshu):** High-elevation mountain valleys within the Japanese Alps (Chikuma River & Kikyogahara basins). Cool alpine climate with significant day-night temperature swings, yielding world-class Merlot, Chardonnay, and crisp Koshu with razor-sharp tension and pristine aromatics.
+
+---
+
+### 🇮🇳 India (100% Subcontinental Expansion Completed)
+1 Pioneer Geographical Indication (GI) registered with the **Geographical Indications Registry (Intellectual Property India)**:
+* **Nashik Valley Wine GI (Maharashtra):** The undisputed "Wine Capital of India," situated in the Western Ghats (Sahyadri range) at 600 - 700 m elevation. Weathered volcanic basalt soils and dry, sunny winter growing cycles (harvested January–March); vibrant hub of tropical Chenin Blanc, peppery Shiraz, and Cabernet Sauvignon (Sula, York, Grover Zampa).
+
+---
+
+### 🇲🇦 Morocco (100% Maghreb Census Completed)
+2 Classic Appellations d'Origine Garantie (AOG) regulated by the **Office National de Sécurité Sanitaire des Produits Alimentaires (ONSSA)**:
+* **Guerrouane AOG (Fès-Meknès):** Historical viticultural plateau in the foothills of the Middle Atlas mountains (500 - 650 m). Clay-limestone and sandy soils tempered by Atlantic winds; famed for refreshing Vin Gris (Carignan, Cinsault) and structured reds of Syrah and Grenache Noir.
+* **Beni M'Tir AOG (Fès-Meknès):** Elevated plateau slopes (up to 750 m) with cooler nights and rich limestone terroir; renowned for Chateau Roslane and structured, age-worthy red blends of Syrah, Cabernet Sauvignon, and Merlot.
+
+---
+
+### 🇹🇳 Tunisia (100% Maghreb Census Completed)
+2 Historic Appellations d'Origine Contrôlée (AOC) overseen by the **Direction Générale de la Production Agricole (DGPA)**:
+* **Grand Cru Mornag AOC (Gouvernorat de Ben Arous):** Ancient coastal plain extending south from Tunis beneath Mount Boukornine. Deep alluvial and limestone soils cooled by Mediterranean breezes; celebrated for expressive Syrah, Carignan, Mourvèdre, and elegant rosés dating back to Carthaginian viticultural treatise writer Mago.
+* **Coteaux de Kélibia AOC (Cap Bon):** Wind-swept Mediterranean peninsula jutting into the Sicilian Strait. Chalky-calcareous coastal terraces dedicated almost exclusively to *Muscat d'Alexandrie* (known locally as Muscat de Kélibia), producing benchmark bone-dry, aromatic, saline white wines.
+
+---
+
+### 🇮🇱 Israel (100% Levantine Quality Census Completed)
+2 Historic Wine Regions recognized by the **Israeli Wine Grapes Board**:
+* **Judean Hills (הרי יהודה):** Ancient biblical terrace vineyards in the mountains surrounding Jerusalem (600 - 900 m elevation). Shallow terra rossa on dense Cenomanian limestone bedrock; cool mountain nights yield exceptional, structured Syrah, Cabernet Franc, Cabernet Sauvignon, and mineral Chardonnay.
+* **Upper Galilee & Golan Heights (הגליל העליון ורמת הגולן):** Northern alpine volcanic region rising from 600 m to over 1,100 m elevation on the volcanic plateau. Basaltic soils, snow in winter, and cool breezes producing benchmark cool-climate Cabernet Sauvignon, Syrah, and crisp Sauvignon Blanc.
+
+---
+
+### 🇦🇿 Azerbaijan (100% Caucasian Quality Census Completed)
+1 Landmark Geographical Indication recognized by the **Ministry of Agriculture of Azerbaijan**:
+* **Ganja & Goygol GI (Gəncə-Göygöl):** Ancient viticultural crossroads at the foothills of the Lesser Caucasus mountains along the Kura river basin. Alluvial, gravelly soils and mild continental climate; historical stronghold of the ancient indigenous red grape *Madrasa (Mədrəsə)* and Bayanshira, crafting characterful, herb-scented reds and crisp whites.
+
+---
+
+### 🇧🇪 Belgium (100% Cool-Climate European Quality Census Completed)
+2 Officially Protected Designations of Origin (DOP / AOP) registered in the EU **eAmbrosia** database and overseen by **FOD Economie**:
+* **Côtes de Sambre et Meuse DOP (Wallonia):** Picturesque river valleys of the Sambre and Meuse rivers. Carboniferous limestone and shale slopes capturing maximum solar reflection from the water; producing vibrant traditional method sparkling wines and crisp whites from Chardonnay, Pinot Noir, and Auxerrois.
+* **Hagelandse Wijn DOP (Flanders):** Belgium's first official appellation (1997) in Flemish Brabant. Rolling iron-sandstone hills (*ijzerzandsteen*) and maritime microclimate, cultivating elegant Müller-Thurgau, Pinot Gris, and Chardonnay.
+
+---
+
+### 🇳🇱 Netherlands (100% Cool-Climate European Quality Census Completed)
+2 Officially Protected Designations of Origin (BOB / DOP) registered in the EU **eAmbrosia** database and overseen by **RVO**:
+* **Mergelland / Zuid-Limburg DOP (Limburg):** The southern undulating hill country of the Netherlands, blessed with unique Cretaceous chalk and marl (*mergel*) soils. Exceptional terroir for mineral Chardonnay, Pinot Blanc, and Pinot Noir (Apostelhoeve).
+* **Achterhoek - Winterswijk DOP (Gelderland):** Historic eastern bocage landscape with distinctive sandy-clay soils and cooler continental conditions, celebrated for cold-hardy modern PIWI varieties (Solaris, Johanniter, Regent).
+
+---
+
+### 🇵🇱 Poland (100% Cool-Climate European Quality Census Completed)
+2 Premier Protected Wine Regions recognized by the **Krajowy Ośrodek Wsparcia Rolnictwa (KOWR)**:
+* **Zielona Góra (Lubuskie):** The historic capital of Polish viticulture along the Oder river valley, with continuous winemaking records since the 12th century. Sand-gravel glacial moraines and temperate microclimate producing acclaimed sparkling and still wines from Pinot Noir, Chardonnay, and Riesling.
+* **Małopolska & Podkarpacie (Kraków & Carpathian Foothills):** Vertiginous terraced vineyards on the southern slopes of the Western Carpathians and Vistula valley. Calcareous and loess soils crafting expressive cold-climate whites (Seyval Blanc, Solaris) and reds (Rondo, Regent, Pinot Noir).
+
+---
+
+### 🇲🇹 Malta (100% Mediterranean Quality Census Completed)
+1 Unified Denominazzjoni ta' Oriġini Kontrollata (DOK) under the **Ministry for Agriculture, Fisheries and Animal Rights (MAFA)**:
+* **DOK Malta & DOK Gozo:** Sun-drenched archipelago in the central Mediterranean south of Sicily. Globigerina limestone terraces and coastal coralline karst buffeted by maritime winds; home to indigenous ancient Maltese treasures *Ġellewża* (red) and *Girgentina* (white), vinified alongside Syrah and Chardonnay.
+
+---
+
+### 🇺🇦 Ukraine (100% Black Sea Quality Census Completed)
+2 Major Viticultural Regions recognized under the **Ministry of Agrarian Policy and Food of Ukraine**:
+* **Odesa & Bessarabia / Shabo (Одещина та Бессарабія):** Historical Black Sea and Dniester estuary terroir. Sandy-loam soils and warm maritime climate; home of the century-old Swiss colony of Shabo and the native Ukrainian white jewel *Telti-Kuruk*, alongside Cabernet Sauvignon and sparkling wines.
+* **Transcarpathia / Zakarpattia (Закарпаття):** Protected volcanic slopes on the southwestern flank of the Carpathian Mountains along the Hungarian border. Mild microclimate and volcanic tuff terraces cultivating aromatic Traminer, Furmint, Leányka, and structured red blends.

@@ -164,7 +164,19 @@ const COUNTRY_NAMES = {
   'Bolivia': { es: 'Bolivia', en: 'Bolivia', flag: '🇧🇴' },
   'Perú': { es: 'Perú', en: 'Peru', flag: '🇵🇪' },
   'México': { es: 'México', en: 'Mexico', flag: '🇲🇽' },
-  'Canadá': { es: 'Canadá', en: 'Canada', flag: '🇨🇦' }
+  'Canadá': { es: 'Canadá', en: 'Canada', flag: '🇨🇦' },
+  'China': { es: 'China', en: 'China', flag: '🇨🇳' },
+  'Japón': { es: 'Japón', en: 'Japan', flag: '🇯🇵' },
+  'India': { es: 'India', en: 'India', flag: '🇮🇳' },
+  'Marruecos': { es: 'Marruecos', en: 'Morocco', flag: '🇲🇦' },
+  'Túnez': { es: 'Túnez', en: 'Tunisia', flag: '🇹🇳' },
+  'Israel': { es: 'Israel', en: 'Israel', flag: '🇮🇱' },
+  'Azerbaiyán': { es: 'Azerbaiyán', en: 'Azerbaijan', flag: '🇦🇿' },
+  'Bélgica': { es: 'Bélgica', en: 'Belgium', flag: '🇧🇪' },
+  'Países Bajos': { es: 'Países Bajos', en: 'Netherlands', flag: '🇳🇱' },
+  'Polonia': { es: 'Polonia', en: 'Poland', flag: '🇵🇱' },
+  'Malta': { es: 'Malta', en: 'Malta', flag: '🇲🇹' },
+  'Ucrania': { es: 'Ucrania', en: 'Ukraine', flag: '🇺🇦' }
 };
 
 let currentLang = 'en';
@@ -1117,7 +1129,19 @@ const COUNTRY_CENTERS = {
   'Bolivia': { center: [-65.0, -20.5], zoom: 6.8 },
   'Perú': { center: [-75.0, -14.0], zoom: 6.5 },
   'México': { center: [-102.0, 26.0], zoom: 5.0 },
-  'Canadá': { center: [-85.0, 46.0], zoom: 4.8 }
+  'Canadá': { center: [-85.0, 46.0], zoom: 4.8 },
+  'China': { center: [106.0, 38.0], zoom: 4.5 },
+  'Japón': { center: [138.5, 36.0], zoom: 6.5 },
+  'India': { center: [74.0, 20.0], zoom: 6.8 },
+  'Marruecos': { center: [-5.5, 33.8], zoom: 7.0 },
+  'Túnez': { center: [10.5, 36.6], zoom: 7.5 },
+  'Israel': { center: [35.2, 32.2], zoom: 7.8 },
+  'Azerbaiyán': { center: [46.5, 40.5], zoom: 7.5 },
+  'Bélgica': { center: [4.8, 50.6], zoom: 8.0 },
+  'Países Bajos': { center: [6.0, 51.5], zoom: 7.8 },
+  'Polonia': { center: [19.0, 51.5], zoom: 6.2 },
+  'Malta': { center: [14.4, 35.9], zoom: 10.5 },
+  'Ucrania': { center: [28.0, 47.0], zoom: 6.0 }
 };
 
 // Event Listeners
