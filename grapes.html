@@ -121,8 +121,76 @@
           </div>
         </div>
 
+        <!-- View Mode Switcher: Periodic Table (3x3 / 9 Groups) vs Standard Catalog -->
+        <div class="view-switch-banner">
+          <div class="view-switch-tabs" role="tablist">
+            <button type="button" class="view-tab-btn active" id="tab-btn-periodic" data-mode="periodic">
+              <span class="tab-icon">⚗️</span>
+              <span class="tab-text" id="lbl-tab-periodic">Tabla Periódica WINE³</span>
+              <span class="tab-badge" id="badge-periodic-count">54 Elementos · 9 Grupos</span>
+            </button>
+            <button type="button" class="view-tab-btn" id="tab-btn-catalog" data-mode="catalog">
+              <span class="tab-icon">▦</span>
+              <span class="tab-text" id="lbl-tab-catalog">Catálogo Completo</span>
+              <span class="tab-badge secondary" id="badge-catalog-count">710 Variedades</span>
+            </button>
+          </div>
+
+          <!-- Aroma Filter by Le Nez du Vin (54 Aromas) -->
+          <div class="aroma-filter-box" id="aroma-filter-box">
+            <div class="aroma-filter-label-wrap">
+              <span class="aroma-filter-icon">👃</span>
+              <span class="aroma-filter-title" id="lbl-aroma-filter-title">Filtro Sensorial Le Nez du Vin:</span>
+            </div>
+            <div class="aroma-select-wrap">
+              <select id="aroma-filter-select" class="aroma-filter-select" title="Filtrar por aroma de Le Nez du Vin">
+                <option value="all" id="opt-aroma-all">✨ Todos los Aromas (54 descriptores)</option>
+              </select>
+              <button type="button" class="btn-clear-aroma" id="btn-clear-aroma" style="display: none;" title="Limpiar filtro de aroma">
+                ✕ <span id="lbl-clear-aroma">Quitar Aroma</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Periodic Table Wrapper Section -->
+        <div class="periodic-table-wrapper" id="periodic-table-wrapper">
+          <div class="periodic-header">
+            <div class="periodic-title-area">
+              <div class="periodic-title-main">
+                <span class="periodic-badge">WINE³ai</span>
+                <h3 class="periodic-title" id="lbl-periodic-main-title">The Periodic Table of Wine &amp; Terroir</h3>
+              </div>
+              <p class="periodic-desc" id="lbl-periodic-desc">
+                Matriz Atómica 3×3 (9 Familias de Estilo) calibrada con los 54 Aromas de <em>Le Nez du Vin</em>. Haz clic en un elemento químico para activar su análisis y mapa geoespacial.
+              </p>
+            </div>
+            <div class="periodic-legend-summary">
+              <div class="legend-macro-tag w1"><span class="macro-dot"></span> W¹ Blancos (G1-G3)</div>
+              <div class="legend-macro-tag w2"><span class="macro-dot"></span> W² Tintos (G4-G6)</div>
+              <div class="legend-macro-tag w3"><span class="macro-dot"></span> W³ Método &amp; Singular (G7-G9)</div>
+            </div>
+          </div>
+
+          <!-- Active Aroma Feedback Banner -->
+          <div class="aroma-feedback-banner" id="aroma-feedback-banner" style="display: none;">
+            <div class="aroma-feedback-content">
+              <span class="aroma-feedback-icon" id="aroma-feedback-icon">🍒</span>
+              <span class="aroma-feedback-text" id="aroma-feedback-text">Mostrando variedades con aroma...</span>
+            </div>
+            <button type="button" class="btn-aroma-feedback-reset" id="btn-aroma-feedback-reset">Ver todas las uvas</button>
+          </div>
+
+          <!-- The Periodic Grid Container -->
+          <div class="periodic-grid-scroll-wrap">
+            <div class="periodic-grid" id="periodic-grid">
+              <!-- Populated dynamically via JS -->
+            </div>
+          </div>
+        </div>
+
         <!-- Reactive Grape Varieties Matrix -->
-        <div class="variety-matrix-wrapper">
+        <div class="variety-matrix-wrapper" id="variety-matrix-wrapper" style="display: none;">
           <div class="matrix-header">
             <div class="matrix-title-area">
               <span class="matrix-icon">🍇</span>
@@ -182,6 +250,12 @@
               <span class="syn-chip">Ull de Llebre</span>
               <span class="syn-chip">Aragonez</span>
               <span class="syn-chip">Tinta Roriz</span>
+            </div>
+          </div>
+          <div class="hero-aromas-wrap" id="hero-aromas-wrap">
+            <span class="synonyms-title" id="lbl-hero-aromas">👃 Key Aromas (Le Nez du Vin):</span>
+            <div class="aromas-chips" id="hero-aromas-chips">
+              <!-- Populated dynamically via JS -->
             </div>
           </div>
         </div>
@@ -338,7 +412,9 @@
   </div>
 
   <!-- Load Data and Core Application Logic -->
-  <script src="data/grape_varieties.js?v=20261104d"></script>
-  <script src="grapes.js?v=20261104d"></script>
+  <script src="data/aromas_nez_du_vin.js?v=20261108"></script>
+  <script src="data/periodic_table_grapes.js?v=20261108"></script>
+  <script src="data/grape_varieties.js?v=20261108"></script>
+  <script src="grapes.js?v=20261108"></script>
 </body>
 </html>

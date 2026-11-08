@@ -71,7 +71,20 @@ const I18N = {
     btnOpenWineMap: "🗺️ Open in Wine Map",
     redBadge: "🔴 Red Variety",
     whiteBadge: "⚪ White Variety",
-    noRegionsFound: "No appellations found for this selection."
+    noRegionsFound: "No appellations found for this selection.",
+    lblTabPeriodic: "WINE³ Periodic Table",
+    lblTabCatalog: "Full Catalog",
+    badgePeriodicCount: "54 Elements · 9 Groups",
+    badgeCatalogCount: "710 Varieties",
+    lblAromaFilterTitle: "Le Nez du Vin Sensory Filter:",
+    optAromaAll: "✨ All Aromas (54 descriptors)",
+    lblClearAroma: "Clear Aroma",
+    lblPeriodicMainTitle: "The Periodic Table of Wine & Terroir",
+    lblPeriodicDesc: "3×3 Atomic Matrix (9 Style Families) calibrated with the 54 Aromas of Le Nez du Vin. Click any chemical element to trigger its terroir and geospatial analysis.",
+    lblHeroAromas: "👃 Key Aromas (Le Nez du Vin):",
+    noAromasRecorded: "Sensory aroma profile in calibration",
+    aromaShowing: "Showing varieties expressing aroma: ",
+    btnAromaReset: "Show all grapes"
   },
   es: {
     brandTitle: "WINE³ai",
@@ -143,7 +156,20 @@ const I18N = {
     btnOpenWineMap: "🗺️ Ver en Mapa General",
     redBadge: "🔴 Variedad Tinta",
     whiteBadge: "⚪ Variedad Blanca",
-    noRegionsFound: "No se encontraron denominaciones para esta selección."
+    noRegionsFound: "No se encontraron denominaciones para esta selección.",
+    lblTabPeriodic: "Tabla Periódica WINE³",
+    lblTabCatalog: "Catálogo Completo",
+    badgePeriodicCount: "54 Elementos · 9 Grupos",
+    badgeCatalogCount: "710 Variedades",
+    lblAromaFilterTitle: "Filtro Sensorial Le Nez du Vin:",
+    optAromaAll: "✨ Todos los Aromas (54 descriptores)",
+    lblClearAroma: "Quitar Aroma",
+    lblPeriodicMainTitle: "Tabla Periódica del Vino y Terruño",
+    lblPeriodicDesc: "Matriz Atómica 3×3 (9 Familias de Estilo) calibrada con los 54 Aromas de Le Nez du Vin. Haz clic en un elemento químico para activar su análisis y mapa geoespacial.",
+    lblHeroAromas: "👃 Descriptores Aromáticos (Le Nez du Vin):",
+    noAromasRecorded: "Perfil sensorial en calibración",
+    aromaShowing: "Mostrando variedades con aroma a: ",
+    btnAromaReset: "Ver todas las uvas"
   }
 };
 
@@ -241,6 +267,10 @@ let selectedGrapeObj = null;
 let activeCountryFilter = null;
 let map = null;
 
+// Periodic Table & Aroma Engine State
+let activeViewMode = 'periodic'; // 'periodic' | 'catalog'
+let activeAromaFilter = 'all';
+
 // Option A: Dynamic full region polygon loading & caching
 let fullRegionsPromise = null;
 let fullRegionsIndex = null;
@@ -252,7 +282,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   initMap();
   await loadGrapeData();
   populateCountryFilter();
+  populateAromaFilter();
   setupEventListeners();
+  renderPeriodicTable();
   renderVarietyMatrix();
   selectGrape('Tempranillo');
 
@@ -468,9 +500,14 @@ function selectGrape(grapeName) {
   updateMapRegions();
   renderTable();
 
-  // Highlight active variety card in matrix
+  // Highlight active variety card in matrix and periodic table
   document.querySelectorAll('.variety-card').forEach(c => {
     c.classList.toggle('active', c.dataset.name === selectedGrapeObj.name);
+  });
+  document.querySelectorAll('.periodic-tile').forEach(tile => {
+    const isAct = tile.dataset.name?.toLowerCase() === selectedGrapeObj.name.toLowerCase() ||
+                  tile.dataset.id === selectedGrapeObj.id;
+    tile.classList.toggle('active', isAct);
   });
 }
 
@@ -508,6 +545,61 @@ function renderHeroCard() {
     sp.style.fontStyle = 'italic';
     sp.textContent = t.noSynonyms;
     synWrap.appendChild(sp);
+  }
+
+  // Render Aromas (Le Nez du Vin)
+  const aromaWrap = document.getElementById('hero-aromas-chips');
+  if (aromaWrap) {
+    aromaWrap.innerHTML = '';
+    let grapeAromas = [];
+
+    // 1. Check in PERIODIC_TABLE_DATA first
+    if (window.PERIODIC_TABLE_DATA && window.PERIODIC_TABLE_DATA.elements) {
+      const ptEntry = window.PERIODIC_TABLE_DATA.elements.find(e => 
+        e.id === g.id || e.name.toLowerCase() === g.name.toLowerCase()
+      );
+      if (ptEntry && ptEntry.aroma_ids && window.AROMAS_NEZ_DU_VIN) {
+        grapeAromas = ptEntry.aroma_ids.map(num => 
+          window.AROMAS_NEZ_DU_VIN.find(a => a.number === num)
+        ).filter(Boolean);
+      }
+    }
+
+    // 2. If still empty, check AROMAS_NEZ_DU_VIN grapes array
+    if (grapeAromas.length === 0 && window.AROMAS_NEZ_DU_VIN) {
+      grapeAromas = window.AROMAS_NEZ_DU_VIN.filter(a => 
+        a.grapes && a.grapes.some(gr => gr === g.id || gr === g.name.toLowerCase())
+      );
+    }
+
+    if (grapeAromas.length > 0) {
+      grapeAromas.forEach(ar => {
+        const chip = document.createElement('div');
+        chip.className = 'aroma-chip';
+        const aName = currentLang === 'es' ? ar.name_es : ar.name_en;
+        chip.title = `${ar.family_es || ar.family}: ${ar.molecule}`;
+        chip.innerHTML = `
+          <span>${ar.icon}</span>
+          <span class="aroma-chip-num">#${ar.number}</span>
+          <span>${aName}</span>
+          <span class="aroma-chip-chem">(${ar.molecule.split(',')[0]})</span>
+        `;
+        chip.addEventListener('click', () => {
+          setAromaFilter(ar.number);
+          if (activeViewMode !== 'periodic') {
+            switchViewMode('periodic');
+          }
+          document.getElementById('periodic-table-wrapper')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+        aromaWrap.appendChild(chip);
+      });
+    } else {
+      const sp = document.createElement('span');
+      sp.className = 'syn-chip';
+      sp.style.fontStyle = 'italic';
+      sp.textContent = t.noAromasRecorded;
+      aromaWrap.appendChild(sp);
+    }
   }
 }
 
@@ -1143,6 +1235,27 @@ function setupEventListeners() {
     });
   }
 
+  // View Mode Tabs (Periodic Table vs Catalog)
+  document.getElementById('tab-btn-periodic')?.addEventListener('click', () => {
+    switchViewMode('periodic');
+  });
+  document.getElementById('tab-btn-catalog')?.addEventListener('click', () => {
+    switchViewMode('catalog');
+  });
+
+  // Aroma filter select (Le Nez du Vin)
+  document.getElementById('aroma-filter-select')?.addEventListener('change', (e) => {
+    setAromaFilter(e.target.value);
+  });
+
+  // Clear aroma buttons
+  document.getElementById('btn-clear-aroma')?.addEventListener('click', () => {
+    setAromaFilter('all');
+  });
+  document.getElementById('btn-aroma-feedback-reset')?.addEventListener('click', () => {
+    setAromaFilter('all');
+  });
+
   // Language Switcher
   document.getElementById('btn-lang-en').addEventListener('click', () => setLanguage('en'));
   document.getElementById('btn-lang-es').addEventListener('click', () => setLanguage('es'));
@@ -1153,6 +1266,7 @@ function setupEventListeners() {
       document.querySelectorAll('#color-filter-group .seg-btn').forEach(b => b.classList.remove('active'));
       e.target.classList.add('active');
       renderVarietyMatrix();
+      applyPeriodicTableFilters();
       
       const filtered = getFilteredGrapes();
       if (filtered.length > 0) {
@@ -1172,6 +1286,7 @@ function setupEventListeners() {
     const val = e.target.value;
     activeCountryFilter = val === 'all' ? null : val;
     renderVarietyMatrix();
+    applyPeriodicTableFilters();
 
     const filtered = getFilteredGrapes();
     if (filtered.length > 0) {
@@ -1388,9 +1503,255 @@ function setLanguage(lang) {
 
   document.getElementById('footer-link-map').textContent = t.navMap;
 
+  // Periodic Table & Aroma Elements translation
+  const elLblTabPeriodic = document.getElementById('lbl-tab-periodic');
+  if (elLblTabPeriodic) elLblTabPeriodic.textContent = t.lblTabPeriodic;
+  const elLblTabCatalog = document.getElementById('lbl-tab-catalog');
+  if (elLblTabCatalog) elLblTabCatalog.textContent = t.lblTabCatalog;
+  const elBadgePeriodic = document.getElementById('badge-periodic-count');
+  if (elBadgePeriodic) elBadgePeriodic.textContent = t.badgePeriodicCount;
+  const elBadgeCatalog = document.getElementById('badge-catalog-count');
+  if (elBadgeCatalog) elBadgeCatalog.textContent = t.badgeCatalogCount;
+  const elLblAroma = document.getElementById('lbl-aroma-filter-title');
+  if (elLblAroma) elLblAroma.textContent = t.lblAromaFilterTitle;
+  const elLblClearAroma = document.getElementById('lbl-clear-aroma');
+  if (elLblClearAroma) elLblClearAroma.textContent = t.lblClearAroma;
+  const elLblPeriodicTitle = document.getElementById('lbl-periodic-main-title');
+  if (elLblPeriodicTitle) elLblPeriodicTitle.textContent = t.lblPeriodicMainTitle;
+  const elLblPeriodicDesc = document.getElementById('lbl-periodic-desc');
+  if (elLblPeriodicDesc) elLblPeriodicDesc.innerHTML = t.lblPeriodicDesc;
+  const elLblHeroAromas = document.getElementById('lbl-hero-aromas');
+  if (elLblHeroAromas) elLblHeroAromas.textContent = t.lblHeroAromas;
+  const elBtnAromaReset = document.getElementById('btn-aroma-feedback-reset');
+  if (elBtnAromaReset) elBtnAromaReset.textContent = t.btnAromaReset;
+
+  populateAromaFilter();
+  renderPeriodicTable();
   renderVarietyMatrix();
   renderHeroCard();
   renderDonutChart();
   renderStylesChart();
   renderTable();
+}
+
+/* ==========================================================================
+   WINE³ai — Periodic Table & "Le Nez du Vin" Sensory Engine Logic
+   ========================================================================== */
+
+function switchViewMode(mode) {
+  activeViewMode = mode;
+  const isPeriodic = mode === 'periodic';
+
+  document.getElementById('tab-btn-periodic')?.classList.toggle('active', isPeriodic);
+  document.getElementById('tab-btn-catalog')?.classList.toggle('active', !isPeriodic);
+
+  const periodicWrap = document.getElementById('periodic-table-wrapper');
+  const catalogWrap = document.getElementById('variety-matrix-wrapper');
+  if (periodicWrap) periodicWrap.style.display = isPeriodic ? 'block' : 'none';
+  if (catalogWrap) catalogWrap.style.display = isPeriodic ? 'none' : 'block';
+}
+
+function populateAromaFilter() {
+  const select = document.getElementById('aroma-filter-select');
+  if (!select || typeof window.AROMAS_NEZ_DU_VIN === 'undefined') return;
+
+  const currentVal = select.value || 'all';
+  select.innerHTML = '';
+
+  const optAll = document.createElement('option');
+  optAll.value = 'all';
+  optAll.id = 'opt-aroma-all';
+  optAll.textContent = I18N[currentLang].optAromaAll;
+  select.appendChild(optAll);
+
+  const families = [
+    { key: 'fruity', label_es: '🍏 1. Notas Frutales (1-23)', label_en: '🍏 1. Fruity Notes (1-23)' },
+    { key: 'floral', label_es: '🌸 2. Notas Florales (24-29)', label_en: '🌸 2. Floral Notes (24-29)' },
+    { key: 'vegetal_spicy', label_es: '🌿 3. Notas Vegetales y Especiadas (30-44)', label_en: '🌿 3. Vegetal & Spicy Notes (30-44)' },
+    { key: 'animal', label_es: '👞 4. Notas Animales (45-47)', label_en: '👞 4. Animal Notes (45-47)' },
+    { key: 'roasted', label_es: '🪵 5. Notas Tostadas y Torrefactas (48-54)', label_en: '🪵 5. Roasted & Smoky Notes (48-54)' }
+  ];
+
+  families.forEach(fam => {
+    const group = document.createElement('optgroup');
+    group.label = currentLang === 'es' ? fam.label_es : fam.label_en;
+
+    const aromas = window.AROMAS_NEZ_DU_VIN.filter(a => a.family === fam.key);
+    aromas.forEach(a => {
+      const opt = document.createElement('option');
+      opt.value = a.number;
+      const name = currentLang === 'es' ? a.name_es : a.name_en;
+      opt.textContent = `${a.icon} #${a.number} ${name}`;
+      group.appendChild(opt);
+    });
+
+    select.appendChild(group);
+  });
+
+  select.value = currentVal;
+}
+
+function setAromaFilter(val) {
+  activeAromaFilter = String(val);
+  const select = document.getElementById('aroma-filter-select');
+  if (select) select.value = val;
+
+  const btnClear = document.getElementById('btn-clear-aroma');
+  const banner = document.getElementById('aroma-feedback-banner');
+  const bannerText = document.getElementById('aroma-feedback-text');
+  const bannerIcon = document.getElementById('aroma-feedback-icon');
+
+  if (val === 'all') {
+    if (btnClear) btnClear.style.display = 'none';
+    if (banner) banner.style.display = 'none';
+  } else {
+    if (btnClear) btnClear.style.display = 'inline-block';
+    if (banner && window.AROMAS_NEZ_DU_VIN) {
+      const aromaNum = parseInt(val, 10);
+      const aroma = window.AROMAS_NEZ_DU_VIN.find(a => a.number === aromaNum);
+      if (aroma) {
+        banner.style.display = 'flex';
+        if (bannerIcon) bannerIcon.textContent = aroma.icon;
+        const aromaName = currentLang === 'es' ? aroma.name_es : aroma.name_en;
+        const prefix = I18N[currentLang].aromaShowing;
+        if (bannerText) {
+          bannerText.innerHTML = `${prefix} <strong>${aromaName}</strong> (#${aroma.number}) — <span style="font-style:italic; opacity:0.85;">${aroma.molecule}</span>`;
+        }
+      }
+    }
+  }
+
+  applyPeriodicTableFilters();
+}
+
+function renderPeriodicTable() {
+  const grid = document.getElementById('periodic-grid');
+  if (!grid || typeof window.PERIODIC_TABLE_DATA === 'undefined') return;
+
+  grid.innerHTML = '';
+  const { groups, elements } = window.PERIODIC_TABLE_DATA;
+
+  // 1. Render Group Headers (Row 1)
+  groups.forEach(g => {
+    const colHeader = document.createElement('div');
+    colHeader.className = 'periodic-col-header';
+    colHeader.style.gridColumn = `${g.group}`;
+    colHeader.style.gridRow = '1';
+    colHeader.style.setProperty('--group-col', g.color);
+
+    const title = currentLang === 'es' ? g.title_es : g.title_en;
+    const subtitle = currentLang === 'es' ? g.subtitle_es : g.subtitle_en;
+
+    colHeader.innerHTML = `
+      <div class="pcol-number">G${g.group} · ${g.macro}</div>
+      <div class="pcol-title" title="${title}">${title}</div>
+      <div class="pcol-subtitle">${subtitle}</div>
+    `;
+    grid.appendChild(colHeader);
+  });
+
+  // 2. Render Periodic Tiles
+  elements.forEach(el => {
+    const tile = document.createElement('div');
+    const isSelected = selectedGrapeObj && (
+      selectedGrapeObj.name.toLowerCase() === el.name.toLowerCase() ||
+      selectedGrapeObj.id === el.id
+    );
+    tile.className = `periodic-tile ${isSelected ? 'active' : ''}`;
+    tile.dataset.id = el.id;
+    tile.dataset.name = el.name;
+    tile.dataset.group = el.group;
+    tile.dataset.period = el.period;
+    tile.dataset.country = el.country || '';
+    tile.dataset.color = el.color;
+
+    // Grid coordinates: column is group, row is period + 1 (row 1 is header)
+    tile.style.gridColumn = `${el.group}`;
+    tile.style.gridRow = `${el.period + 1}`;
+
+    const groupDef = groups.find(g => g.group === el.group) || { color: '#38bdf8' };
+    tile.style.setProperty('--group-color', groupDef.color);
+    tile.style.setProperty('--group-glow', `${groupDef.color}66`);
+
+    // Aromas icons
+    let aromasHtml = '';
+    if (el.aroma_ids && window.AROMAS_NEZ_DU_VIN) {
+      const miniAromas = el.aroma_ids.slice(0, 3).map(num => {
+        const ar = window.AROMAS_NEZ_DU_VIN.find(a => a.number === num);
+        if (!ar) return '';
+        const aName = currentLang === 'es' ? ar.name_es : ar.name_en;
+        return `<span class="ptile-aroma-icon" title="#${ar.number} ${aName} (${ar.molecule})">${ar.icon}</span>`;
+      }).join('');
+      aromasHtml = `<div class="ptile-aromas">${miniAromas}</div>`;
+    }
+
+    tile.innerHTML = `
+      <div class="ptile-top">
+        <span class="ptile-z">${el.atomicNumber}</span>
+        <span class="ptile-mass" title="Body / Structure">${el.atomicMass.toFixed(1)}</span>
+      </div>
+      <div class="ptile-symbol-wrap">
+        <div class="ptile-symbol">${el.symbol}</div>
+      </div>
+      <div class="ptile-name" title="${el.name}">${el.name}</div>
+      ${aromasHtml}
+    `;
+
+    tile.addEventListener('click', () => {
+      selectGrape(el.name);
+    });
+
+    grid.appendChild(tile);
+  });
+
+  applyPeriodicTableFilters();
+}
+
+function applyPeriodicTableFilters() {
+  const tiles = document.querySelectorAll('.periodic-tile');
+  if (tiles.length === 0 || typeof window.PERIODIC_TABLE_DATA === 'undefined') return;
+
+  const colorFilter = document.querySelector('#color-filter-group .seg-btn.active')?.dataset.color || 'all';
+  const countryFilter = document.getElementById('country-filter')?.value || 'all';
+  const aromaFilter = activeAromaFilter;
+
+  const aromaNum = aromaFilter === 'all' ? null : parseInt(aromaFilter, 10);
+
+  tiles.forEach(tile => {
+    const elId = tile.dataset.id;
+    const elData = window.PERIODIC_TABLE_DATA.elements.find(e => e.id === elId || e.name === tile.dataset.name);
+    if (!elData) return;
+
+    let matches = true;
+
+    // Color filter
+    if (colorFilter !== 'all') {
+      if (colorFilter === 'red' && elData.color !== 'red') matches = false;
+      if (colorFilter === 'white' && elData.color !== 'white') matches = false;
+    }
+
+    // Country filter
+    if (countryFilter !== 'all') {
+      const matchGrape = allGrapes.find(g => g.name.toLowerCase() === elData.name.toLowerCase() || g.id === elData.id);
+      if (matchGrape && matchGrape.countries_breakdown) {
+        const inCountry = matchGrape.countries_breakdown.some(c => 
+          c.country === countryFilter || c.country_es === countryFilter || c.country_en === countryFilter
+        );
+        if (!inCountry) matches = false;
+      } else if (elData.country) {
+        if (elData.country !== countryFilter) matches = false;
+      }
+    }
+
+    // Aroma filter
+    let hasAroma = false;
+    if (aromaNum !== null) {
+      if (elData.aroma_ids && elData.aroma_ids.includes(aromaNum)) {
+        hasAroma = true;
+      }
+    }
+
+    tile.classList.toggle('dimmed', !matches || (aromaNum !== null && !hasAroma));
+    tile.classList.toggle('highlighted', matches && aromaNum !== null && hasAroma);
+  });
 }
