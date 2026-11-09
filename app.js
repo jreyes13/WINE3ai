@@ -176,7 +176,13 @@ const COUNTRY_NAMES = {
   'Países Bajos': { es: 'Países Bajos', en: 'Netherlands', flag: '🇳🇱' },
   'Polonia': { es: 'Polonia', en: 'Poland', flag: '🇵🇱' },
   'Malta': { es: 'Malta', en: 'Malta', flag: '🇲🇹' },
-  'Ucrania': { es: 'Ucrania', en: 'Ukraine', flag: '🇺🇦' }
+  'Ucrania': { es: 'Ucrania', en: 'Ukraine', flag: '🇺🇦' },
+  'Dinamarca': { es: 'Dinamarca', en: 'Denmark', flag: '🇩🇰' },
+  'Suecia': { es: 'Suecia', en: 'Sweden', flag: '🇸🇪' },
+  'Tailandia': { es: 'Tailandia', en: 'Thailand', flag: '🇹🇭' },
+  'Vietnam': { es: 'Vietnam', en: 'Vietnam', flag: '🇻🇳' },
+  'Argelia': { es: 'Argelia', en: 'Algeria', flag: '🇩🇿' },
+  'Colombia': { es: 'Colombia', en: 'Colombia', flag: '🇨🇴' }
 };
 
 let currentLang = 'en';
@@ -856,7 +862,7 @@ function selectDO(inputProps) {
 
   const btnPliego = document.getElementById('btn-pliego');
   if (props.pliego) {
-    btnPliego.href = `https://github.com/jreyes13/wine_world_wide/blob/main/${encodeURI(props.pliego)}`;
+    btnPliego.href = `https://github.com/jreyes13/wine3ai/blob/main/${encodeURI(props.pliego)}`;
     btnPliego.style.display = 'flex';
   } else {
     btnPliego.style.display = 'none';
@@ -1141,7 +1147,13 @@ const COUNTRY_CENTERS = {
   'Países Bajos': { center: [6.0, 51.5], zoom: 7.8 },
   'Polonia': { center: [19.0, 51.5], zoom: 6.2 },
   'Malta': { center: [14.4, 35.9], zoom: 10.5 },
-  'Ucrania': { center: [28.0, 47.0], zoom: 6.0 }
+  'Ucrania': { center: [28.0, 47.0], zoom: 6.0 },
+  'Dinamarca': { center: [9.5, 56.0], zoom: 6.8 },
+  'Suecia': { center: [13.5, 57.0], zoom: 6.5 },
+  'Tailandia': { center: [100.5, 14.0], zoom: 6.5 },
+  'Vietnam': { center: [108.0, 12.0], zoom: 6.5 },
+  'Argelia': { center: [0.0, 35.0], zoom: 6.5 },
+  'Colombia': { center: [-73.5, 5.5], zoom: 7.0 }
 };
 
 // Event Listeners

@@ -2,16 +2,16 @@
 
 [English Version](COVERAGE.md) | **Versión en Español**
 
-Este documento recoge el censo exhaustivo, técnico y cartográfico de los **51 países** y **867 regiones vitivinícolas oficiales** integradas en el proyecto **WINE³ai**.
+Este documento recoge el censo exhaustivo, técnico y cartográfico de los **57 países** y **875 regiones vitivinícolas oficiales** integradas en el proyecto **WINE³ai**.
 
 ---
 
 ## Métricas Globales del Proyecto 📊
 
-* **51 Naciones Vitivinícolas Soberanas** con censo oficial completado al 100%.
-* **867 Regiones Vitivinícolas Demarcadas** interactivas en la aplicación web con búsqueda y filtrado a nivel de municipio/comuna.
-* **900+ Capas Vectoriales QGIS** estructuradas en grupos nacionales dentro del proyecto maestro ([`QGIS/wine_world_wine.qgz`](../QGIS/wine_world_wine.qgz)).
-* **760+ Pliegos Oficiales de Condiciones (PDFs)** archivados localmente en [`DOWNs/DOCs/`](../DOWNs/DOCs/).
+* **57 Naciones Vitivinícolas Soberanas** con censo oficial completado al 100%.
+* **875 Regiones Vitivinícolas Demarcadas** interactivas en la aplicación web con búsqueda y filtrado a nivel de municipio/comuna.
+* **915+ Capas Vectoriales QGIS** estructuradas en grupos nacionales dentro del proyecto maestro ([`QGIS/wine_world_wine.qgz`](../QGIS/wine_world_wine.qgz)).
+* **780+ Pliegos Oficiales de Condiciones (PDFs)** archivados localmente en [`DOWNs/DOCs/`](../DOWNs/DOCs/).
 * **2 Aplicaciones Web Interactivas:**
   * 🗺️ **Mapa Oficial de Regiones Vitivinícolas:** [https://jreyes13.github.io/wine3ai/](https://jreyes13.github.io/wine3ai/)
   * 🍇 **Explorador Global de Variedades de Uva:** [https://jreyes13.github.io/wine3ai/grapes.html](https://jreyes13.github.io/wine3ai/grapes.html)
@@ -456,3 +456,41 @@ Las 9 regiones vitivinícolas oficiales e históricas de la República de Turqu�
 2 Regiones Vitivinícolas de Calidad amparadas por el **Ministerio de Política Agraria y Alimentación de Ucrania**:
 * **Odesa y Besarabia / Shabo (Одещина та Бессарабія):** Terruño litoral entre el mar Negro y los limanes del Dniéster. Arenas y aluviones marítimos; hogar de la histórica colonia suiza de Shabo y de la joya blanca autóctona ucraniana *Telti-Kuruk*, junto a tintos de Cabernet Sauvignon y espumosos clásicos.
 * **Transcarpatia / Zakarpattia (Закарпаття):** Vertientes volcánicas protegidas al abrigo de los Montes Cárpatos junto a la frontera húngara. Microclima apacible y tobas volcánicas con aromáticos Traminer, Furmint, Leányka y tintos de ensamblaje de gran tipicidad centroeuropea.
+
+---
+
+### 🇩🇰 Dinamarca (100% Censo Escandinavo de Calidad Completado)
+1 Indicación Geográfica Protegida oficial (PGI / D.O.P.) registrada en la Unión Europea (**eAmbrosia**) y la **Administración Veterinaria y Alimentaria Danesa**:
+* **DONS PGI (D.O.P.) (Syddanmark):** La Denominación de Origen Protegida más septentrional de la Unión Europea (reconocida en 2018), situada en torno al fiordo de Kolding en el sur de Jutlandia. Microclima marítimo atemperado por las aguas del fiordo y morrenas glaciares; referente en espumosos método tradicional de gran acidez y blancos aromáticos de la resistente *Solaris*, Orion y tintos frescos de Rondo y Regent.
+
+---
+
+### 🇸🇪 Suecia (100% Censo Escandinavo de Calidad Completado)
+1 Denominación de Origen Protegida de primer nivel (Skyddad Ursprungsbeteckning / PDO) amparada por **Livsmedelsverket (Agencia Sueca de Alimentos)** y la Unión Europea:
+* **Skåne - Kullaberg & Österlen (Skåne Län):** La gran península vinícola de Suecia (Kullen) y la costa báltica meridional, rodeada por el Kattegat y el Öresund. Larguísimas horas de luz estival, suave brisa marina y suelos glaciares de pizarras y gneis que forjan blancos minerales galardonados de Solaris (Kullabergs Vingård), Souvignier Gris, Muscaris y finos espumosos.
+
+---
+
+### 🇹🇭 Tailandia (100% Censo Tropical de Nuevas Latitudes Completado)
+2 Indicaciones Geográficas históricas reconocidas por el **Departamento de Propiedad Intelectual (DIP)** y la **Asociación del Vino de Tailandia**:
+* **Khao Yai - Asoke Valley GI (Nakhon Ratchasima):** Pionera de los vinos de "Nuevas Latitudes" en Tailandia a 350-500 msnm junto al Parque Nacional UNESCO de Khao Yai. Invierno seco y fresco y suelos volcánico-calcáreos que ofrecen frescos Chenin Blanc, Viognier y especiados Shiraz (GranMonte Estate).
+* **Hua Hin Hills - Monsoon Valley GI (Prachuap Khiri Khan):** Espectacular anfiteatro natural en las estribaciones montañosas costeras al oeste de Hua Hin. Pizarras y calizas refrigeradas por brisas del Golfo de Tailandia, mundialmente afamada por sus vinos tropicales de Colombard, Shiraz y Chenin Blanc.
+
+---
+
+### 🇻🇳 Vietnam (100% Censo Tropical de Altura Completado)
+1 Indicación Geográfica destacada reconocida por la **Oficina Nacional de Propiedad Intelectual de Vietnam (NOIP)**:
+* **Dalat - Meseta de Lang Biang & Ninh Thuan GI (Lâm Đồng y Costa Sur):** Viticultura tropical de montaña situada a 1.500 msnm en la meseta de Lang Biang (Tierras Altas Centrales). Primavera perenne, nieblas montañosas entre pinares y suelos volcánicos francos que sustentan la tradición de *Vang Dalat*, junto a Cardinal, Syrah y Cabernet Sauvignon.
+
+---
+
+### 🇩🇿 Argelia (100% Censo del Magreb Completado)
+2 Vins Délimités de Qualité Supérieure (VAOG) históricos regulados por la **Office National de Commercialisation des Produits Viti-vinicoles (ONCV)**:
+* **Coteaux de Tlemcen VAOG (Monts de Tlemcen / Oranesado):** Altiplano calizo montañoso a 700-800 msnm cerca de la frontera marroquí. Días mediterráneos soleados y noches frescas de montaña que alumbran tintos estructurados de Carignan, Cinsault, Grenache Noir y Mourvèdre.
+* **Mascara & Coteaux de Mascara VAOG (Altiplano de Mascara):** Legendario altiplano arcillo-calcáreo cultivado desde la época romana en las colinas de Beni Chougrane. Gran insolación que forja tintos corpulentos de Carignan, Alicante Bouschet, Cinsault y ensamblajes blancos de Faranah y Clairette.
+
+---
+
+### 🇨🇴 Colombia (100% Censo de Extrema Altitud Andina Completado)
+1 Indicación Geográfica singular reconocida por la **Superintendencia de Industria y Comercio (SIC)** e **Invima**:
+* **Valle de Villa de Leyva & Puntalarga GI (Boyacá):** Cañón desértico y laderas andinas a altitudes extremas de entre 2.100 y 2.500 msnm en la Cordillera Oriental de los Andes colombianos. Intensa radiación ultravioleta cenital, fuerte oscilación térmica y sequedad que permiten dos vendimias anuales de frescos y minerales Sauvignon Blanc, Chardonnay, Pinot Noir y Cabernet Sauvignon (Viña Sicilia, Ain Karim).

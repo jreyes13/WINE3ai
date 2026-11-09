@@ -8,18 +8,19 @@ This document establishes the modular, technical, and collaborative architecture
 
 ## 1. Current Collection Status & Architecture
 
-The project has achieved 100% complete official census coverage across **51 sovereign wine nations** throughout Europe, the Americas, Asia, Africa, and Oceania, encompassing **867 demarcated wine regions**, **900+ vector layers**, and **710 grape varieties**:
+The project has achieved 100% complete official census coverage across **57 sovereign wine nations** throughout Europe, the Americas, Asia, Africa, and Oceania, encompassing **875 demarcated wine regions**, **915+ vector layers**, and **712 grape varieties**:
 
 | Regional Axis | Covered Countries (100% Official Census) | Demarcated Regions |
 | :--- | :--- | :---: |
 | **Western & Iberian Europe** | 🇪🇸 Spain, 🇵🇹 Portugal, 🇫🇷 France, 🇮🇹 Italy, 🇧🇪 Belgium, 🇳🇱 Netherlands, 🇱🇺 Luxembourg, 🇬🇧 UK | 586 DOs / AOCs / DOCGs / PDOs |
 | **Central Europe & Alpine-Adriatic** | 🇩🇪 Germany, 🇦🇹 Austria, 🇨🇭 Switzerland, 🇸🇮 Slovenia, 🇭🇷 Croatia, 🇨🇿 Czech Republic, 🇸🇰 Slovakia, 🇵🇱 Poland | 76 g.U. / DAC / ZGP / CHOP |
+| **Nordic & Scandinavian Europe** | 🇩🇰 Denmark, 🇸🇪 Sweden | 2 PDOs / PGIs |
 | **Black Sea & Eastern Central Europe** | 🇭🇺 Hungary, 🇷🇴 Romania, 🇧🇬 Bulgaria, 🇲🇩 Moldova, 🇺🇦 Ukraine, 🇷🇸 Serbia, 🇧🇦 Bosnia, 🇲🇪 Montenegro, 🇲🇰 North Macedonia | 52 Borvidékek / DOC / PGI / IGP / ZOI |
 | **Archaeological Caucasus, Anatolia & Levant** | 🇬🇪 Georgia, 🇬🇷 Greece, 🇦🇲 Armenia, 🇨🇾 Cyprus, 🇱🇧 Lebanon, 🇹🇷 Turkey, 🇮🇱 Israel, 🇦🇿 Azerbaijan | 79 PDOs / POPs / GIs / Terroirs |
-| **The Americas (Pan-American Axis)** | 🇺🇸 USA, 🇦🇷 Argentina, 🇨🇱 Chile, 🇺🇾 Uruguay, 🇧🇷 Brazil, 🇧🇴 Bolivia, 🇵🇪 Peru, 🇲🇽 Mexico, 🇨🇦 Canada | 59 AVAs / IGs / DOs / VQAs |
-| **Asia & Pacific Rim** | 🇨🇳 China, 🇯🇵 Japan, 🇮🇳 India, 🇦🇺 Australia, 🇳🇿 New Zealand | 19 GIs / National Regions |
-| **North Africa / Maghreb & Southern Hemisphere** | 🇿🇦 South Africa, 🇲🇦 Morocco, 🇹🇳 Tunisia, 🇲🇹 Malta | 12 WOs / AOCs / AOGs / DOKs |
-| **Total Consolidated Metric** | **51 Sovereign Nations** | **867 Official Regions** |
+| **The Americas (Pan-American Axis)** | 🇺🇸 USA, 🇦🇷 Argentina, 🇨🇱 Chile, 🇺🇾 Uruguay, 🇧🇷 Brazil, 🇧🇴 Bolivia, 🇵🇪 Peru, 🇲🇽 Mexico, 🇨🇦 Canada, 🇨🇴 Colombia | 60 AVAs / IGs / DOs / VQAs / GIs |
+| **Asia, Southeast Asia & Pacific Rim** | 🇨🇳 China, 🇯🇵 Japan, 🇮🇳 India, 🇦🇺 Australia, 🇳🇿 New Zealand, 🇹🇭 Thailand, 🇻🇳 Vietnam | 22 GIs / National Regions |
+| **North Africa / Maghreb & Southern Hemisphere** | 🇿🇦 South Africa, 🇲🇦 Morocco, 🇹🇳 Tunisia, 🇲🇹 Malta, 🇩🇿 Algeria | 14 WOs / AOCs / AOGs / VAOGs / DOKs |
+| **Total Consolidated Metric** | **57 Sovereign Nations** | **875 Official Regions** |
 
 ### Standardized Directory Hierarchy
 The repository organizes all assets within a clean, country-by-country modular structure:
@@ -31,22 +32,22 @@ wine3ai/
 ├── README.md                    # Main project documentation in English (summary table & links)
 ├── README_ES.md                 # Main project documentation in Spanish
 ├── data/                        # Production-ready datasets
-│   ├── spain_wine_regions.geojson # 867 wine regions with vector boundaries, grapes, and metadata
-│   ├── grape_varieties.json     # Knowledgebase of 710 normalized grape varieties
+│   ├── spain_wine_regions.geojson # 875 wine regions with vector boundaries, grapes, and metadata
+│   ├── grape_varieties.json     # Knowledgebase of 712 normalized grape varieties
 │   └── *.js                     # JS wrappers for local offline (file:// without CORS) use
 ├── docs/                        # Technical guides, methodology, and national registries
-│   ├── COVERAGE.md              # Exhaustive coverage report in English (51 nations)
-│   ├── COBERTURA.md             # Exhaustive coverage report in Spanish (51 naciones)
+│   ├── COVERAGE.md              # Exhaustive coverage report in English (57 nations)
+│   ├── COBERTURA.md             # Exhaustive coverage report in Spanish (57 naciones)
 │   ├── METHODOLOGY.md           # Technical methodology in English
 │   ├── METODOLOGIA.md           # Technical methodology in Spanish
 │   ├── GLOBAL_EXPANSION.md      # Scaling guide in English
 │   ├── EXPANSION_GLOBAL.md      # Scaling guide in Spanish
 │   ├── SPAIN/ ... SWITZERLAND/  # National directories with appellation registries
 ├── DOWNs/                       # Primary raw data archive
-│   ├── DOCs/<COUNTRY>/          # 760+ official legal specification PDFs organized by country
+│   ├── DOCs/<COUNTRY>/          # 780+ official legal specification PDFs organized by country
 │   └── natural_earth_vector/    # High-resolution base administrative vector datasets
 ├── QGIS/                        # GIS vector layers (.gpkg) and master project (.qgz)
-│   ├── wine_world_wine.qgz      # Master QGIS project (900+ layers across national groups)
+│   ├── wine_world_wine.qgz      # Master QGIS project (915+ layers across national groups)
 │   ├── <COUNTRY>/               # GeoPackage layers organized by country
 │   └── <COUNTRY>/SQLs/          # Versioned SQL filter scripts for administrative boundaries
 └── web/                         # Synchronized mirror for GitHub Pages static web deployment

@@ -11,7 +11,7 @@ const I18N = {
     colorRed: "🔴 Red",
     colorWhite: "⚪ White",
     lblCountryFilter: "Country:",
-    optCountryAll: "🌍 All Countries (51)",
+    optCountryAll: "🌍 All Countries (57)",
     lblStyleFilter: "Wine Style:",
     optStyleAll: "All Wine Styles",
     optStyleStill: "🍷 Still Wine (Tranquilo)",
@@ -75,7 +75,7 @@ const I18N = {
     lblTabPeriodic: "WINE³ Periodic Table",
     lblTabCatalog: "Full Catalog",
     badgePeriodicCount: "54 Elements · 9 Groups",
-    badgeCatalogCount: "710 Varieties",
+    badgeCatalogCount: "712 Varieties",
     lblAromaFilterTitle: "Le Nez du Vin Sensory Filter:",
     optAromaAll: "✨ All Aromas (54 descriptors)",
     lblClearAroma: "Clear Aroma",
@@ -96,7 +96,7 @@ const I18N = {
     colorRed: "🔴 Tinta",
     colorWhite: "⚪ Blanca",
     lblCountryFilter: "País:",
-    optCountryAll: "🌍 Todos los Países (51)",
+    optCountryAll: "🌍 Todos los Países (57)",
     lblStyleFilter: "Estilo de Vino:",
     optStyleAll: "Todos los Estilos",
     optStyleStill: "🍷 Vino Tranquilo",
@@ -160,7 +160,7 @@ const I18N = {
     lblTabPeriodic: "Tabla Periódica WINE³",
     lblTabCatalog: "Catálogo Completo",
     badgePeriodicCount: "54 Elementos · 9 Grupos",
-    badgeCatalogCount: "710 Variedades",
+    badgeCatalogCount: "712 Variedades",
     lblAromaFilterTitle: "Filtro Sensorial Le Nez du Vin:",
     optAromaAll: "✨ Todos los Aromas (54 descriptores)",
     lblClearAroma: "Quitar Aroma",
@@ -209,6 +209,7 @@ const PALETTE = [
 
 const ALL_COUNTRIES = [
   { key: 'Alemania', en: 'Germany', es: 'Alemania', flag: '🇩🇪' },
+  { key: 'Argelia', en: 'Algeria', es: 'Argelia', flag: '🇩🇿' },
   { key: 'Argentina', en: 'Argentina', es: 'Argentina', flag: '🇦🇷' },
   { key: 'Armenia', en: 'Armenia', es: 'Armenia', flag: '🇦🇲' },
   { key: 'Australia', en: 'Australia', es: 'Australia', flag: '🇦🇺' },
@@ -222,8 +223,10 @@ const ALL_COUNTRIES = [
   { key: 'Canadá', en: 'Canada', es: 'Canadá', flag: '🇨🇦' },
   { key: 'Chile', en: 'Chile', es: 'Chile', flag: '🇨🇱' },
   { key: 'China', en: 'China', es: 'China', flag: '🇨🇳' },
+  { key: 'Colombia', en: 'Colombia', es: 'Colombia', flag: '🇨🇴' },
   { key: 'Chipre', en: 'Cyprus', es: 'Chipre', flag: '🇨🇾' },
   { key: 'Croacia', en: 'Croatia', es: 'Croacia', flag: '🇭🇷' },
+  { key: 'Dinamarca', en: 'Denmark', es: 'Dinamarca', flag: '🇩🇰' },
   { key: 'Eslovaquia', en: 'Slovakia', es: 'Eslovaquia', flag: '🇸🇰' },
   { key: 'Eslovenia', en: 'Slovenia', es: 'Eslovenia', flag: '🇸🇮' },
   { key: 'España', en: 'Spain', es: 'España', flag: '🇪🇸' },
@@ -254,11 +257,14 @@ const ALL_COUNTRIES = [
   { key: 'Rumanía', en: 'Romania', es: 'Rumanía', flag: '🇷🇴' },
   { key: 'Serbia', en: 'Serbia', es: 'Serbia', flag: '🇷🇸' },
   { key: 'Sudáfrica', en: 'South Africa', es: 'Sudáfrica', flag: '🇿🇦' },
+  { key: 'Suecia', en: 'Sweden', es: 'Suecia', flag: '🇸🇪' },
   { key: 'Suiza', en: 'Switzerland', es: 'Suiza', flag: '🇨🇭' },
+  { key: 'Tailandia', en: 'Thailand', es: 'Tailandia', flag: '🇹🇭' },
   { key: 'Túnez', en: 'Tunisia', es: 'Túnez', flag: '🇹🇳' },
   { key: 'Turquía', en: 'Turkey', es: 'Turquía', flag: '🇹🇷' },
   { key: 'Ucrania', en: 'Ukraine', es: 'Ucrania', flag: '🇺🇦' },
-  { key: 'Uruguay', en: 'Uruguay', es: 'Uruguay', flag: '🇺🇾' }
+  { key: 'Uruguay', en: 'Uruguay', es: 'Uruguay', flag: '🇺🇾' },
+  { key: 'Vietnam', en: 'Vietnam', es: 'Vietnam', flag: '🇻🇳' }
 ];
 
 let currentLang = 'en';
@@ -1204,7 +1210,7 @@ function renderTable() {
           <button class="btn-table-action btn-zoom-map" data-id="${r.id}" data-name="${r.name}" data-lng="${r.centroid[0]}" data-lat="${r.centroid[1]}">
             ${t.btnViewMap}
           </button>
-          ${r.pliego ? `<a href="https://github.com/jreyes13/wine_world_wide/blob/main/${encodeURI(r.pliego)}" target="_blank" rel="noopener noreferrer" class="btn-table-action">${t.btnPliego}</a>` : ''}
+          ${r.pliego ? `<a href="https://github.com/jreyes13/wine3ai/blob/main/${encodeURI(r.pliego)}" target="_blank" rel="noopener noreferrer" class="btn-table-action">${t.btnPliego}</a>` : ''}
         </div>
       </td>
     `;

@@ -2,16 +2,16 @@
 
 **English** | [Versión en Español](COBERTURA.md)
 
-This document provides the exhaustive technical, viticultural, and cartographic census for all **51 countries** and **867 official wine regions** included in the **WINE³ai** project.
+This document provides the exhaustive technical, viticultural, and cartographic census for all **57 countries** and **875 official wine regions** included in the **WINE³ai** project.
 
 ---
 
 ## Global Summary Metrics 📊
 
-* **51 Sovereign Wine Nations** with 100% completed official census.
-* **867 Demarcated Wine Regions** interactive in the web applications with commune-level search and filtering.
-* **900+ QGIS Vector Layers** organized into national groups in the primary QGIS project ([`QGIS/wine_world_wine.qgz`](../QGIS/wine_world_wine.qgz)).
-* **760+ Official Legal Specification Documents (PDFs)** archived locally in [`DOWNs/DOCs/`](../DOWNs/DOCs/).
+* **57 Sovereign Wine Nations** with 100% completed official census.
+* **875 Demarcated Wine Regions** interactive in the web applications with commune-level search and filtering.
+* **915+ QGIS Vector Layers** organized into national groups in the primary QGIS project ([`QGIS/wine_world_wine.qgz`](../QGIS/wine_world_wine.qgz)).
+* **780+ Official Legal Specification Documents (PDFs)** archived locally in [`DOWNs/DOCs/`](../DOWNs/DOCs/).
 * **2 Interactive Web Applications:**
   * 🗺️ **Official Wine Regions Map:** [https://jreyes13.github.io/wine3ai/](https://jreyes13.github.io/wine3ai/)
   * 🍇 **Grape Varieties Global Explorer:** [https://jreyes13.github.io/wine3ai/grapes.html](https://jreyes13.github.io/wine3ai/grapes.html)
@@ -456,3 +456,41 @@ All 9 official viticultural regions and terroirs of the Republic of Turkey (*Tü
 2 Major Viticultural Regions recognized under the **Ministry of Agrarian Policy and Food of Ukraine**:
 * **Odesa & Bessarabia / Shabo (Одещина та Бессарабія):** Historical Black Sea and Dniester estuary terroir. Sandy-loam soils and warm maritime climate; home of the century-old Swiss colony of Shabo and the native Ukrainian white jewel *Telti-Kuruk*, alongside Cabernet Sauvignon and sparkling wines.
 * **Transcarpathia / Zakarpattia (Закарпаття):** Protected volcanic slopes on the southwestern flank of the Carpathian Mountains along the Hungarian border. Mild microclimate and volcanic tuff terraces cultivating aromatic Traminer, Furmint, Leányka, and structured red blends.
+
+---
+
+### 🇩🇰 Denmark (100% Scandinavian Quality Census Completed)
+1 Officially Protected Geographical Indication (PGI / D.O.P.) registered under the European Union (**eAmbrosia**) and the **Danish Veterinary and Food Administration**:
+* **DONS PGI (D.O.P.) (Syddanmark):** The northernmost registered Protected Designation of Origin in the European Union (established 2018), situated around Kolding Fjord in South Jutland. Maritime microclimate moderated by the fjord waters and glacial moraine soils; benchmark producer of world-class traditional method sparkling wines and vibrant whites centered on cold-hardy *Solaris*, Orion, and crisp reds of Rondo and Regent.
+
+---
+
+### 🇸🇪 Sweden (100% Scandinavian Quality Census Completed)
+1 Premier Protected Origin (Skyddad Ursprungsbeteckning / PDO) recognized under **Livsmedelsverket (Swedish Food Agency)** and the European Union:
+* **Skåne - Kullaberg & Österlen (Skåne Län):** The viticultural heartland of Sweden on the Kullen peninsula and southern Baltic coast, surrounded by the Kattegat and Öresund. Long summer daylight hours, gentle maritime breezes, and mineral-rich glacial slate-gneiss soils producing acclaimed mineral Solaris (Kullabergs Vingård), Souvignier Gris, Muscaris, and refined sparkling wines.
+
+---
+
+### 🇹🇭 Thailand (100% New Latitude Tropical Quality Census Completed)
+2 Landmark Geographical Indications recognized by the **Department of Intellectual Property (DIP)** and the **Thai Wine Association**:
+* **Khao Yai - Asoke Valley GI (Nakhon Ratchasima):** Pioneer of Thailand's New Latitude viticulture nestled at 350-500 m elevation adjacent to Khao Yai UNESCO National Park. Cool, dry tropical winter growing seasons and decomposed volcanic-limestone soils yielding vibrant, aromatic Chenin Blanc, Viognier, and peppery Shiraz (GranMonte Estate).
+* **Hua Hin Hills - Monsoon Valley GI (Prachuap Khiri Khan):** Scenic natural amphitheater nestled in the coastal mountain foothills west of Hua Hin. Slated and calcareous soils cooled by ocean breezes from the Gulf of Thailand; world-renowned for its award-winning tropical Colombard, Shiraz, and Chenin Blanc.
+
+---
+
+### 🇻🇳 Vietnam (100% High-Altitude Tropical Quality Census Completed)
+1 Landmark Geographical Indication recognized by the **National Office of Intellectual Property of Vietnam (NOIP)**:
+* **Dalat - Lang Biang Plateau & Ninh Thuan GI (Lâm Đồng & South Coast):** High-altitude tropical mountain terroir perched at 1,500 m elevation on the Lang Biang Plateau of the Central Highlands. Perennial spring-like climate, pine-clad mountain mists, and volcanic loam nurturing the historic heritage of *Vang Dalat*, alongside Cardinal, Syrah, and Cabernet Sauvignon.
+
+---
+
+### 🇩🇿 Algeria (100% Maghreb Quality Census Completed)
+2 Historic Vins Délimités de Qualité Supérieure (VAOG) overseen by the **Office National de Commercialisation des Produits Viti-vinicoles (ONCV)**:
+* **Coteaux de Tlemcen VAOG (Monts de Tlemcen / Oranie):** Elevated mountain limestone plateau at 700-800 m altitude near the Moroccan border. Warm, luminous Mediterranean days and brisk mountain nights crafting structured, savory red blends of Carignan, Cinsault, Grenache Noir, and Mourvèdre.
+* **Mascara & Coteaux de Mascara VAOG (Mascara Plateau):** Legendary clay-limestone plateau farmed since Roman antiquity in the Beni Chougrane hills. Rich sunshine producing full-bodied, age-worthy Carignan, Alicante Bouschet, Cinsault, and traditional white blends of Faranah and Clairette.
+
+---
+
+### 🇨🇴 Colombia (100% Extreme Andean Altitude Quality Census Completed)
+1 Landmark Geographical Indication recognized by the **Superintendencia de Industria y Comercio (SIC)** and **Invima**:
+* **Valle de Villa de Leyva & Puntalarga GI (Boyacá):** High-altitude desert canyon and terraced hillsides perched at extreme elevations between 2,100 m and 2,500 m in the Cordillera Oriental of the Colombian Andes. Intense ultraviolet light, dramatic diurnal temperature shifts, and dry microclimates yielding two annual harvests of crisp, mineral Sauvignon Blanc, Chardonnay, Pinot Noir, and Cabernet Sauvignon (Viña Sicilia, Ain Karim).

@@ -24,10 +24,11 @@ This project produces **interactive web maps** and terroir analytics that show t
 
 Every country manages its own geographic data. There is no single, global source for administrative boundaries. The core principle of **World Wide Wine** is to identify and process the most **authoritative official public sources** for both regulatory viticultural decrees and geographic demarcations:
 
-### A. Authoritative Sources for Completed Nations (51 Countries)
+### A. Authoritative Sources for Completed Nations (57 Countries)
 
 | Country | Official Cartographic Agency / Portal | Base Administrative Level | Native Coordinate System (CRS) | Regulatory Wine Authority |
 | :--- | :--- | :--- | :--- | :--- |
+| 🇩🇿 **Algeria** | INC (Institut National de Cartographie) / Natural Earth | Wilayas / Daïras | Nord Sahara (EPSG:30731) / WGS84 | ONCV (Office National de Commercialisation des Produits Viti-vinicoles) |
 | 🇦🇷 **Argentina** | IGN Argentina | Departamentos / Distritos | POSGAR 2007 (EPSG:5343) | INV (Instituto Nacional de Vitivinicultura) |
 | 🇦🇲 **Armenia** | Cadastre Committee / Natural Earth | Marzer (Provinces) | ArmRef02 / WGS84 | VWFA / Min. of Economy |
 | 🇦🇺 **Australia** | Geoscience Australia / Natural Earth | GIs / Local Government Areas | GDA2020 (EPSG:7844) | Wine Australia |
@@ -41,9 +42,11 @@ Every country manages its own geographic data. There is no single, global source
 | 🇨🇦 **Canada** | Statistics Canada / Natural Earth | CSD (Census Subdivisions) / Regions | NAD83 / StatCan Lambert (EPSG:3347) | VQA Ontario / BC VQA |
 | 🇨🇱 **Chile** | IDE Chile / IGM | Comunas / Provincias | SIRGAS-Chile (EPSG:5360) | SAG (Servicio Agrícola y Ganadero) |
 | 🇨🇳 **China** | National Geomatics Center of China (NGCC) | Prefectures / Counties | CGCS2000 (EPSG:4490) | SAMR / Ningxia & Provincial Wine Bureaus |
+| 🇨🇴 **Colombia** | IGAC (Instituto Geográfico Agustín Codazzi) | Municipios / Departamentos | MAGNA-SIRGAS (EPSG:3116) | Min. de Agricultura / Invima |
 | 🇭🇷 **Croatia** | DGU (Državna geodetska uprava) | Županije / Gradovi | HTRS96/TM (EPSG:3765) | Min. Poljoprivrede / eAmbrosia |
 | 🇨🇾 **Cyprus** | Dept. of Lands and Surveys / Natural Earth | Eparchies / Communities | CGRS93 (EPSG:6312) | Department of Agriculture |
 | 🇨🇿 **Czech Republic** | ČÚZK (State Administration of Land Surveying) | Okresy / Kraje | S-JTSK (EPSG:5514) | ÚKZÚZ |
+| 🇩🇰 **Denmark** | SDFI (Agency for Data Supply & Infrastructure) | Kommuner / Regioner | ETRS89 / UTM 32N (EPSG:25832) | Danish Veterinary and Food Administration / eAmbrosia |
 | 🇫🇷 **France** | IGN France (BD CARTO® / Géoportail) | Communes / Cantons | RGF93 / Lambert-93 (EPSG:2154) | INAO (*Cahiers des charges*) |
 | 🇬🇪 **Georgia** | NAPR (National Agency of Public Registry) | Municipalities / Rayons | WGS84 / UTM 38N (EPSG:32638) | National Wine Agency / Sakpatenti |
 | 🇩🇪 **Germany** | BKG (Bundesamt für Kartographie und Geodäsie) | Gemeinden / Kreise | ETRS89 / UTM 32N (EPSG:25832) | BLE / *Weinverordnung* |
@@ -72,13 +75,16 @@ Every country manages its own geographic data. There is no single, global source
 | 🇸🇮 **Slovenia** | GURS (Surveying and Mapping Authority) | Občine / Upravne enote | D96/TM (EPSG:3794) | MKGP / eAmbrosia |
 | 🇿🇦 **South Africa** | NGI (National Geo-spatial Information) / Natural Earth | WOs / Municipalities | Hartebeesthoek94 (EPSG:2048) | SAWIS (Wine Industry Information) |
 | 🇪🇸 **Spain** | IGN España (INSPIRE) | Municipios (`recintos_municipales`) | ETRS89 (EPSG:4258) / REGCAN95 | MAPA / Consejos Reguladores |
+| 🇸🇪 **Sweden** | Lantmäteriet (Swedish Mapping Authority) | Kommuner / Län | SWEREF99 TM (EPSG:3006) | Livsmedelsverket (Swedish Food Agency) / eAmbrosia |
 | 🇨🇭 **Switzerland** | swisstopo (Federal Office of Topography) | Cantons / Communes | CH1903+ / LV95 (EPSG:2056) | OFAG / BLW |
+| 🇹🇭 **Thailand** | RTSD (Royal Thai Survey Department) | Amphoes (Districts) / Changwats (Provinces) | WGS84 / UTM 47N (EPSG:32647) | Department of Intellectual Property (DIP) / Thai Wine Association |
 | 🇹🇳 **Tunisia** | OTC (Office de la Topographie et du Cadastre) | Gouvernorats / Délégations | Carthage / UTM 32N (EPSG:22332) | DGPA / Min. de l'Agriculture |
 | 🇹🇷 **Turkey** | Harita Genel Müdürlüğü (HGM) / Natural Earth | İller (Provinces) / İlçeler | TUREF (EPSG:5254) / WGS84 | Tarım ve Orman Bak. / TÜRKPATENT |
 | 🇺🇦 **Ukraine** | StateGeoCadastre / Natural Earth | Raions / Hromadas | UCS-2000 (EPSG:5563) | Min. of Agrarian Policy and Food |
 | 🇬🇧 **United Kingdom** | Ordnance Survey (OS Boundary-Line™) | Counties / Unitary Authorities / Districts | British National Grid (EPSG:27700) | DEFRA / Food Standards Agency |
 | 🇺🇸 **United States** | US Census Bureau (TIGER/Line) | Counties / TTB AVA Boundaries | NAD83 / WGS84 | TTB (Alcohol and Tobacco Tax and Trade Bureau) |
 | 🇺🇾 **Uruguay** | SGM Uruguay / IDE Uy | Departamentos / Secciones | BROU 1928 / UTM 21S (EPSG:5382) | INAVI (Instituto Nacional de Vitivinicultura) |
+| 🇻🇳 **Vietnam** | Department of Survey and Mapping Vietnam (DOSMV) | Districts (Huyện) / Provinces (Tỉnh) | VN-2000 (EPSG:3405) | NOIP (National Office of Intellectual Property) / Lam Dong Dept. of Agriculture |
 
 > **Cartographic Standard:** All vector layers are reprojected and exported to **WGS84 (EPSG:4326)** for unified global GIS analysis and web performance.
 
@@ -160,10 +166,11 @@ For comprehensive technical specifications, official cartographic agencies acros
 
 ## Multi-Country Coverage Status 🌍
 
-The **WINE³ai** project has completed full, authoritative census coverage across **51 sovereign wine nations**, encompassing **867 official wine regions**, **900+ QGIS vector layers**, and **760+ official legal specification documents (PDFs)**:
+The **WINE³ai** project has completed full, authoritative census coverage across **57 sovereign wine nations**, encompassing **875 official wine regions**, **915+ QGIS vector layers**, and **780+ official legal specification documents (PDFs)**:
 
 | Country | Status | Appellations / Regions | Key Official Classifications | Primary Cartographic Agency | National Registry |
 | :--- | :---: | :---: | :--- | :--- | :---: |
+| 🇩🇿 **Algeria** | 100% | 2 | VAOG (Coteaux de Tlemcen, Mascara & Coteaux de Mascara) | INC / ONCV | [Registry](docs/COVERAGE.md) |
 | 🇦🇷 **Argentina** | 100% | 7 | IG / DOC (Valle de Uco, Luján de Cuyo, Maipú, Cafayate, etc.) | IGN Argentina / INV | [Registry](docs/COVERAGE.md) |
 | 🇦🇲 **Armenia** | 100% | 5 | PDO (Vayots Dzor, Aragatsotn, Armavir, etc.) | Natural Earth / VWFA | [Registry](docs/ARMENIA/REGISTRO_REGIONS.md) |
 | 🇦🇺 **Australia** | 100% | 8 | GI (Barossa Valley, McLaren Vale, Margaret River, Yarra Valley, Coonawarra, etc.) | Geoscience Australia / Wine Australia | [Registry](docs/COVERAGE.md) |
@@ -177,9 +184,11 @@ The **WINE³ai** project has completed full, authoritative census coverage acros
 | 🇨🇦 **Canada** | 100% | 3 | VQA (Niagara Peninsula, Okanagan Valley, Prince Edward County) | StatCan / VQA Ontario / BC VQA | [Registry](docs/COVERAGE.md) |
 | 🇨🇱 **Chile** | 100% | 8 | D.O. (Valle del Maipo, Colchagua, Casablanca, Leyda, Peumo, etc.) | IDE Chile / SAG | [Registry](docs/COVERAGE.md) |
 | 🇨🇳 **China** | 100% | 4 | National GI (Ningxia Helan Mountain, Shandong Yantai, Xinjiang, Yunnan) | NGCC / SAMR | [Registry](docs/COVERAGE.md) |
+| 🇨🇴 **Colombia** | 100% | 1 | G.I. (Valle de Villa de Leyva & Puntalarga) | IGAC / Invima | [Registry](docs/COVERAGE.md) |
 | 🇭🇷 **Croatia** | 100% | 4 (16 ZOI) | ZOI (Dalmacija, Istra, Slavonija, Bregovita) | Natural Earth / eAmbrosia | [Registry](docs/CROATIA/REGISTRO_ZOI.md) |
 | 🇨🇾 **Cyprus** | 100% | 5 | PDO (Commandaria, Krasochoria, etc.) | Natural Earth / eAmbrosia | [Registry](docs/CYPRUS/REGISTRO_PDOS.md) |
 | 🇨🇿 **Czech Republic** | 100% | 6 | CHOP / VOC (Znojemská, Mikulovská, etc.) | Natural Earth / ÚKZÚZ | [Registry](docs/CZECH_REPUBLIC/REGISTRO_PODOBLASTI.md) |
+| 🇩🇰 **Denmark** | 100% | 1 | PGI / DOP (DONS PGI) | SDFI / eAmbrosia | [Registry](docs/COVERAGE.md) |
 | 🇫🇷 **France** | 100% | 325 | AOC (Bordeaux, Bourgogne, Rhône, Loire, etc.) | IGN France / INAO | [Registry](docs/FRANCE/REGISTRO_AOCS.md) |
 | 🇬🇪 **Georgia** | 100% | 29 | PDO (Mukuzani, Kindzmarauli, Tsinandali, etc.) | Natural Earth / Sakpatenti | [Registry](docs/GEORGIA/REGISTRO_PDOS.md) |
 | 🇩🇪 **Germany** | 100% | 13 | g.U. Anbaugebiete (Mosel, Rheingau, Pfalz, etc.) | BKG / BLE | [Registry](docs/GERMANY/REGISTRO_ANBAUGEBIETE.md) |
@@ -208,27 +217,30 @@ The **WINE³ai** project has completed full, authoritative census coverage acros
 | 🇸🇮 **Slovenia** | 100% | 9 | ZGP (Goriška Brda, Vipavska dolina, Kras, etc.) | Natural Earth / eAmbrosia | [Registry](docs/SLOVENIA/REGISTRO_ZGP.md) |
 | 🇿🇦 **South Africa** | 100% | 7 | WO (Stellenbosch, Swartland, Paarl, Walker Bay, Franschhoek, etc.) | NGI / SAWIS | [Registry](docs/COVERAGE.md) |
 | 🇪🇸 **Spain** | 100% | 101 | DOCa, DO, VP, VC (Rioja, Ribera, Priorat, etc.) | IGN Spain / MAPA | [Registry](docs/SPAIN/REGISTRO_DOS.md) |
+| 🇸🇪 **Sweden** | 100% | 1 | PDO / Skyddad Ursprungsbeteckning (Skåne - Kullaberg & Österlen) | Lantmäteriet / Livsmedelsverket | [Registry](docs/COVERAGE.md) |
 | 🇨🇭 **Switzerland** | 100% | 6 | AOC / DOC (Valais, Vaud, Genève, Ticino, etc.) | Natural Earth / OFAG | [Registry](docs/SWITZERLAND/REGISTRO_REGIONS.md) |
+| 🇹🇭 **Thailand** | 100% | 2 | G.I. / New Latitude (Khao Yai - Asoke Valley, Hua Hin Hills - Monsoon Valley) | RTSD / DIP | [Registry](docs/COVERAGE.md) |
 | 🇹🇳 **Tunisia** | 100% | 2 | AOC (Grand Cru Mornag, Coteaux de Kélibia) | OTC / DGPA | [Registry](docs/COVERAGE.md) |
 | 🇹🇷 **Turkey** | 100% | 9 | Bölge / GI (Trakya, Urla, Denizli, Kapadokya, etc.) | Natural Earth / TÜRKPATENT | [Registry](docs/TURKEY/REGISTRO_REGIONS.md) |
 | 🇺🇦 **Ukraine** | 100% | 2 | Geographical Indication (Odesa & Bessarabia, Transcarpathia) | StateGeoCadastre / Min. Agrarian Policy | [Registry](docs/COVERAGE.md) |
 | 🇬🇧 **United Kingdom** | 100% | 3 | PDO (Sussex, English Wine, Welsh Wine) | OS / DEFRA | [Registry](docs/COVERAGE.md) |
 | 🇺🇸 **United States** | 100% | 15 | AVA (Napa Valley, Sonoma County, Paso Robles, Willamette, Columbia Valley, etc.) | US Census Bureau / TTB | [Registry](docs/COVERAGE.md) |
 | 🇺🇾 **Uruguay** | 100% | 4 | Región Vitivinícola (Canelones, Maldonado, Colonia, Rivera) | SGM Uruguay / INAVI | [Registry](docs/COVERAGE.md) |
+| 🇻🇳 **Vietnam** | 100% | 1 | G.I. / High-Altitude Tropical (Dalat - Lang Biang Plateau & Ninh Thuan) | DOSMV / NOIP | [Registry](docs/COVERAGE.md) |
 
 👉 **For the complete regional descriptions, territorial notes, and wine profiles of each country, see the full [Multi-Country Coverage Report](docs/COVERAGE.md) (or [Versión en Español](docs/COBERTURA.md)).**
 
 **Key metrics:**
-* **867 official wine regions** interactive in the web applications with commune-level search, basemap switcher, multi-country and regional filters, and official PDF specification viewers.
-* **900+ vector layers** systematically arranged in the primary QGIS project (`QGIS/wine_world_wine.qgz`) partitioned into national groups.
-* **760+ official legal specification documents (PDFs)** archived locally in [`DOWNs/DOCs/`](DOWNs/DOCs/).
+* **875 official wine regions** interactive in the web applications with commune-level search, basemap switcher, multi-country and regional filters, and official PDF specification viewers.
+* **915+ vector layers** systematically arranged in the primary QGIS project (`QGIS/wine_world_wine.qgz`) partitioned into national groups.
+* **780+ official legal specification documents (PDFs)** archived locally in [`DOWNs/DOCs/`](DOWNs/DOCs/).
 * **Dedicated SQL filter libraries** available under `QGIS/<COUNTRY>/SQLs/`.
 
 ---
 
 ## Building the Global Collection 🚀
 
-With the **Old World & Major New World wine heritage fully mapped across 51 countries** (including Spain, France, Italy, USA, Argentina, Chile, South Africa, Australia, New Zealand, Uruguay, Brazil, Canada, and Mexico), the **WINE³ai** project provides comprehensive global territorial and climatic intelligence.
+With the **Old World, New World & New Frontiers wine heritage fully mapped across 57 sovereign countries** (including Spain, France, Italy, USA, Argentina, Chile, South Africa, Australia, New Zealand, Uruguay, Brazil, Canada, Mexico, China, Japan, India, Morocco, Tunisia, Israel, Azerbaijan, Belgium, Netherlands, Poland, Malta, Ukraine, Denmark, Sweden, Thailand, Vietnam, Algeria, and Colombia), the **WINE³ai** project provides comprehensive global territorial and climatic intelligence.
 
 See our [Global Expansion Guide](docs/GLOBAL_EXPANSION.md) (or [Versión en Español](docs/EXPANSION_GLOBAL.md)) for the detailed architectural plan and contribution guidelines.
 

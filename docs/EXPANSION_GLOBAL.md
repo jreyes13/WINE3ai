@@ -8,18 +8,19 @@ Este documento establece la arquitectura modular, técnica y colaborativa para c
 
 ## 1. Estado de la Colección y Arquitectura Consolidada
 
-El proyecto ha completado de forma exhaustiva el censo oficial de **51 naciones vitivinícolas soberanas** en Europa, América, Asia, África y Oceanía, integrando **867 regiones vitivinícolas demarcadas**, **900+ capas vectoriales** y **710 variedades de uva**:
+El proyecto ha completado de forma exhaustiva el censo oficial de **57 naciones vitivinícolas soberanas** en Europa, América, Asia, África y Oceanía, integrando **875 regiones vitivinícolas demarcadas**, **915+ capas vectoriales** y **712 variedades de uva**:
 
 | Eje Territorial | Países Completados (100% Censo Oficial) | Regiones Demarcadas |
 | :--- | :--- | :---: |
 | **Europa Occidental e Ibérica** | 🇪🇸 España, 🇵🇹 Portugal, 🇫🇷 Francia, 🇮🇹 Italia, 🇧🇪 Bélgica, 🇳🇱 Países Bajos, 🇱🇺 Luxemburgo, 🇬🇧 Reino Unido | 586 DOs / AOCs / DOCGs / DOPs |
 | **Europa Central y Alpino-Adriática** | 🇩🇪 Alemania, 🇦🇹 Austria, 🇨🇭 Suiza, 🇸🇮 Eslovenia, 🇭🇷 Croacia, 🇨🇿 República Checa, 🇸🇰 Eslovaquia, 🇵🇱 Polonia | 76 g.U. / DAC / ZGP / CHOP |
+| **Europa Nórdica y Escandinava** | 🇩🇰 Dinamarca, 🇸🇪 Suecia | 2 DOPs / IGPs |
 | **Mar Negro y Centroeuropa Oriental** | 🇭🇺 Hungría, 🇷🇴 Rumanía, 🇧🇬 Bulgaria, 🇲🇩 Moldavia, 🇺🇦 Ucrania, 🇷🇸 Serbia, 🇧🇦 Bosnia, 🇲🇪 Montenegro, 🇲🇰 Macedonia del Norte | 52 Borvidékek / DOC / PGI / IGP / ZOI |
 | **Cáucaso Arqueológico, Anatolia y Levante** | 🇬🇪 Georgia, 🇬🇷 Grecia, 🇦🇲 Armenia, 🇨🇾 Chipre, 🇱🇧 Líbano, 🇹🇷 Turquía, 🇮🇱 Israel, 🇦🇿 Azerbaiyán | 79 PDOs / POPs / GIs / Terruños |
-| **Las Américas (Eje Panamericano)** | 🇺🇸 EE.UU., 🇦🇷 Argentina, 🇨🇱 Chile, 🇺🇾 Uruguay, 🇧🇷 Brasil, 🇧🇴 Bolivia, 🇵🇪 Perú, 🇲🇽 México, 🇨🇦 Canadá | 59 AVAs / IGs / DOs / VQAs |
-| **Asia y Cuenca del Pacífico** | 🇨🇳 China, 🇯🇵 Japón, 🇮🇳 India, 🇦🇺 Australia, 🇳🇿 Nueva Zelanda | 19 GIs / Regiones Nacionales |
-| **Norte de África / Magreb y Hemisferio Sur** | 🇿🇦 Sudáfrica, 🇲🇦 Marruecos, 🇹🇳 Túnez, 🇲🇹 Malta | 12 WOs / AOCs / AOGs / DOKs |
-| **Total Global Consolidado** | **51 Naciones Soberanas** | **867 Regiones Oficiales** |
+| **Las Américas (Eje Panamericano)** | 🇺🇸 EE.UU., 🇦🇷 Argentina, 🇨🇱 Chile, 🇺🇾 Uruguay, 🇧🇷 Brasil, 🇧🇴 Bolivia, 🇵🇪 Perú, 🇲🇽 México, 🇨🇦 Canadá, 🇨🇴 Colombia | 60 AVAs / IGs / DOs / VQAs / GIs |
+| **Asia, Sudeste Asiático y Cuenca del Pacífico** | 🇨🇳 China, 🇯🇵 Japón, 🇮🇳 India, 🇦🇺 Australia, 🇳🇿 Nueva Zelanda, 🇹🇭 Tailandia, 🇻🇳 Vietnam | 22 GIs / Regiones Nacionales |
+| **Norte de África / Magreb y Hemisferio Sur** | 🇿🇦 Sudáfrica, 🇲🇦 Marruecos, 🇹🇳 Túnez, 🇲🇹 Malta, 🇩🇿 Argelia | 14 WOs / AOCs / AOGs / VAOGs / DOKs |
+| **Total Global Consolidado** | **57 Naciones Soberanas** | **875 Regiones Oficiales** |
 
 ### Estructura de Directorios Estandarizada
 El repositorio organiza todos sus activos conforme a una jerarquía modular por país:
@@ -31,22 +32,22 @@ wine3ai/
 ├── README.md                    # Documentación general en inglés (con tabla resumen y enlaces)
 ├── README_ES.md                 # Documentación general en español
 ├── data/                        # Datasets optimizados para producción web
-│   ├── spain_wine_regions.geojson # 867 regiones vitivinícolas con polígonos, uvas y metadatos
-│   ├── grape_varieties.json     # Base de datos de 710 variedades de uva normalizadas
+│   ├── spain_wine_regions.geojson # 875 regiones vitivinícolas con polígonos, uvas y metadatos
+│   ├── grape_varieties.json     # Base de datos de 712 variedades de uva normalizadas
 │   └── *.js                     # Envoltorios JS para soporte local (file:// sin CORS)
 ├── docs/                        # Informes técnicos, metodológicos y registros nacionales
-│   ├── COVERAGE.md              # Informe exhaustivo de cobertura en inglés (51 naciones)
-│   ├── COBERTURA.md             # Informe exhaustivo de cobertura en español (51 naciones)
+│   ├── COVERAGE.md              # Informe exhaustivo de cobertura en inglés (57 naciones)
+│   ├── COBERTURA.md             # Informe exhaustivo de cobertura en español (57 naciones)
 │   ├── METHODOLOGY.md           # Metodología técnica en inglés
 │   ├── METODOLOGIA.md           # Metodología técnica en español
 │   ├── GLOBAL_EXPANSION.md      # Guía de escalado en inglés
 │   ├── EXPANSION_GLOBAL.md      # Guía de escalado en español
 │   ├── SPAIN/ ... SWITZERLAND/  # Carpetas nacionales con sus registros detallados
 ├── DOWNs/                       # Repositorio de fuentes primarias
-│   ├── DOCs/<PAIS>/             # 760+ pliegos oficiales en PDF ordenados por país
+│   ├── DOCs/<PAIS>/             # 780+ pliegos oficiales en PDF ordenados por país
 │   └── natural_earth_vector/    # Cartografía administrativa vectorial de base
 ├── QGIS/                        # Capas SIG vectoriales (.gpkg) y proyectos .qgz
-│   ├── wine_world_wine.qgz      # Proyecto QGIS maestro (900+ capas en grupos nacionales)
+│   ├── wine_world_wine.qgz      # Proyecto QGIS maestro (915+ capas en grupos nacionales)
 │   ├── <PAIS>/                  # Capas GeoPackage organizadas por país
 │   └── <PAIS>/SQLs/             # Librerías de consultas SQL para filtros municipales
 └── web/                         # Réplica sincronizada para despliegue web estático

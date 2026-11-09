@@ -117473,5 +117473,272 @@
       "monovarietal_pct": 100.0,
       "blend_pct": 0.0
     }
+  },
+  {
+    "id": "solaris",
+    "name": "Solaris",
+    "color": "white",
+    "origin": "Germany (Freiburg Grape Breeding Institute, Merzling x Gm 6493)",
+    "synonyms": [
+      "FR 240-75",
+      "Solaris PIWI"
+    ],
+    "desc_en": "Early-ripening, disease-resistant PIWI white variety bred in 1975 at Freiburg by Norbert Becker. Celebrated across Northern Europe and Scandinavia for its frost resilience, high natural sugars, and aromatic profile featuring elderflower, crisp green apple, pineapple, and mineral acidity.",
+    "desc_es": "Variedad blanca resistente (PIWI) de maduración temprana creada en 1975 en Friburgo por Norbert Becker. Es el estandarte vitivinícola de Escandinavia y el norte de Europa gracias a su tolerancia a las heladas y hongos, alcanzando buena graduación natural y aromas a flor de saúco, manzana verde ácida, piña fresca y marcado nervio mineral.",
+    "regions": [
+      {
+        "id": "dnk-pgi-dons",
+        "name": "DONS PGI (D.O.P.)",
+        "country": "Dinamarca",
+        "country_flag": "🇩🇰",
+        "country_en": "Denmark",
+        "country_es": "Dinamarca",
+        "category": "PGI",
+        "region": "Syddanmark (Kolding Fjord)",
+        "color": "#0284C7",
+        "pliego": "DOWNs/DOCs/DENMARK/DONS_PGI_Specification.pdf",
+        "centroid": [
+          9.48,
+          55.53
+        ],
+        "pct": null,
+        "role": "Nordic Flagship White Variety",
+        "blend_type": "monovarietal",
+        "styles": [
+          "sparkling",
+          "still"
+        ],
+        "climate": "atlantic",
+        "climate_icon": "🌊",
+        "climate_name_en": "Atlantic / Maritime Cool-Climate",
+        "climate_name_es": "Atlántico / Marítimo de Clima Fresco"
+      },
+      {
+        "id": "swe-reg-skane",
+        "name": "Skåne - Kullaberg & Österlen",
+        "country": "Suecia",
+        "country_flag": "🇸🇪",
+        "country_en": "Sweden",
+        "country_es": "Suecia",
+        "category": "PDO",
+        "region": "Skåne Län (Kullen Peninsula)",
+        "color": "#0D9488",
+        "pliego": "DOWNs/DOCs/SWEDEN/Skane_Kullaberg_PDO.pdf",
+        "centroid": [
+          12.55,
+          56.28
+        ],
+        "pct": null,
+        "role": "Star Scandinavian White Variety",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still",
+          "sparkling"
+        ],
+        "climate": "atlantic",
+        "climate_icon": "🌊",
+        "climate_name_en": "Boreal Maritime Cool-Climate",
+        "climate_name_es": "Marítimo Boreal de Clima Fresco"
+      },
+      {
+        "id": "nld-dop-achterhoek",
+        "name": "Achterhoek - Winterswijk DOP",
+        "country": "Países Bajos",
+        "country_flag": "🇳🇱",
+        "country_en": "Netherlands",
+        "country_es": "Países Bajos",
+        "category": "DOP",
+        "region": "Gelderland (Oost-Nederland)",
+        "color": "#4F46E5",
+        "pliego": "DOWNs/DOCs/NETHERLANDS/Achterhoek_DOP.pdf",
+        "centroid": [
+          6.62,
+          52.0
+        ],
+        "pct": null,
+        "role": "Key PIWI Sustainable White",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still"
+        ],
+        "climate": "atlantic",
+        "climate_icon": "❄️",
+        "climate_name_en": "Cool Maritime Sandy Loam",
+        "climate_name_es": "Marítimo Fresco Franco-Arenoso"
+      },
+      {
+        "id": "pol-reg-zielona-gora",
+        "name": "Zielona Góra (Lubuskie)",
+        "country": "Polonia",
+        "country_flag": "🇵🇱",
+        "country_en": "Poland",
+        "country_es": "Polonia",
+        "category": "Región",
+        "region": "Lubuskie (Oder Valley)",
+        "color": "#059669",
+        "pliego": "DOWNs/DOCs/POLAND/Zielona_Gora.pdf",
+        "centroid": [
+          15.52,
+          51.97
+        ],
+        "pct": null,
+        "role": "Leading Cool-Climate White",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still",
+          "sparkling"
+        ],
+        "climate": "continental",
+        "climate_icon": "❄️",
+        "climate_name_en": "Sheltered Oder Valley",
+        "climate_name_es": "Valle del Óder Protegido"
+      }
+    ],
+    "total_regions": 4,
+    "countries_count": 4,
+    "countries_breakdown": [
+      {
+        "country": "Dinamarca",
+        "country_en": "Denmark",
+        "country_es": "Dinamarca",
+        "flag": "🇩🇰",
+        "count": 1,
+        "percentage": 25.0
+      },
+      {
+        "country": "Suecia",
+        "country_en": "Sweden",
+        "country_es": "Suecia",
+        "flag": "🇸🇪",
+        "count": 1,
+        "percentage": 25.0
+      },
+      {
+        "country": "Países Bajos",
+        "country_en": "Netherlands",
+        "country_es": "Países Bajos",
+        "flag": "🇳🇱",
+        "count": 1,
+        "percentage": 25.0
+      },
+      {
+        "country": "Polonia",
+        "country_en": "Poland",
+        "country_es": "Polonia",
+        "flag": "🇵🇱",
+        "count": 1,
+        "percentage": 25.0
+      }
+    ],
+    "styles_breakdown": {
+      "still": 4,
+      "sparkling": 3,
+      "fortified_sweet": 0
+    },
+    "blend_breakdown": {
+      "monovarietal": 4,
+      "blend": 0,
+      "monovarietal_pct": 100.0,
+      "blend_pct": 0.0
+    }
+  },
+  {
+    "id": "colombard",
+    "name": "Colombard",
+    "color": "white",
+    "origin": "France (Charente / Gascony, Gouais Blanc x Chenin Blanc)",
+    "synonyms": [
+      "French Colombard",
+      "Colombar",
+      "Bardero"
+    ],
+    "desc_en": "Vigorous white grape variety native to western France and now recognized globally as one of the best-performing white varieties in warm and tropical climates. Prized for naturally retaining vibrant, zesty acidity, it produces aromatic, crisp wines with notes of guava, passionfruit, lime, green mango, and white flowers.",
+    "desc_es": "Vigorosa variedad blanca originaria del suroeste francés, hoy consagrada mundialmente por su sobresaliente adaptación a climas cálidos y tropicales. Destaca por retener una acidez fresca y punzante, alumbrando vinos muy aromáticos con notas de guayaba, maracuyá, lima, mango verde y flores blancas.",
+    "regions": [
+      {
+        "id": "tha-reg-hua-hin",
+        "name": "Hua Hin Hills - Monsoon Valley",
+        "country": "Tailandia",
+        "country_flag": "🇹🇭",
+        "country_en": "Thailand",
+        "country_es": "Tailandia",
+        "category": "G.I.",
+        "region": "Prachuap Khiri Khan (Gulf of Thailand)",
+        "color": "#EA580C",
+        "pliego": "DOWNs/DOCs/THAILAND/Hua_Hin_Hills_GI.pdf",
+        "centroid": [
+          99.78,
+          12.53
+        ],
+        "pct": null,
+        "role": "Benchmark Tropical New Latitude White",
+        "blend_type": "monovarietal",
+        "styles": [
+          "still",
+          "sparkling"
+        ],
+        "climate": "mediterranean_coastal",
+        "climate_icon": "☀️",
+        "climate_name_en": "Tropical Maritime Gulf Microclimate",
+        "climate_name_es": "Microclima Tropical Marítimo del Golfo"
+      },
+      {
+        "id": "dza-vaog-mascara",
+        "name": "Mascara & Coteaux de Mascara VAOG",
+        "country": "Argelia",
+        "country_flag": "🇩🇿",
+        "country_en": "Algeria",
+        "country_es": "Argelia",
+        "category": "VAOG",
+        "region": "Mascara Plateau & Beni Chougrane",
+        "color": "#831843",
+        "pliego": "DOWNs/DOCs/ALGERIA/Mascara_VAOG.pdf",
+        "centroid": [
+          0.14,
+          35.39
+        ],
+        "pct": null,
+        "role": "Authorized Fresh White Variety",
+        "blend_type": "blend",
+        "styles": [
+          "still"
+        ],
+        "climate": "mediterranean_continental",
+        "climate_icon": "🏜️",
+        "climate_name_en": "Mediterranean Semi-Arid Plateau",
+        "climate_name_es": "Mediterráneo Semiárido de Meseta"
+      }
+    ],
+    "total_regions": 2,
+    "countries_count": 2,
+    "countries_breakdown": [
+      {
+        "country": "Tailandia",
+        "country_en": "Thailand",
+        "country_es": "Tailandia",
+        "flag": "🇹🇭",
+        "count": 1,
+        "percentage": 50.0
+      },
+      {
+        "country": "Argelia",
+        "country_en": "Algeria",
+        "country_es": "Argelia",
+        "flag": "🇩🇿",
+        "count": 1,
+        "percentage": 50.0
+      }
+    ],
+    "styles_breakdown": {
+      "still": 2,
+      "sparkling": 1,
+      "fortified_sweet": 0
+    },
+    "blend_breakdown": {
+      "monovarietal": 1,
+      "blend": 1,
+      "monovarietal_pct": 50.0,
+      "blend_pct": 50.0
+    }
   }
 ]
