@@ -38,13 +38,18 @@
           <span>🗺️</span> <span id="nav-map-text">Wine Regions Map</span>
         </a>
 
+        <!-- Link to WINEp3dIA Portal -->
+        <a href="winepedia.html" class="btn-link btn-winepedia" id="nav-btn-winepedia" title="WINEp3dIA & Knowledge Hub">
+          <span>📚</span> <span id="nav-winepedia-text">WINEp3dIA</span>
+        </a>
+
         <!-- Reference Basemap Switcher -->
         <div class="basemap-selector-wrap">
           <span class="basemap-label" id="lbl-basemap" title="Reference Basemap">🌍</span>
           <select id="basemap-select" class="basemap-select" title="Change reference basemap">
+            <option value="dark" id="bm-dark-opt" selected>Dark (Dark Matter)</option>
             <option value="voyager" id="bm-voyager-opt">Voyager (Color)</option>
             <option value="positron" id="bm-positron-opt">Light (Positron)</option>
-            <option value="dark" id="bm-dark-opt">Dark (Dark Matter)</option>
             <option value="satellite" id="bm-satellite-opt">Satellite (ESRI)</option>
             <option value="topo" id="bm-topo-opt">Topographic (Relief)</option>
           </select>
@@ -62,6 +67,9 @@
             <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
           </svg>
           <span>GitHub</span>
+        </a>
+        <a href="https://jreyes13.net" class="btn-link" style="background: rgba(190, 18, 60, 0.2); border-color: rgba(190, 18, 60, 0.4); color: #fda4af;" title="Return to jreyes13.net portal">
+          <span>←</span> jreyes13.net
         </a>
       </div>
     </header>
@@ -85,7 +93,7 @@
           <div class="filter-group">
             <label class="filter-label" id="lbl-country-filter">Country:</label>
             <select id="country-filter" class="filter-select">
-              <option value="all" id="opt-country-all">🌍 All Countries (51)</option>
+              <option value="all" id="opt-country-all">🌍 All Countries (57)</option>
             </select>
           </div>
 
@@ -132,7 +140,7 @@
             <button type="button" class="view-tab-btn" id="tab-btn-catalog" data-mode="catalog">
               <span class="tab-icon">▦</span>
               <span class="tab-text" id="lbl-tab-catalog">Catálogo Completo</span>
-              <span class="tab-badge secondary" id="badge-catalog-count">710 Variedades</span>
+              <span class="tab-badge secondary" id="badge-catalog-count">712 Variedades</span>
             </button>
           </div>
 
@@ -195,7 +203,7 @@
             <div class="matrix-title-area">
               <span class="matrix-icon">🍇</span>
               <span class="matrix-title" id="lbl-matrix-title">Grape Varieties Catalog</span>
-              <span class="matrix-counter" id="matrix-counter">Showing 710 varieties</span>
+              <span class="matrix-counter" id="matrix-counter">Showing 712 varieties</span>
             </div>
             <div class="matrix-actions">
               <select id="matrix-sort-select" class="matrix-sort-select" title="Order varieties">

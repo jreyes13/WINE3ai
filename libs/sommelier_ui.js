@@ -233,4 +233,81 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   renderCard();
+
+  // ==========================================
+  // 3. HOME WINEp3dIA QUICK CONCEPT EXPLORER
+  // ==========================================
+  var homeSearchInput = document.getElementById('home-winepedia-search');
+  var homeResultsGrid = document.getElementById('home-winepedia-results');
+  var homeChips = document.querySelectorAll('.home-concept-chip');
+  var articles = window.WINEPEDIA_ARTICLES || [];
+
+  function renderHomeConcepts(query) {
+    if (!homeResultsGrid || !articles.length) return;
+    var q = (query || '').toLowerCase().trim();
+    
+    var matches = articles;
+    if (q) {
+      matches = articles.filter(function(a) {
+        var text = (a.title_es + ' ' + a.summary_es + ' ' + (a.tags || []).join(' ')).toLowerCase();
+        return text.includes(q);
+      });
+    }
+
+    var previewItems = matches.slice(0, 3);
+    if (!previewItems.length) {
+      homeResultsGrid.innerHTML = 
+        "<div class='col-span-full py-8 text-center text-xs font-mono text-slate-400 bg-black/40 rounded-2xl border border-white/5'>" +
+          "No se encontraron conceptos para '<strong>" + (query || '') + "</strong>'. <a href='winepedia.html' class='text-amber-400 underline ml-2'>Buscar en la enciclopedia completa →</a>" +
+        "</div>";
+      return;
+    }
+
+    homeResultsGrid.innerHTML = '';
+    previewItems.forEach(function(art) {
+      var card = document.createElement('div');
+      var badgeColor = "bg-amber-950 text-amber-300 border-amber-800/40";
+      if (art.standard === 'CMS') badgeColor = "bg-rose-950 text-rose-300 border-rose-800/40";
+      if (art.standard === 'WSET3') badgeColor = "bg-purple-950 text-purple-300 border-purple-800/40";
+      if (art.standard === 'ASI') badgeColor = "bg-emerald-950 text-emerald-300 border-emerald-800/40";
+
+      card.className = "p-5 rounded-2xl bg-[#0e1017] border border-white/10 hover:border-amber-500/40 transition-colors flex flex-col justify-between";
+      card.innerHTML = 
+        "<div>" +
+          "<div class='flex items-center justify-between mb-2.5'>" +
+            "<span class='text-[10px] font-mono px-2 py-0.5 rounded " + badgeColor + " border uppercase font-bold'>" + art.standard + "</span>" +
+            "<span class='text-[11px] text-slate-500 font-mono'>" + art.category_es + "</span>" +
+          "</div>" +
+          "<h6 class='text-base font-bold font-serif-wine text-white mb-1.5 leading-snug'>" + art.title_es + "</h6>" +
+          "<p class='text-slate-300 text-xs leading-relaxed mb-4 line-clamp-3 font-sans'>" + art.summary_es + "</p>" +
+        "</div>" +
+        "<div>" +
+          "<a href='winepedia.html' class='inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-amber-400 hover:text-amber-300 transition-colors'>" +
+            "<span>📖</span> Leer artículo completo →" +
+          "</a>" +
+        "</div>";
+
+      homeResultsGrid.appendChild(card);
+    });
+  }
+
+  if (homeSearchInput) {
+    homeSearchInput.addEventListener('input', function(e) {
+      renderHomeConcepts(e.target.value);
+    });
+  }
+
+  if (homeChips) {
+    homeChips.forEach(function(chip) {
+      chip.addEventListener('click', function() {
+        var term = chip.getAttribute('data-term');
+        if (homeSearchInput) {
+          homeSearchInput.value = term;
+          renderHomeConcepts(term);
+        }
+      });
+    });
+  }
+
+  renderHomeConcepts('');
 });

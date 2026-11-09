@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WINEp3dIA — Enciclopedia de Sumillería, Enología y Terruño | WINE³ai</title>
+  <meta name="description" content="Enciclopedia viva y base de conocimiento técnico de sumillería, bioquímica enológica y cata deductiva basada en WSET 3, Court of Master Sommeliers (CMS), Máster UDIMA y ASI.">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            wine: {
+              950: '#1a050b',
+              900: '#2b0711',
+              800: '#4c0c1e',
+              700: '#72122c',
+              600: '#9b183b',
+              500: '#be123c',
+              400: '#e11d48',
+              100: '#ffe4e6'
+            },
+            terroir: {
+              gold: '#d4af37',
+              earth: '#8b5a2b',
+              sand: '#d97706'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Typography: Cinzel + Plus Jakarta Sans + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800;900&family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0d13; color: #e2e8f0; }
+    .font-serif-wine { font-family: 'Cinzel', serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    .gold-glow { text-shadow: 0 0 25px rgba(212, 175, 55, 0.4); }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col bg-[#0b0d13] selection:bg-amber-500 selection:text-black">
+
+  <!-- Header / Navigation -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-[#0b0d13]/90 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="index_es.html" class="flex items-center gap-3 group">
+        <img src="assets/logo.svg" alt="WINE³ai Logo" class="w-10 h-10 group-hover:scale-105 transition-transform">
+        <div>
+          <div class="text-xl font-bold tracking-tight text-white font-serif-wine flex items-center gap-0.5">
+            WINE<span class="text-rose-500 font-sans text-sm align-super font-black">³</span><span class="text-amber-400 font-sans text-sm font-black">ai</span>
+          </div>
+          <div class="text-[10px] tracking-wider uppercase text-slate-400 font-mono">Pilar III · WINEp3dIA</div>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium">
+        <a href="index_es.html" class="text-slate-300 hover:text-white transition-colors">Inicio</a>
+        <a href="map.html" class="text-slate-300 hover:text-amber-400 transition-colors flex items-center gap-1.5">
+          <span>🗺️</span> Mapa de Regiones
+        </a>
+        <a href="grapes.html" class="text-slate-300 hover:text-rose-400 transition-colors flex items-center gap-1.5">
+          <span>🍇</span> Variedades
+        </a>
+        <a href="index_es.html#sommelier" class="text-slate-300 hover:text-amber-300 transition-colors flex items-center gap-1.5">
+          <span>🍷</span> Sommelier Pocket
+        </a>
+        <a href="winepedia.html" class="text-amber-400 font-bold border-b border-amber-400 pb-0.5 flex items-center gap-1.5">
+          <span>📚</span> WINEp3dIA
+        </a>
+        <a href="index_es.html#referencias" class="text-slate-400 hover:text-white transition-colors text-xs font-mono">Referencias</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <!-- Language Switcher Pill -->
+        <div class="flex items-center bg-white/5 border border-white/10 rounded-lg p-0.5 text-xs font-mono">
+          <button id="lang-btn-es" class="px-2.5 py-1 rounded bg-amber-950 text-amber-300 font-bold border border-amber-800/40">ES</button>
+          <button id="lang-btn-en" class="px-2.5 py-1 text-slate-400 hover:text-white transition-colors">EN</button>
+        </div>
+
+        <a href="https://github.com/jreyes13/wine3ai" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-slate-300 hover:bg-white/10 transition-colors text-xs font-mono hidden sm:flex items-center gap-2">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          <span class="hidden sm:inline">GitHub</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-1">
+    <!-- Hero Header -->
+    <section class="py-16 sm:py-20 border-b border-white/5 bg-gradient-to-b from-[#140b10] via-[#0e1017] to-[#0b0d13] relative overflow-hidden">
+      <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-950/80 border border-amber-800/50 text-amber-300 text-xs font-mono mb-6 shadow-inner">
+          <span>📚</span> Base de Conocimiento Vivo · Cánones WSET 3 · CMS · UDIMA · ASI
+        </div>
+
+        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 font-serif-wine">
+          WINE<span class="text-amber-400">p3dIA</span>
+        </h1>
+        <p class="text-slate-300 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed mb-10">
+          La enciclopedia técnica de sumillería, bioquímica enológica y terruño. Explora conceptos fundamentales, descriptores de cata deductiva y las leyes de armonía explicadas con rigor científico.
+        </p>
+
+        <!-- Search Bar -->
+        <div class="max-w-2xl mx-auto relative mb-8">
+          <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400 text-lg">
+            🔍
+          </div>
+          <input type="text" id="winepedia-search" placeholder="Buscar por concepto, compuesto (cinarina, flor, tca), uva o región..." class="w-full pl-12 pr-4 py-4 rounded-2xl bg-[#131622] border border-white/15 text-white placeholder-slate-500 font-sans text-sm focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-all shadow-xl">
+          <button id="clear-search-btn" class="hidden absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-white text-xs font-mono">
+            ✕ Limpiar
+          </button>
+        </div>
+
+        <!-- Filter Pills by Standard -->
+        <div class="flex flex-wrap items-center justify-center gap-2 text-xs font-mono">
+          <span class="text-slate-500 mr-2 text-[11px] uppercase tracking-wider hidden sm:inline">Estándar:</span>
+          <button class="filter-pill px-3.5 py-1.5 rounded-xl bg-amber-950 text-amber-300 border border-amber-800/60 font-semibold" data-standard="all">Todos</button>
+          <button class="filter-pill px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10" data-standard="UDIMA">UDIMA Máster</button>
+          <button class="filter-pill px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10" data-standard="CMS">CMS Deductive</button>
+          <button class="filter-pill px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10" data-standard="WSET3">WSET 3</button>
+          <button class="filter-pill px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10" data-standard="ASI">ASI Global</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="py-16 max-w-7xl mx-auto px-6">
+      <div class="flex items-center justify-between mb-8 pb-4 border-b border-white/10">
+        <div class="text-xs font-mono text-slate-400" id="articles-counter">
+          Cargando conceptos...
+        </div>
+        <div class="text-xs font-mono text-slate-500">
+          WINEp3dIA Knowledge Engine v1.0
+        </div>
+      </div>
+
+      <!-- Articles Grid -->
+      <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <!-- Empty State -->
+      <div id="empty-state" class="hidden py-20 text-center max-w-md mx-auto">
+        <div class="text-4xl mb-4">🔍</div>
+        <h4 class="text-xl font-bold font-serif-wine text-white mb-2">No se encontraron artículos</h4>
+        <p class="text-slate-400 text-xs font-mono leading-relaxed mb-6">
+          No hay resultados que coincidan con tu término de búsqueda. Prueba con palabras clave como <span class="text-amber-300">flor</span>, <span class="text-amber-300">tca</span>, <span class="text-amber-300">cinarina</span>, <span class="text-amber-300">pirazinas</span> o <span class="text-amber-300">suelo</span>.
+        </p>
+        <button id="reset-filters-btn" class="px-4 py-2 rounded-xl bg-amber-500/20 text-amber-300 border border-amber-500/40 text-xs font-mono hover:bg-amber-500/30 transition-colors">
+          Restablecer búsqueda
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Deep Dive Reading Modal -->
+  <div id="article-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div class="bg-[#131622] border border-white/15 rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 shadow-2xl relative">
+      <!-- Close Button -->
+      <button id="close-modal-btn" class="absolute top-6 right-6 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-sm font-mono transition-colors">
+        ✕
+      </button>
+
+      <div class="flex items-center gap-3 mb-4">
+        <span id="modal-standard" class="px-2.5 py-1 rounded text-[11px] font-mono font-bold bg-amber-950 text-amber-300 border border-amber-800/40">UDIMA</span>
+        <span id="modal-category" class="text-xs font-mono text-slate-400">Enología & Vinos Especiales</span>
+      </div>
+
+      <h3 id="modal-title" class="text-2xl sm:text-3xl font-bold font-serif-wine text-white mb-4 pr-10">
+        Título del Artículo
+      </h3>
+
+      <div class="p-4 rounded-xl bg-white/[0.03] border border-white/10 text-xs text-amber-200 font-mono mb-6 leading-relaxed" id="modal-summary">
+        Resumen introductorio...
+      </div>
+
+      <div class="prose prose-invert max-w-none text-slate-300 text-sm leading-relaxed mb-6 font-sans space-y-4" id="modal-content">
+        <!-- Full content -->
+      </div>
+
+      <div class="mb-6 p-4 rounded-2xl bg-black/50 border border-white/10">
+        <strong class="text-amber-400 text-xs font-mono block mb-2 uppercase tracking-wider">Puntos Clave de Sumillería:</strong>
+        <ul id="modal-takeaways" class="text-xs text-slate-300 font-sans space-y-2">
+          <!-- Takeaways -->
+        </ul>
+      </div>
+
+      <div class="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 text-xs font-mono">
+        <div>
+          <span class="text-slate-500 mr-2">Variedades vinculadas:</span>
+          <span id="modal-grapes" class="text-slate-300"></span>
+        </div>
+        <div>
+          <span class="text-slate-500 mr-2">Regiones:</span>
+          <span id="modal-regions" class="text-rose-400"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 py-10 bg-[#05060a] text-xs text-slate-500 font-mono">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <img src="assets/logo.svg" alt="WINE³ai" class="w-6 h-6">
+        <span class="text-slate-300 font-serif-wine font-bold text-sm">WINE<span class="text-rose-500">³</span>ai</span>
+        <span>•</span>
+        <span>WINEp3dIA Knowledge Engine</span>
+      </div>
+
+      <div class="flex items-center gap-6">
+        <a href="map.html" class="hover:text-rose-400 transition-colors">Mapa</a>
+        <a href="grapes.html" class="hover:text-rose-400 transition-colors">Uvas</a>
+        <a href="index_es.html#sommelier" class="hover:text-amber-400 transition-colors">Sommelier Pocket</a>
+        <a href="index_es.html#referencias" class="hover:text-rose-400 transition-colors">Referencias & Aviso Legal</a>
+        <a href="https://github.com/jreyes13/wine3ai" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">GitHub</a>
+        <a href="https://jreyes13.net" class="hover:text-white transition-colors">jreyes13.net</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="data/winepedia_articles.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var articles = window.WINEPEDIA_ARTICLES || [];
+      var currentLang = 'es';
+      var activeStandard = 'all';
+      var searchQuery = '';
+
+      var searchInput = document.getElementById('winepedia-search');
+      var clearSearchBtn = document.getElementById('clear-search-btn');
+      var filterPills = document.querySelectorAll('.filter-pill');
+      var articlesGrid = document.getElementById('articles-grid');
+      var emptyState = document.getElementById('empty-state');
+      var articlesCounter = document.getElementById('articles-counter');
+      var resetFiltersBtn = document.getElementById('reset-filters-btn');
+
+      var modal = document.getElementById('article-modal');
+      var closeModalBtn = document.getElementById('close-modal-btn');
+      var modalStandard = document.getElementById('modal-standard');
+      var modalCategory = document.getElementById('modal-category');
+      var modalTitle = document.getElementById('modal-title');
+      var modalSummary = document.getElementById('modal-summary');
+      var modalContent = document.getElementById('modal-content');
+      var modalTakeaways = document.getElementById('modal-takeaways');
+      var modalGrapes = document.getElementById('modal-grapes');
+      var modalRegions = document.getElementById('modal-regions');
+
+      var langBtnEs = document.getElementById('lang-btn-es');
+      var langBtnEn = document.getElementById('lang-btn-en');
+
+      function filterArticles() {
+        return articles.filter(function(art) {
+          var matchesStandard = (activeStandard === 'all') || (art.standard === activeStandard);
+          if (!matchesStandard) return false;
+
+          if (!searchQuery) return true;
+
+          var q = searchQuery.toLowerCase();
+          var title = (currentLang === 'es' ? art.title_es : art.title_en).toLowerCase();
+          var summary = (currentLang === 'es' ? art.summary_es : art.summary_en).toLowerCase();
+          var content = (currentLang === 'es' ? art.content_es : art.content_en).toLowerCase();
+          var tags = (art.tags || []).join(' ').toLowerCase();
+          var grapes = (art.related_grapes || []).join(' ').toLowerCase();
+          var regions = (art.related_regions || []).join(' ').toLowerCase();
+
+          return title.includes(q) || summary.includes(q) || content.includes(q) || tags.includes(q) || grapes.includes(q) || regions.includes(q);
+        });
+      }
+
+      function renderGrid() {
+        var filtered = filterArticles();
+        if (articlesCounter) {
+          articlesCounter.textContent = "Mostrando " + filtered.length + " de " + articles.length + " conceptos técnicos";
+        }
+
+        if (filtered.length === 0) {
+          articlesGrid.classList.add('hidden');
+          emptyState.classList.remove('hidden');
+          return;
+        }
+
+        articlesGrid.classList.remove('hidden');
+        emptyState.classList.add('hidden');
+        articlesGrid.innerHTML = '';
+
+        filtered.forEach(function(art) {
+          var card = document.createElement('div');
+          var badgeColorClass = "bg-amber-950 text-amber-300 border-amber-800/40";
+          if (art.standard === 'CMS') badgeColorClass = "bg-rose-950 text-rose-300 border-rose-800/40";
+          if (art.standard === 'WSET3') badgeColorClass = "bg-purple-950 text-purple-300 border-purple-800/40";
+          if (art.standard === 'ASI') badgeColorClass = "bg-emerald-950 text-emerald-300 border-emerald-800/40";
+
+          var title = currentLang === 'es' ? art.title_es : art.title_en;
+          var summary = currentLang === 'es' ? art.summary_es : art.summary_en;
+          var category = currentLang === 'es' ? art.category_es : art.category_en;
+
+          card.className = "p-6 rounded-2xl bg-[#12141c] border border-white/10 hover:border-amber-500/50 transition-all flex flex-col justify-between group";
+          card.innerHTML = 
+            "<div>" +
+              "<div class='flex items-center justify-between mb-3'>" +
+                "<span class='text-[10px] font-mono px-2 py-0.5 rounded " + badgeColorClass + " border uppercase font-bold'>" + art.standard + "</span>" +
+                "<span class='text-xs text-slate-500 font-mono'>" + category + "</span>" +
+              "</div>" +
+              "<h4 class='text-xl font-bold font-serif-wine text-white mb-2 group-hover:text-amber-400 transition-colors leading-snug'>" + title + "</h4>" +
+              "<p class='text-slate-400 text-xs leading-relaxed mb-6 font-sans'>" + summary + "</p>" +
+            "</div>" +
+            "<div>" +
+              "<button class='read-article-btn w-full py-2.5 px-4 rounded-xl bg-white/5 hover:bg-white/10 text-slate-200 border border-white/10 text-xs font-mono font-semibold text-center transition-colors flex items-center justify-center gap-2' data-id='" + art.id + "'>" +
+                "<span>📖</span> " + (currentLang === 'es' ? "Lectura Completa →" : "Read In-Depth →") +
+              "</button>" +
+            "</div>";
+
+          articlesGrid.appendChild(card);
+        });
+
+        // Attach modal triggers
+        document.querySelectorAll('.read-article-btn').forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            var artId = btn.getAttribute('data-id');
+            openModal(artId);
+          });
+        });
+      }
+
+      function openModal(id) {
+        var art = articles.find(function(a) { return a.id === id; });
+        if (!art || !modal) return;
+
+        modalStandard.textContent = art.standard;
+        modalCategory.textContent = currentLang === 'es' ? art.category_es : art.category_en;
+        modalTitle.textContent = currentLang === 'es' ? art.title_es : art.title_en;
+        modalSummary.textContent = currentLang === 'es' ? art.summary_es : art.summary_en;
+        
+        var rawContent = currentLang === 'es' ? art.content_es : art.content_en;
+        modalContent.innerHTML = rawContent.replace(/\n\n/g, '<br><br>').replace(/\*\*(.*?)\*\*/g, '<strong class="text-white">$1</strong>');
+
+        var takeaways = currentLang === 'es' ? art.key_takeaways_es : art.key_takeaways_en;
+        modalTakeaways.innerHTML = (takeaways || []).map(function(t) {
+          return "<li class='flex items-start gap-2'><span class='text-amber-400'>●</span> <span>" + t + "</span></li>";
+        }).join('');
+
+        modalGrapes.textContent = (art.related_grapes || []).join(', ') || 'N/A';
+        modalRegions.textContent = (art.related_regions || []).join(', ') || 'Global';
+
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        if (!modal) return;
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+
+      if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+      if (modal) {
+        modal.addEventListener('click', function(e) {
+          if (e.target === modal) closeModal();
+        });
+      }
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeModal();
+      });
+
+      // Search input handler
+      if (searchInput) {
+        searchInput.addEventListener('input', function(e) {
+          searchQuery = e.target.value.trim();
+          if (clearSearchBtn) {
+            if (searchQuery) clearSearchBtn.classList.remove('hidden');
+            else clearSearchBtn.classList.add('hidden');
+          }
+          renderGrid();
+        });
+      }
+
+      if (clearSearchBtn) {
+        clearSearchBtn.addEventListener('click', function() {
+          searchQuery = '';
+          searchInput.value = '';
+          clearSearchBtn.classList.add('hidden');
+          renderGrid();
+        });
+      }
+
+      if (resetFiltersBtn) {
+        resetFiltersBtn.addEventListener('click', function() {
+          searchQuery = '';
+          if (searchInput) searchInput.value = '';
+          if (clearSearchBtn) clearSearchBtn.classList.add('hidden');
+          activeStandard = 'all';
+          filterPills.forEach(function(p) {
+            p.className = "filter-pill px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10";
+          });
+          document.querySelector('[data-standard="all"]').className = "filter-pill px-3.5 py-1.5 rounded-xl bg-amber-950 text-amber-300 border border-amber-800/60 font-semibold";
+          renderGrid();
+        });
+      }
+
+      // Filter pills
+      filterPills.forEach(function(pill) {
+        pill.addEventListener('click', function() {
+          activeStandard = pill.getAttribute('data-standard');
+          filterPills.forEach(function(p) {
+            p.className = "filter-pill px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10";
+          });
+          pill.className = "filter-pill px-3.5 py-1.5 rounded-xl bg-amber-950 text-amber-300 border border-amber-800/60 font-semibold";
+          renderGrid();
+        });
+      });
+
+      // Language Switcher
+      if (langBtnEs && langBtnEn) {
+        langBtnEs.addEventListener('click', function() {
+          currentLang = 'es';
+          langBtnEs.className = "px-2.5 py-1 rounded bg-amber-950 text-amber-300 font-bold border border-amber-800/40";
+          langBtnEn.className = "px-2.5 py-1 text-slate-400 hover:text-white transition-colors";
+          renderGrid();
+        });
+        langBtnEn.addEventListener('click', function() {
+          currentLang = 'en';
+          langBtnEn.className = "px-2.5 py-1 rounded bg-amber-950 text-amber-300 font-bold border border-amber-800/40";
+          langBtnEs.className = "px-2.5 py-1 text-slate-400 hover:text-white transition-colors";
+          renderGrid();
+        });
+      }
+
+      // Initial render
+      renderGrid();
+    });
+  </script>
+</body>
+</html>
