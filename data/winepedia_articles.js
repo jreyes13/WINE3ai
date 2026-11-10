@@ -247,6 +247,112 @@
       related_grapes: ["Tempranillo", "Chardonnay", "Pinot Noir", "Palomino Fino"],
       related_regions: ["Global"],
       tags: ["asi", "servicio", "temperaturas", "decantacion", "protocolo", "sommelier"]
+    },
+
+    // --- 5. ARTÍCULOS ADICIONALES DE REFERENCIA ---
+    {
+      id: "maceracion_carbonica_elaboracion",
+      title_es: "Maceración Carbónica: Bioquímica Intracelular",
+      title_en: "Carbonic Maceration: Intracellular Biochemistry",
+      standard: "UDIMA",
+      category_es: "Vinificación en Tintos",
+      category_en: "Red Wine Vinification",
+      badge_color: "amber",
+      summary_es: "Fermentación enzimática anaeróbica dentro del grano de uva sin estrujar, liberando aromas de plátano y fresa silvestre mediante acetato de isoamilo con extracción tánica mínima.",
+      summary_en: "Anaerobic intracellular enzymatic fermentation inside uncrushed whole grape berries, synthesizing isoamyl acetate (banana/candy) with minimal tannin extraction.",
+      content_es: "La maceración carbónica tradicional (propia de Rioja Alavesa y Beaujolais) exige introducir racimos enteros e intactos dentro de un depósito sellado saturado de CO2 a 30°-32°C. En estas condiciones de asfixia celular, las enzimas endógenas de la propia uva metabolizan un 20-30% de los azúcares directamente a etanol sin intervención de levaduras, degradan hasta la mitad del ácido málico y transfieren el color de los antocianos de la piel hacia la pulpa sin disolver los taninos amargos de las pepitas. El rasgo organoléptico definitorio es la síntesis de ésteres volátiles, especialmente el acetato de isoamilo (chuchería de plátano, fresa ácida, kirsch y toque de clavo de olor). Son vinos sedosos, explosivamente frutales y diseñados para consumo inmediato.",
+      content_en: "Traditional carbonic maceration involves sealing whole, uncrushed grape clusters in a CO2-saturated tank at 30°-32°C. Under cellular asphyxiation, the grape's own enzymes convert ~20% of sugar into ethanol without yeast, degrade half the malic acid, and pull anthocyanin pigments from skins into the pulp without extracting bitter seed tannins. It produces high levels of isoamyl acetate, yielding characteristic aromas of bubblegum, banana, raspberry, and cinnamon, creating juicy, low-tannin reds ready for early drinking.",
+      key_takeaways_es: [
+        "Fermentación intracelular sin presencia de levaduras iniciales.",
+        "Gran extracción de color con nula extracción de taninos amargos de pepitas.",
+        "Perfil aromático dominado por acetato de isoamilo (plátano y frutas rojas confitadas)."
+      ],
+      key_takeaways_en: [
+        "Pure intracellular fermentation without yeast intervention in the primary phase.",
+        "Vibrant color extraction with near-zero harsh seed tannin pickup.",
+        "Flavor profile dominated by isoamyl acetate (banana, candied berry, bubblegum)."
+      ],
+      related_grapes: ["Tempranillo", "Gamay", "Garnacha"],
+      related_regions: ["Rioja Alavesa", "Beaujolais", "Vinos de Madrid"],
+      tags: ["enologia", "maceracion_carbonica", "fermentacion", "isoamilo", "rioja", "gamay"]
+    },
+    {
+      id: "criaderas_y_soleras_jerez",
+      title_es: "El Sistema Dinámico de Criaderas y Soleras",
+      title_en: "The Criaderas and Solera Fractional Aging System",
+      standard: "UDIMA",
+      category_es: "Enología & Vinos Especiales",
+      category_en: "Enology & Special Vinifications",
+      badge_color: "amber",
+      summary_es: "Método dinámico de envejecimiento fraccionario en cascada de botas de roble americano que garantiza la consistencia organoléptica y la longevidad de los vinos de Jerez y Montilla.",
+      summary_en: "Dynamic fractional blending cascade of American oak butts ensuring sensory consistency and perpetual continuity in Jerez and Montilla wines.",
+      content_es: "A diferencia de la crianza estática por añadas (vintage), el sistema de criaderas y soleras es un proceso de mezcla fraccionada continua. Las botas se organizan en escalas según su edad: la escala más cercana al suelo (la Solera) contiene el vino de mayor vejez; sobre ella se apilan las Criaderas (1ª criadera, 2ª criadera, etc., hasta 8 o 10 escalas en grandes bodegas). Periódicamente se realiza la 'saca' (extracción de hasta un tercio del volumen de la Solera para embotellar) y el 'rocío' (reposición del volumen extraído con vino de la 1ª criadera, y así sucesivamente en cascada). En crianza biológica, el rocío aporta nutrientes y micronutrientes frescos que mantienen vivo el velo de flor; en crianza oxidativa, la evaporación a través del roble poroso (la merma) concentra acidez, glicerol y grado alcohólico año tras año.",
+      content_en: "Unlike static vintage aging, the Solera system is a perpetual fractional blending process. American oak butts are stacked in tiers: the bottom row (Solera) holds the oldest wine; upper tiers (Criaderas) hold progressively younger stages. When wine is drawn for bottling ('saca', max 1/3 volume), it is refreshed ('rocío') with wine from the tier above. In biological aging, this feeds fresh nutrients to the flor veil; in oxidative aging, barrel breathing evaporates water, concentrating acidity, alcohol, and nutty complexity over decades.",
+      key_takeaways_es: [
+        "Garantiza una calidad idéntica e inmutable botella tras botella a lo largo de décadas.",
+        "El rocío nutre continuamente las levaduras del velo de flor.",
+        "La evaporación ('merma') en soleras oxidativas concentra la sapidez y eleva el grado natural."
+      ],
+      key_takeaways_en: [
+        "Guarantees absolute consistency across decades of bottling.",
+        "Replenishment feeds essential micronutrients to the delicate flor yeast.",
+        "Oxidative evaporation concentrates dry extract, alcohol, and acidity."
+      ],
+      related_grapes: ["Palomino Fino", "Pedro Ximénez"],
+      related_regions: ["Jerez-Xérès-Sherry", "Manzanilla de Sanlúcar", "Montilla-Moriles"],
+      tags: ["jerez", "solera", "criaderas", "saca", "rocio", "enologia"]
+    },
+    {
+      id: "ribera_vs_rioja_terruno",
+      title_es: "Terruño Comparado: Ribera del Duero vs Rioja",
+      title_en: "Comparative Terroir: Ribera del Duero vs Rioja",
+      standard: "WSET3",
+      category_es: "Terruño & Factores Ambientales",
+      category_en: "Terroir & Environmental Factors",
+      badge_color: "purple",
+      summary_es: "Análisis geoclimático y edafológico de cómo la altitud de la meseta castellana y la influencia atlántica del valle del Ebro moldean dos expresiones magistrales pero opuestas de la Tempranillo.",
+      summary_en: "Geoclimatic and soil analysis of how Castilian plateau elevation and Ebro Atlantic influence shape two distinct master expressions of Tempranillo.",
+      content_es: "Ribera del Duero y Rioja representan las dos cumbres de la Tempranillo en el mundo, pero sus factores naturales son profundamente divergentes:\n\n* **Ribera del Duero:** Viñedos entre 750 y 950 metros de altitud en la meseta castellana. Clima continental extremo con inviernos de hasta -15°C, veranos secos y oscilaciones térmicas día-noche de más de 20°C en época de maduración. Esta amplitud térmica induce a la uva a generar un hollejo grueso, resultando en vinos de capa profunda, taninos masticables muy potentes, acidez fresca y notas de fruta negra silvestre (mora, ciruela) y balsámicos.\n* **Rioja (Alta y Alavesa):** Viñedos entre 350 y 650 metros en el valle del Ebro, resguardados por la Sierra de Cantabria que frena las borrascas del Cantábrico pero permite la entrada de una suave humedad atlántica. Suelos arcillo-calcáreos y aluviales que producen una Tempranillo de acidez más integrada, tanino fino y sedoso, aromas de fruta roja fresca (fresa, cereza) y una asombrosa aptitud para crianzas prolongadas en barrica de roble americano y francés.",
+      content_en: "Ribera del Duero and Rioja showcase contrasting expressions of Tempranillo based on elevation and climate:\n\n* **Ribera del Duero:** High-altitude plateau (750-950m) with extreme continentality and 20°C+ diurnal range. Cool nights thicken skins, generating deep purple extraction, bold structural tannins, crisp natural acidity, and dark blackberry character.\n* **Rioja (Alta/Alavesa):** Lower elevation (350-650m) sheltered by Sierra de Cantabria, blending Atlantic coolness with Mediterranean warmth on chalky-clay soils. Produces brighter red-fruit aromatics, silken tannins, and legendary capacity for extended oxidative oak aging.",
+      key_takeaways_es: [
+        "Ribera del Duero: Altitud extrema ➔ Hollejo grueso ➔ Potencia, fruta negra y tanino muscular.",
+        "Rioja: Influencia atlántica moderadora ➔ Fruta roja viva, tanino pulido y finura terciaria de guarda.",
+        "La oscilación térmica diurna es el factor clave que preserva la acidez en Ribera."
+      ],
+      key_takeaways_en: [
+        "Ribera: High altitude creates thicker skins, muscular tannins, and dark fruit power.",
+        "Rioja: Atlantic moderation yields brighter red fruit, silken texture, and oak harmony.",
+        "Diurnal shift is the decisive terroir lever preserving natural acidity in Ribera."
+      ],
+      related_grapes: ["Tempranillo", "Garnacha", "Graciano"],
+      related_regions: ["Ribera del Duero", "Rioja"],
+      tags: ["wset3", "ribera_del_duero", "rioja", "tempranillo", "terruno", "clima"]
+    },
+    {
+      id: "metodo_tradicional_autolisis_espuma",
+      title_es: "Método Tradicional: Segunda Fermentación y Autólisis",
+      title_en: "Traditional Method: Secondary Fermentation and Autolysis",
+      standard: "UDIMA",
+      category_es: "Espumosos & Método Tradicional",
+      category_en: "Sparkling & Traditional Method",
+      badge_color: "amber",
+      summary_es: "Cinética de la segunda fermentación en botella (prise de mousse), generación de 5-6 atmósferas de presión de CO2 y la liberación de manoproteínas enriquecedoras de la espuma.",
+      summary_en: "Kinetics of in-bottle secondary fermentation (prise de mousse), 5-6 bars of CO2 pressure generation, and yeast mannoprotein release during prolonged aging.",
+      content_es: "El método tradicional (Champenoise / Cava / Corpinnat) se inicia con la adición del 'licor de tiraje' (vino base + azúcar de caña ~24 g/L + levaduras seleccionadas y clarificante) y el sellado de la botella con chapa corona. Durante 6 a 8 semanas en rima a 12°-15°C se produce la 'prise de mousse': las levaduras fermentan el azúcar, produciendo aproximadamente 1.2-1.3% más de alcohol y liberando dióxido de carbono que, al estar confinado, se disuelve en el líquido creando entre 5 y 6 atmósferas de presión. Una vez agotado el azúcar, las levaduras mueren y se inicia la autólisis enzimática (mínimo 9 meses en Cava estándar, 15 meses en Champagne, 30 meses en Gran Reserva). Las paredes de las levaduras liberan manoproteínas, coloides y aminoácidos que aportan una textura cremosa inigualable en el centro de boca, reducen la astringencia y generan los aromas terciarios característicos de panadería, masa madre, frutos secos y brioche.",
+      content_en: "The traditional method commences with the addition of the 'liqueur de tirage' (base wine, ~24 g/L sugar, selected yeasts) followed by crown-capping. Over 6-8 weeks at 12°-15°C, the 'prise de mousse' occurs: yeast ferments the sugar, raising alcohol by ~1.3% and dissolving CO2 under 5 to 6 bars of pressure. Following fermentation, yeasts die and undergo enzymatic autolysis (minimum 15 months in Champagne, 30+ months in Grand Reserves). Broken cell walls release mannoproteins and amino acids, conferring velvety creaminess, stabilizing the fine bead, and imparting toasted brioche and almond nuances.",
+      key_takeaways_es: [
+        "24 g/L de azúcar en el tiraje generan con precisión matemática ~6 atmósferas de presión.",
+        "La autólisis prolongada sobre lías aporta la textura cremosa y notas de brioche/pan tostado.",
+        "Las manoproteínas protegen la estabilidad de la burbuja y suavizan el paladar."
+      ],
+      key_takeaways_en: [
+        "24 g/L sugar addition reliably yields ~6 bars of atmospheric CO2 pressure.",
+        "Extended yeast autolysis produces creamy mousse and toasted brioche flavors.",
+        "Mannoproteins coat the palate, curbing astringency and stabilizing bubble persistence."
+      ],
+      related_grapes: ["Chardonnay", "Pinot Noir", "Xarel·lo", "Macabeo", "Parellada"],
+      related_regions: ["Champagne", "Cava", "Corpinnat", "Franciacorta"],
+      tags: ["espumosos", "metodo_tradicional", "champagne", "cava", "autolisis", "lias"]
     }
   ];
 
