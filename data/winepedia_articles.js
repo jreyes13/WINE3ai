@@ -62,7 +62,7 @@
       id: "antagonismo_cinarina",
       title_es: "Cinarina y Alimentos Antagónicos del Vino",
       title_en: "Cynarine and Wine-Antagonistic Foods",
-      standard: "WSET3",
+      standard: "CMS",
       category_es: "Armonías & Análisis Sensorial",
       category_en: "Pairing & Sensory Analysis",
       badge_color: "amber",
@@ -88,7 +88,7 @@
       id: "defectos_vino_tca_reduccion",
       title_es: "Defectos del Vino: TCA, Reducción y Brettanomyces",
       title_en: "Wine Faults: TCA, Reduction & Brettanomyces",
-      standard: "WSET3",
+      standard: "ASI",
       category_es: "Control de Calidad & Enología",
       category_en: "Quality Control & Enology",
       badge_color: "amber",
@@ -361,4 +361,287 @@
   } else {
     root.WINEPEDIA_ARTICLES = WINEPEDIA_ARTICLES;
   }
-})(typeof window !== 'undefined' ? window : globalThis);
+})(typeof window !== 'undefined' ? window : globalThis);,
+  // ==========================================
+  // BLOQUE CMS ADICIONAL (COMPLETANDO 8 ARTÍCULOS)
+  // ==========================================
+  {
+    id: "interaccion_sal_acidez_tanino",
+    standard: "CMS",
+    category_es: "Dinámica Sensorial & Armonías",
+    category_en: "Sensory Dynamics & Pairings",
+    title_es: "Dinámica Sensorial CMS: El Rol de la Sal en la Supresión de la Acidez y el Amargor",
+    title_en: "CMS Sensory Dynamics: The Role of Salt in Suppressing Acidity and Bitterness",
+    summary_es: "Explicación fisiológica y neurosensorial de cómo el cloruro sódico mitiga el amargor y la acidez viva del vino, amplificando la sensación de fruta y cuerpo.",
+    summary_en: "Physiological and neurosensory explanation of how sodium chloride mitigates bitterness and bright acidity, amplifying perception of fruit and body.",
+    content_es: "En el manual de Food and Wine Matching de la Court of Master Sommeliers (CMS), la sal (NaCl) es considerada el catalizador más noble y generoso en la interacción plato-vino.\n\nFisiológicamente, el sodio bloquea de forma competitiva los receptores de amargor (TAS2Rs) situados en las papilas linguales y modera el impacto astringente de los taninos monoméricos.\n\nAl reducir simultáneamente la percepción de acidez punzante, la sal libera la expresión de los aromas primarios de fruta y genera una percepción psicológica de mayor cuerpo y untuosidad.\n\nPor esta razón, platos con alta salazón marina (anchoas, jamón curado, caviar, quesos maduros) se armonizan brillantemente con vinos de acidez tartárica afilada (Champagne Brut Nature, Chablis, Sancerre, Manzanilla), transformando una acidez punzante en una sensación fresca, sedosa y equilibrada.",
+    content_en: "In the Court of Master Sommeliers (CMS) Food and Wine Matching curriculum, salt (NaCl) is regarded as the most forgiving catalyst in food-wine interactions.\n\nPhysiologically, sodium competitively inhibits bitterness receptors (TAS2Rs) on lingual papillae while tempering monomeric tannin astringency.\n\nBy simultaneously modulating sharp acid perception, salt elevates fruit expression and generates an impression of greater palate weight and texture.\n\nConsequently, dishes with high salinity (cured ham, anchovies, caviar, aged cheeses) pair seamlessly with high-acid wines (Brut Nature Champagne, Chablis, Sancerre, Manzanilla), transmuting fierce acidity into vibrant, silky balance.",
+    key_takeaways_es: [
+      "La sal suprime receptores de amargor y atenúa la percepción de acidez viva.",
+      "Potencia la expresión de fruta y redondea la estructura tánica en boca.",
+      "Vinos de acidez vertical (Champagne, Riesling seco, Manzanilla) se crecen ante preparaciones con salazón."
+    ],
+    key_takeaways_en: [
+      "Salt suppresses bitterness receptors and softens perception of razor-sharp acidity.",
+      "Elevates fruit weight and smooths youthful tannin astringency.",
+      "High-acid wines (Champagne, dry Riesling, Manzanilla) shine when paired with savory, salted cuisine."
+    ],
+    related_grapes: ["Chardonnay", "Sauvignon Blanc", "Palomino Fino", "Riesling"],
+    related_regions: ["Champagne", "Chablis", "Sancerre", "Jerez-Xérès-Sherry"],
+    tags: ["sal", "acidez", "cms", "food and wine matching", "armonia"]
+  },
+  {
+    id: "nebbiolo_vs_pinot_noir_cms",
+    standard: "CMS",
+    category_es: "Cata Deductiva Comparada",
+    category_en: "Deductive Comparative Tasting",
+    title_es: "Cata Deductiva CMS: Claves para Distinguir Nebbiolo (Piamonte) de Pinot Noir (Borgoña)",
+    title_en: "CMS Deductive Tasting: Distinguishing Nebbiolo (Piedmont) from Pinot Noir (Burgundy)",
+    summary_es: "Desglose minucioso de marcadores visuales, químicos y tánicos para resolver el enigma clásico de cata a ciegas entre dos variedades de capa translúcida.",
+    summary_en: "Meticulous breakdown of visual, chemical, and structural markers to resolve the classic blind tasting dichotomy between two translucent varieties.",
+    content_es: "Nebbiolo y Pinot Noir comparten una apariencia visual que puede desconcertar al catador novel: ambos presentan capa baja a media y gran transparencia lumínica.\n\nSin embargo, la Deductive Tasting Grid de CMS aporta marcadores incontrovertibles:\n\n1. VISTA: Nebbiolo exhibe un ribete anaranjado/teja prematuro (rim variation) desde su juventud debido a su bajo contenido relativo de malvidina glucosilada. Pinot Noir retiene un color rubí o granate con ribete violáceo o fucsia.\n\n2. BOCA (El punto de ruptura definitivo): Pinot Noir posee acidez alta pero taninos medios a medios (+) sedosos y envolventes. Nebbiolo entrega un impacto de taninos masivos, afilados, secantes y astringentes ('brick-wall tannins') junto con acidez tartárica muy elevada y alcohol comúnmente superior al 14-14.5% vol.\n\n3. AROMÁTICA: Pinot Noir gravita hacia cereza roja, frambuesa, sotobosque húmedo y setas. Nebbiolo despliega la firma de 'alquitrán y rosas' (tar and roses), cuero viejo, anís estrellado, guinda amarga y trufa blanca de Alba.",
+    content_en: "Nebbiolo and Pinot Noir share a visual transparency that often confuses novice tasters: both show pale to medium translucent ruby pigmentation.\n\nHowever, CMS Deductive Logic reveals clear markers:\n\n1. SIGHT: Nebbiolo exhibits premature orange/brick rim variation even in youth due to low malvidin glycoside stability. Pinot Noir maintains ruby-garnet tones with pinkish or purplish rims.\n\n2. PALATE (The definitive watershed): Pinot Noir shows high acidity with silky, fine-grained medium to medium (+) tannins. Nebbiolo delivers massive, abrasive, chalky, tongue-drying tannins combined with piercing acidity and 14-14.5%+ ABV.\n\n3. NOSE: Pinot Noir leans toward red cherry, raspberry, forest floor, and sous-bois. Nebbiolo presents the hallmark signature of 'tar and roses', bitter dried cherry, star anise, cured leather, and Alba white truffle.",
+    key_takeaways_es: [
+      "La estructura tánica masiva y seca de Nebbiolo es el discriminador inequívoco frente a la seda de Pinot Noir.",
+      "Nebbiolo muestra degradación oxidativa rápida del color hacia naranja/teja en el menisco.",
+      "Marcador aromático canónico CMS para Nebbiolo: alquitrán, pétalos de rosa marchita y cuero."
+    ],
+    key_takeaways_en: [
+      "Nebbiolo's massive, drying tannin load is the incontrovertible discriminator against silky Pinot Noir.",
+      "Nebbiolo exhibits early orange-garnet rim evolution on visual inspection.",
+      "Canonical CMS aromatic signature for Nebbiolo: tar, dried rose petals, and leather."
+    ],
+    related_grapes: ["Nebbiolo", "Pinot Noir"],
+    related_regions: ["Barolo", "Barbaresco", "Bourgogne Côte d'Or", "Central Otago"],
+    tags: ["nebbiolo", "pinot noir", "cms", "deductive tasting", "barolo"]
+  },
+  {
+    id: "riesling_tdn_queroseno",
+    standard: "CMS",
+    category_es: "Compuestos Volátiles & Maduración",
+    category_en: "Volatile Compounds & Ageing",
+    title_es: "Química del Aroma: El TDN (1,1,6-Trimetil-1,2-Dihidronaftaleno) en el Riesling de Guarda",
+    title_en: "Aroma Chemistry: TDN (1,1,6-Trimethyl-1,2-Dihydronaphthalene) in Aged Riesling",
+    summary_es: "Mecanismo de degradación de carotenoides bajo radiación ultravioleta y su metamorfosis en notas terciarias de queroseno, pedernal y parafina.",
+    summary_en: "Mechanism of carotene degradation under ultraviolet radiation yielding tertiary petrol, kerosene, and mineral paraffin nuances.",
+    content_es: "Uno de los descriptores más singulares de la sumillería es la nota a 'hidrocarburo', queroseno o petróleo en los grandes vinos de Riesling envejecidos.\n\nEl causante es el TDN (1,1,6-trimetil-1,2-dihidronaftaleno), un norisoprenoide derivado de la rotura hidrolítica de carotenoides (luteína, betacaroteno) presentes en la piel de la uva.\n\nFactores agronómicos clave para su génesis:\n- Alta exposición a radiación UV directa sobre el racimo (deshojado temprano).\n- Estrés hídrico moderado durante la maduración.\n- Suelos cálidos y pedregosos con radiación reflejada (pizarras del Mosela, gneis del Rheingau, granito de Alsacia o esquistos de Eden Valley).\n\nDurante la crianza en botella en condiciones de bajo pH y temperatura fresca (10-14°C), los precursores glicosilados no aromáticos se hidrolizan lentamente, liberando el TDN libre. Por encima de 20 microgramos por litro, confiere esa magistral dimensión mineral que define al Riesling histórico.",
+    content_en: "One of sommellerie's most fascinating signatures is the distinct 'petrol', kerosene, or paraffin nuance in aged noble Riesling.\n\nThis is driven by TDN (1,1,6-trimethyl-1,2-dihydronaphthalene), a C13 norisoprenoid produced through hydrolytic degradation of grape carotenoids (lutein, beta-carotene).\n\nCritical viticultural triggers include:\n- High direct solar UV irradiation on grape bunches.\n- Moderate water deficit stress during ripening.\n- Warm, reflective stony soils (Mosel slate, Rheingau quartz, Alsace granite, Eden Valley schist).\n\nDuring bottle aging under low pH and cool cellar temperatures (10-14°C), non-volatile glycosylated precursors slowly cleave, releasing free volatile TDN. Above 20 mcg/L, it imparts that majestic petrol complexity revered in benchmark aged Rieslings.",
+    key_takeaways_es: [
+      "El TDN surge de la hidrólisis ácida lenta de carotenoides fotoexpuestos a radiación UV.",
+      "Marcador canónico CMS de Riesling maduro: queroseno + acidez tartárica estratosférica sin roble.",
+      "Suelos de pizarra y climas continentales frescos optimizan la armonía de este compuesto."
+    ],
+    key_takeaways_en: [
+      "TDN derives from slow acid hydrolysis of solar-exposed grape carotenoids.",
+      "Canonical CMS marker for mature Riesling: kerosene + electric acidity with zero oak influence.",
+      "Slate soils and cool continental climates optimize the harmonious emergence of this compound."
+    ],
+    related_grapes: ["Riesling"],
+    related_regions: ["Mosel", "Rheingau", "Alsace", "Eden Valley", "Clare Valley"],
+    tags: ["riesling", "tdn", "queroseno", "cms", "quimica del aroma"]
+  },
+  {
+    id: "syrah_rotundona_pimienta",
+    standard: "CMS",
+    category_es: "Marcadores Químicos de Uva",
+    category_en: "Grape Chemical Markers",
+    title_es: "Rotundona en Syrah / Shiraz: Expresión de Pimienta Negra y Gradiente Climático",
+    title_en: "Rotundone in Syrah / Shiraz: Black Pepper Expression and Climatic Gradient",
+    summary_es: "El sesquiterpeno rotundona como marcador universal de Syrah de clima fresco frente a la expresión mermelada y confitada de terruños cálidos.",
+    summary_en: "The sesquiterpene rotundone as the universal marker of cool-climate Syrah versus jammy profiles in warm terroirs.",
+    content_es: "Descubierta por investigadores del AWRI en 2008, la rotundona es un sesquiterpeno bicíclico responsable del penetrante aroma a pimienta negra recién molida en la Syrah/Shiraz y en la Grüner Veltliner.\n\nPosee uno de los umbrales de percepción más bajos de la química enológica: los seres humanos la detectan a tan solo 16 nanogramos por litro en vino tinto (aproximadamente una gota diluida en 50 piscinas olímpicas).\n\nGradiente climático canónico:\n- Climas templados y fríos (Ródano Norte: Cornas, Côte-Rôtie, Hermitage; Grampians en Australia): la maduración lenta permite concentrar rotundona en el hollejo, asociada a fruta negra fresca (arándanos), violetas y grafito.\n- Climas cálidos (Barossa Valley, McLaren Vale): las temperaturas estivales extremas (>35°C) degradan la biosíntesis de sesquiterpenos, desplazando el perfil sensorial hacia chocolate negro, eucalipto, mora confitada y ciruela pasa.",
+    content_en: "Discovered by AWRI researchers in 2008, rotundone is a bicyclic sesquiterpene responsible for the pungent cracked black pepper aroma in Syrah/Shiraz and Grüner Veltliner.\n\nIt possesses an extraordinarily low detection threshold: humans perceive it at merely 16 nanograms per liter in red wine (akin to a drop in 50 Olympic-sized pools).\n\nClimatic gradient benchmark:\n- Cool/Moderate climates (Northern Rhône: Côte-Rôtie, Cornas, Hermitage; Victoria's Grampians): slow hang-time accumulates rotundone in the skin, yielding peppery brilliance paired with fresh blueberries, violets, and graphite.\n- Warm climates (Barossa Valley, McLaren Vale): excessive heatwaves (>35°C) suppress sesquiterpene accumulation, shifting aromas to dark chocolate, eucalyptus, blackberry jam, and prune.",
+    key_takeaways_es: [
+      "La rotundona es el marcador aromático definitivo de Syrah/Shiraz de clima templado-fresco.",
+      "Umbral de detección de apenas 16 ng/L en vino tinto.",
+      "En cata deductiva CMS: pimienta negra punzante + fruta negra + violeta = Syrah de clima fresco."
+    ],
+    key_takeaways_en: [
+      "Rotundone is the definitive marker of cool/moderate climate Syrah/Shiraz.",
+      "Olfactory threshold of merely 16 ng/L in red wine.",
+      "In CMS deductive blind tasting: pungent black pepper + blue fruit + violet = cool-climate Syrah."
+    ],
+    related_grapes: ["Syrah", "Shiraz", "Grüner Veltliner"],
+    related_regions: ["Côte-Rôtie", "Hermitage", "Cornas", "Grampians", "Barossa Valley"],
+    tags: ["syrah", "shiraz", "rotundona", "pimienta", "cms"]
+  },
+  {
+    id: "cabernet_sauvignon_madurez_fenolica",
+    standard: "CMS",
+    category_es: "Bioquímica de Maduración",
+    category_en: "Ripening Biochemistry",
+    title_es: "Metoxipirazinas vs Madurez Fenólica: El Dilema Estructural del Cabernet Sauvignon",
+    title_en: "Methoxypyrazines vs Phenolic Ripeness: The Structural Dilemma of Cabernet Sauvignon",
+    summary_es: "Evaluación en copa del equilibrio entre pirazinas (vegetal/herbal) y polímeros de tanino/antociano en función de la insolación y el estrés hídrico.",
+    summary_en: "Glass evaluation of balance between pyrazines (herbal character) and polymeric tannins/anthocyanins modulated by solar exposure.",
+    content_es: "El Cabernet Sauvignon es una variedad vigorosa de brotación tardía y maduración tardía, propensa a sintetizar 3-isobutil-2-metoxipirazina (IBMP) en sus etapas tempranas.\n\nBajo condiciones óptimas de viticultura (canopia aireada, deshojado inteligente y estrés hídrico regulado post-envero), las pirazinas se degradan de forma fotoquímica, estabilizándose entre 5 y 12 ng/L. A este nivel, aportan una noble complejidad a casis, hoja de tabaco y cedro.\n\nSi la viña sufre exceso de vigor, sombra densa o falta de grados-día acumulados (como en añadas húmedas de Burdeos o zonas frías del Maipo), las pirazinas se disparan por encima de 25-30 ng/L, manifestando pimiento verde crudo, espárrago enlatado y taninos verdes amargos y secantes.\n\nEn la cata CMS, evaluar el grano tánico junto a la frescura de la pirazina permite deducir con precisión el clima, la salud de la canopia y la pericia enológica.",
+    content_en: "Cabernet Sauvignon is a late-ripening variety prone to synthesizing 3-isobutyl-2-methoxypyrazine (IBMP) before veraison.\n\nUnder optimal viticultural management (ventilated canopy, sun exposure, and regulated post-veraison water deficit), pyrazines degrade photochemically to 5-12 ng/L. At this balanced concentration, they lend noble nuances of cassis leaf, cedar, and graphite.\n\nIf vines endure excessive vegetative vigor, dense shading, or cool rainy autumns, pyrazine levels remain elevated above 25-30 ng/L, exhibiting bell pepper, canned asparagus, and aggressively astringent green tannins.\n\nIn CMS blind tasting, assessing tannin texture alongside pyrazine purity reveals mesoclimate, canopy management, and vintage conditions.",
+    key_takeaways_es: [
+      "Las metoxipirazinas se degradan por exposición solar directa sobre los racimos antes de vendimia.",
+      "Nivel óptimo (5-12 ng/L): complejidad varietal a cassis y grafito.",
+      "Nivel excesivo (>25 ng/L): defecto vegetal de pimiento verde y tanino rústico e inmaduro."
+    ],
+    key_takeaways_en: [
+      "Methoxypyrazines degrade via direct solar bunch illumination prior to harvest.",
+      "Optimal levels (5-12 ng/L): varietal complexity of cassis and graphite.",
+      "Excessive levels (>25 ng/L): vegetal green bell pepper flaws with harsh, underripe tannins."
+    ],
+    related_grapes: ["Cabernet Sauvignon", "Cabernet Franc", "Carménère"],
+    related_regions: ["Bordeaux Médoc", "Napa Valley", "Maipo Valley", "Coonawarra"],
+    tags: ["cabernet sauvignon", "pirazinas", "madurez", "cms", "taninos"]
+  },
+
+  // ==========================================
+  // BLOQUE ASI ADICIONAL (COMPLETANDO 8 ARTÍCULOS)
+  // ==========================================
+  {
+    id: "capsaicina_alimentos_picantes_asi",
+    standard: "ASI",
+    category_es: "Fisiología de Sala & Alimentos Críticos",
+    category_en: "Floor Physiology & Difficult Foods",
+    title_es: "Capsaicina y Termorreceptores TRPV1: Por qué el Vino Tánico Fracasa ante el Picante",
+    title_en: "Capsaicin and TRPV1 Receptors: Why Tannic Red Wines Fail with Spicy Cuisine",
+    summary_es: "Análisis neurofisiológico de la irritación trigeminal causada por el picante y las reglas canónicas de sumillería ASI para armonizar comidas especiadas.",
+    summary_en: "Neurophysiological analysis of trigeminal irritation caused by capsaicin and canonical ASI rules for pairing spicy gastronomy.",
+    content_es: "La capsaicina (compuesto activo de chiles y guindillas) no estimula las papilas gustativas clásicas, sino las terminaciones del nervio trigémino a través de los canales iónicos TRPV1, responsables de censar el calor térmico y el dolor.\n\nCuando un comensal toma un tinto estructurado con 14.5% vol y alto tanino:\n1. El etanol reduce el umbral de activación de los TRPV1, haciendo que el ardor se dispare a la propia temperatura corporal (37°C).\n2. Los taninos deshidratan las mucinas salivales protectoras, dejando los termorreceptores expuestos.\nEl resultado es una sensación dolorosa, ardor de garganta y la destrucción del perfil gustativo del vino.\n\nProtocolo Canónico ASI:\n- Vinos con bajo grado alcohólico (<11.5% vol).\n- Cero astringencia tánica.\n- Azúcar residual perceptible (Kabinett/Spätlese de Mosela, Moscato d'Asti, Vouvray demi-sec). El azúcar y el frío calman físicamente el estímulo TRPV1, limpiando el paladar sin entrar en conflicto con la especia.",
+    content_en: "Capsaicin (the active compound in chili peppers) does not bind to classic taste buds but activates trigeminal nerve endings via TRPV1 ion channels, which detect thermal heat and physical pain.\n\nWhen paired with a 14.5% ABV tannic red wine:\n1. Ethanol lowers the thermal threshold of TRPV1 receptors, triggering searing burn at baseline body temperature (37°C).\n2. Tannins precipitate protective salivary mucins, leaving oral tissues vulnerable.\nThe result is oral burning, bitterness, and utter sensory discord.\n\nCanonical ASI Sommelier Protocol:\n- Low alcohol wines (<11.5% ABV).\n- Zero tannic astringency.\n- Perceptible residual sugar (Mosel Kabinett/Spätlese, Moscato d'Asti, demi-sec Vouvray). Sweetness and chilled serving temperatures physically soothe TRPV1 channels, coating the palate seamlessly.",
+    key_takeaways_es: [
+      "El alcohol y el tanino amplifican exponencialmente el ardor por estimulación de TRPV1.",
+      "El azúcar residual y la baja graduación alcohólica apagan el fuego y restauran el equilibrio.",
+      "Vinos recomendados: Riesling alemán off-dry, Gewürztraminer, Moscato d'Asti o espumosos frescos."
+    ],
+    key_takeaways_en: [
+      "Alcohol and astringency exponentially magnify burn by triggering TRPV1 pain pathways.",
+      "Residual sugar and lower ABV physically soothe pain receptors, restoring balance.",
+      "Recommended wines: German off-dry Riesling, Gewürztraminer, Moscato d'Asti, or crisp sparkling wine."
+    ],
+    related_grapes: ["Riesling", "Gewürztraminer", "Muscat", "Chenin Blanc"],
+    related_regions: ["Mosel", "Alsace", "Asti", "Loire Valley"],
+    tags: ["picante", "capsaicina", "asi", "sommelier", "trpv1"]
+  },
+  {
+    id: "jamon_iberico_grasa_oleica_fino",
+    standard: "ASI",
+    category_es: "Armonía Lipídica de Sala",
+    category_en: "Cellar Lipid Harmonies",
+    title_es: "La Sumillería del Jamón Ibérico de Bellota: Ácido Oleico y Crianza Biológica",
+    title_en: "Sommellerie of Acorn-Fed Ibérico Ham: Oleic Acid and Biological Aging",
+    summary_es: "Fundamentos físico-químicos del maridaje supremo entre la grasa insaturada de bellota y la sapidez salina sin glicerol de Manzanilla y Fino.",
+    summary_en: "Physicochemical basis of the supreme harmony between unsaturated acorn fat and the savory, glycerol-free salinity of Manzanilla and Fino.",
+    content_es: "El Jamón Ibérico de Bellota puro presenta una concentración de ácido oleico monoinsaturado superior al 55%, lo que le confiere un punto de fusión lipídico sumamente bajo (<28°C). Al entrar en boca, la grasa se funde inmediatamente revistiendo la cavidad bucal de una película grasa untuosa, rica en salazón y umami.\n\nEl maridaje tradicional con tintos jóvenes o con tanino medio es un error enológico: los taninos reaccionan con la grasa coagulando proteínas salivales, provocando un retrogusto férrico, amargo y metálico.\n\nLa Sumillería Científica ASI propone la alianza con vinos de Crianza Biológica (Manzanilla de Sanlúcar o Fino de Jerez):\n1. CERO GLICEROL: Las levaduras de flor han devorado todo el glicerol, dejando un vino ultra-magro.\n2. ACETALDEHÍDOS Y SALINIDAD: Su alto contenido en sales marinas y compuestos punzantes actúa como un bisturí higienizante, disolviendo el velo graso sin agredir la delicada grasa aromática del jamón.\nCada sorbo resetea el paladar, invitando inmediatamente al siguiente bocado.",
+    content_en: "Pure Acorn-Fed Ibérico Ham contains over 55% monounsaturated oleic acid, giving it a remarkably low melting point (<28°C). Upon entering the mouth, fat liquefies instantly, coating the palate in an unctuous, umami-rich savory sheen.\n\nPairing it with tannic young red wines is a documented sommellerie blunder: tannins bind with lipids and proteins, triggering a bitter, metallic, and iron-like finish.\n\nASI Scientific Sommellerie dictates Biological Aging wines (Sanlúcar Manzanilla or Jerez Fino):\n1. ZERO GLYCEROL: Flor yeasts have fully consumed glycerol, resulting in a bone-dry, lean structure.\n2. ACETALDEHYDES & SALINITY: High marine salinity and sharp aldehydes act as an enological scalpel, cleanly slicing through the lipid layer without overpowering the subtle cured acorn flavors.\nEvery sip completely restores palate clarity for the subsequent slice.",
+    key_takeaways_es: [
+      "El ácido oleico del jamón ibérico funde a temperatura bucal tapizando las papilas.",
+      "Los taninos tintos generan regusto amargo y metálico en contacto con la grasa de jamón.",
+      "Manzanilla y Fino limpian el paladar con precisión quirúrgica gracias a su ausencia de glicerol y salinidad."
+    ],
+    key_takeaways_en: [
+      "Oleic acid in bellota ham melts at body temperature, coating taste buds with rich umami.",
+      "Red wine tannins generate bitter, metallic notes upon contact with cured ham fat.",
+      "Manzanilla and Fino cleanse the palate with surgical precision due to zero glycerol and crisp salinity."
+    ],
+    related_grapes: ["Palomino Fino"],
+    related_regions: ["Sanlúcar de Barrameda", "Jerez-Xérès-Sherry", "Montilla-Moriles"],
+    tags: ["jamon iberico", "manzanilla", "fino", "asi", "grasa oleica"]
+  },
+  {
+    id: "decantacion_con_vela_vs_jarreo",
+    standard: "ASI",
+    category_es: "Protocolo Canónico de Servicio",
+    category_en: "Canonical Service Protocol",
+    title_es: "Decantación con Vela vs Jarreo de Oxigenación: El Criterio Canónico ASI",
+    title_en: "Candle Decanting vs Splash Aeration: The Canonical ASI Service Standard",
+    summary_es: "Distinción técnica entre la separación delicada de sedimentos con vela en añadas antiguas y la oxigenación forzada de vinos jóvenes en sala.",
+    summary_en: "Technical distinction between delicate sediment separation over a flame for vintage bottles and forced aeration for youthful wines.",
+    content_es: "Uno de los motivos de penalización más frecuentes en concursos internacionales de sumillería ASI es la confusión conceptual y práctica entre decantar y airear (jarrear).\n\n1. DECANTACIÓN CON VELA (Sedimentos en Vinos Maduros):\n- Propósito: Separar el líquido límpido de los precipitados coloidales insolubles (taninos polimerizados y antocianos condensados) formados durante años de guarda en botella.\n- Procedimiento: La botella se mantiene en reposo horizontal en el cestillo. Se corta la cápsula bajo el gollete inferior, se extrae el corcho con sigilo y se enciende una vela colocada a la altura del hombro de la botella. El sumiller trasvasa el vino con flujo suave y continuo hacia el decantador de cuello estrecho, deteniéndose inmediatamente cuando los primeros sedimentos oscuros asoman por el cristal del hombro.\n- ADVERTENCIA: La oxigenación excesiva puede destruir los frágiles aromas terciarios de un gran vino de más de 25 años en menos de media hora.\n\n2. JARREO / AIREACIÓN (Vinos Jóvenes Concentrados):\n- Propósito: Provocar contacto turbulento masivo con el oxígeno atmosférico para volatilizar mercaptanos reductivos y suavizar taninos cerrados.\n- Procedimiento: Caída vertical vigorosa en decantador de base ancha (tipo barco o capitán). Nunca se debe aplicar a botellas con poso.",
+    content_en: "A common penalty in ASI Sommelier competitions is confusing the concepts and physical protocols of decanting versus aeration (splash carafeing).\n\n1. CANDLE DECANTING (Sediment Separation in Mature Wines):\n- Purpose: Separate brilliant wine from insoluble colloidal precipitates (polymerized tannins and condensed anthocyanins) formed across years of bottle maturation.\n- Procedure: Bottle rests horizontally in cradle. Capsule is cut beneath the lower ring, cork extracted silently, and a candle illuminated at bottle-shoulder level. The sommelier pours smoothly and continuously into a narrow-necked decanter, halting the instant dark particles approach the neck.\n- WARNING: Excessive aeration can oxidize fragile tertiary nuances of an antique vintage in under 30 minutes.\n\n2. SPLASH AERATION / CARAFEING (Youthful Concentrated Reds):\n- Purpose: Induce vigorous turbulent atmospheric oxygen contact to dispel reductive mercaptans and soften tightly coiled tannins.\n- Procedure: Direct vertical pour into a broad-base ship decanter. Never perform this on vintage wines with sediment.",
+    key_takeaways_es: [
+      "Decantar con vela = separar posos de vinos antiguos sin sobreoxigenar.",
+      "Jarrear = oxigenar forzadamente vinos jóvenes concentrados o con reducción.",
+      "Regla de concurso ASI: flujo continuo sin retrocesos ni sacudidas frente a la llama."
+    ],
+    key_takeaways_en: [
+      "Candle decanting = sediment separation in mature bottles without oxidation shock.",
+      "Splash carafing = forced aeration for tight, youthful, or reductive wines.",
+      "ASI competition rule: continuous, steady pour over the flame with zero backwash or agitation."
+    ],
+    related_grapes: ["Tempranillo", "Cabernet Sauvignon", "Nebbiolo", "Syrah"],
+    related_regions: ["Rioja Gran Reserva", "Bordeaux Grand Cru", "Barolo", "Ribera del Duero"],
+    tags: ["decantacion", "vela", "asi", "servicio de sala", "sedimentos"]
+  },
+  {
+    id: "geometria_cristaleria_sumiller",
+    standard: "ASI",
+    category_es: "Física de la Cristalería & Sala",
+    category_en: "Glassware Physics & Service",
+    title_es: "Geometría de la Copa de Sumiller: Volumen de Cáliz, Chimenea y Desprendimiento Volátil",
+    title_en: "Sommelier Glassware Geometry: Bowl Volume, Chimney, and Volatile Release",
+    summary_es: "Cómo influyen la hidrodinámica del cáliz, la superficie de contacto aire-vino y el diámetro de la chimenea en la percepción del sumiller.",
+    summary_en: "How bowl hydrodynamics, liquid-air contact ratio, and chimney diameter govern aroma delivery and palate entry.",
+    content_es: "La cristalería no altera la composición química de un vino, pero actúa como una cámara de resonancia física y difusora de compuestos volátiles.\n\nParámetros clave según el canon de cata ASI:\n\n1. VOLUMEN DEL CÁLIZ (Headspace): Un cáliz amplio (650-800 ml, estilo Borgoña o Burdeos) permite servir 100-150 ml dejando un generoso espacio de cabeza. Al arremolinar, la fuerza centrífuga genera una película fina en las paredes de cristal que multiplica por 10 la tasa de evaporación de ésteres aromáticos.\n\n2. DIÁMETRO DE LA CHIMENEA (Boca de la Copa): Una chimenea cónica hacia el interior retiene los compuestos más pesados y concentra los volátiles florales y frutales en la nariz. Copas cilíndricas o abiertas dispersan los aromas hacia los laterales.\n\n3. ESPESOR DEL BORDE (Sin Reborde): El cristal cortado con láser en frío (<0.8 mm) permite que el flujo de vino se deslice con suavidad sobre la lengua, evitando la dispersión tosca que generan las copas industriales con reborde grueso ('roll rim').\n\n4. LONGITUD DEL TALLO: Imprescindible para evitar que el calor de la mano del catador (36.5°C) caliente el líquido y para no impregnar el cristal con aromas de cosméticos o piel.",
+    content_en: "Glassware does not alter wine chemistry, but operates as a physical resonance chamber and volatile aroma diffuser.\n\nKey aerodynamic parameters per ASI standards:\n\n1. BOWL VOLUME (Headspace): A voluminous bowl (650-800 ml, Burgundy/Bordeaux shape) holding a 100-150 ml pour creates vast headspace. Swirling draws a thin wine film along the interior glass wall, multiplying the evaporation rate of volatile esters tenfold.\n\n2. CHIMNEY DIAMETER (Rim Opening): An inward-tapering chimney traps heavier molecular vapors while funneling delicate floral and fruit notes directly to the nasal cavity. Straight-sided or flared rims rapidly dissipate aromas.\n\n3. RIM THICKNESS (Cut Polish): Laser-cut ultra-thin rims (<0.8 mm) guide an unbroken fluid stream onto targeted lingual zones, avoiding the turbulent flow caused by thick rolled rims.\n\n4. STEM HEIGHT: Crucial to isolate the wine from body heat transfer (36.5°C) and eliminate olfactory interference from hand creams or skin odors.",
+    key_takeaways_es: [
+      "El cáliz amplio multiplica la superficie de evaporación y volatilización de aromas.",
+      "La chimenea cónica concentra los ésteres frutales dirigiéndolos a la fosa nasal.",
+      "Cristal fino cortado a láser (<0.8 mm) y tallo largo son exigencias irrenunciables en sala ASI."
+    ],
+    key_takeaways_en: [
+      "Expansive bowl geometry dramatically enhances surface area and volatile aroma release.",
+      "Inwardly tapered chimney concentrates delicate fruit esters toward the olfactory bulb.",
+      "Laser-cut thin rims (<0.8 mm) and generous stems are non-negotiable ASI dining standards.",
+    ],
+    related_grapes: ["Pinot Noir", "Nebbiolo", "Chardonnay", "Cabernet Sauvignon"],
+    related_regions: ["Bourgogne", "Barolo", "Bordeaux", "Napa Valley"],
+    tags: ["cristaleria", "copas", "asi", "sumiller", "chimenea"]
+  },
+  {
+    id: "quesos_azules_armonia_molecular",
+    standard: "ASI",
+    category_es: "Armonías Osmóticas Complejas",
+    category_en: "Complex Osmotic Pairings",
+    title_es: "Quesos de Pasta Azul y Vinos Nobles Dulces: El Triunfo de la Armonía Osmótica",
+    title_en: "Blue Veined Cheeses and Noble Sweet Wines: The Triumph of Osmotic Harmony",
+    summary_es: "Ruptura del mito del queso con tinto: cómo el azúcar residual, la acidez botritizada y el alcohol equilibran la salinidad y la proteólisis del Penicillium roqueforti.",
+    summary_en: "Debunking the red wine cheese myth: how residual sugar, botrytis acidity, and fortified spirits counterbalance extreme salinity and proteolysis.",
+    content_es: "Los quesos de pasta azul (Roquefort, Stilton, Gorgonzola, Cabrales) figuran entre los desafíos más temidos en la sumillería debido a:\n1. Elevada salinidad (hasta un 4-5% de NaCl).\n2. Intensa proteólisis y lipólisis causada por Penicillium roqueforti, generando ácidos grasos de cadena corta (butírico, caproico) con notas punzantes, animales y amoniacales.\n\nSi se sirve un tinto potente y tánico, los taninos reaccionan con la proteína y la sal, generando un regusto intensamente amargo, pastoso y metálico.\n\nLa Regla Canónica ASI de Armonía de Contraste:\n- Vinos dulces botritizados (Sauternes, Tokaji Aszú 5-6 Puttonyos) o generosos dulces y fortificados (Porto Vintage, Fondillón de Alicante, Pedro Ximénez).\n- MECANISMO: El alto contenido de azúcar residual (120-180 g/L) crea un contraste osmótico placentero con la salazón del queso, mientras que la vivísima acidez tartárica/cítrica disuelve la grasa untuosa. Las notas a miel, albaricoque y frutos secos abrazan la pungencia del hongo azul, alcanzando una de las mayores cumbres sensoriales de la gastronomía mundial.",
+    content_en: "Blue-veined cheeses (Roquefort, Stilton, Gorgonzola, Cabrales) present formidable pairing challenges due to:\n1. High salinity (up to 4-5% NaCl).\n2. Severe proteolysis and lipolysis catalyzed by Penicillium roqueforti, liberating pungent short-chain fatty acids (butyric, caproic) with pungent barnyard and ammoniacal notes.\n\nPairing with robust tannic reds is catastrophic: tannins bind with dairy proteins and salt, yielding a chalky, metallic, bitterly aggressive clash.\n\nASI Canonical Contrast Protocol:\n- Botrytized sweet wines (Sauternes, Tokaji Aszú 5-6 Puttonyos) or fortified legends (Vintage Port, Fondillón, Pedro Ximénez).\n- MECHANISM: Elevated residual sugar (120-180 g/L) delivers sublime osmotic contrast against piercing cheese salt, while electric acidity slices cleanly through heavy butterfats. Honeyed, stone-fruit, and nutty tertiary complexities merge with blue mold pungency in gastronomic perfection.",
+    key_takeaways_es: [
+      "El maridaje de queso azul con tinto tánico produce un regusto metálico y amargo.",
+      "El azúcar residual del vino noble contrarresta por ósmosis la alta salinidad del queso.",
+      "Armonías eternas: Roquefort + Sauternes; Stilton + Oporto Vintage; Cabrales + Fondillón."
+    ],
+    key_takeaways_en: [
+      "Pairing blue cheese with tannic red wines triggers an astringent, unpleasantly metallic clash.",
+      "High residual sugar provides restorative osmotic balance against piercing salt content.",
+      "Legendary pairings: Roquefort + Sauternes; Stilton + Vintage Port; Cabrales + Fondillón."
+    ],
+    related_grapes: ["Sémillon", "Sauvignon Blanc", "Furmint", "Touriga Nacional", "Monastrell"],
+    related_regions: ["Sauternes", "Tokaj", "Douro", "Alicante"],
+    tags: ["quesos azules", "roquefort", "sauternes", "oporto", "asi"]
+  },
+  {
+    id: "ritual_servicio_mesa_asi",
+    standard: "ASI",
+    category_es: "Protocolo Deontológico de Sala",
+    category_en: "Floor Deontological Protocol",
+    title_es: "Protocolo Deontológico y Ritual de Apertura de Sala: La Norma ASI de Excelencia",
+    title_en: "Deontological Protocol and Floor Opening Ritual: The ASI Excellence Standard",
+    summary_es: "Guía paso a paso del servicio de excelencia de sala: presentación de etiqueta, descorche silente, examen del corcho y precedencias de servicio.",
+    summary_en: "Step-by-step master guide to dining room floor excellence: label presentation, silent uncorking, closure examination, and guest precedence.",
+    content_es: "El concurso de Mejor Sumiller del Mundo de la ASI evalúa la pulcritud técnica, elegancia y psicología del sumiller en sala mediante un riguroso canon:\n\n1. PRESENTACIÓN: El sumiller muestra la botella sobre el lito por el lado derecho del anfitrión, anunciando en voz clara productor, denominación de origen, variedad y añada.\n\n2. CORTE DE CÁPSULA: Con la navaja del sacacorchos, se practica un doble corte limpio por debajo del gollete inferior para asegurar que ningún residuo metálico toque el vino al servir. La cápsula se retira y se guarda discretamente en el bolsillo.\n\n3. EXTRACCIÓN DEL TAPÓN: Se introduce la barrena en el centro geométrico del corcho. Con el apoyo de dos tiempos, se extrae el corcho con suavidad, evitando perforar la base y controlando la presión final para no generar estampido sonoro ('pop').\n\n4. INSPECCIÓN Y PRESENTACIÓN DEL TAPÓN: El sumiller huele discretamente el extremo húmedo para verificar ausencia de TCA y deposita el corcho en un platillo a la derecha del comensal anfitrión.\n\n5. CATA Y PRECEDENCIAS: Se limpia la boca interior de la botella con el lito y se sirve una dosis de cata (30-50 ml) al anfitrión. Tras su aprobación, se sirve a los invitados por la derecha, respetando precedencias (mujeres y personas de mayor edad primero, anfitrión en último lugar). Cada servicio finaliza con un sutil giro de muñeca para no verter ni una sola gota fuera de la copa.",
+    content_en: "The ASI Best Sommelier of the World Competition evaluates technical precision, poise, and guest psychology through strict ceremonial rules:\n\n1. PRESENTATION: The sommelier presents the bottle draped in a serviette on the right side of the host, stating producer, appellation, grape blend, and vintage.\n\n2. CAPSULE CUT: Using the foil cutter blade, a clean double incision is made beneath the lower bottle ring to prevent pouring contact with metallic remnants. Foil top is neatly pocketed.\n\n3. EXTRACTION: The worm is inserted into the exact geometric center. Utilizing the double-lever arm, the closure is drawn smoothly upward, avoiding bottom puncture and easing the final emergence to eliminate any loud 'pop'.\n\n4. CLOSURE INSPECTION: The sommelier discreetly inspects the damp end for TCA taint and places the cork on a dedicated saucer to the host's right.\n\n5. TASTING & PRECEDENCE: Bottle lip is wiped with the cloth, and a 30-50 ml tasting portion poured for the host. Upon confirmation, wine is served clockwise from the right, adhering to precedence (female guests and seniors first, host last). Each pour concludes with a gentle wrist twist to prevent droplets.",
+    key_takeaways_es: [
+      "Corte de cápsula siempre bajo el anillo inferior para higiene del vino.",
+      "El descorche debe ser silente y sin perforar la base del tapón.",
+      "La etiqueta de la botella debe mantenerse visible hacia los comensales durante todo el servicio."
+    ],
+    key_takeaways_en: [
+      "Capsule cut must always be executed below the lower ring for sanitary pouring.",
+      "Extraction must remain silent with zero puncture through the cork base.",
+      "The bottle label must remain oriented toward guests throughout table service."
+    ],
+    related_grapes: ["Tempranillo", "Chardonnay", "Cabernet Sauvignon", "Pinot Noir"],
+    related_regions: ["Global"],
+    tags: ["protocolo de sala", "servicio", "asi", "descorche", "sumiller"]
+  }
+];

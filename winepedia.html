@@ -121,10 +121,10 @@
         <!-- Filter Pills by Standard (Only WSET3, CMS, ASI) -->
         <div class="flex flex-wrap items-center justify-center gap-2 text-xs font-mono">
           <span class="text-slate-500 mr-2 text-[11px] uppercase tracking-wider hidden sm:inline" id="lbl-filter-standard">Estándar:</span>
-          <button class="filter-pill px-3.5 py-1.5 rounded-xl bg-amber-950 text-amber-300 border border-amber-800/60 font-semibold" id="pill-all" data-standard="all">Todos</button>
-          <button class="filter-pill px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10" data-standard="WSET3">WSET 3</button>
-          <button class="filter-pill px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10" data-standard="CMS">CMS Deductive</button>
-          <button class="filter-pill px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10" data-standard="ASI">ASI Global</button>
+          <button class="filter-pill px-3.5 py-1.5 rounded-xl bg-amber-950 text-amber-300 border border-amber-800/60 font-semibold" id="pill-all" data-standard="all">Todos (24)</button>
+          <button class="filter-pill px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10" data-standard="WSET3">WSET 3 (8)</button>
+          <button class="filter-pill px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10" data-standard="CMS">CMS Deductive (8)</button>
+          <button class="filter-pill px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10" data-standard="ASI">ASI Global (8)</button>
         </div>
       </div>
     </section>
@@ -228,7 +228,7 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="data/winepedia_articles.js?v=20261110_v2"></script>
+  <script src="data/winepedia_articles.js?v=20261110_v3"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       var articles = window.WINEPEDIA_ARTICLES || [];
@@ -245,7 +245,7 @@
           searchPlaceholder: "Buscar por concepto, compuesto (cinarina, flor, tca, pirazinas), uva o región...",
           clearSearch: "✕ Limpiar",
           lblFilterStandard: "Estándar:",
-          pillAll: "Todos",
+          pillAll: "Todos (24)",
           emptyTitle: "No se encontraron conceptos técnicos",
           emptyDesc: "No hay resultados que coincidan con tu término de búsqueda. Prueba con palabras clave como flor, tca, cinarina, pirazinas o suelo.",
           btnReset: "Restablecer búsqueda",
@@ -263,7 +263,7 @@
           searchPlaceholder: "Search technical concept, compound (cynarin, flor, TCA, pyrazines), grape or region...",
           clearSearch: "✕ Clear",
           lblFilterStandard: "Standard:",
-          pillAll: "All",
+          pillAll: "All (24)",
           emptyTitle: "No technical concepts found",
           emptyDesc: "No results matched your search query. Try keywords like flor, TCA, cynarine, pyrazines, or soil.",
           btnReset: "Reset search",
