@@ -1,5 +1,6 @@
 // WINE³ai — Motor de Inteligencia Sommelier & Algoritmo de Maridaje en 3 Presupuestos
-// Basado en los estándares de cata y armonía de UDIMA, CMS y WSET
+// Basado en los estándares de cata y armonía de WSET 3, CMS y ASI
+// Referencias: Jamie Goode, Pascaline Lepeltier, Jancis Robinson (World Atlas of Wine)
 
 (function(root) {
   'use strict';

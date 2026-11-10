@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
   runSommelier();
 
   // ==========================================
-  // 2. FICHAS DE ESTUDIO INTERACTIVAS (WSET3 / CMS / UDIMA)
+  // 2. FICHAS DE ESTUDIO INTERACTIVAS (WSET3 / CMS / ASI)
   // ==========================================
   var deckFilterBtns = document.querySelectorAll('.deck-filter');
   var cardBadge = document.getElementById('card-standard-badge');
@@ -146,19 +146,20 @@ document.addEventListener('DOMContentLoaded', function() {
   var allCards = window.STUDY_CARDS || [];
   var filteredCards = allCards.slice();
   var currentIndex = 0;
+  var isEnDoc = document.documentElement.lang === 'en' || (window.location.pathname.indexOf('index.html') !== -1 && window.location.pathname.indexOf('index_es.html') === -1);
 
   function renderCard() {
     if (!filteredCards.length || !cardQuestion) return;
     var c = filteredCards[currentIndex];
 
     if (cardBadge) {
-      cardBadge.textContent = c.standard;
-      if (c.standard.includes('UDIMA')) {
-        cardBadge.className = "px-2.5 py-1 rounded text-[11px] font-mono font-bold bg-amber-950 text-amber-300 border border-amber-800/40";
-      } else if (c.standard.includes('CMS')) {
+      cardBadge.textContent = c.standard === 'WSET3' ? 'WSET 3' : (c.standard === 'CMS' ? 'CMS Deductive' : 'ASI Global');
+      if (c.standard.includes('CMS')) {
         cardBadge.className = "px-2.5 py-1 rounded text-[11px] font-mono font-bold bg-rose-950 text-rose-300 border border-rose-800/40";
-      } else {
+      } else if (c.standard.includes('WSET')) {
         cardBadge.className = "px-2.5 py-1 rounded text-[11px] font-mono font-bold bg-purple-950 text-purple-300 border border-purple-800/40";
+      } else {
+        cardBadge.className = "px-2.5 py-1 rounded text-[11px] font-mono font-bold bg-emerald-950 text-emerald-300 border border-emerald-800/40";
       }
     }
 
@@ -166,12 +167,18 @@ document.addEventListener('DOMContentLoaded', function() {
     if (cardQuestion) cardQuestion.textContent = c.question_es;
     if (cardAnswer) cardAnswer.textContent = c.answer_es;
     if (cardSolution) cardSolution.textContent = c.solution_es;
-    if (cardCounter) cardCounter.textContent = "Ficha " + (currentIndex + 1) + " de " + filteredCards.length;
+    if (cardCounter) {
+      cardCounter.textContent = isEnDoc 
+        ? ("Card " + (currentIndex + 1) + " of " + filteredCards.length)
+        : ("Ficha " + (currentIndex + 1) + " de " + filteredCards.length);
+    }
 
     // Ocultar respuesta al cambiar de ficha
     if (cardAnswerBox) cardAnswerBox.classList.add('hidden');
     if (btnReveal) {
-      btnReveal.innerHTML = "<span>👁️</span> <span>Mostrar Solución</span>";
+      btnReveal.innerHTML = isEnDoc 
+        ? "<span>👁️</span> <span>Show Solution</span>"
+        : "<span>👁️</span> <span>Mostrar Solución</span>";
     }
   }
 
@@ -180,10 +187,14 @@ document.addEventListener('DOMContentLoaded', function() {
       var isHidden = cardAnswerBox.classList.contains('hidden');
       if (isHidden) {
         cardAnswerBox.classList.remove('hidden');
-        btnReveal.innerHTML = "<span>🙈</span> <span>Ocultar Solución</span>";
+        btnReveal.innerHTML = isEnDoc
+          ? "<span>🙈</span> <span>Hide Solution</span>"
+          : "<span>🙈</span> <span>Ocultar Solución</span>";
       } else {
         cardAnswerBox.classList.add('hidden');
-        btnReveal.innerHTML = "<span>👁️</span> <span>Mostrar Solución</span>";
+        btnReveal.innerHTML = isEnDoc
+          ? "<span>👁️</span> <span>Show Solution</span>"
+          : "<span>👁️</span> <span>Mostrar Solución</span>";
       }
     });
   }

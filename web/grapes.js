@@ -4,7 +4,7 @@ const I18N = {
   en: {
     brandTitle: "WINE³ai",
     brandSubtitle: "Grape Varieties & Terroir Explorer",
-    navMap: "Wine Regions Map",
+    navMap: "Wine Map",
     lblBasemap: "Reference Basemap",
     lblColorFilter: "Grape Color:",
     colorAll: "All",
@@ -89,7 +89,7 @@ const I18N = {
   es: {
     brandTitle: "WINE³ai",
     brandSubtitle: "Explorador de Variedades de Uva y Terruño",
-    navMap: "Mapa de Regiones Vitivinícolas",
+    navMap: "Mapa",
     lblBasemap: "Mapa de referencia",
     lblColorFilter: "Color de Uva:",
     colorAll: "Todas",
@@ -303,7 +303,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 function initMap() {
   map = new maplibregl.Map({
     container: 'grape-map',
-    style: BASEMAP_STYLES.voyager,
+    style: BASEMAP_STYLES.dark,
     center: [10.0, 47.0],
     zoom: 4.2
   });

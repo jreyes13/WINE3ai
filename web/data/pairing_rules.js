@@ -1,12 +1,12 @@
 // WINE³ai — Base de Conocimiento de Armonías y Reglas de Sumillería
-// Fuentes analíticas: Master en Enología, Sumillería y Enoturismo (UDIMA / Prof. Diego González Barbolla)
-// y Court of Master Sommeliers Europe (CMS Food & Wine Matching Standards)
+// Fuentes analíticas: Court of Master Sommeliers (CMS Food & Wine Matching Standards),
+// Association de la Sommellerie Internationale (ASI) y The Science of Wine (Jamie Goode)
 
 (function(root) {
   'use strict';
 
   var PAIRING_RULES = {
-    // 1. PRINCIPIOS FÍSICO-QUÍMICOS Y ESTRUCTURALES FUNDAMENTALES (CMS & UDIMA)
+    // 1. PRINCIPIOS FÍSICO-QUÍMICOS Y ESTRUCTURALES FUNDAMENTALES (CMS & ASI)
     principles: {
       weight: {
         id: "weight",
@@ -58,7 +58,7 @@
       }
     },
 
-    // 2. EL CATÁLOGO DE ALIMENTOS DIFÍCILES (Extracto UDIMA - Sumillería Molecular y Química)
+    // 2. EL CATÁLOGO DE ALIMENTOS DIFÍCILES (CMS, ASI & The Science of Wine)
     difficultFoods: {
       artichoke_asparagus: {
         id: "artichoke_asparagus",

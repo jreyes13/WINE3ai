@@ -4,7 +4,7 @@ const I18N = {
   en: {
     brandTitle: "WINE³ai",
     brandSubtitle: "Grape Varieties & Terroir Explorer",
-    navMap: "Wine Regions Map",
+    navMap: "Wine Map",
     lblBasemap: "Reference Basemap",
     lblColorFilter: "Grape Color:",
     colorAll: "All",
@@ -89,7 +89,7 @@ const I18N = {
   es: {
     brandTitle: "WINE³ai",
     brandSubtitle: "Explorador de Variedades de Uva y Terruño",
-    navMap: "Mapa de Regiones Vitivinícolas",
+    navMap: "Mapa",
     lblBasemap: "Mapa de referencia",
     lblColorFilter: "Color de Uva:",
     colorAll: "Todas",

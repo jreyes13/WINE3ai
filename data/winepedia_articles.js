@@ -1,16 +1,16 @@
 // WINE³ai — WINEp3dIA: Base de Datos Enciclopédica y Artículos de Referencia
-// Fuentes analíticas: WSET Nivel 3, Court of Master Sommeliers (CMS), Máster UDIMA y ASI
+// Fuentes analíticas: WSET Nivel 3, Court of Master Sommeliers (CMS), Máster WSET 3 / ASI y ASI
 
 (function(root) {
   'use strict';
 
   var WINEPEDIA_ARTICLES = [
-    // --- 1. ENOLOGÍA Y BIOQUÍMICA (UDIMA) ---
+    // --- 1. ENOLOGÍA Y BIOQUÍMICA (WSET 3 / ASI) ---
     {
       id: "velo_de_flor",
       title_es: "Crianza Biológica y Velo de Flor",
       title_en: "Biological Aging and 'Velo de Flor'",
-      standard: "UDIMA",
+      standard: "WSET3",
       category_es: "Enología & Vinos Especiales",
       category_en: "Enology & Special Vinifications",
       badge_color: "amber",
@@ -36,7 +36,7 @@
       id: "fermentacion_malolactica",
       title_es: "Fermentación Maloláctica (FML)",
       title_en: "Malolactic Fermentation (MLF)",
-      standard: "UDIMA",
+      standard: "WSET3",
       category_es: "Bioquímica Enológica",
       category_en: "Enological Biochemistry",
       badge_color: "amber",
@@ -62,13 +62,13 @@
       id: "antagonismo_cinarina",
       title_es: "Cinarina y Alimentos Antagónicos del Vino",
       title_en: "Cynarine and Wine-Antagonistic Foods",
-      standard: "UDIMA",
+      standard: "WSET3",
       category_es: "Armonías & Análisis Sensorial",
       category_en: "Pairing & Sensory Analysis",
       badge_color: "amber",
       summary_es: "Estudio molecular de compuestos presentes en alcachofas y espárragos que bloquean receptores gustativos, generando falsos dulzores y notas metálicas en tintos tánicos.",
       summary_en: "Molecular study of cynarine in artichokes and asparagus temporarily inhibiting sweet tastebuds, turning red wines unpleasantly bitter and metallic.",
-      content_es: "En los apuntes de cata y sumillería de UDIMA (Prof. Diego González Barbolla), se analiza cómo la cinarina (ácido 1,3-dicafeoilquínico) es un éster natural que adormece temporalmente los receptores gustativos del dulzor en las papilas de la lengua. Al dar un sorbo de agua o vino inmediatamente después, los receptores se reactivan de golpe, transmitiendo una ilusión de dulzor anómala que descoordina la percepción sensorial. Con vinos tintos de alta carga tánica o madera, la reacción produce un regusto fuertemente astringente y metálico (similar a chupar una moneda de cobre). La solución técnica es maridarlos con variedades de amargor noble (Verdejo de lías) o vinos de crianza biológica (Fino/Manzanilla) donde el acetaldehído y la salinidad neutralizan la cinarina.",
+      content_es: "En los apuntes de cata y sumillería de WSET 3 / ASI (Prof. Diego González Barbolla), se analiza cómo la cinarina (ácido 1,3-dicafeoilquínico) es un éster natural que adormece temporalmente los receptores gustativos del dulzor en las papilas de la lengua. Al dar un sorbo de agua o vino inmediatamente después, los receptores se reactivan de golpe, transmitiendo una ilusión de dulzor anómala que descoordina la percepción sensorial. Con vinos tintos de alta carga tánica o madera, la reacción produce un regusto fuertemente astringente y metálico (similar a chupar una moneda de cobre). La solución técnica es maridarlos con variedades de amargor noble (Verdejo de lías) o vinos de crianza biológica (Fino/Manzanilla) donde el acetaldehído y la salinidad neutralizan la cinarina.",
       content_en: "Artichokes and green asparagus contain cynarine, an organic compound that temporarily paralyses sweet taste receptors. Once rinsed with wine or water, tastebuds overcompensate, creating perceived sweetness while tannins trigger aggressive metallic aftertastes. Master sommeliers resolve this via bitter-edged whites (Verdejo, Grüner Veltliner) or biological flor aging (Fino/Manzanilla), whose acetaldehydes cut through cynarine.",
       key_takeaways_es: [
         "Inhibe receptores del dulzor provocando disonancia organoléptica.",
@@ -88,7 +88,7 @@
       id: "defectos_vino_tca_reduccion",
       title_es: "Defectos del Vino: TCA, Reducción y Brettanomyces",
       title_en: "Wine Faults: TCA, Reduction & Brettanomyces",
-      standard: "UDIMA",
+      standard: "WSET3",
       category_es: "Control de Calidad & Enología",
       category_en: "Quality Control & Enology",
       badge_color: "amber",
@@ -254,7 +254,7 @@
       id: "maceracion_carbonica_elaboracion",
       title_es: "Maceración Carbónica: Bioquímica Intracelular",
       title_en: "Carbonic Maceration: Intracellular Biochemistry",
-      standard: "UDIMA",
+      standard: "WSET3",
       category_es: "Vinificación en Tintos",
       category_en: "Red Wine Vinification",
       badge_color: "amber",
@@ -280,7 +280,7 @@
       id: "criaderas_y_soleras_jerez",
       title_es: "El Sistema Dinámico de Criaderas y Soleras",
       title_en: "The Criaderas and Solera Fractional Aging System",
-      standard: "UDIMA",
+      standard: "WSET3",
       category_es: "Enología & Vinos Especiales",
       category_en: "Enology & Special Vinifications",
       badge_color: "amber",
@@ -332,7 +332,7 @@
       id: "metodo_tradicional_autolisis_espuma",
       title_es: "Método Tradicional: Segunda Fermentación y Autólisis",
       title_en: "Traditional Method: Secondary Fermentation and Autolysis",
-      standard: "UDIMA",
+      standard: "WSET3",
       category_es: "Espumosos & Método Tradicional",
       category_en: "Sparkling & Traditional Method",
       badge_color: "amber",

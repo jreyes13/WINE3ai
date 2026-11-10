@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WINEp3dIA — Enciclopedia de Sumillería, Enología y Terruño | WINE³ai</title>
-  <meta name="description" content="Enciclopedia viva y base de conocimiento técnico de sumillería, bioquímica enológica y cata deductiva basada en WSET 3, Court of Master Sommeliers (CMS), Máster UDIMA y ASI.">
+  <title>WINEp3dIA — Enciclopedia de Sumillería, Bioquímica Enológica y Terruño | WINE³ai</title>
+  <meta name="description" content="Enciclopedia viva y base de conocimiento técnico de sumillería, bioquímica enológica y cata deductiva basada en los cánones WSET 3, Court of Master Sommeliers (CMS), ASI y las obras de Jancis Robinson, Jamie Goode y Pascaline Lepeltier.">
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
 
   <!-- Tailwind CSS CDN -->
@@ -64,20 +64,15 @@
       </a>
 
       <nav class="hidden md:flex items-center gap-7 text-sm font-medium">
-        <a href="index_es.html" class="text-slate-300 hover:text-white transition-colors">Inicio</a>
-        <a href="map.html" class="text-slate-300 hover:text-amber-400 transition-colors flex items-center gap-1.5">
-          <span>🗺️</span> Mapa de Regiones
+        <a href="map.html" class="text-slate-300 hover:text-amber-400 transition-colors flex items-center gap-1.5" id="nav-map">
+          <span>🗺️</span> <span id="nav-map-text">Mapa</span>
         </a>
-        <a href="grapes.html" class="text-slate-300 hover:text-rose-400 transition-colors flex items-center gap-1.5">
-          <span>🍇</span> Variedades
+        <a href="grapes.html" class="text-slate-300 hover:text-rose-400 transition-colors flex items-center gap-1.5" id="nav-grapes">
+          <span>🍇</span> <span id="nav-grapes-text">Uvas</span>
         </a>
-        <a href="index_es.html#sommelier" class="text-slate-300 hover:text-amber-300 transition-colors flex items-center gap-1.5">
-          <span>🍷</span> Sommelier Pocket
+        <a href="winepedia.html" class="text-amber-400 font-bold border-b border-amber-400 pb-0.5 flex items-center gap-1.5" id="nav-winepedia">
+          <span>📚</span> <span>WINEp3dIA</span>
         </a>
-        <a href="winepedia.html" class="text-amber-400 font-bold border-b border-amber-400 pb-0.5 flex items-center gap-1.5">
-          <span>📚</span> WINEp3dIA
-        </a>
-        <a href="index_es.html#referencias" class="text-slate-400 hover:text-white transition-colors text-xs font-mono">Referencias</a>
       </nav>
 
       <div class="flex items-center gap-3">
@@ -101,15 +96,15 @@
       <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
       <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-950/80 border border-amber-800/50 text-amber-300 text-xs font-mono mb-6 shadow-inner">
-          <span>📚</span> Base de Conocimiento Vivo · Cánones WSET 3 · CMS · UDIMA · ASI
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-950/80 border border-amber-800/50 text-amber-300 text-xs font-mono mb-6 shadow-inner" id="hero-badge">
+          <span>📚</span> Cánones WSET 3 · CMS · ASI · VIVC · Jancis Robinson · Jamie Goode
         </div>
 
         <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 font-serif-wine">
           WINE<span class="text-amber-400">p3dIA</span>
         </h1>
-        <p class="text-slate-300 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed mb-10">
-          La enciclopedia técnica de sumillería, bioquímica enológica y terruño. Explora conceptos fundamentales, descriptores de cata deductiva y las leyes de armonía explicadas con rigor científico.
+        <p class="text-slate-300 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed mb-10" id="hero-desc">
+          La enciclopedia técnica de sumillería, bioquímica enológica y terruño basada en los 3 grandes cánones mundiales (WSET 3, CMS, ASI) y los tratados de referencia de Jancis Robinson, Jamie Goode, Pascaline Lepeltier y el catálogo ampelográfico VIVC.
         </p>
 
         <!-- Search Bar -->
@@ -117,21 +112,22 @@
           <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400 text-lg">
             🔍
           </div>
-          <input type="text" id="winepedia-search" placeholder="Buscar por concepto, compuesto (cinarina, flor, tca), uva o región..." class="w-full pl-12 pr-4 py-4 rounded-2xl bg-[#131622] border border-white/15 text-white placeholder-slate-500 font-sans text-sm focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-all shadow-xl">
+          <input type="text" id="winepedia-search" placeholder="Buscar por concepto, compuesto (cinarina, flor, tca, pirazinas), uva o región..." class="w-full pl-12 pr-4 py-4 rounded-2xl bg-[#131622] border border-white/15 text-white placeholder-slate-500 font-sans text-sm focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-all shadow-xl">
           <button id="clear-search-btn" class="hidden absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-white text-xs font-mono">
             ✕ Limpiar
           </button>
         </div>
 
-        <!-- Filter Pills by Standard -->
+        <!-- Filter Pills by Standard (Only WSET3, CMS, ASI) -->
         <div class="flex flex-wrap items-center justify-center gap-2 text-xs font-mono">
-          <span class="text-slate-500 mr-2 text-[11px] uppercase tracking-wider hidden sm:inline">Estándar:</span>
-          <button class="filter-pill px-3.5 py-1.5 rounded-xl bg-amber-950 text-amber-300 border border-amber-800/60 font-semibold" data-standard="all">Todos</button>
-          <button class="filter-pill px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10" data-standard="UDIMA">UDIMA Máster</button>
-          <button class="filter-pill px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10" data-standard="CMS">CMS Deductive</button>
+          <span class="text-slate-500 mr-2 text-[11px] uppercase tracking-wider hidden sm:inline" id="lbl-filter-standard">Estándar:</span>
+          <button class="filter-pill px-3.5 py-1.5 rounded-xl bg-amber-950 text-amber-300 border border-amber-800/60 font-semibold" id="pill-all" data-standard="all">Todos</button>
           <button class="filter-pill px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10" data-standard="WSET3">WSET 3</button>
+          <button class="filter-pill px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10" data-standard="CMS">CMS Deductive</button>
           <button class="filter-pill px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10" data-standard="ASI">ASI Global</button>
         </div>
+      </div>
+    </section>
       </div>
     </section>
 
@@ -174,7 +170,7 @@
       </button>
 
       <div class="flex items-center gap-3 mb-4">
-        <span id="modal-standard" class="px-2.5 py-1 rounded text-[11px] font-mono font-bold bg-amber-950 text-amber-300 border border-amber-800/40">UDIMA</span>
+        <span id="modal-standard" class="px-2.5 py-1 rounded text-[11px] font-mono font-bold bg-purple-950 text-purple-300 border border-purple-800/40">WSET 3</span>
         <span id="modal-category" class="text-xs font-mono text-slate-400">Enología & Vinos Especiales</span>
       </div>
 
@@ -191,7 +187,7 @@
       </div>
 
       <div class="mb-6 p-4 rounded-2xl bg-black/50 border border-white/10">
-        <strong class="text-amber-400 text-xs font-mono block mb-2 uppercase tracking-wider">Puntos Clave de Sumillería:</strong>
+        <strong id="modal-takeaways-heading" class="text-amber-400 text-xs font-mono block mb-2 uppercase tracking-wider">Puntos Clave de Sumillería:</strong>
         <ul id="modal-takeaways" class="text-xs text-slate-300 font-sans space-y-2">
           <!-- Takeaways -->
         </ul>
@@ -199,11 +195,11 @@
 
       <div class="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 text-xs font-mono">
         <div>
-          <span class="text-slate-500 mr-2">Variedades vinculadas:</span>
+          <span id="modal-grapes-lbl" class="text-slate-500 mr-2">Variedades vinculadas:</span>
           <span id="modal-grapes" class="text-slate-300"></span>
         </div>
         <div>
-          <span class="text-slate-500 mr-2">Regiones:</span>
+          <span id="modal-regions-lbl" class="text-slate-500 mr-2">Regiones:</span>
           <span id="modal-regions" class="text-rose-400"></span>
         </div>
       </div>
@@ -232,13 +228,52 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="data/winepedia_articles.js"></script>
+  <script src="data/winepedia_articles.js?v=20261110_v2"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       var articles = window.WINEPEDIA_ARTICLES || [];
       var currentLang = 'es';
       var activeStandard = 'all';
       var searchQuery = '';
+
+      var I18N = {
+        es: {
+          navMap: "Mapa",
+          navGrapes: "Uvas",
+          heroBadge: "📚 Cánones WSET 3 · CMS · ASI · VIVC · Jancis Robinson · Jamie Goode",
+          heroDesc: "La enciclopedia técnica de sumillería, bioquímica enológica y terruño basada en los 3 grandes cánones mundiales (WSET 3, CMS, ASI) y los tratados de referencia de Hugh Johnson & Jancis Robinson, Jamie Goode, Pascaline Lepeltier y el catálogo ampelográfico internacional VIVC.",
+          searchPlaceholder: "Buscar por concepto, compuesto (cinarina, flor, tca, pirazinas), uva o región...",
+          clearSearch: "✕ Limpiar",
+          lblFilterStandard: "Estándar:",
+          pillAll: "Todos",
+          emptyTitle: "No se encontraron conceptos técnicos",
+          emptyDesc: "No hay resultados que coincidan con tu término de búsqueda. Prueba con palabras clave como flor, tca, cinarina, pirazinas o suelo.",
+          btnReset: "Restablecer búsqueda",
+          counter: function(n, total) { return "Mostrando " + n + " de " + total + " conceptos técnicos"; },
+          modalTakeaways: "Puntos Clave de Sumillería:",
+          modalGrapes: "Variedades vinculadas:",
+          modalRegions: "Regiones:",
+          readMore: "📖 Lectura Completa →"
+        },
+        en: {
+          navMap: "Wine Map",
+          navGrapes: "Grape Varieties",
+          heroBadge: "📚 Standards WSET 3 · CMS · ASI · VIVC · Jancis Robinson · Jamie Goode",
+          heroDesc: "The technical encyclopedia of sommellerie, enological biochemistry, and terroir structured under the 3 global gold standards (WSET 3, CMS, ASI) and the definitive treatises of Hugh Johnson & Jancis Robinson, Jamie Goode, Pascaline Lepeltier, and the VIVC ampelographic catalogue.",
+          searchPlaceholder: "Search technical concept, compound (cynarin, flor, TCA, pyrazines), grape or region...",
+          clearSearch: "✕ Clear",
+          lblFilterStandard: "Standard:",
+          pillAll: "All",
+          emptyTitle: "No technical concepts found",
+          emptyDesc: "No results matched your search query. Try keywords like flor, TCA, cynarine, pyrazines, or soil.",
+          btnReset: "Reset search",
+          counter: function(n, total) { return "Showing " + n + " of " + total + " technical concepts"; },
+          modalTakeaways: "Key Sommelier Takeaways:",
+          modalGrapes: "Associated Varieties:",
+          modalRegions: "Regions:",
+          readMore: "📖 Read In-Depth →"
+        }
+      };
 
       var searchInput = document.getElementById('winepedia-search');
       var clearSearchBtn = document.getElementById('clear-search-btn');
@@ -248,6 +283,13 @@
       var articlesCounter = document.getElementById('articles-counter');
       var resetFiltersBtn = document.getElementById('reset-filters-btn');
 
+      var navMapText = document.getElementById('nav-map-text');
+      var navGrapesText = document.getElementById('nav-grapes-text');
+      var heroBadge = document.getElementById('hero-badge');
+      var heroDesc = document.getElementById('hero-desc');
+      var lblFilterStandard = document.getElementById('lbl-filter-standard');
+      var pillAll = document.getElementById('pill-all');
+
       var modal = document.getElementById('article-modal');
       var closeModalBtn = document.getElementById('close-modal-btn');
       var modalStandard = document.getElementById('modal-standard');
@@ -255,12 +297,45 @@
       var modalTitle = document.getElementById('modal-title');
       var modalSummary = document.getElementById('modal-summary');
       var modalContent = document.getElementById('modal-content');
+      var modalTakeawaysHeading = document.getElementById('modal-takeaways-heading');
       var modalTakeaways = document.getElementById('modal-takeaways');
+      var modalGrapesLbl = document.getElementById('modal-grapes-lbl');
       var modalGrapes = document.getElementById('modal-grapes');
+      var modalRegionsLbl = document.getElementById('modal-regions-lbl');
       var modalRegions = document.getElementById('modal-regions');
 
       var langBtnEs = document.getElementById('lang-btn-es');
       var langBtnEn = document.getElementById('lang-btn-en');
+
+      function applyLanguage(lang) {
+        currentLang = lang;
+        document.documentElement.lang = lang;
+        var t = I18N[lang];
+
+        if (navMapText) navMapText.textContent = t.navMap;
+        if (navGrapesText) navGrapesText.textContent = t.navGrapes;
+        if (heroBadge) heroBadge.innerHTML = "<span>📚</span> " + t.heroBadge.replace('📚 ', '');
+        if (heroDesc) heroDesc.textContent = t.heroDesc;
+        if (searchInput) searchInput.placeholder = t.searchPlaceholder;
+        if (clearSearchBtn) clearSearchBtn.textContent = t.clearSearch;
+        if (lblFilterStandard) lblFilterStandard.textContent = t.lblFilterStandard;
+        if (pillAll) pillAll.textContent = t.pillAll;
+        if (modalTakeawaysHeading) modalTakeawaysHeading.textContent = t.modalTakeaways;
+        if (modalGrapesLbl) modalGrapesLbl.textContent = t.modalGrapes;
+        if (modalRegionsLbl) modalRegionsLbl.textContent = t.modalRegions;
+
+        if (langBtnEs && langBtnEn) {
+          if (lang === 'es') {
+            langBtnEs.className = "px-2.5 py-1 rounded bg-amber-950 text-amber-300 font-bold border border-amber-800/40";
+            langBtnEn.className = "px-2.5 py-1 text-slate-400 hover:text-white transition-colors";
+          } else {
+            langBtnEn.className = "px-2.5 py-1 rounded bg-amber-950 text-amber-300 font-bold border border-amber-800/40";
+            langBtnEs.className = "px-2.5 py-1 text-slate-400 hover:text-white transition-colors";
+          }
+        }
+
+        renderGrid();
+      }
 
       function filterArticles() {
         return articles.filter(function(art) {
@@ -282,9 +357,10 @@
       }
 
       function renderGrid() {
+        var t = I18N[currentLang];
         var filtered = filterArticles();
         if (articlesCounter) {
-          articlesCounter.textContent = "Mostrando " + filtered.length + " de " + articles.length + " conceptos técnicos";
+          articlesCounter.textContent = t.counter(filtered.length, articles.length);
         }
 
         if (filtered.length === 0) {
@@ -320,7 +396,7 @@
             "</div>" +
             "<div>" +
               "<button class='read-article-btn w-full py-2.5 px-4 rounded-xl bg-white/5 hover:bg-white/10 text-slate-200 border border-white/10 text-xs font-mono font-semibold text-center transition-colors flex items-center justify-center gap-2' data-id='" + art.id + "'>" +
-                "<span>📖</span> " + (currentLang === 'es' ? "Lectura Completa →" : "Read In-Depth →") +
+                t.readMore +
               "</button>" +
             "</div>";
 
@@ -424,23 +500,19 @@
       });
 
       // Language Switcher
-      if (langBtnEs && langBtnEn) {
+      if (langBtnEs) {
         langBtnEs.addEventListener('click', function() {
-          currentLang = 'es';
-          langBtnEs.className = "px-2.5 py-1 rounded bg-amber-950 text-amber-300 font-bold border border-amber-800/40";
-          langBtnEn.className = "px-2.5 py-1 text-slate-400 hover:text-white transition-colors";
-          renderGrid();
+          applyLanguage('es');
         });
+      }
+      if (langBtnEn) {
         langBtnEn.addEventListener('click', function() {
-          currentLang = 'en';
-          langBtnEn.className = "px-2.5 py-1 rounded bg-amber-950 text-amber-300 font-bold border border-amber-800/40";
-          langBtnEs.className = "px-2.5 py-1 text-slate-400 hover:text-white transition-colors";
-          renderGrid();
+          applyLanguage('en');
         });
       }
 
-      // Initial render
-      renderGrid();
+      // Initial render in default language
+      applyLanguage('es');
     });
   </script>
 </body>

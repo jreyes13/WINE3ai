@@ -38,7 +38,7 @@ const I18N = {
     bmOsm: "OpenStreetMap",
     toggleSidebarHide: "Ocultar panel lateral",
     toggleSidebarShow: "Mostrar panel lateral",
-    navGrapes: "Variedades de Uva",
+    navGrapes: "Uvas",
     climateToggle: "Capa Climas",
     climateToggleTitle: "Activar/desactivar capa climática mundial",
     allClimates: "Todos los Climas",
@@ -606,12 +606,22 @@ map.on('idle', checkAndRestoreLayers);
 map.on('load', async () => {
   try {
     let data;
-    if (typeof window.SPAIN_WINE_DATA !== 'undefined' && window.SPAIN_WINE_DATA) {
+    if (typeof window.WINE_REGIONS_DATA !== 'undefined' && window.WINE_REGIONS_DATA) {
+      data = window.WINE_REGIONS_DATA;
+    } else if (typeof WINE_REGIONS_DATA !== 'undefined' && WINE_REGIONS_DATA) {
+      data = WINE_REGIONS_DATA;
+    } else if (typeof window.SPAIN_WINE_DATA !== 'undefined' && window.SPAIN_WINE_DATA) {
       data = window.SPAIN_WINE_DATA;
     } else if (typeof SPAIN_WINE_DATA !== 'undefined' && SPAIN_WINE_DATA) {
       data = SPAIN_WINE_DATA;
     } else {
-      const resp = await fetch('data/spain_wine_regions.geojson?v=20261105a');
+      let resp;
+      try {
+        resp = await fetch('data/wine_regions.geojson?v=20261110');
+        if (!resp.ok) throw new Error('wine_regions.geojson not found');
+      } catch (e) {
+        resp = await fetch('data/spain_wine_regions.geojson?v=20261110');
+      }
       data = await resp.json();
     }
     allFeatures = data.features;

@@ -1,186 +1,237 @@
-// WINE³ai — Banco de Fichas de Estudio y Quizzes de Sumillería
-// Fuentes analíticas: WSET Nivel 3, Court of Master Sommeliers (CMS), Máster UDIMA y ASI
+// WINE³ai — Banco Canónico de Fichas de Examen & Cata Deductiva
+// Estructurado estrictamente bajo los 3 grandes cánones internacionales:
+// 1. WSET 3 (Wine & Spirit Education Trust)
+// 2. CMS (Court of Master Sommeliers)
+// 3. ASI (Association de la Sommellerie Internationale)
+// Fuentes y Bibliografía: Jamie Goode (The Science of Wine), Pascaline Lepeltier (One Thousand Vines),
+// Hugh Johnson & Jancis Robinson (The World Atlas of Wine, Wine Grapes), Julius Kühn-Institut (VIVC.de)
 
-(function(root) {
-  'use strict';
+window.STUDY_CARDS = [
+  // ==========================================
+  // BLOQUE 1: WSET 3 (WINE & SPIRIT EDUCATION TRUST)
+  // ==========================================
+  {
+    id: "card_wset_factors",
+    standard: "WSET3",
+    category: "Factores Naturales del Terruño (WSET 3)",
+    question_es: "¿Cuáles son los 5 factores naturales fundamentales que definen el estilo, calidad y precio de un vino según el canon WSET Nivel 3?",
+    answer_es: "1. Macroclima y latitud (insolación y temperatura estacional)\n2. Orografía y altitud (gradiente térmico vertical: -0.6°C cada 100m)\n3. Pendiente y orientación solar (aspecto: captación de radiación y drenaje de aire frío)\n4. Suelo y drenaje edáfico (retención hídrica, calor radiante y textura)\n5. Influencias hídricas o marítimas moderadoras (masas de agua, brisas marinas o nieblas matinales).",
+    solution_es: "La interacción de estos factores determina la tasa de fotosíntesis, el ritmo de degradación del ácido málico y la síntesis de antocianos y polifenoles en el hollejo.",
+    citation: "WSET Level 3 Specification & The World Atlas of Wine (Johnson & Robinson)"
+  },
+  {
+    id: "card_ribera_vs_rioja",
+    standard: "WSET3",
+    category: "Terruño Comparado (WSET 3 / World Atlas of Wine)",
+    question_es: "Compara el terruño de Ribera del Duero y Rioja Alta/Alavesa explicando cómo influyen la altitud y la oscilación térmica en la maduración del Tempranillo.",
+    answer_es: "Ribera del Duero se sitúa entre 750 y 900+ m de altitud en la Meseta Norte, generando oscilaciones térmicas día/noche de hasta 20°C en agosto y septiembre. Esto preserva un ácido málico elevado y produce hollejos más gruesos con taninos y antocianos densos. Rioja Alta/Alavesa (400-600 m), protegida por la Sierra de Cantabria de vientos atlánticos, tiene un clima atlántico-mediterráneo más moderado, dando un Tempranillo con fruta roja más fresca, acidez lineal, menor graduación alcohólica potencial y taninos más sedosos.",
+    solution_es: "En cata comparada WSET: Ribera = color rubí opaco, fruta negra madura, tanino alto y firme, 14.5-15% vol. Rioja Alta = fruta roja nítida, mayor frescura ácida, tanino medio (+), estructura más fluida.",
+    citation: "The World Atlas of Wine (8th Ed.) & WSET 3 Study Guide"
+  },
+  {
+    id: "card_suelos_llicorella",
+    standard: "WSET3",
+    category: "Geología & Edafología (WSET 3 / One Thousand Vines)",
+    question_es: "¿Qué es el suelo de 'Llicorella' en la DOCa Priorat y cómo condiciona el comportamiento hídrico y el vigor de la vid?",
+    answer_es: "La llicorella es una pizarra paleozoica del Carbonífero laminada y oscura, rica en mica y óxidos de hierro. Al fracturarse verticalmente, obliga a las raíces de Garnacha y Cariñena a profundizar hasta 10-15 metros en busca de humedad freática. Además, su color oscuro absorbe la radiación solar durante el día y la reirradia durante la noche, favoreciendo una maduración fenólica completa en rendimientos extremadamente bajos (<15-20 hl/ha).",
+    solution_es: "Pascaline Lepeltier destaca que este confinamiento hídrico induce estrés hídrico moderado, limitando el tamaño de la baya y maximizando la concentración de taninos y extracto seco.",
+    citation: "One Thousand Vines (Pascaline Lepeltier) & WSET 3"
+  },
+  {
+    id: "card_crianza_biologica",
+    standard: "WSET3",
+    category: "Enología Especial (WSET 3)",
+    question_es: "¿Cuáles son las condiciones fisicoquímicas necesarias para el desarrollo del velo de flor y qué transformaciones genera en el vino?",
+    answer_es: "El velo de flor (levaduras del género Saccharomyces, principalmente beticus, cheresiensis, rouxii y montuliensis) requiere:\n- Graduación alcohólica estricta: entre 15.0% y 15.5% vol (por encima de 16% vol se inhibe).\n- Temperatura controlada: 15-20°C y humedad relativa alta (>70%).\n- Oxígeno: botas llenas a 5/6 (espacio de cabeza o 'dos puños').\n- Ausencia de SO2 libre elevado.\n\nTransformaciones moleculares:\n1. Metabolizan el oxígeno, evitando la oxidación y manteniendo el color pálido pajizo.\n2. Consumen glicerol (eliminando la sensación untuosa y dejando el vino ultra seco).\n3. Oxidan etanol a acetaldehído (notas punzantes de almendra cruda, masa de pan, manzana verde y tiza).\n4. Reducen la acidez volátil (ácido acético).",
+    solution_es: "En cata SAT de WSET 3: Color limón pálido, aromas de intensidad pronunciada a levadura, masa madre, almendra verde; boca completamente seca, cuerpo ligero, acidez media, final largo y salino.",
+    citation: "WSET Level 3 Wines Specification & The Science of Wine (Jamie Goode)"
+  },
+  {
+    id: "card_crianza_oxidativa_jerez",
+    standard: "WSET3",
+    category: "Vinos Fortificados & Enología (WSET 3)",
+    question_es: "¿Cómo se produce un Oloroso en el marco del sistema de Criaderas y Soleras y qué perfil organoléptico resulta?",
+    answer_es: "El mosto base (generalmente de segunda prensa o con mayor estructura) se encabeza directamente a 17.0% vol con alcohol vínico, impidiendo la formación de velo de flor desde el inicio. El vino entra directamente en crianza oxidativa continua en botas de roble americano de 600 litros durante años o décadas. La evaporación lenta a través de la madera ('merma') concentra el alcohol (hasta 18-22% vol), la acidez y los extractos secos.",
+    solution_es: "Descriptor SAT: Color ámbar a caoba oscuro; aromas pronunciados de nuez moscada, avellana tostada, higo seco, cuero, café y caramelo tostado; boca seca, con gran peso, acidez punzante y final eterno.",
+    citation: "WSET Level 3 Wines Specification & Consejo Regulador Jerez-Xérès-Sherry"
+  },
+  {
+    id: "card_maceracion_carbonica",
+    standard: "WSET3",
+    category: "Técnicas de Vinificación (WSET 3)",
+    question_es: "¿Cuál es el mecanismo bioquímico de la maceración carbónica en racimo entero y qué perfil aromático distintivo genera?",
+    answer_es: "Consiste en introducir racimos enteros sin estrujar en cubas selladas saturadas de dióxido de carbono (CO2). En ausencia de oxígeno, las células intactas de la uva inician una fermentación intracelular enzimática (anaeróbica):\n- El ácido málico se degrada enzimáticamente en un 30-50% (sin intervención de bacterias lácticas).\n- Se sintetizan hasta 1.5-2.0% vol de alcohol dentro de la uva sin levaduras.\n- Se sintetizan altas concentraciones de ésteres volátiles de fermentación: acetato de isoamilo y cinamato de etilo.\nCuando el alcohol intracelular rompe los hollejos, se prensa y las levaduras completan la fermentación del mosto.",
+    solution_es: "Descriptores sensoriales WSET 3: Color rubí brillante con ribete violáceo, taninos extremadamente bajos y sedosos, y aromas hiperfrutales a plátano maduro, gominola de fresa, frambuesa confitada y chicle de canela.",
+    citation: "WSET Level 3 Wines Specification & Jamie Goode (The Science of Wine)"
+  },
+  {
+    id: "card_espumosos_autolisis",
+    standard: "WSET3",
+    category: "Espumosos & Método Tradicional (WSET 3)",
+    question_es: "¿Qué es la autólisis de las levaduras en el método tradicional (Champagne / Cava) y a partir de qué mes de crianza en rima se hace sensorialmente perceptible?",
+    answer_es: "Tras la segunda fermentación en botella ('toma de espuma'), las levaduras agotan los azúcares y mueren, depositándose como lías finas. A partir del 9º-12º mes, las enzimas celulares de la levadura degradan sus propias paredes de manoproteínas y liberan aminoácidos, lípidos y polipéptidos al vino.\nEste proceso aporta textura cremosa al paladar, estabilidad a la burbuja (espuma persistente de grano fino) y descriptores aromáticos terciarios de brioche, panadería recién horneada, galleta tostada y frutos secos.",
+    solution_es: "WSET Nivel 3 exige identificar notas autolíticas (biscote, brioche) frente a aromas primarios frutales para evaluar la duración de la crianza sobre lías (mínimo 9 meses en Cava, 12 meses en Champagne, 36 meses en Gran Reserva).",
+    citation: "WSET 3 Wines Handbook & The Science of Wine (Jamie Goode)"
+  },
+  {
+    id: "card_wset_noble_rot_botrytis",
+    standard: "WSET3",
+    category: "Enología Especial & Botrytis (WSET 3)",
+    question_es: "¿Qué condiciones meteorológicas exactas requiere la Podredumbre Noble (Botrytis cinerea) y qué impacto químico produce en vinos como Sauternes o Tokaji?",
+    answer_es: "Requiere un ciclo diario bimórfico:\n1. Mañanas húmedas y brumosas (inducidas por la confluencia de ríos a distinta temperatura, como el Ciron y el Garona en Sauternes, o el Bodrog y el Tisza en Tokaj) que permiten al hongo perforar microscópicamente el hollejo.\n2. Tardes cálidas, soleadas y secas que impiden el paso a podredumbre gris (destructiva), evaporando el agua de la baya a través de las microperforaciones.\n\nImpacto químico:\n- Concentración brutal de azúcares (hasta 300-400 g/L) y acidez tartárica.\n- Aumento masivo de glicerol (sensación táctil untuosa y glicérica).\n- Generación de sotolón, fenilacetaldehído y lactonas que dan notas a miel, albaricoque desecado (orejones), mermelada de naranja amarga y jengibre.",
+    solution_es: "SAT WSET 3: Color oro profundo o ámbar; acidez alta que compensa el dulzor elevado (evitando el empalago); final untuoso, largo y sumamente complejo.",
+    citation: "WSET Level 3 Wines Specification & The World Atlas of Wine (Johnson & Robinson)"
+  },
 
-  var STUDY_CARDS = [
-    // --- 1. ARMONÍAS, QUÍMICA & ALIMENTOS CRÍTICOS (UDIMA) ---
-    {
-      id: "card_cinarina",
-      category: "Armonías & Química (UDIMA)",
-      standard: "UDIMA",
-      question_es: "¿Por qué las alcachofas son consideradas un enemigo clásico del maridaje y qué vino recomienda la sumillería?",
-      answer_es: "Contienen cinarina, un compuesto que inhibe temporalmente los receptores del dulzor. Al beber un líquido después, el agua sabe dulce y los vinos tintos tánicos se perciben fuertemente amargos y metálicos.",
-      solution_es: "Se solventa con vinos que tengan amargores nobles (Verdejo sobre lías, Grüner Veltliner) o vinos de crianza biológica bajo velo de flor (Fino o Manzanilla de Sanlúcar).",
-      tags: ["armonias", "quimica", "alcachofas", "cinarina"]
-    },
-    {
-      id: "card_acid_salt",
-      category: "Armonía & Sensorial (CMS & UDIMA)",
-      standard: "CMS / UDIMA",
-      question_es: "¿Cómo interactúa la sal de un alimento (ej. jamón ibérico o anchoas) con la acidez y los taninos del vino?",
-      answer_es: "La sal reduce la percepción de acidez y amargor del vino, realzando su fruta y volumen. Sin embargo, platos salados con vinos fuertemente tánicos pueden desbalancearse si el alimento carece de grasa suficiente.",
-      solution_es: "Por eso el Jamón Ibérico de Bellota marida a la perfección con Manzanilla, Fino o Espumosos Brut Nature: la sal y la grasa infiltrada se complementan con la acidez y las lías.",
-      tags: ["armonias", "jamon", "sal"]
-    },
-    {
-      id: "card_capsaicina",
-      category: "Alimentos Críticos (UDIMA)",
-      standard: "UDIMA",
-      question_es: "¿Por qué el alcohol y el tanino empeoran las comidas picantes y cuál es la solución molecular?",
-      answer_es: "La capsaicina estimula los receptores térmicos vaniloides (TRPV1). El etanol reduce el umbral de activación de estos receptores, aumentando drásticamente la sensación de quemazón. Los taninos aportan astringencia desagradable al paladar inflamado.",
-      solution_es: "La solución: vinos con baja graduación alcohólica y azúcar residual (Riesling Kabinett/Spätlese alemán, Chenin Blanc demi-sec) o vinos generosos con textura grasa/glicérica.",
-      tags: ["picante", "quimica", "capsaicina"]
-    },
-    {
-      id: "card_jamon_iberico_oleico",
-      category: "Armonías & Productos (UDIMA)",
-      standard: "UDIMA",
-      question_es: "¿Qué características lipídicas tiene el Jamón Ibérico de Bellota y por qué la sumillería descarta los tintos de alta madera?",
-      answer_es: "El cerdo alimentado con bellota presenta más de un 55-58% de ácido oleico monoinsaturado, con punto de fusión a 28°C (se funde en la lengua). Los taninos secantes de un tinto maderoso coagulan la grasa en el paladar, tapando la delicadeza del jamón.",
-      solution_es: "La armonía canónica es un vino de crianza biológica (Fino/Manzanilla) o espumoso Brut Nature: limpian la película grasa y potencian el umami sin restar elegancia.",
-      tags: ["jamon", "armonias", "oleico", "jerez"]
-    },
+  // ==========================================
+  // BLOQUE 2: CMS (COURT OF MASTER SOMMELIERS)
+  // ==========================================
+  {
+    id: "card_cms_blind_deduction_steps",
+    standard: "CMS",
+    category: "Cata Deductiva & Metodología (CMS)",
+    question_es: "¿Cuál es la secuencia formal de 4 pasos de la Deductive Tasting Grid de la Court of Master Sommeliers para deducir un vino a ciegas?",
+    answer_es: "1. VISTA (Sight): Claridad, brillo, profundidad de color, color central vs color de menisco/ribete (rim variation), viscosidad/lágrimas (evaluación de graduación y residuo seco).\n2. NARIZ (Nose): Limpieza/condición, intensidad, perfil de fruta (roja, negra, azul, cítrica, de hueso; fresca, cocida, confitada), floral, vegetal/herbal, tierra/mineral, crianza en roble (francés vs americano, nuevo vs usado).\n3. BOCA (Palate): Dulzor, acidez, fenoles/taninos (intensidad y grano: tiza, polvo, terciopelo), alcohol, cuerpo, persistencia y confirmación del perfil retronasal.\n4. CONCLUSIÓN INICIAL & FINAL: Clima (frío/moderado/cálido), variedad o ensamblaje, Viejo Mundo vs Nuevo Mundo, país, apelación concreta y horquilla de añada (1-3 años).",
+    solution_es: "En CMS, ningún vino se adivina: se deduce eliminando sistemáticamente hipótesis contradictorias mediante los marcadores sensoriales observados.",
+    citation: "Court of Master Sommeliers Deductive Tasting Grid™"
+  },
+  {
+    id: "card_cinarina",
+    standard: "CMS",
+    category: "Armonías & Bioquímica (CMS / Jamie Goode)",
+    question_es: "¿Por qué las alcachofas son consideradas un alimento crítico para el maridaje y cuál es la solución técnica del sommelier?",
+    answer_es: "Las alcachofas contienen cinarina (ácido 1,3-dicafeoilquínico). Este compuesto se une a los receptores del gusto dulce de las papilas gustativas sin activarlos inicialmente. Al tragar el vino o beber agua, la cinarina se lava rápidamente de los receptores, lo que provoca un rebote en el que los receptores se activan de golpe, haciendo que cualquier líquido posterior se perciba anormalmente empalagoso, dulce y metálico.",
+    solution_es: "Solución técnica de sommelier: Vinos con nula presencia de azúcar residual y acidez punzante, preferiblemente con crianza biológica (Manzanilla de Sanlúcar o Fino de Jerez), donde el acetaldehído y la extrema salinidad contrarrestan la distorsión de la cinarina.",
+    citation: "The Science of Wine (Jamie Goode) & CMS Food and Wine Matching Guidelines"
+  },
+  {
+    id: "card_acid_salt",
+    standard: "CMS",
+    category: "Armonía Sensorial & Fisiología (CMS / ASI)",
+    question_es: "¿Cómo interactúa la sal (NaCl) de un plato sobre la percepción de la acidez y el amargor del vino en el paladar?",
+    answer_es: "El cloruro sódico (sal) bloquea y suprime los receptores de amargor y atenúa la percepción de acidez viva en la lengua. Al mismo tiempo, potencia la percepción de fruta, cuerpo y dulzor frutal del vino. Por tanto, un plato salado hace que un vino con acidez punzante (ej. Champagne brut nature o Sancerre) se perciba más suave, redondo y afrutado.",
+    solution_es: "Regla CMS: La sal es el mejor amigo del sumiller para domar vinos con acidez muy elevada o con tanino ligeramente agresivo.",
+    citation: "CMS Deductive Tasting & Food Pairing Guide"
+  },
+  {
+    id: "card_cms_cabernet_sauvignon_pyrazines",
+    standard: "CMS",
+    category: "Marcadores de Uva & Enología (CMS / VIVC)",
+    question_es: "¿Cuál es el marcador aromático químico por excelencia del Cabernet Sauvignon en climas frescos y cómo se diferencia de un defecto vegetal?",
+    answer_es: "Las alquil-metoxipirazinas, principalmente la 3-isobutil-2-metoxipirazina (IBMP). Este compuesto se sintetiza en la baya antes del envero y se degrada progresivamente por exposición a la radiación solar y calor acumulado.\nEn climas frescos o añadas frías (Burdeos margen izquierda, Coonawarra, Valle del Maipo), un nivel sutil de 5-15 ng/L aporta el carácter varietal clásico a cassis, pimiento verde, hoja de grosellero negro y grafito. Si la uva no madura fenólica y termodinámicamente, supera los 30 ng/L, dominando con un aroma herbáceo verde, amargo y punzante que desequilibra el vino.",
+    solution_es: "Descriptor CMS Deductive: Si en un tinto oscuro opaco con acidez alta y tanino alto y firme se detecta casis + pimiento verde + cedro/grafito ➔ Hipótesis inmediata: Cabernet Sauvignon de clima templado-fresco.",
+    citation: "The Science of Wine (Jamie Goode) & VIVC Variety Catalogue (vivc.de: Cultivar 1929)"
+  },
+  {
+    id: "card_nebbiolo_cms",
+    standard: "CMS",
+    category: "Cata Deductiva (CMS)",
+    question_es: "En una cata a ciegas deductiva CMS, ¿cuáles son los 3 marcadores visuales y estructurales para no confundir Nebbiolo (Barolo/Barbaresco) con Pinot Noir?",
+    answer_es: "1. VISTA: Ambos presentan capa baja-media translúcida, pero Nebbiolo muestra una evolución prematura hacia el color teja, anaranjado o granate incluso en añadas jóvenes (por déficit de antocianos trioxigenados estables).\n2. ESTRUCTURA EN BOCA: Pinot Noir tiene tanino medio a medio (+) sedoso y acidez media-alta. Nebbiolo posee un nivel masivo de tanino tánico y astringente (alto) combinado con una acidez tartárica punzante (alta) y alcohol elevado (14-15% vol).\n3. NARIZ: Mientras Pinot Noir se orienta a cereza roja, frambuesa, sotobosque húmedo y setas, Nebbiolo despliega 'alquitrán y rosas' (tar & roses), cuero curado, cereza agria, anís estrellado y trufa blanca.",
+    solution_es: "En boca, el tanino 'grip' y masivo de Nebbiolo es la prueba inequívoca de descarte frente a Pinot Noir.",
+    citation: "Court of Master Sommeliers Tasting Grid™"
+  },
+  {
+    id: "card_syrah_rotundona",
+    standard: "CMS",
+    category: "Marcadores Químicos (CMS / Jamie Goode)",
+    question_es: "¿Qué compuesto químico es responsable del aroma a pimienta negra en la Syrah/Shiraz y cómo varía según el clima?",
+    answer_es: "El sesquiterpeno rotundona. Este compuesto aromático volátil tiene un umbral de detección humano excepcionalmente bajo (apenas 16 ng/L en vino tinto).\nSe acumula en el hollejo en concentraciones significativamente mayores en regiones frías o de maduración lenta (ej. Ródano Norte: Cornas, Côte-Rôtie; y climas marítimos fríos como Victoria / Grampians en Australia) que en regiones cálidas (Barossa Valley), donde se degrada por exceso de calor y da paso a notas de mermelada de mora y chocolate.",
+    solution_es: "La presencia dominante de rotundona (pimienta negra recién molida) asociada a fruta negra ácida y violetas es el marcador cardinal de Syrah de clima templado/fresco en la cata deductiva CMS.",
+    citation: "The Science of Wine (Jamie Goode) & Court of Master Sommeliers"
+  },
+  {
+    id: "card_riesling_tdn",
+    standard: "CMS",
+    category: "Compuestos Volátiles (CMS / Jamie Goode)",
+    question_es: "¿Qué es el compuesto TDN en la variedad Riesling y qué factores de viticultura promueven su aparición?",
+    answer_es: "El TDN (1,1,6-trimetil-1,2-dihidronaftaleno) es un norisoprenoide derivado de la degradación carotenoides (luteína, betacaroteno) en el hollejo. Genera un aroma característico a hidrocarburo, queroseno, pedernal y cera de parafina.\nFactores que favorecen concentraciones elevadas de TDN:\n1. Elevada radiación solar ultravioleta directa sobre los racimos (deshojado temprano).\n2. Estrés hídrico moderado en verano.\n3. Suelos cálidos y pedregosos (esquistos de Mosela o granito de Alsacia).\n4. Años de envejecimiento en botella con bajo pH y alta acidez libre.",
+    solution_es: "En cata CMS: La nota de petróleo/queroseno en un blanco con acidez vibrante, alcohol medio-bajo y ausencia de madera orienta inmediatamente la deducción hacia Riesling evolucionado.",
+    citation: "The Science of Wine (Jamie Goode) & CMS Marker Guide"
+  },
+  {
+    id: "card_pinot_noir_deductive",
+    standard: "CMS",
+    category: "Cata Deductiva Comparada (CMS)",
+    question_es: "Compara el perfil deductivo CMS de un Pinot Noir de la Côte d'Or (Borgoña) frente a un Pinot Noir de Central Otago (Nueva Zelanda).",
+    answer_es: "Borgoña (Viejo Mundo, clima continental fresco):\n- Vista: Capa rubí translúcida pálida.\n- Nariz: Dominio de tierra húmeda, hojarasca (forest floor), trufa, champiñón, arándano rojo fresco, cereza ácida y roble francés viejo integrado.\n- Boca: Acidez alta, tanino de grano fino medio, alcohol 13.0-13.5% vol, sensación etérea y mineral.\n\nCentral Otago (Nuevo Mundo, clima continental extremo del sur):\n- Vista: Capa rubí algo más densa y brillante con tintes violáceos.\n- Nariz: Fruta roja y negra explosiva (cereza negra madura, frambuesa silvestre), tomillo seco salvaje, violetas y roble nuevo especiado.\n- Boca: Acidez viva pero arropada por mayor cuerpo, taninos sedosos y maduros, alcohol 14.0-14.5% vol.",
+    solution_es: "En la deducción CMS, la 'tierra vs fruta madura' define la pertenencia a Viejo o Nuevo Mundo.",
+    citation: "Court of Master Sommeliers Blind Tasting Criteria"
+  },
 
-    // --- 2. CATA DEDUCTIVA & MARCADORES DE UVA (CMS) ---
-    {
-      id: "card_cms_grape_markers",
-      category: "Cata Deductiva (CMS)",
-      standard: "CMS",
-      question_es: "¿Cuáles son los marcadores deductivos clave (Grape Markers) del Cabernet Sauvignon de clima moderado?",
-      answer_es: "Cassis / grosella negra, ciruela negra, pimiento verde (pirazinas), grafito, cedro y hojas de tabaco. En boca: acidez media-alta, taninos firmes y cuerpo completo.",
-      solution_es: "Si en la cata a ciegas identificas pirazina evidente (nota vegetal/pimiento) junto a cassis concentrado y tanino estructurado, la deducción lógica apunta a Cabernet Sauvignon (Burdeos Izquierda o clima moderado).",
-      tags: ["deductive_tasting", "cms", "cabernet", "pirazinas"]
-    },
-    {
-      id: "card_nebbiolo_cms",
-      category: "Cata Deductiva (CMS)",
-      standard: "CMS",
-      question_es: "¿Cómo delata la copa a ciegas una uva Nebbiolo (Barolo / Barbaresco) según la parrilla del Master Sommelier?",
-      answer_es: "Vista engañosa: color rubí pálido o granate translúcido con evidente menisco anaranjado/teja prematuro. Nariz: alquitrán ('tar'), pétalos de rosa marchita, cereza ácida, arcilla y cuero. Boca: contraste demoledor con acidez punzante y taninos masivos.",
-      solution_es: "La paradoja visual (parece ligero como un Pinot viejo) confrontada con la artillería en boca (tanino agresivo y acidez láser) es la firma indiscutible de Nebbiolo.",
-      tags: ["cms", "nebbiolo", "barolo", "piamonte"]
-    },
-    {
-      id: "card_syrah_rotundona",
-      category: "Marcadores Químicos (CMS)",
-      standard: "CMS",
-      question_es: "¿Qué molécula aromática diferencia a la Syrah de la Garnacha en cata a ciegas?",
-      answer_es: "La rotundona: un sesquiterpeno que aporta un aroma inequívoco a grano de pimienta negra recién molida, carne ahumada y aceituna negra tapenade. La Garnacha, en cambio, ofrece fruta roja madura (fresa confitada), pimienta blanca y mayor sensación alcohólica.",
-      solution_es: "Pimienta negra crujiente + acidez media-alta + tanino firme ➔ Syrah del Ródano Norte (Hermitage, Cornas, Côte-Rôtie).",
-      tags: ["cms", "syrah", "rotundona", "pimienta"]
-    },
-    {
-      id: "card_riesling_tdn",
-      category: "Marcadores de Uva (CMS)",
-      standard: "CMS",
-      question_es: "¿Qué compuesto genera las notas de petróleo/hidrocarburo en el Riesling y bajo qué condiciones de cultivo se maximiza?",
-      answer_es: "El TDN (1,1,6-trimetil-1,2-dihidronaftaleno). Se origina por degradación de carotenoides presentes en el hollejo, incentivados por una intensa exposición solar sobre pendientes pizarrosas, bajo rendimiento y estrés hídrico moderado.",
-      solution_es: "En cata a ciegas: lima kaffir, acidez hiper-alta, textura tensa y fondo mineral de hidrocarburo = Riesling de guarda.",
-      tags: ["cms", "riesling", "tdn", "petroleo", "mosel"]
-    },
-    {
-      id: "card_pinot_noir_deductive",
-      category: "Cata Deductiva (CMS)",
-      standard: "CMS",
-      question_es: "¿Cómo se distingue un Pinot Noir de Borgoña (Viejo Mundo) de uno de Oregón o California (Nuevo Mundo)?",
-      answer_es: "El Borgoña exhibe acidez alta, color rubí pálido, fruta roja crujiente (arándano, grosella) con notas dominantes de suelo de bosque húmedo, sotobosque y setas. El de Nuevo Mundo muestra fruta más dulce y madura (cereza negra), especias de roble tostado, alcohol superior (> 14%) y taninos más sedosos.",
-      solution_es: "La presencia de tierra mojada / sotobosque frente a la opulencia de fruta madura define el origen climáticogeográfico en la deducción de CMS.",
-      tags: ["cms", "pinot_noir", "borgona", "nuevo_mundo"]
-    },
-
-    // --- 3. ENOLOGÍA & VINIFICACIONES ESPECIALES (UDIMA) ---
-    {
-      id: "card_crianza_biologica",
-      category: "Enología y Vinos Especiales (UDIMA)",
-      standard: "UDIMA",
-      question_es: "¿Qué condiciones bioquímicas caracterizan la Crianza Biológica en el marco de Jerez y Montilla?",
-      answer_es: "Desarrollo del 'velo de flor' (levaduras del género Saccharomyces) en la superficie del vino en botas a 5/6 de capacidad. Consume alcohol, glicerol y oxígeno, aportando acetaldehído y notas punzantes de panadería, frutos secos y tiza.",
-      solution_es: "El velo de flor protege al vino de la oxidación, manteniendo su color pálido y confiriéndole un perfil seco, punzante y salino único en el mundo.",
-      tags: ["jerez", "enologia", "biologica", "velo_de_flor"]
-    },
-    {
-      id: "card_crianza_oxidativa_jerez",
-      category: "Enología Especial (UDIMA)",
-      standard: "UDIMA",
-      question_es: "¿Qué diferencia la crianza oxidativa del Oloroso de la crianza del Amontillado?",
-      answer_es: "El Oloroso se encabeza directamente a 17° vol., impidiendo que nazca el velo de flor; envejece en contacto directo con el oxígeno, oscureciéndose y concentrando alcohol por evaporación ('merma'). El Amontillado es un vino dual: primero tiene crianza biológica bajo velo de flor y, tras agotarse este, pasa a crianza oxidativa.",
-      solution_es: "El Amontillado conserva la finura punzante y salina de la flor unida a los frutos secos y barniz de la oxidación posterior.",
-      tags: ["jerez", "enologia", "oloroso", "amontillado", "oxidativa"]
-    },
-    {
-      id: "card_maceracion_carbonica",
-      category: "Vinificación en Tintos (UDIMA)",
-      standard: "UDIMA",
-      question_es: "¿Cómo funciona la Maceración Carbónica y qué aroma delata este método en copa?",
-      answer_es: "Se introducen racimos enteros sin estrujar en un depósito saturado de dióxido de carbono (CO2). En ausencia de oxígeno, se produce una fermentación enzimática intracelular dentro de cada grano de uva sin levaduras, desdoblando azúcares y ácido málico. Sintetiza acetato de isoamilo, responsable de los aromas de plátano, gominola y canela.",
-      solution_es: "Vinos tintos de color púrpura vivo, taninos ultra-suaves, acidez fresca y notas de fruta golosa (Rioja Alavesa joven de cosechero, Beaujolais Nouveau).",
-      tags: ["enologia", "maceracion_carbonica", "rioja", "beaujolais"]
-    },
-    {
-      id: "card_espumosos_autolisis",
-      category: "Espumosos & Método Tradicional (UDIMA)",
-      standard: "UDIMA",
-      question_es: "¿En qué consiste la autólisis de las levaduras en el método tradicional (Champagne / Cava) y qué aporta?",
-      answer_es: "Tras la segunda fermentación en botella, las levaduras mueren y sus membranas celulares se rompen por acción de sus propias enzimas líticas. Este proceso libera manoproteínas y aminoácidos que enriquecen el vino con volumen en boca, estabilizan la espuma y generan aromas de pan brioche, galleta, masa tostada y frutos secos.",
-      solution_es: "Un mínimo de 15 a 36 meses sobre lías garantiza la complejidad autolítica que distingue a los grandes espumosos de guarda.",
-      tags: ["espumosos", "champagne", "cava", "autolisis", "lias"]
-    },
-    {
-      id: "card_tca_umbral",
-      category: "Defectos del Vino (UDIMA)",
-      standard: "UDIMA",
-      question_es: "¿Cuál es el umbral de detección del TCA (2,4,6-tricloroanisol) y por qué arruina la experiencia sensorial?",
-      answer_es: "El umbral medio humano se sitúa entre 1 y 4 nanogramos por litro (partes por billón). No solo aporta olor a cartón mojado y humedad de sótano, sino que tiene un efecto anestesiante sobre los bulbos olfatorios que suprime por completo los aromas frutales y florales del vino.",
-      solution_es: "Ante la sospecha de corcho, el protocolo de sumillería exige retirar la botella de inmediato sin discutir con el comensal.",
-      tags: ["defectos", "tca", "corcho", "enologia"]
-    },
-
-    // --- 4. TERRUÑO, GEOLOGÍA & FACTORES NATURALES (WSET 3) ---
-    {
-      id: "card_wset_factors",
-      category: "Factores Naturales (WSET 3)",
-      standard: "WSET3",
-      question_es: "Según el canon WSET 3, ¿cuáles son los 4 factores naturales fundamentales que definen el terruño?",
-      answer_es: "1. El clima (temperatura, insolación, pluviometría, continentalidad/maritimidad).\n2. El suelo (retención hídrica, drenaje, nutrientes, reflexión solar de guijarros).\n3. La topografía (altitud, orientación de la ladera, pendiente).\n4. El factor biológico (microbiota del suelo y plagas/vectores).",
-      solution_es: "WSET 3 enseña a vincular cada rasgo de la copa (ej. alta acidez por altitud o noches frías) directamente con un factor ambiental específico.",
-      tags: ["wset3", "terroir", "clima", "suelo"]
-    },
-    {
-      id: "card_ribera_vs_rioja",
-      category: "Terruño & Comparativa (WSET 3)",
-      standard: "WSET3",
-      question_es: "¿Qué factores climáticos diferencian la expresión de la Tempranillo en Ribera del Duero frente a Rioja?",
-      answer_es: "Ribera del Duero se sitúa en la meseta castellana a gran altitud (750 - 950 m) con continentalidad extrema: inviernos gélidos, veranos cortos y oscilaciones térmicas de hasta 20°C entre día y noche que engrosan el hollejo, aportando gran color, tanino potente y acidez vivaz. Rioja (a menor altitud, 350 - 650 m) goza de influencia atlántica moderadora y suelos arcillo-calcáreos que favorecen un perfil más aromático, sedoso y de acidez integrada.",
-      solution_es: "Ribera = Estructura, músculo, fruta negra concentrada. Rioja = Elegancia, fruta roja fresca, complejidad de crianza.",
-      tags: ["wset3", "ribera_del_duero", "rioja", "tempranillo"]
-    },
-    {
-      id: "card_suelos_llicorella",
-      category: "Geología & Edafología (WSET 3)",
-      standard: "WSET3",
-      question_es: "¿Qué propiedades físicas tiene la Llicorella del Priorat y cómo modela el vino de Garnacha y Cariñena?",
-      answer_es: "Es una pizarra paleozoica carbonífera de estructura laminar con mica y cuarzo. Es un suelo sumamente pobre en nutrientes que no retiene agua en superficie, forzando a las raíces a fisurar la roca hasta 15-20 m de profundidad. Las lajas oscuras se calientan durante el día e irradian calor por la noche.",
-      solution_es: "Origina rendimientos mínimos (< 1 kg por cepa), taninos maduros y una inconfundible mineralidad de grafito y piedra caliente.",
-      tags: ["wset3", "priorat", "llicorella", "suelos", "geologia"]
-    },
-
-    // --- 5. PROTOCOLO DE SALA & DIRECTRICES DE SERVICIO (ASI) ---
-    {
-      id: "card_decantacion_vs_jarreo",
-      category: "Servicio & Sala (Norma ASI)",
-      standard: "ASI",
-      question_es: "Según el estándar de la ASI, ¿en qué se diferencia la decantación del jarreado (trasiego) y cuándo se aplica cada una?",
-      answer_es: "La decantación se realiza sobre una vela encendida con movimiento pausado y continuo para separar sedimentos sólidos en vinos viejos sin oxigenarlos en exceso. El jarreado (aireación) se realiza volcando el vino con fuerza en un decantador de base ancha para aportar oxígeno a vinos jóvenes tánicos que se encuentran aromáticamente cerrados o reducidos.",
-      solution_es: "Nunca agitar un vino viejo en decantador: el choque brusco de oxígeno puede destruir sus delicados aromas terciarios en minutos.",
-      tags: ["asi", "servicio", "decantacion", "protocolo", "sumiller"]
-    }
-  ];
-
-  if (typeof module !== 'undefined' && module.exports) {
-    module.exports = STUDY_CARDS;
-  } else {
-    root.STUDY_CARDS = STUDY_CARDS;
+  // ==========================================
+  // BLOQUE 3: ASI (ASSOCIATION DE LA SOMMELLERIE INTERNATIONALE)
+  // ==========================================
+  {
+    id: "card_capsaicina",
+    standard: "ASI",
+    category: "Alimentos Críticos & Termorreceptores (ASI / Jamie Goode)",
+    question_es: "¿Por qué el picante (capsaicina) no se debe maridar con tintos de alto tanino y alta graduación alcohólica según la normativa ASI?",
+    answer_es: "La capsaicina no es un sabor, sino un compuesto químico que se une a los receptores de dolor y calor TRPV1 de la cavidad bucal. El alcohol etílico activa exactamente los mismos receptores TRPV1 reduciendo su umbral térmico (hace que ardan a temperatura corporal). Los taninos astringentes, al deshidratar la saliva y desnudar las mucosas, dejan los receptores desprotegidos. El resultado conjunto es una sensación de quemazón dolorosa e insoportable y una magnificación de la aspereza del vino.",
+    solution_es: "Regla de Sumillería ASI: Platos picantes requieren vinos con baja graduación alcohólica (<11.5% vol), nula presencia tánica, elevada frescura y ligero azúcar residual (Off-dry Riesling alemán Kabinett o espumoso dulce tipo Moscato d'Asti), ya que el azúcar mitiga físicamente el estímulo TRPV1.",
+    citation: "ASI Sommellerie Guidelines & Jamie Goode (The Science of Wine)"
+  },
+  {
+    id: "card_jamon_iberico_oleico",
+    standard: "ASI",
+    category: "Armonías & Análisis Lipídico (ASI / Pascaline Lepeltier)",
+    question_es: "¿Cuál es la explicación físico-química del maridaje canónico entre el Jamón Ibérico de Bellota y un vino de Crianza Biológica (Fino/Manzanilla)?",
+    answer_es: "El jamón de bellota tiene un punto de fusión lipídico muy bajo (<28°C) gracias a su altísimo contenido en ácido oleico monoinsaturado (>55%), lo que tapiza las papilas gustativas de una película grasa untuosa persistente y rica en salazón. La Manzanilla y el Fino carecen completamente de glicerol (consumido por el velo de flor), poseen un pH muy bajo (alta acidez) y un contenido elevado en sales minerales y acetaldehídos punzantes.",
+    solution_es: "La ausencia de glicerol y la riqueza salina actúan como un bisturí limpiador del paladar (efecto detergente no agresivo), disolviendo la capa de grasa tras cada bocado sin apagar los delicados aromas de bellota y curación.",
+    citation: "One Thousand Vines (Pascaline Lepeltier) & ASI Harmony Protocols"
+  },
+  {
+    id: "card_tca_umbral",
+    standard: "ASI",
+    category: "Defectos del Vino & Protocolo de Sala (ASI / Jamie Goode)",
+    question_es: "¿Cuál es el compuesto químico responsable del olor a corcho ('cork taint'), su umbral de percepción humana y su impacto en sala?",
+    answer_es: "El 2,4,6-Tricloroanisol (TCA), producido por hongos microscópicos (Penicillium, Trichoderma) en presencia de clorofenoles durante el tratamiento o almacenamiento del corcho o la bodega.\n- Umbral sensorial: Extraordinariamente bajo, perceptible por el ser humano a partir de 2 a 4 nanogramos por litro (partes por trillón, ng/L).\n- Efecto en copa: Incluso a concentraciones sub-umbral (1-2 ng/L) donde no huele a cartón mojado o humedad de sótano, el TCA actúa anestesiando los receptores olfativos, 'matando' y aplanando completamente la fruta, el frescor y la tipicidad del vino.",
+    solution_es: "Protocolo ASI de Sala: La comprobación visual y olfativa de la botella por el sumiller antes de servir a la mesa del comensal tiene como objetivo primario detectar este defecto antes del servicio.",
+    citation: "The Science of Wine (Jamie Goode) & ASI Technical Guidelines"
+  },
+  {
+    id: "card_decantacion_vs_jarreo",
+    standard: "ASI",
+    category: "Servicio & Sala (Norma ASI)",
+    question_es: "¿En qué se diferencia técnicamente la decantación con vela de la aireación/oxigenación (jarreo) y cuándo está contraindicada cada una?",
+    answer_es: "1. Decantación con vela (Vinos viejos/maduros): Procedimiento delicado donde se trasiega el vino lentamente frente a un foco de luz (vela) para detener el flujo en el hombro de la botella en cuanto asomen los sedimentos o posos (precipitado de taninos polimerizados y antocianos). Contraindicación: Airear agresivamente un vino muy anciano puede oxidarlo y colapsar sus frágiles aromas terciarios en cuestión de 15 minutos.\n2. Jarreo / Oxigenación (Vinos jóvenes y vigorosos): Caída libre de vino en el decantador de base ancha para forzar contacto masivo con oxígeno atmosférico y volatilizar mercaptanos reductivos o suavizar taninos cerrados. Contraindicación: Nunca aplicar a añadas históricas con poso.",
+    solution_es: "Regla ASI de Concurso: Presentar la botella al cliente, cortar la cápsula bajo el gollete inferior, descorchar sin ruido, limpiar la boca de la botella, encender la vela y trasvasar en un solo movimiento continuo sin interrupciones.",
+    citation: "ASI Sommelier Competition Standards & Service Manual"
+  },
+  {
+    id: "card_asi_serving_temperatures",
+    standard: "ASI",
+    category: "Temperaturas de Servicio Canónicas (Norma ASI)",
+    question_es: "¿Cuáles son las temperaturas canónicas de servicio de vino fijadas por la ASI y por qué el término 'temperatura ambiente' es un anacronismo peligroso?",
+    answer_es: "Cánones universales ASI:\n- Espumosos (Champagne, Cava): 6°C a 8°C (conserva la presión de CO2 y la tensión de burbuja).\n- Blancos jóvenes ligeros y secos: 7°C a 10°C.\n- Blancos estructurados con madera / Orange Wines: 10°C a 12°C.\n- Rosados: 8°C a 10°C.\n- Tintos ligeros (Pinot Noir, Mencía, Gamay): 12°C a 14°C.\n- Tintos de cuerpo y tanino (Ribera, Burdeos, Barolo): 16°C a 18°C (nunca más de 18°C).\n- Generosos dulces y fortificados: 12°C a 15°C (Finos/Manzanillas: 6-8°C).",
+    solution_es: "El error de la 'temperatura ambiente': Proviene de los castillos y comedores señoriales del siglo XIX europeo (16-17°C). En salas y hogares contemporáneos a 22-24°C, el vino a 'temperatura ambiente' produce volatilidad agresiva del etanol, sensación de ardor alcohólico, flacidez estructural y pérdida total de frescura frutal.",
+    citation: "ASI Guidelines for Sommelier Competitions & Pascaline Lepeltier"
+  },
+  {
+    id: "card_asi_glassware_geometry",
+    standard: "ASI",
+    category: "Cristalería & Dinámica de Fluidos (ASI / Jamie Goode)",
+    question_es: "¿Cómo afecta la geometría de la copa (volumen del cáliz, diámetro de apertura y chimenea) a la percepción sensorial del vino?",
+    answer_es: "La copa no cambia la composición química del vino, pero gobierna la tasa de evaporación y concentración de compuestos volátiles:\n1. Volumen del cáliz (Headspace): Un cáliz amplio (estilo Burdeos o Borgoña) ofrece una mayor superficie de contacto líquido-aire, acelerando la liberación de aromas complejos y facilitando el arremolinado sin salpicaduras.\n2. Diámetro del borde (Chimenea): Una boca más estrecha actúa como embudo térmico concentrando los aromas volátiles más densos en la fosa nasal. Copas demasiado anchas dispersan los ésteres delicados.\n3. Ángulo de inclinación del sorbo: El diámetro y curvatura del borde obligan al degustador a inclinar la cabeza de manera distinta, depositando el primer impacto del flujo en diferentes áreas iniciales de la cavidad oral.",
+    solution_es: "Norma ASI de Cristalería: Cristal fino (sin reborde grueso o 'roll'), cáliz en forma de tulipán cónico, fuste o tallo largo para sujetar la copa sin transmitir calor corporal al vino, y base perfectamente nivelada.",
+    citation: "The Science of Wine (Jamie Goode) & ASI Standards"
+  },
+  {
+    id: "card_asi_cheese_pairing_lipids",
+    standard: "ASI",
+    category: "Armonía Molecular con Quesos (ASI / Pascaline Lepeltier)",
+    question_es: "¿Por qué el maridaje tradicional de quesos azules (Roquefort, Cabrales, Stilton) con tintos jóvenes potentes es un error sensorial y qué propone la sumillería contemporánea?",
+    answer_es: "Los quesos azules presentan un alto contenido de sal (NaCl), grasas lácteas densas y compuestos aromáticos agresivos generados por Penicillium roqueforti (ácidos grasos libres de cadena corta como ácido butírico, caproico e isovalérico). Al combinarse con un tinto tánico con alta graduación:\n- Los taninos reaccionan con las proteínas y grasas del queso generando un regusto intensamente amargo y metálico.\n- La sal del queso resalta la astringencia y la dureza del tanino del tinto.",
+    solution_es: "La solución científica ASI: Contraste osmótico y complementariedad. Vinos dulces nobles con alta acidez (Sauternes botritizado con Roquefort, Oporto Vintage con Stilton, o Fondillón con quesos curados). El azúcar residual equilibra la sal, la alta acidez corta la grasa láctea y la riqueza de ambos crea una tercera dimensión gustativa armoniosa.",
+    citation: "One Thousand Vines (Pascaline Lepeltier) & ASI Food & Wine Standards"
+  },
+  {
+    id: "card_asi_sommelier_service_ritual",
+    standard: "ASI",
+    category: "Protocolo & Ritual de Sala (Norma ASI)",
+    question_es: "¿Cuál es el protocolo canónico de apertura y servicio de una botella de vino tranquilo en mesa según las normas de concurso ASI?",
+    answer_es: "1. PRESENTACIÓN: Mostrar la botella al comensal anfitrión anunciando productor, apelación, variedad y añada, manteniendo la etiqueta visible.\n2. CORTE DE CÁPSULA: Cortar limpiamente la cápsula de estaño por debajo del gollete inferior (anillo inferior) para evitar que el vino toque restos de metal al verter. Retirar la cápsula con el lito y depositarla discretamente.\n3. LIMPIEZA INICIAL: Limpiar la boca exterior del gollete con el lito de tela antes de insertar la espiral.\n4. DESCORCHE: Introducir el sacacorchos en el centro del corcho, extraerlo verticalmente en dos tiempos sin perforar la base del tapón y silenciando el 'pop' final.\n5. EXAMEN DEL CORCHO: Inspeccionar visual y olfativamente el corcho, depositándolo en un platillo a la derecha del anfitrión.\n6. LIMPIEZA FINAL Y SERVICIO: Limpiar el interior de la boca de la botella, verter una dosis de cata (30-50 ml) al anfitrión por su derecha. Una vez aprobado, servir al resto de comensales siguiendo precedencias (mujeres o invitados primero, anfitrión en último lugar), finalizando cada vertido con un ligero giro de muñeca sin gotear.",
+    solution_es: "La etiqueta de la botella debe permanecer orientada hacia el cliente en todo momento durante el servicio en sala.",
+    citation: "ASI Guidelines for Best Sommelier of the World Competition"
   }
-})(typeof window !== 'undefined' ? window : globalThis);
+];
