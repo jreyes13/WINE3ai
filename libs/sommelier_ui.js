@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
             "<div class='flex items-center justify-between mb-3 relative z-10'>" +
               "<span class='text-[10px] font-mono px-2.5 py-1 rounded " + t.badgeBg + " border uppercase font-bold'>" +
                 t.icon + " " + tierData.name_es +
-              </span>" +
+              "</span>" +
               "<span class='text-xs font-mono font-bold text-amber-400'>" + (rec.price_est || tierData.priceRange) + "</span>" +
             "</div>" +
             "<h4 class='text-xl font-bold font-serif-wine text-white mb-1.5 leading-snug'>" + rec.wine + "</h4>" +

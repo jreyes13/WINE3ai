@@ -353,15 +353,7 @@
       related_grapes: ["Chardonnay", "Pinot Noir", "Xarel·lo", "Macabeo", "Parellada"],
       related_regions: ["Champagne", "Cava", "Corpinnat", "Franciacorta"],
       tags: ["espumosos", "metodo_tradicional", "champagne", "cava", "autolisis", "lias"]
-    }
-  ];
-
-  if (typeof module !== 'undefined' && module.exports) {
-    module.exports = WINEPEDIA_ARTICLES;
-  } else {
-    root.WINEPEDIA_ARTICLES = WINEPEDIA_ARTICLES;
-  }
-})(typeof window !== 'undefined' ? window : globalThis);,
+    },
   // ==========================================
   // BLOQUE CMS ADICIONAL (COMPLETANDO 8 ARTÍCULOS)
   // ==========================================
@@ -645,3 +637,10 @@
     tags: ["protocolo de sala", "servicio", "asi", "descorche", "sumiller"]
   }
 ];
+
+  if (typeof module !== 'undefined' && module.exports) {
+    module.exports = WINEPEDIA_ARTICLES;
+  } else {
+    root.WINEPEDIA_ARTICLES = WINEPEDIA_ARTICLES;
+  }
+})(typeof window !== 'undefined' ? window : globalThis);
