@@ -99,8 +99,8 @@
   .t-origin { font-size: 4.2mm; color: #334155; font-weight: 700; white-space: nowrap; }
   .t-mass { font-size: 4.2mm; color: #0f172a; font-weight: 800; background: #f1f5f9; border: 0.25mm solid #cbd5e1; border-radius: 1mm; padding: 0.2mm 1mm; }
   .t-symbol { font-size: 26mm; font-weight: 900; text-align: center; line-height: 0.95; color: var(--c); letter-spacing: -0.5mm; margin: 0.2mm 0; }
-  .t-name { font-size: 5.4mm; font-weight: 900; text-align: center; color: #0f172a; line-height: 1.1;
-            white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .t-name { font-size: 5.2mm; font-weight: 900; text-align: center; color: #0f172a; line-height: 1.1;
+            letter-spacing: -0.15mm; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .t-val { display: flex; justify-content: center; gap: 1.2mm; margin-top: 0.6mm; }
   .vb { font-size: 3.8mm; font-weight: 800; border-radius: 1mm; padding: 0.3mm 1mm; border: 0.3mm solid; }
   .vb.ac { color: #0369a1; border-color: #38bdf8; background: #f0f9ff; }
@@ -112,74 +112,78 @@
   .t-chem { font-size: 3.1mm; color: #64748b; font-weight: 500; text-align: center; font-style: italic; line-height: 1.15;
             white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 0.3mm; }
 
-  /* ---------- SIDEBAR (Optimized 0-gap vertical fill) ---------- */
+  /* ---------- SIDEBAR (Designer-optimized 0-gap vertical fill) ---------- */
   .side {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 4.5mm;
     min-height: 0;
-    gap: 4mm;
   }
   .box {
     background: #fff;
-    border-radius: 3.2mm;
-    padding: 3.8mm 4.6mm;
+    border-radius: 3.4mm;
+    padding: 4.4mm 5.2mm;
     box-shadow: 0 0 0 0.4mm #cbd5e1 inset;
   }
   .box h3 {
     font-size: 5.6mm;
     font-weight: 900;
     color: #7f1d1d;
-    margin-bottom: 2mm;
+    margin-bottom: 2.2mm;
     letter-spacing: 0.3mm;
   }
   
-  /* Box 1: Anatomy */
-  .anat { display: grid; grid-template-columns: 80mm 1fr; gap: 5mm; align-items: center; }
-  .anat .tile { height: 68mm; --c: #b91c1c; }
-  .anat ol { list-style: none; font-size: 4.2mm; line-height: 1.34; color: #1e293b; }
-  .anat li { margin-bottom: 1.4mm; }
+  /* Box 1: Anatomy (1:1 scale sample tile) */
+  .anat { display: grid; grid-template-columns: 82mm 1fr; gap: 5.5mm; align-items: center; }
+  .anat .tile { height: 75mm; --c: #b91c1c; }
+  .anat ol { list-style: none; font-size: 4.6mm; line-height: 1.48; color: #1e293b; }
+  .anat li { margin-bottom: 1.6mm; }
+  .anat li:last-child { margin-bottom: 0; }
   .anat li b { color: #0f172a; font-weight: 800; }
-  .num { display: inline-flex; width: 4.8mm; height: 4.8mm; border-radius: 50%; background: #f59e0b; color: #fff;
-         font-size: 3.1mm; font-weight: 900; align-items: center; justify-content: center; margin-right: 1.2mm; }
+  .num { display: inline-flex; width: 5.4mm; height: 5.4mm; border-radius: 50%; background: #f59e0b; color: #fff;
+         font-size: 3.5mm; font-weight: 900; align-items: center; justify-content: center; margin-right: 1.4mm; }
 
-  /* Box 2: Top Varieties Stacked Bar Chart */
-  .top-var { padding: 3.8mm 4.6mm; }
-  .top-var-sub { font-size: 3.5mm; color: #475569; font-weight: 600; margin-top: -1.2mm; margin-bottom: 2.2mm; }
-  .top-var-list { display: flex; flex-direction: column; gap: 1.6mm; }
-  .top-var-item { display: flex; flex-direction: column; gap: 0.6mm; }
+  /* Box 2: Top 30 Varieties Stacked Bar Chart */
+  .top-var { padding: 4.4mm 5.2mm; }
+  .top-var-sub { font-size: 3.7mm; color: #475569; font-weight: 600; margin-top: -1.2mm; margin-bottom: 3.2mm; }
+  .top-var-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5.5mm; }
+  .top-var-col { display: flex; flex-direction: column; gap: 2.3mm; }
+  .top-var-item { display: flex; flex-direction: column; gap: 0.8mm; }
   .top-var-meta { display: flex; justify-content: space-between; align-items: baseline; }
-  .top-var-left { display: flex; align-items: center; gap: 1.5mm; }
-  .top-var-rank { font-size: 3.8mm; font-weight: 900; color: #d97706; width: 6.5mm; }
-  .top-var-dot { width: 3mm; height: 3mm; border-radius: 50%; }
-  .top-var-name { font-size: 4.4mm; font-weight: 800; color: #0f172a; }
-  .top-var-total { font-size: 3.6mm; color: #475569; }
+  .top-var-left { display: flex; align-items: center; gap: 1.5mm; min-width: 0; overflow: hidden; }
+  .top-var-rank { font-size: 4.2mm; font-weight: 900; color: #b45309; width: 7.6mm; flex-shrink: 0; }
+  .top-var-dot { width: 3.5mm; height: 3.5mm; border-radius: 50%; flex-shrink: 0; }
+  .top-var-name { font-size: 4.2mm; font-weight: 800; color: #0f172a; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .top-var-total { font-size: 3.5mm; color: #475569; white-space: nowrap; margin-left: 1.5mm; flex-shrink: 0; }
   .top-var-total b { color: #0f172a; font-weight: 800; }
-  .top-var-bar { display: flex; height: 5.6mm; border-radius: 1.2mm; overflow: hidden; background: #e2e8f0; font-size: 2.9mm; font-weight: 800; color: #fff; line-height: 5.6mm; }
+  .top-var-bar { display: flex; height: 6.2mm; border-radius: 1.4mm; overflow: hidden; background: #e2e8f0; font-size: 3.1mm; font-weight: 800; color: #fff; line-height: 6.2mm; }
   .tseg { display: flex; align-items: center; justify-content: center; overflow: hidden; white-space: nowrap; padding: 0 1mm; text-overflow: ellipsis; }
   .tseg span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
   /* Box 3: Climates */
-  .clim-row { display: flex; gap: 2.5mm; align-items: flex-start; margin-bottom: 1.6mm; font-size: 3.8mm; line-height: 1.28; color: #1e293b; }
-  .clim-row .sw { flex: 0 0 5.5mm; height: 5.5mm; border-radius: 1.2mm; margin-top: 0.4mm; }
+  .clim-row { display: flex; gap: 3.2mm; align-items: flex-start; margin-bottom: 2.4mm; font-size: 4.3mm; line-height: 1.38; color: #1e293b; }
+  .clim-row:last-child { margin-bottom: 0; }
+  .clim-row .sw { flex: 0 0 6.8mm; height: 6.8mm; border-radius: 1.5mm; margin-top: 0.3mm; }
   .clim-row b { color: #0f172a; font-weight: 800; }
 
   /* Box 4: Aromas 54 Index */
-  .aromas-cols { column-count: 2; column-gap: 6mm; font-size: 3.9mm; line-height: 1.48; color: #1e293b; }
-  .aromas-cols .fam { font-weight: 900; color: #7f1d1d; font-size: 4.4mm; margin-top: 1.2mm; margin-bottom: 0.4mm; break-after: avoid; }
+  .aromas-cols { column-count: 2; column-gap: 6.5mm; font-size: 4.4mm; line-height: 1.66; color: #1e293b; }
+  .aromas-cols .fam { font-weight: 900; color: #7f1d1d; font-size: 4.9mm; margin-top: 1.8mm; margin-bottom: 0.6mm; break-after: avoid; }
   .aromas-cols .fam:first-child { margin-top: 0; }
   .aromas-cols .ar { margin-bottom: 0.4mm; }
-  .aromas-cols .ar b { display: inline-block; min-width: 6.5mm; color: #b45309; font-weight: 800; }
-  .aromas-cols .ar i { color: #64748b; font-size: 3.1mm; font-weight: 500; }
+  .aromas-cols .ar b { display: inline-block; min-width: 7.2mm; color: #b45309; font-weight: 800; }
+  .aromas-cols .ar i { color: #64748b; font-size: 3.5mm; font-weight: 500; }
 
   /* Box 5: Dynasties */
-  .dyn-card { font-size: 4.1mm; line-height: 1.34; color: #1e293b; margin-bottom: 1.6mm; padding-left: 3mm; border-left: 1.2mm solid #f59e0b; }
+  .dyn-card { font-size: 4.4mm; line-height: 1.44; color: #1e293b; margin-bottom: 2.4mm; padding: 3mm 4mm; background: #f8fafc; border-radius: 1.8mm; border-left: 2mm solid #f59e0b; }
+  .dyn-card:last-of-type { margin-bottom: 0; }
   .dyn-card.d-pinot { border-left-color: #ca8a04; }
   .dyn-card.d-cab { border-left-color: #991b1b; }
   .dyn-card.d-sav { border-left-color: #0ea5e9; }
   .dyn-card.d-iber { border-left-color: #dc2626; }
   .dyn-card b { color: #0f172a; font-weight: 800; }
-  .dyn-note { font-size: 3.2mm; color: #64748b; font-style: italic; margin-top: 1.4mm; }
+  .dyn-note { font-size: 3.5mm; color: #64748b; font-style: italic; margin-top: 2mm; }
 
   /* ---------- FOOTER ---------- */
   .foot { display: flex; justify-content: space-between; align-items: center; font-size: 4.2mm; color: #475569; font-weight: 600;
@@ -221,7 +225,7 @@
           <ol>
             
             <li><span class="num">1</span><b>Nº atómico (Z 1–81):</b> posición ordinal única en la matriz cartesiana 9×9.</li>
-            <li><span class="num">2</span><b>Origen + DOs:</b> país de origen y número total de denominaciones oficiales donde está autorizada.</li>
+            <li><span class="num">2</span><b>Origen + DOs:</b> país de origen y total de denominaciones oficiales protegidas.</li>
             <li><span class="num">3</span><b>Masa (A 1.0–5.0):</b> cuerpo, densidad, extracto seco y peso táctil en boca.</li>
             <li><span class="num">4</span><b>Símbolo:</b> abreviatura mnemotécnica de 2 letras en formato atómico destacado.</li>
             <li><span class="num">5</span><b>Valencias (1–5):</b> <b>Ac</b> acidez · <b>Tn</b> tanino · <b>Cp</b> cuerpo/crianza · <b>Az</b> azúcar residual.</li>
@@ -233,120 +237,345 @@
 
       
       <div class="box top-var">
-        <h3>📊 TOP 10 VARIEDADES MÁS CULTIVADAS & PRESENCIA GLOBAL</h3>
+        <h3>📊 TOP 30 VARIEDADES MÁS CULTIVADAS & PRESENCIA GLOBAL</h3>
         <div class="top-var-sub">Presencia en denominaciones de origen oficiales (DOs / AOCs / DOCGs) y desglose por países</div>
-        <div class="top-var-list">
-          
+        <div class="top-var-grid">
+          <div class="top-var-col">
+            
         <div class="top-var-item">
           <div class="top-var-meta">
             <div class="top-var-left">
               <span class="top-var-rank">#1</span>
               <span class="top-var-dot" style="background:#ca8a04;"></span>
-              <span class="top-var-name">Chardonnay</span>
+              <span class="top-var-name" title="Chardonnay">Chardonnay</span>
             </div>
-            <span class="top-var-total"><b>172</b> DOs · 18 países</span>
+            <span class="top-var-total"><b>172</b> DOs · 18p.</span>
           </div>
-          <div class="top-var-bar"><div class="tseg" style="width:35.5%;background:#1d4ed8;" title="Francia: 61 (35.5%)"><span>🇫🇷 Francia 36%</span></div><div class="tseg" style="width:21.5%;background:#dc2626;" title="España: 37 (21.5%)"><span>🇪🇸 España 22%</span></div><div class="tseg" style="width:9.3%;background:#0284c7;" title="Hungría: 16 (9.3%)"><span>🇭🇺 9%</span></div><div class="tseg" style="width:7.6%;background:#059669;" title="Italia: 13 (7.6%)"><span>🇮🇹 8%</span></div><div class="tseg tseg-other" style="width:26.1%;background:#64748b;" title="Otros (14 países): 45"><span>+14 Otros 26%</span></div></div>
+          <div class="top-var-bar"><div class="tseg" style="width:35.5%;background:#1d4ed8;" title="Francia: 61 DOs (35.5%)"><span>🇫🇷 FRA 36%</span></div><div class="tseg" style="width:21.5%;background:#dc2626;" title="España: 37 DOs (21.5%)"><span>🇪🇸 22%</span></div><div class="tseg" style="width:9.3%;background:#0284c7;" title="Hungría: 16 DOs (9.3%)"><span>🇭🇺</span></div><div class="tseg tseg-other" style="width:33.7%;background:#64748b;" title="Otros (15 países): 58"><span>+15 (34%)</span></div></div>
         </div>
         <div class="top-var-item">
           <div class="top-var-meta">
             <div class="top-var-left">
               <span class="top-var-rank">#2</span>
               <span class="top-var-dot" style="background:#ef4444;"></span>
-              <span class="top-var-name">Cabernet Sauvignon</span>
+              <span class="top-var-name" title="Cabernet Sauvignon">Cabernet Sauvignon</span>
             </div>
-            <span class="top-var-total"><b>166</b> DOs · 18 países</span>
+            <span class="top-var-total"><b>166</b> DOs · 18p.</span>
           </div>
-          <div class="top-var-bar"><div class="tseg" style="width:36.1%;background:#dc2626;" title="España: 60 (36.1%)"><span>🇪🇸 España 36%</span></div><div class="tseg" style="width:33.7%;background:#1d4ed8;" title="Francia: 56 (33.7%)"><span>🇫🇷 Francia 34%</span></div><div class="tseg" style="width:4.2%;background:#059669;" title="Italia: 7 (4.2%)"><span>🇮🇹</span></div><div class="tseg" style="width:4.2%;background:#0284c7;" title="Hungría: 7 (4.2%)"><span>🇭🇺</span></div><div class="tseg tseg-other" style="width:21.8%;background:#64748b;" title="Otros (14 países): 36"><span>+14 Otros 22%</span></div></div>
+          <div class="top-var-bar"><div class="tseg" style="width:36.1%;background:#dc2626;" title="España: 60 DOs (36.1%)"><span>🇪🇸 ESP 36%</span></div><div class="tseg" style="width:33.7%;background:#1d4ed8;" title="Francia: 56 DOs (33.7%)"><span>🇫🇷 FRA 34%</span></div><div class="tseg" style="width:4.2%;background:#059669;" title="Italia: 7 DOs (4.2%)"><span></span></div><div class="tseg tseg-other" style="width:26.0%;background:#64748b;" title="Otros (15 países): 43"><span>+15 (26%)</span></div></div>
         </div>
         <div class="top-var-item">
           <div class="top-var-meta">
             <div class="top-var-left">
               <span class="top-var-rank">#3</span>
               <span class="top-var-dot" style="background:#ef4444;"></span>
-              <span class="top-var-name">Syrah</span>
+              <span class="top-var-name" title="Syrah">Syrah</span>
             </div>
-            <span class="top-var-total"><b>150</b> DOs · 12 países</span>
+            <span class="top-var-total"><b>150</b> DOs · 12p.</span>
           </div>
-          <div class="top-var-bar"><div class="tseg" style="width:48.0%;background:#1d4ed8;" title="Francia: 72 (48.0%)"><span>🇫🇷 Francia 48%</span></div><div class="tseg" style="width:36.7%;background:#dc2626;" title="España: 55 (36.7%)"><span>🇪🇸 España 37%</span></div><div class="tseg" style="width:4.0%;background:#b91c1c;" title="Turquía: 6 (4.0%)"><span>🇹🇷</span></div><div class="tseg" style="width:2.7%;background:#ea580c;" title="Líbano: 4 (2.7%)"><span>🇱🇧</span></div><div class="tseg tseg-other" style="width:8.6%;background:#64748b;" title="Otros (8 países): 13"><span>+8 (9%)</span></div></div>
+          <div class="top-var-bar"><div class="tseg" style="width:48.0%;background:#1d4ed8;" title="Francia: 72 DOs (48.0%)"><span>🇫🇷 FRA 48%</span></div><div class="tseg" style="width:36.7%;background:#dc2626;" title="España: 55 DOs (36.7%)"><span>🇪🇸 ESP 37%</span></div><div class="tseg" style="width:4.0%;background:#991b1b;" title="Turquía: 6 DOs (4.0%)"><span></span></div><div class="tseg tseg-other" style="width:11.3%;background:#64748b;" title="Otros (9 países): 17"><span>+9</span></div></div>
         </div>
         <div class="top-var-item">
           <div class="top-var-meta">
             <div class="top-var-left">
               <span class="top-var-rank">#4</span>
               <span class="top-var-dot" style="background:#ef4444;"></span>
-              <span class="top-var-name">Merlot</span>
+              <span class="top-var-name" title="Merlot">Merlot</span>
             </div>
-            <span class="top-var-total"><b>139</b> DOs · 12 países</span>
+            <span class="top-var-total"><b>139</b> DOs · 12p.</span>
           </div>
-          <div class="top-var-bar"><div class="tseg" style="width:35.3%;background:#dc2626;" title="España: 49 (35.3%)"><span>🇪🇸 España 35%</span></div><div class="tseg" style="width:30.9%;background:#1d4ed8;" title="Francia: 43 (30.9%)"><span>🇫🇷 Francia 31%</span></div><div class="tseg" style="width:10.1%;background:#059669;" title="Italia: 14 (10.1%)"><span>🇮🇹 10%</span></div><div class="tseg" style="width:6.5%;background:#0284c7;" title="Hungría: 9 (6.5%)"><span>🇭🇺</span></div><div class="tseg tseg-other" style="width:17.2%;background:#64748b;" title="Otros (8 países): 24"><span>+8 Otros 17%</span></div></div>
+          <div class="top-var-bar"><div class="tseg" style="width:35.3%;background:#dc2626;" title="España: 49 DOs (35.3%)"><span>🇪🇸 ESP 35%</span></div><div class="tseg" style="width:30.9%;background:#1d4ed8;" title="Francia: 43 DOs (30.9%)"><span>🇫🇷 FRA 31%</span></div><div class="tseg" style="width:10.1%;background:#059669;" title="Italia: 14 DOs (10.1%)"><span>🇮🇹</span></div><div class="tseg tseg-other" style="width:23.7%;background:#64748b;" title="Otros (9 países): 33"><span>+9 (24%)</span></div></div>
         </div>
         <div class="top-var-item">
           <div class="top-var-meta">
             <div class="top-var-left">
               <span class="top-var-rank">#5</span>
               <span class="top-var-dot" style="background:#ef4444;"></span>
-              <span class="top-var-name">Garnacha / Grenache</span>
+              <span class="top-var-name" title="Garnacha (Grenache)">Garnacha (Grenache)</span>
             </div>
-            <span class="top-var-total"><b>124</b> DOs · 3 países</span>
+            <span class="top-var-total"><b>124</b> DOs · 3p.</span>
           </div>
-          <div class="top-var-bar"><div class="tseg" style="width:61.3%;background:#1d4ed8;" title="Francia: 76 (61.3%)"><span>🇫🇷 Francia 61%</span></div><div class="tseg" style="width:37.1%;background:#dc2626;" title="España: 46 (37.1%)"><span>🇪🇸 España 37%</span></div><div class="tseg" style="width:1.6%;background:#059669;" title="Italia: 2 (1.6%)"><span>🇮🇹</span></div></div>
+          <div class="top-var-bar"><div class="tseg" style="width:61.3%;background:#1d4ed8;" title="Francia: 76 DOs (61.3%)"><span>🇫🇷 FRA 61%</span></div><div class="tseg" style="width:37.1%;background:#dc2626;" title="España: 46 DOs (37.1%)"><span>🇪🇸 ESP 37%</span></div><div class="tseg" style="width:1.6%;background:#059669;" title="Italia: 2 DOs (1.6%)"><span></span></div></div>
         </div>
         <div class="top-var-item">
           <div class="top-var-meta">
             <div class="top-var-left">
               <span class="top-var-rank">#6</span>
               <span class="top-var-dot" style="background:#ef4444;"></span>
-              <span class="top-var-name">Pinot Noir</span>
+              <span class="top-var-name" title="Pinot Noir">Pinot Noir</span>
             </div>
-            <span class="top-var-total"><b>121</b> DOs · 13 países</span>
+            <span class="top-var-total"><b>121</b> DOs · 13p.</span>
           </div>
-          <div class="top-var-bar"><div class="tseg" style="width:60.3%;background:#1d4ed8;" title="Francia: 73 (60.3%)"><span>🇫🇷 Francia 60%</span></div><div class="tseg" style="width:10.7%;background:#d97706;" title="Alemania: 13 (10.7%)"><span>🇩🇪 11%</span></div><div class="tseg" style="width:5.0%;background:#059669;" title="Italia: 6 (5.0%)"><span>🇮🇹</span></div><div class="tseg" style="width:5.0%;background:#4f46e5;" title="Eslovenia: 6 (5.0%)"><span>🇸🇮</span></div><div class="tseg tseg-other" style="width:19.0%;background:#64748b;" title="Otros (9 países): 23"><span>+9 Otros 19%</span></div></div>
+          <div class="top-var-bar"><div class="tseg" style="width:60.3%;background:#1d4ed8;" title="Francia: 73 DOs (60.3%)"><span>🇫🇷 FRA 60%</span></div><div class="tseg" style="width:10.7%;background:#d97706;" title="Alemania: 13 DOs (10.7%)"><span>🇩🇪</span></div><div class="tseg" style="width:5.0%;background:#059669;" title="Italia: 6 DOs (5.0%)"><span></span></div><div class="tseg tseg-other" style="width:24.0%;background:#64748b;" title="Otros (10 países): 29"><span>+10 (24%)</span></div></div>
         </div>
         <div class="top-var-item">
           <div class="top-var-meta">
             <div class="top-var-left">
               <span class="top-var-rank">#7</span>
               <span class="top-var-dot" style="background:#ef4444;"></span>
-              <span class="top-var-name">Cabernet Franc</span>
+              <span class="top-var-name" title="Cabernet Franc">Cabernet Franc</span>
             </div>
-            <span class="top-var-total"><b>95</b> DOs · 11 países</span>
+            <span class="top-var-total"><b>95</b> DOs · 11p.</span>
           </div>
-          <div class="top-var-bar"><div class="tseg" style="width:72.6%;background:#1d4ed8;" title="Francia: 69 (72.6%)"><span>🇫🇷 Francia 73%</span></div><div class="tseg" style="width:7.4%;background:#0284c7;" title="Hungría: 7 (7.4%)"><span>🇭🇺 7%</span></div><div class="tseg" style="width:6.3%;background:#059669;" title="Italia: 6 (6.3%)"><span>🇮🇹</span></div><div class="tseg" style="width:4.2%;background:#dc2626;" title="España: 4 (4.2%)"><span>🇪🇸</span></div><div class="tseg tseg-other" style="width:9.5%;background:#64748b;" title="Otros (7 países): 9"><span>+7 (10%)</span></div></div>
+          <div class="top-var-bar"><div class="tseg" style="width:72.6%;background:#1d4ed8;" title="Francia: 69 DOs (72.6%)"><span>🇫🇷 FRA 73%</span></div><div class="tseg" style="width:7.4%;background:#0284c7;" title="Hungría: 7 DOs (7.4%)"><span></span></div><div class="tseg" style="width:6.3%;background:#059669;" title="Italia: 6 DOs (6.3%)"><span></span></div><div class="tseg tseg-other" style="width:13.7%;background:#64748b;" title="Otros (8 países): 13"><span>+8</span></div></div>
         </div>
         <div class="top-var-item">
           <div class="top-var-meta">
             <div class="top-var-left">
               <span class="top-var-rank">#8</span>
               <span class="top-var-dot" style="background:#ca8a04;"></span>
-              <span class="top-var-name">Sauvignon Blanc</span>
+              <span class="top-var-name" title="Sauvignon Blanc">Sauvignon Blanc</span>
             </div>
-            <span class="top-var-total"><b>87</b> DOs · 11 países</span>
+            <span class="top-var-total"><b>87</b> DOs · 11p.</span>
           </div>
-          <div class="top-var-bar"><div class="tseg" style="width:34.5%;background:#1d4ed8;" title="Francia: 30 (34.5%)"><span>🇫🇷 Francia 34%</span></div><div class="tseg" style="width:26.4%;background:#dc2626;" title="España: 23 (26.4%)"><span>🇪🇸 España 26%</span></div><div class="tseg" style="width:12.6%;background:#0284c7;" title="Hungría: 11 (12.6%)"><span>🇭🇺 13%</span></div><div class="tseg" style="width:4.6%;background:#9333ea;" title="Austria: 4 (4.6%)"><span>🇦🇹</span></div><div class="tseg tseg-other" style="width:21.9%;background:#64748b;" title="Otros (7 países): 19"><span>+7 Otros 22%</span></div></div>
+          <div class="top-var-bar"><div class="tseg" style="width:34.5%;background:#1d4ed8;" title="Francia: 30 DOs (34.5%)"><span>🇫🇷 FRA 34%</span></div><div class="tseg" style="width:26.4%;background:#dc2626;" title="España: 23 DOs (26.4%)"><span>🇪🇸 26%</span></div><div class="tseg" style="width:12.6%;background:#0284c7;" title="Hungría: 11 DOs (12.6%)"><span>🇭🇺</span></div><div class="tseg tseg-other" style="width:26.5%;background:#64748b;" title="Otros (8 países): 23"><span>+8 (26%)</span></div></div>
         </div>
         <div class="top-var-item">
           <div class="top-var-meta">
             <div class="top-var-left">
               <span class="top-var-rank">#9</span>
               <span class="top-var-dot" style="background:#ef4444;"></span>
-              <span class="top-var-name">Tempranillo</span>
+              <span class="top-var-name" title="Tempranillo">Tempranillo</span>
             </div>
-            <span class="top-var-total"><b>74</b> DOs · 2 países</span>
+            <span class="top-var-total"><b>74</b> DOs · 2p.</span>
           </div>
-          <div class="top-var-bar"><div class="tseg" style="width:85.1%;background:#dc2626;" title="España: 63 (85.1%)"><span>🇪🇸 España 85%</span></div><div class="tseg" style="width:14.9%;background:#16a34a;" title="Portugal: 11 (14.9%)"><span>🇵🇹 15%</span></div></div>
+          <div class="top-var-bar"><div class="tseg" style="width:85.1%;background:#dc2626;" title="España: 63 DOs (85.1%)"><span>🇪🇸 ESP 85%</span></div><div class="tseg" style="width:14.9%;background:#16a34a;" title="Portugal: 11 DOs (14.9%)"><span>🇵🇹</span></div></div>
         </div>
         <div class="top-var-item">
           <div class="top-var-meta">
             <div class="top-var-left">
               <span class="top-var-rank">#10</span>
               <span class="top-var-dot" style="background:#ef4444;"></span>
-              <span class="top-var-name">Monastrell / Mourvèdre</span>
+              <span class="top-var-name" title="Monastrell (Mourvèdre)">Monastrell (Mourvèdre)</span>
             </div>
-            <span class="top-var-total"><b>65</b> DOs · 3 países</span>
+            <span class="top-var-total"><b>65</b> DOs · 3p.</span>
           </div>
-          <div class="top-var-bar"><div class="tseg" style="width:80.0%;background:#1d4ed8;" title="Francia: 52 (80.0%)"><span>🇫🇷 Francia 80%</span></div><div class="tseg" style="width:16.9%;background:#dc2626;" title="España: 11 (16.9%)"><span>🇪🇸 España 17%</span></div><div class="tseg" style="width:3.1%;background:#ea580c;" title="Líbano: 2 (3.1%)"><span>🇱🇧</span></div></div>
+          <div class="top-var-bar"><div class="tseg" style="width:80.0%;background:#1d4ed8;" title="Francia: 52 DOs (80.0%)"><span>🇫🇷 FRA 80%</span></div><div class="tseg" style="width:16.9%;background:#dc2626;" title="España: 11 DOs (16.9%)"><span>🇪🇸 17%</span></div><div class="tseg" style="width:3.1%;background:#ea580c;" title="Líbano: 2 DOs (3.1%)"><span></span></div></div>
         </div>
+        <div class="top-var-item">
+          <div class="top-var-meta">
+            <div class="top-var-left">
+              <span class="top-var-rank">#11</span>
+              <span class="top-var-dot" style="background:#ca8a04;"></span>
+              <span class="top-var-name" title="Pinot Gris">Pinot Gris</span>
+            </div>
+            <span class="top-var-total"><b>41</b> DOs · 10p.</span>
+          </div>
+          <div class="top-var-bar"><div class="tseg" style="width:24.4%;background:#1d4ed8;" title="Francia: 10 DOs (24.4%)"><span>🇫🇷 24%</span></div><div class="tseg" style="width:17.1%;background:#059669;" title="Italia: 7 DOs (17.1%)"><span>🇮🇹 17%</span></div><div class="tseg" style="width:17.1%;background:#d97706;" title="Alemania: 7 DOs (17.1%)"><span>🇩🇪 17%</span></div><div class="tseg tseg-other" style="width:41.4%;background:#64748b;" title="Otros (7 países): 17"><span>+7 (41%)</span></div></div>
+        </div>
+        <div class="top-var-item">
+          <div class="top-var-meta">
+            <div class="top-var-left">
+              <span class="top-var-rank">#12</span>
+              <span class="top-var-dot" style="background:#ca8a04;"></span>
+              <span class="top-var-name" title="Pinot Blanc">Pinot Blanc</span>
+            </div>
+            <span class="top-var-total"><b>40</b> DOs · 6p.</span>
+          </div>
+          <div class="top-var-bar"><div class="tseg" style="width:30.0%;background:#d97706;" title="Alemania: 12 DOs (30.0%)"><span>🇩🇪 DEU 30%</span></div><div class="tseg" style="width:22.5%;background:#9333ea;" title="Austria: 9 DOs (22.5%)"><span>🇦🇹 22%</span></div><div class="tseg" style="width:20.0%;background:#059669;" title="Italia: 8 DOs (20.0%)"><span>🇮🇹 20%</span></div><div class="tseg tseg-other" style="width:27.5%;background:#64748b;" title="Otros (3 países): 11"><span>+3 (28%)</span></div></div>
+        </div>
+        <div class="top-var-item">
+          <div class="top-var-meta">
+            <div class="top-var-left">
+              <span class="top-var-rank">#13</span>
+              <span class="top-var-dot" style="background:#ef4444;"></span>
+              <span class="top-var-name" title="Blaufränkisch">Blaufränkisch</span>
+            </div>
+            <span class="top-var-total"><b>40</b> DOs · 7p.</span>
+          </div>
+          <div class="top-var-bar"><div class="tseg" style="width:45.0%;background:#0284c7;" title="Hungría: 18 DOs (45.0%)"><span>🇭🇺 HUN 45%</span></div><div class="tseg" style="width:12.5%;background:#9333ea;" title="Austria: 5 DOs (12.5%)"><span>🇦🇹</span></div><div class="tseg" style="width:12.5%;background:#4f46e5;" title="Eslovenia: 5 DOs (12.5%)"><span>🇸🇮</span></div><div class="tseg tseg-other" style="width:30.0%;background:#64748b;" title="Otros (4 países): 12"><span>+4 (30%)</span></div></div>
+        </div>
+        <div class="top-var-item">
+          <div class="top-var-meta">
+            <div class="top-var-left">
+              <span class="top-var-rank">#14</span>
+              <span class="top-var-dot" style="background:#ca8a04;"></span>
+              <span class="top-var-name" title="Riesling">Riesling</span>
+            </div>
+            <span class="top-var-total"><b>37</b> DOs · 6p.</span>
+          </div>
+          <div class="top-var-bar"><div class="tseg" style="width:35.1%;background:#d97706;" title="Alemania: 13 DOs (35.1%)"><span>🇩🇪 DEU 35%</span></div><div class="tseg" style="width:24.3%;background:#1d4ed8;" title="Francia: 9 DOs (24.3%)"><span>🇫🇷 24%</span></div><div class="tseg" style="width:18.9%;background:#9333ea;" title="Austria: 7 DOs (18.9%)"><span>🇦🇹 19%</span></div><div class="tseg tseg-other" style="width:21.7%;background:#64748b;" title="Otros (3 países): 8"><span>+3 (22%)</span></div></div>
+        </div>
+        <div class="top-var-item">
+          <div class="top-var-meta">
+            <div class="top-var-left">
+              <span class="top-var-rank">#15</span>
+              <span class="top-var-dot" style="background:#ef4444;"></span>
+              <span class="top-var-name" title="Carignan">Carignan</span>
+            </div>
+            <span class="top-var-total"><b>36</b> DOs · 3p.</span>
+          </div>
+          <div class="top-var-bar"><div class="tseg" style="width:94.4%;background:#1d4ed8;" title="Francia: 34 DOs (94.4%)"><span>🇫🇷 FRA 94%</span></div><div class="tseg" style="width:2.8%;background:#0891b2;" title="Grecia: 1 DOs (2.8%)"><span></span></div><div class="tseg" style="width:2.8%;background:#ea580c;" title="Líbano: 1 DOs (2.8%)"><span></span></div></div>
+        </div>
+          </div>
+          <div class="top-var-col">
+            
+        <div class="top-var-item">
+          <div class="top-var-meta">
+            <div class="top-var-left">
+              <span class="top-var-rank">#16</span>
+              <span class="top-var-dot" style="background:#ca8a04;"></span>
+              <span class="top-var-name" title="Macabeo / Viura">Macabeo / Viura</span>
+            </div>
+            <span class="top-var-total"><b>33</b> DOs · 1p.</span>
+          </div>
+          <div class="top-var-bar"><div class="tseg" style="width:100.0%;background:#dc2626;" title="España: 33 DOs (100.0%)"><span>🇪🇸 ESP 100%</span></div></div>
+        </div>
+        <div class="top-var-item">
+          <div class="top-var-meta">
+            <div class="top-var-left">
+              <span class="top-var-rank">#17</span>
+              <span class="top-var-dot" style="background:#ca8a04;"></span>
+              <span class="top-var-name" title="Sémillon">Sémillon</span>
+            </div>
+            <span class="top-var-total"><b>29</b> DOs · 1p.</span>
+          </div>
+          <div class="top-var-bar"><div class="tseg" style="width:100.0%;background:#1d4ed8;" title="Francia: 29 DOs (100.0%)"><span>🇫🇷 FRA 100%</span></div></div>
+        </div>
+        <div class="top-var-item">
+          <div class="top-var-meta">
+            <div class="top-var-left">
+              <span class="top-var-rank">#18</span>
+              <span class="top-var-dot" style="background:#ef4444;"></span>
+              <span class="top-var-name" title="Gamay">Gamay</span>
+            </div>
+            <span class="top-var-total"><b>28</b> DOs · 3p.</span>
+          </div>
+          <div class="top-var-bar"><div class="tseg" style="width:85.7%;background:#1d4ed8;" title="Francia: 24 DOs (85.7%)"><span>🇫🇷 FRA 86%</span></div><div class="tseg" style="width:10.7%;background:#e11d48;" title="Suiza: 3 DOs (10.7%)"><span>🇨🇭</span></div><div class="tseg" style="width:3.6%;background:#991b1b;" title="Turquía: 1 DOs (3.6%)"><span></span></div></div>
+        </div>
+        <div class="top-var-item">
+          <div class="top-var-meta">
+            <div class="top-var-left">
+              <span class="top-var-rank">#19</span>
+              <span class="top-var-dot" style="background:#ca8a04;"></span>
+              <span class="top-var-name" title="Clairette">Clairette</span>
+            </div>
+            <span class="top-var-total"><b>28</b> DOs · 1p.</span>
+          </div>
+          <div class="top-var-bar"><div class="tseg" style="width:100.0%;background:#1d4ed8;" title="Francia: 28 DOs (100.0%)"><span>🇫🇷 FRA 100%</span></div></div>
+        </div>
+        <div class="top-var-item">
+          <div class="top-var-meta">
+            <div class="top-var-left">
+              <span class="top-var-rank">#20</span>
+              <span class="top-var-dot" style="background:#ca8a04;"></span>
+              <span class="top-var-name" title="Welschriesling / Graševina">Welschriesling / Graševina</span>
+            </div>
+            <span class="top-var-total"><b>26</b> DOs · 5p.</span>
+          </div>
+          <div class="top-var-bar"><div class="tseg" style="width:53.8%;background:#0284c7;" title="Hungría: 14 DOs (53.8%)"><span>🇭🇺 HUN 54%</span></div><div class="tseg" style="width:19.2%;background:#4f46e5;" title="Eslovenia: 5 DOs (19.2%)"><span>🇸🇮 19%</span></div><div class="tseg" style="width:15.4%;background:#9333ea;" title="Austria: 4 DOs (15.4%)"><span>🇦🇹</span></div><div class="tseg tseg-other" style="width:11.6%;background:#64748b;" title="Otros (2 países): 3"><span>+2</span></div></div>
+        </div>
+        <div class="top-var-item">
+          <div class="top-var-meta">
+            <div class="top-var-left">
+              <span class="top-var-rank">#21</span>
+              <span class="top-var-dot" style="background:#ca8a04;"></span>
+              <span class="top-var-name" title="Muscadelle">Muscadelle</span>
+            </div>
+            <span class="top-var-total"><b>26</b> DOs · 1p.</span>
+          </div>
+          <div class="top-var-bar"><div class="tseg" style="width:100.0%;background:#1d4ed8;" title="Francia: 26 DOs (100.0%)"><span>🇫🇷 FRA 100%</span></div></div>
+        </div>
+        <div class="top-var-item">
+          <div class="top-var-meta">
+            <div class="top-var-left">
+              <span class="top-var-rank">#22</span>
+              <span class="top-var-dot" style="background:#ca8a04;"></span>
+              <span class="top-var-name" title="Roussanne">Roussanne</span>
+            </div>
+            <span class="top-var-total"><b>25</b> DOs · 1p.</span>
+          </div>
+          <div class="top-var-bar"><div class="tseg" style="width:100.0%;background:#1d4ed8;" title="Francia: 25 DOs (100.0%)"><span>🇫🇷 FRA 100%</span></div></div>
+        </div>
+        <div class="top-var-item">
+          <div class="top-var-meta">
+            <div class="top-var-left">
+              <span class="top-var-rank">#23</span>
+              <span class="top-var-dot" style="background:#ca8a04;"></span>
+              <span class="top-var-name" title="Garnacha Blanca">Garnacha Blanca</span>
+            </div>
+            <span class="top-var-total"><b>24</b> DOs · 1p.</span>
+          </div>
+          <div class="top-var-bar"><div class="tseg" style="width:100.0%;background:#1d4ed8;" title="Francia: 24 DOs (100.0%)"><span>🇫🇷 FRA 100%</span></div></div>
+        </div>
+        <div class="top-var-item">
+          <div class="top-var-meta">
+            <div class="top-var-left">
+              <span class="top-var-rank">#24</span>
+              <span class="top-var-dot" style="background:#ef4444;"></span>
+              <span class="top-var-name" title="Cinsaut">Cinsaut</span>
+            </div>
+            <span class="top-var-total"><b>22</b> DOs · 1p.</span>
+          </div>
+          <div class="top-var-bar"><div class="tseg" style="width:100.0%;background:#1d4ed8;" title="Francia: 22 DOs (100.0%)"><span>🇫🇷 FRA 100%</span></div></div>
+        </div>
+        <div class="top-var-item">
+          <div class="top-var-meta">
+            <div class="top-var-left">
+              <span class="top-var-rank">#25</span>
+              <span class="top-var-dot" style="background:#ca8a04;"></span>
+              <span class="top-var-name" title="Chenin Blanc">Chenin Blanc</span>
+            </div>
+            <span class="top-var-total"><b>20</b> DOs · 2p.</span>
+          </div>
+          <div class="top-var-bar"><div class="tseg" style="width:95.0%;background:#1d4ed8;" title="Francia: 19 DOs (95.0%)"><span>🇫🇷 FRA 95%</span></div><div class="tseg" style="width:5.0%;background:#dc2626;" title="España: 1 DOs (5.0%)"><span></span></div></div>
+        </div>
+        <div class="top-var-item">
+          <div class="top-var-meta">
+            <div class="top-var-left">
+              <span class="top-var-rank">#26</span>
+              <span class="top-var-dot" style="background:#ca8a04;"></span>
+              <span class="top-var-name" title="Viognier">Viognier</span>
+            </div>
+            <span class="top-var-total"><b>19</b> DOs · 7p.</span>
+          </div>
+          <div class="top-var-bar"><div class="tseg" style="width:36.8%;background:#1d4ed8;" title="Francia: 7 DOs (36.8%)"><span>🇫🇷 FRA 37%</span></div><div class="tseg" style="width:21.1%;background:#dc2626;" title="España: 4 DOs (21.1%)"><span>🇪🇸 21%</span></div><div class="tseg" style="width:21.1%;background:#ea580c;" title="Líbano: 4 DOs (21.1%)"><span>🇱🇧 21%</span></div><div class="tseg tseg-other" style="width:21.0%;background:#64748b;" title="Otros (4 países): 4"><span>+4 (21%)</span></div></div>
+        </div>
+        <div class="top-var-item">
+          <div class="top-var-meta">
+            <div class="top-var-left">
+              <span class="top-var-rank">#27</span>
+              <span class="top-var-dot" style="background:#ca8a04;"></span>
+              <span class="top-var-name" title="Marsanne">Marsanne</span>
+            </div>
+            <span class="top-var-total"><b>19</b> DOs · 1p.</span>
+          </div>
+          <div class="top-var-bar"><div class="tseg" style="width:100.0%;background:#1d4ed8;" title="Francia: 19 DOs (100.0%)"><span>🇫🇷 FRA 100%</span></div></div>
+        </div>
+        <div class="top-var-item">
+          <div class="top-var-meta">
+            <div class="top-var-left">
+              <span class="top-var-rank">#28</span>
+              <span class="top-var-dot" style="background:#ca8a04;"></span>
+              <span class="top-var-name" title="Arinto">Arinto</span>
+            </div>
+            <span class="top-var-total"><b>19</b> DOs · 1p.</span>
+          </div>
+          <div class="top-var-bar"><div class="tseg" style="width:100.0%;background:#16a34a;" title="Portugal: 19 DOs (100.0%)"><span>🇵🇹 PRT 100%</span></div></div>
+        </div>
+        <div class="top-var-item">
+          <div class="top-var-meta">
+            <div class="top-var-left">
+              <span class="top-var-rank">#29</span>
+              <span class="top-var-dot" style="background:#ca8a04;"></span>
+              <span class="top-var-name" title="Sauvignon">Sauvignon</span>
+            </div>
+            <span class="top-var-total"><b>18</b> DOs · 5p.</span>
+          </div>
+          <div class="top-var-bar"><div class="tseg" style="width:33.3%;background:#059669;" title="Italia: 6 DOs (33.3%)"><span>🇮🇹 ITA 33%</span></div><div class="tseg" style="width:33.3%;background:#4f46e5;" title="Eslovenia: 6 DOs (33.3%)"><span>🇸🇮 SVN 33%</span></div><div class="tseg" style="width:11.1%;background:#4338ca;" title="Croacia: 2 DOs (11.1%)"><span>🇭🇷</span></div><div class="tseg tseg-other" style="width:22.3%;background:#64748b;" title="Otros (2 países): 4"><span>+2 (22%)</span></div></div>
+        </div>
+        <div class="top-var-item">
+          <div class="top-var-meta">
+            <div class="top-var-left">
+              <span class="top-var-rank">#30</span>
+              <span class="top-var-dot" style="background:#ef4444;"></span>
+              <span class="top-var-name" title="Sangiovese">Sangiovese</span>
+            </div>
+            <span class="top-var-total"><b>18</b> DOs · 1p.</span>
+          </div>
+          <div class="top-var-bar"><div class="tseg" style="width:100.0%;background:#059669;" title="Italia: 18 DOs (100.0%)"><span>🇮🇹 ITA 100%</span></div></div>
+        </div>
+          </div>
         </div>
       </div>
 
@@ -356,7 +585,7 @@
         <div class="clim-row"><span class="sw" style="background:#0ea5e9"></span><span><b>C¹ Fresco, Atlántico &amp; Alpino (P1–P3):</b> acidez cortante, ciclo vegetativo largo, tensión mineral, graduación moderada y gran frescura.</span></div>
         <div class="clim-row"><span class="sw" style="background:#10b981"></span><span><b>C² Templado &amp; Continental (P4–P6):</b> riberas fluviales, mesetas centrales y valles de acusada oscilación térmica día/noche.</span></div>
         <div class="clim-row"><span class="sw" style="background:#f59e0b"></span><span><b>C³ Cálido, Mediterráneo &amp; Volcánico (P7–P9):</b> insolación plena, suelos de lava y esquisto, asoleo, crianza biológica de flor y soleras.</span></div>
-        <div class="clim-row"><span class="sw" style="background:linear-gradient(90deg,#ca8a04,#991b1b,#7c3aed)"></span><span><b>G1–G3 Blancos · G4–G6 Tintos · G7–G9</b> Espumosos nobles, Rosados/Ancestrales y Generosos/Dulces de guarda.</span></div>
+        <div class="clim-row"><span class="sw" style="background:linear-gradient(90deg,#ca8a04,#991b1b,#7c3aed)"></span><span><b>G1–G3 Blancos · G4–G6 Tintos · G7–G9 Singulares:</b> Espumosos nobles, Rosados/Ancestrales y Generosos/Dulces de guarda.</span></div>
     
       </div>
 

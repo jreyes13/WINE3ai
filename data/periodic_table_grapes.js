@@ -1303,7 +1303,7 @@ window.PERIODIC_TABLE_DATA = {
     },
     {
       id: "moscatel-de-set-bal",
-      name: "Moscatel de Setúbal / Alejandría",
+      name: "Moscatel de Setúbal",
       symbol: "Msb",
       atomicNumber: 63,
       atomicMass: 4.8,
@@ -1505,7 +1505,7 @@ window.PERIODIC_TABLE_DATA = {
     },
     {
       id: "zibibbo",
-      name: "Zibibbo (Muscat de Alejandría)",
+      name: "Zibibbo",
       symbol: "Zb",
       atomicNumber: 74,
       atomicMass: 3.4,
