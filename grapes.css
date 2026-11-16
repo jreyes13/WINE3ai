@@ -1593,6 +1593,15 @@ body {
 .legend-macro-tag.w3 { color: #c084fc; border-color: rgba(192, 132, 252, 0.3); }
 .legend-macro-tag.w3 .macro-dot { background-color: #c084fc; box-shadow: 0 0 6px #c084fc; }
 
+.legend-macro-tag.c1 { color: #22d3ee; border-color: rgba(34, 211, 238, 0.3); }
+.legend-macro-tag.c1 .macro-dot { background-color: #22d3ee; box-shadow: 0 0 6px #22d3ee; }
+
+.legend-macro-tag.c2 { color: #4ade80; border-color: rgba(74, 222, 128, 0.3); }
+.legend-macro-tag.c2 .macro-dot { background-color: #4ade80; box-shadow: 0 0 6px #4ade80; }
+
+.legend-macro-tag.c3 { color: #fbbf24; border-color: rgba(251, 191, 36, 0.3); }
+.legend-macro-tag.c3 .macro-dot { background-color: #fbbf24; box-shadow: 0 0 6px #fbbf24; }
+
 /* Active Aroma Feedback Banner */
 .aroma-feedback-banner {
   display: flex;

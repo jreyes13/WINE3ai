@@ -121,7 +121,7 @@ window.AROMAS_NEZ_DU_VIN = [
     family_en: "Fruity (White Fruit)",
     icon: "🍐",
     molecule: "Decadienoato de etilo",
-    grapes: ["pinot_gris", "godello", "viura", "cortese", "glera"]
+    grapes: ["pinot_gris", "pinot_blanc", "godello", "viura", "cortese", "glera"]
   },
   {
     number: 11,
@@ -291,7 +291,7 @@ window.AROMAS_NEZ_DU_VIN = [
     family_en: "Floral",
     icon: "🌼",
     molecule: "Anisaldehído",
-    grapes: ["chardonnay", "chenin_blanc", "treixadura", "godello"]
+    grapes: ["chardonnay", "pinot_blanc", "chenin_blanc", "treixadura", "godello"]
   },
   {
     number: 25,
@@ -401,7 +401,7 @@ window.AROMAS_NEZ_DU_VIN = [
     family_en: "Fermentative / Lees",
     icon: "🥖",
     molecule: "Autólisis de levaduras, Diacetilo",
-    grapes: ["chardonnay", "xarello", "parellada", "palomino_fino", "albarino"]
+    grapes: ["chardonnay", "pinot_blanc", "xarello", "parellada", "palomino_fino", "albarino"]
   },
   {
     number: 34,
@@ -585,7 +585,7 @@ window.AROMAS_NEZ_DU_VIN = [
     family_en: "Roasted / Autolytic",
     icon: "🍞",
     molecule: "Furfuril mercaptano, Pirazinas tostadas",
-    grapes: ["chardonnay", "pinot_noir", "xarello", "parellada", "semillon"]
+    grapes: ["chardonnay", "pinot_noir", "pinot_blanc", "xarello", "parellada", "semillon"]
   },
   {
     number: 49,
