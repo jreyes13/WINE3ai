@@ -48,15 +48,15 @@ def build_top_chart_html(lang='es'):
             c_col = country_colors.get(c.get('country'), '#64748b')
             flag = c.get('flag', '')
             cnt = c.get('count', 0)
-            # Show text if segment width is wide enough
-            txt = f"{flag} {c_name} {pct:.0f}%" if pct >= 14 else f"{flag} {pct:.0f}%"
+            # Show text with flag and percentage
+            txt = f"{flag} {c_name} {pct:.0f}%" if pct >= 15 else (f"{flag} {pct:.0f}%" if pct >= 7 else f"{flag}")
             segments.append(f'<div class="tseg" style="width:{pct:.1f}%;background:{c_col};" title="{c_name}: {cnt} ({pct:.1f}%)"><span>{txt}</span></div>')
 
         rem_pct = max(0.0, 100.0 - accum_pct)
         if rem_pct >= 2.0:
             rem_count = total - sum(c.get('count', 0) for c in breakdown[:4])
             rem_c_count = max(1, c_count - min(4, len(breakdown)))
-            other_txt = f"+{rem_c_count} {other_label} {rem_pct:.0f}%" if rem_pct >= 14 else f"+{rem_c_count} {rem_pct:.0f}%"
+            other_txt = f"+{rem_c_count} {other_label} {rem_pct:.0f}%" if rem_pct >= 15 else f"+{rem_c_count} ({rem_pct:.0f}%)"
             segments.append(f'<div class="tseg tseg-other" style="width:{rem_pct:.1f}%;background:#64748b;" title="{other_label} ({rem_c_count} {countries_lbl}): {rem_count}"><span>{other_txt}</span></div>')
 
         bar_html = ''.join(segments)
@@ -68,13 +68,13 @@ def build_top_chart_html(lang='es'):
               <span class="top-var-dot" style="background:{dot_color};"></span>
               <span class="top-var-name">{name}</span>
             </div>
-            <span class="top-var-total">{total} {reg_label} · {c_count} {countries_lbl}</span>
+            <span class="top-var-total"><b>{total}</b> {reg_label} · {c_count} {countries_lbl}</span>
           </div>
           <div class="top-var-bar">{bar_html}</div>
         </div>''')
 
     title = "📊 TOP 10 VARIEDADES MÁS CULTIVADAS & PRESENCIA GLOBAL" if is_es else "📊 TOP 10 MOST CULTIVATED VARIETIES & GLOBAL SPREAD"
-    subtitle = "Presencia en denominaciones oficiales (DOs / AOCs / DOCGs) y desglose por países" if is_es else "Share of official appellations (DOs / AOCs / DOCGs) and country breakdown"
+    subtitle = "Presencia en denominaciones de origen oficiales (DOs / AOCs / DOCGs) y desglose por países" if is_es else "Share of official protected appellations (DOs / AOCs / DOCGs) and country breakdown"
 
     return f'''
       <div class="box top-var">
@@ -99,50 +99,50 @@ def generate_poster_html(lang='es'):
                    "W¹ Whites · W² Reds · W³ Method &amp; Heritage Terroir<br>C¹ Cool/Atlantic · C² Temperate/Continental · C³ Warm/Mediterranean")
     corner_text = "ESTILO →<br>╲<br>↓ CLIMA" if is_es else "STYLE →<br>╲<br>↓ CLIMATE"
 
-    anat_title = "🔬 CÓMO LEER CADA CASILLA" if is_es else "🔬 HOW TO READ EACH TILE"
+    anat_title = "🔬 ANATOMÍA ENOLÓGICA DE CADA CASILLA" if is_es else "🔬 OENOLOGICAL ANATOMY OF EACH TILE"
     anat_list = ("""
-            <li><span class="num">1</span><b>Nº atómico (Z 1–81):</b> posición ordinal en la matriz cartesiana 9×9.</li>
-            <li><span class="num">2</span><b>Origen + DOs:</b> bandera de origen y nº de denominaciones donde está autorizada.</li>
-            <li><span class="num">3</span><b>Masa (A 1.0–5.0):</b> cuerpo, densidad, extracto seco y peso en boca.</li>
-            <li><span class="num">4</span><b>Símbolo:</b> abreviatura mnemotécnica de 2 letras en gran formato.</li>
-            <li><span class="num">5</span><b>Valencias (1–5):</b> <b>Ac</b> acidez · <b>Tn</b> tanino · <b>Cp</b> cuerpo · <b>Az</b> azúcar.</li>
-            <li><span class="num">6</span><b>Aromas:</b> descriptores calibrados con <i>Le Nez du Vin</i> (ver índice).</li>
+            <li><span class="num">1</span><b>Nº atómico (Z 1–81):</b> posición ordinal única en la matriz cartesiana 9×9.</li>
+            <li><span class="num">2</span><b>Origen + DOs:</b> país de origen y número total de denominaciones oficiales donde está autorizada.</li>
+            <li><span class="num">3</span><b>Masa (A 1.0–5.0):</b> cuerpo, densidad, extracto seco y peso táctil en boca.</li>
+            <li><span class="num">4</span><b>Símbolo:</b> abreviatura mnemotécnica de 2 letras en formato atómico destacado.</li>
+            <li><span class="num">5</span><b>Valencias (1–5):</b> <b>Ac</b> acidez · <b>Tn</b> tanino · <b>Cp</b> cuerpo/crianza · <b>Az</b> azúcar residual.</li>
+            <li><span class="num">6</span><b>Aromas:</b> descriptores olfativos dominantes de <i>Le Nez du Vin</i> (ver índice numerado).</li>
     """ if is_es else """
-            <li><span class="num">1</span><b>Atomic No. (Z 1–81):</b> ordinal position in the 9×9 Cartesian matrix.</li>
-            <li><span class="num">2</span><b>Origin + DOs:</b> origin flag and number of official appellations authorized.</li>
+            <li><span class="num">1</span><b>Atomic No. (Z 1–81):</b> unique ordinal position in the 9×9 Cartesian matrix.</li>
+            <li><span class="num">2</span><b>Origin + DOs:</b> country flag and total number of official appellations authorized.</li>
             <li><span class="num">3</span><b>Mass (A 1.0–5.0):</b> body, density, dry extract, and palate weight.</li>
-            <li><span class="num">4</span><b>Symbol:</b> 2-letter mnemonic chemical abbreviation.</li>
-            <li><span class="num">5</span><b>Valences (1–5):</b> <b>Ac</b> acidity · <b>Tn</b> tannin · <b>Cp</b> body · <b>Az</b> sweetness.</li>
-            <li><span class="num">6</span><b>Aromas:</b> key aroma descriptors from <i>Le Nez du Vin</i> (see index).</li>
+            <li><span class="num">4</span><b>Symbol:</b> 2-letter mnemonic chemical symbol in bold atomic display.</li>
+            <li><span class="num">5</span><b>Valences (1–5):</b> <b>Ac</b> acidity · <b>Tn</b> tannin · <b>Cp</b> body/aging · <b>Az</b> residual sweetness.</li>
+            <li><span class="num">6</span><b>Aromas:</b> dominant aroma descriptors from <i>Le Nez du Vin</i> (see numbered index).</li>
     """)
 
     climates_title = "🌍 FILAS = CLIMA · COLUMNAS = ESTILO" if is_es else "🌍 ROWS = CLIMATE · COLUMNS = STYLE"
     climates_body = ("""
-        <div><span class="sw" style="background:#0ea5e9"></span><span><b>C¹ Fresco, Atlántico &amp; Alpino (P1–P3):</b> acidez alta, ciclo largo, tensión mineral y graduación moderada.</span></div>
-        <div><span class="sw" style="background:#10b981"></span><span><b>C² Templado &amp; Continental (P4–P6):</b> riberas fluviales y mesetas; gran oscilación térmica día/noche.</span></div>
-        <div><span class="sw" style="background:#f59e0b"></span><span><b>C³ Cálido, Mediterráneo &amp; Volcánico (P7–P9):</b> brisa solar, lava, asoleo, crianza biológica y soleras.</span></div>
-        <div><span class="sw" style="background:linear-gradient(90deg,#ca8a04,#991b1b,#7c3aed)"></span><span><b>G1–G3 Blancos · G4–G6 Tintos · G7–G9</b> Espumosos, Rosados/Ancestrales y Generosos/Dulces.</span></div>
+        <div class="clim-row"><span class="sw" style="background:#0ea5e9"></span><span><b>C¹ Fresco, Atlántico &amp; Alpino (P1–P3):</b> acidez cortante, ciclo vegetativo largo, tensión mineral, graduación moderada y gran frescura.</span></div>
+        <div class="clim-row"><span class="sw" style="background:#10b981"></span><span><b>C² Templado &amp; Continental (P4–P6):</b> riberas fluviales, mesetas centrales y valles de acusada oscilación térmica día/noche.</span></div>
+        <div class="clim-row"><span class="sw" style="background:#f59e0b"></span><span><b>C³ Cálido, Mediterráneo &amp; Volcánico (P7–P9):</b> insolación plena, suelos de lava y esquisto, asoleo, crianza biológica de flor y soleras.</span></div>
+        <div class="clim-row"><span class="sw" style="background:linear-gradient(90deg,#ca8a04,#991b1b,#7c3aed)"></span><span><b>G1–G3 Blancos · G4–G6 Tintos · G7–G9</b> Espumosos nobles, Rosados/Ancestrales y Generosos/Dulces de guarda.</span></div>
     """ if is_es else """
-        <div><span class="sw" style="background:#0ea5e9"></span><span><b>C¹ Cool, Atlantic &amp; Alpine (P1–P3):</b> high acidity, long ripening, mineral tension and freshness.</span></div>
-        <div><span class="sw" style="background:#10b981"></span><span><b>C² Temperate &amp; Continental (P4–P6):</b> river valleys, high plateaus, and diurnal temperature shifts.</span></div>
-        <div><span class="sw" style="background:#f59e0b"></span><span><b>C³ Warm, Mediterranean &amp; Volcanic (P7–P9):</b> maritime sun, volcanic soils, raisining, flor soleras.</span></div>
-        <div><span class="sw" style="background:linear-gradient(90deg,#ca8a04,#991b1b,#7c3aed)"></span><span><b>G1–G3 Whites · G4–G6 Reds · G7–G9</b> Sparkling, Rosé/Skin-Contact &amp; Fortified/Noble Sweet.</span></div>
+        <div class="clim-row"><span class="sw" style="background:#0ea5e9"></span><span><b>C¹ Cool, Atlantic &amp; Alpine (P1–P3):</b> high acid tension, extended ripening cycle, mineral drive, moderate alcohol, and crispness.</span></div>
+        <div class="clim-row"><span class="sw" style="background:#10b981"></span><span><b>C² Temperate &amp; Continental (P4–P6):</b> river basins, plateau mesetas, and pronounced diurnal temperature shifts.</span></div>
+        <div class="clim-row"><span class="sw" style="background:#f59e0b"></span><span><b>C³ Warm, Mediterranean &amp; Volcanic (P7–P9):</b> abundant sun, volcanic lava &amp; schist, raisining, biological flor aging, and secular soleras.</span></div>
+        <div class="clim-row"><span class="sw" style="background:linear-gradient(90deg,#ca8a04,#991b1b,#7c3aed)"></span><span><b>G1–G3 Whites · G4–G6 Reds · G7–G9</b> Noble Sparkling, Rosé/Skin-Contact, and Fortified/Noble Sweet.</span></div>
     """)
 
-    aromas_title = "👃 ÍNDICE DE AROMAS · LE NEZ DU VIN (54)" if is_es else "👃 AROMA INDEX · LE NEZ DU VIN (54)"
+    aromas_title = "👃 ÍNDICE SENSORIAL DE AROMAS · LE NEZ DU VIN (54)" if is_es else "👃 SENSORY AROMA INDEX · LE NEZ DU VIN (54)"
     dyn_title = "🧬 LAS GRANDES DINASTÍAS GENÉTICAS (VIVC)" if is_es else "🧬 MAJOR GENETIC DYNASTIES (VIVC)"
     dyn_body = ("""
-        <div><b>👑 Pinot × Gouais Blanc</b> → Chardonnay · Gamay · Aligoté · Melon de Bourgogne</div>
-        <div><b>👑 Cabernet Franc</b> → Cabernet Sauvignon (× Sauvignon Blanc) · Merlot (× Magdeleine Noire) · Carmenère (× Gros Cabernet)</div>
-        <div><b>👑 Savagnin / Traminer</b> → Sauvignon Blanc · Grüner Veltliner · Verdejo y Godello (hermanas, × Castellana Blanca)</div>
-        <div><b>👑 Dinastías Ibéricas</b> → Tempranillo (Albillo Mayor × Benedicto) · Hebén (madre de Pedro Ximénez y Macabeo)</div>
-        <p class="dyn-note">Pedigríes confirmados por marcadores moleculares de ADN (SSR) · Vitis International Variety Catalogue (Julius Kühn-Institut)</p>
+        <div class="dyn-card d-pinot"><b>👑 Dinastía Borgoñona (Pinot Noir × Gouais Blanc):</b> Chardonnay · Gamay · Aligoté · Melon de Bourgogne</div>
+        <div class="dyn-card d-cab"><b>👑 Dinastía Bordelesa (Cabernet Franc):</b> Cabernet Sauvignon (× Sauvignon Blanc) · Merlot (× Magdeleine Noire) · Carmenère (× Gros Cabernet)</div>
+        <div class="dyn-card d-sav"><b>👑 Dinastía Savagnin / Traminer:</b> Sauvignon Blanc · Grüner Veltliner · Verdejo y Godello (hermanas biológicas, × Castellana Blanca)</div>
+        <div class="dyn-card d-iber"><b>👑 Dinastías Ibéricas Ancestrales:</b> Tempranillo (Albillo Mayor × Benedicto) · Hebén (madre morisca de Pedro Ximénez y Macabeo)</div>
+        <p class="dyn-note">Pedigríes certificados por marcadores moleculares de ADN (SSR) · Vitis International Variety Catalogue (Julius Kühn-Institut)</p>
     """ if is_es else """
-        <div><b>👑 Pinot × Gouais Blanc</b> → Chardonnay · Gamay · Aligoté · Melon de Bourgogne</div>
-        <div><b>👑 Cabernet Franc</b> → Cabernet Sauvignon (× Sauvignon Blanc) · Merlot (× Magdeleine Noire) · Carmenère (× Gros Cabernet)</div>
-        <div><b>👑 Savagnin / Traminer</b> → Sauvignon Blanc · Grüner Veltliner · Verdejo &amp; Godello (siblings, × Castellana Blanca)</div>
-        <div><b>👑 Iberian Patriarchs</b> → Tempranillo (Albillo Mayor × Benedicto) · Hebén (mother of Pedro Ximénez &amp; Macabeo)</div>
-        <p class="dyn-note">Pedigrees confirmed by molecular SSR DNA markers · Vitis International Variety Catalogue (Julius Kühn-Institut)</p>
+        <div class="dyn-card d-pinot"><b>👑 Burgundian Dynasty (Pinot Noir × Gouais Blanc):</b> Chardonnay · Gamay · Aligoté · Melon de Bourgogne</div>
+        <div class="dyn-card d-cab"><b>👑 Bordeaux Dynasty (Cabernet Franc):</b> Cabernet Sauvignon (× Sauvignon Blanc) · Merlot (× Magdeleine Noire) · Carmenère (× Gros Cabernet)</div>
+        <div class="dyn-card d-sav"><b>👑 Savagnin / Traminer Dynasty:</b> Sauvignon Blanc · Grüner Veltliner · Verdejo &amp; Godello (biological siblings, × Castellana Blanca)</div>
+        <div class="dyn-card d-iber"><b>👑 Ancient Iberian Patriarchs:</b> Tempranillo (Albillo Mayor × Benedicto) · Hebén (Moorish matriarch of Pedro Ximénez &amp; Macabeo)</div>
+        <p class="dyn-note">Pedigrees certified by molecular SSR DNA markers · Vitis International Variety Catalogue (Julius Kühn-Institut)</p>
     """)
 
     foot_left = ("<b>WINE³ai</b> — Proyecto abierto geoespacial y vitícola · wine3ai.jreyes13.net · github.com/jreyes13/wine3ai"
@@ -167,151 +167,178 @@ def generate_poster_html(lang='es'):
   }}
   body {{
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    color: #1e293b;
+    color: #0f172a;
     background: #fbf8f3;
     overflow: hidden;
   }}
   .poster {{
     width: 1189mm; height: 841mm;
-    padding: 12mm 15mm 10mm 15mm;
+    padding: 12mm 14mm 10mm 14mm;
     display: grid;
-    grid-template-rows: 54mm 1fr 11mm;
+    grid-template-rows: 56mm 1fr 12mm;
     gap: 5mm;
   }}
 
   /* ---------- HEADER ---------- */
   .head {{
     display: flex; align-items: center; justify-content: space-between;
-    border-bottom: 1.2mm solid #7f1d1d; padding-bottom: 3.5mm;
+    border-bottom: 1.4mm solid #7f1d1d; padding-bottom: 4mm;
   }}
-  .brand {{ display: flex; align-items: baseline; gap: 6mm; }}
-  .brand-logo {{ font-size: 27mm; font-weight: 900; color: #7f1d1d; letter-spacing: -1mm; line-height: 1; }}
-  .brand-logo sup {{ font-size: 15mm; color: #f59e0b; }}
-  .brand-logo .ai {{ font-size: 15mm; color: #0ea5e9; font-weight: 700; }}
-  .title-block h1 {{ font-size: 16mm; font-weight: 900; letter-spacing: -0.3mm; line-height: 1.05; color: #0f172a; }}
-  .title-block p {{ font-size: 5.4mm; color: #475569; margin-top: 1.8mm; }}
+  .brand {{ display: flex; align-items: baseline; gap: 7mm; }}
+  .brand-logo {{ font-size: 30mm; font-weight: 900; color: #7f1d1d; letter-spacing: -1.2mm; line-height: 1; }}
+  .brand-logo sup {{ font-size: 17mm; color: #f59e0b; }}
+  .brand-logo .ai {{ font-size: 17mm; color: #0ea5e9; font-weight: 800; }}
+  .title-block h1 {{ font-size: 18mm; font-weight: 900; letter-spacing: -0.4mm; line-height: 1.05; color: #0f172a; }}
+  .title-block p {{ font-size: 6.2mm; color: #334155; font-weight: 500; margin-top: 1.8mm; }}
   .head-formula {{ text-align: right; }}
-  .formula {{ font-size: 11.5mm; font-weight: 900; color: #0f172a; }}
+  .formula {{ font-size: 13.5mm; font-weight: 900; color: #0f172a; }}
   .formula span {{ color: #f59e0b; }}
-  .formula-sub {{ font-size: 4.2mm; color: #64748b; margin-top: 1mm; line-height: 1.35; }}
+  .formula-sub {{ font-size: 4.8mm; color: #475569; font-weight: 600; margin-top: 1.2mm; line-height: 1.35; }}
 
   /* ---------- BODY ---------- */
-  .body {{ display: grid; grid-template-columns: 1fr 275mm; gap: 8mm; min-height: 0; }}
+  .body {{ display: grid; grid-template-columns: 1fr 310mm; gap: 8mm; min-height: 0; }}
 
   .table-grid {{
     display: grid;
-    grid-template-columns: 12mm 50mm repeat(9, 1fr);
-    grid-template-rows: 12mm 37mm repeat(9, 1fr);
-    gap: 2mm;
+    grid-template-columns: 14mm 54mm repeat(9, 1fr);
+    grid-template-rows: 14mm 42mm repeat(9, 1fr);
+    gap: 2.2mm;
     min-height: 0;
   }}
   .wband {{
-    border-radius: 2mm; color: #fff; font-weight: 900; font-size: 5.2mm;
-    display: flex; align-items: center; justify-content: center; letter-spacing: 0.3mm;
+    border-radius: 2mm; color: #fff; font-weight: 900; font-size: 5.6mm;
+    display: flex; align-items: center; justify-content: center; letter-spacing: 0.4mm;
   }}
   .cband {{
-    border-radius: 2mm; color: #fff; font-weight: 900; font-size: 4.8mm;
+    border-radius: 2mm; color: #fff; font-weight: 900; font-size: 5.2mm;
     writing-mode: vertical-rl; transform: rotate(180deg);
-    display: flex; align-items: center; justify-content: center; letter-spacing: 0.3mm;
+    display: flex; align-items: center; justify-content: center; letter-spacing: 0.4mm;
   }}
   .corner {{
-    border: 0.4mm dashed #94a3b8; border-radius: 2mm;
+    border: 0.5mm dashed #94a3b8; border-radius: 2mm;
     display: flex; flex-direction: column; justify-content: center; align-items: center;
-    font-size: 4mm; font-weight: 800; color: #475569; text-align: center; line-height: 1.3;
+    font-size: 4.4mm; font-weight: 900; color: #334155; text-align: center; line-height: 1.3;
   }}
   .ghead {{
-    background: #fff; border-radius: 2mm; border-top: 2.4mm solid var(--c);
-    padding: 1.8mm 2.2mm; display: flex; flex-direction: column; justify-content: flex-start;
-    box-shadow: 0 0 0 0.3mm #e2e8f0 inset;
+    background: #fff; border-radius: 2.2mm; border-top: 2.8mm solid var(--c);
+    padding: 2.2mm 2.4mm; display: flex; flex-direction: column; justify-content: flex-start;
+    box-shadow: 0 0 0 0.35mm #cbd5e1 inset;
   }}
-  .ghead .gnum {{ font-size: 3.8mm; font-weight: 900; color: var(--c); }}
-  .ghead .gtitle {{ font-size: 4.4mm; font-weight: 800; line-height: 1.15; margin-top: 0.6mm; color: #0f172a; }}
-  .ghead .gsub {{ font-size: 3mm; color: #64748b; line-height: 1.25; margin-top: 0.8mm; }}
+  .ghead .gnum {{ font-size: 4.2mm; font-weight: 900; color: var(--c); }}
+  .ghead .gtitle {{ font-size: 4.8mm; font-weight: 800; line-height: 1.15; margin-top: 0.8mm; color: #0f172a; }}
+  .ghead .gsub {{ font-size: 3.3mm; color: #475569; line-height: 1.25; margin-top: 0.8mm; }}
 
   .phead {{
-    background: #fff; border-radius: 2mm; border-left: 2.4mm solid var(--c);
-    padding: 1.5mm 2mm; display: flex; flex-direction: column; justify-content: center;
-    box-shadow: 0 0 0 0.3mm #e2e8f0 inset;
+    background: #fff; border-radius: 2.2mm; border-left: 2.8mm solid var(--c);
+    padding: 1.8mm 2.2mm; display: flex; flex-direction: column; justify-content: center;
+    box-shadow: 0 0 0 0.35mm #cbd5e1 inset;
   }}
-  .phead .pnum {{ font-size: 4mm; font-weight: 900; color: var(--c); }}
-  .phead .picon {{ font-size: 8mm; line-height: 1.15; margin: 0.4mm 0; }}
-  .phead .pname {{ font-size: 4.2mm; font-weight: 800; line-height: 1.15; color: #0f172a; }}
-  .phead .pbadge {{ font-size: 3.2mm; color: #64748b; margin-top: 0.5mm; }}
+  .phead .pnum {{ font-size: 4.4mm; font-weight: 900; color: var(--c); }}
+  .phead .picon {{ font-size: 9mm; line-height: 1.15; margin: 0.5mm 0; }}
+  .phead .pname {{ font-size: 4.6mm; font-weight: 800; line-height: 1.15; color: #0f172a; }}
+  .phead .pbadge {{ font-size: 3.5mm; color: #475569; font-weight: 600; margin-top: 0.6mm; }}
 
   .tile {{
-    position: relative; background: #fff; border-radius: 2.2mm;
-    border: 0.5mm solid var(--c); border-top-width: 2mm;
-    padding: 1.5mm 1.8mm 1.3mm 1.8mm;
+    position: relative; background: #fff; border-radius: 2.4mm;
+    border: 0.6mm solid var(--c); border-top-width: 2.4mm;
+    padding: 1.8mm 2.2mm 1.6mm 2.2mm;
     display: flex; flex-direction: column; justify-content: space-between;
     overflow: hidden;
   }}
   .tile::after {{
     content: ""; position: absolute; inset: 0; background: var(--c); opacity: 0.05; pointer-events: none;
   }}
-  .t-top {{ display: flex; justify-content: space-between; align-items: flex-start; font-weight: 800; }}
-  .t-z {{ font-size: 6.2mm; color: #b45309; line-height: 1; }}
-  .t-origin {{ font-size: 3.6mm; color: #475569; white-space: nowrap; }}
-  .t-mass {{ font-size: 3.8mm; color: #334155; background: #f1f5f9; border-radius: 1mm; padding: 0.3mm 1mm; }}
-  .t-symbol {{ font-size: 21mm; font-weight: 900; text-align: center; line-height: 1; color: var(--c); letter-spacing: -0.4mm; margin-top: 0.2mm; }}
-  .t-name {{ font-size: 4.5mm; font-weight: 800; text-align: center; color: #0f172a; line-height: 1.1;
+  .t-top {{ display: flex; justify-content: space-between; align-items: baseline; font-weight: 800; }}
+  .t-z {{ font-size: 7.2mm; color: #b45309; line-height: 1; font-weight: 900; }}
+  .t-origin {{ font-size: 4.2mm; color: #334155; font-weight: 700; white-space: nowrap; }}
+  .t-mass {{ font-size: 4.2mm; color: #0f172a; font-weight: 800; background: #f1f5f9; border: 0.25mm solid #cbd5e1; border-radius: 1mm; padding: 0.2mm 1mm; }}
+  .t-symbol {{ font-size: 26mm; font-weight: 900; text-align: center; line-height: 0.95; color: var(--c); letter-spacing: -0.5mm; margin: 0.2mm 0; }}
+  .t-name {{ font-size: 5.4mm; font-weight: 900; text-align: center; color: #0f172a; line-height: 1.1;
             white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }}
-  .t-val {{ display: flex; justify-content: center; gap: 1mm; margin-top: 0.5mm; }}
-  .vb {{ font-size: 3.3mm; font-weight: 800; border-radius: 0.8mm; padding: 0.2mm 0.9mm; border: 0.25mm solid; }}
-  .vb.ac {{ color: #0369a1; border-color: #7dd3fc; background: #f0f9ff; }}
-  .vb.tn {{ color: #b91c1c; border-color: #fca5a5; background: #fef2f2; }}
-  .vb.cp {{ color: #b45309; border-color: #fcd34d; background: #fffbeb; }}
-  .vb.az {{ color: #7e22ce; border-color: #d8b4fe; background: #faf5ff; }}
-  .t-aromas {{ display: flex; justify-content: center; gap: 1.5mm; font-size: 3.4mm; color: #475569; font-weight: 700; margin-top: 0.5mm; }}
+  .t-val {{ display: flex; justify-content: center; gap: 1.2mm; margin-top: 0.6mm; }}
+  .vb {{ font-size: 3.8mm; font-weight: 800; border-radius: 1mm; padding: 0.3mm 1mm; border: 0.3mm solid; }}
+  .vb.ac {{ color: #0369a1; border-color: #38bdf8; background: #f0f9ff; }}
+  .vb.tn {{ color: #b91c1c; border-color: #f87171; background: #fef2f2; }}
+  .vb.cp {{ color: #b45309; border-color: #fbbf24; background: #fffbeb; }}
+  .vb.az {{ color: #7e22ce; border-color: #c084fc; background: #faf5ff; }}
+  .t-aromas {{ display: flex; justify-content: center; gap: 1.8mm; font-size: 4mm; color: #334155; font-weight: 800; margin-top: 0.6mm; }}
   .t-aromas span {{ white-space: nowrap; }}
-  .t-chem {{ font-size: 2.6mm; color: #94a3b8; text-align: center; font-style: italic; line-height: 1.15;
+  .t-chem {{ font-size: 3.1mm; color: #64748b; font-weight: 500; text-align: center; font-style: italic; line-height: 1.15;
             white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 0.3mm; }}
 
-  /* ---------- SIDEBAR ---------- */
-  .side {{ display: flex; flex-direction: column; gap: 4mm; min-height: 0; }}
-  .box {{ background: #fff; border-radius: 3mm; padding: 3.2mm 4.2mm; box-shadow: 0 0 0 0.35mm #e2e8f0 inset; }}
-  .box h3 {{ font-size: 4.8mm; font-weight: 900; color: #7f1d1d; margin-bottom: 1.8mm; letter-spacing: 0.2mm; }}
+  /* ---------- SIDEBAR (Optimized 0-gap vertical fill) ---------- */
+  .side {{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 0;
+    gap: 4mm;
+  }}
+  .box {{
+    background: #fff;
+    border-radius: 3.2mm;
+    padding: 3.8mm 4.6mm;
+    box-shadow: 0 0 0 0.4mm #cbd5e1 inset;
+  }}
+  .box h3 {{
+    font-size: 5.6mm;
+    font-weight: 900;
+    color: #7f1d1d;
+    margin-bottom: 2mm;
+    letter-spacing: 0.3mm;
+  }}
   
-  .anat {{ display: grid; grid-template-columns: 66mm 1fr; gap: 4mm; align-items: center; }}
-  .anat .tile {{ height: 56mm; --c: #b91c1c; }}
-  .anat ol {{ list-style: none; font-size: 3.3mm; line-height: 1.3; color: #334155; }}
-  .anat li {{ margin-bottom: 1.1mm; }}
-  .anat li b {{ color: #0f172a; }}
-  .num {{ display: inline-flex; width: 4.2mm; height: 4.2mm; border-radius: 50%; background: #f59e0b; color: #fff;
-         font-size: 2.7mm; font-weight: 900; align-items: center; justify-content: center; margin-right: 1mm; }}
+  /* Box 1: Anatomy */
+  .anat {{ display: grid; grid-template-columns: 80mm 1fr; gap: 5mm; align-items: center; }}
+  .anat .tile {{ height: 68mm; --c: #b91c1c; }}
+  .anat ol {{ list-style: none; font-size: 4.2mm; line-height: 1.34; color: #1e293b; }}
+  .anat li {{ margin-bottom: 1.4mm; }}
+  .anat li b {{ color: #0f172a; font-weight: 800; }}
+  .num {{ display: inline-flex; width: 4.8mm; height: 4.8mm; border-radius: 50%; background: #f59e0b; color: #fff;
+         font-size: 3.1mm; font-weight: 900; align-items: center; justify-content: center; margin-right: 1.2mm; }}
 
-  /* Top Varieties Stacked Bar Chart */
-  .top-var {{ padding: 3.2mm 4.2mm; }}
-  .top-var-sub {{ font-size: 2.9mm; color: #64748b; margin-top: -1mm; margin-bottom: 2mm; }}
+  /* Box 2: Top Varieties Stacked Bar Chart */
+  .top-var {{ padding: 3.8mm 4.6mm; }}
+  .top-var-sub {{ font-size: 3.5mm; color: #475569; font-weight: 600; margin-top: -1.2mm; margin-bottom: 2.2mm; }}
   .top-var-list {{ display: flex; flex-direction: column; gap: 1.6mm; }}
-  .top-var-item {{ display: flex; flex-direction: column; gap: 0.5mm; }}
+  .top-var-item {{ display: flex; flex-direction: column; gap: 0.6mm; }}
   .top-var-meta {{ display: flex; justify-content: space-between; align-items: baseline; }}
-  .top-var-left {{ display: flex; align-items: center; gap: 1.2mm; }}
-  .top-var-rank {{ font-size: 3.1mm; font-weight: 900; color: #f59e0b; width: 5.5mm; }}
-  .top-var-dot {{ width: 2.5mm; height: 2.5mm; border-radius: 50%; }}
-  .top-var-name {{ font-size: 3.7mm; font-weight: 800; color: #0f172a; }}
-  .top-var-total {{ font-size: 2.9mm; font-weight: 700; color: #64748b; }}
-  .top-var-bar {{ display: flex; height: 4.2mm; border-radius: 1mm; overflow: hidden; background: #e2e8f0; font-size: 2.4mm; font-weight: 800; color: #fff; line-height: 4.2mm; }}
-  .tseg {{ display: flex; align-items: center; justify-content: center; overflow: hidden; white-space: nowrap; padding: 0 0.8mm; text-overflow: ellipsis; }}
+  .top-var-left {{ display: flex; align-items: center; gap: 1.5mm; }}
+  .top-var-rank {{ font-size: 3.8mm; font-weight: 900; color: #d97706; width: 6.5mm; }}
+  .top-var-dot {{ width: 3mm; height: 3mm; border-radius: 50%; }}
+  .top-var-name {{ font-size: 4.4mm; font-weight: 800; color: #0f172a; }}
+  .top-var-total {{ font-size: 3.6mm; color: #475569; }}
+  .top-var-total b {{ color: #0f172a; font-weight: 800; }}
+  .top-var-bar {{ display: flex; height: 5.6mm; border-radius: 1.2mm; overflow: hidden; background: #e2e8f0; font-size: 2.9mm; font-weight: 800; color: #fff; line-height: 5.6mm; }}
+  .tseg {{ display: flex; align-items: center; justify-content: center; overflow: hidden; white-space: nowrap; padding: 0 1mm; text-overflow: ellipsis; }}
   .tseg span {{ overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }}
 
-  .climates div {{ display: flex; gap: 2.2mm; align-items: flex-start; margin-bottom: 1.4mm; font-size: 3.2mm; line-height: 1.25; color: #334155; }}
-  .climates .sw {{ flex: 0 0 4.5mm; height: 4.5mm; border-radius: 1mm; margin-top: 0.3mm; }}
-  .climates b {{ color: #0f172a; }}
+  /* Box 3: Climates */
+  .clim-row {{ display: flex; gap: 2.5mm; align-items: flex-start; margin-bottom: 1.6mm; font-size: 3.8mm; line-height: 1.28; color: #1e293b; }}
+  .clim-row .sw {{ flex: 0 0 5.5mm; height: 5.5mm; border-radius: 1.2mm; margin-top: 0.4mm; }}
+  .clim-row b {{ color: #0f172a; font-weight: 800; }}
 
-  .aromas-cols {{ column-count: 2; column-gap: 5mm; font-size: 3.3mm; line-height: 1.38; color: #334155; }}
-  .aromas-cols .fam {{ font-weight: 900; color: #7f1d1d; font-size: 3.5mm; margin-top: 0.8mm; break-after: avoid; }}
+  /* Box 4: Aromas 54 Index */
+  .aromas-cols {{ column-count: 2; column-gap: 6mm; font-size: 3.9mm; line-height: 1.48; color: #1e293b; }}
+  .aromas-cols .fam {{ font-weight: 900; color: #7f1d1d; font-size: 4.4mm; margin-top: 1.2mm; margin-bottom: 0.4mm; break-after: avoid; }}
   .aromas-cols .fam:first-child {{ margin-top: 0; }}
-  .aromas-cols .ar b {{ display: inline-block; min-width: 5.4mm; color: #b45309; }}
-  .aromas-cols .ar i {{ color: #94a3b8; font-size: 2.5mm; }}
+  .aromas-cols .ar {{ margin-bottom: 0.4mm; }}
+  .aromas-cols .ar b {{ display: inline-block; min-width: 6.5mm; color: #b45309; font-weight: 800; }}
+  .aromas-cols .ar i {{ color: #64748b; font-size: 3.1mm; font-weight: 500; }}
 
-  .dyn div {{ font-size: 3.4mm; line-height: 1.32; color: #334155; margin-bottom: 1.4mm; padding-left: 2.5mm; border-left: 0.9mm solid #f59e0b; }}
-  .dyn b {{ color: #0f172a; }}
-  .dyn-note {{ font-size: 2.8mm; color: #94a3b8; font-style: italic; margin-top: 1.2mm; }}
+  /* Box 5: Dynasties */
+  .dyn-card {{ font-size: 4.1mm; line-height: 1.34; color: #1e293b; margin-bottom: 1.6mm; padding-left: 3mm; border-left: 1.2mm solid #f59e0b; }}
+  .dyn-card.d-pinot {{ border-left-color: #ca8a04; }}
+  .dyn-card.d-cab {{ border-left-color: #991b1b; }}
+  .dyn-card.d-sav {{ border-left-color: #0ea5e9; }}
+  .dyn-card.d-iber {{ border-left-color: #dc2626; }}
+  .dyn-card b {{ color: #0f172a; font-weight: 800; }}
+  .dyn-note {{ font-size: 3.2mm; color: #64748b; font-style: italic; margin-top: 1.4mm; }}
 
   /* ---------- FOOTER ---------- */
-  .foot {{ display: flex; justify-content: space-between; align-items: center; font-size: 3.5mm; color: #64748b;
-          border-top: 0.5mm solid #cbd5e1; padding-top: 2.2mm; }}
-  .foot b {{ color: #7f1d1d; }}
+  .foot {{ display: flex; justify-content: space-between; align-items: center; font-size: 4.2mm; color: #475569; font-weight: 600;
+          border-top: 0.6mm solid #cbd5e1; padding-top: 2.5mm; }}
+  .foot b {{ color: #7f1d1d; font-weight: 800; }}
 </style>
 </head>
 <body>
@@ -339,11 +366,11 @@ def generate_poster_html(lang='es'):
         <div class="anat">
           <div class="tile">
             <div class="t-top"><span class="t-z">5</span><span class="t-origin">🇪🇸 74 DOs</span><span class="t-mass">4.0</span></div>
-            <div class="t-symbol" style="font-size:18mm !important;">Te</div>
+            <div class="t-symbol" style="font-size:24mm !important;">Te</div>
             <div class="t-name">Tempranillo</div>
             <div class="t-val"><span class="vb ac">Ac 3</span><span class="vb tn">Tn 4</span><span class="vb cp">Cp 4</span></div>
             <div class="t-aromas"><span>🍒 13</span><span>🪵 52</span><span>🌿 35</span></div>
-            <div class="t-chem">Compuestos aromáticos clave</div>
+            <div class="t-chem">Beta-damascenona, Ciclona</div>
           </div>
           <ol>
             {anat_list}
@@ -358,7 +385,7 @@ def generate_poster_html(lang='es'):
         {climates_body}
       </div>
 
-      <div class="box" style="flex:1; min-height:0; overflow:hidden;">
+      <div class="box aromas-box">
         <h3>{aromas_title}</h3>
         <div class="aromas-cols" id="aromas"></div>
       </div>
@@ -507,4 +534,4 @@ with open('/Users/jreyes13/GitHub/wine3ai/print/poster_a0_en.html', 'w', encodin
 with open('/Users/jreyes13/GitHub/wine3ai/print/poster_a0.html', 'w', encoding='utf-8') as f:
     f.write(es_html)
 
-print("Updated poster HTML files for ES and EN.")
+print("Generated perfected posters successfully.")

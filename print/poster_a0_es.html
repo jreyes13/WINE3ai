@@ -13,151 +13,178 @@
   }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    color: #1e293b;
+    color: #0f172a;
     background: #fbf8f3;
     overflow: hidden;
   }
   .poster {
     width: 1189mm; height: 841mm;
-    padding: 12mm 15mm 10mm 15mm;
+    padding: 12mm 14mm 10mm 14mm;
     display: grid;
-    grid-template-rows: 54mm 1fr 11mm;
+    grid-template-rows: 56mm 1fr 12mm;
     gap: 5mm;
   }
 
   /* ---------- HEADER ---------- */
   .head {
     display: flex; align-items: center; justify-content: space-between;
-    border-bottom: 1.2mm solid #7f1d1d; padding-bottom: 3.5mm;
+    border-bottom: 1.4mm solid #7f1d1d; padding-bottom: 4mm;
   }
-  .brand { display: flex; align-items: baseline; gap: 6mm; }
-  .brand-logo { font-size: 27mm; font-weight: 900; color: #7f1d1d; letter-spacing: -1mm; line-height: 1; }
-  .brand-logo sup { font-size: 15mm; color: #f59e0b; }
-  .brand-logo .ai { font-size: 15mm; color: #0ea5e9; font-weight: 700; }
-  .title-block h1 { font-size: 16mm; font-weight: 900; letter-spacing: -0.3mm; line-height: 1.05; color: #0f172a; }
-  .title-block p { font-size: 5.4mm; color: #475569; margin-top: 1.8mm; }
+  .brand { display: flex; align-items: baseline; gap: 7mm; }
+  .brand-logo { font-size: 30mm; font-weight: 900; color: #7f1d1d; letter-spacing: -1.2mm; line-height: 1; }
+  .brand-logo sup { font-size: 17mm; color: #f59e0b; }
+  .brand-logo .ai { font-size: 17mm; color: #0ea5e9; font-weight: 800; }
+  .title-block h1 { font-size: 18mm; font-weight: 900; letter-spacing: -0.4mm; line-height: 1.05; color: #0f172a; }
+  .title-block p { font-size: 6.2mm; color: #334155; font-weight: 500; margin-top: 1.8mm; }
   .head-formula { text-align: right; }
-  .formula { font-size: 11.5mm; font-weight: 900; color: #0f172a; }
+  .formula { font-size: 13.5mm; font-weight: 900; color: #0f172a; }
   .formula span { color: #f59e0b; }
-  .formula-sub { font-size: 4.2mm; color: #64748b; margin-top: 1mm; line-height: 1.35; }
+  .formula-sub { font-size: 4.8mm; color: #475569; font-weight: 600; margin-top: 1.2mm; line-height: 1.35; }
 
   /* ---------- BODY ---------- */
-  .body { display: grid; grid-template-columns: 1fr 275mm; gap: 8mm; min-height: 0; }
+  .body { display: grid; grid-template-columns: 1fr 310mm; gap: 8mm; min-height: 0; }
 
   .table-grid {
     display: grid;
-    grid-template-columns: 12mm 50mm repeat(9, 1fr);
-    grid-template-rows: 12mm 37mm repeat(9, 1fr);
-    gap: 2mm;
+    grid-template-columns: 14mm 54mm repeat(9, 1fr);
+    grid-template-rows: 14mm 42mm repeat(9, 1fr);
+    gap: 2.2mm;
     min-height: 0;
   }
   .wband {
-    border-radius: 2mm; color: #fff; font-weight: 900; font-size: 5.2mm;
-    display: flex; align-items: center; justify-content: center; letter-spacing: 0.3mm;
+    border-radius: 2mm; color: #fff; font-weight: 900; font-size: 5.6mm;
+    display: flex; align-items: center; justify-content: center; letter-spacing: 0.4mm;
   }
   .cband {
-    border-radius: 2mm; color: #fff; font-weight: 900; font-size: 4.8mm;
+    border-radius: 2mm; color: #fff; font-weight: 900; font-size: 5.2mm;
     writing-mode: vertical-rl; transform: rotate(180deg);
-    display: flex; align-items: center; justify-content: center; letter-spacing: 0.3mm;
+    display: flex; align-items: center; justify-content: center; letter-spacing: 0.4mm;
   }
   .corner {
-    border: 0.4mm dashed #94a3b8; border-radius: 2mm;
+    border: 0.5mm dashed #94a3b8; border-radius: 2mm;
     display: flex; flex-direction: column; justify-content: center; align-items: center;
-    font-size: 4mm; font-weight: 800; color: #475569; text-align: center; line-height: 1.3;
+    font-size: 4.4mm; font-weight: 900; color: #334155; text-align: center; line-height: 1.3;
   }
   .ghead {
-    background: #fff; border-radius: 2mm; border-top: 2.4mm solid var(--c);
-    padding: 1.8mm 2.2mm; display: flex; flex-direction: column; justify-content: flex-start;
-    box-shadow: 0 0 0 0.3mm #e2e8f0 inset;
+    background: #fff; border-radius: 2.2mm; border-top: 2.8mm solid var(--c);
+    padding: 2.2mm 2.4mm; display: flex; flex-direction: column; justify-content: flex-start;
+    box-shadow: 0 0 0 0.35mm #cbd5e1 inset;
   }
-  .ghead .gnum { font-size: 3.8mm; font-weight: 900; color: var(--c); }
-  .ghead .gtitle { font-size: 4.4mm; font-weight: 800; line-height: 1.15; margin-top: 0.6mm; color: #0f172a; }
-  .ghead .gsub { font-size: 3mm; color: #64748b; line-height: 1.25; margin-top: 0.8mm; }
+  .ghead .gnum { font-size: 4.2mm; font-weight: 900; color: var(--c); }
+  .ghead .gtitle { font-size: 4.8mm; font-weight: 800; line-height: 1.15; margin-top: 0.8mm; color: #0f172a; }
+  .ghead .gsub { font-size: 3.3mm; color: #475569; line-height: 1.25; margin-top: 0.8mm; }
 
   .phead {
-    background: #fff; border-radius: 2mm; border-left: 2.4mm solid var(--c);
-    padding: 1.5mm 2mm; display: flex; flex-direction: column; justify-content: center;
-    box-shadow: 0 0 0 0.3mm #e2e8f0 inset;
+    background: #fff; border-radius: 2.2mm; border-left: 2.8mm solid var(--c);
+    padding: 1.8mm 2.2mm; display: flex; flex-direction: column; justify-content: center;
+    box-shadow: 0 0 0 0.35mm #cbd5e1 inset;
   }
-  .phead .pnum { font-size: 4mm; font-weight: 900; color: var(--c); }
-  .phead .picon { font-size: 8mm; line-height: 1.15; margin: 0.4mm 0; }
-  .phead .pname { font-size: 4.2mm; font-weight: 800; line-height: 1.15; color: #0f172a; }
-  .phead .pbadge { font-size: 3.2mm; color: #64748b; margin-top: 0.5mm; }
+  .phead .pnum { font-size: 4.4mm; font-weight: 900; color: var(--c); }
+  .phead .picon { font-size: 9mm; line-height: 1.15; margin: 0.5mm 0; }
+  .phead .pname { font-size: 4.6mm; font-weight: 800; line-height: 1.15; color: #0f172a; }
+  .phead .pbadge { font-size: 3.5mm; color: #475569; font-weight: 600; margin-top: 0.6mm; }
 
   .tile {
-    position: relative; background: #fff; border-radius: 2.2mm;
-    border: 0.5mm solid var(--c); border-top-width: 2mm;
-    padding: 1.5mm 1.8mm 1.3mm 1.8mm;
+    position: relative; background: #fff; border-radius: 2.4mm;
+    border: 0.6mm solid var(--c); border-top-width: 2.4mm;
+    padding: 1.8mm 2.2mm 1.6mm 2.2mm;
     display: flex; flex-direction: column; justify-content: space-between;
     overflow: hidden;
   }
   .tile::after {
     content: ""; position: absolute; inset: 0; background: var(--c); opacity: 0.05; pointer-events: none;
   }
-  .t-top { display: flex; justify-content: space-between; align-items: flex-start; font-weight: 800; }
-  .t-z { font-size: 6.2mm; color: #b45309; line-height: 1; }
-  .t-origin { font-size: 3.6mm; color: #475569; white-space: nowrap; }
-  .t-mass { font-size: 3.8mm; color: #334155; background: #f1f5f9; border-radius: 1mm; padding: 0.3mm 1mm; }
-  .t-symbol { font-size: 21mm; font-weight: 900; text-align: center; line-height: 1; color: var(--c); letter-spacing: -0.4mm; margin-top: 0.2mm; }
-  .t-name { font-size: 4.5mm; font-weight: 800; text-align: center; color: #0f172a; line-height: 1.1;
+  .t-top { display: flex; justify-content: space-between; align-items: baseline; font-weight: 800; }
+  .t-z { font-size: 7.2mm; color: #b45309; line-height: 1; font-weight: 900; }
+  .t-origin { font-size: 4.2mm; color: #334155; font-weight: 700; white-space: nowrap; }
+  .t-mass { font-size: 4.2mm; color: #0f172a; font-weight: 800; background: #f1f5f9; border: 0.25mm solid #cbd5e1; border-radius: 1mm; padding: 0.2mm 1mm; }
+  .t-symbol { font-size: 26mm; font-weight: 900; text-align: center; line-height: 0.95; color: var(--c); letter-spacing: -0.5mm; margin: 0.2mm 0; }
+  .t-name { font-size: 5.4mm; font-weight: 900; text-align: center; color: #0f172a; line-height: 1.1;
             white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .t-val { display: flex; justify-content: center; gap: 1mm; margin-top: 0.5mm; }
-  .vb { font-size: 3.3mm; font-weight: 800; border-radius: 0.8mm; padding: 0.2mm 0.9mm; border: 0.25mm solid; }
-  .vb.ac { color: #0369a1; border-color: #7dd3fc; background: #f0f9ff; }
-  .vb.tn { color: #b91c1c; border-color: #fca5a5; background: #fef2f2; }
-  .vb.cp { color: #b45309; border-color: #fcd34d; background: #fffbeb; }
-  .vb.az { color: #7e22ce; border-color: #d8b4fe; background: #faf5ff; }
-  .t-aromas { display: flex; justify-content: center; gap: 1.5mm; font-size: 3.4mm; color: #475569; font-weight: 700; margin-top: 0.5mm; }
+  .t-val { display: flex; justify-content: center; gap: 1.2mm; margin-top: 0.6mm; }
+  .vb { font-size: 3.8mm; font-weight: 800; border-radius: 1mm; padding: 0.3mm 1mm; border: 0.3mm solid; }
+  .vb.ac { color: #0369a1; border-color: #38bdf8; background: #f0f9ff; }
+  .vb.tn { color: #b91c1c; border-color: #f87171; background: #fef2f2; }
+  .vb.cp { color: #b45309; border-color: #fbbf24; background: #fffbeb; }
+  .vb.az { color: #7e22ce; border-color: #c084fc; background: #faf5ff; }
+  .t-aromas { display: flex; justify-content: center; gap: 1.8mm; font-size: 4mm; color: #334155; font-weight: 800; margin-top: 0.6mm; }
   .t-aromas span { white-space: nowrap; }
-  .t-chem { font-size: 2.6mm; color: #94a3b8; text-align: center; font-style: italic; line-height: 1.15;
+  .t-chem { font-size: 3.1mm; color: #64748b; font-weight: 500; text-align: center; font-style: italic; line-height: 1.15;
             white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 0.3mm; }
 
-  /* ---------- SIDEBAR ---------- */
-  .side { display: flex; flex-direction: column; gap: 4mm; min-height: 0; }
-  .box { background: #fff; border-radius: 3mm; padding: 3.2mm 4.2mm; box-shadow: 0 0 0 0.35mm #e2e8f0 inset; }
-  .box h3 { font-size: 4.8mm; font-weight: 900; color: #7f1d1d; margin-bottom: 1.8mm; letter-spacing: 0.2mm; }
+  /* ---------- SIDEBAR (Optimized 0-gap vertical fill) ---------- */
+  .side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 0;
+    gap: 4mm;
+  }
+  .box {
+    background: #fff;
+    border-radius: 3.2mm;
+    padding: 3.8mm 4.6mm;
+    box-shadow: 0 0 0 0.4mm #cbd5e1 inset;
+  }
+  .box h3 {
+    font-size: 5.6mm;
+    font-weight: 900;
+    color: #7f1d1d;
+    margin-bottom: 2mm;
+    letter-spacing: 0.3mm;
+  }
   
-  .anat { display: grid; grid-template-columns: 66mm 1fr; gap: 4mm; align-items: center; }
-  .anat .tile { height: 56mm; --c: #b91c1c; }
-  .anat ol { list-style: none; font-size: 3.3mm; line-height: 1.3; color: #334155; }
-  .anat li { margin-bottom: 1.1mm; }
-  .anat li b { color: #0f172a; }
-  .num { display: inline-flex; width: 4.2mm; height: 4.2mm; border-radius: 50%; background: #f59e0b; color: #fff;
-         font-size: 2.7mm; font-weight: 900; align-items: center; justify-content: center; margin-right: 1mm; }
+  /* Box 1: Anatomy */
+  .anat { display: grid; grid-template-columns: 80mm 1fr; gap: 5mm; align-items: center; }
+  .anat .tile { height: 68mm; --c: #b91c1c; }
+  .anat ol { list-style: none; font-size: 4.2mm; line-height: 1.34; color: #1e293b; }
+  .anat li { margin-bottom: 1.4mm; }
+  .anat li b { color: #0f172a; font-weight: 800; }
+  .num { display: inline-flex; width: 4.8mm; height: 4.8mm; border-radius: 50%; background: #f59e0b; color: #fff;
+         font-size: 3.1mm; font-weight: 900; align-items: center; justify-content: center; margin-right: 1.2mm; }
 
-  /* Top Varieties Stacked Bar Chart */
-  .top-var { padding: 3.2mm 4.2mm; }
-  .top-var-sub { font-size: 2.9mm; color: #64748b; margin-top: -1mm; margin-bottom: 2mm; }
+  /* Box 2: Top Varieties Stacked Bar Chart */
+  .top-var { padding: 3.8mm 4.6mm; }
+  .top-var-sub { font-size: 3.5mm; color: #475569; font-weight: 600; margin-top: -1.2mm; margin-bottom: 2.2mm; }
   .top-var-list { display: flex; flex-direction: column; gap: 1.6mm; }
-  .top-var-item { display: flex; flex-direction: column; gap: 0.5mm; }
+  .top-var-item { display: flex; flex-direction: column; gap: 0.6mm; }
   .top-var-meta { display: flex; justify-content: space-between; align-items: baseline; }
-  .top-var-left { display: flex; align-items: center; gap: 1.2mm; }
-  .top-var-rank { font-size: 3.1mm; font-weight: 900; color: #f59e0b; width: 5.5mm; }
-  .top-var-dot { width: 2.5mm; height: 2.5mm; border-radius: 50%; }
-  .top-var-name { font-size: 3.7mm; font-weight: 800; color: #0f172a; }
-  .top-var-total { font-size: 2.9mm; font-weight: 700; color: #64748b; }
-  .top-var-bar { display: flex; height: 4.2mm; border-radius: 1mm; overflow: hidden; background: #e2e8f0; font-size: 2.4mm; font-weight: 800; color: #fff; line-height: 4.2mm; }
-  .tseg { display: flex; align-items: center; justify-content: center; overflow: hidden; white-space: nowrap; padding: 0 0.8mm; text-overflow: ellipsis; }
+  .top-var-left { display: flex; align-items: center; gap: 1.5mm; }
+  .top-var-rank { font-size: 3.8mm; font-weight: 900; color: #d97706; width: 6.5mm; }
+  .top-var-dot { width: 3mm; height: 3mm; border-radius: 50%; }
+  .top-var-name { font-size: 4.4mm; font-weight: 800; color: #0f172a; }
+  .top-var-total { font-size: 3.6mm; color: #475569; }
+  .top-var-total b { color: #0f172a; font-weight: 800; }
+  .top-var-bar { display: flex; height: 5.6mm; border-radius: 1.2mm; overflow: hidden; background: #e2e8f0; font-size: 2.9mm; font-weight: 800; color: #fff; line-height: 5.6mm; }
+  .tseg { display: flex; align-items: center; justify-content: center; overflow: hidden; white-space: nowrap; padding: 0 1mm; text-overflow: ellipsis; }
   .tseg span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
-  .climates div { display: flex; gap: 2.2mm; align-items: flex-start; margin-bottom: 1.4mm; font-size: 3.2mm; line-height: 1.25; color: #334155; }
-  .climates .sw { flex: 0 0 4.5mm; height: 4.5mm; border-radius: 1mm; margin-top: 0.3mm; }
-  .climates b { color: #0f172a; }
+  /* Box 3: Climates */
+  .clim-row { display: flex; gap: 2.5mm; align-items: flex-start; margin-bottom: 1.6mm; font-size: 3.8mm; line-height: 1.28; color: #1e293b; }
+  .clim-row .sw { flex: 0 0 5.5mm; height: 5.5mm; border-radius: 1.2mm; margin-top: 0.4mm; }
+  .clim-row b { color: #0f172a; font-weight: 800; }
 
-  .aromas-cols { column-count: 2; column-gap: 5mm; font-size: 3.3mm; line-height: 1.38; color: #334155; }
-  .aromas-cols .fam { font-weight: 900; color: #7f1d1d; font-size: 3.5mm; margin-top: 0.8mm; break-after: avoid; }
+  /* Box 4: Aromas 54 Index */
+  .aromas-cols { column-count: 2; column-gap: 6mm; font-size: 3.9mm; line-height: 1.48; color: #1e293b; }
+  .aromas-cols .fam { font-weight: 900; color: #7f1d1d; font-size: 4.4mm; margin-top: 1.2mm; margin-bottom: 0.4mm; break-after: avoid; }
   .aromas-cols .fam:first-child { margin-top: 0; }
-  .aromas-cols .ar b { display: inline-block; min-width: 5.4mm; color: #b45309; }
-  .aromas-cols .ar i { color: #94a3b8; font-size: 2.5mm; }
+  .aromas-cols .ar { margin-bottom: 0.4mm; }
+  .aromas-cols .ar b { display: inline-block; min-width: 6.5mm; color: #b45309; font-weight: 800; }
+  .aromas-cols .ar i { color: #64748b; font-size: 3.1mm; font-weight: 500; }
 
-  .dyn div { font-size: 3.4mm; line-height: 1.32; color: #334155; margin-bottom: 1.4mm; padding-left: 2.5mm; border-left: 0.9mm solid #f59e0b; }
-  .dyn b { color: #0f172a; }
-  .dyn-note { font-size: 2.8mm; color: #94a3b8; font-style: italic; margin-top: 1.2mm; }
+  /* Box 5: Dynasties */
+  .dyn-card { font-size: 4.1mm; line-height: 1.34; color: #1e293b; margin-bottom: 1.6mm; padding-left: 3mm; border-left: 1.2mm solid #f59e0b; }
+  .dyn-card.d-pinot { border-left-color: #ca8a04; }
+  .dyn-card.d-cab { border-left-color: #991b1b; }
+  .dyn-card.d-sav { border-left-color: #0ea5e9; }
+  .dyn-card.d-iber { border-left-color: #dc2626; }
+  .dyn-card b { color: #0f172a; font-weight: 800; }
+  .dyn-note { font-size: 3.2mm; color: #64748b; font-style: italic; margin-top: 1.4mm; }
 
   /* ---------- FOOTER ---------- */
-  .foot { display: flex; justify-content: space-between; align-items: center; font-size: 3.5mm; color: #64748b;
-          border-top: 0.5mm solid #cbd5e1; padding-top: 2.2mm; }
-  .foot b { color: #7f1d1d; }
+  .foot { display: flex; justify-content: space-between; align-items: center; font-size: 4.2mm; color: #475569; font-weight: 600;
+          border-top: 0.6mm solid #cbd5e1; padding-top: 2.5mm; }
+  .foot b { color: #7f1d1d; font-weight: 800; }
 </style>
 </head>
 <body>
@@ -181,24 +208,24 @@
 
     <aside class="side">
       <div class="box">
-        <h3>🔬 CÓMO LEER CADA CASILLA</h3>
+        <h3>🔬 ANATOMÍA ENOLÓGICA DE CADA CASILLA</h3>
         <div class="anat">
           <div class="tile">
             <div class="t-top"><span class="t-z">5</span><span class="t-origin">🇪🇸 74 DOs</span><span class="t-mass">4.0</span></div>
-            <div class="t-symbol" style="font-size:18mm !important;">Te</div>
+            <div class="t-symbol" style="font-size:24mm !important;">Te</div>
             <div class="t-name">Tempranillo</div>
             <div class="t-val"><span class="vb ac">Ac 3</span><span class="vb tn">Tn 4</span><span class="vb cp">Cp 4</span></div>
             <div class="t-aromas"><span>🍒 13</span><span>🪵 52</span><span>🌿 35</span></div>
-            <div class="t-chem">Compuestos aromáticos clave</div>
+            <div class="t-chem">Beta-damascenona, Ciclona</div>
           </div>
           <ol>
             
-            <li><span class="num">1</span><b>Nº atómico (Z 1–81):</b> posición ordinal en la matriz cartesiana 9×9.</li>
-            <li><span class="num">2</span><b>Origen + DOs:</b> bandera de origen y nº de denominaciones donde está autorizada.</li>
-            <li><span class="num">3</span><b>Masa (A 1.0–5.0):</b> cuerpo, densidad, extracto seco y peso en boca.</li>
-            <li><span class="num">4</span><b>Símbolo:</b> abreviatura mnemotécnica de 2 letras en gran formato.</li>
-            <li><span class="num">5</span><b>Valencias (1–5):</b> <b>Ac</b> acidez · <b>Tn</b> tanino · <b>Cp</b> cuerpo · <b>Az</b> azúcar.</li>
-            <li><span class="num">6</span><b>Aromas:</b> descriptores calibrados con <i>Le Nez du Vin</i> (ver índice).</li>
+            <li><span class="num">1</span><b>Nº atómico (Z 1–81):</b> posición ordinal única en la matriz cartesiana 9×9.</li>
+            <li><span class="num">2</span><b>Origen + DOs:</b> país de origen y número total de denominaciones oficiales donde está autorizada.</li>
+            <li><span class="num">3</span><b>Masa (A 1.0–5.0):</b> cuerpo, densidad, extracto seco y peso táctil en boca.</li>
+            <li><span class="num">4</span><b>Símbolo:</b> abreviatura mnemotécnica de 2 letras en formato atómico destacado.</li>
+            <li><span class="num">5</span><b>Valencias (1–5):</b> <b>Ac</b> acidez · <b>Tn</b> tanino · <b>Cp</b> cuerpo/crianza · <b>Az</b> azúcar residual.</li>
+            <li><span class="num">6</span><b>Aromas:</b> descriptores olfativos dominantes de <i>Le Nez du Vin</i> (ver índice numerado).</li>
     
           </ol>
         </div>
@@ -207,7 +234,7 @@
       
       <div class="box top-var">
         <h3>📊 TOP 10 VARIEDADES MÁS CULTIVADAS & PRESENCIA GLOBAL</h3>
-        <div class="top-var-sub">Presencia en denominaciones oficiales (DOs / AOCs / DOCGs) y desglose por países</div>
+        <div class="top-var-sub">Presencia en denominaciones de origen oficiales (DOs / AOCs / DOCGs) y desglose por países</div>
         <div class="top-var-list">
           
         <div class="top-var-item">
@@ -217,7 +244,7 @@
               <span class="top-var-dot" style="background:#ca8a04;"></span>
               <span class="top-var-name">Chardonnay</span>
             </div>
-            <span class="top-var-total">172 DOs · 18 países</span>
+            <span class="top-var-total"><b>172</b> DOs · 18 países</span>
           </div>
           <div class="top-var-bar"><div class="tseg" style="width:35.5%;background:#1d4ed8;" title="Francia: 61 (35.5%)"><span>🇫🇷 Francia 36%</span></div><div class="tseg" style="width:21.5%;background:#dc2626;" title="España: 37 (21.5%)"><span>🇪🇸 España 22%</span></div><div class="tseg" style="width:9.3%;background:#0284c7;" title="Hungría: 16 (9.3%)"><span>🇭🇺 9%</span></div><div class="tseg" style="width:7.6%;background:#059669;" title="Italia: 13 (7.6%)"><span>🇮🇹 8%</span></div><div class="tseg tseg-other" style="width:26.1%;background:#64748b;" title="Otros (14 países): 45"><span>+14 Otros 26%</span></div></div>
         </div>
@@ -228,9 +255,9 @@
               <span class="top-var-dot" style="background:#ef4444;"></span>
               <span class="top-var-name">Cabernet Sauvignon</span>
             </div>
-            <span class="top-var-total">166 DOs · 18 países</span>
+            <span class="top-var-total"><b>166</b> DOs · 18 países</span>
           </div>
-          <div class="top-var-bar"><div class="tseg" style="width:36.1%;background:#dc2626;" title="España: 60 (36.1%)"><span>🇪🇸 España 36%</span></div><div class="tseg" style="width:33.7%;background:#1d4ed8;" title="Francia: 56 (33.7%)"><span>🇫🇷 Francia 34%</span></div><div class="tseg" style="width:4.2%;background:#059669;" title="Italia: 7 (4.2%)"><span>🇮🇹 4%</span></div><div class="tseg" style="width:4.2%;background:#0284c7;" title="Hungría: 7 (4.2%)"><span>🇭🇺 4%</span></div><div class="tseg tseg-other" style="width:21.8%;background:#64748b;" title="Otros (14 países): 36"><span>+14 Otros 22%</span></div></div>
+          <div class="top-var-bar"><div class="tseg" style="width:36.1%;background:#dc2626;" title="España: 60 (36.1%)"><span>🇪🇸 España 36%</span></div><div class="tseg" style="width:33.7%;background:#1d4ed8;" title="Francia: 56 (33.7%)"><span>🇫🇷 Francia 34%</span></div><div class="tseg" style="width:4.2%;background:#059669;" title="Italia: 7 (4.2%)"><span>🇮🇹</span></div><div class="tseg" style="width:4.2%;background:#0284c7;" title="Hungría: 7 (4.2%)"><span>🇭🇺</span></div><div class="tseg tseg-other" style="width:21.8%;background:#64748b;" title="Otros (14 países): 36"><span>+14 Otros 22%</span></div></div>
         </div>
         <div class="top-var-item">
           <div class="top-var-meta">
@@ -239,9 +266,9 @@
               <span class="top-var-dot" style="background:#ef4444;"></span>
               <span class="top-var-name">Syrah</span>
             </div>
-            <span class="top-var-total">150 DOs · 12 países</span>
+            <span class="top-var-total"><b>150</b> DOs · 12 países</span>
           </div>
-          <div class="top-var-bar"><div class="tseg" style="width:48.0%;background:#1d4ed8;" title="Francia: 72 (48.0%)"><span>🇫🇷 Francia 48%</span></div><div class="tseg" style="width:36.7%;background:#dc2626;" title="España: 55 (36.7%)"><span>🇪🇸 España 37%</span></div><div class="tseg" style="width:4.0%;background:#b91c1c;" title="Turquía: 6 (4.0%)"><span>🇹🇷 4%</span></div><div class="tseg" style="width:2.7%;background:#ea580c;" title="Líbano: 4 (2.7%)"><span>🇱🇧 3%</span></div><div class="tseg tseg-other" style="width:8.6%;background:#64748b;" title="Otros (8 países): 13"><span>+8 9%</span></div></div>
+          <div class="top-var-bar"><div class="tseg" style="width:48.0%;background:#1d4ed8;" title="Francia: 72 (48.0%)"><span>🇫🇷 Francia 48%</span></div><div class="tseg" style="width:36.7%;background:#dc2626;" title="España: 55 (36.7%)"><span>🇪🇸 España 37%</span></div><div class="tseg" style="width:4.0%;background:#b91c1c;" title="Turquía: 6 (4.0%)"><span>🇹🇷</span></div><div class="tseg" style="width:2.7%;background:#ea580c;" title="Líbano: 4 (2.7%)"><span>🇱🇧</span></div><div class="tseg tseg-other" style="width:8.6%;background:#64748b;" title="Otros (8 países): 13"><span>+8 (9%)</span></div></div>
         </div>
         <div class="top-var-item">
           <div class="top-var-meta">
@@ -250,9 +277,9 @@
               <span class="top-var-dot" style="background:#ef4444;"></span>
               <span class="top-var-name">Merlot</span>
             </div>
-            <span class="top-var-total">139 DOs · 12 países</span>
+            <span class="top-var-total"><b>139</b> DOs · 12 países</span>
           </div>
-          <div class="top-var-bar"><div class="tseg" style="width:35.3%;background:#dc2626;" title="España: 49 (35.3%)"><span>🇪🇸 España 35%</span></div><div class="tseg" style="width:30.9%;background:#1d4ed8;" title="Francia: 43 (30.9%)"><span>🇫🇷 Francia 31%</span></div><div class="tseg" style="width:10.1%;background:#059669;" title="Italia: 14 (10.1%)"><span>🇮🇹 10%</span></div><div class="tseg" style="width:6.5%;background:#0284c7;" title="Hungría: 9 (6.5%)"><span>🇭🇺 6%</span></div><div class="tseg tseg-other" style="width:17.2%;background:#64748b;" title="Otros (8 países): 24"><span>+8 Otros 17%</span></div></div>
+          <div class="top-var-bar"><div class="tseg" style="width:35.3%;background:#dc2626;" title="España: 49 (35.3%)"><span>🇪🇸 España 35%</span></div><div class="tseg" style="width:30.9%;background:#1d4ed8;" title="Francia: 43 (30.9%)"><span>🇫🇷 Francia 31%</span></div><div class="tseg" style="width:10.1%;background:#059669;" title="Italia: 14 (10.1%)"><span>🇮🇹 10%</span></div><div class="tseg" style="width:6.5%;background:#0284c7;" title="Hungría: 9 (6.5%)"><span>🇭🇺</span></div><div class="tseg tseg-other" style="width:17.2%;background:#64748b;" title="Otros (8 países): 24"><span>+8 Otros 17%</span></div></div>
         </div>
         <div class="top-var-item">
           <div class="top-var-meta">
@@ -261,9 +288,9 @@
               <span class="top-var-dot" style="background:#ef4444;"></span>
               <span class="top-var-name">Garnacha / Grenache</span>
             </div>
-            <span class="top-var-total">124 DOs · 3 países</span>
+            <span class="top-var-total"><b>124</b> DOs · 3 países</span>
           </div>
-          <div class="top-var-bar"><div class="tseg" style="width:61.3%;background:#1d4ed8;" title="Francia: 76 (61.3%)"><span>🇫🇷 Francia 61%</span></div><div class="tseg" style="width:37.1%;background:#dc2626;" title="España: 46 (37.1%)"><span>🇪🇸 España 37%</span></div><div class="tseg" style="width:1.6%;background:#059669;" title="Italia: 2 (1.6%)"><span>🇮🇹 2%</span></div></div>
+          <div class="top-var-bar"><div class="tseg" style="width:61.3%;background:#1d4ed8;" title="Francia: 76 (61.3%)"><span>🇫🇷 Francia 61%</span></div><div class="tseg" style="width:37.1%;background:#dc2626;" title="España: 46 (37.1%)"><span>🇪🇸 España 37%</span></div><div class="tseg" style="width:1.6%;background:#059669;" title="Italia: 2 (1.6%)"><span>🇮🇹</span></div></div>
         </div>
         <div class="top-var-item">
           <div class="top-var-meta">
@@ -272,9 +299,9 @@
               <span class="top-var-dot" style="background:#ef4444;"></span>
               <span class="top-var-name">Pinot Noir</span>
             </div>
-            <span class="top-var-total">121 DOs · 13 países</span>
+            <span class="top-var-total"><b>121</b> DOs · 13 países</span>
           </div>
-          <div class="top-var-bar"><div class="tseg" style="width:60.3%;background:#1d4ed8;" title="Francia: 73 (60.3%)"><span>🇫🇷 Francia 60%</span></div><div class="tseg" style="width:10.7%;background:#d97706;" title="Alemania: 13 (10.7%)"><span>🇩🇪 11%</span></div><div class="tseg" style="width:5.0%;background:#059669;" title="Italia: 6 (5.0%)"><span>🇮🇹 5%</span></div><div class="tseg" style="width:5.0%;background:#4f46e5;" title="Eslovenia: 6 (5.0%)"><span>🇸🇮 5%</span></div><div class="tseg tseg-other" style="width:19.0%;background:#64748b;" title="Otros (9 países): 23"><span>+9 Otros 19%</span></div></div>
+          <div class="top-var-bar"><div class="tseg" style="width:60.3%;background:#1d4ed8;" title="Francia: 73 (60.3%)"><span>🇫🇷 Francia 60%</span></div><div class="tseg" style="width:10.7%;background:#d97706;" title="Alemania: 13 (10.7%)"><span>🇩🇪 11%</span></div><div class="tseg" style="width:5.0%;background:#059669;" title="Italia: 6 (5.0%)"><span>🇮🇹</span></div><div class="tseg" style="width:5.0%;background:#4f46e5;" title="Eslovenia: 6 (5.0%)"><span>🇸🇮</span></div><div class="tseg tseg-other" style="width:19.0%;background:#64748b;" title="Otros (9 países): 23"><span>+9 Otros 19%</span></div></div>
         </div>
         <div class="top-var-item">
           <div class="top-var-meta">
@@ -283,9 +310,9 @@
               <span class="top-var-dot" style="background:#ef4444;"></span>
               <span class="top-var-name">Cabernet Franc</span>
             </div>
-            <span class="top-var-total">95 DOs · 11 países</span>
+            <span class="top-var-total"><b>95</b> DOs · 11 países</span>
           </div>
-          <div class="top-var-bar"><div class="tseg" style="width:72.6%;background:#1d4ed8;" title="Francia: 69 (72.6%)"><span>🇫🇷 Francia 73%</span></div><div class="tseg" style="width:7.4%;background:#0284c7;" title="Hungría: 7 (7.4%)"><span>🇭🇺 7%</span></div><div class="tseg" style="width:6.3%;background:#059669;" title="Italia: 6 (6.3%)"><span>🇮🇹 6%</span></div><div class="tseg" style="width:4.2%;background:#dc2626;" title="España: 4 (4.2%)"><span>🇪🇸 4%</span></div><div class="tseg tseg-other" style="width:9.5%;background:#64748b;" title="Otros (7 países): 9"><span>+7 10%</span></div></div>
+          <div class="top-var-bar"><div class="tseg" style="width:72.6%;background:#1d4ed8;" title="Francia: 69 (72.6%)"><span>🇫🇷 Francia 73%</span></div><div class="tseg" style="width:7.4%;background:#0284c7;" title="Hungría: 7 (7.4%)"><span>🇭🇺 7%</span></div><div class="tseg" style="width:6.3%;background:#059669;" title="Italia: 6 (6.3%)"><span>🇮🇹</span></div><div class="tseg" style="width:4.2%;background:#dc2626;" title="España: 4 (4.2%)"><span>🇪🇸</span></div><div class="tseg tseg-other" style="width:9.5%;background:#64748b;" title="Otros (7 países): 9"><span>+7 (10%)</span></div></div>
         </div>
         <div class="top-var-item">
           <div class="top-var-meta">
@@ -294,9 +321,9 @@
               <span class="top-var-dot" style="background:#ca8a04;"></span>
               <span class="top-var-name">Sauvignon Blanc</span>
             </div>
-            <span class="top-var-total">87 DOs · 11 países</span>
+            <span class="top-var-total"><b>87</b> DOs · 11 países</span>
           </div>
-          <div class="top-var-bar"><div class="tseg" style="width:34.5%;background:#1d4ed8;" title="Francia: 30 (34.5%)"><span>🇫🇷 Francia 34%</span></div><div class="tseg" style="width:26.4%;background:#dc2626;" title="España: 23 (26.4%)"><span>🇪🇸 España 26%</span></div><div class="tseg" style="width:12.6%;background:#0284c7;" title="Hungría: 11 (12.6%)"><span>🇭🇺 13%</span></div><div class="tseg" style="width:4.6%;background:#9333ea;" title="Austria: 4 (4.6%)"><span>🇦🇹 5%</span></div><div class="tseg tseg-other" style="width:21.9%;background:#64748b;" title="Otros (7 países): 19"><span>+7 Otros 22%</span></div></div>
+          <div class="top-var-bar"><div class="tseg" style="width:34.5%;background:#1d4ed8;" title="Francia: 30 (34.5%)"><span>🇫🇷 Francia 34%</span></div><div class="tseg" style="width:26.4%;background:#dc2626;" title="España: 23 (26.4%)"><span>🇪🇸 España 26%</span></div><div class="tseg" style="width:12.6%;background:#0284c7;" title="Hungría: 11 (12.6%)"><span>🇭🇺 13%</span></div><div class="tseg" style="width:4.6%;background:#9333ea;" title="Austria: 4 (4.6%)"><span>🇦🇹</span></div><div class="tseg tseg-other" style="width:21.9%;background:#64748b;" title="Otros (7 países): 19"><span>+7 Otros 22%</span></div></div>
         </div>
         <div class="top-var-item">
           <div class="top-var-meta">
@@ -305,9 +332,9 @@
               <span class="top-var-dot" style="background:#ef4444;"></span>
               <span class="top-var-name">Tempranillo</span>
             </div>
-            <span class="top-var-total">74 DOs · 2 países</span>
+            <span class="top-var-total"><b>74</b> DOs · 2 países</span>
           </div>
-          <div class="top-var-bar"><div class="tseg" style="width:85.1%;background:#dc2626;" title="España: 63 (85.1%)"><span>🇪🇸 España 85%</span></div><div class="tseg" style="width:14.9%;background:#16a34a;" title="Portugal: 11 (14.9%)"><span>🇵🇹 Portugal 15%</span></div></div>
+          <div class="top-var-bar"><div class="tseg" style="width:85.1%;background:#dc2626;" title="España: 63 (85.1%)"><span>🇪🇸 España 85%</span></div><div class="tseg" style="width:14.9%;background:#16a34a;" title="Portugal: 11 (14.9%)"><span>🇵🇹 15%</span></div></div>
         </div>
         <div class="top-var-item">
           <div class="top-var-meta">
@@ -316,9 +343,9 @@
               <span class="top-var-dot" style="background:#ef4444;"></span>
               <span class="top-var-name">Monastrell / Mourvèdre</span>
             </div>
-            <span class="top-var-total">65 DOs · 3 países</span>
+            <span class="top-var-total"><b>65</b> DOs · 3 países</span>
           </div>
-          <div class="top-var-bar"><div class="tseg" style="width:80.0%;background:#1d4ed8;" title="Francia: 52 (80.0%)"><span>🇫🇷 Francia 80%</span></div><div class="tseg" style="width:16.9%;background:#dc2626;" title="España: 11 (16.9%)"><span>🇪🇸 España 17%</span></div><div class="tseg" style="width:3.1%;background:#ea580c;" title="Líbano: 2 (3.1%)"><span>🇱🇧 3%</span></div></div>
+          <div class="top-var-bar"><div class="tseg" style="width:80.0%;background:#1d4ed8;" title="Francia: 52 (80.0%)"><span>🇫🇷 Francia 80%</span></div><div class="tseg" style="width:16.9%;background:#dc2626;" title="España: 11 (16.9%)"><span>🇪🇸 España 17%</span></div><div class="tseg" style="width:3.1%;background:#ea580c;" title="Líbano: 2 (3.1%)"><span>🇱🇧</span></div></div>
         </div>
         </div>
       </div>
@@ -326,26 +353,26 @@
       <div class="box climates">
         <h3>🌍 FILAS = CLIMA · COLUMNAS = ESTILO</h3>
         
-        <div><span class="sw" style="background:#0ea5e9"></span><span><b>C¹ Fresco, Atlántico &amp; Alpino (P1–P3):</b> acidez alta, ciclo largo, tensión mineral y graduación moderada.</span></div>
-        <div><span class="sw" style="background:#10b981"></span><span><b>C² Templado &amp; Continental (P4–P6):</b> riberas fluviales y mesetas; gran oscilación térmica día/noche.</span></div>
-        <div><span class="sw" style="background:#f59e0b"></span><span><b>C³ Cálido, Mediterráneo &amp; Volcánico (P7–P9):</b> brisa solar, lava, asoleo, crianza biológica y soleras.</span></div>
-        <div><span class="sw" style="background:linear-gradient(90deg,#ca8a04,#991b1b,#7c3aed)"></span><span><b>G1–G3 Blancos · G4–G6 Tintos · G7–G9</b> Espumosos, Rosados/Ancestrales y Generosos/Dulces.</span></div>
+        <div class="clim-row"><span class="sw" style="background:#0ea5e9"></span><span><b>C¹ Fresco, Atlántico &amp; Alpino (P1–P3):</b> acidez cortante, ciclo vegetativo largo, tensión mineral, graduación moderada y gran frescura.</span></div>
+        <div class="clim-row"><span class="sw" style="background:#10b981"></span><span><b>C² Templado &amp; Continental (P4–P6):</b> riberas fluviales, mesetas centrales y valles de acusada oscilación térmica día/noche.</span></div>
+        <div class="clim-row"><span class="sw" style="background:#f59e0b"></span><span><b>C³ Cálido, Mediterráneo &amp; Volcánico (P7–P9):</b> insolación plena, suelos de lava y esquisto, asoleo, crianza biológica de flor y soleras.</span></div>
+        <div class="clim-row"><span class="sw" style="background:linear-gradient(90deg,#ca8a04,#991b1b,#7c3aed)"></span><span><b>G1–G3 Blancos · G4–G6 Tintos · G7–G9</b> Espumosos nobles, Rosados/Ancestrales y Generosos/Dulces de guarda.</span></div>
     
       </div>
 
-      <div class="box" style="flex:1; min-height:0; overflow:hidden;">
-        <h3>👃 ÍNDICE DE AROMAS · LE NEZ DU VIN (54)</h3>
+      <div class="box aromas-box">
+        <h3>👃 ÍNDICE SENSORIAL DE AROMAS · LE NEZ DU VIN (54)</h3>
         <div class="aromas-cols" id="aromas"></div>
       </div>
 
       <div class="box dyn">
         <h3>🧬 LAS GRANDES DINASTÍAS GENÉTICAS (VIVC)</h3>
         
-        <div><b>👑 Pinot × Gouais Blanc</b> → Chardonnay · Gamay · Aligoté · Melon de Bourgogne</div>
-        <div><b>👑 Cabernet Franc</b> → Cabernet Sauvignon (× Sauvignon Blanc) · Merlot (× Magdeleine Noire) · Carmenère (× Gros Cabernet)</div>
-        <div><b>👑 Savagnin / Traminer</b> → Sauvignon Blanc · Grüner Veltliner · Verdejo y Godello (hermanas, × Castellana Blanca)</div>
-        <div><b>👑 Dinastías Ibéricas</b> → Tempranillo (Albillo Mayor × Benedicto) · Hebén (madre de Pedro Ximénez y Macabeo)</div>
-        <p class="dyn-note">Pedigríes confirmados por marcadores moleculares de ADN (SSR) · Vitis International Variety Catalogue (Julius Kühn-Institut)</p>
+        <div class="dyn-card d-pinot"><b>👑 Dinastía Borgoñona (Pinot Noir × Gouais Blanc):</b> Chardonnay · Gamay · Aligoté · Melon de Bourgogne</div>
+        <div class="dyn-card d-cab"><b>👑 Dinastía Bordelesa (Cabernet Franc):</b> Cabernet Sauvignon (× Sauvignon Blanc) · Merlot (× Magdeleine Noire) · Carmenère (× Gros Cabernet)</div>
+        <div class="dyn-card d-sav"><b>👑 Dinastía Savagnin / Traminer:</b> Sauvignon Blanc · Grüner Veltliner · Verdejo y Godello (hermanas biológicas, × Castellana Blanca)</div>
+        <div class="dyn-card d-iber"><b>👑 Dinastías Ibéricas Ancestrales:</b> Tempranillo (Albillo Mayor × Benedicto) · Hebén (madre morisca de Pedro Ximénez y Macabeo)</div>
+        <p class="dyn-note">Pedigríes certificados por marcadores moleculares de ADN (SSR) · Vitis International Variety Catalogue (Julius Kühn-Institut)</p>
     
       </div>
     </aside>
