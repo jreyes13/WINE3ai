@@ -1560,6 +1560,46 @@ body {
   line-height: 1.45;
 }
 
+.poster-download-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-left: 0.8rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.2rem 0.55rem;
+  border-radius: 8px;
+  vertical-align: middle;
+}
+
+.poster-download-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #94a3b8;
+}
+
+.btn-poster-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  color: #fbbf24;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-poster-download:hover {
+  background: rgba(245, 158, 11, 0.35);
+  color: #ffffff;
+  border-color: #f59e0b;
+  transform: translateY(-1px);
+}
+
 .periodic-legend-summary {
   display: flex;
   gap: 0.65rem;
