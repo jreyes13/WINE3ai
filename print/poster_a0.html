@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Tabla Periódica del Vino WINE³ai — Póster DIN-A0</title>
+<style>
+  /* DIN-A0 apaisado: 1189 x 841 mm. Todo en mm => PDF vectorial a escala real */
+  @page { size: 1189mm 841mm; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    width: 1189mm; height: 841mm;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #1e293b;
+    background: #fbf8f3;
+    overflow: hidden;
+  }
+  .poster {
+    width: 1189mm; height: 841mm;
+    padding: 16mm 18mm 12mm 18mm;
+    display: grid;
+    grid-template-rows: 62mm 1fr 14mm;
+    gap: 7mm;
+  }
+
+  /* ---------- HEADER ---------- */
+  .head {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.2mm solid #7f1d1d; padding-bottom: 5mm;
+  }
+  .brand { display: flex; align-items: baseline; gap: 6mm; }
+  .brand-logo { font-size: 30mm; font-weight: 900; color: #7f1d1d; letter-spacing: -1mm; line-height: 1; }
+  .brand-logo sup { font-size: 16mm; color: #f59e0b; }
+  .brand-logo .ai { font-size: 16mm; color: #0ea5e9; font-weight: 700; }
+  .title-block h1 { font-size: 17mm; font-weight: 900; letter-spacing: -0.3mm; line-height: 1.05; color: #0f172a; }
+  .title-block p { font-size: 6mm; color: #475569; margin-top: 2.5mm; }
+  .head-formula { text-align: right; }
+  .formula { font-size: 13mm; font-weight: 900; color: #0f172a; }
+  .formula span { color: #f59e0b; }
+  .formula-sub { font-size: 4.6mm; color: #64748b; margin-top: 1.5mm; line-height: 1.35; }
+
+  /* ---------- BODY ---------- */
+  .body { display: grid; grid-template-columns: 1fr 238mm; gap: 9mm; min-height: 0; }
+
+  .table-grid {
+    display: grid;
+    grid-template-columns: 12mm 52mm repeat(9, 1fr);
+    grid-template-rows: 12mm 40mm repeat(9, 1fr);
+    gap: 2.2mm;
+    min-height: 0;
+  }
+  .wband {
+    border-radius: 2mm; color: #fff; font-weight: 900; font-size: 5.6mm;
+    display: flex; align-items: center; justify-content: center; letter-spacing: 0.3mm;
+  }
+  .cband {
+    border-radius: 2mm; color: #fff; font-weight: 900; font-size: 5mm;
+    writing-mode: vertical-rl; transform: rotate(180deg);
+    display: flex; align-items: center; justify-content: center; letter-spacing: 0.3mm;
+  }
+  .corner {
+    border: 0.4mm dashed #94a3b8; border-radius: 2mm;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    font-size: 4mm; font-weight: 800; color: #475569; text-align: center; line-height: 1.3;
+  }
+  .ghead {
+    background: #fff; border-radius: 2mm; border-top: 2.4mm solid var(--c);
+    padding: 2mm 2.4mm; display: flex; flex-direction: column; justify-content: flex-start;
+    box-shadow: 0 0 0 0.3mm #e2e8f0 inset;
+  }
+  .ghead .gnum { font-size: 4mm; font-weight: 900; color: var(--c); }
+  .ghead .gtitle { font-size: 4.8mm; font-weight: 800; line-height: 1.15; margin-top: 0.8mm; color: #0f172a; }
+  .ghead .gsub { font-size: 3.4mm; color: #64748b; line-height: 1.25; margin-top: 1mm; }
+
+  .phead {
+    background: #fff; border-radius: 2mm; border-left: 2.4mm solid var(--c);
+    padding: 1.6mm 2.2mm; display: flex; flex-direction: column; justify-content: center;
+    box-shadow: 0 0 0 0.3mm #e2e8f0 inset;
+  }
+  .phead .pnum { font-size: 4.2mm; font-weight: 900; color: var(--c); }
+  .phead .picon { font-size: 9mm; line-height: 1.2; }
+  .phead .pname { font-size: 4.6mm; font-weight: 800; line-height: 1.15; color: #0f172a; }
+  .phead .pbadge { font-size: 3.6mm; color: #64748b; margin-top: 0.6mm; }
+
+  .tile {
+    position: relative; background: #fff; border-radius: 2.2mm;
+    border: 0.5mm solid var(--c); border-top-width: 2mm;
+    padding: 1.6mm 2mm 1.4mm 2mm;
+    display: flex; flex-direction: column; justify-content: space-between;
+    overflow: hidden;
+  }
+  .tile::after {
+    content: ""; position: absolute; inset: 0; background: var(--c); opacity: 0.05; pointer-events: none;
+  }
+  .t-top { display: flex; justify-content: space-between; align-items: flex-start; font-weight: 800; }
+  .t-z { font-size: 6.6mm; color: #b45309; line-height: 1; }
+  .t-origin { font-size: 3.9mm; color: #475569; white-space: nowrap; }
+  .t-mass { font-size: 4.1mm; color: #334155; background: #f1f5f9; border-radius: 1mm; padding: 0.3mm 1mm; }
+  .t-symbol { font-size: 21mm; font-weight: 900; text-align: center; line-height: 1; color: var(--c); letter-spacing: -0.4mm; margin-top: 0.4mm; }
+  .t-name { font-size: 4.9mm; font-weight: 800; text-align: center; color: #0f172a; line-height: 1.1;
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .t-val { display: flex; justify-content: center; gap: 1mm; margin-top: 0.8mm; }
+  .vb { font-size: 3.6mm; font-weight: 800; border-radius: 0.8mm; padding: 0.2mm 0.9mm; border: 0.25mm solid; }
+  .vb.ac { color: #0369a1; border-color: #7dd3fc; background: #f0f9ff; }
+  .vb.tn { color: #b91c1c; border-color: #fca5a5; background: #fef2f2; }
+  .vb.cp { color: #b45309; border-color: #fcd34d; background: #fffbeb; }
+  .vb.az { color: #7e22ce; border-color: #d8b4fe; background: #faf5ff; }
+  .t-aromas { display: flex; justify-content: center; gap: 1.8mm; font-size: 3.8mm; color: #475569; font-weight: 700; margin-top: 0.6mm; }
+  .t-aromas span { white-space: nowrap; }
+  .t-chem { font-size: 2.9mm; color: #94a3b8; text-align: center; font-style: italic; line-height: 1.15;
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 0.4mm; }
+
+  /* ---------- SIDEBAR ---------- */
+  .side { display: flex; flex-direction: column; gap: 5mm; min-height: 0; }
+  .box { background: #fff; border-radius: 3mm; padding: 4mm 4.5mm; box-shadow: 0 0 0 0.35mm #e2e8f0 inset; }
+  .box h3 { font-size: 6mm; font-weight: 900; color: #7f1d1d; margin-bottom: 2.5mm; letter-spacing: 0.2mm; }
+  .anat { display: grid; grid-template-columns: 70mm 1fr; gap: 4mm; align-items: center; }
+  .anat .tile { height: 66mm; --c: #b91c1c; }
+  .anat ol { list-style: none; font-size: 3.9mm; line-height: 1.35; color: #334155; }
+  .anat li { margin-bottom: 1.4mm; }
+  .anat li b { color: #0f172a; }
+  .num { display: inline-flex; width: 4.2mm; height: 4.2mm; border-radius: 50%; background: #f59e0b; color: #fff;
+         font-size: 2.7mm; font-weight: 900; align-items: center; justify-content: center; margin-right: 1mm; }
+  .climates div { display: flex; gap: 2.5mm; align-items: flex-start; margin-bottom: 2.4mm; font-size: 4mm; line-height: 1.3; color: #334155; }
+  .climates .sw { flex: 0 0 5mm; height: 5mm; border-radius: 1mm; margin-top: 0.4mm; }
+  .climates b { color: #0f172a; }
+  .aromas-cols { column-count: 2; column-gap: 5mm; font-size: 3.85mm; line-height: 1.45; color: #334155; }
+  .aromas-cols .fam { font-weight: 900; color: #7f1d1d; font-size: 4.2mm; margin-top: 1.2mm; break-after: avoid; }
+  .aromas-cols .fam:first-child { margin-top: 0; }
+  .aromas-cols .ar b { display: inline-block; min-width: 5.4mm; color: #b45309; }
+  .aromas-cols .ar i { color: #94a3b8; font-size: 3mm; }
+
+  .dyn div { font-size: 3.9mm; line-height: 1.35; color: #334155; margin-bottom: 2.2mm; padding-left: 3mm; border-left: 1mm solid #f59e0b; }
+  .dyn b { color: #0f172a; }
+  .dyn-note { font-size: 3mm; color: #94a3b8; font-style: italic; margin-top: 2mm; }
+  .t-symbol { font-size: 24mm !important; }
+
+  /* ---------- FOOTER ---------- */
+  .foot { display: flex; justify-content: space-between; align-items: center; font-size: 3.6mm; color: #64748b;
+          border-top: 0.5mm solid #cbd5e1; padding-top: 3mm; }
+  .foot b { color: #7f1d1d; }
+</style>
+</head>
+<body>
+<div class="poster">
+  <header class="head">
+    <div class="brand">
+      <div class="brand-logo">WINE<sup>³</sup><span class="ai">ai</span></div>
+      <div class="title-block">
+        <h1>Tabla Periódica del Vino &amp; Terruño</h1>
+        <p>81 variedades de uva ordenadas por estilo (columnas) y clima (filas) · calibradas con los 54 aromas de <i>Le Nez du Vin</i></p>
+      </div>
+    </div>
+    <div class="head-formula">
+      <div class="formula">3 Estilos <span>×</span> 3 Climas <span>×</span> 9 = 81</div>
+      <div class="formula-sub">W¹ Blancos · W² Tintos · W³ Método &amp; Singulares<br>C¹ Fresco/Atlántico · C² Templado/Continental · C³ Cálido/Mediterráneo</div>
+    </div>
+  </header>
+
+  <section class="body">
+    <div class="table-grid" id="grid"></div>
+
+    <aside class="side">
+      <div class="box">
+        <h3>🔬 CÓMO LEER CADA CASILLA</h3>
+        <div class="anat">
+          <div class="tile">
+            <div class="t-top"><span class="t-z">5</span><span class="t-origin">🇪🇸 74 DOs</span><span class="t-mass">4.0</span></div>
+            <div class="t-symbol">Te</div>
+            <div class="t-name">Tempranillo</div>
+            <div class="t-val"><span class="vb ac">Ac 3</span><span class="vb tn">Tn 4</span><span class="vb cp">Cp 4</span></div>
+            <div class="t-aromas"><span>🍒 13</span><span>🪵 52</span><span>🌿 35</span></div>
+            <div class="t-chem">Compuestos aromáticos clave</div>
+          </div>
+          <ol>
+            <li><span class="num">1</span><b>Nº atómico (Z 1–81):</b> posición en la matriz, se lee por filas de clima.</li>
+            <li><span class="num">2</span><b>Origen + DOs:</b> bandera y nº de denominaciones donde está autorizada.</li>
+            <li><span class="num">3</span><b>Masa (A 1.0–5.0):</b> cuerpo y peso en boca.</li>
+            <li><span class="num">4</span><b>Símbolo:</b> abreviatura de 2 letras.</li>
+            <li><span class="num">5</span><b>Valencias (1–5):</b> <b>Ac</b> acidez · <b>Tn</b> tanino · <b>Cp</b> cuerpo · <b>Az</b> azúcar.</li>
+            <li><span class="num">6</span><b>Aromas:</b> nº del kit <i>Le Nez du Vin</i> (ver índice).</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="box climates">
+        <h3>🌍 FILAS = CLIMA · COLUMNAS = ESTILO</h3>
+        <div><span class="sw" style="background:#0ea5e9"></span><span><b>C¹ Fresco, Atlántico &amp; Alpino (P1–P3):</b> acidez alta, ciclo largo, tensión mineral.</span></div>
+        <div><span class="sw" style="background:#10b981"></span><span><b>C² Templado &amp; Continental (P4–P6):</b> riberas, mesetas, gran oscilación térmica día/noche.</span></div>
+        <div><span class="sw" style="background:#f59e0b"></span><span><b>C³ Cálido, Mediterráneo &amp; Volcánico (P7–P9):</b> sol, lava, asoleo y soleras.</span></div>
+        <div><span class="sw" style="background:linear-gradient(90deg,#eab308,#b91c1c,#8b5cf6)"></span><span><b>G1–G3 Blancos · G4–G6 Tintos · G7–G9</b> Espumosos, Rosados/Ancestrales y Generosos/Dulces.</span></div>
+      </div>
+
+      <div class="box" >
+        <h3>👃 ÍNDICE DE AROMAS · LE NEZ DU VIN (54)</h3>
+        <div class="aromas-cols" id="aromas"></div>
+      </div>
+
+      <div class="box dyn" style="flex:1;">
+        <h3>🧬 LAS GRANDES DINASTÍAS GENÉTICAS (VIVC)</h3>
+        <div><b>👑 Pinot × Gouais Blanc</b> → Chardonnay · Gamay · Aligoté · Melon de Bourgogne</div>
+        <div><b>👑 Cabernet Franc</b> → Cabernet Sauvignon (× Sauvignon Blanc) · Merlot (× Magdeleine Noire) · Carmenère (× Gros Cabernet)</div>
+        <div><b>👑 Savagnin / Traminer</b> → Sauvignon Blanc · Grüner Veltliner · Verdejo y Godello (hermanas, × Castellana Blanca)</div>
+        <div><b>👑 Ibéricas</b> → Tempranillo (Albillo Mayor × Benedicto) · Hebén, madre de Pedro Ximénez y Macabeo</div>
+        <p class="dyn-note">Pedigríes confirmados por marcadores de ADN (SSR) · Vitis International Variety Catalogue, Julius Kühn-Institut</p>
+      </div>
+    </aside>
+  </section>
+
+  <footer class="foot">
+    <div><b>WINE³ai</b> — Proyecto abierto geoespacial y vitícola · wine3ai.jreyes13.net · github.com/jreyes13/wine3ai</div>
+    <div>Fuentes: Consejos Reguladores, VIVC (Julius Kühn-Institut), Jean Lenoir — <i>Le Nez du Vin</i> · Edición <span id="ed"></span></div>
+  </footer>
+</div>
+
+<script src="../data/aromas_nez_du_vin.js"></script>
+<script src="../data/periodic_table_grapes.js"></script>
+<script src="../data/grape_varieties.js"></script>
+<script>
+(function () {
+  const D = window.PERIODIC_TABLE_DATA;
+  const AR = window.AROMAS_NEZ_DU_VIN || [];
+  const GV = window.GRAPE_VARIETIES_DATA || [];
+  const grid = document.getElementById('grid');
+  const climateCol = { C1: '#0ea5e9', C2: '#10b981', C3: '#f59e0b' };
+  const macroCol = { W1: '#ca8a04', W2: '#991b1b', W3: '#7c3aed' };
+  const add = (cls, col, row, html, style) => {
+    const d = document.createElement('div');
+    d.className = cls; d.style.gridColumn = col; d.style.gridRow = row;
+    if (style) Object.assign(d.style, style);
+    d.innerHTML = html; grid.appendChild(d); return d;
+  };
+  const flagFor = (c) => {
+    const m = { 'españa':'🇪🇸','spain':'🇪🇸','francia':'🇫🇷','france':'🇫🇷','italia':'🇮🇹','italy':'🇮🇹','portugal':'🇵🇹',
+      'alemania':'🇩🇪','germany':'🇩🇪','austria':'🇦🇹','grecia':'🇬🇷','greece':'🇬🇷','georgia':'🇬🇪','hungría':'🇭🇺',
+      'hungary':'🇭🇺','croacia':'🇭🇷','argentina':'🇦🇷','chile':'🇨🇱','estados unidos':'🇺🇸','usa':'🇺🇸' };
+    const k = (c || '').toLowerCase();
+    for (const key in m) if (k.includes(key)) return m[key];
+    return '🍇';
+  };
+
+  // Corner + macro bands
+  add('corner', '1 / 3', '1 / 3', 'ESTILO →<br>╲<br>↓ CLIMA');
+  D.macroCategories.forEach((m, i) => {
+    add('wband', `${3 + i * 3} / span 3`, '1', m.title_es, { background: macroCol[m.id] });
+  });
+  D.macroClimates.forEach((c, i) => {
+    add('cband', '1', `${3 + i * 3} / span 3`, c.title_es.split(',')[0], { background: climateCol[c.id] });
+  });
+
+  // Group headers
+  D.groups.forEach(g => {
+    const el = add('ghead', `${g.group + 2}`, '2',
+      `<div class="gnum">G${g.group} · ${g.macro.replace('W','W')}</div><div class="gtitle">${g.title_es}</div><div class="gsub">${g.subtitle_es}</div>`);
+    el.style.setProperty('--c', g.color);
+  });
+
+  // Period headers
+  (D.periods || []).forEach(p => {
+    const el = add('phead', '2', `${p.period + 2}`,
+      `<div class="pnum">P${p.period} · ${p.macro}</div><div class="picon">${p.icon}</div><div class="pname">${p.climate_es}</div><div class="pbadge">${p.badge_es}</div>`);
+    el.style.setProperty('--c', climateCol[p.macro]);
+  });
+
+  // Tiles
+  D.elements.forEach(el => {
+    const g = D.groups.find(x => x.group === el.group);
+    const gv = GV.find(x => x.id === el.id || x.name.toLowerCase() === el.name.toLowerCase());
+    let origin = flagFor(el.country);
+    if (gv && gv.countries_breakdown && gv.countries_breakdown.length) {
+      origin = `${gv.countries_breakdown[0].flag || origin} ${gv.total_regions} DOs`;
+    }
+    const ac = el.acidity || 3, body = el.body || Math.round(el.atomicMass);
+    let val;
+    if (el.color === 'red') {
+      val = `<span class="vb ac">Ac ${ac}</span><span class="vb tn">Tn ${el.tannin || 3}</span><span class="vb cp">Cp ${body}</span>`;
+    } else if (el.group === 9 || (el.sweetness && el.sweetness > 2)) {
+      val = `<span class="vb ac">Ac ${ac}</span><span class="vb az">Az ${el.sweetness || 4}</span><span class="vb cp">Cp ${body}</span>`;
+    } else {
+      val = `<span class="vb ac">Ac ${ac}</span><span class="vb cp">Cp ${body}</span>`;
+    }
+    const aromas = (el.aroma_ids || []).slice(0, 3).map(n => {
+      const a = AR.find(x => x.number === n); return a ? `<span>${a.icon} ${n}</span>` : '';
+    }).join('');
+    const chem = (el.key_compounds || '').split(',').slice(0, 2).join(', ');
+    const t = add('tile', `${el.group + 2}`, `${el.period + 2}`, `
+      <div class="t-top"><span class="t-z">${el.atomicNumber}</span><span class="t-origin">${origin}</span><span class="t-mass">${el.atomicMass.toFixed(1)}</span></div>
+      <div class="t-symbol">${el.symbol}</div>
+      <div class="t-name">${el.name}</div>
+      <div class="t-val">${val}</div>
+      <div class="t-aromas">${aromas}</div>
+      <div class="t-chem">${chem}</div>`);
+    t.style.setProperty('--c', g ? g.color : '#64748b');
+  });
+
+  // Aroma index
+  const fams = [
+    ['fruity', '🍏 Frutales (1–23)'], ['floral', '🌸 Florales (24–29)'],
+    ['vegetal_spicy', '🌿 Vegetales & Especiados (30–44)'], ['animal', '👞 Animales (45–47)'],
+    ['roasted', '🪵 Tostados & Torrefactos (48–54)']
+  ];
+  const box = document.getElementById('aromas');
+  box.innerHTML = fams.map(([k, label]) =>
+    `<div class="fam">${label}</div>` +
+    AR.filter(a => a.family === k).map(a =>
+      `<div class="ar"><b>${a.number}</b>${a.icon} ${a.name_es} <i>${(a.molecule || '').split(',')[0]}</i></div>`).join('')
+  ).join('');
+
+  document.getElementById('ed').textContent = new Date().toLocaleDateString('es-ES', { month: 'long', year: 'numeric' });
+  document.body.setAttribute('data-ready', '1');
+})();
+</script>
+</body>
+</html>
