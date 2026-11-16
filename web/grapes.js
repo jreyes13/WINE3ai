@@ -613,6 +613,210 @@ function renderHeroCard() {
       aromaWrap.appendChild(sp);
     }
   }
+
+  // Render VIVC Genetic Pedigree & Lineage Module
+  renderHeroPedigree();
+}
+
+/* ==========================================================================
+   VIVC Genetic Pedigree & Lineage Tree Functions
+   ========================================================================== */
+function renderHeroPedigree() {
+  const wrap = document.getElementById('hero-pedigree-wrap');
+  if (!wrap) return;
+  if (!selectedGrapeObj) {
+    wrap.style.display = 'none';
+    return;
+  }
+
+  const g = selectedGrapeObj;
+  const pedigreeDb = window.GRAPE_PEDIGREE_DATA || {};
+
+  // Find pedigree entry by id, name, or synonym
+  const pKey = Object.keys(pedigreeDb).find(k => {
+    const entry = pedigreeDb[k];
+    if (k === g.id || entry.id === g.id) return true;
+    if (entry.name.toLowerCase() === g.name.toLowerCase()) return true;
+    if (g.name.toLowerCase().includes(entry.name.toLowerCase()) || entry.name.toLowerCase().includes(g.name.toLowerCase())) return true;
+    return false;
+  });
+
+  const ped = pKey ? pedigreeDb[pKey] : null;
+
+  if (!ped) {
+    wrap.style.display = 'none';
+    return;
+  }
+
+  wrap.style.display = 'block';
+  wrap.innerHTML = '';
+
+  const isEs = currentLang === 'es';
+  const vivcUrl = `https://www.vivc.de/index.php?r=passport%2Fview&id=${ped.vivc_id}`;
+
+  const card = document.createElement('div');
+  card.className = 'pedigree-card';
+
+  // Header with title and VIVC badge link
+  const headEl = document.createElement('div');
+  headEl.className = 'pedigree-header';
+  headEl.innerHTML = `
+    <div class="pedigree-title-wrap">
+      <span class="pedigree-dna-icon">🧬</span>
+      <div>
+        <span class="pedigree-title">${isEs ? 'Linaje Genético & Pedigrí Oficial' : 'Official Genetic Lineage & Pedigree'}</span>
+        <span class="pedigree-badge-type">${isEs ? ped.pedigree_type_es : ped.pedigree_type_en}</span>
+      </div>
+    </div>
+    <a href="${vivcUrl}" target="_blank" rel="noopener noreferrer" class="vivc-passport-btn" title="${isEs ? 'Abrir pasaporte oficial en el catálogo internacional VIVC (Julius Kühn-Institut)' : 'Open official passport in VIVC international catalogue (Julius Kühn-Institut)'}">
+      <span>VIVC #${ped.vivc_id}</span>
+      <span class="vivc-arrow">↗</span>
+    </a>
+  `;
+  card.appendChild(headEl);
+
+  // Tree container
+  const treeEl = document.createElement('div');
+  treeEl.className = 'pedigree-tree-container';
+
+  if (ped.parent1 && ped.parent2) {
+    const parentsRow = document.createElement('div');
+    parentsRow.className = 'pedigree-parents-row';
+
+    const p1Card = createParentCard(ped.parent1, isEs ? 'PROGENITOR 1 (MADRE)' : 'PARENT 1 (MATERNAL)', isEs);
+    const crossNode = document.createElement('div');
+    crossNode.className = 'pedigree-cross-symbol';
+    crossNode.innerHTML = `<span>✕</span><div class="cross-sub">${isEs ? 'Cruce Natural' : 'Natural Cross'}</div>`;
+    const p2Card = createParentCard(ped.parent2, isEs ? 'PROGENITOR 2 (PADRE)' : 'PARENT 2 (PATERNAL)', isEs);
+
+    parentsRow.appendChild(p1Card);
+    parentsRow.appendChild(crossNode);
+    parentsRow.appendChild(p2Card);
+    treeEl.appendChild(parentsRow);
+
+    // Connector arrow
+    const arrowEl = document.createElement('div');
+    arrowEl.className = 'pedigree-down-connector';
+    arrowEl.innerHTML = '<span>↓</span>';
+    treeEl.appendChild(arrowEl);
+
+    // Child node (Current Grape)
+    const childNode = document.createElement('div');
+    childNode.className = 'pedigree-child-node';
+    childNode.innerHTML = `
+      <div class="pchild-badge">${isEs ? 'VARIEDAD RESULTANTE' : 'RESULTING VARIETY'}</div>
+      <div class="pchild-name">★ ${ped.name} <span class="pchild-dot ${ped.color}"></span></div>
+      <div class="pchild-meta">${ped.country_origin} · ${ped.species}</div>
+    `;
+    treeEl.appendChild(childNode);
+  } else {
+    // Ancestral founder grape (e.g. Pinot Noir, Cabernet Franc, Garnacha, Albariño)
+    const founderNode = document.createElement('div');
+    founderNode.className = 'pedigree-founder-node';
+    founderNode.innerHTML = `
+      <div class="founder-badge">👑 ${isEs ? 'VARIEDAD ANCESTRAL FUNDADORA' : 'ANCESTRAL FOUNDER VARIETY'}</div>
+      <div class="founder-name">★ ${ped.name} <span class="pchild-dot ${ped.color}"></span></div>
+      <div class="founder-desc">${isEs ? 'Pilar genético milenario domesticado de Vitis vinifera sin progenitores cruzados conocidos en los registros modernos.' : 'Millenary foundational genetic pillar of Vitis vinifera with no known crossed parents in modern registries.'}</div>
+    `;
+    treeEl.appendChild(founderNode);
+  }
+
+  card.appendChild(treeEl);
+
+  // Mutations and Offspring (if any)
+  if ((ped.mutations && ped.mutations.length > 0) || (ped.offspring && ped.offspring.length > 0)) {
+    const relativesWrap = document.createElement('div');
+    relativesWrap.className = 'pedigree-relatives-grid';
+
+    if (ped.mutations && ped.mutations.length > 0) {
+      const mutBox = document.createElement('div');
+      mutBox.className = 'relative-box mutations-box';
+      const mutItems = ped.mutations.map(m => `
+        <div class="relative-item">
+          <span class="rel-badge mut">${isEs ? 'Mutación Somática' : 'Somatic Mutation'}</span>
+          <strong>${m.name}</strong> 
+          <span class="rel-meta">(${m.year ? m.year + ' · ' : ''}${isEs ? m.place_es : m.place_en || ''}${m.vivc_id ? ' · VIVC #' + m.vivc_id : ''})</span>
+          ${m.note_es ? `<div class="rel-note">${isEs ? m.note_es : m.note_en}</div>` : ''}
+        </div>
+      `).join('');
+      mutBox.innerHTML = `
+        <div class="rel-box-title">🌱 ${isEs ? 'Variantes y Mutaciones Clonales' : 'Clonal Variants & Mutations'}:</div>
+        <div class="rel-box-content">${mutItems}</div>
+      `;
+      relativesWrap.appendChild(mutBox);
+    }
+
+    if (ped.offspring && ped.offspring.length > 0) {
+      const offBox = document.createElement('div');
+      offBox.className = 'relative-box offspring-box';
+      const offItems = ped.offspring.map(o => `
+        <span class="offspring-chip" ${o.vivc_id ? `title="VIVC #${o.vivc_id}"` : ''}>
+          🌿 ${o.name}
+        </span>
+      `).join('');
+      offBox.innerHTML = `
+        <div class="rel-box-title">🌾 ${isEs ? 'Descendencia y Cruces Notables' : 'Notable Offspring & Crosses'}:</div>
+        <div class="rel-box-chips">${offItems}</div>
+      `;
+      relativesWrap.appendChild(offBox);
+    }
+
+    card.appendChild(relativesWrap);
+  }
+
+  // Discovery / Ampelographic note
+  const discoveryText = isEs ? ped.discovery_es : ped.discovery_en;
+  if (discoveryText) {
+    const noteEl = document.createElement('div');
+    noteEl.className = 'pedigree-discovery-note';
+    noteEl.innerHTML = `
+      <span class="discovery-icon">🔬</span>
+      <div class="discovery-text">
+        <strong>${isEs ? 'Evidencia de Marcadores SSR & ADN:' : 'SSR DNA Markers Evidence:'}</strong> 
+        ${discoveryText}
+      </div>
+    `;
+    card.appendChild(noteEl);
+  }
+
+  wrap.appendChild(card);
+}
+
+function createParentCard(parent, roleLabel, isEs) {
+  const card = document.createElement('div');
+  const matchInDb = allGrapes.find(g => 
+    (parent.id && (g.id === parent.id || g.name.toLowerCase() === parent.name.toLowerCase())) ||
+    g.name.toLowerCase() === parent.name.toLowerCase()
+  );
+
+  card.className = `pedigree-parent-card ${parent.color} ${matchInDb ? 'clickable' : ''}`;
+  card.title = matchInDb 
+    ? (isEs ? `Haz clic para explorar ${parent.name} en el mapa y catálogo` : `Click to explore ${parent.name} in map and catalog`)
+    : `${parent.name} (${parent.vivc_id ? 'VIVC #' + parent.vivc_id : ''})`;
+
+  const origin = isEs ? parent.origin_es : parent.origin_en;
+  card.innerHTML = `
+    <div class="pparent-role">${roleLabel}</div>
+    <div class="pparent-main">
+      <span class="pparent-flag">${parent.flag || '🍇'}</span>
+      <span class="pparent-name">${parent.name}</span>
+      <span class="pparent-dot ${parent.color}"></span>
+    </div>
+    <div class="pparent-meta">
+      <span>${origin || ''}</span>
+      ${parent.vivc_id ? `<span class="pparent-vivc">VIVC #${parent.vivc_id}</span>` : ''}
+    </div>
+    ${matchInDb ? `<div class="pparent-hint">${isEs ? '👆 Clic para seleccionar variedad' : '👆 Click to select variety'}</div>` : ''}
+  `;
+
+  if (matchInDb) {
+    card.addEventListener('click', () => {
+      selectGrape(matchInDb.name);
+      document.getElementById('grape-hero-card')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
+
+  return card;
 }
 
 /* Donut Chart SVG Rendering */
