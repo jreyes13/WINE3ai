@@ -1646,10 +1646,148 @@ body {
   transform: scale(1.03);
 }
 
+/* ==========================================================================
+   Tile Anatomy Guide & Educational Reading Legend
+   ========================================================================== */
+.tile-anatomy-guide {
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.anatomy-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.anatomy-badge-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.anatomy-badge {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #0f172a;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+}
+
+.anatomy-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.btn-toggle-anatomy {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #cbd5e1;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-toggle-anatomy:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+.anatomy-body {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  padding-top: 0.85rem;
+}
+
+.anatomy-card-demo {
+  display: flex;
+  justify-content: center;
+}
+
+.demo-tile {
+  background: #1e293b;
+  border: 2px solid #f59e0b;
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.3);
+  border-radius: 10px;
+  padding: 0.55rem 0.5rem;
+  width: 155px;
+  min-height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.anatomy-legend-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem;
+}
+
+.legend-expl-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 0.6rem 0.75rem;
+}
+
+.expl-head {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  color: #f1f5f9;
+  margin-bottom: 0.25rem;
+}
+
+.expl-num {
+  width: 18px;
+  height: 18px;
+  background: #f59e0b;
+  color: #0f172a;
+  border-radius: 50%;
+  font-size: 0.68rem;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.expl-desc {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  line-height: 1.35;
+}
+
+@media (max-width: 1100px) {
+  .anatomy-body {
+    grid-template-columns: 1fr;
+  }
+  .anatomy-legend-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 /* Scroll wrap for responsive table */
 .periodic-grid-scroll-wrap {
   overflow-x: auto;
-  padding-bottom: 0.75rem;
+  padding: 0.5rem 2.5rem 1.25rem 0.5rem; /* Generous 2.5rem right padding so Column 9 NEVER cuts off */
   scrollbar-width: thin;
   scrollbar-color: #334155 #0b1120;
 }
@@ -1665,19 +1803,53 @@ body {
   border-radius: 4px;
 }
 
-/* The Periodic Table 9-Column Grid */
+/* The Periodic Table 10-Column Grid (1 Climate Column + 9 Groups) */
 .periodic-grid {
   display: grid;
-  grid-template-columns: repeat(9, minmax(136px, 1fr));
-  gap: 0.65rem;
-  min-width: 1224px; /* Ensures columns maintain ideal width when horizontally scrolling */
+  grid-template-columns: 86px repeat(9, minmax(118px, 1fr));
+  gap: 0.55rem;
+  min-width: 1240px;
+  width: 100%;
 }
 
-/* Group Column Header */
+/* Top-Left Corner Header (Row 1, Col 1) */
+.periodic-corner-header {
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 10px;
+  padding: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 88px;
+}
+
+.corner-label-style {
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: #38bdf8;
+  letter-spacing: 0.5px;
+}
+
+.corner-divider {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin: 0.1rem 0;
+}
+
+.corner-label-climate {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #f59e0b;
+}
+
+/* Row 1 Group Column Header */
 .periodic-col-header {
   background: rgba(15, 23, 42, 0.8);
   border-radius: 10px;
-  padding: 0.65rem 0.5rem;
+  padding: 0.65rem 0.45rem;
   border-top: 3px solid var(--group-col, #38bdf8);
   border-left: 1px solid rgba(255, 255, 255, 0.06);
   border-right: 1px solid rgba(255, 255, 255, 0.06);
@@ -1710,17 +1882,62 @@ body {
   line-height: 1.2;
 }
 
+/* Column 1 Period/Climate Row Header */
+.periodic-period-header {
+  background: rgba(15, 23, 42, 0.85);
+  border-radius: 10px;
+  padding: 0.45rem 0.35rem;
+  border-left: 3px solid var(--climate-col, #38bdf8);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  min-height: 128px;
+}
+
+.pperiod-pnum {
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: var(--climate-col, #38bdf8);
+  letter-spacing: 0.5px;
+}
+
+.pperiod-icon {
+  font-size: 1.15rem;
+  margin: 0.2rem 0;
+}
+
+.pperiod-name {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  line-height: 1.15;
+}
+
+.pperiod-badge {
+  font-size: 0.58rem;
+  font-weight: 600;
+  color: #94a3b8;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.15rem 0.25rem;
+  border-radius: 4px;
+  margin-top: 0.2rem;
+}
+
 /* Periodic Chemical Element Tile */
 .periodic-tile {
   background: #111827;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
-  padding: 0.5rem 0.45rem;
+  padding: 0.45rem 0.4rem;
   cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 120px;
+  min-height: 128px;
   position: relative;
   transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -1743,7 +1960,7 @@ body {
   z-index: 15;
 }
 
-/* When aroma filter is active: highlight matching vs dim non-matching */
+/* When aroma filter is active */
 .periodic-tile.dimmed {
   opacity: 0.22;
   filter: grayscale(80%);
@@ -1767,37 +1984,46 @@ body {
   }
 }
 
-/* Tile Header: Atomic Number & Mass */
+/* Tile Header: Z, Flag/DOs, Mass */
 .ptile-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
   line-height: 1;
+  gap: 0.2rem;
 }
 
 .ptile-z {
   font-size: 0.68rem;
   font-weight: 800;
+  color: #f59e0b;
+}
+
+.ptile-origin {
+  font-size: 0.64rem;
+  font-weight: 700;
   color: #94a3b8;
+  white-space: nowrap;
 }
 
 .ptile-mass {
-  font-size: 0.65rem;
+  font-size: 0.64rem;
   font-weight: 700;
-  color: #64748b;
+  color: #cbd5e1;
   background: rgba(255, 255, 255, 0.05);
   padding: 0.1rem 0.25rem;
   border-radius: 4px;
+  white-space: nowrap;
 }
 
 /* Center Chemical Symbol */
 .ptile-symbol-wrap {
   text-align: center;
-  margin: 0.25rem 0;
+  margin: 0.2rem 0;
 }
 
 .ptile-symbol {
-  font-size: 1.85rem;
+  font-size: 1.75rem;
   font-weight: 800;
   letter-spacing: -0.5px;
   line-height: 1;
@@ -1807,14 +2033,55 @@ body {
 
 /* Variety Name */
 .ptile-name {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 600;
   color: #e2e8f0;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.2rem;
+}
+
+/* Valences Row */
+.ptile-valences {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  margin-bottom: 0.25rem;
+}
+
+.val-badge {
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 0.08rem 0.25rem;
+  border-radius: 3px;
+  line-height: 1.2;
+}
+
+.val-badge.ac {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.val-badge.tn {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.val-badge.cr, .val-badge.al {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.val-badge.az {
+  background: rgba(168, 85, 247, 0.15);
+  color: #c084fc;
+  border: 1px solid rgba(168, 85, 247, 0.3);
 }
 
 /* Bottom Bar: Mini Aroma Icons */
@@ -1823,8 +2090,8 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.2rem;
-  font-size: 0.75rem;
-  min-height: 18px;
+  font-size: 0.72rem;
+  min-height: 16px;
 }
 
 .ptile-aroma-icon {

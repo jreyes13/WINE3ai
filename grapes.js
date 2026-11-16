@@ -84,7 +84,10 @@ const I18N = {
     lblHeroAromas: "👃 Key Aromas (Le Nez du Vin):",
     noAromasRecorded: "Sensory aroma profile in calibration",
     aromaShowing: "Showing varieties expressing aroma: ",
-    btnAromaReset: "Show all grapes"
+    btnAromaReset: "Show all grapes",
+    lblAnatomyTitle: "How to read each tile in the Periodic Table?",
+    lblToggleAnatomyHide: "✕ Hide Guide",
+    lblToggleAnatomyShow: "👁️ Show Guide"
   },
   es: {
     brandTitle: "WINE³ai",
@@ -169,7 +172,10 @@ const I18N = {
     lblHeroAromas: "👃 Descriptores Aromáticos (Le Nez du Vin):",
     noAromasRecorded: "Perfil sensorial en calibración",
     aromaShowing: "Mostrando variedades con aroma a: ",
-    btnAromaReset: "Ver todas las uvas"
+    btnAromaReset: "Ver todas las uvas",
+    lblAnatomyTitle: "¿Cómo leer cada casilla de la Tabla Periódica?",
+    lblToggleAnatomyHide: "✕ Ocultar Guía",
+    lblToggleAnatomyShow: "👁️ Mostrar Guía"
   }
 };
 
@@ -1262,6 +1268,23 @@ function setupEventListeners() {
     setAromaFilter('all');
   });
 
+  // Toggle Anatomy Guide
+  const btnToggleAnatomy = document.getElementById('btn-toggle-anatomy');
+  if (btnToggleAnatomy) {
+    btnToggleAnatomy.addEventListener('click', () => {
+      const anatomyBody = document.getElementById('anatomy-body');
+      const lblToggle = document.getElementById('lbl-toggle-anatomy');
+      if (!anatomyBody) return;
+      const isHidden = window.getComputedStyle(anatomyBody).display === 'none';
+      anatomyBody.style.display = isHidden ? 'grid' : 'none';
+      if (lblToggle) {
+        lblToggle.textContent = isHidden
+          ? (currentLang === 'es' ? '✕ Ocultar Guía' : '✕ Hide Guide')
+          : (currentLang === 'es' ? '👁️ Mostrar Guía' : '👁️ Show Guide');
+      }
+    });
+  }
+
   // Language Switcher
   document.getElementById('btn-lang-en').addEventListener('click', () => setLanguage('en'));
   document.getElementById('btn-lang-es').addEventListener('click', () => setLanguage('es'));
@@ -1531,6 +1554,15 @@ function setLanguage(lang) {
   const elBtnAromaReset = document.getElementById('btn-aroma-feedback-reset');
   if (elBtnAromaReset) elBtnAromaReset.textContent = t.btnAromaReset;
 
+  const elAnatomyTitle = document.getElementById('lbl-anatomy-title');
+  if (elAnatomyTitle) elAnatomyTitle.textContent = t.lblAnatomyTitle;
+  const lblToggleAnatomy = document.getElementById('lbl-toggle-anatomy');
+  const anatomyBody = document.getElementById('anatomy-body');
+  if (lblToggleAnatomy && anatomyBody) {
+    const isHidden = window.getComputedStyle(anatomyBody).display === 'none';
+    lblToggleAnatomy.textContent = isHidden ? t.lblToggleAnatomyShow : t.lblToggleAnatomyHide;
+  }
+
   populateAromaFilter();
   renderPeriodicTable();
   renderVarietyMatrix();
@@ -1630,18 +1662,52 @@ function setAromaFilter(val) {
   applyPeriodicTableFilters();
 }
 
+function getGrapeCountryFlag(countryName) {
+  if (!countryName) return '🍇';
+  const c = countryName.toLowerCase();
+  if (c.includes('españa') || c.includes('spain')) return '🇪🇸';
+  if (c.includes('francia') || c.includes('france')) return '🇫🇷';
+  if (c.includes('italia') || c.includes('italy')) return '🇮🇹';
+  if (c.includes('portugal')) return '🇵🇹';
+  if (c.includes('alemania') || c.includes('germany')) return '🇩🇪';
+  if (c.includes('austria')) return '🇦🇹';
+  if (c.includes('grecia') || c.includes('greece')) return '🇬🇷';
+  if (c.includes('georgia')) return '🇬🇪';
+  if (c.includes('hungría') || c.includes('hungary')) return '🇭🇺';
+  if (c.includes('croacia') || c.includes('croatia')) return '🇭🇷';
+  if (c.includes('estados unidos') || c.includes('usa')) return '🇺🇸';
+  if (c.includes('argentina')) return '🇦🇷';
+  if (c.includes('chile')) return '🇨🇱';
+  if (c.includes('sudáfrica') || c.includes('south africa')) return '🇿🇦';
+  if (c.includes('australia')) return '🇦🇺';
+  if (c.includes('nueva zelanda') || c.includes('new zealand')) return '🇳🇿';
+  return '🍇';
+}
+
 function renderPeriodicTable() {
   const grid = document.getElementById('periodic-grid');
   if (!grid || typeof window.PERIODIC_TABLE_DATA === 'undefined') return;
 
   grid.innerHTML = '';
-  const { groups, elements } = window.PERIODIC_TABLE_DATA;
+  const { groups, elements, periods } = window.PERIODIC_TABLE_DATA;
 
-  // 1. Render Group Headers (Row 1)
+  // 1. Render Top-Left Corner Header (Col 1, Row 1)
+  const cornerHeader = document.createElement('div');
+  cornerHeader.className = 'periodic-corner-header';
+  cornerHeader.style.gridColumn = '1';
+  cornerHeader.style.gridRow = '1';
+  cornerHeader.innerHTML = `
+    <div class="corner-label-style">${currentLang === 'es' ? 'ESTILO →' : 'STYLE →'}</div>
+    <div class="corner-divider">╲</div>
+    <div class="corner-label-climate">${currentLang === 'es' ? '↓ CLIMA' : '↓ CLIMATE'}</div>
+  `;
+  grid.appendChild(cornerHeader);
+
+  // 2. Render Group Headers (Cols 2 to 10, Row 1)
   groups.forEach(g => {
     const colHeader = document.createElement('div');
     colHeader.className = 'periodic-col-header';
-    colHeader.style.gridColumn = `${g.group}`;
+    colHeader.style.gridColumn = `${g.group + 1}`;
     colHeader.style.gridRow = '1';
     colHeader.style.setProperty('--group-col', g.color);
 
@@ -1656,7 +1722,36 @@ function renderPeriodicTable() {
     grid.appendChild(colHeader);
   });
 
-  // 2. Render Periodic Tiles
+  // 3. Render Period / Climate Row Headers (Col 1, Rows 2 to 10)
+  const climateColors = {
+    C1: '#38bdf8', // Cool/Atlantic Cyan
+    C2: '#10b981', // Temperate/Continental Emerald
+    C3: '#f59e0b'  // Warm/Mediterranean Amber
+  };
+
+  if (periods && Array.isArray(periods)) {
+    periods.forEach(p => {
+      const pHeader = document.createElement('div');
+      pHeader.className = 'periodic-period-header';
+      pHeader.style.gridColumn = '1';
+      pHeader.style.gridRow = `${p.period + 1}`;
+      const cColor = climateColors[p.macro] || '#38bdf8';
+      pHeader.style.setProperty('--climate-col', cColor);
+
+      const cName = currentLang === 'es' ? p.climate_es : p.climate_en;
+      const cBadge = currentLang === 'es' ? p.badge_es : p.badge_en;
+
+      pHeader.innerHTML = `
+        <div class="pperiod-pnum">P${p.period} · ${p.macro}</div>
+        <div class="pperiod-icon">${p.icon}</div>
+        <div class="pperiod-name">${cName}</div>
+        <div class="pperiod-badge">${cBadge}</div>
+      `;
+      grid.appendChild(pHeader);
+    });
+  }
+
+  // 4. Render Periodic Element Tiles (Cols 2 to 10, Rows 2 to 10)
   elements.forEach(el => {
     const tile = document.createElement('div');
     const isSelected = selectedGrapeObj && (
@@ -1671,13 +1766,49 @@ function renderPeriodicTable() {
     tile.dataset.country = el.country || '';
     tile.dataset.color = el.color;
 
-    // Grid coordinates: column is group, row is period + 1 (row 1 is header)
-    tile.style.gridColumn = `${el.group}`;
+    // Grid coordinates: col is group + 1, row is period + 1
+    tile.style.gridColumn = `${el.group + 1}`;
     tile.style.gridRow = `${el.period + 1}`;
 
     const groupDef = groups.find(g => g.group === el.group) || { color: '#38bdf8' };
     tile.style.setProperty('--group-color', groupDef.color);
     tile.style.setProperty('--group-glow', `${groupDef.color}66`);
+
+    // Lookup matching grape in allGrapes to get official presence in Spain/World
+    const matchGrape = allGrapes.find(g => g.name.toLowerCase() === el.name.toLowerCase() || g.id === el.id);
+    let flag = getGrapeCountryFlag(el.country);
+    let originHtml = '';
+    if (matchGrape && matchGrape.countries_breakdown && matchGrape.countries_breakdown.length > 0) {
+      flag = matchGrape.countries_breakdown[0].flag || flag;
+      originHtml = `<span class="ptile-origin" title="${matchGrape.total_regions} DOs (${matchGrape.origin})">${flag} ${matchGrape.total_regions} DOs</span>`;
+    } else {
+      originHtml = `<span class="ptile-origin" title="${el.country}">${flag}</span>`;
+    }
+
+    // Valences HTML
+    let valencesHtml = '';
+    const acVal = el.acidity || 3;
+    const bodyVal = el.body || Math.round(el.atomicMass);
+    if (el.color === 'red') {
+      const tnVal = el.tannin || 3;
+      valencesHtml = `
+        <span class="val-badge ac" title="Acidez / pH: ${acVal}/5">Ac:${acVal}</span>
+        <span class="val-badge tn" title="Taninos: ${tnVal}/5">Tn:${tnVal}</span>
+        <span class="val-badge cr" title="Cuerpo / Guarda: ${bodyVal}/5">Cp:${bodyVal}</span>
+      `;
+    } else if (el.group === 9 || (el.sweetness && el.sweetness > 2)) {
+      const azVal = el.sweetness || 4;
+      valencesHtml = `
+        <span class="val-badge ac" title="Acidez: ${acVal}/5">Ac:${acVal}</span>
+        <span class="val-badge az" title="Dulzura / Solera: ${azVal}/5">Az:${azVal}</span>
+        <span class="val-badge cr" title="Cuerpo: ${bodyVal}/5">Cp:${bodyVal}</span>
+      `;
+    } else {
+      valencesHtml = `
+        <span class="val-badge ac" title="Acidez / Frescura: ${acVal}/5">Ac:${acVal}</span>
+        <span class="val-badge cr" title="Cuerpo / Extracto: ${bodyVal}/5">Cp:${bodyVal}</span>
+      `;
+    }
 
     // Aromas icons
     let aromasHtml = '';
@@ -1693,13 +1824,17 @@ function renderPeriodicTable() {
 
     tile.innerHTML = `
       <div class="ptile-top">
-        <span class="ptile-z">${el.atomicNumber}</span>
-        <span class="ptile-mass" title="Body / Structure">${el.atomicMass.toFixed(1)}</span>
+        <span class="ptile-z" title="Nº Atómico: ${el.atomicNumber}">${el.atomicNumber}</span>
+        ${originHtml}
+        <span class="ptile-mass" title="Masa Enológica / Cuerpo">${el.atomicMass.toFixed(1)}</span>
       </div>
       <div class="ptile-symbol-wrap">
         <div class="ptile-symbol">${el.symbol}</div>
       </div>
       <div class="ptile-name" title="${el.name}">${el.name}</div>
+      <div class="ptile-valences">
+        ${valencesHtml}
+      </div>
       ${aromasHtml}
     `;
 

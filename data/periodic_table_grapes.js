@@ -54,6 +54,18 @@ window.PERIODIC_TABLE_DATA = {
     }
   ],
 
+  periods: [
+    { period: 1, macro: "C1", climate_es: "Atlántico Extremo", climate_en: "Extreme Atlantic", icon: "❄️", badge_es: "Tensión Ácida", badge_en: "High Acid Tension" },
+    { period: 2, macro: "C1", climate_es: "Continental Sept.", climate_en: "North Continental", icon: "🏔️", badge_es: "Valles Frescos", badge_en: "Cool Valleys" },
+    { period: 3, macro: "C1", climate_es: "Altitud & Montaña", climate_en: "High Altitude", icon: "⛰️", badge_es: "Suelos de Pizarra", badge_en: "Schist & Elevation" },
+    { period: 4, macro: "C2", climate_es: "Riberas & Valles", climate_en: "River Valleys", icon: "🌊", badge_es: "Valles Fluviales", badge_en: "River Basins" },
+    { period: 5, macro: "C2", climate_es: "Meseta Templada", climate_en: "Temperate Plateau", icon: "🌾", badge_es: "Equilibrio Central", badge_en: "Classic Balance" },
+    { period: 6, macro: "C2", climate_es: "Oscilación Térmica", climate_en: "Diurnal Shift", icon: "🌗", badge_es: "Contraste Día/Noche", badge_en: "High Diurnal Shift" },
+    { period: 7, macro: "C3", climate_es: "Costa Solar & Mar", climate_en: "Coastal Solar", icon: "☀️", badge_es: "Brisa Marina", badge_en: "Maritime Sun" },
+    { period: 8, macro: "C3", climate_es: "Volcánico & Secano", climate_en: "Volcanic & Arid", icon: "🌋", badge_es: "Lava & Pizarra", badge_en: "Volcanic & Dry" },
+    { period: 9, macro: "C3", climate_es: "Pasas & Soleras", climate_en: "Raisined & Soleras", icon: "🍯", badge_es: "Asoleo & Flor", badge_en: "Late Harvest & Flor" }
+  ],
+
   groups: [
     {
       group: 1,

@@ -183,6 +183,72 @@
             </div>
           </div>
 
+          <!-- Interactive Atomic Tile Legend & Anatomy Guide -->
+          <div class="tile-anatomy-guide" id="tile-anatomy-guide">
+            <div class="anatomy-top-row">
+              <div class="anatomy-badge-wrap">
+                <span class="anatomy-badge">🔬 Anatomía Enológica</span>
+                <span class="anatomy-title" id="lbl-anatomy-title">¿Cómo leer cada casilla de la Tabla Periódica?</span>
+              </div>
+              <button type="button" class="btn-toggle-anatomy" id="btn-toggle-anatomy">
+                <span id="lbl-toggle-anatomy">✕ Ocultar Guía</span>
+              </button>
+            </div>
+            
+            <div class="anatomy-body" id="anatomy-body">
+              <div class="anatomy-card-demo">
+                <div class="demo-tile">
+                  <div class="ptile-top">
+                    <span class="ptile-z" title="Nº Atómico">5</span>
+                    <span class="ptile-origin" title="Origen y Presencia">🇪🇸 74 DOs</span>
+                    <span class="ptile-mass" title="Masa / Cuerpo">⚖️ 4.0</span>
+                  </div>
+                  <div class="ptile-symbol-wrap">
+                    <div class="ptile-symbol">Te</div>
+                  </div>
+                  <div class="ptile-name">Tempranillo</div>
+                  <div class="ptile-valences">
+                    <span class="val-badge ac" title="Acidez (1-5)">Ac:3</span>
+                    <span class="val-badge tn" title="Tanino (1-5)">Tn:4</span>
+                    <span class="val-badge cr" title="Potencial de Guarda / Alcohol">Cr:5</span>
+                  </div>
+                  <div class="ptile-aromas">
+                    <span class="ptile-aroma-icon">🍒</span>
+                    <span class="ptile-aroma-icon">🪵</span>
+                    <span class="ptile-aroma-icon">🌿</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="anatomy-legend-grid">
+                <div class="legend-expl-item">
+                  <div class="expl-head"><span class="expl-num">1</span> <strong>Nº Atómico (Z = 1 a 81):</strong></div>
+                  <div class="expl-desc">Posición ordinal única de la variedad en la matriz cartesiana 9×9.</div>
+                </div>
+                <div class="legend-expl-item">
+                  <div class="expl-head"><span class="expl-num">2</span> <strong>Masa Enológica (A = 1.0 a 5.0):</strong></div>
+                  <div class="expl-desc">Nivel de cuerpo, densidad y peso en boca del vino (1.0 ligero a 5.0 corpóreo).</div>
+                </div>
+                <div class="legend-expl-item">
+                  <div class="expl-head"><span class="expl-num">3</span> <strong>Presencia GIS (Bandera + DOs):</strong></div>
+                  <div class="expl-desc">País de origen histórico y número total de Denominaciones de Origen oficiales donde está autorizada.</div>
+                </div>
+                <div class="legend-expl-item">
+                  <div class="expl-head"><span class="expl-num">4</span> <strong>Valencias Enológicas (Ac / Tn / Az):</strong></div>
+                  <div class="expl-desc"><strong>Ac:</strong> Acidez / pH · <strong>Tn:</strong> Taninos / Polifenoles · <strong>Az:</strong> Azúcar residual / Alcohol.</div>
+                </div>
+                <div class="legend-expl-item">
+                  <div class="expl-head"><span class="expl-num">5</span> <strong>Aromas de Le Nez du Vin (1 a 54):</strong></div>
+                  <div class="expl-desc">Moléculas olfativas dominantes calibradas con el Masterkit de Jean Lenoir.</div>
+                </div>
+                <div class="legend-expl-item">
+                  <div class="expl-head"><span class="expl-num">6</span> <strong>Filas / Periodos (3 Macro-Climas):</strong></div>
+                  <div class="expl-desc"><strong>P1-P3 (C¹ Fresco):</strong> Tensión y altitud · <strong>P4-P6 (C² Continental):</strong> Oscilación térmica · <strong>P7-P9 (C³ Cálido):</strong> Sol y solera.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <!-- Active Aroma Feedback Banner -->
           <div class="aroma-feedback-banner" id="aroma-feedback-banner" style="display: none;">
             <div class="aroma-feedback-content">
