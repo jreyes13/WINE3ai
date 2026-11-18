@@ -35,6 +35,18 @@
           <div class="brand-subtitle" id="brand-subtitle">World Wide Wine — Maps &amp; Terroir Intelligence</div>
         </div>
       </div>
+      <nav class="nav-links">
+        <a href="map.html" class="nav-link active" id="nav-btn-map" title="Interactive Wine Regions Map">
+          <span>🗺️</span> <span id="nav-map-text">Wine Map</span>
+        </a>
+        <a href="grapes.html" class="nav-link" id="nav-btn-grapes" title="Grape Varieties & Periodic Table">
+          <span>🍇</span> <span id="nav-grapes-text">Grape Varieties</span>
+        </a>
+        <a href="winepedia.html" class="nav-link" id="nav-btn-winepedia" title="WINEp3dIA Knowledge Hub">
+          <span>📚</span> <span id="nav-winepedia-text">WINEp3dIA</span>
+        </a>
+      </nav>
+
       <div class="nav-actions">
         <!-- Selector de Mapa de Referencia (Basemap) -->
         <div class="basemap-selector-wrap">
@@ -49,31 +61,6 @@
           </select>
         </div>
 
-        <!-- Link to Grape Varieties Explorer -->
-        <a href="grapes.html" class="btn-link btn-grapes" id="nav-btn-grapes" title="Grape Varieties Explorer">
-          <span>🍇</span> <span id="nav-grapes-text">Grape Varieties</span>
-        </a>
-
-        <!-- Link to WINEp3dIA Portal -->
-        <a href="winepedia.html" class="btn-link btn-winepedia" id="nav-btn-winepedia" title="WINEp3dIA & Knowledge Hub">
-          <span>📚</span> <span id="nav-winepedia-text">WINEp3dIA</span>
-        </a>
-
-        <!-- Toggle Wine Regions Layer -->
-        <button class="btn-toggle-layer btn-toggle-regions active" id="btn-toggle-regions" title="Toggle Wine Regions Layer">
-          <span>🍷</span> <span id="txt-regions-toggle">Wine Regions</span>
-        </button>
-
-        <!-- Toggle World Climate Zones Layer -->
-        <button class="btn-toggle-layer btn-toggle-climate" id="btn-toggle-climate" title="Toggle World Climate Zones Layer">
-          <span>⛅</span> <span id="txt-climate-toggle">Climate</span>
-        </button>
-
-        <!-- Export Map to A4 Landscape PDF -->
-        <button class="btn-export-pdf" id="btn-export-pdf" title="Export current map view to A4 Landscape PDF">
-          <span>🖨️</span> <span id="txt-export-pdf">Export PDF</span>
-        </button>
-
         <button class="lang-btn" data-lang="es">ES</button>
         <button class="lang-btn active" data-lang="en">EN</button>
 
@@ -86,6 +73,19 @@
     <main class="main-content">
       <!-- Interactive Map -->
       <div id="map"></div>
+
+      <!-- Floating Map Layer & Export Tools -->
+      <div class="map-floating-tools">
+        <button class="btn-toggle-layer btn-toggle-regions active" id="btn-toggle-regions" title="Toggle Wine Regions Layer">
+          <span>🍷</span> <span id="txt-regions-toggle">Wine Regions</span>
+        </button>
+        <button class="btn-toggle-layer btn-toggle-climate" id="btn-toggle-climate" title="Toggle World Climate Zones Layer">
+          <span>⛅</span> <span id="txt-climate-toggle">Climate</span>
+        </button>
+        <button class="btn-export-pdf" id="btn-export-pdf" title="Export current map view to A4 Landscape PDF">
+          <span>🖨️</span> <span id="txt-export-pdf">Export PDF</span>
+        </button>
+      </div>
 
       <!-- Floating Climate Layer Map Legend -->
       <div class="climate-map-legend" id="climate-map-legend" style="display: none;">
