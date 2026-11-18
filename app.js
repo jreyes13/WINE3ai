@@ -1199,6 +1199,44 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
   btn.addEventListener('click', (e) => setLanguage(e.target.dataset.lang));
 });
 
+// Dark / Light Theme Switcher
+const themeToggleBtn = document.getElementById('btn-theme-toggle');
+if (themeToggleBtn) {
+  const updateThemeUI = (theme) => {
+    themeToggleBtn.innerHTML = theme === 'light' ? '☀️' : '🌙';
+    themeToggleBtn.setAttribute('title', theme === 'light'
+      ? (currentLang === 'es' ? 'Cambiar a modo oscuro' : 'Switch to dark mode')
+      : (currentLang === 'es' ? 'Cambiar a modo claro' : 'Switch to light mode'));
+  };
+
+  const initialTheme = localStorage.getItem('wine3ai_theme') || 'dark';
+  updateThemeUI(initialTheme);
+
+  themeToggleBtn.addEventListener('click', () => {
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    const nextTheme = isLight ? 'dark' : 'light';
+    if (nextTheme === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+      if (basemapSelectEl && basemapSelectEl.value === 'dark') {
+        basemapSelectEl.value = 'positron';
+        if (typeof BASEMAP_STYLES !== 'undefined' && BASEMAP_STYLES['positron']) {
+          map.setStyle(BASEMAP_STYLES['positron']);
+        }
+      }
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      if (basemapSelectEl && basemapSelectEl.value === 'positron') {
+        basemapSelectEl.value = 'dark';
+        if (typeof BASEMAP_STYLES !== 'undefined' && BASEMAP_STYLES['dark']) {
+          map.setStyle(BASEMAP_STYLES['dark']);
+        }
+      }
+    }
+    localStorage.setItem('wine3ai_theme', nextTheme);
+    updateThemeUI(nextTheme);
+  });
+}
+
 // Basemap Switcher
 const basemapSelectEl = document.getElementById('basemap-select');
 if (basemapSelectEl) {

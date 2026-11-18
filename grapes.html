@@ -17,6 +17,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="grapes.css">
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('wine3ai_theme') || 'dark';
+      if (savedTheme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
 </head>
 <body>
   <div class="app-layout">
@@ -47,11 +55,11 @@
         <div class="basemap-selector-wrap">
           <span class="basemap-label" id="lbl-basemap" title="Reference Basemap">🌍</span>
           <select id="basemap-select" class="basemap-select" title="Change reference basemap">
-            <option value="dark" id="bm-dark-opt" selected>Dark (Dark Matter)</option>
-            <option value="voyager" id="bm-voyager-opt">Voyager (Color)</option>
-            <option value="positron" id="bm-positron-opt">Light (Positron)</option>
-            <option value="satellite" id="bm-satellite-opt">Satellite (ESRI)</option>
-            <option value="topo" id="bm-topo-opt">Topographic (Relief)</option>
+            <option value="dark" id="bm-dark-opt" selected>Dark</option>
+            <option value="voyager" id="bm-voyager-opt">Voyager</option>
+            <option value="positron" id="bm-positron-opt">Light</option>
+            <option value="satellite" id="bm-satellite-opt">Satellite</option>
+            <option value="topo" id="bm-topo-opt">Topographic</option>
           </select>
         </div>
 
@@ -59,18 +67,8 @@
         <button class="lang-btn" data-lang="es" id="btn-lang-es">ES</button>
         <button class="lang-btn active" data-lang="en" id="btn-lang-en">EN</button>
 
-        <a href="https://app.atlas.co/projects/iRfhgtNFAbVm6zHZL3bN?loc=-2.7334%2C39.9785%2C6.0441z" target="_blank" rel="noopener noreferrer" class="btn-link btn-atlas">
-          <span>🗺️</span> Atlas.co
-        </a>
-        <a href="https://github.com/jreyes13/wine3ai" target="_blank" rel="noopener noreferrer" class="btn-link btn-github">
-          <svg height="16" width="16" viewBox="0 0 16 16" fill="currentColor">
-            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
-          </svg>
-          <span>GitHub</span>
-        </a>
-        <a href="https://jreyes13.net" class="btn-link" style="background: rgba(190, 18, 60, 0.2); border-color: rgba(190, 18, 60, 0.4); color: #fda4af;" title="Return to jreyes13.net portal">
-          <span>←</span> jreyes13.net
-        </a>
+        <!-- Dark / Light Theme Toggle -->
+        <button type="button" class="btn-theme-toggle" id="btn-theme-toggle" title="Cambiar tema / Switch theme">🌙</button>
       </div>
     </header>
 

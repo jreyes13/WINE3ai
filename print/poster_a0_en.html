@@ -28,17 +28,19 @@
   /* ---------- HEADER ---------- */
   .head {
     display: flex; align-items: center; justify-content: space-between;
-    border-bottom: 1.4mm solid #7f1d1d; padding-bottom: 4mm;
+    border-bottom: 1.6mm solid #5E1C37; padding-bottom: 4mm;
   }
-  .brand { display: flex; align-items: baseline; gap: 7mm; }
-  .brand-logo { font-size: 30mm; font-weight: 900; color: #7f1d1d; letter-spacing: -1.2mm; line-height: 1; }
-  .brand-logo sup { font-size: 17mm; color: #f59e0b; }
-  .brand-logo .ai { font-size: 17mm; color: #0ea5e9; font-weight: 800; }
+  .brand { display: flex; align-items: center; gap: 7mm; }
+  .brand-logo-wrap { display: flex; align-items: center; gap: 4mm; }
+  .brand-logo-img { width: 34mm; height: 34mm; object-fit: contain; }
+  .brand-logo { font-size: 28mm; font-weight: 900; color: #B08D4B; letter-spacing: -1.2mm; line-height: 1; }
+  .brand-logo sup { font-size: 16mm; color: #B08D4B; font-weight: 900; }
+  .brand-logo .ai { font-size: 16mm; color: #5E1C37; font-weight: 900; background: rgba(94, 28, 55, 0.12); padding: 1mm 3.5mm; border-radius: 2mm; border: 0.6mm solid rgba(94, 28, 55, 0.4); margin-left: 2.5mm; }
   .title-block h1 { font-size: 18mm; font-weight: 900; letter-spacing: -0.4mm; line-height: 1.05; color: #0f172a; }
   .title-block p { font-size: 6.2mm; color: #334155; font-weight: 500; margin-top: 1.8mm; }
   .head-formula { text-align: right; }
   .formula { font-size: 13.5mm; font-weight: 900; color: #0f172a; }
-  .formula span { color: #f59e0b; }
+  .formula span { color: #B08D4B; }
   .formula-sub { font-size: 4.8mm; color: #475569; font-weight: 600; margin-top: 1.2mm; line-height: 1.35; }
 
   /* ---------- BODY ---------- */
@@ -195,7 +197,10 @@
 <div class="poster">
   <header class="head">
     <div class="brand">
-      <div class="brand-logo">WINE<sup>³</sup><span class="ai">ai</span></div>
+      <div class="brand-logo-wrap">
+        <img class="brand-logo-img" src="../assets/logo.svg" alt="WINE³ai" />
+        <div class="brand-logo">WINE<sup>³</sup><span class="ai">ai</span></div>
+      </div>
       <div class="title-block">
         <h1>The Periodic Table of Wine &amp; Terroir</h1>
         <p>81 grape varieties arranged by style (columns) and climate (rows) · calibrated with the 54 aromas of <i>Le Nez du Vin</i></p>
@@ -608,7 +613,7 @@
   </section>
 
   <footer class="foot">
-    <div><b>WINE³ai</b> — Open Geospatial &amp; Viticultural Project · wine3ai.jreyes13.net · github.com/jreyes13/wine3ai</div>
+    <div><b>WINE³ai</b> — Open Geospatial &amp; Viticultural Project · <span style='color:#5E1C37;font-weight:900;'>wine3ai.jreyes13.net</span></div>
     <div>Sources: Official Regulatory Councils, VIVC (Julius Kühn-Institut), Jean Lenoir — <i>Le Nez du Vin</i> · Edition: <span id="ed"></span></div>
   </footer>
 </div>

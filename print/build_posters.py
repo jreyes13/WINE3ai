@@ -189,17 +189,19 @@ HTML_TEMPLATE = """<!DOCTYPE html>
   /* ---------- HEADER ---------- */
   .head {
     display: flex; align-items: center; justify-content: space-between;
-    border-bottom: 1.4mm solid #7f1d1d; padding-bottom: 4mm;
+    border-bottom: 1.6mm solid #5E1C37; padding-bottom: 4mm;
   }
-  .brand { display: flex; align-items: baseline; gap: 7mm; }
-  .brand-logo { font-size: 30mm; font-weight: 900; color: #7f1d1d; letter-spacing: -1.2mm; line-height: 1; }
-  .brand-logo sup { font-size: 17mm; color: #f59e0b; }
-  .brand-logo .ai { font-size: 17mm; color: #0ea5e9; font-weight: 800; }
+  .brand { display: flex; align-items: center; gap: 7mm; }
+  .brand-logo-wrap { display: flex; align-items: center; gap: 4mm; }
+  .brand-logo-img { width: 34mm; height: 34mm; object-fit: contain; }
+  .brand-logo { font-size: 28mm; font-weight: 900; color: #B08D4B; letter-spacing: -1.2mm; line-height: 1; }
+  .brand-logo sup { font-size: 16mm; color: #B08D4B; font-weight: 900; }
+  .brand-logo .ai { font-size: 16mm; color: #5E1C37; font-weight: 900; background: rgba(94, 28, 55, 0.12); padding: 1mm 3.5mm; border-radius: 2mm; border: 0.6mm solid rgba(94, 28, 55, 0.4); margin-left: 2.5mm; }
   .title-block h1 { font-size: 18mm; font-weight: 900; letter-spacing: -0.4mm; line-height: 1.05; color: #0f172a; }
   .title-block p { font-size: 6.2mm; color: #334155; font-weight: 500; margin-top: 1.8mm; }
   .head-formula { text-align: right; }
   .formula { font-size: 13.5mm; font-weight: 900; color: #0f172a; }
-  .formula span { color: #f59e0b; }
+  .formula span { color: #B08D4B; }
   .formula-sub { font-size: 4.8mm; color: #475569; font-weight: 600; margin-top: 1.2mm; line-height: 1.35; }
 
   /* ---------- BODY ---------- */
@@ -356,7 +358,10 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 <div class="poster">
   <header class="head">
     <div class="brand">
-      <div class="brand-logo">WINE<sup>³</sup><span class="ai">ai</span></div>
+      <div class="brand-logo-wrap">
+        <img class="brand-logo-img" src="../assets/logo.svg" alt="WINE³ai" />
+        <div class="brand-logo">WINE<sup>³</sup><span class="ai">ai</span></div>
+      </div>
       <div class="title-block">
         <h1>__H1_TITLE__</h1>
         <p>__H1_SUB__</p>
@@ -590,9 +595,9 @@ def generate_poster_html(lang='es'):
         <p class="dyn-note">Pedigrees certified by molecular SSR DNA markers · Vitis International Variety Catalogue (Julius Kühn-Institut)</p>
     """)
 
-    foot_left = ("<b>WINE³ai</b> — Proyecto abierto geoespacial y vitícola · wine3ai.jreyes13.net · github.com/jreyes13/wine3ai"
+    foot_left = ("<b>WINE³ai</b> — Proyecto abierto geoespacial y vitícola · <span style='color:#5E1C37;font-weight:900;'>wine3ai.jreyes13.net</span>"
                  if is_es else
-                 "<b>WINE³ai</b> — Open Geospatial &amp; Viticultural Project · wine3ai.jreyes13.net · github.com/jreyes13/wine3ai")
+                 "<b>WINE³ai</b> — Open Geospatial &amp; Viticultural Project · <span style='color:#5E1C37;font-weight:900;'>wine3ai.jreyes13.net</span>")
     foot_right = ("Fuentes: Consejos Reguladores Oficiales, VIVC (Julius Kühn-Institut), Jean Lenoir — <i>Le Nez du Vin</i> · Edición: "
                   if is_es else
                   "Sources: Official Regulatory Councils, VIVC (Julius Kühn-Institut), Jean Lenoir — <i>Le Nez du Vin</i> · Edition: ")
@@ -627,13 +632,47 @@ def generate_poster_html(lang='es'):
 es_html = generate_poster_html('es')
 en_html = generate_poster_html('en')
 
-with open('/Users/jreyes13/GitHub/wine3ai/print/poster_a0_es.html', 'w', encoding='utf-8') as f:
+print_dir = '/Users/jreyes13/GitHub/WINE3ai/print'
+es_html_path = os.path.join(print_dir, 'poster_a0_es.html')
+en_html_path = os.path.join(print_dir, 'poster_a0_en.html')
+def_html_path = os.path.join(print_dir, 'poster_a0.html')
+
+with open(es_html_path, 'w', encoding='utf-8') as f:
     f.write(es_html)
 
-with open('/Users/jreyes13/GitHub/wine3ai/print/poster_a0_en.html', 'w', encoding='utf-8') as f:
+with open(en_html_path, 'w', encoding='utf-8') as f:
     f.write(en_html)
 
-with open('/Users/jreyes13/GitHub/wine3ai/print/poster_a0.html', 'w', encoding='utf-8') as f:
+with open(def_html_path, 'w', encoding='utf-8') as f:
     f.write(es_html)
 
-print("Generated perfected posters with scaled typography successfully.")
+print("Generated HTML posters successfully.")
+
+# Generate PDFs via Google Chrome headless
+chrome_bin = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+if os.path.exists(chrome_bin):
+    es_pdf = os.path.join(print_dir, 'WINE3ai_Tabla_Periodica_A0_ES.pdf')
+    en_pdf = os.path.join(print_dir, 'WINE3ai_Periodic_Table_A0_EN.pdf')
+    def_pdf = os.path.join(print_dir, 'WINE3ai_Tabla_Periodica_A0.pdf')
+
+    print("Rendering ES PDF via Chrome headless...")
+    subprocess.run([
+        chrome_bin, '--headless=new', '--disable-gpu',
+        '--run-all-compositor-stages-before-draw',
+        '--no-pdf-header-footer',
+        f'--print-to-pdf={es_pdf}',
+        f'file://{es_html_path}'
+    ], check=True)
+
+    print("Rendering EN PDF via Chrome headless...")
+    subprocess.run([
+        chrome_bin, '--headless=new', '--disable-gpu',
+        '--run-all-compositor-stages-before-draw',
+        '--no-pdf-header-footer',
+        f'--print-to-pdf={en_pdf}',
+        f'file://{en_html_path}'
+    ], check=True)
+
+    import shutil
+    shutil.copyfile(es_pdf, def_pdf)
+    print("PDF generation complete: ES, EN, and default A0 vector PDFs created.")

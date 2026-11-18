@@ -1,13 +1,14 @@
 :root {
-  --primary: #be123c;
-  --primary-hover: #e11d48;
-  --secondary: #D4AF37;
-  --accent: #A63A50;
-  --bg-dark: #07090e;
-  --panel-bg: rgba(14, 18, 28, 0.95);
-  --panel-border: rgba(190, 18, 60, 0.25);
-  --text-main: #f8fafc;
-  --text-muted: #94a3b8;
+  /* WINE³ai New Unified Brand Tokens */
+  --primary: #5E1C37;          /* Burdeos Vino */
+  --primary-hover: #752345;
+  --secondary: #B08D4B;        /* Oro Cálido */
+  --accent: #819B7F;           /* Verde Salvia */
+  --bg-dark: #0B0E14;
+  --panel-bg: rgba(24, 30, 38, 0.95);
+  --panel-border: rgba(176, 141, 75, 0.28);
+  --text-main: #F8FAFC;
+  --text-muted: #94A3B8;
   --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
@@ -935,4 +936,132 @@ body, html {
   .brand-subtitle {
     display: none;
   }
+}
+
+/* ========================================================
+   LIGHT THEME SUPPORT FOR MAP ([data-theme="light"])
+   ======================================================== */
+[data-theme="light"] {
+  --bg-dark: #f8fafc;
+  --panel-bg: rgba(255, 255, 255, 0.96);
+  --panel-border: rgba(94, 28, 55, 0.18);
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --card-bg: #ffffff;
+}
+
+[data-theme="light"] body,
+[data-theme="light"] html {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .top-nav {
+  background: rgba(255, 255, 255, 0.96) !important;
+  border-bottom: 1px solid rgba(94, 28, 55, 0.16) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .brand-title {
+  color: #5E1C37;
+}
+
+[data-theme="light"] .basemap-selector-wrap {
+  background: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+}
+
+[data-theme="light"] .basemap-select {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .sidebar,
+[data-theme="light"] .detail-panel,
+[data-theme="light"] .climate-map-legend {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08) !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .region-card {
+  background: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .region-card:hover {
+  background: #ffffff !important;
+  border-color: #5E1C37 !important;
+}
+
+[data-theme="light"] .region-name {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .btn-link {
+  background: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .btn-toggle-layer {
+  background: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #334155 !important;
+}
+
+[data-theme="light"] .btn-toggle-layer.active {
+  background: #5E1C37 !important;
+  color: #ffffff !important;
+  border-color: #5E1C37 !important;
+}
+
+[data-theme="light"] .btn-export-pdf {
+  background: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #334155 !important;
+}
+
+[data-theme="light"] .lang-btn {
+  background: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #475569 !important;
+}
+
+[data-theme="light"] .lang-btn.active {
+  background: #5E1C37 !important;
+  color: #ffffff !important;
+  border-color: #5E1C37 !important;
+}
+
+/* Theme toggle button */
+.btn-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid var(--panel-border);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-main);
+  cursor: pointer;
+  font-size: 1.15rem;
+  transition: all 0.2s ease;
+}
+
+.btn-theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: scale(1.05);
+}
+
+[data-theme="light"] .btn-theme-toggle {
+  background: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .btn-theme-toggle:hover {
+  background: #e2e8f0 !important;
 }

@@ -1493,6 +1493,32 @@ function setupEventListeners() {
   document.getElementById('btn-lang-en').addEventListener('click', () => setLanguage('en'));
   document.getElementById('btn-lang-es').addEventListener('click', () => setLanguage('es'));
 
+  // Dark / Light Theme Switcher
+  const themeToggleBtn = document.getElementById('btn-theme-toggle');
+  if (themeToggleBtn) {
+    const updateThemeIcon = (theme) => {
+      themeToggleBtn.innerHTML = theme === 'light' ? '☀️' : '🌙';
+      themeToggleBtn.setAttribute('title', theme === 'light'
+        ? (currentLang === 'es' ? 'Cambiar a modo oscuro' : 'Switch to dark mode')
+        : (currentLang === 'es' ? 'Cambiar a modo claro' : 'Switch to light mode'));
+    };
+
+    const initialTheme = localStorage.getItem('wine3ai_theme') || 'dark';
+    updateThemeIcon(initialTheme);
+
+    themeToggleBtn.addEventListener('click', () => {
+      const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+      const nextTheme = isLight ? 'dark' : 'light';
+      if (nextTheme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+      }
+      localStorage.setItem('wine3ai_theme', nextTheme);
+      updateThemeIcon(nextTheme);
+    });
+  }
+
   // Color Filter Segmented Buttons
   document.querySelectorAll('#color-filter-group .seg-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
