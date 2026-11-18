@@ -65,8 +65,27 @@
     [data-theme="light"] .bg-white\/5 { background-color: #ffffff !important; border-color: #e2e8f0 !important; }
     [data-theme="light"] .border-white\/10, [data-theme="light"] .border-white\/5 { border-color: #e2e8f0 !important; }
     [data-theme="light"] input#winepedia-search { background-color: #ffffff !important; border-color: #cbd5e1 !important; color: #0f172a !important; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-    [data-theme="light"] .filter-pill { background-color: #ffffff !important; border-color: #e2e8f0 !important; color: #334155 !important; }
-    [data-theme="light"] .article-card { background: #ffffff !important; border-color: #e2e8f0 !important; box-shadow: 0 4px 16px rgba(0,0,0,0.04); }
+    [data-theme="light"] .filter-pill { background-color: #f1f5f9 !important; border-color: #e2e8f0 !important; color: #475569 !important; }
+    [data-theme="light"] .article-card,
+    [data-theme="light"] #articles-grid > div,
+    [data-theme="light"] .bg-\[\#12141c\],
+    [data-theme="light"] div[class*="bg-[#12141c]"] {
+      background-color: #ffffff !important;
+      border-color: #e2e8f0 !important;
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05) !important;
+      color: #0f172a !important;
+    }
+    [data-theme="light"] .article-card h4 { color: #0f172a !important; }
+    [data-theme="light"] .article-card p { color: #475569 !important; }
+    [data-theme="light"] .read-article-btn {
+      background-color: #f1f5f9 !important;
+      border-color: #e2e8f0 !important;
+      color: #0f172a !important;
+    }
+    [data-theme="light"] .read-article-btn:hover {
+      background-color: #e2e8f0 !important;
+      color: #b45309 !important;
+    }
     [data-theme="light"] #article-modal > div { background-color: #ffffff !important; border-color: #e2e8f0 !important; color: #0f172a !important; }
     [data-theme="light"] #modal-summary { background-color: #fef3c7 !important; border-color: #fde68a !important; color: #92400e !important; }
     [data-theme="light"] #close-modal-btn { background-color: #f1f5f9 !important; color: #0f172a !important; }
@@ -423,7 +442,7 @@
           var summary = currentLang === 'es' ? art.summary_es : art.summary_en;
           var category = currentLang === 'es' ? art.category_es : art.category_en;
 
-          card.className = "p-6 rounded-2xl bg-[#12141c] border border-white/10 hover:border-amber-500/50 transition-all flex flex-col justify-between group";
+          card.className = "article-card p-6 rounded-2xl bg-[#12141c] border border-white/10 hover:border-amber-500/50 transition-all flex flex-col justify-between group";
           card.innerHTML = 
             "<div>" +
               "<div class='flex items-center justify-between mb-3'>" +
