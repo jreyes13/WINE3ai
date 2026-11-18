@@ -1209,7 +1209,7 @@ if (themeToggleBtn) {
       : (currentLang === 'es' ? 'Cambiar a modo claro' : 'Switch to light mode'));
   };
 
-  const initialTheme = localStorage.getItem('wine3ai_theme') || 'dark';
+  const initialTheme = localStorage.getItem('theme') || localStorage.getItem('jreyes13_theme') || localStorage.getItem('wine3ai_theme') || 'dark';
   updateThemeUI(initialTheme);
 
   themeToggleBtn.addEventListener('click', () => {
@@ -1232,6 +1232,8 @@ if (themeToggleBtn) {
         }
       }
     }
+    localStorage.setItem('theme', nextTheme);
+    localStorage.setItem('jreyes13_theme', nextTheme);
     localStorage.setItem('wine3ai_theme', nextTheme);
     updateThemeUI(nextTheme);
   });

@@ -1023,6 +1023,46 @@ body, html {
   border-color: #5E1C37 !important;
 }
 
+[data-theme="light"] .detail-region {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .info-label {
+  color: #64748b !important;
+}
+
+[data-theme="light"] .info-value {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .munis-summary {
+  background: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .munis-container {
+  background: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+[data-theme="light"] .munis-search-input {
+  background: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .muni-chip {
+  background: #e2e8f0 !important;
+  color: #1e293b !important;
+}
+
+[data-theme="light"] .maplibregl-popup-content {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12) !important;
+}
+
 [data-theme="light"] .region-name {
   color: #0f172a !important;
 }

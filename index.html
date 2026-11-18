@@ -52,38 +52,80 @@
       transform: translateY(-2px);
     }
 
+    /* Complete Light Theme Overrides for WINE3ai */
     [data-theme="light"] body { background-color: #f8fafc !important; color: #0f172a !important; }
     [data-theme="light"] header { background-color: rgba(255, 255, 255, 0.95) !important; border-bottom-color: #e2e8f0 !important; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
-    [data-theme="light"] footer { background-color: #ffffff !important; border-top-color: #e2e8f0 !important; }
+    [data-theme="light"] footer { background-color: #ffffff !important; border-top-color: #e2e8f0 !important; color: #64748b !important; }
     [data-theme="light"] .text-white { color: #0f172a !important; }
+    [data-theme="light"] .text-slate-100,
+    [data-theme="light"] .text-slate-200 { color: #1e293b !important; }
+    [data-theme="light"] .text-stone-200 { color: #334155 !important; }
     [data-theme="light"] .text-slate-300 { color: #334155 !important; }
     [data-theme="light"] .text-slate-400 { color: #64748b !important; }
+    [data-theme="light"] .text-rose-200,
+    [data-theme="light"] .text-rose-200\/90 { color: #9b183b !important; text-shadow: none !important; }
+    [data-theme="light"] .text-rose-300 { color: #be123c !important; }
+    [data-theme="light"] .text-amber-200,
+    [data-theme="light"] .text-amber-300 { color: #b45309 !important; }
+    [data-theme="light"] .text-blue-200,
+    [data-theme="light"] .text-blue-300 { color: #0369a1 !important; }
+    [data-theme="light"] .text-emerald-200,
+    [data-theme="light"] .text-emerald-300 { color: #047857 !important; }
+    [data-theme="light"] .text-purple-200,
+    [data-theme="light"] .text-purple-300 { color: #7e22ce !important; }
+
     [data-theme="light"] section { background: #ffffff !important; }
     [data-theme="light"] section.bg-gradient-to-b,
     [data-theme="light"] #winepedia,
     [data-theme="light"] #sommelier,
     [data-theme="light"] #references { background: #f8fafc !important; }
+
     [data-theme="light"] .bg-\[\#0b0d13\],
     [data-theme="light"] .bg-\[\#0e111a\],
     [data-theme="light"] .bg-\[\#0a0c14\],
     [data-theme="light"] .bg-\[\#07090e\],
-    [data-theme="light"] .bg-\[\#05070a\] { background-color: #f8fafc !important; }
+    [data-theme="light"] .bg-\[\#05070a\],
+    [data-theme="light"] .bg-\[\#05060a\] { background-color: #f8fafc !important; }
+
     [data-theme="light"] .bg-\[\#12141c\],
+    [data-theme="light"] .bg-\[\#12141e\],
     [data-theme="light"] .bg-\[\#131622\],
     [data-theme="light"] .bg-\[\#131622\]\/90,
-    [data-theme="light"] .bg-white\/\[0\.02\] { background-color: #ffffff !important; border-color: #e2e8f0 !important; box-shadow: 0 4px 20px -2px rgba(0,0,0,0.05) !important; }
+    [data-theme="light"] .bg-white\/\[0\.02\],
+    [data-theme="light"] .bg-white\/\[0\.03\] { background-color: #ffffff !important; border-color: #e2e8f0 !important; box-shadow: 0 4px 20px -2px rgba(0,0,0,0.05) !important; }
+
     [data-theme="light"] .bg-black\/40,
-    [data-theme="light"] .bg-black\/60 { background-color: #f1f5f9 !important; border-color: #cbd5e1 !important; color: #0f172a !important; }
+    [data-theme="light"] .bg-black\/50,
+    [data-theme="light"] .bg-black\/60 { background-color: #ffffff !important; border-color: #cbd5e1 !important; color: #0f172a !important; box-shadow: 0 4px 16px rgba(0,0,0,0.04) !important; }
+
+    /* Badges & Chips in Light Mode */
+    [data-theme="light"] .bg-rose-950,
+    [data-theme="light"] .bg-rose-950\/40,
+    [data-theme="light"] .bg-rose-950\/80 { background-color: #ffe4e6 !important; border-color: #fecdd3 !important; color: #9f1239 !important; }
+    [data-theme="light"] .bg-amber-950,
+    [data-theme="light"] .bg-amber-950\/40 { background-color: #fef3c7 !important; border-color: #fde68a !important; color: #92400e !important; }
+    [data-theme="light"] .bg-blue-950 { background-color: #e0f2fe !important; border-color: #bae6fd !important; color: #075985 !important; }
+    [data-theme="light"] .bg-emerald-950 { background-color: #d1fae5 !important; border-color: #a7f3d0 !important; color: #065f46 !important; }
+    [data-theme="light"] .bg-purple-950 { background-color: #f3e8ff !important; border-color: #e9d5ff !important; color: #6b21a8 !important; }
+
     [data-theme="light"] input#dish-input,
     [data-theme="light"] textarea#menu-text-input { background-color: #ffffff !important; border-color: #cbd5e1 !important; color: #0f172a !important; }
     [data-theme="light"] .dish-chip { background-color: #f1f5f9 !important; border-color: #e2e8f0 !important; color: #334155 !important; }
     [data-theme="light"] .bg-white\/5 { background-color: #f1f5f9 !important; border-color: #e2e8f0 !important; }
+    [data-theme="light"] .bg-white\/10 { background-color: #f8fafc !important; border-color: #e2e8f0 !important; }
     [data-theme="light"] .border-white\/10,
+    [data-theme="light"] .border-white\/15,
     [data-theme="light"] .border-white\/5 { border-color: #e2e8f0 !important; }
+
+    /* Flashcard in Light Mode */
+    [data-theme="light"] #active-flashcard { background-color: #ffffff !important; border-color: #e2e8f0 !important; box-shadow: 0 10px 30px rgba(0,0,0,0.06) !important; }
+    [data-theme="light"] #card-front-title,
+    [data-theme="light"] #card-back-title { color: #0f172a !important; }
+    [data-theme="light"] #card-back-text { color: #334155 !important; }
   </style>
   <script>
     (function() {
-      const savedTheme = localStorage.getItem('wine3ai_theme') || 'dark';
+      const savedTheme = localStorage.getItem('theme') || localStorage.getItem('jreyes13_theme') || localStorage.getItem('wine3ai_theme') || 'dark';
       if (savedTheme === 'light') {
         document.documentElement.classList.remove('dark');
         document.documentElement.setAttribute('data-theme', 'light');
@@ -865,7 +907,7 @@ Vega Sicilia Valbuena 5º 2018 .. 160€" class="w-full bg-black/60 border borde
       const themeBtn = document.getElementById('btn-theme-toggle');
       if (!themeBtn) return;
       const updateIcon = (t) => { themeBtn.innerHTML = t === 'light' ? '☀️' : '🌙'; };
-      const currentT = localStorage.getItem('wine3ai_theme') || 'dark';
+      const currentT = localStorage.getItem('theme') || localStorage.getItem('jreyes13_theme') || localStorage.getItem('wine3ai_theme') || 'dark';
       updateIcon(currentT);
 
       themeBtn.addEventListener('click', () => {
@@ -878,6 +920,8 @@ Vega Sicilia Valbuena 5º 2018 .. 160€" class="w-full bg-black/60 border borde
           document.documentElement.removeAttribute('data-theme');
           document.documentElement.classList.add('dark');
         }
+        localStorage.setItem('theme', nextT);
+        localStorage.setItem('jreyes13_theme', nextT);
         localStorage.setItem('wine3ai_theme', nextT);
         updateIcon(nextT);
       });
