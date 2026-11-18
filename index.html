@@ -91,8 +91,38 @@
     [data-theme="light"] .bg-\[\#12141e\],
     [data-theme="light"] .bg-\[\#131622\],
     [data-theme="light"] .bg-\[\#131622\]\/90,
+    [data-theme="light"] div[class*="bg-[#131622]"],
+    [data-theme="light"] .home-concept-box,
     [data-theme="light"] .bg-white\/\[0\.02\],
     [data-theme="light"] .bg-white\/\[0\.03\] { background-color: #ffffff !important; border-color: #e2e8f0 !important; box-shadow: 0 4px 20px -2px rgba(0,0,0,0.05) !important; }
+
+    [data-theme="light"] .home-concept-result-card,
+    [data-theme="light"] #home-winepedia-results > div,
+    [data-theme="light"] .bg-\[\#0e1017\],
+    [data-theme="light"] div[class*="bg-[#0e1017]"] {
+      background-color: #ffffff !important;
+      border-color: #e2e8f0 !important;
+      color: #0f172a !important;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04) !important;
+    }
+
+    [data-theme="light"] .home-concept-chip {
+      background-color: #f1f5f9 !important;
+      border: 1px solid #e2e8f0 !important;
+      color: #334155 !important;
+    }
+    [data-theme="light"] .home-concept-chip:hover {
+      background-color: #e2e8f0 !important;
+      color: #0f172a !important;
+    }
+
+    [data-theme="light"] input#home-winepedia-search,
+    [data-theme="light"] #home-winepedia-search {
+      background-color: #ffffff !important;
+      border-color: #cbd5e1 !important;
+      color: #0f172a !important;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03) !important;
+    }
 
     [data-theme="light"] .bg-black\/40,
     [data-theme="light"] .bg-black\/50,
@@ -375,7 +405,7 @@
         </div>
 
         <!-- Home Mini Concept Explorer -->
-        <div class="bg-[#131622]/90 border border-white/10 rounded-3xl p-6 sm:p-8 backdrop-blur-xl">
+        <div class="home-concept-box bg-[#131622]/90 border border-white/10 rounded-3xl p-6 sm:p-8 backdrop-blur-xl">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
             <div>
               <h5 class="text-lg font-bold font-serif-wine text-white flex items-center gap-2">
@@ -901,7 +931,7 @@ Vega Sicilia Valbuena 5º 2018 .. 160€" class="w-full bg-black/60 border borde
   <script src="data/pairing_rules.js?v=20261110_v3"></script>
   <script src="libs/sommelier_engine.js?v=20261110_v3"></script>
   <script src="data/study_cards.js?v=20261110_v3"></script>
-  <script src="libs/sommelier_ui.js?v=20261110_v3"></script>
+  <script src="libs/sommelier_ui.js?v=20261118_v4"></script>
   <script>
     (function() {
       const themeBtn = document.getElementById('btn-theme-toggle');

@@ -282,7 +282,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (art.standard === 'WSET3') badgeColor = "bg-purple-950 text-purple-300 border-purple-800/40";
       if (art.standard === 'ASI') badgeColor = "bg-emerald-950 text-emerald-300 border-emerald-800/40";
 
-      card.className = "p-5 rounded-2xl bg-[#0e1017] border border-white/10 hover:border-amber-500/40 transition-colors flex flex-col justify-between";
+      card.className = "home-concept-result-card p-5 rounded-2xl bg-[#0e1017] border border-white/10 hover:border-amber-500/40 transition-colors flex flex-col justify-between";
       card.innerHTML = 
         "<div>" +
           "<div class='flex items-center justify-between mb-2.5'>" +
