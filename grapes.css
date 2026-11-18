@@ -2715,16 +2715,66 @@ body {
   color: #334155 !important;
 }
 
-[data-theme="light"] .ptile {
+[data-theme="light"] .demo-tile {
   background: #ffffff !important;
-  border-color: #cbd5e1 !important;
+  border-color: #f59e0b !important;
+  color: #0f172a !important;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.15) !important;
+}
+
+[data-theme="light"] .periodic-corner-header {
+  background: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
   color: #0f172a !important;
 }
 
+[data-theme="light"] .periodic-col-header {
+  background: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+  border-top: 3px solid var(--group-col, #38bdf8) !important;
+}
+
+[data-theme="light"] .pcol-title {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .pcol-subtitle {
+  color: #64748b !important;
+}
+
+[data-theme="light"] .periodic-row-header {
+  background: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+  border-left: 3px solid var(--climate-col, #38bdf8) !important;
+}
+
+[data-theme="light"] .pperiod-name {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .pperiod-badge {
+  background: #e2e8f0 !important;
+  color: #475569 !important;
+}
+
+[data-theme="light"] .periodic-tile,
+[data-theme="light"] .ptile {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06) !important;
+}
+
+[data-theme="light"] .periodic-tile:hover,
 [data-theme="light"] .ptile:hover {
   background: #f8fafc !important;
-  border-color: #5E1C37 !important;
-  box-shadow: 0 6px 16px rgba(94, 28, 55, 0.12);
+  border-color: var(--group-color, #5E1C37) !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-theme="light"] .periodic-tile.active {
+  background: #fefce8 !important;
+  border: 2px solid #b08d4b !important;
 }
 
 [data-theme="light"] .ptile-name {
@@ -2734,15 +2784,80 @@ body {
 [data-theme="light"] .ptile-mass {
   background: #f1f5f9 !important;
   color: #334155 !important;
+  border: 1px solid #cbd5e1 !important;
 }
 
 [data-theme="light"] .grape-hero-card,
 [data-theme="light"] .variety-matrix-wrapper,
 [data-theme="light"] .chart-card,
+[data-theme="light"] .map-section-card,
+[data-theme="light"] .regions-table-section,
 [data-theme="light"] .pedigree-card {
   background: #ffffff !important;
   border-color: #e2e8f0 !important;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .card-header-bar {
+  border-bottom-color: #e2e8f0 !important;
+}
+
+[data-theme="light"] .section-title,
+[data-theme="light"] .chart-title {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .section-subtitle,
+[data-theme="light"] .chart-subtitle,
+[data-theme="light"] .center-label {
+  color: #64748b !important;
+}
+
+[data-theme="light"] .legend-row:hover,
+[data-theme="light"] .legend-row.active {
+  background: #f1f5f9 !important;
+}
+
+[data-theme="light"] .legend-pct {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .btn-chart-reset,
+[data-theme="light"] .table-counter-badge {
+  background: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .multi-progress-bar {
+  background: #e2e8f0 !important;
+}
+
+[data-theme="light"] .regions-table th {
+  background: #f1f5f9 !important;
+  color: #475569 !important;
+  border-bottom-color: #cbd5e1 !important;
+}
+
+[data-theme="light"] .regions-table td {
+  border-bottom-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .regions-table tr:hover td {
+  background: #f8fafc !important;
+}
+
+[data-theme="light"] .td-role-tag {
+  background: #f1f5f9 !important;
+  color: #334155 !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+[data-theme="light"] .table-search-input {
+  background: #f8fafc !important;
+  border-color: #cbd5e1 !important;
   color: #0f172a !important;
 }
 

@@ -975,6 +975,29 @@ body, html {
   color: #0f172a !important;
 }
 
+[data-theme="light"] .search-input,
+[data-theme="light"] .filter-select {
+  background: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .regions-counter {
+  background: #f1f5f9 !important;
+  border-bottom-color: #e2e8f0 !important;
+}
+
+[data-theme="light"] .count-visible-pill {
+  background: #e2e8f0 !important;
+  color: #475569 !important;
+}
+
+[data-theme="light"] .btn-vis-action {
+  background: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #334155 !important;
+}
+
 [data-theme="light"] .sidebar,
 [data-theme="light"] .detail-panel,
 [data-theme="light"] .climate-map-legend {
@@ -985,13 +1008,18 @@ body, html {
 }
 
 [data-theme="light"] .region-card {
-  background: #f8fafc !important;
+  background: #ffffff !important;
   border-color: #e2e8f0 !important;
   color: #0f172a !important;
 }
 
 [data-theme="light"] .region-card:hover {
-  background: #ffffff !important;
+  background: #f8fafc !important;
+  border-color: #5E1C37 !important;
+}
+
+[data-theme="light"] .region-card.selected {
+  background: #fef2f2 !important;
   border-color: #5E1C37 !important;
 }
 
