@@ -53,6 +53,27 @@
     .font-mono { font-family: 'JetBrains Mono', monospace; }
     .gold-glow { text-shadow: 0 0 25px rgba(212, 175, 55, 0.4); }
 
+    /* Hide horizontal scrollbar while keeping functionality */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    /* Smooth snapping carousel */
+    .carousel-track {
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+    .carousel-card {
+      scroll-snap-align: start;
+      flex: 0 0 320px;
+    }
+    @media (max-width: 640px) {
+      .carousel-card {
+        flex: 0 0 280px;
+      }
+    }
+
+    /* Light mode adaptations */
     [data-theme="light"] body { background-color: #f8fafc !important; color: #0f172a !important; }
     [data-theme="light"] header { background-color: rgba(255, 255, 255, 0.95) !important; border-bottom-color: #e2e8f0 !important; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
     [data-theme="light"] footer { background-color: #ffffff !important; border-top-color: #e2e8f0 !important; color: #64748b !important; }
@@ -71,9 +92,9 @@
     [data-theme="light"] .bg-white\/5 { background-color: #ffffff !important; border-color: #e2e8f0 !important; }
     [data-theme="light"] .border-white\/10, [data-theme="light"] .border-white\/5 { border-color: #e2e8f0 !important; }
     [data-theme="light"] input#winepedia-search { background-color: #ffffff !important; border-color: #cbd5e1 !important; color: #0f172a !important; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-    [data-theme="light"] .filter-pill { background-color: #f1f5f9 !important; border-color: #e2e8f0 !important; color: #475569 !important; }
-    [data-theme="light"] .theme-pill { background-color: #f1f5f9 !important; border-color: #e2e8f0 !important; color: #475569 !important; }
+    [data-theme="light"] .filter-pill, [data-theme="light"] .theme-pill { background-color: #f1f5f9 !important; border-color: #e2e8f0 !important; color: #475569 !important; }
     [data-theme="light"] .article-card,
+    [data-theme="light"] .theme-hub-card,
     [data-theme="light"] #random-spotlight,
     [data-theme="light"] .bg-\[\#12141c\],
     [data-theme="light"] div[class*="bg-[#12141c]"] {
@@ -86,23 +107,15 @@
       background: linear-gradient(135deg, #fffbeb 0%, #ffffff 100%) !important;
       border-color: #fde68a !important;
     }
-    [data-theme="light"] .theme-header {
-      background-color: #ffffff !important;
-      border-color: #e2e8f0 !important;
-    }
-    [data-theme="light"] .theme-header:hover {
-      border-color: #cbd5e1 !important;
-    }
-    [data-theme="light"] .theme-header h3 { color: #0f172a !important; }
     [data-theme="light"] .theme-badge {
       background-color: #fef3c7 !important;
       color: #92400e !important;
       border-color: #fde68a !important;
     }
-    [data-theme="light"] .accordion-btn {
-      background-color: #f1f5f9 !important;
-      border-color: #e2e8f0 !important;
-      color: #475569 !important;
+    [data-theme="light"] .slider-nav-btn {
+      background-color: #ffffff !important;
+      border-color: #cbd5e1 !important;
+      color: #0f172a !important;
     }
     [data-theme="light"] .article-card h4 { color: #0f172a !important; }
     [data-theme="light"] .article-card p { color: #475569 !important; }
@@ -179,19 +192,19 @@
 
   <main class="flex-1">
     <!-- Hero Header -->
-    <section class="py-14 sm:py-16 border-b border-white/5 bg-gradient-to-b from-[#140b10] via-[#0e1017] to-[#0b0d13] relative overflow-hidden">
+    <section class="py-12 sm:py-14 border-b border-white/5 bg-gradient-to-b from-[#140b10] via-[#0e1017] to-[#0b0d13] relative overflow-hidden">
       <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
       <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-950/80 border border-amber-800/50 text-amber-300 text-xs font-mono mb-6 shadow-inner" id="hero-badge">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-950/80 border border-amber-800/50 text-amber-300 text-xs font-mono mb-5 shadow-inner" id="hero-badge">
           <span>📚</span> Cánones WSET 3 · CMS · ASI · VIVC · Jancis Robinson · Jamie Goode
         </div>
 
-        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 font-serif-wine">
+        <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4 font-serif-wine">
           WINE<span class="text-amber-400">p3dIA</span>
         </h1>
-        <p class="text-slate-300 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed mb-8" id="hero-desc">
-          La enciclopedia técnica de sumillería, bioquímica enológica y terruño basada en los 3 grandes cánones mundiales (WSET 3, CMS, ASI) y los tratados de referencia de Jancis Robinson, Jamie Goode, Pascaline Lepeltier y el catálogo ampelográfico VIVC.
+        <p class="text-slate-300 text-sm sm:text-base max-w-3xl mx-auto leading-relaxed mb-6" id="hero-desc">
+          La enciclopedia técnica de sumillería, bioquímica enológica y terruño estructurada en 5 ejes temáticos y disponible mediante visualización deslizable o consulta interactiva.
         </p>
 
         <!-- Search Bar -->
@@ -199,7 +212,7 @@
           <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400 text-lg">
             🔍
           </div>
-          <input type="text" id="winepedia-search" placeholder="Buscar por concepto, compuesto (cinarina, flor, tca, pirazinas), uva o región..." class="w-full pl-12 pr-4 py-4 rounded-2xl bg-[#131622] border border-white/15 text-white placeholder-slate-500 font-sans text-sm focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-all shadow-xl">
+          <input type="text" id="winepedia-search" placeholder="Buscar por concepto, compuesto (cinarina, flor, tca, pirazinas), uva o región..." class="w-full pl-12 pr-4 py-3.5 rounded-2xl bg-[#131622] border border-white/15 text-white placeholder-slate-500 font-sans text-sm focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-all shadow-xl">
           <button id="clear-search-btn" class="hidden absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-white text-xs font-mono">
             ✕ Limpiar
           </button>
@@ -228,10 +241,10 @@
     </section>
 
     <!-- Main Content Section -->
-    <section class="py-12 max-w-7xl mx-auto px-6">
+    <section class="py-10 max-w-7xl mx-auto px-6">
       
       <!-- Random Spotlight Card (Ficha Aleatoria Destacada) -->
-      <div id="random-spotlight" class="mb-10 p-6 sm:p-7 rounded-3xl bg-gradient-to-r from-amber-950/30 via-[#131622] to-purple-950/20 border border-amber-500/30 shadow-2xl relative transition-all">
+      <div id="random-spotlight" class="mb-10 p-5 sm:p-7 rounded-3xl bg-gradient-to-r from-amber-950/30 via-[#131622] to-purple-950/20 border border-amber-500/30 shadow-2xl relative transition-all">
         <div class="flex flex-wrap items-center justify-between gap-3 mb-4 pb-3 border-b border-white/10">
           <div class="flex items-center gap-2 text-xs font-mono font-bold text-amber-300 uppercase tracking-wider">
             <span class="text-base">🎲</span>
@@ -266,32 +279,46 @@
           </div>
           <div class="lg:col-span-1 flex lg:justify-end">
             <button id="spotlight-read-btn" class="w-full lg:w-auto px-5 py-3 rounded-2xl bg-amber-500 hover:bg-amber-400 text-black font-semibold text-xs font-mono shadow-lg transition-transform active:scale-95 flex items-center justify-center gap-2">
-              <span>📖</span>
-              <span id="spotlight-read-text">Leer ficha completa</span>
+              <span>🎴</span>
+              <span id="spotlight-read-text">Abrir en Visor Deslizable</span>
             </button>
           </div>
         </div>
       </div>
 
-      <!-- Toolbar: Counter & Global Controls -->
+      <!-- Toolbar: Counter, Mode Toggle & Global Window Opener -->
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-4 border-b border-white/10">
-        <div class="text-xs font-mono text-slate-400" id="articles-counter">
-          Cargando conceptos...
+        <div>
+          <div class="text-xs font-mono text-slate-400" id="articles-counter">
+            Cargando conceptos...
+          </div>
+          <div class="text-[11px] text-slate-500 font-mono mt-0.5">
+            Las fichas se organizan en bloques temáticos ocultos. Despliega un tema o abre el visor deslizable.
+          </div>
         </div>
-        <div class="flex items-center gap-3 text-xs font-mono">
-          <button id="btn-toggle-all-sections" class="px-3 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 transition-colors flex items-center gap-1.5">
-            <span id="toggle-all-icon">▸</span>
-            <span id="toggle-all-text">Contraer todos</span>
+
+        <div class="flex flex-wrap items-center gap-2 text-xs font-mono">
+          <!-- Primary CTA: Ventana con Deslizables -->
+          <button id="btn-open-deck-viewer" class="px-4 py-2 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black font-bold border border-amber-400/50 shadow-lg transition-all flex items-center gap-2 active:scale-95">
+            <span>🎴</span>
+            <span id="btn-open-deck-text">Abrir Ventana con Deslizables</span>
           </button>
-          <button id="btn-restore-spotlight" class="hidden px-3 py-1.5 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 transition-colors flex items-center gap-1.5">
+
+          <!-- Toggle all inline carousels -->
+          <button id="btn-toggle-all-sections" class="px-3 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 transition-colors flex items-center gap-1.5">
+            <span id="toggle-all-icon">▾</span>
+            <span id="toggle-all-text">Desplegar todos los carruseles</span>
+          </button>
+
+          <button id="btn-restore-spotlight" class="hidden px-3 py-2 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 transition-colors flex items-center gap-1.5">
             <span>🎲</span>
             <span id="restore-spotlight-text">Ver ficha aleatoria</span>
           </button>
         </div>
       </div>
 
-      <!-- Thematic Grouped Sections Container -->
-      <div id="thematic-sections" class="space-y-10">
+      <!-- Thematic Hubs & Hidden/Collapsible Carousels Container -->
+      <div id="thematic-sections" class="space-y-6">
         <!-- Injected via JavaScript dynamically -->
       </div>
 
@@ -309,48 +336,103 @@
     </section>
   </main>
 
-  <!-- Deep Dive Reading Modal -->
-  <div id="article-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
-    <div class="bg-[#131622] border border-white/15 rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 shadow-2xl relative">
-      <!-- Close Button -->
-      <button id="close-modal-btn" class="absolute top-6 right-6 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-sm font-mono transition-colors">
-        ✕
-      </button>
-
-      <div class="flex items-center gap-3 mb-4">
-        <span id="modal-standard" class="px-2.5 py-1 rounded text-[11px] font-mono font-bold bg-purple-950 text-purple-300 border border-purple-800/40">WSET 3</span>
-        <span id="modal-category" class="text-xs font-mono text-slate-400">Enología & Vinos Especiales</span>
-      </div>
-
-      <h3 id="modal-title" class="text-2xl sm:text-3xl font-bold font-serif-wine text-white mb-4 pr-10 leading-snug">
-        Título del Artículo
-      </h3>
-
-      <div class="p-4 rounded-xl bg-white/[0.03] border border-white/10 text-xs text-amber-200 font-mono mb-6 leading-relaxed" id="modal-summary">
-        Resumen introductorio...
-      </div>
-
-      <div class="prose prose-invert max-w-none text-slate-300 text-sm leading-relaxed mb-6 font-sans space-y-4" id="modal-content">
-        <!-- Full content -->
-      </div>
-
-      <div class="mb-6 p-4 rounded-2xl bg-black/50 border border-white/10">
-        <strong id="modal-takeaways-heading" class="text-amber-400 text-xs font-mono block mb-2 uppercase tracking-wider">Puntos Clave de Sumillería:</strong>
-        <ul id="modal-takeaways" class="text-xs text-slate-300 font-sans space-y-2">
-          <!-- Takeaways -->
-        </ul>
-      </div>
-
-      <div class="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 text-xs font-mono">
-        <div>
-          <span id="modal-grapes-lbl" class="text-slate-500 mr-2">Variedades vinculadas:</span>
-          <span id="modal-grapes" class="text-slate-300"></span>
+  <!-- ============================================================ -->
+  <!-- VENTANA CON DESLIZABLES (Interactive Slide Deck / Viewer)    -->
+  <!-- ============================================================ -->
+  <div id="deck-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
+    <div class="bg-[#12141c] border border-white/15 rounded-3xl max-w-3xl w-full max-h-[92vh] flex flex-col shadow-2xl relative overflow-hidden">
+      
+      <!-- Deck Top Bar -->
+      <div class="p-4 sm:p-5 border-b border-white/10 flex items-center justify-between bg-black/40">
+        <div class="flex items-center gap-3">
+          <span id="deck-card-counter" class="text-xs font-mono font-bold px-2.5 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30">
+            Ficha 1 de 58
+          </span>
+          <span id="deck-standard-badge" class="text-[11px] font-mono px-2 py-0.5 rounded font-bold uppercase border">
+            WSET 3
+          </span>
+          <span id="deck-category-text" class="text-xs text-slate-400 font-mono hidden sm:inline truncate max-w-[220px]">
+            Enología
+          </span>
         </div>
-        <div>
-          <span id="modal-regions-lbl" class="text-slate-500 mr-2">Regiones:</span>
-          <span id="modal-regions" class="text-rose-400"></span>
+
+        <div class="flex items-center gap-2">
+          <!-- Keyboard shortcut indicator -->
+          <span class="text-[11px] font-mono text-slate-500 hidden md:inline">Usa ← y →</span>
+          <button id="deck-random-btn" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/10 text-amber-300 text-xs font-mono border border-white/10 transition-colors" title="Ficha aleatoria">
+            🎲 Aleatoria
+          </button>
+          <button id="close-deck-btn" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-sm font-mono transition-colors">
+            ✕
+          </button>
         </div>
       </div>
+
+      <!-- Deck Progress Line -->
+      <div class="w-full bg-white/5 h-1">
+        <div id="deck-progress-bar" class="bg-amber-400 h-1 transition-all duration-300" style="width: 2%;"></div>
+      </div>
+
+      <!-- Deck Scrollable Content Area -->
+      <div id="deck-content-area" class="p-6 sm:p-8 overflow-y-auto flex-1 space-y-6">
+        
+        <div>
+          <div class="text-xs font-mono text-amber-400/90 mb-1" id="deck-theme-title">
+            🌱 Edafología y Suelos
+          </div>
+          <h2 id="deck-title" class="text-2xl sm:text-3xl font-bold font-serif-wine text-white leading-snug mb-3">
+            Título de la Ficha
+          </h2>
+          <div id="deck-summary" class="p-4 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-xs sm:text-sm text-amber-200 font-mono leading-relaxed">
+            Resumen conceptual...
+          </div>
+        </div>
+
+        <!-- Technical Deep-Dive Content -->
+        <div class="prose prose-invert max-w-none text-slate-300 text-sm leading-relaxed font-sans space-y-4" id="deck-content">
+          <!-- Full technical description -->
+        </div>
+
+        <!-- Sommelier Takeaways -->
+        <div class="p-4 sm:p-5 rounded-2xl bg-black/50 border border-white/10">
+          <strong id="deck-takeaways-heading" class="text-amber-400 text-xs font-mono block mb-2 uppercase tracking-wider">
+            Puntos Clave de Sumillería:
+          </strong>
+          <ul id="deck-takeaways" class="text-xs text-slate-300 font-sans space-y-2">
+            <!-- Items -->
+          </ul>
+        </div>
+
+        <!-- Grapes & Regions Links -->
+        <div class="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 text-xs font-mono">
+          <div>
+            <span id="deck-grapes-lbl" class="text-slate-500 mr-2">Variedades vinculadas:</span>
+            <span id="deck-grapes" class="text-slate-300"></span>
+          </div>
+          <div>
+            <span id="deck-regions-lbl" class="text-slate-500 mr-2">Regiones:</span>
+            <span id="deck-regions" class="text-rose-400"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Deck Bottom Navigation Bar (Deslizadores / Controles) -->
+      <div class="p-4 sm:p-5 border-t border-white/10 bg-black/40 flex items-center justify-between gap-3">
+        <button id="deck-prev-btn" class="flex-1 sm:flex-none px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-white font-mono text-xs font-semibold border border-white/15 transition-all flex items-center justify-center gap-2 active:scale-95">
+          <span>←</span>
+          <span id="deck-prev-text">Ficha Anterior</span>
+        </button>
+
+        <div class="hidden sm:flex items-center gap-1.5 text-xs font-mono text-slate-400" id="deck-dots-indicator">
+          <!-- Dots or current / total -->
+        </div>
+
+        <button id="deck-next-btn" class="flex-1 sm:flex-none px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-black font-mono text-xs font-bold shadow-lg transition-all flex items-center justify-center gap-2 active:scale-95">
+          <span id="deck-next-text">Ficha Siguiente</span>
+          <span>→</span>
+        </button>
+      </div>
+
     </div>
   </div>
 
@@ -379,7 +461,7 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="data/winepedia_articles.js?v=20261119_v4"></script>
+  <script src="data/winepedia_articles.js?v=20261119_v5"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       var articles = window.WINEPEDIA_ARTICLES || [];
@@ -387,8 +469,14 @@
       var activeStandard = 'all';
       var activeThemeFilter = 'all';
       var searchQuery = '';
-      var collapsedThemes = {}; // map of themeId -> boolean
+      
+      // By default: all theme inline carousels are HIDDEN (collapsed)
+      var expandedThemes = {}; 
       var currentSpotlightArticle = null;
+
+      // Deck Slider State
+      var currentDeckArticles = [];
+      var currentDeckIndex = 0;
 
       // Thematic taxonomies
       var THEMES = [
@@ -460,7 +548,7 @@
         for (var i = 0; i < THEMES.length; i++) {
           if (THEMES[i].matcher(art)) return THEMES[i].id;
         }
-        return 'enology'; // fallback
+        return 'enology';
       }
 
       var I18N = {
@@ -468,7 +556,7 @@
           navMap: "Mapa",
           navGrapes: "Uvas",
           heroBadge: "📚 Cánones WSET 3 · CMS · ASI · VIVC · Jancis Robinson · Jamie Goode",
-          heroDesc: "La enciclopedia técnica de sumillería, bioquímica enológica y terruño basada en los 3 grandes cánones mundiales (WSET 3, CMS, ASI) y los tratados de referencia de Hugh Johnson & Jancis Robinson, Jamie Goode, Pascaline Lepeltier y el catálogo ampelográfico internacional VIVC.",
+          heroDesc: "La enciclopedia técnica de sumillería, bioquímica enológica y terruño estructurada en 5 ejes temáticos y disponible mediante visualización deslizable o consulta interactiva.",
           searchPlaceholder: "Buscar por concepto, compuesto (cinarina, flor, tca, pirazinas), uva o región...",
           clearSearch: "✕ Limpiar",
           lblFilterStandard: "Estándar:",
@@ -479,27 +567,32 @@
           emptyDesc: "No hay resultados que coincidan con tu término de búsqueda. Prueba con palabras clave como flor, tca, cinarina, pirazinas o suelo.",
           btnReset: "Restablecer búsqueda",
           counter: function(n, total, themesCount) {
-            return "Mostrando " + n + " de " + total + " conceptos técnicos" + (themesCount ? " (organizados en " + themesCount + " temas)" : "");
+            return "Mostrando " + n + " de " + total + " conceptos técnicos" + (themesCount ? " (distribuidos en " + themesCount + " temas)" : "");
           },
           spotlightBadge: "Ficha Técnica Destacada (Aleatoria)",
           spotlightBtn: "Otra ficha aleatoria",
-          spotlightRead: "Leer ficha completa →",
+          spotlightRead: "Abrir en Visor Deslizable →",
           modalTakeaways: "Puntos Clave de Sumillería:",
           modalGrapes: "Variedades vinculadas:",
           modalRegions: "Regiones:",
-          readMore: "📖 Lectura Completa →",
-          collapse: "Contraer",
-          expand: "Expandir",
-          collapseAll: "Contraer todos",
-          expandAll: "Expandir todos",
+          readMore: "🎴 Ver en Ventana →",
+          openDeckWindow: "Abrir Ventana con Deslizables",
+          slideThemeInWindow: "🎴 Deslizar en Ventana",
+          expandCarousel: "▾ Ver Carrusel",
+          hideCarousel: "▴ Ocultar Carrusel",
+          expandAllCarousels: "Desplegar todos los carruseles",
+          hideAllCarousels: "Ocultar todos los carruseles",
           conceptsCount: function(n) { return n === 1 ? "1 concepto" : n + " conceptos"; },
-          restoreSpotlight: "Ver ficha aleatoria"
+          restoreSpotlight: "Ver ficha aleatoria",
+          deckPrev: "Ficha Anterior",
+          deckNext: "Ficha Siguiente",
+          deckCounter: function(i, total) { return "Ficha " + i + " de " + total; }
         },
         en: {
           navMap: "Wine Map",
           navGrapes: "Grape Varieties",
           heroBadge: "📚 Standards WSET 3 · CMS · ASI · VIVC · Jancis Robinson · Jamie Goode",
-          heroDesc: "The technical encyclopedia of sommellerie, enological biochemistry, and terroir structured under the 3 global gold standards (WSET 3, CMS, ASI) and the definitive treatises of Hugh Johnson & Jancis Robinson, Jamie Goode, Pascaline Lepeltier, and the VIVC ampelographic catalogue.",
+          heroDesc: "The technical encyclopedia of sommellerie, enological biochemistry, and terroir structured under 5 thematic pillars and accessible via interactive slide-deck.",
           searchPlaceholder: "Search technical concept, compound (cynarin, flor, TCA, pyrazines), grape or region...",
           clearSearch: "✕ Clear",
           lblFilterStandard: "Standard:",
@@ -514,17 +607,22 @@
           },
           spotlightBadge: "Featured Concept (Random Spotlight)",
           spotlightBtn: "Another random concept",
-          spotlightRead: "Read complete concept →",
+          spotlightRead: "Open in Slide Deck Viewer →",
           modalTakeaways: "Key Sommelier Takeaways:",
           modalGrapes: "Associated Varieties:",
           modalRegions: "Regions:",
-          readMore: "📖 Read In-Depth →",
-          collapse: "Collapse",
-          expand: "Expand",
-          collapseAll: "Collapse all",
-          expandAll: "Expand all",
+          readMore: "🎴 Open Slide →",
+          openDeckWindow: "Open Slide Deck Viewer",
+          slideThemeInWindow: "🎴 Slide in Window",
+          expandCarousel: "▾ View Carousel",
+          hideCarousel: "▴ Hide Carousel",
+          expandAllCarousels: "Expand all carousels",
+          hideAllCarousels: "Hide all carousels",
           conceptsCount: function(n) { return n === 1 ? "1 concept" : n + " concepts"; },
-          restoreSpotlight: "View random spotlight"
+          restoreSpotlight: "View random spotlight",
+          deckPrev: "Previous Slide",
+          deckNext: "Next Slide",
+          deckCounter: function(i, total) { return "Slide " + i + " of " + total; }
         }
       };
 
@@ -537,6 +635,8 @@
       var emptyState = document.getElementById('empty-state');
       var articlesCounter = document.getElementById('articles-counter');
       var resetFiltersBtn = document.getElementById('reset-filters-btn');
+      var btnOpenDeck = document.getElementById('btn-open-deck-viewer');
+      var btnOpenDeckText = document.getElementById('btn-open-deck-text');
       var btnToggleAll = document.getElementById('btn-toggle-all-sections');
       var toggleAllText = document.getElementById('toggle-all-text');
       var toggleAllIcon = document.getElementById('toggle-all-icon');
@@ -569,20 +669,30 @@
       var spotlightTags = document.getElementById('spotlight-tags');
       var spotlightReadBtn = document.getElementById('spotlight-read-btn');
 
-      // Modal Elements
-      var modal = document.getElementById('article-modal');
-      var closeModalBtn = document.getElementById('close-modal-btn');
-      var modalStandard = document.getElementById('modal-standard');
-      var modalCategory = document.getElementById('modal-category');
-      var modalTitle = document.getElementById('modal-title');
-      var modalSummary = document.getElementById('modal-summary');
-      var modalContent = document.getElementById('modal-content');
-      var modalTakeawaysHeading = document.getElementById('modal-takeaways-heading');
-      var modalTakeaways = document.getElementById('modal-takeaways');
-      var modalGrapesLbl = document.getElementById('modal-grapes-lbl');
-      var modalGrapes = document.getElementById('modal-grapes');
-      var modalRegionsLbl = document.getElementById('modal-regions-lbl');
-      var modalRegions = document.getElementById('modal-regions');
+      // Deck Modal Elements
+      var deckModal = document.getElementById('deck-modal');
+      var closeDeckBtn = document.getElementById('close-deck-btn');
+      var deckPrevBtn = document.getElementById('deck-prev-btn');
+      var deckNextBtn = document.getElementById('deck-next-btn');
+      var deckRandomBtn = document.getElementById('deck-random-btn');
+      var deckPrevText = document.getElementById('deck-prev-text');
+      var deckNextText = document.getElementById('deck-next-text');
+      var deckCardCounter = document.getElementById('deck-card-counter');
+      var deckStandardBadge = document.getElementById('deck-standard-badge');
+      var deckCategoryText = document.getElementById('deck-category-text');
+      var deckProgressBar = document.getElementById('deck-progress-bar');
+      var deckDotsIndicator = document.getElementById('deck-dots-indicator');
+      var deckThemeTitle = document.getElementById('deck-theme-title');
+      var deckTitle = document.getElementById('deck-title');
+      var deckSummary = document.getElementById('deck-summary');
+      var deckContent = document.getElementById('deck-content');
+      var deckTakeawaysHeading = document.getElementById('deck-takeaways-heading');
+      var deckTakeaways = document.getElementById('deck-takeaways');
+      var deckGrapesLbl = document.getElementById('deck-grapes-lbl');
+      var deckGrapes = document.getElementById('deck-grapes');
+      var deckRegionsLbl = document.getElementById('deck-regions-lbl');
+      var deckRegions = document.getElementById('deck-regions');
+      var deckContentArea = document.getElementById('deck-content-area');
 
       var navMapText = document.getElementById('nav-map-text');
       var navGrapesText = document.getElementById('nav-grapes-text');
@@ -623,12 +733,12 @@
         if (pillThemeSommellerie) pillThemeSommellerie.textContent = "🍽️ " + (currentLang === 'es' ? 'Sumillería' : 'Sommellerie') + " (" + (themeCounts['sommellerie'] || 0) + ")";
       }
 
-      function pickRandomArticle() {
-        if (!articles.length) return null;
-        var filtered = filterArticles();
-        var pool = (filtered.length > 0) ? filtered : articles;
-        var randomIndex = Math.floor(Math.random() * pool.length);
-        return pool[randomIndex];
+      function pickRandomArticle(pool) {
+        var source = (pool && pool.length) ? pool : filterArticles();
+        if (!source.length) source = articles;
+        if (!source.length) return null;
+        var randomIndex = Math.floor(Math.random() * source.length);
+        return source[randomIndex];
       }
 
       function renderSpotlight(art) {
@@ -676,10 +786,13 @@
         if (emptyDesc) emptyDesc.innerHTML = t.emptyDesc;
         if (resetFiltersBtn) resetFiltersBtn.textContent = t.btnReset;
         if (restoreSpotlightText) restoreSpotlightText.textContent = t.restoreSpotlight;
+        if (btnOpenDeckText) btnOpenDeckText.textContent = t.openDeckWindow;
 
-        if (modalTakeawaysHeading) modalTakeawaysHeading.textContent = t.modalTakeaways;
-        if (modalGrapesLbl) modalGrapesLbl.textContent = t.modalGrapes;
-        if (modalRegionsLbl) modalRegionsLbl.textContent = t.modalRegions;
+        if (deckTakeawaysHeading) deckTakeawaysHeading.textContent = t.modalTakeaways;
+        if (deckGrapesLbl) deckGrapesLbl.textContent = t.modalGrapes;
+        if (deckRegionsLbl) deckRegionsLbl.textContent = t.modalRegions;
+        if (deckPrevText) deckPrevText.textContent = t.deckPrev;
+        if (deckNextText) deckNextText.textContent = t.deckNext;
 
         if (langBtnEs && langBtnEn) {
           if (lang === 'es') {
@@ -697,6 +810,10 @@
         }
         renderSpotlight(currentSpotlightArticle);
         renderThematicSections();
+
+        if (deckModal && !deckModal.classList.contains('hidden')) {
+          renderCurrentDeckSlide();
+        }
       }
 
       function filterArticles() {
@@ -722,6 +839,7 @@
         });
       }
 
+      // Render Thematic Hubs & Collapsible Horizontal Carousels
       function renderThematicSections() {
         var t = I18N[currentLang];
         var filtered = filterArticles();
@@ -743,9 +861,7 @@
         filtered.forEach(function(art) {
           var themeId = getArticleTheme(art);
           if (grouped[themeId]) grouped[themeId].push(art);
-          else {
-            grouped['enology'].push(art);
-          }
+          else { grouped['enology'].push(art); }
         });
 
         // Count how many themes have > 0 articles
@@ -758,23 +874,25 @@
           articlesCounter.textContent = t.counter(filtered.length, articles.length, activeThemesCount);
         }
 
-        // Render each active theme
+        // Render each active theme as a Hub card (fichas ocultas por defecto o en carrusel horizontal)
         THEMES.forEach(function(theme) {
           var themeArticles = grouped[theme.id];
           if (!themeArticles || themeArticles.length === 0) return;
 
-          // If searching or single theme filter is active, force open; otherwise check collapsedThemes
-          var isCollapsed = (searchQuery.length > 0 || activeThemeFilter !== 'all') ? false : (collapsedThemes[theme.id] === true);
+          // If searching or single theme filter is chosen, auto-expand; otherwise obey expandedThemes (default false/hidden)
+          var isExpanded = (searchQuery.length > 0 || activeThemeFilter !== 'all') ? true : (expandedThemes[theme.id] === true);
 
           var themeSection = document.createElement('div');
-          themeSection.className = "theme-section rounded-3xl bg-[#12141c]/50 border border-white/10 p-5 sm:p-6 transition-all shadow-lg";
+          themeSection.className = "theme-hub-card rounded-3xl bg-[#12141c]/60 border border-white/10 p-5 sm:p-6 transition-all shadow-lg hover:border-white/20";
 
           var themeTitle = currentLang === 'es' ? theme.title_es : theme.title_en;
           var themeDesc = currentLang === 'es' ? theme.desc_es : theme.desc_en;
 
-          // Header
+          // Header with Dual Actions:
+          // 1. "🎴 Deslizar en Ventana" (Opens full slide deck for this category)
+          // 2. "▾ Ver Carrusel" / "▴ Ocultar Carrusel" (Toggles inline horizontal slider)
           var headerHtml = 
-            "<div class='theme-header flex items-center justify-between cursor-pointer select-none pb-2' data-theme-id='" + theme.id + "'>" +
+            "<div class='flex flex-col md:flex-row md:items-center justify-between gap-4 select-none'>" +
               "<div class='flex items-start sm:items-center gap-3.5'>" +
                 "<span class='text-3xl sm:text-4xl filter drop-shadow'>" + theme.icon + "</span>" +
                 "<div>" +
@@ -784,116 +902,253 @@
                       t.conceptsCount(themeArticles.length) +
                     "</span>" +
                   "</div>" +
-                  "<p class='text-xs text-slate-400 font-sans mt-0.5 max-w-2xl hidden sm:block'>" + themeDesc + "</p>" +
+                  "<p class='text-xs text-slate-400 font-sans mt-0.5 max-w-2xl'>" + themeDesc + "</p>" +
                 "</div>" +
               "</div>" +
-              "<button class='accordion-btn text-xs font-mono text-slate-300 hover:text-white flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors shrink-0 ml-2'>" +
-                "<span>" + (isCollapsed ? t.expand : t.collapse) + "</span>" +
-                "<span class='transform transition-transform text-xs " + (isCollapsed ? "" : "rotate-180") + "'>▾</span>" +
-              "</button>" +
+              "<div class='flex items-center gap-2.5 shrink-0 self-end md:self-center'>" +
+                "<button class='open-theme-deck-btn px-3.5 py-2 rounded-xl bg-amber-500/15 hover:bg-amber-500/25 text-amber-300 border border-amber-500/30 text-xs font-mono font-semibold transition-all flex items-center gap-1.5 active:scale-95' data-theme-id='" + theme.id + "'>" +
+                  "<span>🎴</span>" +
+                  "<span>" + t.slideThemeInWindow + "</span>" +
+                "</button>" +
+                "<button class='toggle-carousel-btn px-3 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 text-xs font-mono transition-colors flex items-center gap-1' data-theme-id='" + theme.id + "'>" +
+                  "<span>" + (isExpanded ? t.hideCarousel : t.expandCarousel) + "</span>" +
+                "</button>" +
+              "</div>" +
             "</div>";
 
-          // Grid
-          var gridClasses = "theme-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-5 mt-3 border-t border-white/5 transition-all " + (isCollapsed ? "hidden" : "");
-
-          var cardsHtml = "<div class='" + gridClasses + "' id='grid-" + theme.id + "'>";
-          themeArticles.forEach(function(art) {
-            var badgeColorClass = "bg-amber-950 text-amber-300 border-amber-800/40";
-            if (art.standard === 'CMS') badgeColorClass = "bg-rose-950 text-rose-300 border-rose-800/40";
-            if (art.standard === 'WSET3') badgeColorClass = "bg-purple-950 text-purple-300 border-purple-800/40";
-            if (art.standard === 'ASI') badgeColorClass = "bg-emerald-950 text-emerald-300 border-emerald-800/40";
-
-            var artTitle = currentLang === 'es' ? art.title_es : art.title_en;
-            var artSummary = currentLang === 'es' ? art.summary_es : art.summary_en;
-            var artCategory = currentLang === 'es' ? art.category_es : art.category_en;
-
-            cardsHtml += 
-              "<div class='article-card p-6 rounded-2xl bg-[#0e1017] border border-white/10 hover:border-amber-500/50 transition-all flex flex-col justify-between group hover:-translate-y-0.5 shadow-sm'>" +
-                "<div>" +
-                  "<div class='flex items-center justify-between mb-3'>" +
-                    "<span class='text-[10px] font-mono px-2 py-0.5 rounded " + badgeColorClass + " border uppercase font-bold'>" + art.standard + "</span>" +
-                    "<span class='text-xs text-slate-500 font-mono truncate ml-2'>" + artCategory + "</span>" +
+          // Inline Horizontal Scrollable Carousel (Deslizable horizontal con flechas)
+          var carouselHtml = "";
+          if (isExpanded) {
+            carouselHtml = 
+              "<div class='mt-5 pt-4 border-t border-white/10 relative group/carousel'>" +
+                "<div class='flex items-center justify-between mb-3 text-xs font-mono text-slate-400'>" +
+                  "<span>Desliza horizontalmente para explorar las fichas:</span>" +
+                  "<div class='flex items-center gap-1.5'>" +
+                    "<button class='carousel-prev-btn w-8 h-8 rounded-lg bg-white/5 hover:bg-white/15 text-white flex items-center justify-center border border-white/10 transition-colors' data-target='track-" + theme.id + "'>‹</button>" +
+                    "<button class='carousel-next-btn w-8 h-8 rounded-lg bg-white/5 hover:bg-white/15 text-white flex items-center justify-center border border-white/10 transition-colors' data-target='track-" + theme.id + "'>›</button>" +
                   "</div>" +
-                  "<h4 class='text-lg sm:text-xl font-bold font-serif-wine text-white mb-2 group-hover:text-amber-400 transition-colors leading-snug'>" + artTitle + "</h4>" +
-                  "<p class='text-slate-400 text-xs leading-relaxed mb-6 font-sans line-clamp-3'>" + artSummary + "</p>" +
                 "</div>" +
-                "<div>" +
-                  "<button class='read-article-btn w-full py-2.5 px-4 rounded-xl bg-white/5 hover:bg-white/10 text-slate-200 border border-white/10 text-xs font-mono font-semibold text-center transition-colors flex items-center justify-center gap-2 active:scale-98' data-id='" + art.id + "'>" +
-                    t.readMore +
-                  "</button>" +
-                "</div>" +
-              "</div>";
-          });
-          cardsHtml += "</div>";
+                "<div class='carousel-track no-scrollbar flex gap-4 overflow-x-auto py-2' id='track-" + theme.id + "'>";
 
-          themeSection.innerHTML = headerHtml + cardsHtml;
+            themeArticles.forEach(function(art, artIdx) {
+              var badgeColorClass = "bg-amber-950 text-amber-300 border-amber-800/40";
+              if (art.standard === 'CMS') badgeColorClass = "bg-rose-950 text-rose-300 border-rose-800/40";
+              if (art.standard === 'WSET3') badgeColorClass = "bg-purple-950 text-purple-300 border-purple-800/40";
+              if (art.standard === 'ASI') badgeColorClass = "bg-emerald-950 text-emerald-300 border-emerald-800/40";
+
+              var artTitle = currentLang === 'es' ? art.title_es : art.title_en;
+              var artSummary = currentLang === 'es' ? art.summary_es : art.summary_en;
+              var artCategory = currentLang === 'es' ? art.category_es : art.category_en;
+
+              carouselHtml += 
+                "<div class='carousel-card p-5 rounded-2xl bg-[#0e1017] border border-white/10 hover:border-amber-500/50 transition-all flex flex-col justify-between group shadow-md hover:-translate-y-1'>" +
+                  "<div>" +
+                    "<div class='flex items-center justify-between mb-2.5'>" +
+                      "<span class='text-[10px] font-mono px-2 py-0.5 rounded " + badgeColorClass + " border uppercase font-bold'>" + art.standard + "</span>" +
+                      "<span class='text-[11px] text-slate-500 font-mono truncate ml-2'>" + artCategory + "</span>" +
+                    "</div>" +
+                    "<h4 class='text-base font-bold font-serif-wine text-white mb-2 group-hover:text-amber-400 transition-colors leading-snug line-clamp-2'>" + artTitle + "</h4>" +
+                    "<p class='text-slate-400 text-xs leading-relaxed mb-4 font-sans line-clamp-3'>" + artSummary + "</p>" +
+                  "</div>" +
+                  "<div>" +
+                    "<button class='open-article-deck-btn w-full py-2 px-3 rounded-xl bg-white/5 hover:bg-amber-500 hover:text-black text-slate-200 border border-white/10 text-xs font-mono font-semibold text-center transition-all flex items-center justify-center gap-1.5 active:scale-95' data-id='" + art.id + "' data-theme-id='" + theme.id + "'>" +
+                      t.readMore +
+                    "</button>" +
+                  "</div>" +
+                "</div>";
+            });
+
+            carouselHtml += "</div></div>";
+          }
+
+          themeSection.innerHTML = headerHtml + carouselHtml;
           thematicSectionsContainer.appendChild(themeSection);
         });
 
-        // Attach Accordion Toggle Click
-        document.querySelectorAll('.theme-header').forEach(function(header) {
-          header.addEventListener('click', function() {
-            var themeId = header.getAttribute('data-theme-id');
-            collapsedThemes[themeId] = !collapsedThemes[themeId];
+        // Attach Inline Carousel Toggles
+        document.querySelectorAll('.toggle-carousel-btn').forEach(function(btn) {
+          btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            var themeId = btn.getAttribute('data-theme-id');
+            expandedThemes[themeId] = !expandedThemes[themeId];
             renderThematicSections();
           });
         });
 
-        // Attach modal triggers
-        document.querySelectorAll('.read-article-btn').forEach(function(btn) {
+        // Attach "🎴 Deslizar en Ventana" (Opens deck for that specific theme)
+        document.querySelectorAll('.open-theme-deck-btn').forEach(function(btn) {
+          btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            var themeId = btn.getAttribute('data-theme-id');
+            var pool = filtered.filter(function(a) { return getArticleTheme(a) === themeId; });
+            openDeckViewer(pool, 0);
+          });
+        });
+
+        // Attach Article Card Click -> Opens deck directly on this card
+        document.querySelectorAll('.open-article-deck-btn').forEach(function(btn) {
           btn.addEventListener('click', function(e) {
             e.stopPropagation();
             var artId = btn.getAttribute('data-id');
-            openModal(artId);
+            var themeId = btn.getAttribute('data-theme-id');
+            var pool = filtered.filter(function(a) { return getArticleTheme(a) === themeId; });
+            var targetIdx = pool.findIndex(function(a) { return a.id === artId; });
+            if (targetIdx === -1) { pool = filtered; targetIdx = pool.findIndex(function(a) { return a.id === artId; }); }
+            openDeckViewer(pool, targetIdx >= 0 ? targetIdx : 0);
+          });
+        });
+
+        // Carousel arrow scroll buttons
+        document.querySelectorAll('.carousel-prev-btn').forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            var trackId = btn.getAttribute('data-target');
+            var track = document.getElementById(trackId);
+            if (track) track.scrollBy({ left: -340, behavior: 'smooth' });
+          });
+        });
+
+        document.querySelectorAll('.carousel-next-btn').forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            var trackId = btn.getAttribute('data-target');
+            var track = document.getElementById(trackId);
+            if (track) track.scrollBy({ left: 340, behavior: 'smooth' });
           });
         });
       }
 
-      function openModal(id) {
-        var art = articles.find(function(a) { return a.id === id; });
-        if (!art || !modal) return;
+      // ============================================================
+      // VENTANA CON DESLIZABLES LOGIC (Interactive Deck Viewer)
+      // ============================================================
+      function openDeckViewer(articlePool, startIndex) {
+        currentDeckArticles = (articlePool && articlePool.length > 0) ? articlePool : filterArticles();
+        if (currentDeckArticles.length === 0) currentDeckArticles = articles;
+        currentDeckIndex = (typeof startIndex === 'number' && startIndex >= 0 && startIndex < currentDeckArticles.length) ? startIndex : 0;
 
-        modalStandard.textContent = art.standard;
+        renderCurrentDeckSlide();
+        deckModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeDeckViewer() {
+        if (!deckModal) return;
+        deckModal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+
+      function renderCurrentDeckSlide() {
+        if (!currentDeckArticles.length) return;
+        var art = currentDeckArticles[currentDeckIndex];
+        var total = currentDeckArticles.length;
+        var t = I18N[currentLang];
+
+        // Counter & Progress
+        deckCardCounter.textContent = t.deckCounter(currentDeckIndex + 1, total);
+        var progressPercent = Math.round(((currentDeckIndex + 1) / total) * 100);
+        deckProgressBar.style.width = progressPercent + "%";
+
+        // Badges
+        deckStandardBadge.textContent = art.standard;
         var badgeColor = "bg-amber-950 text-amber-300 border-amber-800/40";
         if (art.standard === 'CMS') badgeColor = "bg-rose-950 text-rose-300 border-rose-800/40";
         if (art.standard === 'WSET3') badgeColor = "bg-purple-950 text-purple-300 border-purple-800/40";
         if (art.standard === 'ASI') badgeColor = "bg-emerald-950 text-emerald-300 border-emerald-800/40";
-        modalStandard.className = "px-2.5 py-1 rounded text-[11px] font-mono font-bold uppercase border " + badgeColor;
+        deckStandardBadge.className = "text-[11px] font-mono px-2 py-0.5 rounded font-bold uppercase border " + badgeColor;
 
-        modalCategory.textContent = currentLang === 'es' ? art.category_es : art.category_en;
-        modalTitle.textContent = currentLang === 'es' ? art.title_es : art.title_en;
-        modalSummary.textContent = currentLang === 'es' ? art.summary_es : art.summary_en;
-        
+        var themeObj = THEMES.find(function(th) { return th.id === getArticleTheme(art); });
+        if (themeObj) {
+          deckThemeTitle.textContent = themeObj.icon + " " + (currentLang === 'es' ? themeObj.title_es : themeObj.title_en);
+        } else {
+          deckThemeTitle.textContent = "🍷 WINEp3dIA";
+        }
+
+        deckCategoryText.textContent = currentLang === 'es' ? art.category_es : art.category_en;
+        deckTitle.textContent = currentLang === 'es' ? art.title_es : art.title_en;
+        deckSummary.textContent = currentLang === 'es' ? art.summary_es : art.summary_en;
+
         var rawContent = currentLang === 'es' ? art.content_es : art.content_en;
-        modalContent.innerHTML = rawContent.replace(/\n\n/g, '<br><br>').replace(/\*\*(.*?)\*\*/g, '<strong class="text-white">$1</strong>');
+        deckContent.innerHTML = rawContent.replace(/\n\n/g, '<br><br>').replace(/\*\*(.*?)\*\*/g, '<strong class="text-white">$1</strong>');
 
         var takeaways = currentLang === 'es' ? art.key_takeaways_es : art.key_takeaways_en;
-        modalTakeaways.innerHTML = (takeaways || []).map(function(item) {
+        deckTakeaways.innerHTML = (takeaways || []).map(function(item) {
           return "<li class='flex items-start gap-2'><span class='text-amber-400'>●</span> <span>" + item + "</span></li>";
         }).join('');
 
-        modalGrapes.textContent = (art.related_grapes || []).join(', ') || 'N/A';
-        modalRegions.textContent = (art.related_regions || []).join(', ') || 'Global';
+        deckGrapes.textContent = (art.related_grapes || []).join(', ') || 'N/A';
+        deckRegions.textContent = (art.related_regions || []).join(', ') || 'Global';
 
-        modal.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
+        if (deckContentArea) deckContentArea.scrollTop = 0;
       }
 
-      function closeModal() {
-        if (!modal) return;
-        modal.classList.add('hidden');
-        document.body.style.overflow = '';
+      function deckNext() {
+        if (!currentDeckArticles.length) return;
+        currentDeckIndex = (currentDeckIndex + 1) % currentDeckArticles.length;
+        renderCurrentDeckSlide();
       }
 
-      if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
-      if (modal) {
-        modal.addEventListener('click', function(e) {
-          if (e.target === modal) closeModal();
+      function deckPrev() {
+        if (!currentDeckArticles.length) return;
+        currentDeckIndex = (currentDeckIndex - 1 + currentDeckArticles.length) % currentDeckArticles.length;
+        renderCurrentDeckSlide();
+      }
+
+      // Deck Navigation Event Listeners
+      if (deckNextBtn) deckNextBtn.addEventListener('click', deckNext);
+      if (deckPrevBtn) deckPrevBtn.addEventListener('click', deckPrev);
+      if (deckRandomBtn) {
+        deckRandomBtn.addEventListener('click', function() {
+          if (!currentDeckArticles.length) return;
+          var newIdx = Math.floor(Math.random() * currentDeckArticles.length);
+          if (newIdx === currentDeckIndex && currentDeckArticles.length > 1) {
+            newIdx = (newIdx + 1) % currentDeckArticles.length;
+          }
+          currentDeckIndex = newIdx;
+          renderCurrentDeckSlide();
         });
       }
+
+      if (closeDeckBtn) closeDeckBtn.addEventListener('click', closeDeckViewer);
+      if (deckModal) {
+        deckModal.addEventListener('click', function(e) {
+          if (e.target === deckModal) closeDeckViewer();
+        });
+      }
+
+      // Keyboard Controls (Arrows and Escape)
       document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') closeModal();
+        if (!deckModal || deckModal.classList.contains('hidden')) return;
+        if (e.key === 'ArrowRight' || e.key === 'l' || e.key === 'L') {
+          deckNext();
+        } else if (e.key === 'ArrowLeft' || e.key === 'h' || e.key === 'H') {
+          deckPrev();
+        } else if (e.key === 'Escape') {
+          closeDeckViewer();
+        }
       });
+
+      // Touch / Swipe Controls on Deck Window
+      var touchStartX = 0;
+      var touchEndX = 0;
+      if (deckModal) {
+        deckModal.addEventListener('touchstart', function(e) {
+          touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        deckModal.addEventListener('touchend', function(e) {
+          touchEndX = e.changedTouches[0].screenX;
+          var diff = touchEndX - touchStartX;
+          if (Math.abs(diff) > 50) {
+            if (diff < 0) { deckNext(); } // swipe left -> next
+            else { deckPrev(); }         // swipe right -> prev
+          }
+        }, { passive: true });
+      }
+
+      // Open Deck from Global Toolbar Button
+      if (btnOpenDeck) {
+        btnOpenDeck.addEventListener('click', function() {
+          openDeckViewer(filterArticles(), 0);
+        });
+      }
 
       // Spotlight Event Handlers
       if (btnNextRandom) {
@@ -905,7 +1160,9 @@
       if (spotlightReadBtn) {
         spotlightReadBtn.addEventListener('click', function() {
           if (currentSpotlightArticle) {
-            openModal(currentSpotlightArticle.id);
+            var pool = filterArticles();
+            var idx = pool.findIndex(function(a) { return a.id === currentSpotlightArticle.id; });
+            openDeckViewer(pool, idx >= 0 ? idx : 0);
           }
         });
       }
@@ -924,17 +1181,17 @@
         });
       }
 
-      // Expand / Collapse All Sections Handler
-      var allCollapsed = false;
+      // Expand / Hide All Carousels Toggle
+      var allCarouselsOpen = false;
       if (btnToggleAll) {
         btnToggleAll.addEventListener('click', function() {
-          allCollapsed = !allCollapsed;
+          allCarouselsOpen = !allCarouselsOpen;
           THEMES.forEach(function(th) {
-            collapsedThemes[th.id] = allCollapsed;
+            expandedThemes[th.id] = allCarouselsOpen;
           });
           var t = I18N[currentLang];
-          toggleAllText.textContent = allCollapsed ? t.expandAll : t.collapseAll;
-          toggleAllIcon.textContent = allCollapsed ? '▸' : '▾';
+          toggleAllText.textContent = allCarouselsOpen ? t.hideAllCarousels : t.expandAllCarousels;
+          toggleAllIcon.textContent = allCarouselsOpen ? '▴' : '▾';
           renderThematicSections();
         });
       }
@@ -967,7 +1224,7 @@
           if (clearSearchBtn) clearSearchBtn.classList.add('hidden');
           activeStandard = 'all';
           activeThemeFilter = 'all';
-          collapsedThemes = {};
+          expandedThemes = {};
           
           filterPills.forEach(function(p) {
             p.className = "filter-pill px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 transition-all";
@@ -1009,14 +1266,10 @@
 
       // Language Switcher
       if (langBtnEs) {
-        langBtnEs.addEventListener('click', function() {
-          applyLanguage('es');
-        });
+        langBtnEs.addEventListener('click', function() { applyLanguage('es'); });
       }
       if (langBtnEn) {
-        langBtnEn.addEventListener('click', function() {
-          applyLanguage('en');
-        });
+        langBtnEn.addEventListener('click', function() { applyLanguage('en'); });
       }
 
       // Theme toggle
