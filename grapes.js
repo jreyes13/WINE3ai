@@ -290,8 +290,12 @@ let activeRegionPolygon = null;
 let activeMapPopup = null;
 
 // Initialize Application
-document.addEventListener('DOMContentLoaded', async () => {
-  initMap();
+async function initApplication() {
+  try {
+    initMap();
+  } catch (err) {
+    console.warn("MapLibre init notice:", err);
+  }
   await loadGrapeData();
   populateCountryFilter();
   populateAromaFilter();
@@ -304,7 +308,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   setTimeout(() => {
     ensureFullRegionsLoaded().catch(err => console.warn("Background preload info:", err));
   }, 600);
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApplication);
+} else {
+  initApplication();
+}
 
 function initMap() {
   map = new maplibregl.Map({
@@ -987,9 +997,6 @@ async function ensureFullRegionsLoaded() {
             data = SPAIN_WINE_DATA;
           } else if (typeof window !== 'undefined' && typeof window.SPAIN_WINE_DATA !== 'undefined') {
             data = window.SPAIN_WINE_DATA;
-          }
-        }
-      }
           }
         }
       }
