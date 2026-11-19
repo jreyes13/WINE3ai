@@ -6,6 +6,12 @@
   <title>WINEp3dIA — Enciclopedia de Sumillería, Bioquímica Enológica y Terruño | WINE³ai</title>
   <meta name="description" content="Enciclopedia viva y base de conocimiento técnico de sumillería, bioquímica enológica y cata deductiva basada en los cánones WSET 3, Court of Master Sommeliers (CMS), ASI y las obras de Jancis Robinson, Jamie Goode y Pascaline Lepeltier.">
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#881337">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="WINE³ai">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -46,14 +52,73 @@
     .font-serif-wine { font-family: 'Cinzel', serif; }
     .font-mono { font-family: 'JetBrains Mono', monospace; }
     .gold-glow { text-shadow: 0 0 25px rgba(212, 175, 55, 0.4); }
+
+    [data-theme="light"] body { background-color: #f8fafc !important; color: #0f172a !important; }
+    [data-theme="light"] header { background-color: rgba(255, 255, 255, 0.95) !important; border-bottom-color: #e2e8f0 !important; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+    [data-theme="light"] footer { background-color: #ffffff !important; border-top-color: #e2e8f0 !important; color: #64748b !important; }
+    [data-theme="light"] .text-white { color: #0f172a !important; }
+    [data-theme="light"] .text-slate-100,
+    [data-theme="light"] .text-slate-200 { color: #1e293b !important; }
+    [data-theme="light"] .text-slate-300 { color: #334155 !important; }
+    [data-theme="light"] .text-slate-400 { color: #64748b !important; }
+    [data-theme="light"] .text-amber-200 { color: #92400e !important; }
+    [data-theme="light"] .text-purple-300 { color: #6b21a8 !important; }
+    [data-theme="light"] .text-rose-300 { color: #9f1239 !important; }
+    [data-theme="light"] .text-blue-300 { color: #075985 !important; }
+    [data-theme="light"] .bg-\[\#0b0d13\], [data-theme="light"] .bg-\[\#0e1017\], [data-theme="light"] .bg-\[\#140b10\] { background-color: #f8fafc !important; }
+    [data-theme="light"] .bg-gradient-to-b { background-image: none !important; background-color: #f8fafc !important; }
+    [data-theme="light"] section { background-color: #f8fafc !important; }
+    [data-theme="light"] .bg-white\/5 { background-color: #ffffff !important; border-color: #e2e8f0 !important; }
+    [data-theme="light"] .border-white\/10, [data-theme="light"] .border-white\/5 { border-color: #e2e8f0 !important; }
+    [data-theme="light"] input#winepedia-search { background-color: #ffffff !important; border-color: #cbd5e1 !important; color: #0f172a !important; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    [data-theme="light"] .filter-pill { background-color: #f1f5f9 !important; border-color: #e2e8f0 !important; color: #475569 !important; }
+    [data-theme="light"] .article-card,
+    [data-theme="light"] #articles-grid > div,
+    [data-theme="light"] .bg-\[\#12141c\],
+    [data-theme="light"] div[class*="bg-[#12141c]"] {
+      background-color: #ffffff !important;
+      border-color: #e2e8f0 !important;
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05) !important;
+      color: #0f172a !important;
+    }
+    [data-theme="light"] .article-card h4 { color: #0f172a !important; }
+    [data-theme="light"] .article-card p { color: #475569 !important; }
+    [data-theme="light"] .read-article-btn {
+      background-color: #f1f5f9 !important;
+      border-color: #e2e8f0 !important;
+      color: #0f172a !important;
+    }
+    [data-theme="light"] .read-article-btn:hover {
+      background-color: #e2e8f0 !important;
+      color: #b45309 !important;
+    }
+    [data-theme="light"] #article-modal > div { background-color: #ffffff !important; border-color: #e2e8f0 !important; color: #0f172a !important; }
+    [data-theme="light"] #modal-summary { background-color: #fef3c7 !important; border-color: #fde68a !important; color: #92400e !important; }
+    [data-theme="light"] #close-modal-btn { background-color: #f1f5f9 !important; color: #0f172a !important; }
+    [data-theme="light"] #modal-content { color: #334155 !important; }
+    [data-theme="light"] .bg-purple-950 { background-color: #f3e8ff !important; color: #6b21a8 !important; border-color: #e9d5ff !important; }
+    [data-theme="light"] .bg-amber-950 { background-color: #fef3c7 !important; color: #92400e !important; border-color: #fde68a !important; }
+    [data-theme="light"] .bg-rose-950 { background-color: #ffe4e6 !important; color: #9f1239 !important; border-color: #fecdd3 !important; }
+    [data-theme="light"] .bg-blue-950 { background-color: #e0f2fe !important; color: #075985 !important; border-color: #bae6fd !important; }
   </style>
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme') || localStorage.getItem('jreyes13_theme') || localStorage.getItem('wine3ai_theme') || 'dark';
+      if (savedTheme === 'light') {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.setAttribute('data-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
 </head>
 <body class="min-h-screen flex flex-col bg-[#0b0d13] selection:bg-amber-500 selection:text-black">
 
   <!-- Header / Navigation -->
   <header class="sticky top-0 z-50 backdrop-blur-md bg-[#0b0d13]/90 border-b border-white/10">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <a href="index_es.html" class="flex items-center gap-3 group">
+      <a href="index.html" class="flex items-center gap-3 group">
         <img src="assets/logo.svg" alt="WINE³ai Logo" class="w-10 h-10 group-hover:scale-105 transition-transform">
         <div>
           <div class="text-xl font-bold tracking-tight text-white font-serif-wine flex items-center gap-0.5">
@@ -82,10 +147,8 @@
           <button id="lang-btn-en" class="px-2.5 py-1 text-slate-400 hover:text-white transition-colors">EN</button>
         </div>
 
-        <a href="https://github.com/jreyes13/wine3ai" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-slate-300 hover:bg-white/10 transition-colors text-xs font-mono hidden sm:flex items-center gap-2">
-          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-          <span class="hidden sm:inline">GitHub</span>
-        </a>
+        <!-- Dark / Light Theme Toggle -->
+        <button type="button" id="btn-theme-toggle" class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 text-slate-200 hover:bg-white/10 transition-colors text-base" title="Cambiar tema / Switch theme">🌙</button>
       </div>
     </div>
   </header>
@@ -208,21 +271,22 @@
 
   <!-- Footer -->
   <footer class="border-t border-white/10 py-10 bg-[#05060a] text-xs text-slate-500 font-mono">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-3">
         <img src="assets/logo.svg" alt="WINE³ai" class="w-6 h-6">
         <span class="text-slate-300 font-serif-wine font-bold text-sm">WINE<span class="text-rose-500">³</span>ai</span>
         <span>•</span>
-        <span>WINEp3dIA Knowledge Engine</span>
+        <span>Joaquín Reyes González</span>
       </div>
 
-      <div class="flex items-center gap-6">
-        <a href="map.html" class="hover:text-rose-400 transition-colors">Mapa</a>
-        <a href="grapes.html" class="hover:text-rose-400 transition-colors">Uvas</a>
-        <a href="index_es.html#sommelier" class="hover:text-amber-400 transition-colors">Sommelier Pocket</a>
-        <a href="index_es.html#referencias" class="hover:text-rose-400 transition-colors">Referencias & Aviso Legal</a>
-        <a href="https://github.com/jreyes13/wine3ai" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">GitHub</a>
-        <a href="https://jreyes13.net" class="hover:text-white transition-colors">jreyes13.net</a>
+      <div class="flex items-center gap-5">
+        <a href="https://github.com/jreyes13/wine3ai" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-1.5">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          <span>GitHub</span>
+        </a>
+        <a href="https://jreyes13.net" class="hover:text-white transition-colors flex items-center gap-1 font-semibold text-slate-400">
+          <span>←</span> jreyes13.net
+        </a>
       </div>
     </div>
   </footer>
@@ -384,7 +448,7 @@
           var summary = currentLang === 'es' ? art.summary_es : art.summary_en;
           var category = currentLang === 'es' ? art.category_es : art.category_en;
 
-          card.className = "p-6 rounded-2xl bg-[#12141c] border border-white/10 hover:border-amber-500/50 transition-all flex flex-col justify-between group";
+          card.className = "article-card p-6 rounded-2xl bg-[#12141c] border border-white/10 hover:border-amber-500/50 transition-all flex flex-col justify-between group";
           card.innerHTML = 
             "<div>" +
               "<div class='flex items-center justify-between mb-3'>" +
@@ -513,7 +577,42 @@
 
       // Initial render in default language
       applyLanguage('es');
+
+      // Theme toggle
+      var themeBtn = document.getElementById('btn-theme-toggle');
+      if (themeBtn) {
+        var updateIcon = function(t) {
+          themeBtn.innerHTML = t === 'light' ? '☀️' : '🌙';
+        };
+        var currentT = localStorage.getItem('theme') || localStorage.getItem('jreyes13_theme') || localStorage.getItem('wine3ai_theme') || 'dark';
+        updateIcon(currentT);
+
+        themeBtn.addEventListener('click', function() {
+          var isLight = document.documentElement.getAttribute('data-theme') === 'light';
+          var nextT = isLight ? 'dark' : 'light';
+          if (nextT === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            document.documentElement.classList.remove('dark');
+          } else {
+            document.documentElement.removeAttribute('data-theme');
+            document.documentElement.classList.add('dark');
+          }
+          localStorage.setItem('theme', nextT);
+          localStorage.setItem('jreyes13_theme', nextT);
+          localStorage.setItem('wine3ai_theme', nextT);
+          updateIcon(nextT);
+        });
+      }
     });
+  </script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('./sw.js').catch(function(err) {
+          console.warn('SW registration failed:', err);
+        });
+      });
+    }
   </script>
 </body>
 </html>

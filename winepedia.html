@@ -6,6 +6,12 @@
   <title>WINEp3dIA — Enciclopedia de Sumillería, Bioquímica Enológica y Terruño | WINE³ai</title>
   <meta name="description" content="Enciclopedia viva y base de conocimiento técnico de sumillería, bioquímica enológica y cata deductiva basada en los cánones WSET 3, Court of Master Sommeliers (CMS), ASI y las obras de Jancis Robinson, Jamie Goode y Pascaline Lepeltier.">
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#881337">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="WINE³ai">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -598,6 +604,15 @@
         });
       }
     });
+  </script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('./sw.js').catch(function(err) {
+          console.warn('SW registration failed:', err);
+        });
+      });
+    }
   </script>
 </body>
 </html>

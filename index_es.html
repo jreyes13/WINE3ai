@@ -6,6 +6,12 @@
   <title>WINE³ai — World Wide Wine: Terroir, Ampelografía & WINEp3dIA</title>
   <meta name="description" content="Plataforma de inteligencia vitivinícola que une cartografía geoespacial de terruño, catálogo ampelográfico de variedades y la WINEp3dIA basada en WSET 3, CMS y ASI.">
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#881337">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="WINE³ai">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -953,6 +959,15 @@ Vega Sicilia Valbuena 5º 2018 .. 160€" class="w-full bg-black/60 border borde
         updateIcon(nextT);
       });
     })();
+  </script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('./sw.js').catch(function(err) {
+          console.warn('SW registration failed:', err);
+        });
+      });
+    }
   </script>
 </body>
 </html>

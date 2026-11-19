@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+  "id": "/wine3ai",
+  "name": "WINE³ai — Enciclopedia & Sumillería Canónica",
+  "short_name": "WINE³ai",
+  "description": "Enciclopedia técnica de sumillería, bioquímica enológica, atlas de terruños y cata deductiva bajo los cánones WSET 3, CMS y ASI.",
+  "start_url": "./index_es.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0a0c14",
+  "theme_color": "#881337",
+  "lang": "es",
+  "categories": ["education", "reference", "food", "lifestyle"],
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
