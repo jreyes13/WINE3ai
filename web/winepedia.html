@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WINEp3dIA — Enciclopedia de Sumillería, Bioquímica Enológica y Terruño | WINE³ai</title>
-  <meta name="description" content="Enciclopedia viva y base de conocimiento técnico de sumillería, bioquímica enológica y cata deductiva basada en los cánones WSET 3, Court of Master Sommeliers (CMS), ASI y las obras de Jancis Robinson, Jamie Goode y Pascaline Lepeltier.">
+  <meta name="description" content="Enciclopedia técnica viva y base de conocimiento de sumillería, bioquímica enológica y cata deductiva basada en los cánones WSET 3, Court of Master Sommeliers (CMS), ASI y las obras de Jancis Robinson, Jamie Goode y Pascaline Lepeltier.">
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg?v=20261119_v2">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#5E1C37">
@@ -72,14 +72,37 @@
     [data-theme="light"] .border-white\/10, [data-theme="light"] .border-white\/5 { border-color: #e2e8f0 !important; }
     [data-theme="light"] input#winepedia-search { background-color: #ffffff !important; border-color: #cbd5e1 !important; color: #0f172a !important; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
     [data-theme="light"] .filter-pill { background-color: #f1f5f9 !important; border-color: #e2e8f0 !important; color: #475569 !important; }
+    [data-theme="light"] .theme-pill { background-color: #f1f5f9 !important; border-color: #e2e8f0 !important; color: #475569 !important; }
     [data-theme="light"] .article-card,
-    [data-theme="light"] #articles-grid > div,
+    [data-theme="light"] #random-spotlight,
     [data-theme="light"] .bg-\[\#12141c\],
     [data-theme="light"] div[class*="bg-[#12141c]"] {
       background-color: #ffffff !important;
       border-color: #e2e8f0 !important;
       box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05) !important;
       color: #0f172a !important;
+    }
+    [data-theme="light"] #random-spotlight {
+      background: linear-gradient(135deg, #fffbeb 0%, #ffffff 100%) !important;
+      border-color: #fde68a !important;
+    }
+    [data-theme="light"] .theme-header {
+      background-color: #ffffff !important;
+      border-color: #e2e8f0 !important;
+    }
+    [data-theme="light"] .theme-header:hover {
+      border-color: #cbd5e1 !important;
+    }
+    [data-theme="light"] .theme-header h3 { color: #0f172a !important; }
+    [data-theme="light"] .theme-badge {
+      background-color: #fef3c7 !important;
+      color: #92400e !important;
+      border-color: #fde68a !important;
+    }
+    [data-theme="light"] .accordion-btn {
+      background-color: #f1f5f9 !important;
+      border-color: #e2e8f0 !important;
+      color: #475569 !important;
     }
     [data-theme="light"] .article-card h4 { color: #0f172a !important; }
     [data-theme="light"] .article-card p { color: #475569 !important; }
@@ -156,7 +179,7 @@
 
   <main class="flex-1">
     <!-- Hero Header -->
-    <section class="py-16 sm:py-20 border-b border-white/5 bg-gradient-to-b from-[#140b10] via-[#0e1017] to-[#0b0d13] relative overflow-hidden">
+    <section class="py-14 sm:py-16 border-b border-white/5 bg-gradient-to-b from-[#140b10] via-[#0e1017] to-[#0b0d13] relative overflow-hidden">
       <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
       <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
@@ -167,12 +190,12 @@
         <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 font-serif-wine">
           WINE<span class="text-amber-400">p3dIA</span>
         </h1>
-        <p class="text-slate-300 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed mb-10" id="hero-desc">
+        <p class="text-slate-300 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed mb-8" id="hero-desc">
           La enciclopedia técnica de sumillería, bioquímica enológica y terruño basada en los 3 grandes cánones mundiales (WSET 3, CMS, ASI) y los tratados de referencia de Jancis Robinson, Jamie Goode, Pascaline Lepeltier y el catálogo ampelográfico VIVC.
         </p>
 
         <!-- Search Bar -->
-        <div class="max-w-2xl mx-auto relative mb-8">
+        <div class="max-w-2xl mx-auto relative mb-6">
           <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400 text-lg">
             🔍
           </div>
@@ -182,40 +205,101 @@
           </button>
         </div>
 
-        <!-- Filter Pills by Standard (Only WSET3, CMS, ASI) -->
-        <div class="flex flex-wrap items-center justify-center gap-2 text-xs font-mono">
+        <!-- Filter Row 1: Standards (WSET3, CMS, ASI) -->
+        <div class="flex flex-wrap items-center justify-center gap-2 text-xs font-mono mb-3">
           <span class="text-slate-500 mr-2 text-[11px] uppercase tracking-wider hidden sm:inline" id="lbl-filter-standard">Estándar:</span>
-          <button class="filter-pill px-3.5 py-1.5 rounded-xl bg-amber-950 text-amber-300 border border-amber-800/60 font-semibold" id="pill-all" data-standard="all">Todos (24)</button>
-          <button class="filter-pill px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10" data-standard="WSET3">WSET 3 (8)</button>
-          <button class="filter-pill px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10" data-standard="CMS">CMS Deductive (8)</button>
-          <button class="filter-pill px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10" data-standard="ASI">ASI Global (8)</button>
+          <button class="filter-pill px-3.5 py-1.5 rounded-xl bg-amber-950 text-amber-300 border border-amber-800/60 font-semibold transition-all" id="pill-all" data-standard="all">Todos</button>
+          <button class="filter-pill px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 transition-all" id="pill-wset" data-standard="WSET3">WSET 3</button>
+          <button class="filter-pill px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 transition-all" id="pill-cms" data-standard="CMS">CMS Deductive</button>
+          <button class="filter-pill px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 transition-all" id="pill-asi" data-standard="ASI">ASI Global</button>
+        </div>
+
+        <!-- Filter Row 2: Thematic Areas -->
+        <div class="flex flex-wrap items-center justify-center gap-2 text-xs font-mono">
+          <span class="text-slate-500 mr-2 text-[11px] uppercase tracking-wider hidden sm:inline" id="lbl-filter-theme">Eje Temático:</span>
+          <button class="theme-pill px-3 py-1.5 rounded-xl bg-amber-950 text-amber-300 border border-amber-800/60 font-semibold transition-all" data-theme-filter="all" id="pill-theme-all">Todos los Temas</button>
+          <button class="theme-pill px-3 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 transition-all" data-theme-filter="terroir" id="pill-theme-terroir">🌱 Edafología y Suelos</button>
+          <button class="theme-pill px-3 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 transition-all" data-theme-filter="enology" id="pill-theme-enology">🍷 Enología y Vinificación</button>
+          <button class="theme-pill px-3 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 transition-all" data-theme-filter="viticulture" id="pill-theme-viticulture">🍇 Viticultura y Fisiología</button>
+          <button class="theme-pill px-3 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 transition-all" data-theme-filter="biochemistry" id="pill-theme-biochemistry">🔬 Bioquímica y Aromas</button>
+          <button class="theme-pill px-3 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 transition-all" data-theme-filter="sommellerie" id="pill-theme-sommellerie">🍽️ Sumillería, Sala y Cata</button>
         </div>
       </div>
     </section>
-      </div>
-    </section>
 
-    <!-- Content Section -->
-    <section class="py-16 max-w-7xl mx-auto px-6">
-      <div class="flex items-center justify-between mb-8 pb-4 border-b border-white/10">
+    <!-- Main Content Section -->
+    <section class="py-12 max-w-7xl mx-auto px-6">
+      
+      <!-- Random Spotlight Card (Ficha Aleatoria Destacada) -->
+      <div id="random-spotlight" class="mb-10 p-6 sm:p-7 rounded-3xl bg-gradient-to-r from-amber-950/30 via-[#131622] to-purple-950/20 border border-amber-500/30 shadow-2xl relative transition-all">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-4 pb-3 border-b border-white/10">
+          <div class="flex items-center gap-2 text-xs font-mono font-bold text-amber-300 uppercase tracking-wider">
+            <span class="text-base">🎲</span>
+            <span id="spotlight-badge-title">Ficha Técnica Destacada (Aleatoria)</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <button id="btn-next-random" class="text-xs font-mono px-3.5 py-1.5 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-200 border border-amber-500/40 transition-all flex items-center gap-1.5 shadow-sm active:scale-95">
+              <span>🔄</span>
+              <span id="spotlight-btn-text">Otra ficha aleatoria</span>
+            </button>
+            <button id="btn-toggle-spotlight" class="text-xs font-mono px-2.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white border border-white/10 transition-all" title="Ocultar ficha destacada">
+              ✕
+            </button>
+          </div>
+        </div>
+
+        <div id="spotlight-body" class="grid grid-cols-1 lg:grid-cols-4 gap-6 items-center">
+          <div class="lg:col-span-3">
+            <div class="flex items-center gap-2.5 mb-2.5">
+              <span id="spotlight-standard" class="text-[10px] font-mono px-2 py-0.5 rounded font-bold uppercase border">WSET 3</span>
+              <span id="spotlight-category" class="text-xs text-slate-400 font-mono">Enología & Vinos Especiales</span>
+            </div>
+            <h3 id="spotlight-title" class="text-xl sm:text-2xl font-bold font-serif-wine text-white mb-2 leading-snug">
+              Crianza Biológica y Velo de Flor
+            </h3>
+            <p id="spotlight-summary" class="text-xs sm:text-sm text-slate-300 font-sans leading-relaxed mb-3">
+              Cargando concepto...
+            </p>
+            <div id="spotlight-tags" class="flex flex-wrap gap-1.5 text-[11px] font-mono text-slate-400">
+              <!-- tags -->
+            </div>
+          </div>
+          <div class="lg:col-span-1 flex lg:justify-end">
+            <button id="spotlight-read-btn" class="w-full lg:w-auto px-5 py-3 rounded-2xl bg-amber-500 hover:bg-amber-400 text-black font-semibold text-xs font-mono shadow-lg transition-transform active:scale-95 flex items-center justify-center gap-2">
+              <span>📖</span>
+              <span id="spotlight-read-text">Leer ficha completa</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Toolbar: Counter & Global Controls -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-4 border-b border-white/10">
         <div class="text-xs font-mono text-slate-400" id="articles-counter">
           Cargando conceptos...
         </div>
-        <div class="text-xs font-mono text-slate-500">
-          WINEp3dIA Knowledge Engine v1.0
+        <div class="flex items-center gap-3 text-xs font-mono">
+          <button id="btn-toggle-all-sections" class="px-3 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 transition-colors flex items-center gap-1.5">
+            <span id="toggle-all-icon">▸</span>
+            <span id="toggle-all-text">Contraer todos</span>
+          </button>
+          <button id="btn-restore-spotlight" class="hidden px-3 py-1.5 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 transition-colors flex items-center gap-1.5">
+            <span>🎲</span>
+            <span id="restore-spotlight-text">Ver ficha aleatoria</span>
+          </button>
         </div>
       </div>
 
-      <!-- Articles Grid -->
-      <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Injected via JavaScript -->
+      <!-- Thematic Grouped Sections Container -->
+      <div id="thematic-sections" class="space-y-10">
+        <!-- Injected via JavaScript dynamically -->
       </div>
 
       <!-- Empty State -->
       <div id="empty-state" class="hidden py-20 text-center max-w-md mx-auto">
         <div class="text-4xl mb-4">🔍</div>
-        <h4 class="text-xl font-bold font-serif-wine text-white mb-2">No se encontraron artículos</h4>
-        <p class="text-slate-400 text-xs font-mono leading-relaxed mb-6">
+        <h4 class="text-xl font-bold font-serif-wine text-white mb-2" id="empty-title">No se encontraron artículos</h4>
+        <p class="text-slate-400 text-xs font-mono leading-relaxed mb-6" id="empty-desc">
           No hay resultados que coincidan con tu término de búsqueda. Prueba con palabras clave como <span class="text-amber-300">flor</span>, <span class="text-amber-300">tca</span>, <span class="text-amber-300">cinarina</span>, <span class="text-amber-300">pirazinas</span> o <span class="text-amber-300">suelo</span>.
         </p>
         <button id="reset-filters-btn" class="px-4 py-2 rounded-xl bg-amber-500/20 text-amber-300 border border-amber-500/40 text-xs font-mono hover:bg-amber-500/30 transition-colors">
@@ -238,7 +322,7 @@
         <span id="modal-category" class="text-xs font-mono text-slate-400">Enología & Vinos Especiales</span>
       </div>
 
-      <h3 id="modal-title" class="text-2xl sm:text-3xl font-bold font-serif-wine text-white mb-4 pr-10">
+      <h3 id="modal-title" class="text-2xl sm:text-3xl font-bold font-serif-wine text-white mb-4 pr-10 leading-snug">
         Título del Artículo
       </h3>
 
@@ -295,13 +379,89 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="data/winepedia_articles.js?v=20261110_v3"></script>
+  <script src="data/winepedia_articles.js?v=20261119_v4"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       var articles = window.WINEPEDIA_ARTICLES || [];
       var currentLang = 'es';
       var activeStandard = 'all';
+      var activeThemeFilter = 'all';
       var searchQuery = '';
+      var collapsedThemes = {}; // map of themeId -> boolean
+      var currentSpotlightArticle = null;
+
+      // Thematic taxonomies
+      var THEMES = [
+        {
+          id: 'terroir',
+          icon: '🌱',
+          title_es: 'Edafología, Suelos y Terruño',
+          title_en: 'Soil Science, Geology & Terroir',
+          desc_es: 'Suelos de albariza, llicorella, esquistos, calizas kimmeridgienses, drenaje edáfico y factores geológicos.',
+          desc_en: 'Albariza, llicorella, schist, Kimmeridgian limestone soils, soil drainage, and geologic factors.',
+          matcher: function(art) {
+            var cat = (art.category_es || '').toLowerCase();
+            var tags = (art.tags || []).join(' ').toLowerCase();
+            return cat.includes('edafología') || cat.includes('suelo') || cat.includes('geología') || cat.includes('terruño & factores') || tags.includes('suelo');
+          }
+        },
+        {
+          id: 'enology',
+          icon: '🍷',
+          title_es: 'Enología y Vinificaciones Especiales',
+          title_en: 'Enology & Winemaking Methods',
+          desc_es: 'Crianza biológica y oxidativa, maceración intracelular, lías finas, método tradicional y crianza en roble.',
+          desc_en: 'Biological & oxidative aging, carbonic maceration, fine lees, traditional method, and oak management.',
+          matcher: function(art) {
+            var cat = (art.category_es || '').toLowerCase();
+            return cat.includes('enología & terruño') || cat.includes('enología & vinos especiales') || cat.includes('vinificación') || cat.includes('espumosos') || cat.includes('control de calidad');
+          }
+        },
+        {
+          id: 'viticulture',
+          icon: '🍇',
+          title_es: 'Viticultura y Fisiología de la Vid',
+          title_en: 'Viticulture & Vine Physiology',
+          desc_es: 'Fenología de la vid, déficit hídrico controlado (RDI), patrones portainjertos, sistemas de conducción y sanidad.',
+          desc_en: 'Vine phenology, regulated deficit irrigation (RDI), rootstock adaptation, training systems, and pathology.',
+          matcher: function(art) {
+            var cat = (art.category_es || '').toLowerCase();
+            var tags = (art.tags || []).join(' ').toLowerCase();
+            return cat.includes('viticultura') || cat.includes('sanidad vegetal') || tags.includes('viticultura') || tags.includes('portainjerto');
+          }
+        },
+        {
+          id: 'biochemistry',
+          icon: '🔬',
+          title_es: 'Bioquímica Enológica y Aromas',
+          title_en: 'Enological Biochemistry & Aromas',
+          desc_es: 'Marcadores moleculares (rotundona, TDN, metoxipirazinas), fermentación maloláctica y defectos del vino (TCA, reducción).',
+          desc_en: 'Molecular aroma markers (rotundone, TDN, pyrazines), malolactic fermentation, and wine faults (TCA, reduction).',
+          matcher: function(art) {
+            var cat = (art.category_es || '').toLowerCase();
+            return cat.includes('bioquímica') || cat.includes('marcadores químicos') || cat.includes('compuestos volátiles');
+          }
+        },
+        {
+          id: 'sommellerie',
+          icon: '🍽️',
+          title_es: 'Sumillería, Sala y Cata Deductiva',
+          title_en: 'Sommellerie, Service & Deductive Tasting',
+          desc_es: 'Cuadrícula deductiva CMS, protocolo canónico ASI de servicio y decantación, cristalería y armonías complejas.',
+          desc_en: 'CMS blind deductive grid, ASI service & decanting protocol, glassware dynamics, and molecular pairings.',
+          matcher: function(art) {
+            var cat = (art.category_es || '').toLowerCase();
+            return cat.includes('armonía') || cat.includes('sala') || cat.includes('cata') || cat.includes('servicio') || cat.includes('cristalería') || cat.includes('protocolo') || cat.includes('fisiología de sala') || cat.includes('dinámica sensorial');
+          }
+        }
+      ];
+
+      function getArticleTheme(art) {
+        for (var i = 0; i < THEMES.length; i++) {
+          if (THEMES[i].matcher(art)) return THEMES[i].id;
+        }
+        return 'enology'; // fallback
+      }
 
       var I18N = {
         es: {
@@ -312,15 +472,28 @@
           searchPlaceholder: "Buscar por concepto, compuesto (cinarina, flor, tca, pirazinas), uva o región...",
           clearSearch: "✕ Limpiar",
           lblFilterStandard: "Estándar:",
-          pillAll: "Todos (24)",
+          lblFilterTheme: "Eje Temático:",
+          pillAll: "Todos",
+          themeAll: "Todos los Temas",
           emptyTitle: "No se encontraron conceptos técnicos",
           emptyDesc: "No hay resultados que coincidan con tu término de búsqueda. Prueba con palabras clave como flor, tca, cinarina, pirazinas o suelo.",
           btnReset: "Restablecer búsqueda",
-          counter: function(n, total) { return "Mostrando " + n + " de " + total + " conceptos técnicos"; },
+          counter: function(n, total, themesCount) {
+            return "Mostrando " + n + " de " + total + " conceptos técnicos" + (themesCount ? " (organizados en " + themesCount + " temas)" : "");
+          },
+          spotlightBadge: "Ficha Técnica Destacada (Aleatoria)",
+          spotlightBtn: "Otra ficha aleatoria",
+          spotlightRead: "Leer ficha completa →",
           modalTakeaways: "Puntos Clave de Sumillería:",
           modalGrapes: "Variedades vinculadas:",
           modalRegions: "Regiones:",
-          readMore: "📖 Lectura Completa →"
+          readMore: "📖 Lectura Completa →",
+          collapse: "Contraer",
+          expand: "Expandir",
+          collapseAll: "Contraer todos",
+          expandAll: "Expandir todos",
+          conceptsCount: function(n) { return n === 1 ? "1 concepto" : n + " conceptos"; },
+          restoreSpotlight: "Ver ficha aleatoria"
         },
         en: {
           navMap: "Wine Map",
@@ -330,33 +503,73 @@
           searchPlaceholder: "Search technical concept, compound (cynarin, flor, TCA, pyrazines), grape or region...",
           clearSearch: "✕ Clear",
           lblFilterStandard: "Standard:",
-          pillAll: "All (24)",
+          lblFilterTheme: "Thematic Area:",
+          pillAll: "All",
+          themeAll: "All Topics",
           emptyTitle: "No technical concepts found",
           emptyDesc: "No results matched your search query. Try keywords like flor, TCA, cynarine, pyrazines, or soil.",
           btnReset: "Reset search",
-          counter: function(n, total) { return "Showing " + n + " of " + total + " technical concepts"; },
+          counter: function(n, total, themesCount) {
+            return "Showing " + n + " of " + total + " technical concepts" + (themesCount ? " (across " + themesCount + " topics)" : "");
+          },
+          spotlightBadge: "Featured Concept (Random Spotlight)",
+          spotlightBtn: "Another random concept",
+          spotlightRead: "Read complete concept →",
           modalTakeaways: "Key Sommelier Takeaways:",
           modalGrapes: "Associated Varieties:",
           modalRegions: "Regions:",
-          readMore: "📖 Read In-Depth →"
+          readMore: "📖 Read In-Depth →",
+          collapse: "Collapse",
+          expand: "Expand",
+          collapseAll: "Collapse all",
+          expandAll: "Expand all",
+          conceptsCount: function(n) { return n === 1 ? "1 concept" : n + " concepts"; },
+          restoreSpotlight: "View random spotlight"
         }
       };
 
+      // Elements
       var searchInput = document.getElementById('winepedia-search');
       var clearSearchBtn = document.getElementById('clear-search-btn');
       var filterPills = document.querySelectorAll('.filter-pill');
-      var articlesGrid = document.getElementById('articles-grid');
+      var themePills = document.querySelectorAll('.theme-pill');
+      var thematicSectionsContainer = document.getElementById('thematic-sections');
       var emptyState = document.getElementById('empty-state');
       var articlesCounter = document.getElementById('articles-counter');
       var resetFiltersBtn = document.getElementById('reset-filters-btn');
+      var btnToggleAll = document.getElementById('btn-toggle-all-sections');
+      var toggleAllText = document.getElementById('toggle-all-text');
+      var toggleAllIcon = document.getElementById('toggle-all-icon');
 
-      var navMapText = document.getElementById('nav-map-text');
-      var navGrapesText = document.getElementById('nav-grapes-text');
-      var heroBadge = document.getElementById('hero-badge');
-      var heroDesc = document.getElementById('hero-desc');
-      var lblFilterStandard = document.getElementById('lbl-filter-standard');
       var pillAll = document.getElementById('pill-all');
+      var pillWset = document.getElementById('pill-wset');
+      var pillCms = document.getElementById('pill-cms');
+      var pillAsi = document.getElementById('pill-asi');
 
+      var pillThemeAll = document.getElementById('pill-theme-all');
+      var pillThemeTerroir = document.getElementById('pill-theme-terroir');
+      var pillThemeEnology = document.getElementById('pill-theme-enology');
+      var pillThemeViticulture = document.getElementById('pill-theme-viticulture');
+      var pillThemeBiochemistry = document.getElementById('pill-theme-biochemistry');
+      var pillThemeSommellerie = document.getElementById('pill-theme-sommellerie');
+
+      // Spotlight Elements
+      var randomSpotlight = document.getElementById('random-spotlight');
+      var btnNextRandom = document.getElementById('btn-next-random');
+      var btnToggleSpotlight = document.getElementById('btn-toggle-spotlight');
+      var btnRestoreSpotlight = document.getElementById('btn-restore-spotlight');
+      var restoreSpotlightText = document.getElementById('restore-spotlight-text');
+      var spotlightBadgeTitle = document.getElementById('spotlight-badge-title');
+      var spotlightBtnText = document.getElementById('spotlight-btn-text');
+      var spotlightReadText = document.getElementById('spotlight-read-text');
+      var spotlightStandard = document.getElementById('spotlight-standard');
+      var spotlightCategory = document.getElementById('spotlight-category');
+      var spotlightTitle = document.getElementById('spotlight-title');
+      var spotlightSummary = document.getElementById('spotlight-summary');
+      var spotlightTags = document.getElementById('spotlight-tags');
+      var spotlightReadBtn = document.getElementById('spotlight-read-btn');
+
+      // Modal Elements
       var modal = document.getElementById('article-modal');
       var closeModalBtn = document.getElementById('close-modal-btn');
       var modalStandard = document.getElementById('modal-standard');
@@ -371,8 +584,80 @@
       var modalRegionsLbl = document.getElementById('modal-regions-lbl');
       var modalRegions = document.getElementById('modal-regions');
 
+      var navMapText = document.getElementById('nav-map-text');
+      var navGrapesText = document.getElementById('nav-grapes-text');
+      var heroBadge = document.getElementById('hero-badge');
+      var heroDesc = document.getElementById('hero-desc');
+      var lblFilterStandard = document.getElementById('lbl-filter-standard');
+      var lblFilterTheme = document.getElementById('lbl-filter-theme');
+      var emptyTitle = document.getElementById('empty-title');
+      var emptyDesc = document.getElementById('empty-desc');
+
       var langBtnEs = document.getElementById('lang-btn-es');
       var langBtnEn = document.getElementById('lang-btn-en');
+
+      // Update Dynamic Standard & Theme Pill Labels
+      function updateFilterPillLabels() {
+        var total = articles.length;
+        var wsetCount = articles.filter(function(a) { return a.standard === 'WSET3'; }).length;
+        var cmsCount = articles.filter(function(a) { return a.standard === 'CMS'; }).length;
+        var asiCount = articles.filter(function(a) { return a.standard === 'ASI'; }).length;
+
+        var t = I18N[currentLang];
+        if (pillAll) pillAll.textContent = t.pillAll + " (" + total + ")";
+        if (pillWset) pillWset.textContent = "WSET 3 (" + wsetCount + ")";
+        if (pillCms) pillCms.textContent = "CMS Deductive (" + cmsCount + ")";
+        if (pillAsi) pillAsi.textContent = "ASI Global (" + asiCount + ")";
+
+        // Counts per theme
+        var themeCounts = {};
+        THEMES.forEach(function(th) {
+          themeCounts[th.id] = articles.filter(function(a) { return getArticleTheme(a) === th.id; }).length;
+        });
+
+        if (pillThemeAll) pillThemeAll.textContent = t.themeAll + " (" + total + ")";
+        if (pillThemeTerroir) pillThemeTerroir.textContent = "🌱 " + (currentLang === 'es' ? 'Edafología' : 'Soil Science') + " (" + (themeCounts['terroir'] || 0) + ")";
+        if (pillThemeEnology) pillThemeEnology.textContent = "🍷 " + (currentLang === 'es' ? 'Enología' : 'Enology') + " (" + (themeCounts['enology'] || 0) + ")";
+        if (pillThemeViticulture) pillThemeViticulture.textContent = "🍇 " + (currentLang === 'es' ? 'Viticultura' : 'Viticulture') + " (" + (themeCounts['viticulture'] || 0) + ")";
+        if (pillThemeBiochemistry) pillThemeBiochemistry.textContent = "🔬 " + (currentLang === 'es' ? 'Bioquímica' : 'Biochemistry') + " (" + (themeCounts['biochemistry'] || 0) + ")";
+        if (pillThemeSommellerie) pillThemeSommellerie.textContent = "🍽️ " + (currentLang === 'es' ? 'Sumillería' : 'Sommellerie') + " (" + (themeCounts['sommellerie'] || 0) + ")";
+      }
+
+      function pickRandomArticle() {
+        if (!articles.length) return null;
+        var filtered = filterArticles();
+        var pool = (filtered.length > 0) ? filtered : articles;
+        var randomIndex = Math.floor(Math.random() * pool.length);
+        return pool[randomIndex];
+      }
+
+      function renderSpotlight(art) {
+        if (!art || !randomSpotlight) return;
+        currentSpotlightArticle = art;
+
+        var t = I18N[currentLang];
+        if (spotlightBadgeTitle) spotlightBadgeTitle.textContent = t.spotlightBadge;
+        if (spotlightBtnText) spotlightBtnText.textContent = t.spotlightBtn;
+        if (spotlightReadText) spotlightReadText.textContent = t.spotlightRead;
+
+        spotlightStandard.textContent = art.standard;
+        var badgeColor = "bg-amber-950 text-amber-300 border-amber-800/40";
+        if (art.standard === 'CMS') badgeColor = "bg-rose-950 text-rose-300 border-rose-800/40";
+        if (art.standard === 'WSET3') badgeColor = "bg-purple-950 text-purple-300 border-purple-800/40";
+        if (art.standard === 'ASI') badgeColor = "bg-emerald-950 text-emerald-300 border-emerald-800/40";
+        spotlightStandard.className = "text-[10px] font-mono px-2 py-0.5 rounded font-bold uppercase border " + badgeColor;
+
+        spotlightCategory.textContent = currentLang === 'es' ? art.category_es : art.category_en;
+        spotlightTitle.textContent = currentLang === 'es' ? art.title_es : art.title_en;
+        spotlightSummary.textContent = currentLang === 'es' ? art.summary_es : art.summary_en;
+
+        if (spotlightTags) {
+          var tags = (art.tags || []).slice(0, 4);
+          spotlightTags.innerHTML = tags.map(function(tg) {
+            return "<span class='px-2 py-0.5 rounded bg-white/5 border border-white/10'>#" + tg + "</span>";
+          }).join('');
+        }
+      }
 
       function applyLanguage(lang) {
         currentLang = lang;
@@ -386,7 +671,12 @@
         if (searchInput) searchInput.placeholder = t.searchPlaceholder;
         if (clearSearchBtn) clearSearchBtn.textContent = t.clearSearch;
         if (lblFilterStandard) lblFilterStandard.textContent = t.lblFilterStandard;
-        if (pillAll) pillAll.textContent = t.pillAll;
+        if (lblFilterTheme) lblFilterTheme.textContent = t.lblFilterTheme;
+        if (emptyTitle) emptyTitle.textContent = t.emptyTitle;
+        if (emptyDesc) emptyDesc.innerHTML = t.emptyDesc;
+        if (resetFiltersBtn) resetFiltersBtn.textContent = t.btnReset;
+        if (restoreSpotlightText) restoreSpotlightText.textContent = t.restoreSpotlight;
+
         if (modalTakeawaysHeading) modalTakeawaysHeading.textContent = t.modalTakeaways;
         if (modalGrapesLbl) modalGrapesLbl.textContent = t.modalGrapes;
         if (modalRegionsLbl) modalRegionsLbl.textContent = t.modalRegions;
@@ -401,13 +691,22 @@
           }
         }
 
-        renderGrid();
+        updateFilterPillLabels();
+        if (!currentSpotlightArticle) {
+          currentSpotlightArticle = pickRandomArticle();
+        }
+        renderSpotlight(currentSpotlightArticle);
+        renderThematicSections();
       }
 
       function filterArticles() {
         return articles.filter(function(art) {
           var matchesStandard = (activeStandard === 'all') || (art.standard === activeStandard);
           if (!matchesStandard) return false;
+
+          var artTheme = getArticleTheme(art);
+          var matchesTheme = (activeThemeFilter === 'all') || (artTheme === activeThemeFilter);
+          if (!matchesTheme) return false;
 
           if (!searchQuery) return true;
 
@@ -423,56 +722,127 @@
         });
       }
 
-      function renderGrid() {
+      function renderThematicSections() {
         var t = I18N[currentLang];
         var filtered = filterArticles();
-        if (articlesCounter) {
-          articlesCounter.textContent = t.counter(filtered.length, articles.length);
-        }
 
         if (filtered.length === 0) {
-          articlesGrid.classList.add('hidden');
+          thematicSectionsContainer.classList.add('hidden');
           emptyState.classList.remove('hidden');
+          if (articlesCounter) articlesCounter.textContent = t.counter(0, articles.length, 0);
           return;
         }
 
-        articlesGrid.classList.remove('hidden');
+        thematicSectionsContainer.classList.remove('hidden');
         emptyState.classList.add('hidden');
-        articlesGrid.innerHTML = '';
+        thematicSectionsContainer.innerHTML = '';
 
+        // Group filtered articles by theme
+        var grouped = {};
+        THEMES.forEach(function(th) { grouped[th.id] = []; });
         filtered.forEach(function(art) {
-          var card = document.createElement('div');
-          var badgeColorClass = "bg-amber-950 text-amber-300 border-amber-800/40";
-          if (art.standard === 'CMS') badgeColorClass = "bg-rose-950 text-rose-300 border-rose-800/40";
-          if (art.standard === 'WSET3') badgeColorClass = "bg-purple-950 text-purple-300 border-purple-800/40";
-          if (art.standard === 'ASI') badgeColorClass = "bg-emerald-950 text-emerald-300 border-emerald-800/40";
+          var themeId = getArticleTheme(art);
+          if (grouped[themeId]) grouped[themeId].push(art);
+          else {
+            grouped['enology'].push(art);
+          }
+        });
 
-          var title = currentLang === 'es' ? art.title_es : art.title_en;
-          var summary = currentLang === 'es' ? art.summary_es : art.summary_en;
-          var category = currentLang === 'es' ? art.category_es : art.category_en;
+        // Count how many themes have > 0 articles
+        var activeThemesCount = 0;
+        THEMES.forEach(function(th) {
+          if (grouped[th.id].length > 0) activeThemesCount++;
+        });
 
-          card.className = "article-card p-6 rounded-2xl bg-[#12141c] border border-white/10 hover:border-amber-500/50 transition-all flex flex-col justify-between group";
-          card.innerHTML = 
-            "<div>" +
-              "<div class='flex items-center justify-between mb-3'>" +
-                "<span class='text-[10px] font-mono px-2 py-0.5 rounded " + badgeColorClass + " border uppercase font-bold'>" + art.standard + "</span>" +
-                "<span class='text-xs text-slate-500 font-mono'>" + category + "</span>" +
+        if (articlesCounter) {
+          articlesCounter.textContent = t.counter(filtered.length, articles.length, activeThemesCount);
+        }
+
+        // Render each active theme
+        THEMES.forEach(function(theme) {
+          var themeArticles = grouped[theme.id];
+          if (!themeArticles || themeArticles.length === 0) return;
+
+          // If searching or single theme filter is active, force open; otherwise check collapsedThemes
+          var isCollapsed = (searchQuery.length > 0 || activeThemeFilter !== 'all') ? false : (collapsedThemes[theme.id] === true);
+
+          var themeSection = document.createElement('div');
+          themeSection.className = "theme-section rounded-3xl bg-[#12141c]/50 border border-white/10 p-5 sm:p-6 transition-all shadow-lg";
+
+          var themeTitle = currentLang === 'es' ? theme.title_es : theme.title_en;
+          var themeDesc = currentLang === 'es' ? theme.desc_es : theme.desc_en;
+
+          // Header
+          var headerHtml = 
+            "<div class='theme-header flex items-center justify-between cursor-pointer select-none pb-2' data-theme-id='" + theme.id + "'>" +
+              "<div class='flex items-start sm:items-center gap-3.5'>" +
+                "<span class='text-3xl sm:text-4xl filter drop-shadow'>" + theme.icon + "</span>" +
+                "<div>" +
+                  "<div class='flex flex-wrap items-center gap-2.5'>" +
+                    "<h3 class='text-lg sm:text-xl font-bold font-serif-wine text-white tracking-wide'>" + themeTitle + "</h3>" +
+                    "<span class='theme-badge text-[11px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30 shadow-sm'>" +
+                      t.conceptsCount(themeArticles.length) +
+                    "</span>" +
+                  "</div>" +
+                  "<p class='text-xs text-slate-400 font-sans mt-0.5 max-w-2xl hidden sm:block'>" + themeDesc + "</p>" +
+                "</div>" +
               "</div>" +
-              "<h4 class='text-xl font-bold font-serif-wine text-white mb-2 group-hover:text-amber-400 transition-colors leading-snug'>" + title + "</h4>" +
-              "<p class='text-slate-400 text-xs leading-relaxed mb-6 font-sans'>" + summary + "</p>" +
-            "</div>" +
-            "<div>" +
-              "<button class='read-article-btn w-full py-2.5 px-4 rounded-xl bg-white/5 hover:bg-white/10 text-slate-200 border border-white/10 text-xs font-mono font-semibold text-center transition-colors flex items-center justify-center gap-2' data-id='" + art.id + "'>" +
-                t.readMore +
+              "<button class='accordion-btn text-xs font-mono text-slate-300 hover:text-white flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors shrink-0 ml-2'>" +
+                "<span>" + (isCollapsed ? t.expand : t.collapse) + "</span>" +
+                "<span class='transform transition-transform text-xs " + (isCollapsed ? "" : "rotate-180") + "'>▾</span>" +
               "</button>" +
             "</div>";
 
-          articlesGrid.appendChild(card);
+          // Grid
+          var gridClasses = "theme-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-5 mt-3 border-t border-white/5 transition-all " + (isCollapsed ? "hidden" : "");
+
+          var cardsHtml = "<div class='" + gridClasses + "' id='grid-" + theme.id + "'>";
+          themeArticles.forEach(function(art) {
+            var badgeColorClass = "bg-amber-950 text-amber-300 border-amber-800/40";
+            if (art.standard === 'CMS') badgeColorClass = "bg-rose-950 text-rose-300 border-rose-800/40";
+            if (art.standard === 'WSET3') badgeColorClass = "bg-purple-950 text-purple-300 border-purple-800/40";
+            if (art.standard === 'ASI') badgeColorClass = "bg-emerald-950 text-emerald-300 border-emerald-800/40";
+
+            var artTitle = currentLang === 'es' ? art.title_es : art.title_en;
+            var artSummary = currentLang === 'es' ? art.summary_es : art.summary_en;
+            var artCategory = currentLang === 'es' ? art.category_es : art.category_en;
+
+            cardsHtml += 
+              "<div class='article-card p-6 rounded-2xl bg-[#0e1017] border border-white/10 hover:border-amber-500/50 transition-all flex flex-col justify-between group hover:-translate-y-0.5 shadow-sm'>" +
+                "<div>" +
+                  "<div class='flex items-center justify-between mb-3'>" +
+                    "<span class='text-[10px] font-mono px-2 py-0.5 rounded " + badgeColorClass + " border uppercase font-bold'>" + art.standard + "</span>" +
+                    "<span class='text-xs text-slate-500 font-mono truncate ml-2'>" + artCategory + "</span>" +
+                  "</div>" +
+                  "<h4 class='text-lg sm:text-xl font-bold font-serif-wine text-white mb-2 group-hover:text-amber-400 transition-colors leading-snug'>" + artTitle + "</h4>" +
+                  "<p class='text-slate-400 text-xs leading-relaxed mb-6 font-sans line-clamp-3'>" + artSummary + "</p>" +
+                "</div>" +
+                "<div>" +
+                  "<button class='read-article-btn w-full py-2.5 px-4 rounded-xl bg-white/5 hover:bg-white/10 text-slate-200 border border-white/10 text-xs font-mono font-semibold text-center transition-colors flex items-center justify-center gap-2 active:scale-98' data-id='" + art.id + "'>" +
+                    t.readMore +
+                  "</button>" +
+                "</div>" +
+              "</div>";
+          });
+          cardsHtml += "</div>";
+
+          themeSection.innerHTML = headerHtml + cardsHtml;
+          thematicSectionsContainer.appendChild(themeSection);
+        });
+
+        // Attach Accordion Toggle Click
+        document.querySelectorAll('.theme-header').forEach(function(header) {
+          header.addEventListener('click', function() {
+            var themeId = header.getAttribute('data-theme-id');
+            collapsedThemes[themeId] = !collapsedThemes[themeId];
+            renderThematicSections();
+          });
         });
 
         // Attach modal triggers
         document.querySelectorAll('.read-article-btn').forEach(function(btn) {
-          btn.addEventListener('click', function() {
+          btn.addEventListener('click', function(e) {
+            e.stopPropagation();
             var artId = btn.getAttribute('data-id');
             openModal(artId);
           });
@@ -484,6 +854,12 @@
         if (!art || !modal) return;
 
         modalStandard.textContent = art.standard;
+        var badgeColor = "bg-amber-950 text-amber-300 border-amber-800/40";
+        if (art.standard === 'CMS') badgeColor = "bg-rose-950 text-rose-300 border-rose-800/40";
+        if (art.standard === 'WSET3') badgeColor = "bg-purple-950 text-purple-300 border-purple-800/40";
+        if (art.standard === 'ASI') badgeColor = "bg-emerald-950 text-emerald-300 border-emerald-800/40";
+        modalStandard.className = "px-2.5 py-1 rounded text-[11px] font-mono font-bold uppercase border " + badgeColor;
+
         modalCategory.textContent = currentLang === 'es' ? art.category_es : art.category_en;
         modalTitle.textContent = currentLang === 'es' ? art.title_es : art.title_en;
         modalSummary.textContent = currentLang === 'es' ? art.summary_es : art.summary_en;
@@ -492,8 +868,8 @@
         modalContent.innerHTML = rawContent.replace(/\n\n/g, '<br><br>').replace(/\*\*(.*?)\*\*/g, '<strong class="text-white">$1</strong>');
 
         var takeaways = currentLang === 'es' ? art.key_takeaways_es : art.key_takeaways_en;
-        modalTakeaways.innerHTML = (takeaways || []).map(function(t) {
-          return "<li class='flex items-start gap-2'><span class='text-amber-400'>●</span> <span>" + t + "</span></li>";
+        modalTakeaways.innerHTML = (takeaways || []).map(function(item) {
+          return "<li class='flex items-start gap-2'><span class='text-amber-400'>●</span> <span>" + item + "</span></li>";
         }).join('');
 
         modalGrapes.textContent = (art.related_grapes || []).join(', ') || 'N/A';
@@ -519,6 +895,50 @@
         if (e.key === 'Escape') closeModal();
       });
 
+      // Spotlight Event Handlers
+      if (btnNextRandom) {
+        btnNextRandom.addEventListener('click', function() {
+          renderSpotlight(pickRandomArticle());
+        });
+      }
+
+      if (spotlightReadBtn) {
+        spotlightReadBtn.addEventListener('click', function() {
+          if (currentSpotlightArticle) {
+            openModal(currentSpotlightArticle.id);
+          }
+        });
+      }
+
+      if (btnToggleSpotlight) {
+        btnToggleSpotlight.addEventListener('click', function() {
+          randomSpotlight.classList.add('hidden');
+          if (btnRestoreSpotlight) btnRestoreSpotlight.classList.remove('hidden');
+        });
+      }
+
+      if (btnRestoreSpotlight) {
+        btnRestoreSpotlight.addEventListener('click', function() {
+          randomSpotlight.classList.remove('hidden');
+          btnRestoreSpotlight.classList.add('hidden');
+        });
+      }
+
+      // Expand / Collapse All Sections Handler
+      var allCollapsed = false;
+      if (btnToggleAll) {
+        btnToggleAll.addEventListener('click', function() {
+          allCollapsed = !allCollapsed;
+          THEMES.forEach(function(th) {
+            collapsedThemes[th.id] = allCollapsed;
+          });
+          var t = I18N[currentLang];
+          toggleAllText.textContent = allCollapsed ? t.expandAll : t.collapseAll;
+          toggleAllIcon.textContent = allCollapsed ? '▸' : '▾';
+          renderThematicSections();
+        });
+      }
+
       // Search input handler
       if (searchInput) {
         searchInput.addEventListener('input', function(e) {
@@ -527,7 +947,7 @@
             if (searchQuery) clearSearchBtn.classList.remove('hidden');
             else clearSearchBtn.classList.add('hidden');
           }
-          renderGrid();
+          renderThematicSections();
         });
       }
 
@@ -536,7 +956,7 @@
           searchQuery = '';
           searchInput.value = '';
           clearSearchBtn.classList.add('hidden');
-          renderGrid();
+          renderThematicSections();
         });
       }
 
@@ -546,23 +966,44 @@
           if (searchInput) searchInput.value = '';
           if (clearSearchBtn) clearSearchBtn.classList.add('hidden');
           activeStandard = 'all';
+          activeThemeFilter = 'all';
+          collapsedThemes = {};
+          
           filterPills.forEach(function(p) {
-            p.className = "filter-pill px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10";
+            p.className = "filter-pill px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 transition-all";
           });
-          document.querySelector('[data-standard="all"]').className = "filter-pill px-3.5 py-1.5 rounded-xl bg-amber-950 text-amber-300 border border-amber-800/60 font-semibold";
-          renderGrid();
+          if (pillAll) pillAll.className = "filter-pill px-3.5 py-1.5 rounded-xl bg-amber-950 text-amber-300 border border-amber-800/60 font-semibold transition-all";
+
+          themePills.forEach(function(tp) {
+            tp.className = "theme-pill px-3 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 transition-all";
+          });
+          if (pillThemeAll) pillThemeAll.className = "theme-pill px-3 py-1.5 rounded-xl bg-amber-950 text-amber-300 border border-amber-800/60 font-semibold transition-all";
+
+          renderThematicSections();
         });
       }
 
-      // Filter pills
+      // Standard Filter Pills Handler
       filterPills.forEach(function(pill) {
         pill.addEventListener('click', function() {
           activeStandard = pill.getAttribute('data-standard');
           filterPills.forEach(function(p) {
-            p.className = "filter-pill px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10";
+            p.className = "filter-pill px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 transition-all";
           });
-          pill.className = "filter-pill px-3.5 py-1.5 rounded-xl bg-amber-950 text-amber-300 border border-amber-800/60 font-semibold";
-          renderGrid();
+          pill.className = "filter-pill px-3.5 py-1.5 rounded-xl bg-amber-950 text-amber-300 border border-amber-800/60 font-semibold transition-all";
+          renderThematicSections();
+        });
+      });
+
+      // Thematic Filter Pills Handler
+      themePills.forEach(function(pill) {
+        pill.addEventListener('click', function() {
+          activeThemeFilter = pill.getAttribute('data-theme-filter');
+          themePills.forEach(function(p) {
+            p.className = "theme-pill px-3 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 transition-all";
+          });
+          pill.className = "theme-pill px-3 py-1.5 rounded-xl bg-amber-950 text-amber-300 border border-amber-800/60 font-semibold transition-all";
+          renderThematicSections();
         });
       });
 
@@ -577,9 +1018,6 @@
           applyLanguage('en');
         });
       }
-
-      // Initial render in default language
-      applyLanguage('es');
 
       // Theme toggle
       var themeBtn = document.getElementById('btn-theme-toggle');
@@ -606,6 +1044,9 @@
           updateIcon(nextT);
         });
       }
+
+      // Initial boot in default language
+      applyLanguage('es');
     });
   </script>
   <script>
