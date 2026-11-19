@@ -960,7 +960,10 @@ async function ensureFullRegionsLoaded() {
         data = window.SPAIN_WINE_DATA;
       } else {
         try {
-          const resp = await fetch('data/spain_wine_regions.geojson');
+          let resp = await fetch('data/wine_regions.geojson');
+          if (!resp.ok) {
+            resp = await fetch('data/spain_wine_regions.geojson');
+          }
           if (resp.ok) {
             data = await resp.json();
           }
@@ -970,9 +973,15 @@ async function ensureFullRegionsLoaded() {
         if (!data) {
           await new Promise((resolve) => {
             const script = document.createElement('script');
-            script.src = 'data/spain_wine_regions.js';
+            script.src = 'data/wine_regions.js';
+            script.onerror = () => {
+              const fallback = document.createElement('script');
+              fallback.src = 'data/spain_wine_regions.js';
+              fallback.onload = resolve;
+              fallback.onerror = resolve;
+              document.head.appendChild(fallback);
+            };
             script.onload = resolve;
-            script.onerror = resolve;
             document.head.appendChild(script);
           });
           if (typeof SPAIN_WINE_DATA !== 'undefined' && SPAIN_WINE_DATA) {
