@@ -954,13 +954,17 @@ async function ensureFullRegionsLoaded() {
   if (!fullRegionsPromise) {
     fullRegionsPromise = (async () => {
       let data = null;
-      if (typeof SPAIN_WINE_DATA !== 'undefined' && SPAIN_WINE_DATA) {
+      if (typeof WINE_REGIONS_DATA !== 'undefined' && WINE_REGIONS_DATA) {
+        data = WINE_REGIONS_DATA;
+      } else if (typeof window !== 'undefined' && typeof window.WINE_REGIONS_DATA !== 'undefined' && window.WINE_REGIONS_DATA) {
+        data = window.WINE_REGIONS_DATA;
+      } else if (typeof SPAIN_WINE_DATA !== 'undefined' && SPAIN_WINE_DATA) {
         data = SPAIN_WINE_DATA;
       } else if (typeof window !== 'undefined' && typeof window.SPAIN_WINE_DATA !== 'undefined' && window.SPAIN_WINE_DATA) {
         data = window.SPAIN_WINE_DATA;
       } else {
         try {
-          const resp = await fetch('data/spain_wine_regions.geojson');
+          const resp = await fetch('data/wine_regions.geojson');
           if (resp.ok) {
             data = await resp.json();
           }
@@ -970,15 +974,22 @@ async function ensureFullRegionsLoaded() {
         if (!data) {
           await new Promise((resolve) => {
             const script = document.createElement('script');
-            script.src = 'data/spain_wine_regions.js';
+            script.src = 'data/wine_regions.js';
             script.onload = resolve;
             script.onerror = resolve;
             document.head.appendChild(script);
           });
-          if (typeof SPAIN_WINE_DATA !== 'undefined' && SPAIN_WINE_DATA) {
+          if (typeof WINE_REGIONS_DATA !== 'undefined' && WINE_REGIONS_DATA) {
+            data = WINE_REGIONS_DATA;
+          } else if (typeof window !== 'undefined' && typeof window.WINE_REGIONS_DATA !== 'undefined') {
+            data = window.WINE_REGIONS_DATA;
+          } else if (typeof SPAIN_WINE_DATA !== 'undefined' && SPAIN_WINE_DATA) {
             data = SPAIN_WINE_DATA;
           } else if (typeof window !== 'undefined' && typeof window.SPAIN_WINE_DATA !== 'undefined') {
             data = window.SPAIN_WINE_DATA;
+          }
+        }
+      }
           }
         }
       }

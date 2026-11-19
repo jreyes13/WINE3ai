@@ -32,7 +32,7 @@ wine3ai/
 ├── README.md                    # Main project documentation in English (summary table & links)
 ├── README_ES.md                 # Main project documentation in Spanish
 ├── data/                        # Production-ready datasets
-│   ├── spain_wine_regions.geojson # 875 wine regions with vector boundaries, grapes, and metadata
+│   ├── wine_regions.geojson # 894 wine regions with vector boundaries, grapes, and metadata
 │   ├── grape_varieties.json     # Knowledgebase of 712 normalized grape varieties
 │   └── *.js                     # JS wrappers for local offline (file:// without CORS) use
 ├── docs/                        # Technical guides, methodology, and national registries
@@ -125,7 +125,7 @@ To maintain strict cartographic rigor and interoperability within the **World Wi
 3. **Build SQL Selection Filter:** Develop the precise attribute selection expression in QGIS and version it under `QGIS/<COUNTRY>/SQLs/`.
 4. **Export Vector Geometries:** Save the layer in GeoPackage format (`QGIS/<COUNTRY>/...`) with coordinates reprojected to standard **WGS84 (EPSG:4326)**.
 5. **Web & Grape Analytics Integration:**
-   * Append the new feature with full attributes (category, red varieties, white varieties, color, specifications link) into `data/spain_wine_regions.geojson`.
+   * Append the new feature with full attributes (category, red varieties, white varieties, color, specifications link) into `data/wine_regions.geojson`.
    * Run `scratch/build_grape_database.py` to automatically update the grape varieties knowledgebase and circular charts in `grapes.html`.
    * Document the appellation in `docs/<COUNTRY>/REGISTRO_...md` and update coverage matrices in `README.md`, `README_ES.md`, `COVERAGE.md`, and `COBERTURA.md`.
 

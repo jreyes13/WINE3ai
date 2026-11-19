@@ -32,7 +32,7 @@ wine3ai/
 ├── README.md                    # Documentación general en inglés (con tabla resumen y enlaces)
 ├── README_ES.md                 # Documentación general en español
 ├── data/                        # Datasets optimizados para producción web
-│   ├── spain_wine_regions.geojson # 875 regiones vitivinícolas con polígonos, uvas y metadatos
+│   ├── wine_regions.geojson # 894 regiones vitivinícolas con polígonos, uvas y metadatos
 │   ├── grape_varieties.json     # Base de datos de 712 variedades de uva normalizadas
 │   └── *.js                     # Envoltorios JS para soporte local (file:// sin CORS)
 ├── docs/                        # Informes técnicos, metodológicos y registros nacionales
@@ -125,7 +125,7 @@ Para asegurar la máxima rigurosidad y compatibilidad con el ecosistema de **Wor
 3. **Construcción del Filtro SQL:** Crear la expresión de selección por nombres o identificadores en QGIS y versionarla en `QGIS/<PAIS>/SQLs/`.
 4. **Empaquetado Vectorial:** Exportar la selección en formato GeoPackage (`QGIS/<PAIS>/...`) con coordenadas transformadas a **WGS84 (EPSG:4326)**.
 5. **Integración Web y Análisis de Variedades:**
-   * Agregar la entidad con sus metadatos (categoría, uvas tintas, uvas blancas, color, enlace al pliego) en `data/spain_wine_regions.geojson`.
+   * Agregar la entidad con sus metadatos (categoría, uvas tintas, uvas blancas, color, enlace al pliego) en `data/wine_regions.geojson`.
    * Ejecutar `scratch/build_grape_database.py` para sincronizar automáticamente el nuevo país con el explorador de variedades `grapes.html`.
    * Registrar la denominación en `docs/<PAIS>/REGISTRO_...md` y actualizar las tablas de cobertura en `README.md`, `README_ES.md`, `COVERAGE.md` y `COBERTURA.md`.
 
