@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grape Varieties Explorer — WINE³ai 🍇</title>
   <meta name="description" content="Explore where world grape varieties like Tempranillo, Pinot Noir, Chardonnay or Riesling are cultivated across 21 countries and 763 official wine regions with interactive circular charts, regional distribution, and blend analysis.">
-  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg?v=20261119_v2">
 
   <!-- MapLibre GL JS -->
   <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css" />
@@ -17,6 +17,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="grapes.css">
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme') || localStorage.getItem('jreyes13_theme') || localStorage.getItem('wine3ai_theme') || 'dark';
+      if (savedTheme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
 </head>
 <body>
   <div class="app-layout">
@@ -24,7 +32,7 @@
     <header class="top-nav">
       <div class="brand">
         <a href="index.html" class="brand-link" title="WINE³ai">
-          <img src="assets/logo.svg" alt="WINE³ai Logo" class="brand-logo-img" width="34" height="34" />
+          <img src="assets/logo.svg?v=20261119_v2" alt="WINE³ai — Triqueta Oficial" class="brand-logo-img" width="36" height="36" />
         </a>
         <div>
           <h1 class="brand-title" id="brand-title">WINE<span class="brand-exp">³</span><span class="brand-ai">ai</span></h1>
@@ -32,45 +40,25 @@
         </div>
       </div>
 
-      <div class="nav-actions">
-        <!-- Return to Main Wine Map -->
-        <a href="map.html" class="btn-link btn-map" id="nav-btn-map" title="Interactive Wine Regions Map">
+      <nav class="nav-links">
+        <a href="map.html" class="nav-link" id="nav-btn-map" title="Interactive Wine Regions Map">
           <span>🗺️</span> <span id="nav-map-text">Wine Map</span>
         </a>
-
-        <!-- Link to WINEp3dIA Portal -->
-        <a href="winepedia.html" class="btn-link btn-winepedia" id="nav-btn-winepedia" title="WINEp3dIA & Knowledge Hub">
+        <a href="grapes.html" class="nav-link active" id="nav-btn-grapes" title="Grape Varieties &amp; Periodic Table">
+          <span>🍇</span> <span id="nav-grapes-text">Grape Varieties</span>
+        </a>
+        <a href="winepedia.html" class="nav-link" id="nav-btn-winepedia" title="WINEp3dIA Knowledge Hub">
           <span>📚</span> <span id="nav-winepedia-text">WINEp3dIA</span>
         </a>
+      </nav>
 
-        <!-- Reference Basemap Switcher -->
-        <div class="basemap-selector-wrap">
-          <span class="basemap-label" id="lbl-basemap" title="Reference Basemap">🌍</span>
-          <select id="basemap-select" class="basemap-select" title="Change reference basemap">
-            <option value="dark" id="bm-dark-opt" selected>Dark (Dark Matter)</option>
-            <option value="voyager" id="bm-voyager-opt">Voyager (Color)</option>
-            <option value="positron" id="bm-positron-opt">Light (Positron)</option>
-            <option value="satellite" id="bm-satellite-opt">Satellite (ESRI)</option>
-            <option value="topo" id="bm-topo-opt">Topographic (Relief)</option>
-          </select>
-        </div>
-
+      <div class="nav-actions">
         <!-- Language Switcher -->
         <button class="lang-btn" data-lang="es" id="btn-lang-es">ES</button>
         <button class="lang-btn active" data-lang="en" id="btn-lang-en">EN</button>
 
-        <a href="https://app.atlas.co/projects/iRfhgtNFAbVm6zHZL3bN?loc=-2.7334%2C39.9785%2C6.0441z" target="_blank" rel="noopener noreferrer" class="btn-link btn-atlas">
-          <span>🗺️</span> Atlas.co
-        </a>
-        <a href="https://github.com/jreyes13/wine3ai" target="_blank" rel="noopener noreferrer" class="btn-link btn-github">
-          <svg height="16" width="16" viewBox="0 0 16 16" fill="currentColor">
-            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
-          </svg>
-          <span>GitHub</span>
-        </a>
-        <a href="https://jreyes13.net" class="btn-link" style="background: rgba(190, 18, 60, 0.2); border-color: rgba(190, 18, 60, 0.4); color: #fda4af;" title="Return to jreyes13.net portal">
-          <span>←</span> jreyes13.net
-        </a>
+        <!-- Dark / Light Theme Toggle -->
+        <button type="button" class="btn-theme-toggle" id="btn-theme-toggle" title="Cambiar tema / Switch theme">🌙</button>
       </div>
     </header>
 
@@ -437,6 +425,16 @@
             <p class="section-subtitle" id="sub-map-section">Interactive locations of all authorized wine appellations cultivating this grape</p>
           </div>
           <div class="map-legend-pills">
+            <div class="basemap-selector-wrap">
+              <span class="basemap-label" id="lbl-basemap" title="Reference Basemap">🌍</span>
+              <select id="basemap-select" class="basemap-select" title="Change reference basemap">
+                <option value="dark" id="bm-dark-opt" selected>Dark</option>
+                <option value="voyager" id="bm-voyager-opt">Voyager</option>
+                <option value="positron" id="bm-positron-opt">Light</option>
+                <option value="satellite" id="bm-satellite-opt">Satellite</option>
+                <option value="topo" id="bm-topo-opt">Topographic</option>
+              </select>
+            </div>
             <span class="pill-marker pill-active-grape" id="lbl-pill-cultivated">📍 Cultivated Area</span>
             <span class="active-polygon-badge" id="active-polygon-badge" style="display: none;">
               <span class="poly-icon">🗺️</span>
@@ -486,13 +484,20 @@
 
     <!-- Footer -->
     <footer class="app-footer">
-      <div>
-        <strong>WINE³ai</strong> — Open Geospatial &amp; Viticultural Project. Data from Official Regulatory Councils &amp; Ministries.
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <img src="assets/logo.svg?v=20261119_v2" alt="WINE³ai" style="width: 24px; height: 24px;">
+        <strong style="color: var(--text-main);"><span style="color: #B08D4B;">WINE<sup>3</sup></span><span style="background: #5E1C37; color: #FFF; padding: 1px 4px; border-radius: 3px; font-size: 10px; margin-left: 3px;">ai</span></strong>
+        <span>•</span>
+        <span>Joaquín Reyes González</span>
       </div>
-      <div>
-        <a href="map.html" class="footer-link" id="footer-link-map">Interactive Map</a> • 
-        <a href="https://github.com/jreyes13/wine3ai" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a> • 
-        <a href="https://app.atlas.co/projects/iRfhgtNFAbVm6zHZL3bN?loc=-2.7334%2C39.9785%2C6.0441z" target="_blank" rel="noopener noreferrer" class="footer-link">Atlas.co</a>
+      <div style="display: flex; align-items: center; gap: 1.25rem;">
+        <a href="https://github.com/jreyes13/wine3ai" target="_blank" rel="noopener noreferrer" class="footer-link" style="display: inline-flex; align-items: center; gap: 0.35rem;">
+          <svg style="width: 14px; height: 14px; fill: currentColor;" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          <span>GitHub</span>
+        </a>
+        <a href="https://jreyes13.net" class="footer-link">
+          ← jreyes13.net
+        </a>
       </div>
     </footer>
   </div>

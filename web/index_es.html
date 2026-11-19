@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WINE³ai — World Wide Wine: Terroir, Ampelografía & WINEp3dIA</title>
   <meta name="description" content="Plataforma de inteligencia vitivinícola que une cartografía geoespacial de terruño, catálogo ampelográfico de variedades y la WINEp3dIA basada en WSET 3, CMS y ASI.">
-  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg?v=20261119_v2">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#5E1C37">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -178,10 +178,11 @@
   <header class="border-b border-white/10 bg-[#0b0d13]/90 backdrop-blur-md sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-6 h-18 flex items-center justify-between">
       <a href="." class="flex items-center gap-3.5 group">
-        <img src="assets/logo.svg" alt="WINE³ai Logo" class="w-10 h-10 group-hover:scale-105 transition-transform">
+        <img src="assets/logo.svg?v=20261119_v2" alt="WINE³ai — Triqueta Oficial" class="w-11 h-11 group-hover:scale-105 transition-transform drop-shadow-[0_4px_12px_rgba(94,28,55,0.4)]">
         <div>
-          <div class="text-xl font-bold tracking-tight font-serif-wine flex items-center gap-0.5">
-            <span class="text-[#B08D4B]">WINE<sup class="font-sans text-xs font-black">3</sup></span><span class="text-[#c026d3] dark:text-[#f43f5e] font-sans text-sm font-black ml-0.5">ai</span>
+          <div class="text-xl font-black tracking-tight flex items-baseline gap-1" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+            <span class="text-[#B08D4B] font-extrabold tracking-tight">WINE<sup class="text-xs font-black ml-0.5">3</sup></span>
+            <span class="bg-[#5E1C37] text-white text-[11px] font-black px-1.5 py-0.5 rounded border border-[#B08D4B]/40 shadow-sm ml-0.5 uppercase tracking-wider">ai</span>
           </div>
           <div class="text-[10px] tracking-wider uppercase text-slate-400 font-mono">Terroir · Ampelografía · WINEp3dIA</div>
         </div>
@@ -214,16 +215,30 @@
 
   <!-- Hero Section -->
   <main class="flex-1">
-    <section class="relative overflow-hidden py-20 sm:py-28 border-b border-white/5 bg-gradient-to-b from-[#14060b] via-[#0d0a11] to-[#0b0d13]">
+    <section class="relative overflow-hidden py-16 sm:py-24 border-b border-white/5 bg-gradient-to-b from-[#14060b] via-[#0d0a11] to-[#0b0d13]">
       <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
+        <!-- Isotipo Triqueta Central Oficial WINE³ai -->
+        <div class="flex flex-col items-center justify-center mb-6">
+          <div class="relative group cursor-pointer">
+            <div class="absolute -inset-2 bg-gradient-to-r from-[#B08D4B] via-[#5E1C37] to-[#819B7F] rounded-full blur-2xl opacity-40 group-hover:opacity-75 transition duration-500"></div>
+            <img src="assets/logo.svg?v=20261119_v2" alt="WINE³ai — Isotipo Oficial Triqueta" class="relative w-28 h-28 sm:w-36 sm:h-36 mx-auto drop-shadow-[0_15px_30px_rgba(94,28,55,0.5)] transition-all duration-300 group-hover:scale-105">
+          </div>
+          <!-- Suite Attribution Pill -->
+          <div class="mt-4 inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#181E26]/90 border border-[#B08D4B]/30 text-[11px] font-mono text-slate-300 shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-[#B08D4B] animate-pulse"></span>
+            <span>Suite Tecnológica jreyes13: <strong class="text-[#BA9857]">TRIsat</strong> · <strong class="text-[#B9995D]">ST3LLA</strong> · <strong class="text-[#B08D4B]">WINE³ai</strong></span>
+          </div>
+        </div>
+
         <!-- Badge -->
-        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-rose-950/80 border border-rose-800/50 text-rose-300 text-xs font-mono mb-8 shadow-inner">
-          <span class="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span>
+        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#5E1C37]/30 border border-[#5E1C37]/60 text-rose-200 text-xs font-mono mb-6 shadow-inner">
+          <span class="w-2 h-2 rounded-full bg-[#B08D4B]"></span>
           Geoclimatología · Ampelografía · Estándares WSET 3 · CMS · ASI
         </div>
 
-        <h1 class="text-4xl sm:text-7xl font-extrabold tracking-tight text-white mb-6 font-serif-wine">
-          WINE<span class="text-rose-500 text-3xl sm:text-5xl align-super">3</span><span class="text-amber-400 text-3xl sm:text-5xl">ai</span>
+        <h1 class="text-4xl sm:text-7xl font-extrabold tracking-tight text-white mb-6 flex items-baseline justify-center gap-2" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+          <span class="text-[#B08D4B] font-serif-wine">WINE<sup class="text-2xl sm:text-4xl font-sans font-black ml-1">3</sup></span>
+          <span class="bg-[#5E1C37] text-white text-2xl sm:text-4xl font-black px-3.5 py-1 rounded-xl border border-[#B08D4B]/50 shadow-lg tracking-wider">ai</span>
         </h1>
         <p class="text-xl sm:text-2xl text-rose-200/90 font-serif-wine max-w-3xl mx-auto mb-6 wine-glow leading-relaxed">
           La confluencia de la Viticultura, la Inteligencia Geoespacial y la Sumillería Científica.
@@ -911,8 +926,10 @@ Vega Sicilia Valbuena 5º 2018 .. 160€" class="w-full bg-black/60 border borde
   <footer class="border-t border-white/10 py-10 bg-[#05060a] text-xs text-slate-500 font-mono">
     <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-3">
-        <img src="assets/logo.svg" alt="WINE³ai" class="w-6 h-6">
-        <span class="text-slate-300 font-serif-wine font-bold text-sm">WINE<span class="text-rose-500">³</span>ai</span>
+        <img src="assets/logo.svg?v=20261119_v2" alt="WINE³ai — Triqueta Oficial" class="w-7 h-7">
+        <span class="text-slate-300 font-bold text-sm">
+          <span class="text-[#B08D4B]">WINE<sup class="font-sans text-xs">3</sup></span><span class="bg-[#5E1C37] text-white px-1.5 py-0.5 rounded text-[10px] ml-1 uppercase">ai</span>
+        </span>
         <span>•</span>
         <span>Joaquín Reyes González</span>
       </div>
@@ -963,7 +980,9 @@ Vega Sicilia Valbuena 5º 2018 .. 160€" class="w-full bg-black/60 border borde
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function() {
-        navigator.serviceWorker.register('./sw.js').catch(function(err) {
+        navigator.serviceWorker.register('./sw.js').then(function(reg) {
+          reg.update();
+        }).catch(function(err) {
           console.warn('SW registration failed:', err);
         });
       });
