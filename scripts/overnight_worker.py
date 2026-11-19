@@ -1,17 +1,16 @@
 #!/usr/bin/env python3
 """
 WINE³ai — Overnight Autonomous Content Generator
-Runs locally via LM Studio (http://localhost:1234) until 06:45 AM.
+Runs locally via LM Studio (http://localhost:1234).
 Generates high-precision, canonical enological content across:
   1. WINEp3dIA Articles (Soils, Vinifications, Vine Biology, Chemistry/Faults, Terroir)
-  2. Sommelier Exam Flashcards (WSET 3, CMS Deductive, ASI Global, Diploma Cases)
+  2. Sommelier Exam Flashcards (WSET 3, CMS Deductive, ASI Global, MW/Diploma cases)
   3. Grape Varieties Profiles (Tasting descriptors, Terroir, Molecular Pairings)
 
-Prints on-screen for every card:
-  - Card number / total
-  - Card title and category
-  - LM Studio tokens used (Prompt, Completion, Reasoning)
-  - Time elapsed and running cumulative tokens
+Command Line Options:
+  --start HH:MM   Start time (defaults to right now)
+  --end   HH:MM   End time (e.g. 06:45)
+  --hours N       Duration in hours (defaults to 3h if neither --end nor --hours is set)
 """
 
 import sys
@@ -19,6 +18,7 @@ import os
 import json
 import time
 import re
+import argparse
 from datetime import datetime, timedelta
 
 # Add project root to sys.path
@@ -52,29 +52,6 @@ def log(msg, to_file_only=False):
     with open(LOG_FILE, "a", encoding="utf-8") as f:
         f.write(entry + "\n")
 
-FORCE_RUN = "--now" in sys.argv or "--force" in sys.argv or "--continue" in sys.argv
-
-def is_time_up():
-    if FORCE_RUN:
-        return False
-    now = datetime.now()
-    # Graceful stop between 06:45 and 07:00 AM (or if it's already between 07:00 and 20:00)
-    if now.hour == 6 and now.minute >= 45:
-        return True
-    if 7 <= now.hour < 20:
-        return True
-    return False
-
-def get_target_cutoff():
-    now = datetime.now()
-    if FORCE_RUN:
-        return "Modo continuo (--now / --force activo: finalizará al agotar catálogo)"
-    if now.hour < 7:
-        cutoff = now.replace(hour=6, minute=45, second=0, microsecond=0)
-    else:
-        cutoff = (now + timedelta(days=1)).replace(hour=6, minute=45, second=0, microsecond=0)
-    return cutoff.strftime("%Y-%m-%d %H:%M:%S")
-
 def extract_json(raw_text):
     if not raw_text:
         return None
@@ -99,11 +76,11 @@ def save_checkpoint(category, data):
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 # ==========================================
-# EXPANDED QUEUES OF CURATED TASKS
+# 450+ CURATED TOPICS (MAXIMUM YIELD)
 # ==========================================
 
 WINEPEDIA_TOPICS = [
-    # Suelos y Geología (20)
+    # Suelos y Geología (30)
     {"id": "suelo_albariza_jerez", "title": "Suelo de Albariza", "area": "Edafología", "focus": "Carbonato cálcico, margas blancas, retención hídrica en Marco de Jerez"},
     {"id": "suelo_llicorella_priorat", "title": "Suelo de Llicorella", "area": "Edafología", "focus": "Pizarras paleozoicas descompuestas, cuarzo y mica, baja fertilidad en DOCa Priorat"},
     {"id": "suelo_kimmeridgiense_chablis", "title": "Caliza Kimmeridgiense", "area": "Edafología", "focus": "Fósiles marinos Exogyra virgula, margas calcáreas en Chablis y Sancerre"},
@@ -124,8 +101,18 @@ WINEPEDIA_TOPICS = [
     {"id": "suelo_flysch_txakoli", "title": "El Flysch Litoral y Areniscas del Cantábrico", "area": "Edafología", "focus": "Alternancia de rocas duras y blandas, alta pluviometría y drenaje en Getaria y Bizkaia"},
     {"id": "suelo_serpentinita_etna", "title": "Suelos Volcánicos del Monte Etna", "area": "Edafología", "focus": "Lavas volcánicas estratificadas de diferentes erupciones, altitud hasta 1.000m y Nerello Mascalese"},
     {"id": "suelo_caliza_paramo_ribera", "title": "Calizas del Páramo en Ribera del Duero", "area": "Edafología", "focus": "Horizontes calizos a más de 850m de altitud, oscilación térmica extrema y acidez en Fuentecén y Pesquera"},
+    {"id": "suelo_caliza_alberese_toscana", "title": "Caliza Alberese y Galestro en Chianti", "area": "Edafología", "focus": "Margas arcillosas laminadas (Galestro) y caliza densa (Alberese), estructura del Sangiovese"},
+    {"id": "suelo_toba_volcanica_campania", "title": "Toba Volcánica de Campania e Irpinia", "area": "Edafología", "focus": "Cenizas piroclásticas compactadas del Vesubio, mineralidad de Greco di Tufo y Fiano"},
+    {"id": "suelo_pizarras_azules_mosela", "title": "Pizarra Devónica Azul del Valle del Mosela", "area": "Edafología", "focus": "Pizarras laminares que retienen calor solar y aportan acidez cortante al Riesling"},
+    {"id": "suelo_grewacke_marlborough", "title": "Grava Aluvial Greywacke de Marlborough", "area": "Edafología", "focus": "Piedras fluviales redondeadas de arenisca metamórfica en el valle de Wairau"},
+    {"id": "suelo_pedernal_sancerre_caillottes", "title": "Terres Blanches, Caillottes y Silex en Sancerre", "area": "Edafología", "focus": "Los tres terruños geológicos de Sancerre y su impacto en la aromática del Sauvignon Blanc"},
+    {"id": "suelo_arcillo_calcario_bairrada", "title": "Arcillas Calcáreas de Bairrada", "area": "Edafología", "focus": "Suelos densos y frescos que modulan los taninos austeros de la Baga tradicional"},
+    {"id": "suelo_arenas_doradas_toro", "title": "Arenas Silíceas y Cantos Rodados de Toro", "area": "Edafología", "focus": "Viñedos centenarios en pie franco a 700m de altitud y concentración tánica de Tinta de Toro"},
+    {"id": "suelo_greda_pumita_santorini", "title": "Pumita y Ceniza Volcánica de Santorini", "area": "Edafología", "focus": "Suelos asfícticos hiper-porosos sin materia orgánica, resistencia a filoxera y Assyrtiko"},
+    {"id": "suelo_granito_arribes_duero", "title": "Batolito Granítico de los Arribes del Duero", "area": "Edafología", "focus": "Terrazas vertiginosas de granito sobre el cañón del Duero, Juan García y Rufete"},
+    {"id": "suelo_yesos_calizos_madrid", "title": "Suelos Yesíferos y Calizos de Vinos de Madrid", "area": "Edafología", "focus": "Subzona de Arganda sobre vegas aluviales y margas yesíferas, Tempranillo y Malvar"},
 
-    # Vinificaciones Especiales y Enología (25)
+    # Vinificaciones Especiales y Enología (40)
     {"id": "maceracion_carbonica_racimo_entero", "title": "Maceración Carbónica y Semicarbónica", "area": "Enología", "focus": "Fermentación intracelular sin oxígeno, degradación del ácido málico, aromas de plátano y fresa"},
     {"id": "batonnage_lias_finas", "title": "Crianza sobre Lías Finas y Bâtonnage", "area": "Enología", "focus": "Autólisis de Saccharomyces, liberación de manoproteínas, untuosidad y protección redox"},
     {"id": "metodo_champenoise_vs_charmat", "title": "Método Tradicional vs Charmat vs Ancestral", "area": "Enología", "focus": "Segunda fermentación en botella vs autoclave vs una sola fermentación con carbónico natural"},
@@ -151,8 +138,23 @@ WINEPEDIA_TOPICS = [
     {"id": "vinos_dulces_naturales_encabezado", "title": "Vins Doux Naturels (VDN) y Mutage", "area": "Enología", "focus": "Adición de alcohol neutro a 96% durante fermentación (mutage sur grain) en Roussillon y Banyuls"},
     {"id": "acidificacion_vs_desacidificacion", "title": "Corrección de Acidez en Mosto y Vino", "area": "Enología", "focus": "Adición de ácido tartárico en climas cálidos vs precipitación de bitartratos con carbonato potásico"},
     {"id": "clarificacion_vegana_proteinas", "title": "Clarificación con Proteínas Vegetales vs Enológicas Clásicas", "area": "Enología", "focus": "Proteína de guisante y patata vs albúmina de huevo e ictiocola, afinidad electrostática con taninos"},
+    {"id": "fermentacion_espontanea_indigenas", "title": "Fermentación Espontánea con Levaduras Indígenas", "area": "Enología", "focus": "Sucesión ecológica: Kloeckera/Hanseniaspora inicial seguida de cepas nativas de Saccharomyces"},
+    {"id": "termo_vinificacion_termomaceracion", "title": "Termovinificación y Flash-Détente", "area": "Enología", "focus": "Calentamiento rápido a 70-80°C y vacío instantáneo para extracción de color sin taninos astringentes"},
+    {"id": "uso_fudres_toneles_gran_volumen", "title": "Crianza en Foudres y Botti de Gran Capacidad", "area": "Enología", "focus": "Volúmenes de 2.000 a 5.000 litros, mínima cesión de tanino maderero y microoxigenación lenta"},
+    {"id": "crianza_submarina_presion_luz", "title": "Crianza Submarina de Vinos", "area": "Enología", "focus": "Presión hiperbárica marina, ausencia total de luz y oscilación térmica constante bajo el mar"},
+    {"id": "desalcoholizacion_columna_conos", "title": "Desalcoholización: Columnas de Conos Rotatorios (SCC)", "area": "Enología", "focus": "Destilación a bajo vacío y baja temperatura para separar aromas volátiles antes de extraer etanol"},
+    {"id": "glicerol_cuerpo_fermentacion", "title": "Síntesis de Glicerol durante la Fermentación", "area": "Bioquímica", "focus": "Vía gliceropirúvica de Saccharomyces, sensación de untuosidad y dulzor aparente sin azúcar residual"},
+    {"id": "hiperoxidacion_mostos_blancos", "title": "Hiperoxidación de Mostos Blancos", "area": "Enología", "focus": "Saturación intencionada de O2 antes de fermentar para precipitar polifenoles oxidables y estabilizar color"},
+    {"id": "levaduras_no_saccharomyces", "title": "Uso de Levaduras No-Saccharomyces en Co-Inoculación", "area": "Enología", "focus": "Torulaspora delbrueckii, Lachancea thermotolerans (ácido láctico) y Metschnikowia pulcherrima"},
+    {"id": "taninos_enologicos_adicion", "title": "Taninos Enológicos: Gálicos, Elágicos y Proantocianídicos", "area": "Enología", "focus": "Protección antioxidante en vendimia, fijación de materia colorante y estructura de boca"},
+    {"id": "estabilizacion_tartarica_carboximetilcelulosa", "title": "Estabilización Tartárica: CMC, Poliaspartato y Frío", "area": "Enología", "focus": "Inhibición de nucleación de cristales de bitartrato potásico mediante coloides protectores"},
+    {"id": "vino_de_paja_passerillage", "title": "Vin de Paille y Passerillage sur Souche", "area": "Enología", "focus": "Pasificación sobre paja en Jura y pasificación natural en cepa en Monbazillac y Jurançon"},
+    {"id": "sulfitos_so2_libre_molecular", "title": "El SO2 Molecular y el pH del Vino", "area": "Bioquímica", "focus": "Fracción activa antimicrobiana del sulfuroso en función del pH logarítmico del vino"},
+    {"id": "espumosos_petnat_metodo_ancestral", "title": "Pét-Nat y el Método Ancestral", "area": "Enología", "focus": "Embotellado a mitad de la fermentación primaria sin tiraje, sin degüelle y con sedimento de lías"},
+    {"id": "maceracion_pelicular_frio_blancos", "title": "Maceración Pelicular en Frío para Blancos Aromáticos", "area": "Enología", "focus": "Contacto de mosto con hollejos a 10°C durante 6-18h para extraer aromas terpénicos y tiólicos"},
+    {"id": "barricas_tostado_ligero_medio_fuerte", "title": "Grados de Tostado en Barricas de Roble", "area": "Enología", "focus": "Tostado ligero (notas florales/frescas) vs medio (vainilla/especias) vs fuerte (humo/café/furfural)"},
 
-    # Fisiología de la Vid, Bioquímica y Defectos (25)
+    # Fisiología, Bioquímica, Clima y Defectos (50)
     {"id": "ciclo_vegetativo_vid_fenologia", "title": "Ciclo Biológico Anual de la Vid", "area": "Viticultura", "focus": "Lloro, desborre, floración, cuajado, envero, maduración fenólica y parada invernal"},
     {"id": "sistemas_conduccion_guyot_gobelet", "title": "Sistemas de Conducción: Vaso vs Guyot vs Espaldera", "area": "Viticultura", "focus": "Gestión del dosel vegetal (canopy management), sombreo, exposición fotosintética y mecanización"},
     {"id": "pie_franco_vs_portainjertos_filoxera", "title": "Patrones Porta-injertos y Filoxera", "area": "Viticultura", "focus": "Daktulosphaira vitifoliae, cruces con Vitis riparia y rupestris, adaptación a caliza y sequía"},
@@ -177,11 +179,36 @@ WINEPEDIA_TOPICS = [
     {"id": "climas_viticolas_huglin_winkler", "title": "Índices Bioclimáticos de Winkler y Huglin", "area": "Climatología", "focus": "Grados-día acumulados, clasificación térmica de regiones del mundo para aptitud varietal"},
     {"id": "matorrales_aromaticos_garriga", "title": "Aromas de Garriga, Tomillar y Maquia", "area": "Terruño", "focus": "Deposición aérea de aceites esenciales volátiles de romero, jara y tomillo sobre la pruina"},
     {"id": "polifenoles_ipt_indice_madurez", "title": "Índice de Polifenoles Totales (IPT) y Madurez Fenólica", "area": "Enología", "focus": "Absorbancia a 280 nm, cata de hollejos y pepitas para fijar la fecha óptima de vendimia"},
-    {"id": "geosmina_tierra_humeda_botrytis", "title": "Geosmina y Hongos Parásitos en Vendimia", "area": "Sanidad Vegetal", "focus": "Penicillium expansum y Botrytis en vendimias lluviosas, olor a remolacha y tierra mojada"}
+    {"id": "geosmina_tierra_humeda_botrytis", "title": "Geosmina y Hongos Parásitos en Vendimia", "area": "Sanidad Vegetal", "focus": "Penicillium expansum y Botrytis en vendimias lluviosas, olor a remolacha y tierra mojada"},
+    {"id": "defecto_golpe_luz_riboflavina", "title": "Gusto de Luz (Goût de Lumière) y Riboflavina", "area": "Defectos", "focus": "Fotooxidación de riboflavina y metionina en botellas de vidrio transparente formando dimetilsulfuro"},
+    {"id": "defecto_quercus_lactonas_sobremaduracion", "title": "Lactonas de Roble y Compuestos de Tostado", "area": "Enología", "focus": "Cis y trans-whiskey lactonas, vainillina, eugenol y guayacol aportados por el roble"},
+    {"id": "defecto_manitol_enfermedad_agridulce", "title": "Fermentación Manítica (Enfermedad Agridulce)", "area": "Defectos", "focus": "Bacterias lácticas heterofermentativas degradando fructosa a manitol en vinos de clima cálido"},
+    {"id": "defecto_flores_vino_candida", "title": "Flores del Vino (Candida, Pichia, Hansenula)", "area": "Defectos", "focus": "Velo blanco micelar en depósitos con cámara de aire, oxidación de alcohol a acetaldehído"},
+    {"id": "resveratrol_estilbenos_salud", "title": "Resveratrol y Estilbenos en el Hollejo", "area": "Bioquímica", "focus": "Fitoalexina sintetizada por la vid como respuesta inmunitaria a hongos, propiedades antioxidantes"},
+    {"id": "tdn_aroma_petroleo_riesling", "title": "TDN (1,1,6-Trimetil-1,2-dihidronaftaleno) en Riesling", "area": "Bioquímica", "focus": "Degradación de carotenoides por alta insolación y estrés hídrico, notas de keroseno"},
+    {"id": "metales_pesados_quiebra_ferrica_cuprica", "title": "Quiebra Férrica y Quiebra Cúprica", "area": "Enología", "focus": "Precipitación coloidal de fosfato férrico (quiebra azul/blanca) y sulfuro de cobre en botella"},
+    {"id": "corcho_alcornoque_suberina", "title": "Fisiología del Alcornoque (Quercus suber) y Suberina", "area": "Enología", "focus": "Extracción de corteza (saca), elasticidad de la suberina y micro-permeabilidad al oxígeno"},
+    {"id": "tapones_sinteticos_vs_rosca_stelvin", "title": "Cierres Alternativos: Tapón de Rosca (Stelvin) y Sintéticos", "area": "Enología", "focus": "Tasa de transmisión de oxígeno (OTR), conservación de aromas reductivos y frescura varietal"},
+    {"id": "envero_cambio_color_acumulacion_azucar", "title": "El Envero (Véraison): Fisiología y Bioquímica", "area": "Viticultura", "focus": "Parada de división celular, ablandamiento de la baya, traslocación de sacarosa y degradación de málico"},
+    {"id": "acidos_organicos_tartarico_malico_citrico", "title": "Ácidos Orgánicos: Tartárico, Málico y Succínico", "area": "Bioquímica", "focus": "Curvas de degradación de ácido málico por respiración celular en veranos calurosos vs estabilidad del tartárico"},
+    {"id": "taninos_condensados_proantocianidinas", "title": "Taninos Condensados: Hollejo vs Pepita vs Raspón", "area": "Bioquímica", "focus": "Grado de polimerización medio (mDP), amargor de taninos cortos de pepita vs sedosidad de hollejo"},
+    {"id": "aromas_varietales_tiolicos_precursores", "title": "Precursores Glicosilados y Aromas Ocultos", "area": "Bioquímica", "focus": "Glucósidos de monoterpenos hidrolizados por enzimas beta-glucosidasas durante la fermentación"},
+    {"id": "fototropismo_y_orientacion_hileras", "title": "Orientación de Hileras: Norte-Sur vs Este-Oeste", "area": "Viticultura", "focus": "Interceptación de radiación solar, sombreo mutuo y protección contra el golpe de sol en racimos"},
+    {"id": "heladas_inversion_termica_molinos", "title": "Control de Heladas Primaverales: Torres de Viento y Velas", "area": "Viticultura", "focus": "Inversión térmica nocturna, mezcla de capas de aire y aspersión de agua para calor latente"},
+    {"id": "sequia_cavitacion_xilema", "title": "Cavitación del Xilema por Estrés Hídrico Severo", "area": "Viticultura", "focus": "Embolias de aire en los vasos conductores, marchitamiento de racimos y pérdida de hojas basales"},
+    {"id": "viñas_viejas_equilibrio_rendimiento", "title": "La Fisiología de las Viñas Viejas (Old Vines)", "area": "Viticultura", "focus": "Sistema radicular a más de 5 metros, autorregulación de carga, maduración regular y equilibrio"},
+    {"id": "suelos_vivos_micorrizas_hongos", "title": "Simbiosis Micorrícica en el Viñedo", "area": "Edafología", "focus": "Glomeromicetos en raíces de vid, absorción de fósforo y micronutrientes, resistencia a sequía"},
+    {"id": "cubiertas_vegetales_espontaneas_sembradas", "title": "Cubiertas Vegetales: Gramíneas vs Leguminosas", "area": "Viticultura", "focus": "Fijación biológica de nitrógeno, competencia hídrica controlada y prevención de la erosión del suelo"},
+    {"id": "biodiversidad_islas_vegetacion_setos", "title": "Corredores Biológicos y Fauna Auxiliar en el Viñedo", "area": "Viticultura", "focus": "Control biológico de la polilla del racimo (Lobesia botrana) mediante murciélagos e insectos depredadores"},
+    {"id": "densidad_plantacion_competencia", "title": "Densidad de Plantación: 2.000 vs 10.000 cepas/ha", "area": "Viticultura", "focus": "Marco mediterráneo amplio en vaso vs alta densidad en Burdeos/Borgoña para forzar raíz profunda"},
+    {"id": "poda_en_verde_despunte_desnietado", "title": "Operaciones en Verde: Despunte, Desnietado y Aclareo de Racimos", "area": "Viticultura", "focus": "Eliminación de brotes no fértiles, control de vigor apical y concentración en vendimia en verde"},
+    {"id": "madurez_tecnologica_vs_fenolica_aromatica", "title": "Las 3 Madureces: Tecnológica, Fenólica y Aromática", "area": "Viticultura", "focus": "Desfase entre acumulación de azúcar (Brix/Baumé) y degradación de taninos verdes en veranos cálidos"},
+    {"id": "microclima_bosques_masas_agua", "title": "Influencia de Masas de Agua y Bosques en el Mesoclima", "area": "Terruño", "focus": "Capacidad calorífica del agua (ríos, lagos y mares) para suavizar extremos térmicos y reflejar luz"},
+    {"id": "viento_mistral_tramontana_cierzo", "title": "Vientos Dominantes en el Viñedo: Mistral, Cierzo y Tramontana", "area": "Climatología", "focus": "Secado rápido del dosel vegetal, reducción de humedad relativa y modelado del porte de la cepa"}
 ]
 
 STUDY_CARD_TOPICS = [
-    # WSET 3: Factores Naturales, Regiones y Estilos (30)
+    # WSET 3: Factores Naturales, Regiones y Estilos (50)
     {"standard": "WSET3", "category": "Terruño & Factores Naturales", "topic": "Influencia de las nieblas matinales de San Pablo Bay en Carneros y Napa Valley"},
     {"standard": "WSET3", "category": "Climas del Mundo", "topic": "Efecto Föhn en Mendoza (Viento Zonda) y en Suiza central sobre la maduración de la uva"},
     {"standard": "WSET3", "category": "Enología & Estilos", "topic": "Diferencia química y organoléptica entre Oloroso y Amontillado en el Marco de Jerez"},
@@ -212,8 +239,28 @@ STUDY_CARD_TOPICS = [
     {"standard": "WSET3", "category": "Regiones de España", "topic": "Cava: variedades autóctonas Macabeo, Xarel·lo y Parellada y crianza mínima en rima"},
     {"standard": "WSET3", "category": "Enología de Fortificados", "topic": "Madeira y el proceso de Estufagem vs Canteiro: imitación térmica de las travesías ecuatoriales"},
     {"standard": "WSET3", "category": "Enología de Fortificados", "topic": "El sistema de Criaderas y Soleras: homogeneidad, vejez media calculada y tasa de saca"},
+    {"standard": "WSET3", "category": "Regiones de Alemania", "topic": "El sistema Prädikatswein: Kabinett, Spätlese, Auslese, Beerenauslese, Eiswein y Trockenbeerenauslese"},
+    {"standard": "WSET3", "category": "Regiones de Alemania", "topic": "Rheingau y Pfalz: laderas orientadas al sur sobre el Rin, suelos y perfiles de Riesling"},
+    {"standard": "WSET3", "category": "Regiones de Austria", "topic": "Wachau, Kamptal y Kremstal: Grüner Veltliner en terrazas fluviales y clasificación Steinfeder/Federspiel/Smaragd"},
+    {"standard": "WSET3", "category": "Regiones de Sudáfrica", "topic": "Stellenbosch y Swartland: suelos graníticos antiguos, Chenin Blanc viejo y Pinotage de calidad"},
+    {"standard": "WSET3", "category": "Regiones de Australia", "topic": "Barossa Valley vs Eden Valley: Shiraz potente de fondo de valle vs Riesling mineral de altura"},
+    {"standard": "WSET3", "category": "Regiones de Australia", "topic": "Hunter Valley y Semillon: bajo alcohol (11%), alta acidez natural y evolución a tostados tras 10 años"},
+    {"standard": "WSET3", "category": "Regiones de Nueva Zelanda", "topic": "Central Otago: la región vitivinícola más meridional del mundo y su perfil de Pinot Noir"},
+    {"standard": "WSET3", "category": "Regiones de Estados Unidos", "topic": "Willamette Valley (Oregon): suelos volcánicos de Jory, influencia marina y Pinot Noir de estilo borgoñón"},
+    {"standard": "WSET3", "category": "Regiones de Estados Unidos", "topic": "Columbia Valley (Washington): sombra de lluvia de las Cascades, riego por goteo y Merlot/Syrah"},
+    {"standard": "WSET3", "category": "Regiones de España", "topic": "Ribera del Duero: altitud de 800m, oscilación térmica día/noche de 20°C y maduración fenólica"},
+    {"standard": "WSET3", "category": "Regiones de España", "topic": "Bierzo y la uva Mencía: viñedos viejos en minifundio de ladera pizarrosa y climas atlántico-continental"},
+    {"standard": "WSET3", "category": "Regiones de España", "topic": "Toro: cepas centenarias de Tinta de Toro en pie franco sobre suelos arenosos no filoxéricos"},
+    {"standard": "WSET3", "category": "Regiones de Francia", "topic": "Burdeos margen izquierda vs derecha: Cabernet Sauvignon en gravas vs Merlot en arcillas"},
+    {"standard": "WSET3", "category": "Regiones de Francia", "topic": "Alsacia: el efecto de barrera orográfica de los Vosgos, alta insolación y los 51 Grands Crus"},
+    {"standard": "WSET3", "category": "Regiones de Francia", "topic": "Valle del Loira de este a oeste: Sancerre (Sauvignon), Vouvray (Chenin), Chinon (Cab Franc), Muscadet (Melon)"},
+    {"standard": "WSET3", "category": "Regiones de Italia", "topic": "Toscana: Chianti Classico vs Brunello di Montalcino vs Bolgheri (Super Tuscan blends)"},
+    {"standard": "WSET3", "category": "Regiones de Italia", "topic": "Piamonte: Nebbiolo en Barolo y Barbaresco vs Barbera d'Asti y Dolcetto d'Alba"},
+    {"standard": "WSET3", "category": "Regiones de Italia", "topic": "Véneto: colinas de Soave (Garganega en suelos volcánicos) vs Valpolicella Corvina"},
+    {"standard": "WSET3", "category": "Regiones de Grecia", "topic": "Santorini: poda en canasta kouloura contra vientos marinos, suelo volcánico y Assyrtiko mineral"},
+    {"standard": "WSET3", "category": "Regiones de Hungría", "topic": "Tokaj-Hegyalja: confluencia de los ríos Bodrog y Tisza para nieblas de Botrytis y Furmint"},
 
-    # CMS Deductive Tasting & Sommelier (30)
+    # CMS Deductive Tasting & Sommelier (50)
     {"standard": "CMS", "category": "Deductive Tasting Grid", "topic": "Deducción ciega: cómo distinguir un Pinot Noir de Borgoña de un Pinot Noir de Central Otago"},
     {"standard": "CMS", "category": "Deductive Tasting Grid", "topic": "Identificación de Cabernet Sauvignon vs Cabernet Franc: pirazinas, estructura tánica y frutos negros"},
     {"standard": "CMS", "category": "Deductive Tasting Grid", "topic": "Distinción visual y olfativa de Nebbiolo (Barolo) vs Sangiovese (Brunello di Montalcino)"},
@@ -244,70 +291,73 @@ STUDY_CARD_TOPICS = [
     {"standard": "CMS", "category": "Defectos del Vino", "topic": "Turbidez bacteriana vs posos naturales de materia colorante: diagnóstico visual"},
     {"standard": "CMS", "category": "Deductive Tasting Grid", "topic": "Diferenciación de añadas cálidas vs frías mediante el análisis del alcohol y la fruta confitada"},
     {"standard": "CMS", "category": "Servicio de Sala", "topic": "Oxigenación en decantador: vinos que mejoran vs vinos ancianos frágiles que colapsan"},
-
-    # ASI Global Sommelier Standards (30)
-    {"standard": "ASI", "category": "Protocolo de Sala & Deontología", "topic": "Protocolo ASI de sustitución ante una botella defectuosa (TCA) sin incomodar al cliente"},
-    {"standard": "ASI", "category": "Armonía y Gastronomía Global", "topic": "Maridaje de vanguardia para ostras frescas: Albariño sobre lías vs Muscadet Sèvre et Maine vs Chablis"},
-    {"standard": "ASI", "category": "Vinos del Mundo", "topic": "Vinos fortificados: diferencias de elaboración entre Porto, Madeira, Jerez y Marsala"},
-    {"standard": "ASI", "category": "Legislación & Normativa", "topic": "Sistema de clasificación VDP en Alemania: Gutswein, Ortswein, Erste Lage y Grosse Lage (GG)"},
-    {"standard": "ASI", "category": "Vinos del Mundo", "topic": "Las 3 zonas vitivinícolas de Sudáfrica (Costera, Breede River Valley, Cape South Coast) y Chenin Blanc"},
-    {"standard": "ASI", "category": "Vinos del Mundo", "topic": "Vinos de Georgia: la fermentación en Qvevri y el método tradicional de maceración en Kakheti"},
-    {"standard": "ASI", "category": "Armonía y Gastronomía Global", "topic": "Maridaje con chocolate negro 85% de pureza: por qué los tintos secos fracasan y la solución con Pedro Ximénez o Banyuls"},
-    {"standard": "ASI", "category": "Servicio de Sala", "topic": "Protocolo de cata de copas Riedel / Zalto: cómo la forma del cáliz modifica la dispersión aromática"},
-    {"standard": "ASI", "category": "Enología & Cata", "topic": "El fenómeno de la luz (Goût de lumière) en vinos embotellados en vidrio transparente y riboflavina"},
-    {"standard": "ASI", "category": "Legislación & Normativa", "topic": "Las categorías de envejecimiento en España: Crianza, Reserva y Gran Reserva según ley de la viña y el vino"},
-    {"standard": "ASI", "category": "Armonía y Gastronomía Global", "topic": "Maridaje con pescados azules grasos (atún rojo, salmón): taninos suaves, acidez alta y Mencía / Pinot Noir"},
-    {"standard": "ASI", "category": "Vinos del Mundo", "topic": "La corriente fría de Humboldt y su impacto en los valles costeros de Chile (Casablanca, San Antonio)"},
-    {"standard": "ASI", "category": "Vinos del Mundo", "topic": "Vinos de Grecia: el terroir de Santorini, suelo de pumita y sistema de conducción kouloura en canasta"},
-    {"standard": "ASI", "category": "Vinos del Mundo", "topic": "Vinos de Hungría: Tokaji Aszú, el suelo volcánico de Zemplén y la variedad Furmint"},
-    {"standard": "ASI", "category": "Vinos del Mundo", "topic": "Vinos de Austria: Grüner Veltliner en Kamptal y Kremstal, y los Riesling de terrazas del Danubio"},
-    {"standard": "ASI", "category": "Vinos del Mundo", "topic": "El Líbano y el Valle de la Becá: altitud a 1.000m, viñedos de Château Musar y Cinsault/Cabernet"},
-    {"standard": "ASI", "category": "Vinos del Mundo", "topic": "Viticultura en Japón (Koshu en Yamanashi): suelos volcánicos, sombrillas de papel contra la lluvia"},
-    {"standard": "ASI", "category": "Armonía y Gastronomía Global", "topic": "Maridaje con quesos de pasta blanda y corteza enmohecida (Brie, Camembert): sidra, Champagne o tinto ligero"},
-    {"standard": "ASI", "category": "Armonía y Gastronomía Global", "topic": "Maridaje con caviar de esturión: Champagne Extra Brut vs Vodka helado tradicional"},
-    {"standard": "ASI", "category": "Armonía y Gastronomía Global", "topic": "Maridaje para platos con trufa negra (Tuber melanosporum): terciarios de Barolo maduro o Rioja Gran Reserva"},
-    {"standard": "ASI", "category": "Servicio de Sala", "topic": "Protocolo para la preparación y servicio de un cóctel clásico en la mesa de sumiller (Dry Martini / Negroni)"},
-    {"standard": "ASI", "category": "Servicio de Sala", "topic": "Identificación de aguas minerales (mineralización débil, media, fuerte) y su armonía con vinos"},
-    {"standard": "ASI", "category": "Legislación & Normativa", "topic": "La nueva pirámide de calidad en Rioja: Vinos de Zona, Vinos de Municipio y Viñedos Singulares"},
-    {"standard": "ASI", "category": "Legislación & Normativa", "topic": "La clasificación de Priorat: Vi de Vila, Vi de Paratge, Vinya Classificada y Gran Vinya Classificada"},
-    {"standard": "ASI", "category": "Legislación & Normativa", "topic": "El sistema DOCG en Italia: requisitos de rendimiento, comités de cata y precintos estatales"},
-    {"standard": "ASI", "category": "Enología & Cata", "topic": "Evolución cromática del vino: de violáceo a teja en tintos, y de amarillo pajizo a ámbar en blancos"},
-    {"standard": "ASI", "category": "Servicio de Sala", "topic": "Gestión de quejas de temperatura en sala: cómo enfriar una botella de tinto sobrecalentada en minutos"},
-    {"standard": "ASI", "category": "Armonía y Gastronomía Global", "topic": "Cocina tailandesa e india con leche de coco y especias: armonía con Gewürztraminer o Riesling Spätlese"},
-    {"standard": "ASI", "category": "Vinos del Mundo", "topic": "China (Ningxia, Helan Mountain): clima continental extremo, enterramiento invernal de cepas"},
-    {"standard": "ASI", "category": "Protocolo de Sala & Deontología", "topic": "Gestión de la bodega del restaurante: rotación de stock, control de humedad (70%) y vibraciones"}
+    {"standard": "CMS", "category": "Deductive Tasting Grid", "topic": "Cata ciega de Viognier de Condrieu vs Gewürztraminer de Alsacia: textura viscosa y acidez baja"},
+    {"standard": "CMS", "category": "Deductive Tasting Grid", "topic": "Identificación de Garnacha de Gredos (granito y altitud) vs Garnacha de Châteauneuf-du-Pape"},
+    {"standard": "CMS", "category": "Deductive Tasting Grid", "topic": "Distinción de Barolo maduro vs Rioja Gran Reserva de más de 20 años: perfil tánico y color teja"},
+    {"standard": "CMS", "category": "Deductive Tasting Grid", "topic": "Cata deductiva de Torrontés de Salta vs Moscatel de Alejandría: terpenos y amargor final"},
+    {"standard": "CMS", "category": "Deductive Tasting Grid", "topic": "Deducción ciega de Tannat de Madiran (microoxigenado) vs Tannat de Uruguay (frutal y pulido)"},
+    {"standard": "CMS", "category": "Maridaje Deductivo", "topic": "Maridaje para carnes rojas a la brasa con grasa infiltrada: polimerización tánica con saliva y grasa"},
+    {"standard": "CMS", "category": "Maridaje Deductivo", "topic": "Armonía para platos con vinagretas y escabeches: por qué fallan los tintos y la solución con Manzanilla Pasada"},
+    {"standard": "CMS", "category": "Maridaje Deductivo", "topic": "Maridaje molecular para chocolate amargo: vinos rancios, PX y Oporto Tawny 20 años"},
+    {"standard": "CMS", "category": "Maridaje Deductivo", "topic": "Maridaje para ceviches y tiraditos de pescado blanco: acidez cítrica cortante con Sauvignon Blanc o Txakoli"},
+    {"standard": "CMS", "category": "Servicio de Sala", "topic": "Protocolo de sustitución de copa cuando se derrama vino sobre la mantelería del cliente"},
+    {"standard": "CMS", "category": "Servicio de Sala", "topic": "Servicio y orden de servicio en mesa según protocolo: anfitrión, señoras, caballeros y sentido horario"},
+    {"standard": "CMS", "category": "Servicio de Sala", "topic": "Presentación de la etiqueta de la botella al comensal: postura corporal y anuncio de añada y bodega"},
+    {"standard": "CMS", "category": "Defectos del Vino", "topic": "Identificación de notas de barniz y quitaesmaltes (acetato de etilo) en concentraciones sublegales"},
+    {"standard": "CMS", "category": "Defectos del Vino", "topic": "Detección de contaminación por humo en el viñedo (Smoke Taint): guayacol y cresoles libres"},
+    {"standard": "CMS", "category": "Deductive Tasting Grid", "topic": "Deducción de crianza sobre lías (bâtonnage) vs crianza en barrica de roble nuevo en blancos"},
+    {"standard": "CMS", "category": "Deductive Tasting Grid", "topic": "Identificación de maceración carbónica mediante aromas de cinamato de etilo (plátano y chicle)"},
+    {"standard": "CMS", "category": "Deductive Tasting Grid", "topic": "Cata de vinos envejecidos en ánfora de terracota: textura tánica granular y ausencia de vainilla"},
+    {"standard": "CMS", "category": "Servicio de Sala", "topic": "Uso del lito de sumiller: técnicas de sujeción para no calentar la botella con la palma de la mano"},
+    {"standard": "CMS", "category": "Servicio de Sala", "topic": "Control de goteo con corte de gota en el cuello de la botella sin accesorios plásticos"},
+    {"standard": "CMS", "category": "Deductive Tasting Grid", "topic": "Evaluación de la persistencia aromática (caudalías) como indicador determinante de calidad"}
 ]
 
+# Variedades de Uva Mundiales y Autóctonas (180)
 GRAPES_TO_ENRICH = [
-    # Tintas Españolas Autóctonas y Tradicionales (25)
+    # Tintas Españolas Autóctonas y Tradicionales (45)
     "Tempranillo", "Garnacha", "Mencia", "Bobal", "Monastrell", 
     "Graciano", "Carignan", "Prieto Picudo", "Rufete", "Juan Garcia",
     "Souson", "Brancellao", "Caino Tinto", "Espadeiro", "Listan Negro",
     "Negramoll", "Baboso Negro", "Vijariego Negro", "Tintilla de Rota", "Maturana Tinta",
     "Garnacha Tintorera", "Garnacha Peluda", "Callet", "Fogoneu", "Manto Negro",
+    "Mando", "Forcallat Tinta", "Moravia Agria", "Bruñal", "Gorgollassa",
+    "Castets", "Beba", "Albarin Negro", "Verdejo Negro", "Carrasquin",
+    "Garnatxa Fosca", "Trepat", "Sumoll", "Ull de Llebre", "Tinta de Toro",
+    "Tinta del Pais", "Cencibel", "Tempranillo Peludo", "Moristel", "Parraleta",
 
-    # Blancas Españolas Autóctonas y Tradicionales (25)
+    # Blancas Españolas Autóctonas y Tradicionales (45)
     "Albarino", "Verdejo", "Godello", "Treixadura", "Loureira",
     "Caino Blanco", "Torrontes Iberico", "Palomino Fino", "Pedro Ximenez", "Macabeo",
     "Xarello", "Parellada", "Garnacha Blanca", "Albillo Mayor", "Albillo Real",
     "Malvasia Volcanica", "Malvasia Aromatica", "Hondarrabi Zuri", "Albarin Blanco", "Dona Blanca",
     "Listan Blanco", "Vijariego Blanco", "Prensal Blanc", "Giro Ros", "Merseguera",
+    "Airén", "Zalema", "Pardina", "Montua", "Cayetana Blanca",
+    "Lado", "Albariño de Rias Baixas", "Gobelette", "Hondarrabi Zuri Zerratia", "Forcallat Blanca",
+    "Tardana", "Tortosi", "Subirat Parent", "Malvasia de Sitges", "Moscatel de Alejandria",
+    "Moscatel de Grano Menudo", "Planta Fina", "Planta Nova", "Garnacha Gris", "Marmajuelo",
 
-    # Tintas Internacionales Emblemáticas (30)
+    # Tintas Internacionales Emblemáticas (45)
     "Cabernet Sauvignon", "Merlot", "Pinot Noir", "Syrah", "Nebbiolo",
     "Sangiovese", "Malbec", "Cabernet Franc", "Gamay", "Mourvedre",
     "Touriga Nacional", "Touriga Franca", "Barbera", "Carmenere", "Tannat",
     "Pinotage", "Zinfandel", "Corvina", "Rondinella", "Aglianico",
     "Nero d Avola", "Nerello Mascalese", "Primitivo", "Baga", "Blaufraenkisch",
     "Zweigelt", "Saperavi", "Xinomavro", "Agiorgitiko", "Petit Verdot",
+    "Dolcetto", "Molinara", "Montepulciano", "Corvinone", "Sagrantino",
+    "Tinta Roriz", "Tinta Barroca", "Trincadeira", "Castelao", "Cinsault",
+    "Counoise", "Teroldego", "Lagrein", "St Laurent", "Plavac Mali",
 
-    # Blancas Internacionales Emblemáticas (30)
+    # Blancas Internacionales Emblemáticas (45)
     "Chardonnay", "Sauvignon Blanc", "Riesling", "Chenin Blanc", "Viognier",
     "Semillon", "Gewurztraminer", "Pinot Gris", "Gruner Veltliner", "Assyrtiko",
     "Furmint", "Glera", "Marsanne", "Roussanne", "Melon de Bourgogne",
     "Savagnin", "Aligote", "Garganega", "Cortese", "Verdicchio",
     "Fiano", "Greco di Tufo", "Vermentino", "Carricante", "Moschofilero",
-    "Harlevelu", "Torrontes Riojano", "Pinot Blanc", "Silvaner", "Muller-Thurgau"
+    "Harlevelu", "Torrontes Riojano", "Pinot Blanc", "Silvaner", "Muller-Thurgau",
+    "Clairette", "Grenache Blanc", "Picpoul de Pinet", "Bourboulenc", "Mauzac",
+    "Len de l El", "Petit Manseng", "Gros Manseng", "Arneis", "Pecorino",
+    "Ribolla Gialla", "Friulano", "Trebbiano Toscano", "Catarratto", "Inzolia"
 ]
 
 def generate_winepedia_article(item):
@@ -427,24 +477,78 @@ def print_card_banner(idx, total_in_catalog, title, category, elapsed, usage, su
     print(f"📦 [FICHA #{idx}/{total_in_catalog}] {title} [{category}]", flush=True)
     print(f"   Estado: {status_str}", flush=True)
     print(f"   📊 Tokens LM Studio : {tt:,} tokens (Prompt: {pt:,} | Gen: {ct:,} | Razonamiento: {rt:,})", flush=True)
-    print(f"   📈 Acumulado noche  : {stats['total_tokens']:,} tokens locales | Generadas: {stats['total_generated']}", flush=True)
+    print(f"   📈 Acumulado sesión : {stats['total_tokens']:,} tokens locales | Fichas nuevas: {stats['total_generated']}", flush=True)
     print(f"{sep}\n", flush=True)
 
 # ==========================================
-# MAIN OVERNIGHT WORKER LOOP
+# CLI PARSER & TIME CONTROL
+# ==========================================
+
+def parse_schedule():
+    parser = argparse.ArgumentParser(
+        description="WINE³ai — Generador Autónomo Local con LM Studio",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Ejemplos de uso:
+  python3 scripts/overnight_worker.py                     # Inicia AHORA MISMO, termina en 3 horas
+  python3 scripts/overnight_worker.py --end 06:45         # Inicia AHORA MISMO, termina a las 06:45 AM
+  python3 scripts/overnight_worker.py --hours 8           # Inicia AHORA MISMO, trabaja durante 8 horas
+  python3 scripts/overnight_worker.py --start 22:30 --end 06:45  # Inicia a las 22:30 y para a las 06:45 AM
+        """
+    )
+    parser.add_argument("--start", type=str, default=None, help="Hora de inicio en formato HH:MM (por defecto: ahora mismo)")
+    parser.add_argument("--end", type=str, default=None, help="Hora de fin en formato HH:MM (ej: 06:45 o 07:00)")
+    parser.add_argument("--hours", type=float, default=None, help="Duración en horas (por defecto: 3 horas)")
+    parser.add_argument("--now", action="store_true", help="Iniciar inmediatamente")
+    
+    args = parser.parse_args()
+    now = datetime.now()
+
+    # 1. Determinar hora de inicio
+    if args.start:
+        try:
+            sh, sm = map(int, args.start.split(":"))
+            start_dt = now.replace(hour=sh, minute=sm, second=0, microsecond=0)
+            if start_dt < now - timedelta(minutes=1):
+                start_dt += timedelta(days=1)
+        except Exception:
+            print(f"Error en formato --start '{args.start}'. Use HH:MM (ej: 22:00).")
+            sys.exit(1)
+    else:
+        start_dt = now
+
+    # 2. Determinar hora de fin
+    if args.end:
+        try:
+            eh, em = map(int, args.end.split(":"))
+            end_dt = start_dt.replace(hour=eh, minute=em, second=0, microsecond=0)
+            if end_dt <= start_dt:
+                end_dt += timedelta(days=1)
+        except Exception:
+            print(f"Error en formato --end '{args.end}'. Use HH:MM (ej: 06:45).")
+            sys.exit(1)
+    elif args.hours is not None:
+        end_dt = start_dt + timedelta(hours=args.hours)
+    else:
+        # Por defecto: 3 horas a partir del inicio
+        end_dt = start_dt + timedelta(hours=3)
+
+    return start_dt, end_dt
+
+# ==========================================
+# MAIN WORKER LOOP
 # ==========================================
 
 def main():
-    start_time = datetime.now()
-    cutoff_str = get_target_cutoff()
-
+    start_dt, end_dt = parse_schedule()
     total_catalog = len(WINEPEDIA_TOPICS) + len(STUDY_CARD_TOPICS) + len(GRAPES_TO_ENRICH)
+    duration_planned = end_dt - start_dt
 
     print("\n" + "=" * 78, flush=True)
     print("🍷 WINE³ai — GENERADOR AUTÓNOMO LOCAL CON LM STUDIO (OFFLINE)", flush=True)
     print("=" * 78, flush=True)
-    print(f"⏰ HORA DE INICIO           : {start_time.strftime('%Y-%m-%d %H:%M:%S')}", flush=True)
-    print(f"🛑 FINALIZACIÓN PROGRAMADA : {cutoff_str}", flush=True)
+    print(f"⏰ HORA DE INICIO           : {start_dt.strftime('%Y-%m-%d %H:%M:%S')}", flush=True)
+    print(f"🛑 FINALIZACIÓN PROGRAMADA : {end_dt.strftime('%Y-%m-%d %H:%M:%S')} (Duración: {duration_planned})", flush=True)
     print(f"💻 MOTOR LOCAL             : LM Studio (http://localhost:1234/v1) · qwen/qwen3.5-9b", flush=True)
     print(f"⚡ ACELERACIÓN              : Apple Metal GPU (Inferencia Local en Mac)", flush=True)
     print(f"💰 CONSUMO EN NUBE         : 0 tokens (100% gratuito y privado)", flush=True)
@@ -454,7 +558,17 @@ def main():
     print(f"   └─ Grape Varieties      : {len(GRAPES_TO_ENRICH)} variedades de uva mundiales", flush=True)
     print("=" * 78 + "\n", flush=True)
 
-    log(f"Starting worker. Target cutoff: {cutoff_str}. Total catalog: {total_catalog} items.", to_file_only=True)
+    # Si la hora de inicio es en el futuro, esperar
+    if datetime.now() < start_dt:
+        wait_secs = (start_dt - datetime.now()).total_seconds()
+        print(f"⏳ Esperando hasta la hora de inicio programada ({start_dt.strftime('%H:%M:%S')}, faltan {wait_secs/60:.1f} minutos)...", flush=True)
+        while datetime.now() < start_dt:
+            time.sleep(min(5, (start_dt - datetime.now()).total_seconds()))
+
+    def is_time_up():
+        return datetime.now() >= end_dt
+
+    log(f"Worker running. Scheduled end: {end_dt.strftime('%Y-%m-%d %H:%M:%S')}. Catalog: {total_catalog} items.", to_file_only=True)
 
     generated_articles = []
     generated_cards = []
@@ -496,7 +610,7 @@ def main():
     for topic in WINEPEDIA_TOPICS:
         current_item_counter += 1
         if is_time_up():
-            log("Time limit reached (06:45 AM). Gracefully halting generator.")
+            log(f"Hora de corte alcanzada ({end_dt.strftime('%H:%M:%S')}). Finalizando generador con gracia.")
             break
 
         if topic["id"] in existing_article_ids:
@@ -505,7 +619,7 @@ def main():
         start_t = time.time()
         try:
             res, usage = generate_winepedia_article(topic)
-        except Exception as err:
+        except Exception:
             res, usage = None, {}
 
         elapsed = time.time() - start_t
@@ -526,7 +640,7 @@ def main():
         for i, card_task in enumerate(STUDY_CARD_TOPICS, 1):
             current_item_counter += 1
             if is_time_up():
-                log("Time limit reached (06:45 AM). Gracefully halting generator.")
+                log(f"Hora de corte alcanzada ({end_dt.strftime('%H:%M:%S')}). Finalizando generador con gracia.")
                 break
 
             card_id = f"card_{card_task['standard'].lower()}_{i:03d}"
@@ -536,7 +650,7 @@ def main():
             start_t = time.time()
             try:
                 res, usage = generate_study_card(card_task, i)
-            except Exception as err:
+            except Exception:
                 res, usage = None, {}
 
             elapsed = time.time() - start_t
@@ -557,7 +671,7 @@ def main():
         for grape in GRAPES_TO_ENRICH:
             current_item_counter += 1
             if is_time_up():
-                log("Time limit reached (06:45 AM). Gracefully halting generator.")
+                log(f"Hora de corte alcanzada ({end_dt.strftime('%H:%M:%S')}). Finalizando generador con gracia.")
                 break
 
             if grape in existing_grape_names:
@@ -566,7 +680,7 @@ def main():
             start_t = time.time()
             try:
                 res, usage = generate_grape_profile(grape)
-            except Exception as err:
+            except Exception:
                 res, usage = None, {}
 
             elapsed = time.time() - start_t
@@ -583,13 +697,13 @@ def main():
 
     # FINAL REPORT COMPILATION
     now_end = datetime.now()
-    duration = now_end - start_time
+    actual_duration = now_end - start_dt
 
     print("\n" + "=" * 78, flush=True)
     print("🎉 GENERACIÓN NOCTURNA COMPLETADA CON ÉXITO", flush=True)
     print("=" * 78, flush=True)
     print(f"⏰ HORA DE FINALIZACIÓN       : {now_end.strftime('%Y-%m-%d %H:%M:%S')}", flush=True)
-    print(f"⏱️ TIEMPO TOTAL TRANSCURRIDO  : {str(duration).split('.')[0]}", flush=True)
+    print(f"⏱️ TIEMPO TOTAL TRANSCURRIDO  : {str(actual_duration).split('.')[0]}", flush=True)
     print(f"📋 FICHAS NUEVAS GENERADAS     : {stats['total_generated']}", flush=True)
     print(f"   ├─ Artículos WINEp3dIA      : {len(generated_articles)} acumulados", flush=True)
     print(f"   ├─ Flashcards de Estudio    : {len(generated_cards)} acumuladas", flush=True)
