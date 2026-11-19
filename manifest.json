@@ -8,8 +8,8 @@
   "scope": "./",
   "display": "standalone",
   "orientation": "any",
-  "background_color": "#0a0c14",
-  "theme_color": "#881337",
+  "background_color": "#262E36",
+  "theme_color": "#5E1C37",
   "lang": "es",
   "categories": ["education", "reference", "food", "lifestyle"],
   "icons": [

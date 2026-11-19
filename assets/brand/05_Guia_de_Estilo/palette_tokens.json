@@ -1,0 +1,25 @@
+{
+  "WINE3ai": {
+    "burgundy": "#5E1C37",
+    "gold": "#B08D4B",
+    "sage": "#819B7F"
+  },
+  "TRIsat": {
+    "teal": "#17576B",
+    "gold": "#BA9857",
+    "sage": "#819B7E"
+  },
+  "ST3LLA": {
+    "slate_blue": "#738AAD",
+    "gold": "#B9995D",
+    "sage": "#809A7F"
+  },
+  "monochrome": {
+    "white": "#FFFFFF",
+    "black": "#000000"
+  },
+  "surfaces": {
+    "dark_slate": "#262E36",
+    "light_surface": "#F6F8FA"
+  }
+}
