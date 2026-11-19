@@ -163,10 +163,10 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
 
-    if (cardCategory) cardCategory.textContent = c.category;
-    if (cardQuestion) cardQuestion.textContent = c.question_es;
-    if (cardAnswer) cardAnswer.textContent = c.answer_es;
-    if (cardSolution) cardSolution.textContent = c.solution_es;
+    if (cardCategory) cardCategory.textContent = (isEnDoc && c.category_en) ? c.category_en : (c.category || c.category_es || '');
+    if (cardQuestion) cardQuestion.textContent = (isEnDoc && c.question_en) ? c.question_en : c.question_es;
+    if (cardAnswer) cardAnswer.textContent = (isEnDoc && c.answer_en) ? c.answer_en : c.answer_es;
+    if (cardSolution) cardSolution.textContent = (isEnDoc && c.solution_en) ? c.solution_en : c.solution_es;
     if (cardCounter) {
       cardCounter.textContent = isEnDoc 
         ? ("Card " + (currentIndex + 1) + " of " + filteredCards.length)

@@ -1,0 +1,688 @@
+[
+  {
+    "grape": "Tempranillo",
+    "profile": {
+      "acidity": "Media",
+      "tannin": "Medio-Alto",
+      "alcohol": "Medio (13-14%)",
+      "body": "Medio a Completo",
+      "aromas_primary": [
+        "Cereza",
+        "Fresa",
+        "Arándano",
+        "Flor de lavanda"
+      ],
+      "aromas_secondary": [
+        "Vainilla",
+        "Canela",
+        "Especias tostadas",
+        "Madera roble"
+      ],
+      "aromas_tertiary": [
+        "Cuero",
+        "Tabaco",
+        "Húmus",
+        "Albahaca"
+      ],
+      "benchmark_appellations": [
+        "Rioja (España)",
+        "Ribera del Duero (España)",
+        "Toro (España)"
+      ],
+      "ideal_food_pairings": [
+        "Cordero asado",
+        "Jamón ibérico curado",
+        "Quesos curados"
+      ]
+    },
+    "sommelier_note_es": "La Tempranillo ofrece una estructura equilibrada con taninos suaves que evolucionan hacia notas de cuero y tabaco en la madurez. Su perfil frutal rojo se complementa con acidez fresca, ideal para vinos de guarda.",
+    "sommelier_note_en": "Tempranillo presents a balanced structure with soft tannins evolving into leather and tobacco notes at maturity. Its red fruit profile complements fresh acidity, making it ideal for aging wines."
+  },
+  {
+    "grape": "Cabernet Sauvignon",
+    "profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Alto",
+      "alcohol": "Medio-Alto (13.5-15%)",
+      "body": "Completo",
+      "aromas_primary": [
+        "Cassis",
+        "Frutos negros",
+        "Hierbas verdes",
+        "Violeta"
+      ],
+      "aromas_secondary": [
+        "Madera tostada",
+        "Vainilla",
+        "Tabaco",
+        "Especias"
+      ],
+      "aromas_tertiary": [
+        "Cuero",
+        "Grisolita",
+        "Cedro",
+        "Tomate seco"
+      ],
+      "benchmark_appellations": [
+        "Bordeaux (Francia)",
+        "Napa Valley (EE.UU.)",
+        "Colchagua (Chile)"
+      ],
+      "ideal_food_pairings": [
+        "Carne roja a la parrilla",
+        "Queso curado",
+        "Cordero asado"
+      ]
+    },
+    "sommelier_note_es": "Variedad noble de piel gruesa que aporta estructura tánica y acidez equilibrada, con notas frutales intensas de grosella negra. Requiere maduración para suavizar taninos y desarrollar complejidad aromática en botella.",
+    "sommelier_note_en": "Noble variety with thick skins contributing tannic structure and balanced acidity, featuring intense blackcurrant fruit notes. Requires maturation to soften tannins and develop bottle complexity."
+  },
+  {
+    "grape": "Merlot",
+    "profile": {
+      "acidity": "Media",
+      "tannin": "Medio / Suave",
+      "alcohol": "Medio-Alto (13.5-15%)",
+      "body": "Medio-Peso Completo",
+      "aromas_primary": [
+        "Frutos rojos",
+        "Ciruela",
+        "Cereza",
+        "Notas florales"
+      ],
+      "aromas_secondary": [
+        "Vainilla",
+        "Caramelo",
+        "Especias tostadas"
+      ],
+      "aromas_tertiary": [
+        "Cuero",
+        "Tabaco",
+        "Fruta deshidratada"
+      ],
+      "benchmark_appellations": [
+        "Pomerol (Francia)",
+        "Saint-Émilion (Francia)",
+        "Colchagua (Chile)"
+      ],
+      "ideal_food_pairings": [
+        "Carnes rojas a la parrilla",
+        "Cordero asado",
+        "Quesos curados"
+      ]
+    },
+    "sommelier_note_es": "El Merlot destaca por su estructura sedosa y taninos accesibles, ofreciendo una fruta roja dominante con matices de chocolate y flores. En madurez, desarrolla complejidad terciaria de cuero y tabaco.",
+    "sommelier_note_en": "Merlot stands out for its silky structure and accessible tannins, offering dominant red fruit with notes of chocolate and flowers. At maturity, it develops tertiary complexity of leather and tobacco."
+  },
+  {
+    "grape": "Pinot Noir",
+    "profile": {
+      "acidity": "Alta / Media-Alta",
+      "tannin": "Bajo / Medio-Bajo",
+      "alcohol": "Medio (13-14%)",
+      "body": "Ligero a Medio",
+      "aromas_primary": [
+        "Cereza",
+        "Fresa",
+        "Arándano",
+        "Flor de cerezo"
+      ],
+      "aromas_secondary": [
+        "Levadura",
+        "Vainilla tostada",
+        "Especias rojas",
+        "Higos secos"
+      ],
+      "aromas_tertiary": [
+        "Setas",
+        "Tierra húmeda",
+        "Tabaco",
+        "Bosque"
+      ],
+      "benchmark_appellations": [
+        "Bourgogne (Francia)",
+        "Willamette Valley (USA)",
+        "Central Otago (Nueva Zelanda)"
+      ],
+      "ideal_food_pairings": [
+        "Carnes rojas magras",
+        "Aves de corral",
+        "Quesos suaves"
+      ]
+    },
+    "sommelier_note_es": "Variedad delicada con alta acidez y taninos sutiles, expresando frutos rojos frescos y notas terrosas complejas tras el envejecimiento. Requiere maduración cuidadosa para equilibrar su estructura frágil.",
+    "sommelier_note_en": "Delicate variety with high acidity and subtle tannins, expressing fresh red fruits and complex earthy notes after aging. Requires careful maturation to balance its fragile structure."
+  },
+  {
+    "grape": "Garnacha",
+    "profile": {
+      "acidity": "Media",
+      "tannin": "Bajo a Medio",
+      "alcohol": "Alto (13-15%)",
+      "body": "Medio a Completo",
+      "aromas_primary": [
+        "Frutos rojos frescos",
+        "Fresa",
+        "Rosa",
+        "Cereza"
+      ],
+      "aromas_secondary": [
+        "Compota de frutos",
+        "Pasas secas",
+        "Miel"
+      ],
+      "aromas_tertiary": [
+        "Cuero",
+        "Especias cálidas",
+        "Tabaco"
+      ],
+      "benchmark_appellations": [
+        "Priorat (España)",
+        "Châteauneuf-du-Pape (Francia)",
+        "Rioja (España)"
+      ],
+      "ideal_food_pairings": [
+        "Cordero asado",
+        "Quesos curados",
+        "Carne magra"
+      ]
+    },
+    "sommelier_note_es": "La Garnacha ofrece una estructura suave con acidez media y taninos bajos, destacando por su potencial alcohólico y aromas frutales primarios de fresa y rosa. Con el envejecimiento desarrolla notas terciarias complejas de cuero y especias, ideal para maridajes con carnes rojas.",
+    "sommelier_note_en": "Grenache presents a soft structure with medium acidity and low tannins, highlighting its high alcohol potential and primary fruity aromas of strawberry and rose. With aging it develops complex tertiary notes of leather and spices, ideal for pairing with red meats."
+  },
+  {
+    "grape": "Cabernet Franc",
+    "profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Medio",
+      "alcohol": "Medio (13-14%)",
+      "body": "Medio",
+      "aromas_primary": [
+        "Fresa",
+        "Cereza",
+        "Violeta",
+        "Pimienta verde"
+      ],
+      "aromas_secondary": [
+        "Vainilla",
+        "Tabaco",
+        "Especias tostadas",
+        "Caramelo"
+      ],
+      "aromas_tertiary": [
+        "Cuero",
+        "Cedro",
+        "Hierbas secas",
+        "Tierra"
+      ],
+      "benchmark_appellations": [
+        "Chinon (Francia)",
+        "Saint-Émilion (Francia)",
+        "Napa Valley (EE.UU.)"
+      ],
+      "ideal_food_pairings": [
+        "Quesos curados",
+        "Carne roja a la parrilla",
+        "Pato confitado"
+      ]
+    },
+    "sommelier_note_es": "La Cabernet Franc destaca por su acidez vibrante y notas florales de violeta, con toques herbáceos característicos. Envejecida en roble, desarrolla matices de tabaco y especias complejas.",
+    "sommelier_note_en": "Cabernet Franc stands out with vibrant acidity and violet floral notes, featuring characteristic herbaceous touches. Aged in oak, it develops complex tobacco and spice nuances."
+  },
+  {
+    "grape": "Mourvedre",
+    "profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Alto",
+      "alcohol": "Medio-Alto (13-15%)",
+      "body": "Completo",
+      "aromas_primary": [
+        "Frutos rojos negros",
+        "Hojas de olivo",
+        "Hierbas aromáticas",
+        "Tierra"
+      ],
+      "aromas_secondary": [
+        "Vainilla",
+        "Canela",
+        "Especias tostadas",
+        "Tabaco"
+      ],
+      "aromas_tertiary": [
+        "Cuero",
+        "Bosque húmedo",
+        "Carne ahumada",
+        "Albahaca seca"
+      ],
+      "benchmark_appellations": [
+        "Châteauneuf-du-Pape (Francia)",
+        "Priorat (España)",
+        "Bandol (Francia)"
+      ],
+      "ideal_food_pairings": [
+        "Cordero asado",
+        "Cazadores de caza mayor",
+        "Quesos curados"
+      ]
+    },
+    "sommelier_note_es": "Variedad robusta que aporta estructura tánica y notas herbáceas distintivas, requiriendo maduración completa para equilibrar su acidez natural. Su perfil evolutivo revela complejidad con el tiempo, destacando en vinos de guarda.",
+    "sommelier_note_en": "Robust varietal contributing firm tannic structure and distinctive herbal notes, requiring full phenolic maturity to balance its natural acidity. Its evolutionary profile reveals complexity with age, standing out in wines meant for cellaring."
+  },
+  {
+    "grape": "Mencia",
+    "profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Medio",
+      "alcohol": "Medio (13-14%)",
+      "body": "Completo",
+      "aromas_primary": [
+        "Frutos rojos",
+        "Cereza",
+        "Fresa",
+        "Violeta"
+      ],
+      "aromas_secondary": [
+        "Vainilla",
+        "Especias tostadas",
+        "Hierbas secas"
+      ],
+      "aromas_tertiary": [
+        "Cuero",
+        "Tabaco",
+        "Tierra húmeda"
+      ],
+      "benchmark_appellations": [
+        "Bierzo (España)",
+        "Ribeira Sacra (España)",
+        "Valdeorras (España)"
+      ],
+      "ideal_food_pairings": [
+        "Cordero asado",
+        "Quesos curados",
+        "Carne de caza"
+      ]
+    },
+    "sommelier_note_es": "La Mencia ofrece una estructura equilibrada con acidez vibrante y taninos finos que evolucionan hacia notas terrosas. Su perfil frutal rojo se complementa perfectamente con el envejecimiento en barrica de roble.",
+    "sommelier_note_en": "Mencia delivers a balanced structure with vibrant acidity and fine tannins evolving into earthy notes. Its red fruit profile complements perfectly with oak barrel aging."
+  },
+  {
+    "grape": "Barbera",
+    "profile": {
+      "acidity": "Alta",
+      "tannin": "Bajo",
+      "alcohol": "Medio (13-14%)",
+      "body": "Medio",
+      "aromas_primary": [
+        "Cereza",
+        "Fresa",
+        "Flor de cerezo",
+        "Tomate"
+      ],
+      "aromas_secondary": [
+        "Vainilla",
+        "Especias",
+        "Madera tostada"
+      ],
+      "aromas_tertiary": [
+        "Fruta pasa",
+        "Cuero",
+        "Tierra"
+      ],
+      "benchmark_appellations": [
+        "Barbera d'Asti (Italia)",
+        "Barbera del Monferrato (Italia)",
+        "Colli Tortonesi (Italia)"
+      ],
+      "ideal_food_pairings": [
+        "Carne roja asada",
+        "Pasta con salsa de tomate",
+        "Setas salteadas"
+      ]
+    },
+    "sommelier_note_es": "La Barbera se define por su notable acidez y taninos bajos, proporcionando una frescura vibrante y estructura ligera. Sus perfiles aromáticos evocan frutos rojos frescos que pueden madurar con madera suave.",
+    "sommelier_note_en": "Barbera is defined by its notable acidity and low tannins, providing vibrant freshness and light structure. Its aromatic profiles evoke fresh red fruits that can mature with soft wood."
+  },
+  {
+    "grape": "Carmenere",
+    "profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Medio-Alto",
+      "alcohol": "Medio (13-14%)",
+      "body": "Completo",
+      "aromas_primary": [
+        "Frutos negros maduros",
+        "Albaricoque",
+        "Violeta",
+        "Pimiento verde"
+      ],
+      "aromas_secondary": [
+        "Roble tostado",
+        "Vainilla",
+        "Caramelo ahumado"
+      ],
+      "aromas_tertiary": [
+        "Cuero",
+        "Tabaco",
+        "Hierbas secas"
+      ],
+      "benchmark_appellations": [
+        "Colchagua Valley (Chile)",
+        "Maipo Valley (Chile)",
+        "Bordeaux (Francia)"
+      ],
+      "ideal_food_pairings": [
+        "Cordero asado",
+        "Carne roja a la parrilla",
+        "Quesos curados"
+      ]
+    },
+    "sommelier_note_es": "El Carmenere se distingue por su firma aromática de pimiento verde y frutos negros maduros, con una estructura tánica media que requiere un envejecimiento moderado. Es ideal para carnes rojas grasas y quesos curados.",
+    "sommelier_note_en": "Carmenere is distinguished by its signature green pepper and ripe black fruit aromas, with a medium tannic structure requiring moderate aging. It pairs best with fatty red meats and aged cheeses."
+  },
+  {
+    "grape": "Pinotage",
+    "profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Medio-Alto",
+      "alcohol": "Medio (13-14%)",
+      "body": "Medio-Completo",
+      "aromas_primary": [
+        "Frambuesa",
+        "Cereza negra",
+        "Bayas negras",
+        "Notas terrosas"
+      ],
+      "aromas_secondary": [
+        "Ahumado",
+        "Tocino",
+        "Vainilla",
+        "Especias tostadas"
+      ],
+      "aromas_tertiary": [
+        "Cuero",
+        "Tabaco",
+        "Fruta seca",
+        "Bosque"
+      ],
+      "benchmark_appellations": [
+        "Stellenbosch (Sudáfrica)",
+        "Walker Bay (Sudáfrica)",
+        "Constantia (Sudáfrica)"
+      ],
+      "ideal_food_pairings": [
+        "Carnes a la parrilla",
+        "Quesos curados",
+        "Chocolate oscuro"
+      ]
+    },
+    "sommelier_note_es": "El Pinotage es una variedad híbrida única de Sudáfrica, reconocible por su perfil ahumado distintivo derivado del Cinsault. Requiere maduración cuidadosa para equilibrar sus taninos con acidez fresca y fruta roja compleja.",
+    "sommelier_note_en": "Pinotage is a unique South African hybrid varietal, recognizable by its distinctive smoky profile derived from the Cinsault parent. It requires careful ripening to balance its tannins with fresh acidity and complex red fruit."
+  },
+  {
+    "grape": "Chardonnay",
+    "profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Bajo",
+      "alcohol": "Medio-Alto (13-15%)",
+      "body": "Medio a Completo",
+      "aromas_primary": [
+        "Cítricos",
+        "Pomelo",
+        "Manzana verde",
+        "Fresas"
+      ],
+      "aromas_secondary": [
+        "Levadura",
+        "Pan tostado",
+        "Brioche",
+        "Huevos duros"
+      ],
+      "aromas_tertiary": [
+        "Miel",
+        "Nuez",
+        "Tabaco",
+        "Caramelo"
+      ],
+      "benchmark_appellations": [
+        "Chablis (Francia)",
+        "Bourgogne (Francia)",
+        "Valle del Napa (EE.UU.)"
+      ],
+      "ideal_food_pairings": [
+        "Mariscos frescos",
+        "Pollo asado",
+        "Quesos curados"
+      ]
+    },
+    "sommelier_note_es": "La Chardonnay es una variedad versátil que refleja el terroir, desde la acidez mineral de Chablis hasta la cremosidad del roble. Su perfil evolutivo permite notas frutales frescas o aromas complejos de madera y oxidación controlada.",
+    "sommelier_note_en": "Chardonnay is a versatile variety reflecting terroir, ranging from the mineral acidity of Chablis to the creaminess of oak. Its evolutionary profile allows fresh fruity notes or complex wood and controlled oxidation aromas."
+  },
+  {
+    "grape": "Sauvignon Blanc",
+    "profile": {
+      "acidity": "Alta",
+      "tannin": "Bajo",
+      "alcohol": "Medio (13-14%)",
+      "body": "Ligero a Medio",
+      "aromas_primary": [
+        "Cítricos frescos",
+        "Frutas tropicales",
+        "Hierbas verdes",
+        "Mineralidad"
+      ],
+      "aromas_secondary": [
+        "Madera tostada",
+        "Yeast notes"
+      ],
+      "aromas_tertiary": [
+        "Higos secos",
+        "Cítricos maduros",
+        "Petrol"
+      ],
+      "benchmark_appellations": [
+        "Sancerre (Francia)",
+        "Pouilly-Fumé (Francia)",
+        "Marlborough (Nueva Zelanda)"
+      ],
+      "ideal_food_pairings": [
+        "Mariscos y crustáceos",
+        "Queso de cabra",
+        "Ensaladas frescas"
+      ]
+    },
+    "sommelier_note_es": "Variedad aromática intensa con notas herbáceas y cítricas frescas. Requiere acidez vibrante para equilibrar su carácter mineral y frutal.",
+    "sommelier_note_en": "Intensely aromatic white variety featuring herbaceous and fresh citrus notes. Requires vibrant acidity to balance its mineral and fruity character."
+  },
+  {
+    "grape": "Viognier",
+    "profile": {
+      "acidity": "Media",
+      "tannin": "Bajo",
+      "alcohol": "Medio-Alto (13-15%)",
+      "body": "Medio-Peso",
+      "aromas_primary": [
+        "Melocotón",
+        "Albaricoque",
+        "Hiedra",
+        "Florales violeta"
+      ],
+      "aromas_secondary": [
+        "Miel",
+        "Levadura",
+        "Caramelo"
+      ],
+      "aromas_tertiary": [
+        "Fruta seca",
+        "Nuez",
+        "Especias tostadas"
+      ],
+      "benchmark_appellations": [
+        "Condrieu (Francia)",
+        "Santa Barbara (USA)",
+        "Roussillon (Francia)"
+      ],
+      "ideal_food_pairings": [
+        "Mariscos frescos",
+        "Queso de cabra",
+        "Carnes a la parrilla"
+      ]
+    },
+    "sommelier_note_es": "El Viognier presenta una textura oleosa y aromas florales intensos con notas frutales de piedra. Requiere maduración cuidadosa para evitar oxidación, destacando su perfil dulce y alto en alcohol.",
+    "sommelier_note_en": "Viognier exhibits an oily texture with intense floral notes and stone fruit characteristics. It requires careful maturation to prevent oxidation, highlighting its sweet profile and high alcohol content."
+  },
+  {
+    "grape": "Pinot Gris",
+    "profile": {
+      "acidity": "Media a Alta",
+      "tannin": "Bajo",
+      "alcohol": "Medio (13-14%)",
+      "body": "Medio a Completo",
+      "aromas_primary": [
+        "Pera",
+        "Cítricos",
+        "Flor blanca",
+        "Fruta de hueso"
+      ],
+      "aromas_secondary": [
+        "Miel",
+        "Hierbas secas",
+        "Levadura",
+        "Nuez"
+      ],
+      "aromas_tertiary": [
+        "Especias",
+        "Dulce ahumado",
+        "Caramelo",
+        "Cuero"
+      ],
+      "benchmark_appellations": [
+        "Alsace (Francia)",
+        "Loire (Francia)",
+        "Collio (Italia)"
+      ],
+      "ideal_food_pairings": [
+        "Pollo asado",
+        "Quesos suaves",
+        "Mariscos",
+        "Cocina asiática"
+      ]
+    },
+    "sommelier_note_es": "El Pinot Gris ofrece una complejidad aromática que oscila entre la elegancia mineral del Loire y la opulencia de Alsace. Su perfil destaca por notas frutales frescas acompañadas de matices florales y, en maduración, toques especiado o mielados.",
+    "sommelier_note_en": "Pinot Gris delivers aromatic complexity ranging from the mineral elegance of the Loire to the opulence of Alsace. Its profile stands out with fresh fruity notes accompanied by floral nuances and spiced or honeyed tones upon maturation."
+  },
+  {
+    "grape": "Godello",
+    "profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Bajo",
+      "alcohol": "Medio (13-14%)",
+      "body": "Medio a Completo",
+      "aromas_primary": [
+        "Flores blancas",
+        "Manzana verde",
+        "Cítricos",
+        "Peras"
+      ],
+      "aromas_secondary": [
+        "Miel tostada",
+        "Yema de huevo",
+        "Panadería suave"
+      ],
+      "aromas_tertiary": [
+        "Madera noble",
+        "Especias finas",
+        "Mineralidad pizarrosa"
+      ],
+      "benchmark_appellations": [
+        "Valdeorras (España)",
+        "Rías Baixas (España)",
+        "Monterrei (España)"
+      ],
+      "ideal_food_pairings": [
+        "Quesos curados de cabra",
+        "Mariscos frescos",
+        "Carnes blancas a la brasa"
+      ]
+    },
+    "sommelier_note_es": "Es una variedad blanca gallega de alta acidez y aromas florales complejos. Evoluciona hacia notas minerales y maderadas con el tiempo.",
+    "sommelier_note_en": "This aromatic white Galician grape features high acidity and floral primary notes. It possesses tertiary mineral complexity suitable for aging."
+  },
+  {
+    "grape": "Glera",
+    "profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Bajo",
+      "alcohol": "Medio (12-13%)",
+      "body": "Ligero a Medio",
+      "aromas_primary": [
+        "Cítricos frescos",
+        "Floreales blancos",
+        "Pera verde",
+        "Manzana"
+      ],
+      "aromas_secondary": [
+        "Levadura",
+        "Brioche",
+        "Huevos duros",
+        "Miel"
+      ],
+      "aromas_tertiary": [
+        "Fruta seca",
+        "Caramelo",
+        "Mineral oxidado",
+        "Nuez"
+      ],
+      "benchmark_appellations": [
+        "Prosecco DOC (Italia)",
+        "Valdobbiadene Prosecco Superiore DOCG (Italia)",
+        "Colli di Conegliano DOCG (Italia)"
+      ],
+      "ideal_food_pairings": [
+        "Frutos de mar frescos",
+        "Antipasti ligeros",
+        "Pasta con salsas blancas"
+      ]
+    },
+    "sommelier_note_es": "La Glera ofrece una acidez vibrante y notas florales intensas, típicas del estilo Prosecco. Su perfil mineral y cuerpo ligero la convierten en un vino de frescura inmediata.",
+    "sommelier_note_en": "Glera delivers vibrant acidity and intense floral notes, typical of the Prosecco style. Its mineral profile and light body make it an immediate freshness wine."
+  },
+  {
+    "grape": "Zinfandel",
+    "profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Medio",
+      "alcohol": "Alto (14-16%)",
+      "body": "Completo",
+      "aromas_primary": [
+        "Frutos rojos negros",
+        "Cereza",
+        "Arándano",
+        "Especias"
+      ],
+      "aromas_secondary": [
+        "Vainilla",
+        "Caramelo tostado",
+        "Tabaco",
+        "Humedad"
+      ],
+      "aromas_tertiary": [
+        "Cuero",
+        "Tobacco",
+        "Miel ahumada",
+        "Tierra"
+      ],
+      "benchmark_appellations": [
+        "Lodi (USA)",
+        "Paso Robles (USA)",
+        "Primitivo Puglia (Italia)"
+      ],
+      "ideal_food_pairings": [
+        "Costillas BBQ",
+        "Chorizo ahumado",
+        "Queso curado"
+      ]
+    },
+    "sommelier_note_es": "Zinfandel presenta una estructura robusta con alcohol elevado y notas frutales intensas de bayas negras, a menudo acompañadas de especias y madera. Requiere maduración para desarrollar complejidad terciaria de cuero y tierra.",
+    "sommelier_note_en": "Zinfandel features a robust structure with high alcohol and intense blackberry fruit notes, often accompanied by spice and oak. It requires maturity to develop tertiary complexity of leather and earth."
+  }
+]
