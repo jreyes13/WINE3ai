@@ -205,6 +205,61 @@ WINEPEDIA_TOPICS = [
     {"id": "madurez_tecnologica_vs_fenolica_aromatica", "title": "Las 3 Madureces: Tecnológica, Fenólica y Aromática", "area": "Viticultura", "focus": "Desfase entre acumulación de azúcar (Brix/Baumé) y degradación de taninos verdes en veranos cálidos"},
     {"id": "microclima_bosques_masas_agua", "title": "Influencia de Masas de Agua y Bosques en el Mesoclima", "area": "Terruño", "focus": "Capacidad calorífica del agua (ríos, lagos y mares) para suavizar extremos térmicos y reflejar luz"},
     {"id": "viento_mistral_tramontana_cierzo", "title": "Vientos Dominantes en el Viñedo: Mistral, Cierzo y Tramontana", "area": "Climatología", "focus": "Secado rápido del dosel vegetal, reducción de humedad relativa y modelado del porte de la cepa"}
+,
+    # --- CANON CMS: CATA DEDUCTIVA, COMPARADA Y DEFECTOS (25) ---
+    {"id": "cms_deductive_visual_analysis", "standard": "CMS", "area": "Cata Deductiva", "title": "La Fase Visual CMS: Menisco, Turbidez y Lágrima", "focus": "Gradiente de color, ribete, viscosidad y edad estimada bajo la cuadrícula deductiva"},
+    {"id": "cms_deductive_fruit_condition", "standard": "CMS", "area": "Cata Deductiva", "title": "Condición de la Fruta en Cata Deductiva CMS", "focus": "Diferenciación organoléptica: fruta fresca, madura, sobremadura, mermelada y pasa"},
+    {"id": "cms_deductive_earth_mineral_markers", "standard": "CMS", "area": "Cata Deductiva", "title": "Marcadores Terrosos y Minerales del Viejo Mundo", "focus": "Identificación a ciegas de notas de tiza, pedernal, champiñón, sotobosque y pizarra"},
+    {"id": "cms_comparative_syrah_vs_shiraz", "standard": "CMS", "area": "Cata Deductiva Comparada", "title": "Cata Comparada: Syrah del Ródano Norte vs Shiraz de Barossa", "focus": "Rotundona, pimienta negra y acidez cortante vs fruta negra confitada, chocolate y roble americano"},
+    {"id": "cms_comparative_cabernet_bordeaux_napa", "standard": "CMS", "area": "Cata Deductiva Comparada", "title": "Cata Comparada: Burdeos Margen Izquierda vs Napa Valley Cabernet", "focus": "Grava, cedro, cassis y taninos austeros vs fruta madura exuberante, vainilla y taninos sedosos"},
+    {"id": "cms_comparative_chardonnay_chablis_meursault", "standard": "CMS", "area": "Cata Deductiva Comparada", "title": "Cata Comparada: Chablis Mineral vs Meursault de Lías y Roble", "focus": "Acidez cortante, manzana verde y concha marina vs avellana, mantequilla y textura untuosa"},
+    {"id": "cms_comparative_sauvignon_sancerre_marlborough", "standard": "CMS", "area": "Cata Deductiva Comparada", "title": "Cata Comparada: Sancerre Calcáreo vs Marlborough Tiolítico", "focus": "Tiza, grosella y hierba seca vs fruta de la pasión, maracuyá y boj punzante"},
+    {"id": "cms_comparative_pinot_bourgogne_oregon", "standard": "CMS", "area": "Cata Deductiva Comparada", "title": "Cata Comparada: Borgoña Village vs Willamette Valley vs Central Otago", "focus": "Sotobosque, cereza ácida y tensión vs frambuesa silvestre, especias de roble y taninos densos"},
+    {"id": "cms_comparative_sangiovese_tempranillo", "standard": "CMS", "area": "Cata Deductiva Comparada", "title": "Cata Comparada: Sangiovese (Chianti) vs Tempranillo (Rioja Reserva)", "focus": "Cereza agria, tanino astringente y té negro vs cuero, eneldo, vainilla y fruta roja madura"},
+    {"id": "cms_comparative_malbec_cahors_mendoza", "standard": "CMS", "area": "Cata Deductiva Comparada", "title": "Cata Comparada: Malbec de Cahors vs Malbec de Altura de Mendoza", "focus": "Austeridad caliza, taninos agrestes y mora salvaje vs violetas, tanino aterciopelado y ciruela"},
+    {"id": "cms_wine_flaws_volatile_acidity", "standard": "CMS", "area": "Defectos del Vino", "title": "Acidez Volátil y Acetato de Etilo en Sala", "focus": "Ácido acético y pegamento/disolvente: umbrales olfativos y distinción frente al ácido tartárico"},
+    {"id": "cms_wine_flaws_brettanomyces", "standard": "CMS", "area": "Defectos del Vino", "title": "Brettanomyces: 4-Etilfenol y 4-Etilguayacol", "focus": "Huella de establo, sudor de caballo y cuero frente a complejidad terciaria de crianza"},
+    {"id": "cms_wine_flaws_reduction_sulfides", "standard": "CMS", "area": "Defectos del Vino", "title": "Compuestos Azufrados y Reducción: H2S y Mercaptanos", "focus": "De huevo podrido a caucho quemado y col cocida: cinética redox y aireación correctiva"},
+    {"id": "cms_wine_flaws_oxidation_aldehydes", "standard": "CMS", "area": "Defectos del Vino", "title": "Oxidación Prematura (Premox) y Acetaldehído", "focus": "Pérdida de SO2 libre, manzana magullada, color ámbar no intencionado y colapso en boca"},
+    {"id": "cms_sommelier_service_decanting", "standard": "CMS", "area": "Servicio de Sala", "title": "Técnica de Decantación: Vinos Jóvenes vs Vinos Ancianos", "focus": "Jarreo enérgico para oxigenación vs separación lenta de sedimento con vela sin shock térmico"},
+    {"id": "cms_sommelier_cellar_management", "standard": "CMS", "area": "Servicio de Sala", "title": "Gestión de Cava en Alta Restauración: Rotación y FIFO", "focus": "Humedad relativa del 70%, temperatura estable a 12°C, estanterías antivibración e inventario"},
+    {"id": "cms_sommelier_wine_pricing_margins", "standard": "CMS", "area": "Servicio de Sala", "title": "Estructura de Márgenes y Carta de Vinos Rentable", "focus": "Estrategia de pricing por coeficiente decreciente, vinos de rotación y joyas de guarda"},
+    {"id": "cms_food_pairing_umami_interaction", "standard": "CMS", "area": "Maridaje Deductivo", "title": "El Efecto del Umami en la Percepción Tánica y la Acidez", "focus": "Por qué el glutamato monosódico endurece el vino y qué estilos (burbujas, Jerez) triunfan"},
+    {"id": "cms_food_pairing_sweet_savory_acid", "standard": "CMS", "area": "Maridaje Deductivo", "title": "Interacción entre Dulzor Residual, Acidez y Comida Grasa", "focus": "Contraste ácido-grasa y armonía azúcar-picor en cocina asiática y quesos azules"},
+    {"id": "cms_blind_tasting_oak_identification", "standard": "CMS", "area": "Cata Deductiva", "title": "Identificación de Crianza en Roble: Francés vs Americano", "focus": "Vainillina, lactonas del roble americano (coco) vs eugenol, clavo y tanino sutil francés"},
+    {"id": "cms_blind_tasting_climate_deduction", "standard": "CMS", "area": "Cata Deductiva", "title": "Deducción de Clima: Frío, Moderado y Cálido", "focus": "Correlación fisiológica entre grado alcohólico volumétrico, acidez total titulable y color"},
+    {"id": "cms_fortified_wines_port_system", "standard": "CMS", "area": "Enología & Fortificados", "title": "El Sistema Canónico del Vino de Oporto: Ruby vs Tawny", "focus": "Crianza reductiva en balseiros vs oxidativa en pipas, añadas declaradas Vintage y Colheitas"},
+    {"id": "cms_fortified_wines_madeira_styles", "standard": "CMS", "area": "Enología & Fortificados", "title": "Estilos Canónicos de Madeira: Sercial a Malvasia", "focus": "Calor artificial (Estufagem) vs calor solar (Canteiro), acidez volátil legal y perfiles secos a dulces"},
+    {"id": "cms_sparkling_champagne_assemblage", "standard": "CMS", "area": "Espumosos & Método Tradicional", "title": "El Assemblage en Champagne: Vinos de Reserva y Dosage", "focus": "Construcción del estilo de maison, autólisis de levaduras sobre rima y equilibrio del licor"},
+    {"id": "cms_service_champagne_opening", "standard": "CMS", "area": "Servicio de Sala", "title": "Protocolo de Apertura Silenciosa de Champagne en Mesa", "focus": "Giro de la base de la botella, contención del corcho a 45 grados y servicio sin espuma excesiva"},
+
+    # --- CANON ASI: PROTOCOLO DE SALA, BEBIDAS DEL MUNDO Y DEGUSTACIÓN (25) ---
+    {"id": "asi_sommelier_deontology_ethics", "standard": "ASI", "area": "Sumillería & Sala", "title": "Código Deontológico y Ética del Sumiller (Norma ASI)", "focus": "Neutralidad comercial, fidelidad al cliente, discreción en mesa y elegancia postural"},
+    {"id": "asi_practical_candle_decanting", "standard": "ASI", "area": "Sumillería & Sala", "title": "Decantación con Vela para Vinos con Sedimento (Norma ASI)", "focus": "Luz de vela en el hombro de la botella, vertido continuo sin retorno y detección de posos"},
+    {"id": "asi_beverage_sake_grades", "standard": "ASI", "area": "Bebidas del Mundo", "title": "Clasificación Canónica del Sake: Junmai, Ginjo y Daiginjo", "focus": "Tasa de pulido del arroz (Seimai-buai), adición de alcohol destilado y aromas de ginjo-ka"},
+    {"id": "asi_beverage_sake_service", "standard": "ASI", "area": "Bebidas del Mundo", "title": "Protocolo de Servicio, Cristalería y Temperaturas del Sake", "focus": "Desde Kan-zake (tibio) a Reishu (frío), uso de ochoko, tokkuri y copa de vino blanco"},
+    {"id": "asi_beverage_craft_beer_styles", "standard": "ASI", "area": "Bebidas del Mundo", "title": "Estilos de Cerveza y Fermentación: Ales, Lagers y Lambic", "focus": "Fermentación alta vs baja vs espontánea, lúpulo, IBUs y maridaje gastronómico"},
+    {"id": "asi_beverage_mineral_waters", "standard": "ASI", "area": "Bebidas del Mundo", "title": "La Sumillería del Agua Mineral: Residuo Seco y TDS", "focus": "Aguas de baja vs alta mineralización, carbónico natural vs añadido y armonía con vinos y platos"},
+    {"id": "asi_beverage_tequila_mezcal", "standard": "ASI", "area": "Destilados del Mundo", "title": "Agaves y Destilados de México: Tequila vs Mezcal", "focus": "Agave Tequilana Weber vs Agave Espadín/silvestres, hornos cónicos de tierra y destilación en alambique"},
+    {"id": "asi_beverage_whisky_styles", "standard": "ASI", "area": "Destilados del Mundo", "title": "Geografía del Whisky: Scotch, Irish y Bourbon", "focus": "Malteado con turba vs triple destilación vs mash bill con 51% de maíz y roble nuevo carbonizado"},
+    {"id": "asi_beverage_brandy_cognac_armagnac", "standard": "ASI", "area": "Destilados del Mundo", "title": "Cognac vs Armagnac: Terruños y Alambiques", "focus": "Doble destilación charentaise vs columna continua armagnaçaise, Ugni Blanc y cru Grande Champagne"},
+    {"id": "asi_service_large_formats", "standard": "ASI", "area": "Sumillería & Sala", "title": "Servicio de Grandes Formatos: Magnum, Jeroboam y Matusalén", "focus": "Evolución lenta en botella grande, técnicas de sujeción ergonómica y escanciado equilibrado"},
+    {"id": "asi_glassware_geometry_science", "standard": "ASI", "area": "Física de la Cristalería", "title": "Geometría de la Copa: Difusión Aromática y Vertido", "focus": "Relación entre diámetro de chimenea, volumen de cámara de evaporación y caída en papilas"},
+    {"id": "asi_viticulture_biodynamic_preparations", "standard": "ASI", "area": "Viticultura Sostenible", "title": "Viticultura Biodinámica: Preparados 500 y 501", "focus": "Boñiga en cuerno fermentada (500) y sílice molida (501), dinamización en agua y certificación Demeter"},
+    {"id": "asi_viticulture_regenerative_agroforestry", "standard": "ASI", "area": "Viticultura Sostenible", "title": "Viticultura Regenerativa: Captura de Carbono y Suelo Vivo", "focus": "Siembra de leguminosas, pastoreo dirigido entre hileras y eliminación de laboreo destructivo"},
+    {"id": "asi_sommelier_cheese_cart_pairing", "standard": "ASI", "area": "Sumillería & Armonías", "title": "El Carro de Quesos: Armonías de Afinidad y Osmosis", "focus": "Quesos de pasta blanda, lavada, dura y azul: maridajes con blancos ácidos, espumosos y dulces nobles"},
+    {"id": "asi_sommelier_cigar_fortified_pairing", "standard": "ASI", "area": "Sumillería & Sala", "title": "Protocolo de Servicio de Puros con Vinos Fortificados", "focus": "Corte con guillotina, encendido con fósforo de cedro y maridaje con Rancio, Tawny y PX"},
+    {"id": "asi_sensory_trpv1_capsaicin", "standard": "ASI", "area": "Fisiología Sensorial", "title": "Receptores TRPV1 y Comida Picante ante el Vino Tánico", "focus": "Termorreceptores orales activados por capsaicina: vasodilatación, quemazón y astringencia desbocada"},
+    {"id": "asi_sensory_salt_acid_tannin_balance", "standard": "ASI", "area": "Fisiología Sensorial", "title": "El Rol de la Sal en la Supresión del Amargor y la Acidez", "focus": "Mecanismo iónico oral del cloruro sódico que redondea vinos tánicos y amortigua acidez punzante"},
+    {"id": "asi_service_table_presentation_drill", "standard": "ASI", "area": "Sumillería & Sala", "title": "Presentación Canónica de la Botella al Comensal", "focus": "Anuncio claro de bodega, denominación y añada, etiqueta visible en lito y confirmación del anfitrión"},
+    {"id": "asi_service_cork_inspection", "standard": "ASI", "area": "Sumillería & Sala", "title": "Inspección Canónica del Corcho en Sala", "focus": "Comprobación de humedad, elasticidad y aromas antes de depositarlo en platillo auxiliar frente al anfitrión"},
+    {"id": "asi_blind_tasting_competition_format", "standard": "ASI", "area": "Competición Internacional", "title": "La Cuadrícula de Cata de Competición ASI", "focus": "Gestión del tiempo (4 minutos por copa), vocabulario sensorial internacional y sugerencia comercial"},
+    {"id": "asi_beverage_vermouth_aromatized_wines", "standard": "ASI", "area": "Bebidas del Mundo", "title": "Vinos Aromatizados y Vermut: El Ritual del Aperitivo", "focus": "Artemisia absinthium, infusiones botánicas, azúcar y servicio con piel de cítrico"},
+    {"id": "asi_beverage_tea_sommellerie", "standard": "ASI", "area": "Bebidas del Mundo", "title": "Sumillería de Infusiones y Té en la Mesa Gastronómica", "focus": "Tés verdes (Sencha), fermentados (Pu-erh) y semifermentados (Oolong) como alternativa al vino"},
+    {"id": "asi_beverage_coffee_specialty", "standard": "ASI", "area": "Bebidas del Mundo", "title": "Café de Especialidad y Protocolo de Cierre de Sala", "focus": "Procesos de lavado, natural y honey en Arábica: extracción y maridaje con petit fours"},
+    {"id": "asi_cellar_wine_preservation_systems", "standard": "ASI", "area": "Sumillería & Sala", "title": "Sistemas de Conservación por Copas: Gas Inerte y Coravin", "focus": "Inyección de gas argón grado enológico para evitar oxidación en botellas de alta gama abiertas"},
+    {"id": "asi_sommelier_conflict_spoilage_resolution", "standard": "ASI", "area": "Sumillería & Sala", "title": "Resolución de Disconformidad por Vino Defectuoso en Sala", "focus": "Validación cortés sin discusión, retirada inmediata de la botella y sugerencia de alternativa óptima"}
+
 ]
 
 STUDY_CARD_TOPICS = [
@@ -311,6 +366,34 @@ STUDY_CARD_TOPICS = [
     {"standard": "CMS", "category": "Servicio de Sala", "topic": "Uso del lito de sumiller: técnicas de sujeción para no calentar la botella con la palma de la mano"},
     {"standard": "CMS", "category": "Servicio de Sala", "topic": "Control de goteo con corte de gota en el cuello de la botella sin accesorios plásticos"},
     {"standard": "CMS", "category": "Deductive Tasting Grid", "topic": "Evaluación de la persistencia aromática (caudalías) como indicador determinante de calidad"}
+,
+    # ASI Global: Concurso Internacional, Servicio y Bebidas (25)
+    {"standard": "ASI", "category": "Deontología de Sumiller", "topic": "Código deontológico y ética profesional en el servicio de vinos en restaurantes Michelin"},
+    {"standard": "ASI", "category": "Servicio de Sala", "topic": "Protocolo oficial de decantación con vela de un vino tinto antiguo de más de 25 años con posos"},
+    {"standard": "ASI", "category": "Bebidas del Mundo", "topic": "Clasificación de calidad del Sake según la tasa de pulido (Seimai-buai): Daiginjo vs Ginjo vs Junmai"},
+    {"standard": "ASI", "category": "Bebidas del Mundo", "topic": "Temperaturas de servicio y copas adecuadas para diferentes tipos de Sake japonés"},
+    {"standard": "ASI", "category": "Bebidas del Mundo", "topic": "Estilos de cerveza y fermentación: fermentación espontánea (Lambic/Gueuze) vs Ale vs Lager"},
+    {"standard": "ASI", "category": "Bebidas del Mundo", "topic": "Sumillería del agua mineral: residuo seco a 180°C (TDS) y su maridaje con vinos tánicos y ácidos"},
+    {"standard": "ASI", "category": "Destilados del Mundo", "topic": "Diferencias de producción y legislación entre Tequila (100% Agave azul) y Mezcal tradicional"},
+    {"standard": "ASI", "category": "Destilados del Mundo", "topic": "Tipologías de Whisky: Single Malt escocés vs Irish Pot Still vs Kentucky Straight Bourbon"},
+    {"standard": "ASI", "category": "Destilados del Mundo", "topic": "Cognac vs Armagnac: métodos de destilación (doble alambique Charentais vs columna continua)"},
+    {"standard": "ASI", "category": "Servicio de Sala", "topic": "Protocolo de servicio de una botella de formato Magnum (1,5 L) y Jeroboam (3 L) en mesa"},
+    {"standard": "ASI", "category": "Física de la Cristalería", "topic": "Influencia del volumen de la copa y el estrechamiento de la chimenea en el desprendimiento de aromas"},
+    {"standard": "ASI", "category": "Viticultura Sostenible", "topic": "Principios de la viticultura biodinámica: preparados 500 y 501, dinamización y calendario lunar"},
+    {"standard": "ASI", "category": "Viticultura Sostenible", "topic": "Viticultura regenerativa: pastoreo en viñedo, cubiertas vegetales y eliminación de herbicidas"},
+    {"standard": "ASI", "category": "Maridajes Clásicos", "topic": "El carro de quesos: armonías canónicas de quesos azules con vinos dulces nobles botritizados"},
+    {"standard": "ASI", "category": "Servicio de Sala", "topic": "Servicio de puros habanos y su maridaje con vinos generosos (Oloroso, Tawny) y destilados añejos"},
+    {"standard": "ASI", "category": "Fisiología Sensorial", "topic": "El receptor TRPV1 y la capsaicina: por qué el picante destruye la armonía con vinos de alto tanino y alcohol"},
+    {"standard": "ASI", "category": "Fisiología Sensorial", "topic": "Efecto de la sal en el vino: supresión del amargor, reducción de la acidez percibida y realce de fruta"},
+    {"standard": "ASI", "category": "Servicio de Sala", "topic": "Presentación canónica de la botella al comensal: postura corporal y anuncio de añada y bodega"},
+    {"standard": "ASI", "category": "Servicio de Sala", "topic": "Inspección visual y olfativa del corcho antes de depositarlo en el platillo de servicio"},
+    {"standard": "ASI", "category": "Cata de Competición", "topic": "La cuadrícula de cata en concursos internacionales de sumillería: tiempo, descriptores y nota comercial"},
+    {"standard": "ASI", "category": "Bebidas del Mundo", "topic": "El vermut y los vinos aromatizados: plantas amargas (artemisia), azúcar y ritual del aperitivo"},
+    {"standard": "ASI", "category": "Bebidas del Mundo", "topic": "Sumillería del té: servicio y maridaje de tés Pu-erh, Oolong y verdes en la alta gastronomía"},
+    {"standard": "ASI", "category": "Bebidas del Mundo", "topic": "Café de especialidad en sala: molienda al momento, agua filtrada y maridaje con petit fours"},
+    {"standard": "ASI", "category": "Gestión de Bodega", "topic": "Sistemas de conservación de vino por copas mediante gas argón inerte y Coravin"},
+    {"standard": "ASI", "category": "Servicio de Sala", "topic": "Resolución diplomática de quejas en mesa cuando un cliente rechaza una botella por TCA o temperatura"}
+
 ]
 
 # Variedades de Uva Mundiales y Autóctonas (180)
@@ -361,15 +444,23 @@ GRAPES_TO_ENRICH = [
 ]
 
 def generate_winepedia_article(item):
+    standard = item.get("standard", "WSET3")
+    default_cat_es = f"{item['area']} & Terruño" if standard == "WSET3" else ("Cata Deductiva & Metodología" if standard == "CMS" else "Servicio & Protocolo de Sala")
+    default_cat_en = "Enology & Terroir" if standard == "WSET3" else ("Deductive Tasting & Flaws" if standard == "CMS" else "Sommellerie & Service Protocol")
+    category_es = item.get("category_es", default_cat_es)
+    category_en = item.get("category_en", default_cat_en)
+    badge_color = item.get("badge_color", "amber" if standard == "WSET3" else ("rose" if standard == "CMS" else "emerald"))
+
     prompt = f"""Genera un artículo técnico canónico para WINEp3dIA sobre '{item['title']}' ({item['area']}).
+Canon de referencia: {standard}.
 Enfoque: {item['focus']}.
 Devuelve EXCLUSIVAMENTE un objeto JSON válido con esta estructura:
 {{
   "id": "{item['id']}",
-  "standard": "WSET3",
-  "category_es": "{item['area']} & Terruño",
-  "category_en": "Enology & Terroir",
-  "badge_color": "amber",
+  "standard": "{standard}",
+  "category_es": "{category_es}",
+  "category_en": "{category_en}",
+  "badge_color": "{badge_color}",
   "title_es": "{item['title']}: Mecanismo y Relevancia Enológica",
   "title_en": "{item['title']}: Mechanism and Enological Significance",
   "summary_es": "Resumen técnico sintético en 1 o 2 frases.",
