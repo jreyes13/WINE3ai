@@ -2223,6 +2223,3076 @@
       "enologia",
       "terruño"
     ]
+  },
+  {
+    "id": "suelo_terra_rossa_coonawarra",
+    "standard": "WSET3",
+    "category_es": "Edafología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Terra Rossa de Coonawarra: Mecanismo y Relevancia Enológica",
+    "title_en": "Terra Rossa de Coonawarra: Mechanism and Enological Significance",
+    "summary_es": "La Terra Rossa de Coonawarra es un suelo único en Australia, compuesto por arcilla roja rica en óxido de hierro sobre caliza porosa. Este perfil edafológico confiere estructura y notas terrosas distintivas a los vinos, especialmente al Cabernet Sauvignon.",
+    "summary_en": "Coonawarra Terra Rossa is a unique Australian soil profile, consisting of red iron-oxide-rich clay over porous limestone. This edaphological profile imparts structure and distinct earthy notes to wines, particularly Cabernet Sauvignon.",
+    "content_es": "La capa superficial de arcilla roja (Terra Rossa) es rica en hematita, lo que proporciona un drenaje óptimo y regula la temperatura radicular. Esta característica permite una maduración lenta de las bayas, concentrando taninos y polifenoles. El sustrato calizo subyacente actúa como reservorio hídrico, mitigando el estrés hídrico durante la sequía estival. Bioquímicamente, la alta acidez del suelo favorece la expresión aromática de compuestos volátiles terrosos y florales.",
+    "content_en": "The surface red clay layer (Terra Rossa) is rich in hematite, providing optimal drainage and regulating root temperature. This characteristic allows for slow berry ripening, concentrating tannins and polyphenols. The underlying limestone substrate acts as a water reservoir, mitigating summer drought stress. Biochemically, high soil acidity favors the expression of volatile aromatic compounds with earthy and floral notes.",
+    "key_takeaways_es": [
+      "Drenaje superior y retención hídrica subterránea",
+      "Maduración lenta de bayas por estrés térmico controlado",
+      "Perfil tánico estructurado y notas ferruginosas"
+    ],
+    "key_takeaways_en": [
+      "Superior drainage and underground water retention",
+      "Slow berry ripening due to controlled thermal stress",
+      "Structured tannic profile and ferruginous notes"
+    ],
+    "related_grapes": [
+      "Cabernet Sauvignon",
+      "Shiraz"
+    ],
+    "related_regions": [
+      "Coonawarra",
+      "South Australia"
+    ],
+    "tags": [
+      "suelo terra rossa coonawarra",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "suelo_caliza_jurassica_bourgogne",
+    "standard": "WSET3",
+    "category_es": "Edafología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Caliza Oolítica de la Côte d'Or: Mecanismo y Relevancia Enológica",
+    "title_en": "Oolitic Limestone of the Côte d'Or: Mechanism and Enological Significance",
+    "summary_es": "La caliza oolítica bajociense y batiense de la Côte d'Or proporciona un sustrato alcalino con excelente drenaje, favoreciendo la acidez natural en Chardonnay y la elegancia estructural en Pinot Noir.",
+    "summary_en": "The Bajocian and Bathonian oolitic limestone of the Côte d'Or provides an alkaline substrate with excellent drainage, favoring natural acidity in Chardonnay and structural elegance in Pinot Noir.",
+    "content_es": "Las calizas oolíticas de la Côte d'Or, depositadas durante los periodos bajociense y batiense del Jurásico, presentan una estructura porosa que garantiza un drenaje profundo y eficiente. Este sustrato alcalino (pH 7.5-8.0) regula la disponibilidad de nutrientes, limitando el exceso de vegetación y forzando al viñedo a desarrollar raíces profundas. Bioquímicamente, el alto contenido en calcio estabiliza los taninos del Pinot Noir y preserva la acidez volátil en el Chardonnay, mientras que la baja actividad microbiana reduce defectos oxidativos. Sensorialmente, esto se traduce en vinos con notas de piedra caliza, salinidad sutil y una estructura mineralítica distintiva que define el terroir burgundino.",
+    "content_en": "Oolitic limestones of the Côte d'Or, deposited during the Bajocian and Bathonian periods of the Jurassic, feature a porous structure ensuring deep and efficient drainage. This alkaline substrate (pH 7.5-8.0) regulates nutrient availability, limiting excessive vegetative growth and forcing vines to develop deep roots. Biochemically, high calcium content stabilizes Pinot Noir tannins and preserves volatile acidity in Chardonnay, while low microbial activity reduces oxidative defects. Sensorially, this translates into wines with chalky stone notes, subtle salinity, and a distinct mineral structure defining the Burgundian terroir.",
+    "key_takeaways_es": [
+      "Drenaje profundo previene estrés hídrico moderado y promueve maduración equilibrada.",
+      "pH alcalino favorece acidez natural y taninos finos en variedades rojas.",
+      "Perfil mineral de piedra caliza y salinidad define la identidad sensorial."
+    ],
+    "key_takeaways_en": [
+      "Deep drainage prevents moderate water stress and promotes balanced ripening.",
+      "Alkaline pH favors natural acidity and fine tannins in red varieties.",
+      "Chalky stone and salinity mineral profile defines the sensory identity."
+    ],
+    "related_grapes": [
+      "Pinot Noir",
+      "Chardonnay"
+    ],
+    "related_regions": [
+      "Côte de Nuits",
+      "Côte de Beaune"
+    ],
+    "tags": [
+      "suelo caliza jurassica bourgogne",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "suelo_aluvial_grava_graves",
+    "standard": "WSET3",
+    "category_es": "Edafología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Terrazas Aluviales y Gravas de Graves: Mecanismo y Relevancia Enológica",
+    "title_en": "Alluvial Terraces and Graves Gravels: Mechanism and Enological Significance",
+    "summary_es": "Las gravas cuarcíticas del Garona facilitan el drenaje profundo, reduciendo la humedad radicular y forzando al Cabernet Sauvignon a profundizar raíces, concentrando antocianinas y taninos.",
+    "summary_en": "Garonne quartz gravels facilitate deep drainage, reducing root moisture and forcing Cabernet Sauvignon to deepen roots, concentrating anthocyanins and tannins.",
+    "content_es": "Las terrazas aluviales de Graves consisten en depósitos de grava cuarcítica depositada por el río Garona. Esta matriz pétreo-granular ofrece un drenaje excepcional, evitando la asfixia radicular y reduciendo el estrés hídrico moderado que induce la concentración de compuestos fenólicos. Bioquímicamente, este entorno limita el desarrollo vegetativo excesivo, favoreciendo la maduración lenta del racimo bajo insolación directa sobre suelo frío.",
+    "content_en": "The alluvial terraces of Graves consist of quartz gravel deposits laid by the Garonne river. This stone-granular matrix offers exceptional drainage, preventing root asphyxiation and reducing moderate water stress that induces phenolic concentration. Biochemically, this environment limits excessive vegetative development, favoring slow berry maturation under direct sunlight on cold soil.",
+    "key_takeaways_es": [
+      "Drenaje profundo reduce estrés hídrico y concentra antocianinas.",
+      "Suelo frío ralentiza maduración, preservando acidez natural.",
+      "Gravas blancas reflejan luz UV, aumentando polifenoles."
+    ],
+    "key_takeaways_en": [
+      "Deep drainage reduces water stress and concentrates anthocyanins.",
+      "Cold soil slows ripening, preserving natural acidity.",
+      "White gravels reflect UV light, increasing polyphenols."
+    ],
+    "related_grapes": [
+      "Cabernet Sauvignon",
+      "Merlot"
+    ],
+    "related_regions": [
+      "Pessac-Léognan",
+      "Bordeaux"
+    ],
+    "tags": [
+      "suelo aluvial grava graves",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "suelo_pizarra_bierzo",
+    "standard": "WSET3",
+    "category_es": "Edafología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Pizarras y Suelos de Ladera en el Bierzo: Mecanismo y Relevancia Enológica",
+    "title_en": "Slate and Slope Soils in Bierzo: Mechanism and Enological Significance",
+    "summary_es": "Los suelos pizarrosos del Bierzo, formados por estratificación de esquistos descompuestos en laderas altas, regulan la temperatura y drenaje, potenciando la acidez y frescura mineral de la Mencía.",
+    "summary_en": "Bierzo's slate soils, formed by decomposed schist stratification on high slopes, regulate temperature and drainage, enhancing the acidity and mineral freshness of Mencía.",
+    "content_es": "La edafología del Bierzo se define por la presencia de pizarras micáceas y esquistos en laderas orientadas a norte o noreste. La descomposición lenta de estas rocas madre genera un sustrato ácido (pH 4.5-5.5) con alto contenido en sílice y óxidos de hierro, lo que limita el vigor vegetativo y concentra los compuestos fenólicos. Bioquímicamente, la baja retención hídrica fuerza al racimo a desarrollar raíces profundas, extrayendo minerales secundarios que se traducen en notas de pizarra húmeda, espinaca y salinidad en boca. La frescura mineral no es solo un aroma, sino una percepción táctil derivada de la acidez volátil preservada por el estrés hídrico controlado.",
+    "content_en": "Bierzo's edaphology is defined by the presence of micaceous slates and schists on north or northeast-facing slopes. The slow decomposition of these parent rocks generates an acidic substrate (pH 4.5-5.5) with high silica and iron oxide content, limiting vegetative vigor and concentrating phenolic compounds. Biochemically, low water retention forces the cluster to develop deep roots, extracting secondary minerals that translate into wet slate, spinach, and salinity notes in the mouth. Mineral freshness is not just an aroma but a tactile perception derived from volatile acidity preserved by controlled hydric stress.",
+    "key_takeaways_es": [
+      "La pizarra micácea regula la temperatura nocturna, preservando acidez volátil.",
+      "El drenaje rápido concentra azúcares y taninos en la Mencía.",
+      "Los óxidos de hierro aportan notas minerales y estructura tánica."
+    ],
+    "key_takeaways_en": [
+      "Micaceous slate regulates nighttime temperature, preserving volatile acidity.",
+      "Rapid drainage concentrates sugars and tannins in Mencía.",
+      "Iron oxides impart mineral notes and tannic structure."
+    ],
+    "related_grapes": [
+      "Mencía",
+      "Garnacha"
+    ],
+    "related_regions": [
+      "Bierzo",
+      "Priorat"
+    ],
+    "tags": [
+      "suelo pizarra bierzo",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "suelo_flysch_txakoli",
+    "standard": "WSET3",
+    "category_es": "Edafología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "El Flysch Litoral y Areniscas del Cantábrico: Mecanismo y Relevancia Enológica",
+    "title_en": "El Flysch Litoral y Areniscas del Cantábrico: Mechanism and Enological Significance",
+    "summary_es": "El Flysch Litoral presenta estratificación alternante de capas duras y blandas que optimizan el drenaje bajo alta pluviometría, influyendo decisivamente en la acidez y mineralidad del Txakoli.",
+    "summary_en": "The Coastal Flysch presents alternating stratification of hard and soft layers that optimize drainage under high rainfall, decisively influencing the acidity and minerality of Txakoli.",
+    "content_es": "El Flysch Litoral presenta una estratificación alternante de capas duras (calizas) y blandas (arcillas/areniscas). Esta heterogeneidad promueve un drenaje eficiente crucial ante la alta pluviometría del Cantábrico, evitando el estrés hídrico excesivo mientras permite una extracción mineral selectiva. La interacción entre la meteorización diferencial y la retención de humedad crea un perfil químico distintivo que influye directamente en el perfil aromático del vino.\n\nEn Bizkaia y Getaria, este sustrato favorece la acidez natural y la concentración de taninos en Txakoli. La estructura geológica permite una maduración lenta de las uvas, preservando los ácidos volátiles y potenciando notas minerales como salinidad y arcilla, características definitorias del estilo regional.",
+    "content_en": "The Coastal Flysch presents alternating stratification of hard (limestone) and soft (clay/sandstone) layers. This heterogeneity promotes efficient drainage crucial under Cantabrian high rainfall, preventing excessive water stress while allowing selective mineral uptake. The interaction between differential weathering and moisture retention creates a distinct chemical profile that directly influences the wine's aromatic profile.\n\nIn Bizkaia and Getaria, this substrate favors natural acidity and tannin concentration in Txakoli. The geological structure allows for slow grape maturation, preserving volatile acids and enhancing mineral notes such as salinity and clay, which are defining characteristics of the regional style.",
+    "key_takeaways_es": [
+      "Drenaje eficiente bajo alta pluviometría evita estrés hídrico excesivo",
+      "Estratificación alternante favorece acidez natural y mineralidad selectiva",
+      "Sustrato geológico define notas de salinidad y estructura tanínica en Txakoli"
+    ],
+    "key_takeaways_en": [
+      "Efficient drainage under high rainfall prevents excessive water stress",
+      "Alternating stratification favors natural acidity and selective minerality",
+      "Geological substrate defines salinity notes and tannic structure in Txakoli"
+    ],
+    "related_grapes": [
+      "Txakoli Blanco",
+      "Txakoli Negro"
+    ],
+    "related_regions": [
+      "Getaria",
+      "Bizkaia"
+    ],
+    "tags": [
+      "suelo flysch txakoli",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "suelo_serpentinita_etna",
+    "standard": "WSET3",
+    "category_es": "Edafología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Suelos Volcánicos del Monte Etna: Mecanismo y Relevancia Enológica",
+    "title_en": "Volcanic Soils of Mount Etna: Mechanism and Enological Significance",
+    "summary_es": "Los estratos de lava basáltica y tufos volcánicos en Etna inducen estrés hídrico moderado, potenciando la acidez natural y la estructura tánica en Nerello Mascalese.",
+    "summary_en": "Stratified basaltic lavas and volcanic tuffs in Etna induce moderate hydric stress, enhancing natural acidity and tannic structure in Nerello Mascalese.",
+    "content_es": "La edafología del Monte Etna se define por capas estratificadas de lavas volcánicas de distintas erupciones, con altitudes que alcanzan los 1.000 metros. Esta composición mineralógica, rica en magnesio y hierro sobre sustratos andesíticos, favorece un excelente drenaje y retención térmica nocturna. Bioquímicamente, el estrés hídrico moderado limita la vegetación, concentrando azúcares y ácidos orgánicos que definen la acidez vibrante característica de los vinos etneos.",
+    "content_en": "Etna's edaphology is defined by stratified volcanic lava layers from different eruptions, reaching altitudes up to 1,000 meters. This mineralogical composition, rich in magnesium and iron over andesitic substrates, promotes excellent drainage and nocturnal heat retention. Biochemically, moderate hydric stress limits vegetation, concentrating sugars and organic acids that define the characteristic vibrant acidity of Etna wines.",
+    "key_takeaways_es": [
+      "El drenaje rápido previene la acumulación excesiva de azúcares en uva.",
+      "La mineralogía volcánica aporta notas minerales y florales distintivas.",
+      "La altitud modula el perfil aromático hacia frutillas y flores blancas."
+    ],
+    "key_takeaways_en": [
+      "Rapid drainage prevents excessive sugar accumulation in grapes.",
+      "Volcanic mineralogy imparts distinctive mineral and floral notes.",
+      "Altitude modulates the aromatic profile towards strawberry and white flowers."
+    ],
+    "related_grapes": [
+      "Nerello Mascalese",
+      "Nerello Cappuccio"
+    ],
+    "related_regions": [
+      "Etna DOC",
+      "Sicilia IGP"
+    ],
+    "tags": [
+      "suelo serpentinita etna",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "suelo_caliza_paramo_ribera",
+    "standard": "WSET3",
+    "category_es": "Edafología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Calizas del Páramo en Ribera del Duero: Mecanismo y Relevancia Enológica",
+    "title_en": "Limestone of the Páramo in Ribera del Duero: Mechanism and Enological Significance",
+    "summary_es": "Horizontes calizos profundos en zonas de alta montaña (>850m) que potencian la acidez y la estructura tánica mediante oscilaciones térmicas extremas.",
+    "summary_en": "Deep calcareous horizons in high mountain zones (>850m) enhance acidity and tannic structure through extreme thermal oscillations.",
+    "content_es": "En Fuentecén y Pesquera, los suelos de páramo presentan horizontes calizos profundos que regulan la temperatura del viñedo. La alta amplitud térmica nocturna favorece la respiración celular en la uva, preservando el ácido málico y ralentizando la maduración fenólica. Bioquímicamente, la caliza aporta calcio que estabiliza la pectina, mejorando la textura y el color del vino. Sensorialmente, esto se traduce en vinos con mayor frescura, acidez vibrante y una estructura tánica más fina y elegante.",
+    "content_en": "In Fuentecén and Pesquera, páramo soils feature deep calcareous horizons that regulate vineyard temperature. High nocturnal thermal amplitude favors cellular respiration in the grape, preserving malic acid and slowing phenolic maturation. Biochemically, limestone provides calcium that stabilizes pectin, improving texture and wine color. Sensorially, this translates to wines with greater freshness, vibrant acidity, and a finer, more elegant tannic structure.",
+    "key_takeaways_es": [
+      "La caliza del páramo preserva la acidez natural mediante amplitud térmica extrema.",
+      "El calcio de la tierra estabiliza la pectina y refina la textura tánica.",
+      "Zonas como Fuentecén son ideales para Tempranillo con perfil mineral."
+    ],
+    "key_takeaways_en": [
+      "Páramo limestone preserves natural acidity through extreme thermal amplitude.",
+      "Soil calcium stabilizes pectin and refines tannic texture.",
+      "Fuentecén zones are ideal for Tempranillo with a mineral profile."
+    ],
+    "related_grapes": [
+      "Tempranillo",
+      "Garnacha"
+    ],
+    "related_regions": [
+      "Ribera del Duero",
+      "Vega Sicilia"
+    ],
+    "tags": [
+      "suelo caliza paramo ribera",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "suelo_caliza_alberese_toscana",
+    "standard": "WSET3",
+    "category_es": "Edafología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Caliza Alberese y Galestro en Chianti: Mecanismo y Relevancia Enológica",
+    "title_en": "Caliza Alberese and Galestro in Chianti: Mechanism and Enological Significance",
+    "summary_es": "El suelo de Galestro (arcilla laminada) y Alberese (caliza densa) en Chianti dictan la estructura del Sangiovese mediante estrés hídrico selectivo y regulación iónica, definiendo acidez, taninos y mineralidad.",
+    "summary_en": "Galestro (laminated clay) and Alberese (dense limestone) soils in Chianti dictate Sangiovese structure via selective water stress and ionic regulation, defining acidity, tannins, and minerality.",
+    "content_es": "El Galestro, arcilla pizarrosa laminada, retiene humedad superficialmente pero drena profundamente, forzando al Sangiovese a desarrollar raíces profundas. Esto concentra fenoles y ácidos volátiles, aportando taninos finos y notas de tierra húmeda.\n\nEl Alberese, caliza calcárea densa, eleva el pH del suelo y aporta calcio, estabilizando la pectina y mejorando la textura en boca. La mezcla de ambos suelos crea un equilibrio entre cuerpo y frescura, esencial para la longevidad del vino.",
+    "content_en": "Galestro, laminated schistous clay, retains surface moisture but drains deeply, forcing Sangiovese to develop deep roots. This concentrates phenols and volatile acids, imparting fine tannins and wet earth notes.\n\nAlberese, dense calcareous limestone, raises soil pH and provides calcium, stabilizing pectin and improving mouthfeel. The mix of both soils creates a balance between body and freshness, essential for wine longevity.",
+    "key_takeaways_es": [
+      "El Galestro aporta estructura tánica y complejidad aromática de tierra.",
+      "El Alberese confiere mineralidad calcárea y acidez fresca.",
+      "La combinación define la longevidad y el perfil clásico del Chianti."
+    ],
+    "key_takeaways_en": [
+      "Galestro contributes tannic structure and earthy aromatic complexity.",
+      "Alberese imparts calcareous minerality and fresh acidity.",
+      "The combination defines longevity and the classic Chianti profile."
+    ],
+    "related_grapes": [
+      "Sangiovese",
+      "Canaiolo"
+    ],
+    "related_regions": [
+      "Chianti Classico",
+      "Tuscany"
+    ],
+    "tags": [
+      "suelo caliza alberese toscana",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "suelo_toba_volcanica_campania",
+    "standard": "WSET3",
+    "category_es": "Edafología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Toba Volcánica de Campania e Irpinia: Mecanismo y Relevancia Enológica",
+    "title_en": "Volcanic Tufa of Campania and Irpinia: Mechanism and Enological Significance",
+    "summary_es": "Sustrato calcáreo poroso derivado de cenizas piroclásticas compactadas del Vesubio, influyendo decisivamente en la mineralidad y acidez de los vinos.",
+    "summary_en": "Porous calcareous substrate derived from compacted Vesuvian pyroclastic ash, decisively influencing wine minerality and acidity.",
+    "content_es": "La toba volcánica es un sustrato poroso formado por cenizas piroclásticas consolidadas del Vesubio. Su estructura permite una excelente drenaje y retención de humedad, reduciendo el estrés hídrico moderado en la vid. Bioquímicamente, la alta porosidad favorece la oxidación lenta de compuestos fenólicos en la raíz, mientras que los minerales presentes (calcio, magnesio) modulan la expresión aromática. En Irpinia y Campania, esto se traduce en vinos con acidez vibrante y notas minerales distintivas.",
+    "content_en": "Volcanic tufa is a porous substrate formed from consolidated Vesuvian pyroclastic ash. Its structure allows excellent drainage and moisture retention, reducing moderate water stress in the vine. Biochemically, high porosity favors slow oxidation of phenolic compounds at the root level, while present minerals (calcium, magnesium) modulate aromatic expression. In Irpinia and Campania, this translates to wines with vibrant acidity and distinctive mineral notes.",
+    "key_takeaways_es": [
+      "Alta porosidad del suelo mejora el drenaje y reduce estrés hídrico.",
+      "Mineralidad calcárea define la acidez y estructura tánica.",
+      "Impacto directo en la expresión aromática de Greco y Fiano."
+    ],
+    "key_takeaways_en": [
+      "High soil porosity improves drainage and reduces water stress.",
+      "Calcareous minerality defines acidity and tannic structure.",
+      "Direct impact on aromatic expression of Greco and Fiano."
+    ],
+    "related_grapes": [
+      "Greco di Tufo",
+      "Fiano"
+    ],
+    "related_regions": [
+      "Campania",
+      "Irpinia"
+    ],
+    "tags": [
+      "suelo toba volcanica campania",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "suelo_pizarras_azules_mosela",
+    "standard": "WSET3",
+    "category_es": "Edafología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Pizarra Devónica Azul del Valle del Mosela: Mecanismo y Relevancia Enológica",
+    "title_en": "Blue Devonian Slate of the Mosel Valley: Mechanism and Enological Significance",
+    "summary_es": "La pizarra azul devónica actúa como acumulador térmico diurno, elevando la temperatura de racimos y preservando acidez natural mediante estrés hídrico controlado.",
+    "summary_en": "Blue Devonian slate acts as a diurnal thermal accumulator, raising cluster temperatures and preserving natural acidity through controlled water stress.",
+    "content_es": "La pizarra azul devónica del Valle del Mosela posee una alta conductividad térmica y capacidad de retención radiante. Durante el día, absorbe la radiación solar y la irradia por la noche, elevando la temperatura de los racimos y acelerando la maduración fenólica sin comprometer la acidez volátil. Químicamente, su matriz rica en aluminio y óxidos de hierro influye en la extracción mineral durante la vinificación, aportando notas de pizarra húmeda y salinidad. La estructura laminar favorece un drenaje profundo, induciendo estrés hídrico que concentra azúcares y ácidos málicos, resultando en vinos con frescura extrema y longevidad.",
+    "content_en": "Blue Devonian slate in the Mosel Valley possesses high thermal conductivity and radiant retention capacity. During the day, it absorbs solar radiation and radiates it at night, raising cluster temperatures and accelerating phenolic ripening without compromising volatile acidity. Chemically, its matrix rich in aluminum and iron oxides influences mineral extraction during winemaking, imparting wet slate and salinity notes. The laminar structure favors deep drainage, inducing water stress that concentrates sugars and malic acids, resulting in wines with extreme freshness and longevity.",
+    "key_takeaways_es": [
+      "Alta capacidad térmica regula la maduración sin perder acidez.",
+      "Composición mineral aporta notas de pizarra y salinidad.",
+      "Drenaje profundo concentra ácidos y azúcares."
+    ],
+    "key_takeaways_en": [
+      "High thermal capacity regulates ripening without losing acidity.",
+      "Mineral composition imparts slate and salinity notes.",
+      "Deep drainage concentrates acids and sugars."
+    ],
+    "related_grapes": [
+      "Riesling",
+      "Müller-Thurgau"
+    ],
+    "related_regions": [
+      "Mosel Valley",
+      "Piesporter"
+    ],
+    "tags": [
+      "suelo pizarras azules mosela",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "suelo_grewacke_marlborough",
+    "standard": "WSET3",
+    "category_es": "Edafología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Grava Aluvial Greywacke de Marlborough: Mecanismo y Relevancia Enológica",
+    "title_en": "Grava Aluvial Greywacke de Marlborough: Mechanism and Enological Significance",
+    "summary_es": "Suelos areniscos metamórficos con alta drenaje y retención térmica en el valle de Wairau, favoreciendo la acidez y aromas herbáceos en Sauvignon Blanc.",
+    "summary_en": "Metamorphic sandy soils with high drainage and thermal retention in the Wairau valley, favoring acidity and herbaceous aromas in Sauvignon Blanc.",
+    "content_es": "La grava aluvial de greywacke en Marlborough presenta una estructura porosa que garantiza un drenaje excepcional, evitando el estrés hídrico excesivo y promoviendo raíces profundas. Bioquímicamente, la baja materia orgánica reduce la retención de nitrógeno, forzando a la vid a buscar nutrientes en profundidad, lo que concentra los compuestos fenólicos. Sensorialmente, esto se traduce en vinos con acidez vibrante, notas minerales y una estructura tánica más fina, típica del estilo clásico de Sauvignon Blanc.",
+    "content_en": "Alluvial greywacke gravel in Marlborough presents a porous structure ensuring exceptional drainage, preventing excessive water stress and promoting deep roots. Biochemically, low organic matter reduces nitrogen retention, forcing the vine to seek nutrients in depth, which concentrates phenolic compounds. Sensorially, this translates into wines with vibrant acidity, mineral notes, and a finer tannic structure, typical of the classic Sauvignon Blanc style.",
+    "key_takeaways_es": [
+      "Alto drenaje reduce estrés hídrico y concentra compuestos",
+      "Baja materia orgánica limita nitrógeno disponible para la vid",
+      "Estilo clásico de Sauvignon Blanc con acidez y mineralidad"
+    ],
+    "key_takeaways_en": [
+      "High drainage reduces water stress and concentrates compounds",
+      "Low organic matter limits available nitrogen for the vine",
+      "Classic Sauvignon Blanc style with acidity and minerality"
+    ],
+    "related_grapes": [
+      "Sauvignon Blanc",
+      "Pinot Noir"
+    ],
+    "related_regions": [
+      "Marlborough",
+      "Wairau Valley"
+    ],
+    "tags": [
+      "suelo grewacke marlborough",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "suelo_pedernal_sancerre_caillottes",
+    "standard": "WSET3",
+    "category_es": "Edafología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Terres Blanches, Caillottes y Silex en Sancerre: Mecanismo y Relevancia Enológica",
+    "title_en": "Terres Blanches, Caillottes and Silex in Sancerre: Mechanism and Enological Significance",
+    "summary_es": "Análisis de los tres suelos principales de Sancerre (Kimmeridgiano, Jurásico y Silex) y su influencia directa en la expresión aromática del Sauvignon Blanc.",
+    "summary_en": "Analysis of the three main soils in Sancerre (Kimmeridgian, Jurassic, and Flint) and their direct influence on Sauvignon Blanc aromatic expression.",
+    "content_es": "Los Terres Blanches, compuestos por arcilla y caliza de origen Kimmeridgiano, retienen humedad y nutrientes, favoreciendo un desarrollo vegetativo lento que concentra azúcares y aromas florales como la clave o el acedillo. Por otro lado, los Caillottes son formaciones calcáreas jurásicas fragmentadas que aseguran un drenaje rápido, induciendo estrés hídrico leve que potencia la acidez natural y notas cítricas frescas como limón y pomelo. Finalmente, las parcelas de Silex, raras en la región, aportan sílice que modifica la pared celular del racimo, liberando compuestos volátiles secundarios con carácter mineral ahumado y estructura rígida. Bioquímicamente, el alto contenido de calcio en estos suelos regula la actividad enzimática durante la fermentación, mientras que la textura física influye en la extracción de taninos y polifenoles.",
+    "content_en": "Terres Blanches, composed of Kimmeridgian clay and limestone, retain moisture and nutrients, favoring slow vegetative development that concentrates sugars and floral aromas such as elderflower or acacia. Conversely, Caillottes are Jurassic calcareous formations fragmented to ensure rapid drainage, inducing mild hydric stress that potentiates natural acidity and fresh citrus notes like lemon and grapefruit. Finally, Flint plots, rare in the region, add silica that modifies the berry cell wall, releasing secondary volatile compounds with smoky mineral character and rigid structure. Biochemically, high calcium content in these soils regulates enzymatic activity during fermentation, while physical texture influences tannin and polyphenol extraction.",
+    "key_takeaways_es": [
+      "Terres Blanches aportan cuerpo y notas florales/herbáceas.",
+      "Caillottes generan acidez viva y perfil cítrico ligero.",
+      "El Silex confiere mineralidad ahumada y complejidad estructural."
+    ],
+    "key_takeaways_en": [
+      "Terres Blanches add body and floral/herbal notes.",
+      "Caillottes generate lively acidity and light citrus profile.",
+      "Flint confers smoky minerality and structural complexity."
+    ],
+    "related_grapes": [
+      "Sauvignon Blanc",
+      "Pinot Noir"
+    ],
+    "related_regions": [
+      "Sancerre",
+      "Loire Valley"
+    ],
+    "tags": [
+      "suelo pedernal sancerre caillottes",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "suelo_arcillo_calcario_bairrada",
+    "standard": "WSET3",
+    "category_es": "Edafología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Arcillas Calcáreas de Bairrada: Mecanismo y Relevancia Enológica",
+    "title_en": "Arcillas Calcáreas de Bairrada: Mechanism and Enological Significance",
+    "summary_es": "Las arcillas calcáreas de Bairrada aportan frescura y densidad, suavizando los taninos agresivos de la Baga mediante una extracción lenta y equilibrada.",
+    "summary_en": "Bairrada's clay-limestone soils impart freshness and density, softening Baga's aggressive tannins through slow, balanced extraction.",
+    "content_es": "Las arcillas calcáreas de Bairrada presentan una alta capacidad de retención hídrica y moderación térmica, creando un microclima fresco que preserva la acidez natural. Esta matriz mineral densa limita el vigor vegetativo, forzando a la vid Baga a profundizar raíces y concentrar compuestos fenólicos en los racimos. Químicamente, la caliza aporta minerales que interactúan con los taninos, reduciendo su agresividad y promoviendo una extracción más lenta durante la maceración.",
+    "content_en": "Bairrada's clay-limestone soils exhibit high water retention and thermal moderation, creating a cool microclimate that preserves natural acidity. This dense mineral matrix limits vegetative vigor, forcing Baga vines to deepen roots and concentrate phenolic compounds in clusters. Chemically, the limestone contributes minerals interacting with tannins, reducing their aggressiveness and promoting slower extraction during maceration.",
+    "key_takeaways_es": [
+      "Retención hídrica y térmica moderada",
+      "Extracción fenólica lenta de la Baga",
+      "Estructura tánica más armónica"
+    ],
+    "key_takeaways_en": [
+      "Moderated water and thermal retention",
+      "Slow phenolic extraction from Baga",
+      "More harmonious tannic structure"
+    ],
+    "related_grapes": [
+      "Baga",
+      "Rabo de Ovelha"
+    ],
+    "related_regions": [
+      "Bairrada",
+      "Dão"
+    ],
+    "tags": [
+      "suelo arcillo calcario bairrada",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "suelo_arenas_doradas_toro",
+    "standard": "WSET3",
+    "category_es": "Edafología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Arenas Silíceas y Cantos Rodados de Toro: Mecanismo y Relevancia Enológica",
+    "title_en": "Siliceous Sands and Rounded Pebbles of Toro: Mechanism and Enological Significance",
+    "summary_es": "Suelos arenosos profundos con cantos rodados en la DO Toro favorecen el estrés hídrico controlado, maximizando la concentración de taninos y acidez en Tinta de Toro a 700m.",
+    "summary_en": "Deep sandy soils with rounded pebbles in the Toro DO promote controlled water stress, maximizing tannin and acidity concentration in Tinta de Toro at 700m altitude.",
+    "content_es": "La combinación de arenas silíceas y cantos rodados en la zona alta de Toro (700m) crea un microclima térmico único. Los cantos reflejan calor diurno, acelerando la maduración fenólica sin quemar la uva, mientras que la baja retención hídrica de las arenas obliga a raíces profundas. Esto resulta en racimos con piel gruesa y alta densidad de taninos estables, esenciales para el envejecimiento. Bioquímicamente, la acidez del suelo silíceo preserva los ácidos málico y tartárico, equilibrando la potencia tánica.",
+    "content_en": "The combination of siliceous sands and rounded pebbles in the high zone of Toro (700m) creates a unique thermal microclimate. Pebbles reflect daytime heat, accelerating phenolic maturity without scorching the grape, while low water retention forces deep roots. This results in bunches with thick skins and high stable tannin density, essential for aging. Biochemically, the siliceous soil acidity preserves malic and tartaric acids, balancing the tannic power.",
+    "key_takeaways_es": [
+      "Estrés hídrico inducido por suelos arenosos concentra polifenoles.",
+      "Cantos rodados regulan temperatura nocturna para mantener acidez.",
+      "Tinta de Toro desarrolla estructura tanica excepcional en este sustrato."
+    ],
+    "key_takeaways_en": [
+      "Water stress induced by sandy soils concentrates polyphenols.",
+      "Rounded pebbles regulate nighttime temperature to maintain acidity.",
+      "Tinta de Toro develops exceptional tannic structure on this substrate."
+    ],
+    "related_grapes": [
+      "Tinta de Toro",
+      "Tempranillo"
+    ],
+    "related_regions": [
+      "Toro",
+      "Ribera del Duero"
+    ],
+    "tags": [
+      "suelo arenas doradas toro",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "suelo_greda_pumita_santorini",
+    "standard": "WSET3",
+    "category_es": "Edafología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Pumita y Ceniza Volcánica de Santorini: Mecanismo y Relevancia Enológica",
+    "title_en": "Pumice and Volcanic Ash of Santorini: Mechanism and Enological Significance",
+    "summary_es": "Suelos hiper-porosos sin materia orgánica que confieren resistencia a filoxera y estrés hídrico al Assyrtiko, potenciando acidez y mineralidad.",
+    "summary_en": "Hyper-porous soils without organic matter confer phylloxera resistance and water stress to Assyrtiko, enhancing acidity and minerality.",
+    "content_es": "La edafología de Santorini se define por una matriz de ceniza volcánica y pumita altamente porosa, creando un suelo asfíctico con nula retención hídrica y ausencia de materia orgánica. Esta esterilidad natural confiere resistencia intrínseca a la filoxera, eliminando la necesidad de injertos resistentes. Bioquímicamente, la alta reflectividad térmica del pumita induce estrés en la vid, forzando una maduración lenta que preserva la acidez volátil y concentra sales minerales.\n\nEnológica y sensorialmente, este entorno limita el vigor vegetativo, resultando en racimos pequeños con piel gruesa. El Assyrtiko desarrolla perfiles de alta acidez y notas de salinidad marina, reflejando la proximidad al mar y la composición volcánica del sustrato.",
+    "content_en": "The edaphology of Santorini is defined by a matrix of highly porous volcanic ash and pumice, creating an asphyctic soil with negligible water retention and absence of organic matter. This natural sterility confers intrinsic resistance to phylloxera, eliminating the need for resistant grafts. Biochemically, the high thermal reflectivity of pumice induces stress on the vine, forcing slow maturation that preserves volatile acidity and concentrates mineral salts.\n\nEnologically and sensorially, this environment limits vegetative vigor, resulting in small clusters with thick skins. Assyrtiko develops profiles of high acidity and marine salinity notes, reflecting proximity to the sea and the volcanic composition of the substrate.",
+    "key_takeaways_es": [
+      "Estructura hiper-porosa de la pumita impide el anclaje radicular profundo y retención hídrica.",
+      "Ausencia de materia orgánica garantiza inmunidad natural contra la filoxera.",
+      "Alta reflectividad térmica concentra acidez y compuestos fenólicos en Assyrtiko."
+    ],
+    "key_takeaways_en": [
+      "Hyper-porous pumice structure prevents deep root anchorage and water retention.",
+      "Absence of organic matter guarantees natural immunity against phylloxera.",
+      "High thermal reflectivity concentrates acidity and phenolic compounds in Assyrtiko."
+    ],
+    "related_grapes": [
+      "Assyrtiko",
+      "Aidani"
+    ],
+    "related_regions": [
+      "Santorini",
+      "Greece"
+    ],
+    "tags": [
+      "suelo greda pumita santorini",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "suelo_granito_arribes_duero",
+    "standard": "WSET3",
+    "category_es": "Edafología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Batolito Granítico de los Arribes del Duero: Mecanismo y Relevancia Enológica",
+    "title_en": "Batolito Granítico de los Arribes del Duero: Mechanism and Enological Significance",
+    "summary_es": "El batolito granítico en Juan García y Rufete define un terroir de drenaje excepcional, favoreciendo la concentración fenólica y el perfil mineral en vinos tintos.",
+    "summary_en": "The granite batholith in Juan García and Rufete defines an exceptional drainage terroir, favoring phenolic concentration and mineral profile in red wines.",
+    "content_es": "El batolito granítico de los Arribes del Duero, expuesto en las terrazas vertiginosas de Juan García y Rufete, impone una edafología de baja retención hídrica. Esta geología favorece un estrés hídrico controlado que concentra azúcares y antocianinas, mientras la alta conductividad térmica del granito modula la maduración nocturna. Químicamente, el suelo aporta potasio y magnesio, influyendo en la estructura tánica y la persistencia aromática.",
+    "content_en": "The granite batholith of the Arribes del Duero, exposed on the vertiginous terraces of Juan García and Rufete, imposes a low water-retention edaphology. This geology favors controlled hydric stress that concentrates sugars and anthocyanins, while the high thermal conductivity of granite modulates night ripening. Chemically, the soil contributes potassium and magnesium, influencing tannic structure and aromatic persistence.",
+    "key_takeaways_es": [
+      "Drenaje profundo reduce riesgo de pudrición y concentra compuestos fenólicos.",
+      "Retención térmica del granito equilibra acidez y maduración aromática.",
+      "Mineralidad específica aporta notas de piedra húmeda y salinidad."
+    ],
+    "key_takeaways_en": [
+      "Deep drainage reduces rot risk and concentrates phenolic compounds.",
+      "Granite thermal retention balances acidity and aromatic ripening.",
+      "Specific minerality adds wet stone and saline notes."
+    ],
+    "related_grapes": [
+      "Tinta de Toro",
+      "Garnacha"
+    ],
+    "related_regions": [
+      "Arribes del Duero",
+      "Ribera del Duero"
+    ],
+    "tags": [
+      "suelo granito arribes duero",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "suelo_yesos_calizos_madrid",
+    "standard": "WSET3",
+    "category_es": "Edafología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Suelos Yesíferos y Calizos de Vinos de Madrid: Mecanismo y Relevancia Enológica",
+    "title_en": "Suelos Yesíferos y Calizos de Vinos de Madrid: Mechanism and Enological Significance",
+    "summary_es": "Los suelos yesíferos y calizos de Arganda del Rey modulan la acidez y el perfil mineral, favoreciendo la longevidad en Tempranillo y la frescura en Malvar mediante regulación hídrica y térmica.",
+    "summary_en": "Gypsum and limestone soils in Arganda del Rey modulate acidity and mineral profile, favoring longevity in Tempranillo and freshness in Malvar through water and thermal regulation.",
+    "content_es": "La presencia de yeso (sulfato de calcio) en las vegas aluviales reduce la disponibilidad de potasio, limitando el vigor vegetativo y concentrando azúcares y aromas primarios. Las margas calizas aportan carbonatos que estabilizan el pH del suelo, favoreciendo la expresión de taninos finos en Tempranillo y notas florales en Malvar.\n\nLa estructura aluvial permite drenaje profundo, evitando estrés hídrico excesivo pero manteniendo frescura. La interacción entre yeso y caliza crea un equilibrio mineral único que define la identidad sensorial de los vinos de Madrid, destacando acidez viva y complejidad aromática.",
+    "content_en": "The presence of gypsum (calcium sulfate) in alluvial vegas reduces potassium availability, limiting vegetative vigor and concentrating sugars and primary aromas. Limestone marls provide carbonates that stabilize soil pH, favoring fine tannin expression in Tempranillo and floral notes in Malvar.\n\nAlluvial structure allows deep drainage, avoiding excessive water stress but maintaining freshness. The interaction between gypsum and limestone creates a unique mineral balance defining the sensory identity of Madrid wines, highlighting lively acidity and aromatic complexity.",
+    "key_takeaways_es": [
+      "El yeso limita el vigor y concentra aromas primarios.",
+      "Las margas calizas estabilizan pH y potencian taninos finos.",
+      "El drenaje aluvial preserva la acidez natural del mosto."
+    ],
+    "key_takeaways_en": [
+      "Gypsum limits vigor and concentrates primary aromas.",
+      "Limestone marls stabilize pH and enhance fine tannins.",
+      "Alluvial drainage preserves natural must acidity."
+    ],
+    "related_grapes": [
+      "Tempranillo",
+      "Malvar"
+    ],
+    "related_regions": [
+      "Arganda del Rey",
+      "Madrid"
+    ],
+    "tags": [
+      "suelo yesos calizos madrid",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "fermentacion_malolactica_diacetilo",
+    "standard": "WSET3",
+    "category_es": "Bioquímica & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Fermentación Maloláctica (FML): Mecanismo y Relevancia Enológica",
+    "title_en": "Fermentación Maloláctica (FML): Mechanism and Enological Significance",
+    "summary_es": "La FML transforma el ácido málico en láctico mediante Oenococcus oeni, suavizando la acidez y generando diacetilo para complejidad sensorial.",
+    "summary_en": "MLF transforms malic acid into lactic acid via Oenococcus oeni, softening acidity and generating diacetyl for sensory complexity.",
+    "content_es": "La Fermentación Maloláctica (FML) es una transformación bioquímica microbiana donde bacterias lácticas, principalmente Oenococcus oeni, reducen el ácido málico a ácido láctico. Este proceso ablanda la acidez total del vino, aportando redondez y estabilidad microbiológica.\n\nSimultáneamente, se generan compuestos secundarios como el diacetilo, precursor de notas lácteas que definen perfiles sensoriales complejos en variedades blancas y tintos.\n\nEl control del proceso es crucial para evitar defectos como la acetobacteriosis o sabores a piña podrida.",
+    "content_en": "Malolactic Fermentation (MLF) is a microbial biochemical transformation where lactic acid bacteria, primarily Oenococcus oeni, reduce malic acid to lactic acid. This process softens the wine's total acidity, adding roundness and microbiological stability.\n\nSimultaneously, secondary compounds like diacetyl are generated, precursors to buttery notes that define complex sensory profiles in white and red varieties.\n\nProcess control is crucial to avoid defects such as acetobacteriosis or rotten pineapple flavors.",
+    "key_takeaways_es": [
+      "Conversión de ácido málico a láctico reduce la agresividad del vino.",
+      "Síntesis de diacetilo aporta notas lácteas y complejidad aromática.",
+      "Estabilidad microbiológica se logra tras completar la FML."
+    ],
+    "key_takeaways_en": [
+      "Malic acid conversion to lactic reduces wine aggressiveness.",
+      "Diacetyl synthesis adds buttery notes and aromatic complexity.",
+      "Microbiological stability is achieved after MLF completion."
+    ],
+    "related_grapes": [
+      "Chardonnay",
+      "Pinot Noir"
+    ],
+    "related_regions": [
+      "Burgundy",
+      "Champagne"
+    ],
+    "tags": [
+      "fermentacion malolactica diacetilo",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "desfangado_estatico_mostos",
+    "standard": "WSET3",
+    "category_es": "Enología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Desfangado Estático y Flotación: Mecanismo y Relevancia Enológica",
+    "title_en": "Desfangado Estático y Flotación: Mechanism and Enological Significance",
+    "summary_es": "Técnicas de clarificación pre-fermentativa que eliminan sedimentos mediante frío o agentes, reduciendo la turbidez (NTU) para evitar defectos oxidativos y mejorar estabilidad proteica.",
+    "summary_en": "Pre-fermentative clarification techniques that remove sediments via cold or agents, reducing turbidity (NTU) to avoid oxidative defects and improve protein stability.",
+    "content_es": "El desfangado estático aprovecha la densidad diferencial para sedimentar partículas finas en tanques de baja agitación, mientras que la flotación utiliza agentes como bentonita o sílice para atrapar coloides. Ambos procesos buscan reducir los NTU iniciales, minimizando el riesgo de reducción de azufre y turbidez post-fermentación. Bioquímicamente, esto estabiliza la matriz coloidal del mosto, previniendo la interacción entre taninos y proteínas que causan precipitados.",
+    "content_en": "Static settling leverages density differentials to sediment fine particles in low-agitation tanks, while flocculation uses agents like bentonite or silica to trap colloids. Both processes aim to reduce initial NTU, minimizing the risk of hydrogen sulfide reduction and post-fermentation haze. Biochemically, this stabilizes the must's colloidal matrix, preventing interactions between tannins and proteins that cause precipitates.",
+    "key_takeaways_es": [
+      "Reducción de turbidez inicial (< 5 NTU) mejora estabilidad",
+      "El frío ralentiza la fermentación microbiana antes del desfangado",
+      "Evita defectos reductores y claridad visual en vinos blancos"
+    ],
+    "key_takeaways_en": [
+      "Initial turbidity reduction (< 5 NTU) improves stability",
+      "Cold slows microbial fermentation before settling",
+      "Prevents reductive defects and visual clarity in white wines"
+    ],
+    "related_grapes": [
+      "Sauvignon Blanc",
+      "Chardonnay"
+    ],
+    "related_regions": [
+      "Loire Valley",
+      "Burgundy"
+    ],
+    "tags": [
+      "desfangado estatico mostos",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "crianza_biologica_velo_flor",
+    "standard": "WSET3",
+    "category_es": "Enología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Crianza Biológica bajo Velo de Flor: Mecanismo y Relevancia Enológica",
+    "title_en": "Biological Aging under Yeast Mat: Mechanism and Enological Significance",
+    "summary_es": "Proceso enológico donde levaduras no convencionales como S. beticus/cheresiensis modifican el perfil químico mediante consumo de glicerol y síntesis de acetaldehído.",
+    "summary_en": "Enological process where non-conventional yeasts like S. beticus/cheresiensis modify chemical profile through glycerol consumption and acetaldehyde synthesis.",
+    "content_es": "La crianza biológica bajo velo de flor, impulsada por levaduras como Saccharomyces beticus/cheresiensis, altera significativamente el perfil reductivo del mosto. Estas cepas metabolizan activamente el glicerol, reduciendo la dulzura residual y aumentando la percepción de alcohol etílico, lo que intensifica la estructura corporal y la sensación de peso en boca. Simultáneamente, se produce una síntesis elevada de acetaldehído mediante la oxidación parcial del etanol, aportando notas características de almendra tostada, nuez y mantequilla quemada típicas de vinos biológicos envejecidos bajo flor.",
+    "content_en": "Biological aging under a yeast mat driven by strains like Saccharomyces beticus/cheresiensis significantly alters the must's reductive profile. These yeasts actively metabolize glycerol, reducing residual sweetness and increasing perceived ethanol, intensifying body structure and mouthfeel weight. Simultaneously, elevated acetaldehyde synthesis occurs via partial ethanol oxidation, imparting characteristic toasted almond, nut, and burnt butter notes typical of biologically aged wines under flor.",
+    "key_takeaways_es": [
+      "Consumo de glicerol reduce dulzura y aumenta cuerpo",
+      "Síntesis de acetaldehído aporta notas oxidativas características",
+      "Impacto directo en el perfil aromático y textura del vino final"
+    ],
+    "key_takeaways_en": [
+      "Glycerol consumption reduces sweetness and increases body",
+      "Acetaldehyde synthesis provides characteristic oxidative notes",
+      "Direct impact on wine's aromatic profile and texture"
+    ],
+    "related_grapes": [
+      "Palomino Fino",
+      "Pedro Ximénez"
+    ],
+    "related_regions": [
+      "Jerez-Xérès-Sherry",
+      "Montilla-Moriles"
+    ],
+    "tags": [
+      "crianza biologica velo flor",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "fondillon_alicante_envejecimiento",
+    "standard": "WSET3",
+    "category_es": "Enología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Fondillón de Alicante y Vinos Rancios: Mecanismo y Relevancia Enológica",
+    "title_en": "Fondillón de Alicante and Vinous Rancios: Mechanism and Enological Significance",
+    "summary_es": "El Fondillón de Alicante es un vino rancio autóctono basado en Monastrell, caracterizado por una oxidación controlada y maduración prolongada que transforma el perfil tánico en notas complejas de frutos secos y miel.",
+    "summary_en": "Fondillón from Alicante is an indigenous aged wine based on Monastrell, characterized by controlled oxidation and prolonged aging that transforms tannic profiles into complex notes of nuts and honey.",
+    "content_es": "El Fondillón se define por una fermentación espontánea sin intervención de encabezar, permitiendo la integración total de las levaduras nativas y la extracción de polifenoles en toneles monoveros. Tras más de una década de sobremaduración oxidativa, ocurren reacciones de esterificación que generan ésteres volátiles y reducen la acidez percibida, estabilizando el color hacia tonalidades ámbar-oro. La ausencia de filtrado y la microoxidación a través del roble añaden texturas cremosas y complejidad aromática única.",
+    "content_en": "Fondillón is defined by spontaneous fermentation without pumping over, allowing full integration of native yeasts and phenol extraction in single-use oak barrels. After more than a decade of oxidative post-fermentation aging, esterification reactions occur generating volatile esters and reducing perceived acidity, stabilizing color towards amber-gold tones. The absence of filtration and micro-oxygenation through the wood add creamy textures and unique aromatic complexity.",
+    "key_takeaways_es": [
+      "Fermentación espontánea sin intervención mecánica",
+      "Oxidación controlada en toneles monoveros >10 años",
+      "Transformación bioquímica de taninos a notas rancias"
+    ],
+    "key_takeaways_en": [
+      "Spontaneous fermentation without mechanical intervention",
+      "Controlled oxidation in single-use oak barrels >10 years",
+      "Biochemical transformation of tannins to aged notes"
+    ],
+    "related_grapes": [
+      "Monastrell",
+      "Garnacha"
+    ],
+    "related_regions": [
+      "Alicante",
+      "Vinos Rancios de España"
+    ],
+    "tags": [
+      "fondillon alicante envejecimiento",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "tanques_hormigon_deposito_huevo",
+    "standard": "WSET3",
+    "category_es": "Enología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Depósitos Ovoides de Hormigón y Vórtice: Mecanismo y Relevancia Enológica",
+    "title_en": "Depósitos Ovoides de Hormigón y Vórtice: Mechanism and Enological Significance",
+    "summary_es": "Los depósitos ovoides de hormigón aprovechan la forma para generar corrientes de convección naturales que mantienen las lías en suspensión, facilitando una micro-oxigenación controlada y un aislamiento térmico superior al acero inoxidable.",
+    "summary_en": "Concrete ovoid tanks leverage shape to generate natural convection currents that keep lees in suspension, facilitating controlled micro-oxygenation and superior thermal insulation compared to stainless steel.",
+    "content_es": "La geometría ovoide optimiza el flujo gravitacional, eliminando la necesidad de bombas mecánicas para la mezcla. El hormigón aporta porosidad que permite una micro-oxigenación sutil durante la fermentación y crianza, enriqueciendo los polifenoles. Esto resulta en vinos con mayor cuerpo, texturas aterciopeladas y notas minerales complejas, típicas de regiones como el Priorat o Rioja Alta.",
+    "content_en": "The ovoid geometry optimizes gravitational flow, eliminating mechanical pumps for mixing. Concrete porosity allows subtle micro-oxygenation during fermentation and aging, enriching polyphenols. This results in wines with greater body, velvety textures, and complex mineral notes, typical of regions like Priorat or Rioja Alta.",
+    "key_takeaways_es": [
+      "La forma ovoide induce vórtices que homogeneizan sin bombas mecánicas.",
+      "El hormigón regula temperatura y permite micro-oxigenación natural.",
+      "Impacto sensorial: mayor cuerpo, textura y complejidad mineral."
+    ],
+    "key_takeaways_en": [
+      "Ovoid shape induces vortices for homogenization without mechanical pumps.",
+      "Concrete regulates temperature and allows natural micro-oxygenation.",
+      "Sensory impact: greater body, texture, and mineral complexity."
+    ],
+    "related_grapes": [
+      "Tempranillo",
+      "Grenache"
+    ],
+    "related_regions": [
+      "Rioja",
+      "Priorat"
+    ],
+    "tags": [
+      "tanques hormigon deposito huevo",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "maceracion_postfermentativa_caliente",
+    "standard": "WSET3",
+    "category_es": "Enología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Maceración Postfermentativa en Caliente: Mecanismo y Relevancia Enológica",
+    "title_en": "Hot Post-fermentative Maceration: Mechanism and Enological Significance",
+    "summary_es": "Técnica que mantiene el vino a 28-30°C tras la fermentación alcohólica para acelerar la polimerización tánica, suavizando la astringencia y mejorando la estructura en boca.",
+    "summary_en": "Technique maintaining wine at 28-30°C post-alcoholic fermentation to accelerate tannin polymerization, softening astringency and improving mouthfeel structure.",
+    "content_es": "Tras la fermentación alcohólica, mantener el mosto o vino en contacto con las pieles a temperaturas elevadas (28-30°C) induce una polimerización acelerada de los taninos hidrolizables y condensados. Este proceso térmico favorece la oxidación controlada y la precipitación de compuestos fenólicos, reduciendo la agresividad tánica sin sacrificar el color. Enológico, esto permite integrar mejor la estructura con la fruta residual, aportando una textura aterciopelada y mayor persistencia en paladar. Es crucial controlar el tiempo para evitar la pérdida excesiva de frescura o aromas volátiles primarios.",
+    "content_en": "After alcoholic fermentation, keeping the must or wine in contact with skins at elevated temperatures (28-30°C) induces accelerated polymerization of hydrolyzable and condensed tannins. This thermal process favors controlled oxidation and precipitation of phenolic compounds, reducing astringency without sacrificing color. Enologically, this allows better integration of structure with residual fruit, imparting a velvety texture and greater palate persistence. It is crucial to control time to avoid excessive loss of freshness or primary volatile aromas.",
+    "key_takeaways_es": [
+      "Acelera la polimerización de taninos reduciendo astringencia",
+      "Mejora la integración estructural y textura aterciopelada",
+      "Requiere control estricto para preservar frescura aromática"
+    ],
+    "key_takeaways_en": [
+      "Accelerates tannin polymerization reducing astringency",
+      "Improves structural integration and velvety texture",
+      "Requires strict control to preserve aromatic freshness"
+    ],
+    "related_grapes": [
+      "Tannat",
+      "Cabernet Sauvignon"
+    ],
+    "related_regions": [
+      "Bordeaux",
+      "Rioja Alta"
+    ],
+    "tags": [
+      "maceracion postfermentativa caliente",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "autolisis_champagne_manoproteinas",
+    "standard": "WSET3",
+    "category_es": "Enología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Cinética de la Autólisis en Vinos Espumosos: Mecanismo y Relevancia Enológica",
+    "title_en": "Kinetics of Autolysis in Sparkling Wines: Mechanism and Enological Significance",
+    "summary_es": "La autólisis describe la degradación bioquímica de las células de levadura muertas tras el reposo sobre lías, liberando compuestos que definen la textura y aroma del espumoso.",
+    "summary_en": "Autolysis describes the biochemical degradation of dead yeast cells after lees contact, releasing compounds that define texture and aroma in sparkling wine.",
+    "content_es": "La autólisis es un proceso cinético complejo iniciado tras el remojado de las lías (sur lie). Entre los 15 y 36 meses de crianza, la integridad celular se rompe progresivamente mediante hidrólisis enzimática. Esto libera aminoácidos libres, particularmente glutamato, que aportan umami y notas saladas, además de polifenoles que estabilizan el color. La liberación de manoproteínas es crítica: estas proteínas recubren las burbujas de CO2, reduciendo la tensión superficial y evitando su coalescencia prematura.",
+    "content_en": "Autolysis is a complex kinetic process initiated after lees contact (sur lie). Between 15 and 36 months of aging, cellular integrity breaks down progressively via enzymatic hydrolysis. This releases free amino acids, particularly glutamate, imparting umami and salty notes, along with polyphenols that stabilize color. The release of mannoproteins is critical: these proteins coat CO2 bubbles, reducing surface tension and preventing premature coalescence.",
+    "key_takeaways_es": [
+      "La liberación de manoproteínas es el factor determinante para la finura y persistencia de la burbuja.",
+      "El perfil aromático evoluciona desde fermentado a tostado/panadería tras los 18 meses.",
+      "La autólisis excesiva (>36 meses) puede generar notas animales o amoniacales indeseables."
+    ],
+    "key_takeaways_en": [
+      "Mannoprotein release is the determining factor for bubble finesse and persistence.",
+      "Aroma profile evolves from yeasty to toasted/bakery notes after 18 months.",
+      "Excessive autolysis (>36 months) can generate undesirable animal or ammonia notes."
+    ],
+    "related_grapes": [
+      "Chardonnay",
+      "Pinot Noir"
+    ],
+    "related_regions": [
+      "Champagne",
+      "Cava"
+    ],
+    "tags": [
+      "autolisis champagne manoproteinas",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "filtracion_tangencial_vs_lenticular",
+    "standard": "WSET3",
+    "category_es": "Enología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Estabilización Microbiológica: Filtración Tangencial vs Lenticular: Mecanismo y Relevancia Enológica",
+    "title_en": "Microbiological Stabilization: Tangential vs Lenticular Filtration: Mechanism and Enological Significance",
+    "summary_es": "Comparativa técnica entre filtración tangencial y lenticular, enfocada en la retención microbiológica sin pérdida de coloides protectores.",
+    "summary_en": "Technical comparison between tangential and lenticular filtration, focusing on microbial retention without loss of protective colloids.",
+    "content_es": "La filtración tangencial (TFF) opera mediante flujo cruzado, minimizando la floculación y preservando coloides finos esenciales para el cuerpo y color. Con porosidad de 0.45 a 1.2 µm, retiene levaduras y bacterias sin eliminar microcoloides protectores contra oxidación, manteniendo la textura. En contraste, la filtración lenticular atrapa partículas en una matriz profunda; aunque eficaz para claridad, puede despojar el vino de sus estabilizadores naturales si la presión diferencial no se controla, comprometiendo la estabilidad coloidal a largo plazo y alterando el perfil sensorial original del terroir.",
+    "content_en": "Tangential Flow Filtration (TFF) operates via cross-flow, minimizing flocculation and preserving fine colloids essential for body and color. With 0.45 to 1.2 µm porosity, it retains yeasts and bacteria without stripping protective micro-colloids against oxidation, maintaining texture. Conversely, Lenticular filtration traps particles in a deep matrix; while effective for clarity, it may deplete the wine of its natural stabilizers if pressure differential is uncontrolled, compromising long-term colloidal stability and altering the original sensory profile of the terroir.",
+    "key_takeaways_es": [
+      "TFF preserva coloides finos mejor que la filtración por profundidad.",
+      "El tamaño de poro (0.45-1.2µm) es crítico para retención microbiana sin despojar.",
+      "La filtración lenticular conlleva riesgo de alterar el perfil sensorial si la presión no se gestiona."
+    ],
+    "key_takeaways_en": [
+      "TFF preserves fine colloids better than depth filtration.",
+      "Pore size (0.45-1.2µm) is critical for microbial retention without stripping.",
+      "Lenticular filtration risks sensory alteration if pressure is not managed."
+    ],
+    "related_grapes": [
+      "Cabernet Sauvignon",
+      "Pinot Noir"
+    ],
+    "related_regions": [
+      "Bordeaux",
+      "Burgundy"
+    ],
+    "tags": [
+      "filtracion tangencial",
+      "lenticular",
+      "estabilizacion microbiologica"
+    ]
+  },
+  {
+    "id": "vinos_dulces_naturales_encabezado",
+    "standard": "WSET3",
+    "category_es": "Enología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Vins Doux Naturels (VDN) y Mutage: Mecanismo y Relevancia Enológica",
+    "title_en": "Vins Doux Naturels (VDN) y Mutage: Mechanism and Enological Significance",
+    "summary_es": "El mutage detiene la fermentación alcohólica mediante adición de alcohol vínico, preservando azúcares residuales y generando vinos dulces estables.",
+    "summary_en": "Mutage halts alcoholic fermentation via neutral spirit addition, preserving residual sugars and creating stable sweet wines.",
+    "content_es": "El VDN se define por el mutage, proceso donde se añade alcohol vínico neutro (96%) a la mosto en fermentación activa. En regiones como Banyuls y Roussillon, esto ocurre 'sur grain' (sobre grano), deteniendo la levadura cuando el alcohol alcanza ~15% vol., punto de parada natural para Saccharomyces cerevisiae. Esto preserva azúcares residuales sin esterilizar el mosto completamente, permitiendo una fermentación lenta posterior o maduración oxidativa controlada. El perfil sensorial resulta en vinos con dulzura intensa, acidez equilibrada y notas de fruta deshidratada o mermelada.",
+    "content_en": "VDN is defined by mutage, a process where neutral grape spirit (96%) is added to fermenting must. In regions like Banyuls and Roussillon, this occurs 'sur grain', halting yeast activity when alcohol reaches ~15% vol., the natural stop point for Saccharomyces cerevisiae. This preserves residual sugars without fully sterilizing the must, allowing for slow secondary fermentation or controlled oxidative maturation. The sensory profile results in intense sweetness, balanced acidity, and notes of dried fruit or jam.",
+    "key_takeaways_es": [
+      "El mutage detiene la fermentación alcohólica en presencia de levadura viva.",
+      "La adición de alcohol a 96% preserva azúcares residuales sin pasteurizar el vino.",
+      "Roussillon y Banyuls destacan por su estilo 'sur grain' y maduración oxidativa."
+    ],
+    "key_takeaways_en": [
+      "Mutage halts alcoholic fermentation in the presence of live yeast.",
+      "Adding 96% alcohol preserves residual sugars without pasteurizing the wine.",
+      "Roussillon and Banyuls are noted for their 'sur grain' style and oxidative maturation."
+    ],
+    "related_grapes": [
+      "Grenache Noir",
+      "Muscat à Petits Grains"
+    ],
+    "related_regions": [
+      "Roussillon",
+      "Banyuls"
+    ],
+    "tags": [
+      "vinos dulces naturales encabezado",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "acidificacion_vs_desacidificacion",
+    "standard": "WSET3",
+    "category_es": "Enología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Corrección de Acidez en Mosto y Vino: Mecanismo y Relevancia Enológica",
+    "title_en": "Corrección de Acidez en Mosto y Vino: Mechanism and Enological Significance",
+    "summary_es": "La acidificación con ácido tartárico compensa la baja acidez en climas cálidos, mientras que el carbonato potásico induce precipitación bitartrática para estabilizar vinos jóvenes.",
+    "summary_en": "Tartaric acid addition compensates for low acidity in warm climates, while potassium bicarbonate induces bitartrate precipitation to stabilize young wines.",
+    "content_es": "En climas cálidos, la baja acidez natural del mosto requiere corrección mediante ácido tartárico para preservar el perfil sensorial y evitar oxidación. La adición eleva el pH y ajusta el equilibrio sin alterar excesivamente el perfil aromático. Por otro lado, en vinos con alta acidez libre, el tratamiento con carbonato potásico (K2CO3) reduce la acidez total precipitando bitartratos de potasio insolubles. Este proceso estabiliza químicamente el vino frente a depósitos cristalinos y modera la agresividad ácida, requiriendo un control estricto del pH final para mantener la frescura sin comprometer la estructura.",
+    "content_en": "In warm climates, low natural must acidity requires correction via tartaric acid to preserve sensory profile and prevent oxidation. Addition raises pH and adjusts balance without excessively altering the aromatic profile. Conversely, in wines with high free acidity, treatment with potassium bicarbonate (K2CO3) reduces total acidity by precipitating insoluble potassium bitartrates. This process chemically stabilizes the wine against crystal deposits and moderates acid aggressiveness, requiring strict final pH control to maintain freshness without compromising structure.",
+    "key_takeaways_es": [
+      "El ácido tartárico es el estándar para corrección en climas cálidos por su estabilidad térmica.",
+      "El carbonato potásico reduce acidez total mediante precipitación de bitartratos insolubles.",
+      "El equilibrio pH-acidez determina la estabilidad química y sensorial del vino final."
+    ],
+    "key_takeaways_en": [
+      "Tartaric acid is the standard for correction in warm climates due to its thermal stability.",
+      "Potassium bicarbonate reduces total acidity via precipitation of insoluble bitartrates.",
+      "The pH-acidity balance determines the chemical and sensory stability of the final wine."
+    ],
+    "related_grapes": [
+      "Chardonnay",
+      "Cabernet Sauvignon"
+    ],
+    "related_regions": [
+      "Ribera del Duero",
+      "Napa Valley"
+    ],
+    "tags": [
+      "acidificacion vs desacidificacion",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "clarificacion_vegana_proteinas",
+    "standard": "WSET3",
+    "category_es": "Enología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Clarificación con Proteínas Vegetales vs Enológicas Clásicas: Mecanismo y Relevancia Enológica",
+    "title_en": "Clarification with Plant Proteins vs Classic Enological: Mechanism and Enological Significance",
+    "summary_es": "Comparativa técnica entre proteínas vegetales (guisante/patata) y agentes clásicos (huevo/ictiocola), analizando su afinidad electrostática con taninos y el impacto en la estabilidad y perfil sensorial del vino.",
+    "summary_en": "Technical comparison between plant proteins (pea/potato) and classic agents (egg/isinglass), analyzing their electrostatic affinity with tannins and impact on wine stability and sensory profile.",
+    "content_es": "La clarificación mediante proteínas vegetales, como la de guisante o patata, se basa en la adsorción de polifenoles a través de interacciones electrostáticas. A diferencia de la albúmina de huevo, que puede ser agresiva con el color y los taninos delicados, las proteínas vegetales ofrecen una carga superficial ajustable al pH del vino, permitiendo una precipitación selectiva de compuestos indeseables sin comprometer excesivamente la estructura tánica. El ictiocola, derivado de pescado, actúa similarmente pero introduce consideraciones éticas y alergénicas.\n\nEn términos sensoriales, el uso de proteínas vegetales puede preservar mejor los aromas frutales volátiles en comparación con la clara de huevo, que a veces induce notas avulsadas o opacidad residual. La estabilidad coloidal se logra mediante la formación de complejos insolubles que sedimentan, reduciendo la astringencia percibida sin eliminar completamente el cuerpo del vino. Este proceso es crucial para vinos tintos jóvenes de alta extracción como los de Nebbiolo o Cabernet Sauvignon.",
+    "content_en": "Clarification using plant proteins, such as pea or potato, relies on the adsorption of polyphenols through electrostatic interactions. Unlike egg albumin, which can be aggressive towards color and delicate tannins, plant proteins offer an adjustable surface charge at wine pH, allowing selective precipitation of unwanted compounds without excessively compromising tannic structure. Isinglass, derived from fish, acts similarly but introduces ethical and allergenic considerations.\n\nIn sensory terms, the use of plant proteins can better preserve volatile fruity aromas compared to egg white, which sometimes induces avulsed notes or residual opacity. Colloidal stability is achieved through the formation of insoluble complexes that sediment, reducing perceived astringency without eliminating the wine's body entirely. This process is crucial for young red wines of high extraction such as Nebbiolo or Cabernet Sauvignon.",
+    "key_takeaways_es": [
+      "Las proteínas vegetales ofrecen una alternativa ética y sostenible con menor impacto en el perfil aromático que la clara de huevo.",
+      "La afinidad electrostática permite precipitar taninos sin comprometer excesivamente la estructura del vino.",
+      "El uso de ictiocola o albúmina sigue siendo relevante para vinos de alta astringencia donde la claridad es prioritaria."
+    ],
+    "key_takeaways_en": [
+      "Plant proteins offer an ethical and sustainable alternative with less impact on the aromatic profile than egg white.",
+      "Electrostatic affinity allows precipitating tannins without excessively compromising the wine's structure.",
+      "Using isinglass or albumin remains relevant for high astringency wines where clarity is prioritized."
+    ],
+    "related_grapes": [
+      "Cabernet Sauvignon",
+      "Nebbiolo"
+    ],
+    "related_regions": [
+      "Bordeaux",
+      "Piedmont"
+    ],
+    "tags": [
+      "clarificacion vegana proteinas",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "fermentacion_espontanea_indigenas",
+    "standard": "WSET3",
+    "category_es": "Enología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Fermentación Espontánea con Levaduras Indígenas: Mecanismo y Relevancia Enológica",
+    "title_en": "Spontaneous Fermentation with Indigenous Yeasts: Mechanism and Enological Significance",
+    "summary_es": "La fermentación espontánea aprovecha la flora microbiana natural, iniciada por no-Saccharomyces como Kloeckera y Hanseniaspora, que aportan complejidad aromática antes de ser superadas por Saccharomyces nativo.",
+    "summary_en": "Spontaneous fermentation utilizes native microbiota, initiated by non-Saccharomyces like Kloeckera and Hanseniaspora for aromatic complexity before being overtaken by native Saccharomyces.",
+    "content_es": "La sucesión microbiana comienza con levaduras no-Saccharomyces (Kloeckera apiculata, Hanseniaspora uvarum), que metabolizan azúcares rápidamente generando ésteres y alcoholes superiores característicos del terroir. Posteriormente, cepas nativas de Saccharomyces cerevisiae toman el control para completar la fermentación alcohólica y estabilizar el vino. Este proceso bioquímico incrementa la diversidad fenotípica, aunque requiere estricto control higiénico para evitar bacterias acéticas o parásitos.",
+    "content_en": "Microbial succession begins with non-Saccharomyces yeasts (Kloeckera apiculata, Hanseniaspora uvarum), which rapidly metabolize sugars generating characteristic esters and higher alcohols reflecting the terroir. Subsequently, native Saccharomyces cerevisiae strains take control to complete alcoholic fermentation and stabilize the wine. This biochemical process increases phenotypic diversity, though it requires strict hygiene control to avoid acetic bacteria or spoilage organisms.",
+    "key_takeaways_es": [
+      "Sucesión microbiana natural define el perfil aromático inicial.",
+      "Riesgo de fermentación detenida o bacterias acéticas sin manejo.",
+      "Mayor expresión del terroir y complejidad sensorial."
+    ],
+    "key_takeaways_en": [
+      "Natural microbial succession defines initial aromatic profile.",
+      "Risk of stuck fermentation or acetic bacteria without management.",
+      "Greater terroir expression and sensory complexity."
+    ],
+    "related_grapes": [
+      "Grenache",
+      "Syrah",
+      "Pinot Noir"
+    ],
+    "related_regions": [
+      "Jura",
+      "Priorat",
+      "Orange County"
+    ],
+    "tags": [
+      "fermentacion espontanea indigenas",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "termo_vinificacion_termomaceracion",
+    "standard": "WSET3",
+    "category_es": "Enología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Termovinificación y Flash-Détente: Mecanismo y Relevancia Enológica",
+    "title_en": "Thermovinificación y Flash-Détente: Mechanism and Enological Significance",
+    "summary_es": "Técnica de extracción que combina calor moderado (70-80°C) con vacío instantáneo para maximizar el colorante antocianídico sin liberar taninos astringentes, preservando la frescura.",
+    "summary_en": "Extraction technique combining moderate heat (70-80°C) with instant vacuum to maximize anthocyanin extraction without releasing astringent tannins, preserving freshness.",
+    "content_es": "La termovinificación o termomaceración implica el calentamiento rápido del mosto o de la uva para romper las paredes celulares y facilitar la liberación de antocianinas. El proceso de Flash-Détente complementa esto mediante un vacío súbito que reduce la presión osmótica, extrayendo pigmentos sin arrastrar taninos de alto peso molecular responsables de la astringencia. Bioquímicamente, el calor desnaturaliza enzimas como la polifenoloxidasa, protegiendo el color, mientras que el vacío minimiza la oxidación.\n\nEsta técnica permite un control fino sobre la estructura tánica, evitando la extracción excesiva de compuestos fenólicos agresivos que podrían enmascarar la fruta. El resultado es un vino con una cromática intensa y estable, pero con una textura suave y redonda.",
+    "content_en": "Thermovinification or thermomaceration involves rapid heating of the must or grapes to break cell walls and facilitate anthocyanin release. The Flash-Détente process complements this through an instant vacuum that reduces osmotic pressure, extracting pigments without dragging high molecular weight tannins responsible for astringency. Biochemically, heat denatures enzymes like polyphenoloxidase, protecting color, while the vacuum minimizes oxidation.\n\nThis technique allows fine control over tannic structure, avoiding excessive extraction of aggressive phenolic compounds that could mask fruit character. The result is a wine with intense and stable chromatics, but with a soft and rounded texture.",
+    "key_takeaways_es": [
+      "Extracción selectiva de antocianinas sin taninos agresivos",
+      "Preservación del perfil aromático frutal mediante reducción de oxidación",
+      "Aplicación común en variedades de piel fina como Pinot Noir"
+    ],
+    "key_takeaways_en": [
+      "Selective anthocyanin extraction without aggressive tannins",
+      "Preservation of fruity aromatic profile via oxidation reduction",
+      "Common application in thin-skinned varieties like Pinot Noir"
+    ],
+    "related_grapes": [
+      "Pinot Noir",
+      "Gamay"
+    ],
+    "related_regions": [
+      "Beaujolais",
+      "Burgundy"
+    ],
+    "tags": [
+      "termo vinificacion termomaceracion",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "uso_fudres_toneles_gran_volumen",
+    "standard": "WSET3",
+    "category_es": "Enología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Crianza en Foudres y Botti de Gran Capacidad: Mecanismo y Relevancia Enológica",
+    "title_en": "Aging in Large Capacity Foudres and Botti: Mechanism and Enological Significance",
+    "summary_es": "Vasos de gran capacidad (2.000-5.000L) minimizan la extracción de taninos madereros y permiten una microoxigenación lenta, preservando la pureza frutal.",
+    "summary_en": "Large capacity vessels (2,000-5,000L) minimize wood tannin extraction and allow slow micro-oxygenation, preserving fruit purity.",
+    "content_es": "La crianza en foudres y botti de gran volumen se define por una relación superficie-volumen extremadamente baja. Esto reduce drásticamente la transferencia de compuestos fenólicos del roble (taninos, extractos) al vino, evitando el perfil maderado agresivo típico de barricas pequeñas. La microoxigenación ocurre a través de los poros de la madera y el corcho, promoviendo una evolución lenta y controlada de los polifenoles endógenos sin saturar la estructura.",
+    "content_en": "Aging in large capacity foudres and botti is defined by an extremely low surface-to-volume ratio. This drastically reduces the transfer of oak phenolic compounds (tannins, extracts) to the wine, avoiding the aggressive woody profile typical of small barrels. Micro-oxygenation occurs through wood pores and cork, promoting slow and controlled evolution of endogenous polyphenols without saturating the structure.",
+    "key_takeaways_es": [
+      "Relación superficie-volumen baja limita la extracción de taninos del roble.",
+      "La microoxigenación es lenta, favoreciendo la integración sin oxidación excesiva.",
+      "Ideal para vinos que buscan pureza varietal y estructura suave."
+    ],
+    "key_takeaways_en": [
+      "Low surface-to-volume ratio limits oak tannin extraction.",
+      "Slow micro-oxygenation favors integration without excessive oxidation.",
+      "Ideal for wines seeking varietal purity and soft structure."
+    ],
+    "related_grapes": [
+      "Tempranillo",
+      "Cabernet Sauvignon"
+    ],
+    "related_regions": [
+      "Rioja",
+      "Bordeaux"
+    ],
+    "tags": [
+      "uso fudres toneles gran volumen",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "crianza_submarina_presion_luz",
+    "standard": "WSET3",
+    "category_es": "Enología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Crianza Submarina de Vinos: Mecanismo y Relevancia Enológica",
+    "title_en": "Submarine Wine Aging: Mechanism and Enological Significance",
+    "summary_es": "La crianza submarina somete al vino a presión hidrostática extrema y oscuridad total, alterando la cinética de oxidación y preservando fenoles sensibles.",
+    "summary_en": "Submarine aging exposes wine to extreme hydrostatic pressure and total darkness, altering oxidation kinetics and preserving sensitive phenolics.",
+    "content_es": "La crianza submarina somete al vino a presión hidrostática extrema y oscuridad total, alterando la cinética de oxidación y preservando fenoles sensibles. Bajo presión hiperbárica, las reacciones de esterificación se ralentizan, conservando aromas frutales primarios que suelen evaporarse en barricas tradicionales. La ausencia de luz UV protege los taninos y antocianinas de la fotodegradación, mientras que la oscilación térmica constante del agua marina estabiliza el perfil volátil, reduciendo la pérdida de alcohol etílico. Sin embargo, la permeabilidad del envase es crítica; si no es hermética, la salinidad puede alterar el pH y la microbiota.",
+    "content_en": "Submarine aging exposes wine to extreme hydrostatic pressure and total darkness, altering oxidation kinetics and preserving sensitive phenolics. Under hyperbaric pressure, esterification reactions slow down, retaining primary fruity aromas often lost in traditional barrel aging. The absence of UV light protects tannins and anthocyanins from photodegradation, while the constant thermal oscillation of seawater stabilizes the volatile profile, reducing ethanol loss. However, packaging permeability is critical; if not hermetic, salinity can alter pH and microbiota.",
+    "key_takeaways_es": [
+      "La presión hidrostática ralentiza la oxidación y conserva aromas volátiles.",
+      "La oscuridad total previene la fotodegradación de compuestos fenólicos sensibles.",
+      "La estabilidad térmica marina reduce la evaporación de alcohol etílico."
+    ],
+    "key_takeaways_en": [
+      "Hydrostatic pressure slows oxidation and preserves volatile aromas.",
+      "Total darkness prevents photodegradation of sensitive phenolic compounds.",
+      "Marine thermal stability reduces ethanol evaporation."
+    ],
+    "related_grapes": [
+      "Riesling",
+      "Pinot Noir"
+    ],
+    "related_regions": [
+      "Atlántico Experimental",
+      "Costa Conceptual"
+    ],
+    "tags": [
+      "crianza submarina presion luz",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "desalcoholizacion_columna_conos",
+    "standard": "WSET3",
+    "category_es": "Enología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Desalcoholización: Columnas de Conos Rotatorios (SCC): Mecanismo y Relevancia Enológica",
+    "title_en": "Desalcoholización: Columnas de Conos Rotatorios (SCC): Mechanism and Enological Significance",
+    "summary_es": "La técnica SCC utiliza vacío y baja temperatura para separar aromas volátiles del etanol, preservando el perfil sensorial original del vino.",
+    "summary_en": "The SCC technique uses vacuum and low temperature to separate volatile aromas from ethanol, preserving the wine's original sensory profile.",
+    "content_es": "Las Columnas de Conos Rotatorios (SCC) operan bajo vacío controlado y temperaturas reducidas (<40°C), minimizando la degradación térmica de compuestos aromáticos lábiles. El mecanismo de giro genera una película delgada que facilita la transferencia de masa, permitiendo el fraccionamiento selectivo: los aromas primarios (terpenos, ésteres) se separan antes o durante la extracción del etanol, evitando la 'cocción' típica de otras desalcoholizaciones. Esto resulta en vinos con mayor frescura y complejidad olfativa, aunque puede requerir un ajuste de pH para mantener la estabilidad.",
+    "content_en": "Spinning Cone Columns (SCC) operate under controlled vacuum and reduced temperatures (<40°C), minimizing thermal degradation of labile aromatic compounds. The rotation mechanism creates a thin film that facilitates mass transfer, allowing selective fractionation: primary aromatics (terpenes, esters) are separated before or during ethanol extraction, avoiding the typical 'cooked' notes found in other desalcoholization methods. This results in wines with greater freshness and olfactory complexity, though pH adjustment may be required to maintain stability.",
+    "key_takeaways_es": [
+      "Separación selectiva de aromas volátiles",
+      "Minimización del estrés térmico en el mosto",
+      "Preservación del perfil terroir original"
+    ],
+    "key_takeaways_en": [
+      "Selective separation of volatile aromas",
+      "Minimization of thermal stress on must",
+      "Preservation of original terroir profile"
+    ],
+    "related_grapes": [
+      "Pinot Noir",
+      "Riesling"
+    ],
+    "related_regions": [
+      "Burgundy",
+      "Alsace"
+    ],
+    "tags": [
+      "desalcoholizacion columna conos",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "glicerol_cuerpo_fermentacion",
+    "standard": "WSET3",
+    "category_es": "Bioquímica & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Síntesis de Glicerol durante la Fermentación: Mecanismo y Relevancia Enológica",
+    "title_en": "Glycerol Synthesis during Fermentation: Mechanism and Enological Significance",
+    "summary_es": "El glicerol, producido vía metabólica en levaduras, aporta cuerpo y sensación de dulzor sin azúcar residual.",
+    "summary_en": "Glycerol, produced via yeast metabolic pathways, contributes body and a sensation of sweetness without residual sugar.",
+    "content_es": "La síntesis de glicerol en Saccharomyces cerevisiae ocurre principalmente a través de la reducción del dihidroxiacetona fosfato (DHAP) por la enzima glicerol-3-fosfato deshidrogenasa, aunque rutas alternativas como la vía gliceropirúvica pueden activarse bajo estrés metabólico. Este proceso es esencial para el reoxidación de NADH durante la fermentación anaeróbica, equilibrando el metabolismo celular. Enológica y sensorialmente, el glicerol incrementa la viscosidad del vino, aportando una sensación de untuosidad en boca que se percibe como cuerpo y peso. Además, su estructura molecular interactúa con los receptores gustativos, generando una percepción de dulzor aparente sin necesidad de azúcar residual, lo cual es crucial para el equilibrio en vinos secos o de alta acidez.",
+    "content_en": "Glycerol synthesis in Saccharomyces cerevisiae primarily occurs via the reduction of dihydroxyacetone phosphate (DHAP) by glycerol-3-phosphate dehydrogenase, though alternative pathways like the glyceropyruvate route may activate under metabolic stress. This process is essential for NADH reoxidation during anaerobic fermentation, balancing cellular metabolism. Enologically and sensorially, glycerol increases must viscosity, contributing to a mouthfeel of body and weight. Furthermore, its molecular structure interacts with taste receptors, generating an apparent sweetness perception without the need for residual sugar, which is crucial for balance in dry or high-acidity wines.",
+    "key_takeaways_es": [
+      "El glicerol actúa como co-factor redox (NADH) durante la fermentación anaeróbica.",
+      "Aporta cuerpo y textura mediante aumento de viscosidad del líquido.",
+      "Percepción sensorial de dulzor sin aporte calórico de azúcares residuales."
+    ],
+    "key_takeaways_en": [
+      "Glycerol acts as a redox cofactor (NADH) during anaerobic fermentation.",
+      "Contributes body and texture by increasing liquid viscosity.",
+      "Sensory perception of sweetness without caloric contribution from residual sugars."
+    ],
+    "related_grapes": [
+      "Pinot Noir",
+      "Chardonnay"
+    ],
+    "related_regions": [
+      "Burgundy",
+      "Loire"
+    ],
+    "tags": [
+      "glicerol cuerpo fermentacion",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "hiperoxidacion_mostos_blancos",
+    "standard": "WSET3",
+    "category_es": "Enología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Hiperoxidación de Mostos Blancos: Mecanismo y Relevancia Enológica",
+    "title_en": "Hiperoxidación de Mostos Blancos: Mechanism and Enological Significance",
+    "summary_es": "Saturación controlada de oxígeno pre-fermentación para polimerizar fenoles, precipitar taninos y estabilizar el color en vinos blancos con contacto piel.",
+    "summary_en": "Controlled oxygen saturation prior to fermentation to polymerize phenolics, precipitate tannins, and stabilize color in white wines with skin contact.",
+    "content_es": "La hiperoxidación de mostos blancos consiste en la exposición intencionada a altos niveles de oxígeno antes del inicio de la fermentación alcohólica. Este proceso bioquímico promueve la polimerización temprana de catequinas y ácidos hidroxicínicos, transformándolos en moléculas más grandes que precipitan como lodos (lees). La relevancia radica en la estabilización del color y la reducción de astringencia, evitando el pardeamiento oxidativo tardío durante la crianza. Es fundamental para vinos blancos con contacto piel (estilo naranja), donde se busca una estructura tánica más suave.",
+    "content_en": "White must hyperoxidation involves intentional exposure to high oxygen levels before alcoholic fermentation begins. This biochemical process promotes early polymerization of catechins and hydroxycinnamic acids, transforming them into larger molecules that precipitate as lees. The significance lies in color stabilization and astringency reduction, preventing late-stage oxidative browning during aging. It is fundamental for white wines with skin contact (orange style), where a softer tannic structure is sought.",
+    "key_takeaways_es": [
+      "Polimerización de fenoles reduce la astringencia y estabiliza el color.",
+      "Necesita control estricto de temperatura para evitar arrancas microbianas.",
+      "Ideal para variedades con alto contenido polifenólico como Viognier."
+    ],
+    "key_takeaways_en": [
+      "Phenolic polymerization reduces astringency and stabilizes color.",
+      "Requires strict temperature control to avoid microbial spoilage.",
+      "Ideal for varieties with high polyphenolic content like Viognier."
+    ],
+    "related_grapes": [
+      "Viognier",
+      "Albariño"
+    ],
+    "related_regions": [
+      "Priorat",
+      "Languedoc"
+    ],
+    "tags": [
+      "hiperoxidacion mostos blancos",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "levaduras_no_saccharomyces",
+    "standard": "WSET3",
+    "category_es": "Enología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Uso de Levaduras No-Saccharomyces en Co-Inoculación: Mecanismo y Relevancia Enológica",
+    "title_en": "Use of Non-Saccharomyces Yeasts in Co-Inoculation: Mechanism and Enological Significance",
+    "summary_es": "La co-inoculación de levaduras no-Saccharomyces modula la fermentación alcohólica y post-alcohólica, aportando complejidad aromática y estabilidad del color.",
+    "summary_en": "Co-inoculation of non-Saccharomyces yeasts modulates alcoholic and post-alcoholic fermentation, adding aromatic complexity and color stability.",
+    "content_es": "La co-inoculación estratégica de levaduras no-Saccharomyces redefine la fermentación alcohólica y post-alcohólica. Torulaspora delbrueckii preserva aromas primarios y reduce el SO2 residual, mientras que Lachancea thermotolerans aporta acidez láctica heterofermentativa y cuerpo vía glicerol. Metschnikowia pulcherrima estabiliza color en tintos mediante pigmentación natural y reduce la oxidación. Esta sinergia bioquímica permite un perfil sensorial más complejo y terroir expresivo.",
+    "content_en": "Strategic co-inoculation of non-Saccharomyces yeasts redefines alcoholic and post-alcoholic fermentation. Torulaspora delbrueckii preserves primary aromas and reduces residual SO2, while Lachancea thermotolerans contributes heterofermentative lactic acid and body via glycerol. Metschnikowia pulcherrima stabilizes color in reds through natural pigmentation and reduces oxidation. This biochemical synergy allows for a more complex sensory profile and expressive terroir.",
+    "key_takeaways_es": [
+      "Modulación de la fermentación mixta para complejidad aromática",
+      "Reducción del SO2 residual y estabilización natural del color",
+      "Impacto en el perfil de acidez y cuerpo vía metabolitos secundarios"
+    ],
+    "key_takeaways_en": [
+      "Modulation of mixed fermentation for aromatic complexity",
+      "Reduction of residual SO2 and natural color stabilization",
+      "Impact on acidity profile and body via secondary metabolites"
+    ],
+    "related_grapes": [
+      "Pinot Noir",
+      "Chardonnay"
+    ],
+    "related_regions": [
+      "Borgoña",
+      "Valle del Loira"
+    ],
+    "tags": [
+      "levaduras no saccharomyces",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "taninos_enologicos_adicion",
+    "standard": "WSET3",
+    "category_es": "Enología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Taninos Enológicos: Gálicos, Elágicos y Proantocianídicos: Mecanismo y Relevancia Enológica",
+    "title_en": "Enological Tannins: Gallic, Ellagic, and Proanthocyanidic: Mechanism and Enological Significance",
+    "summary_es": "Los taninos hidrolizables (gálicos/elágicos) y condensados (proantocianídicos) regulan la estabilidad oxidativa del mosto y definen la estructura sensorial mediante polimerización con antocianinas.",
+    "summary_en": "Hydrolyzable (gallic/ellagic) and condensed tannins regulate must oxidative stability and define sensory structure through polymerization with anthocyanins.",
+    "content_es": "Los taninos enológicos adicionados, principalmente hidrolizables de origen vegetal o extraídos, actúan como antioxidantes naturales durante la vendimia, protegiendo el mosto contra la oxidación prematura inducida por enzimas polifenoloxidasa.\n\nSu capacidad de fijar materia colorante radica en la interacción con antocianinas, formando copolímeros estables que mejoran la persistencia del color en vinos tintos jóvenes.\n\nEn boca, los proantocianídicos condensados aportan astringencia y cuerpo, mientras que los taninos hidrolizables suavizan la percepción, equilibrando la acidez y contribuyendo a una estructura armónica y duradera en el paladar.",
+    "content_en": "Added enological tannins, primarily hydrolyzable of plant origin or extracted, act as natural antioxidants during harvest, protecting the must from premature oxidation induced by polyphenol oxidase enzymes.\n\nTheir ability to fix color material lies in their interaction with anthocyanins, forming stable copolymers that improve color persistence in young red wines.\n\nIn the mouth, condensed proanthocyanidic tannins provide astringency and body, while hydrolyzable tannins soften perception, balancing acidity and contributing to a harmonious and lasting structure on the palate.",
+    "key_takeaways_es": [
+      "Protección antioxidante en vendimia mediante quelación de metales",
+      "Fijación de color vía polimerización con antocianinas",
+      "Modulación de astringencia y estructura en boca"
+    ],
+    "key_takeaways_en": [
+      "Antioxidant protection during harvest via metal chelation",
+      "Color fixation via polymerization with anthocyanins",
+      "Modulation of astringency and structure in the mouth"
+    ],
+    "related_grapes": [
+      "Cabernet Sauvignon",
+      "Tempranillo"
+    ],
+    "related_regions": [
+      "Ribera del Duero",
+      "Bordeaux"
+    ],
+    "tags": [
+      "taninos enologicos adicion",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "estabilizacion_tartarica_carboximetilcelulosa",
+    "standard": "WSET3",
+    "category_es": "Enología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Estabilización Tartárica: CMC, Poliaspartato y Frío: Mecanismo y Relevancia Enológica",
+    "title_en": "Tartaric Stabilization: CMC, Polyaspartate and Cold: Mechanism and Enological Significance",
+    "summary_es": "La estabilización mediante coloides como CMC y poliaspartato inhibe la nucleación de bitartrato potásico sin alterar el perfil sensorial, ofreciendo una alternativa al método por frío.",
+    "summary_en": "Stabilization via colloids like CMC and polyaspartate inhibits potassium bitartrate nucleation without altering the sensory profile, offering an alternative to cold stabilization.",
+    "content_es": "La estabilización tartárica mediante carboximetilcelulosa (CMC) y ácido poliaspártico actúa como inhibidor de nucleación, formando una barrera física sobre los cristales de bitartrato potásico para evitar su crecimiento visible sin alterar el perfil organoléptico. A diferencia del método por frío que elimina físicamente los cristales y puede comprometer la frescura o oxidar fenoles, estos coloides protectores mantienen la estabilidad química en botella preservando la textura y acidez percibida.",
+    "content_en": "Tartaric stabilization using carboxymethyl cellulose (CMC) and polyaspartic acid acts as a nucleation inhibitor, forming a physical barrier on potassium bitartrate crystals to prevent visible growth without altering the organoleptic profile. Unlike cold stabilization which physically removes crystals and may compromise freshness or oxidize phenols, these protective colloids maintain chemical stability in the bottle while preserving perceived texture and acidity.",
+    "key_takeaways_es": [
+      "Los coloides adsorben en la superficie cristalina, impidiendo el crecimiento de cristales de bitartrato potásico.",
+      "El método por frío puede comprometer la frescura y oxidación fenólica si no se controla estrictamente.",
+      "La elección depende del equilibrio entre claridad inmediata y longevidad sensorial en vinos premium."
+    ],
+    "key_takeaways_en": [
+      "Colloids adsorb on crystal surfaces, preventing growth of potassium bitartrate crystals.",
+      "Cold stabilization may compromise freshness and phenolic oxidation if not strictly controlled.",
+      "Choice depends on balance between immediate clarity and sensory longevity in premium wines."
+    ],
+    "related_grapes": [
+      "Cabernet Sauvignon",
+      "Pinot Noir"
+    ],
+    "related_regions": [
+      "Bordeaux",
+      "Napa Valley"
+    ],
+    "tags": [
+      "estabilizacion tartarica carboximetilcelulosa",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "vino_de_paja_passerillage",
+    "standard": "WSET3",
+    "category_es": "Enología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Vin de Paille y Passerillage sur Souche: Mecanismo y Relevancia Enológica",
+    "title_en": "Vin de Paille and Passerillage sur Souche: Mechanism and Enological Significance",
+    "summary_es": "Técnicas de concentración de mosto mediante deshidratación exógena (paja) o endógena (pasificación), determinando el perfil glucídico y fenólico final.",
+    "summary_en": "Must concentration techniques via exogenous dehydration (straw) or endogenous passerillage determine final glycidic and phenolic profiles.",
+    "content_es": "El Vin de Paille en Jura implica deshidratación post-cosecha sobre paja, elevando Brix y concentrando aromas secundarios como miel y frutos secos. La Passerillage sur Souche en Monbazillac o Jurançon ocurre pre-cosecha, permitiendo la maduración fisiológica de las uvas sin intervención mecánica. Bioquímicamente, ambos procesos aumentan la relación azúcar/ácido, pero el Vin de Paille introduce estrés oxidativo controlado que desarrolla complejidad fenólica, mientras la pasificación natural preserva acidez volátil y frescura cítrica. La fermentación alcohólica posterior debe gestionar osmolaridad elevada para evitar parálisis microbiana.",
+    "content_en": "Vin de Paille in Jura involves post-harvest dehydration on straw, raising Brix and concentrating secondary aromas like honey and nuts. Passerillage sur Souche in Monbazillac or Jurançon occurs pre-harvest, allowing physiological grape ripening without mechanical intervention. Biochemically, both processes increase the sugar/acid ratio, but Vin de Paille introduces controlled oxidative stress developing phenolic complexity, while natural passerillage preserves volatile acidity and citrus freshness. Subsequent alcoholic fermentation must manage high osmolarity to avoid microbial paralysis.",
+    "key_takeaways_es": [
+      "Concentración de azúcares mediante estrés hídrico controlado",
+      "Diferencia crítica entre deshidratación exógena y endógena",
+      "Impacto en la estructura fenólica y acidez residual"
+    ],
+    "key_takeaways_en": [
+      "Sugar concentration via controlled hydric stress",
+      "Critical difference between exogenous and endogenous dehydration",
+      "Impact on phenolic structure and residual acidity"
+    ],
+    "related_grapes": [
+      "Chardonnay",
+      "Savagnin",
+      "Sémillon",
+      "Petit Manseng"
+    ],
+    "related_regions": [
+      "Jura",
+      "Monbazillac",
+      "Jurançon"
+    ],
+    "tags": [
+      "vino de paja passerillage",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "sulfitos_so2_libre_molecular",
+    "standard": "WSET3",
+    "category_es": "Bioquímica & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "El SO2 Molecular y el pH del Vino: Mecanismo y Relevancia Enológica",
+    "title_en": "Molecular SO2 and Wine pH: Mechanism and Enological Significance",
+    "summary_es": "El SO2 molecular es la única forma activa antimicrobiana; su concentración disminuye exponencialmente al aumentar el pH del vino.",
+    "summary_en": "Molecular SO2 is the only active antimicrobial form; its concentration decreases exponentially as wine pH increases.",
+    "content_es": "El dióxido de sulfuro total en el vino existe en equilibrio entre formas no disociadas (SO2 molecular) y disociadas (HSO3-). La forma molecular es la única activa biológicamente, actuando como antioxidante y antimicrobiano. Este equilibrio sigue la ecuación de Henderson-Hasselbalch con un pKa de aproximadamente 1.8. A medida que el pH del vino aumenta (ej. de 3.0 a 3.6), la fracción molecular cae drásticamente, reduciendo su eficacia protectora. Por ello, vinos con mayor pH requieren dosis totales más altas para mantener la misma protección contra oxidación y microorganismos como Brettanomyces o bacterias lácticas no deseadas.",
+    "content_en": "Total sulfur dioxide in wine exists in equilibrium between undissociated (molecular SO2) and dissociated forms (HSO3-). The molecular form is the only biologically active species, acting as an antioxidant and antimicrobial agent. This equilibrium follows the Henderson-Hasselbalch equation with a pKa of approximately 1.8. As wine pH increases (e.g., from 3.0 to 3.6), the molecular fraction drops drastically, reducing its protective efficacy. Consequently, wines with higher pH require higher total dosages to maintain equivalent protection against oxidation and spoilage organisms such as Brettanomyces or unwanted lactic bacteria.",
+    "key_takeaways_es": [
+      "El SO2 molecular es la única forma activa antimicrobiana y antioxidante en el vino.",
+      "Su concentración depende inversamente del pH logarítmico, disminuyendo exponencialmente al subir el pH.",
+      "Las dosis totales deben ajustarse según el pH para garantizar estabilidad microbiológica y oxidativa."
+    ],
+    "key_takeaways_en": [
+      "Molecular SO2 is the only active antimicrobial and antioxidant form in wine.",
+      "Its concentration depends inversely on logarithmic pH, decreasing exponentially as pH rises.",
+      "Total doses must be adjusted according to pH to ensure microbiological and oxidative stability."
+    ],
+    "related_grapes": [
+      "Riesling",
+      "Grenache"
+    ],
+    "related_regions": [
+      "Bordeaux",
+      "Loire Valley"
+    ],
+    "tags": [
+      "sulfitos so2 libre molecular",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "espumosos_petnat_metodo_ancestral",
+    "standard": "WSET3",
+    "category_es": "Enología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Pét-Nat y el Método Ancestral: Mecanismo y Relevancia Enológica",
+    "title_en": "Pét-Nat and the Ancestral Method: Mechanism and Enological Significance",
+    "summary_es": "El Pét-Nat se caracteriza por la botella durante la fermentación primaria, generando carbonatación natural y autólisis de lías sin intervención de tiraje.",
+    "summary_en": "Pét-Nat is characterized by bottling during primary fermentation, generating natural carbonation and lees autolysis without tirage intervention.",
+    "content_es": "El método ancestral implica embotellar el mosto antes del final de la fermentación alcohólica. La levadura continúa trabajando en la botella, produciendo CO2 que queda atrapado y generando una segunda fermentación natural. Esto resulta en un perfil sensorial único con burbuja fina y aromas de panadería o lías frescas debido a la autólisis.\n\nA diferencia del método tradicional, no hay tiraje ni degüelle, por lo que el sedimento permanece en la botella, aportando textura cremosa pero requiriendo consumo rápido. La ausencia de filtrado y la alta presión osmótica preservan compuestos volátiles únicos del terruño.",
+    "content_en": "The ancestral method involves bottling the must before primary alcoholic fermentation concludes. Yeast continues working in the bottle, producing CO2 that gets trapped, creating natural carbonation and a secondary fermentation. This results in a unique sensory profile with fine bubbles and aromas of bread or fresh lees due to autolysis.\n\nUnlike traditional methods, there is no tirage or riddling, so sediment remains in the bottle, adding creamy texture but requiring prompt consumption. The absence of filtration and high osmotic pressure preserves unique volatile compounds from the terroir.",
+    "key_takeaways_es": [
+      "Fermentación primaria incompleta al embotellado",
+      "Carbonatación natural sin adición de azúcar",
+      "Sedimento activo en la botella"
+    ],
+    "key_takeaways_en": [
+      "Incomplete primary fermentation at bottling",
+      "Natural carbonation without sugar addition",
+      "Active sediment in the bottle"
+    ],
+    "related_grapes": [
+      "Gamay",
+      "Chenin Blanc"
+    ],
+    "related_regions": [
+      "Loire Valley",
+      "Alsace"
+    ],
+    "tags": [
+      "espumosos petnat metodo ancestral",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "maceracion_pelicular_frio_blancos",
+    "standard": "WSET3",
+    "category_es": "Enología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Maceración Pelicular en Frío para Blancos Aromáticos: Mecanismo y Relevancia Enológica",
+    "title_en": "Maceración Pelicular en Frío para Blancos Aromáticos: Mechanism and Enological Significance",
+    "summary_es": "Técnica de contacto breve entre mosto y hollejos a baja temperatura (10°C) que maximiza la extracción de aromas volátiles primarios sin extraer polifenoles indeseables.",
+    "summary_en": "Brief contact technique between must and skins at low temperature (10°C) maximizing volatile primary aroma extraction without extracting undesirable polyphenols.",
+    "content_es": "La maceración pelicular en frío consiste en mantener el mosto blanco en contacto con los hollejos de la uva a temperaturas controladas entre 8-12°C durante 6 a 18 horas. Este proceso permite una extracción selectiva de precursores aromáticos volátiles, específicamente terpenos (linalool, geraniol) y tioles, responsables de notas florales, cítricas y tropicales. Al evitar temperaturas superiores a 12°C, se minimiza la oxidación y la extracción de taninos que podrían aportar amargor o coloración amarillenta prematura. Bioquímicamente, la baja temperatura preserva la integridad de los compuestos aromáticos lábiles frente a la hidrólisis enzimática.",
+    "content_en": "Cold skin maceration involves keeping white must in contact with grape skins at controlled temperatures between 8-12°C for 6 to 18 hours. This process allows selective extraction of volatile aromatic precursors, specifically terpenes (linalool, geraniol) and thiols, responsible for floral, citrus, and tropical notes. By avoiding temperatures above 12°C, oxidation and the extraction of tannins that could impart bitterness or premature yellowing are minimized. Biochemically, low temperature preserves the integrity of labile aromatic compounds against enzymatic hydrolysis.",
+    "key_takeaways_es": [
+      "Extracción selectiva de terpenos y tioles sin polifenoles",
+      "Temperatura crítica bajo 12°C para evitar oxidación",
+      "Duración limitada (6-18h) para mantener frescura"
+    ],
+    "key_takeaways_en": [
+      "Selective extraction of terpenes and thiols without polyphenols",
+      "Critical temperature below 12°C to avoid oxidation",
+      "Limited duration (6-18h) to maintain freshness"
+    ],
+    "related_grapes": [
+      "Moscato",
+      "Gewürztraminer",
+      "Torrontés"
+    ],
+    "related_regions": [
+      "Alsacia",
+      "Rueda",
+      "Rioja Alavesa"
+    ],
+    "tags": [
+      "maceracion pelicular frio blancos",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "barricas_tostado_ligero_medio_fuerte",
+    "standard": "WSET3",
+    "category_es": "Enología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Grados de Tostado en Barricas de Roble: Mecanismo y Relevancia Enológica",
+    "title_en": "Degrees of Toasting in Oak Barrels: Mechanism and Enological Significance",
+    "summary_es": "El tostado controla la pirólisis del roble, liberando aromas desde notas florales suaves hasta matices ahumados intensos según la temperatura.",
+    "summary_en": "Toasting controls oak pyrolysis, releasing aromas from soft floral notes to intense smoky nuances depending on temperature.",
+    "content_es": "El tostado regula la pirólisis de lignina y hemicelulosa. Tostado ligero (150-200°C) preserva lactonas y volátiles frescos, aportando sutileza sin dominar el vino. El medio (200-240°C) genera vanilina y aldehídos, equilibrando cuerpo con notas de vainilla y especias. El fuerte (>240°C) induce carbonización parcial, creando furfural y fenoles que aportan humo, café y amargor estructural.",
+    "content_en": "Toasting regulates lignin and hemicellulose pyrolysis. Light toasting (150-200°C) preserves lactones and fresh volatiles, adding subtlety without dominating the wine. Medium (200-240°C) generates vanillin and aldehydes, balancing body with vanilla and spice notes. Strong (>240°C) induces partial carbonization, creating furfural and phenols that impart smoke, coffee, and structural bitterness.",
+    "key_takeaways_es": [
+      "El nivel de tostado define el perfil aromático dominante del vino.",
+      "La vanilina se forma principalmente en tostones medios y fuertes.",
+      "El humo proviene de la carbonización superficial en tostones intensos."
+    ],
+    "key_takeaways_en": [
+      "Toasting level defines the dominant aromatic profile of the wine.",
+      "Vanillin forms primarily in medium and strong toasts.",
+      "Smoke originates from surface carbonization in intense toasts."
+    ],
+    "related_grapes": [
+      "Cabernet Sauvignon",
+      "Chardonnay"
+    ],
+    "related_regions": [
+      "Bordeaux",
+      "Champagne"
+    ],
+    "tags": [
+      "barricas tostado ligero medio fuerte",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "bioquimia_tioles_volatiles",
+    "standard": "WSET3",
+    "category_es": "Bioquímica & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Tioles Volátiles: Fruta Tropical y Boj: Mecanismo y Relevancia Enológica",
+    "title_en": "Volatile Thiols: Tropical Fruit and Boxwood: Mechanism and Enological Significance",
+    "summary_es": "Los tioles volátiles provienen de precursores cisteínicos en el racimo, liberándose durante la fermentación para generar aromas intensos como maracuyá y boj.",
+    "summary_en": "Volatile thiols originate from cysteine precursors in the berry, releasing during fermentation to generate intense aromas such as passion fruit and boxwood.",
+    "content_es": "Los tioles volátiles son compuestos de bajo peso molecular derivados de precursores cisteínicos almacenados en el racimo. Durante la fermentación, las levaduras hidrolizan estos conjugados liberando 3-mercaptohexanol (3MH), 3-mercapthexanoato (3MHA) y 4-mercapto-4-metilpentano (4MMP). Estos compuestos son responsables de aromas intensos como maracuyá, mango y boj. La estabilidad térmica varía; el 4MMP es más estable que los tioles primarios.",
+    "content_en": "Volatile thiols are low molecular weight compounds derived from cysteine precursors stored in the berry. During fermentation, yeasts hydrolyze these conjugates releasing 3-mercaptohexanol (3MH), 3-mercapthexanoate (3MHA), and 4-mercapto-4-methylpentanethiol (4MMP). These compounds are responsible for intense aromas such as passion fruit, mango, and boxwood. Thermal stability varies; 4MMP is more stable than primary thiols.",
+    "key_takeaways_es": [
+      "Los precursores cisteínicos determinan el perfil aromático tropical en variedades como Sauvignon Blanc.",
+      "El proceso de fermentación y maduración afecta la liberación y estabilidad de los tioles volátiles.",
+      "La percepción sensorial del boj y maracuyá es clave para definir la identidad varietal."
+    ],
+    "key_takeaways_en": [
+      "Cysteine precursors determine the tropical aromatic profile in varieties like Sauvignon Blanc.",
+      "The fermentation and aging process affects the release and stability of volatile thiols.",
+      "The sensory perception of boxwood and passion fruit is key to defining varietal identity."
+    ],
+    "related_grapes": [
+      "Sauvignon Blanc",
+      "Verdejo"
+    ],
+    "related_regions": [
+      "Nueva Zelanda",
+      "Rueda"
+    ],
+    "tags": [
+      "esteres fermentacion tioles",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "oidio_vs_mildiu_hongos",
+    "standard": "WSET3",
+    "category_es": "Sanidad Vegetal & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Mildiu (Plasmopara) vs Oídio (Uncinula): Mecanismo y Relevancia Enológica",
+    "title_en": "Mildew (Plasmopara) vs Powdery Mildew (Erysiphe): Mechanism and Enological Significance",
+    "summary_es": "Distinción crítica entre mildiu (*Plasmopara*) con manchas de aceite y oídio (*Uncinula/Erysiphe*) con pelusa blanca, gestionando condiciones ambientales y nutricionales para preservar la calidad del vino.",
+    "summary_en": "Critical distinction between downy mildew (*Plasmopara*) with oil spots and powdery mildew (*Erysiphe/Uncinula*) with white fuzz, managing environmental and nutritional conditions to preserve wine quality.",
+    "content_es": "El mildiu (*Plasmopara viticola*) induce manchas de aceite amarillas en hojas y esporangios en el envés bajo humedad alta (>85%), mientras el oídio (*Erysiphe necator*, ex-*Uncinula*) presenta micelio blanco superficial prosperando en calor. El equilibrio nutricional (ej. 10-10-10 NPK) modula la resistencia; un exceso de nitrógeno favorece ambos patógenos. Tratamientos: Cobre protege ambos, pero el azufre es específico para oídio y tóxico para mildiu en mezclas. El impacto enológico incluye pérdida de acidez, oxidación prematura y defectos aromáticos por estrés hídrico inducido.",
+    "content_en": "Downy mildew (*Plasmopara viticola*) induces yellow oil spots on leaves and sporangia on the underside under high humidity (>85%), while powdery mildew (*Erysiphe necator*, ex-*Uncinula*) presents superficial white mycelium thriving in heat. Nutritional balance (e.g., 10-10-10 NPK) modulates resistance; excess nitrogen favors both pathogens. Treatments: Copper protects both, but sulfur is specific for powdery mildew and toxic to downy in mixtures. Enological impact includes acidity loss, premature oxidation, and aromatic defects due to induced water stress.",
+    "key_takeaways_es": [
+      "Mildiu requiere humedad foliar; Oídio prospera en sequedad relativa alta.",
+      "Azufre exclusivo para oídio; Cobre es preventivo general.",
+      "Nutrición desequilibrada (NPK) incrementa susceptibilidad a ambos hongos."
+    ],
+    "key_takeaways_en": [
+      "Downy mildew requires leaf moisture; Powdery mildew thrives in high relative humidity.",
+      "Sulfur exclusive for powdery mildew; Copper is general preventive.",
+      "Imbalanced nutrition (NPK) increases susceptibility to both fungi."
+    ],
+    "related_grapes": [
+      "Cabernet Sauvignon",
+      "Riesling"
+    ],
+    "related_regions": [
+      "Bordeaux",
+      "Alsacia"
+    ],
+    "tags": [
+      "oidio vs mildiu hongos",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "defecto_brettanomyces_fenoles",
+    "standard": "WSET3",
+    "category_es": "Defectos & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Brettanomyces: 4-Etilfenol y 4-Etilguayacol: Mecanismo y Relevancia Enológica",
+    "title_en": "Brettanomyces: 4-Ethylphenol and 4-Ethylguaiacol: Mechanism and Enological Significance",
+    "summary_es": "La levadura Brettanomyces produce fenoles volátiles que definen defectos como 'sudor de caballo'. Su desarrollo depende críticamente del pH, SO2 libre y temperatura durante la crianza.",
+    "summary_en": "The yeast Brettanomyces produces volatile phenols defining defects like 'horse sweat'. Its development critically depends on pH, free SO2, and temperature during aging.",
+    "content_es": "Brettanomyces bruxellensis metaboliza precursores fenólicos (ácidos fenilacéticos) en 4-etilfenol y 4-etilguayacol mediante la enzima alcohol deshidrogenasa. El 4-etilfenol aporta notas de establo, mientras que el guayacol evoca cuero rancio o especias. La presencia de SO2 libre es crucial para inhibir el crecimiento bacteriano y proteger los precursores. Un pH bajo (<3.4) limita la actividad enzimática, y temperaturas elevadas (>15°C) aceleran la fermentación indeseada.",
+    "content_en": "Brettanomyces bruxellensis metabolizes phenolic precursors (phenylacetic acid) into 4-ethylphenol and 4-ethylguaiacol via alcohol dehydrogenase. 4-Ethylphenol contributes stable notes, while guaiacol evokes leathery or spicy aromas. Free SO2 presence is crucial to inhibit growth and protect precursors. A low pH (<3.4) limits enzymatic activity, and elevated temperatures (>15°C) accelerate undesired fermentation.",
+    "key_takeaways_es": [
+      "El 4-etilguayacol es más persistente que el 4-etilfenol en la nariz.",
+      "El SO2 libre debe ser alto al inicio de la fermentación maloláctica.",
+      "La temperatura de crianza debe mantenerse baja para evitar proliferación."
+    ],
+    "key_takeaways_en": [
+      "4-Ethylguaiacol is more persistent than 4-ethylphenol in the nose.",
+      "Free SO2 must be high at the start of malolactic fermentation.",
+      "Aging temperature must remain low to avoid proliferation."
+    ],
+    "related_grapes": [
+      "Cabernet Sauvignon",
+      "Pinot Noir"
+    ],
+    "related_regions": [
+      "Burgundy",
+      "Napa Valley"
+    ],
+    "tags": [
+      "defecto brettanomyces fenoles",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "defecto_reduccion_h2s_mercaptanos",
+    "standard": "WSET3",
+    "category_es": "Defectos & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Reducción de Azufre: Sulfhídrico y Mercaptanos: Mecanismo y Relevancia Enológica",
+    "title_en": "Reducción de Azufre: Sulfhídrico y Mercaptanos: Mechanism and Enological Significance",
+    "summary_es": "El H2S y los mercaptanos son defectos reductores por metabolismo del azufre en levaduras, generando aromas a huevos podridos o alcachofa que requieren corrección con cobre.",
+    "summary_en": "H2S and mercaptans are reducing defects caused by yeast sulfur metabolism, generating rotten egg or artichoke aromas requiring copper correction.",
+    "content_es": "La formación de sulfhídrico (H2S) surge cuando las levaduras asimilaran insuficientemente el azufre inorgánico, liberando H2S como subproducto volátil. Los mercaptanos (metanotiol y etanotiol) son compuestos más estables pero con perfil sensorial complejo, a menudo asociados a frutas tropicales o defectos según concentración. El tratamiento con sulfato de cobre precipita el azufre formando sulfuro de cobre insoluble, eliminando el olor, aunque no revierte la percepción gustativa si es severo. La prevención reside en un aporte nutricional equilibrado (vitaminas B, hierro) y control del pH durante la fermentación para minimizar la actividad reductora.",
+    "content_en": "Hydrogen sulfide (H2S) formation occurs when yeast assimilate insufficient inorganic sulfur, releasing volatile H2S as a metabolic byproduct. Mercaptans (methanethiol and ethanethiol) are more stable compounds but possess complex sensory profiles, often associated with tropical fruits or defects depending on concentration. Copper sulfate treatment precipitates the sulfur forming insoluble copper sulfide, eliminating the odor, though it does not reverse taste perception if severe. Prevention lies in balanced nutrient supplementation (B vitamins, iron) and pH control during fermentation to minimize reducing activity.",
+    "key_takeaways_es": [
+      "Nutrición adecuada de levaduras previene la reducción",
+      "El choque con cobre precipita el sulfuro pero no corrige el sabor",
+      "Controlar el pH y la temperatura reduce la formación de H2S"
+    ],
+    "key_takeaways_en": [
+      "Proper yeast nutrition prevents reduction",
+      "Copper shock precipitates sulfur but does not correct taste",
+      "Controlling pH and temperature reduces H2S formation"
+    ],
+    "related_grapes": [
+      "Cabernet Sauvignon",
+      "Riesling"
+    ],
+    "related_regions": [
+      "Bordeaux",
+      "Napa Valley"
+    ],
+    "tags": [
+      "defecto reduccion h2s mercaptanos",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "defecto_tca_corcho_anisoles",
+    "standard": "WSET3",
+    "category_es": "Defectos & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Tricloroanisol (TCA) y Contaminación de Corcho: Mecanismo y Relevancia Enológica",
+    "title_en": "Trichloroanisole (TCA) and Cork Contamination: Mechanism and Enological Significance",
+    "summary_es": "El 2,4,6-Tricloroanisol es un defecto volátil generado por la reacción de clorofenoles con mohos en corchos húmedos, detectable a niveles inferiores a 1 ng/L y caracterizado por aromas a humedad.",
+    "summary_en": "2,4,6-Trichloroanisole is a volatile defect generated by the reaction of chlorophenols with molds on wet corks, detectable below 1 ng/L and characterized by musty aromas.",
+    "content_es": "El TCA se origina mediante la biotransformación de clorofenoles en presencia de hongos (Penicillium) dentro del corcho o el barril. La humedad relativa elevada (>75%) es el catalizador crítico que permite esta reacción química, transformando compuestos inocuos en defectivos. Sensorialmente, el umbral de percepción varía entre 1-2 ng/L, donde se manifiesta como notas a cartón mojado o moho, enmascarando la expresión frutal y la complejidad del vino.",
+    "content_en": "TCA originates via biotransformation of chlorophenols in the presence of fungi (Penicillium) within the cork or barrel. High relative humidity (>75%) is the critical catalyst allowing this chemical reaction, transforming innocuous compounds into defects. Sensorially, the perception threshold varies between 1-2 ng/L, manifesting as wet cardboard or mold notes, masking fruit expression and wine complexity.",
+    "key_takeaways_es": [
+      "El TCA es irreversible y no se elimina con la decantación.",
+      "La humedad en el corcho favorece la formación de clorofenoles volátiles.",
+      "Variedades como Cabernet Sauvignon son más susceptibles a la percepción del defecto."
+    ],
+    "key_takeaways_en": [
+      "TCA is irreversible and not removed by decantation.",
+      "Humidity in the cork favors the formation of volatile chlorophenols.",
+      "Varieties like Cabernet Sauvignon are more susceptible to defect perception."
+    ],
+    "related_grapes": [
+      "Cabernet Sauvignon",
+      "Pinot Noir"
+    ],
+    "related_regions": [
+      "Ribera del Duero",
+      "Burgundy"
+    ],
+    "tags": [
+      "defecto tca corcho anisoles",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "defecto_acidez_volatil_acetato",
+    "standard": "WSET3",
+    "category_es": "Defectos & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Acidez Volátil: Ácido Acético y Acetato de Etilo: Mecanismo y Relevancia Enológica",
+    "title_en": "Volatile Acidity: Acetic Acid and Ethyl Acetate: Mechanism and Enological Significance",
+    "summary_es": "La acidez volátil es un defecto causado por la oxidación del etanol a ácido acético mediante bacterias acéticas, generando aromas de vinagre y disolvente que enmascaran el perfil frutal.",
+    "summary_en": "Volatile acidity is a defect caused by ethanol oxidation to acetic acid via acetic bacteria, generating vinegar and solvent aromas that mask the fruit profile.",
+    "content_es": "Bioquímicamente, las bacterias *Acetobacter* y *Gluconobacter* oxidan el etanol residual a ácido acético (vinagre) y posteriormente a ésteres como el acetato de etilo (olor a pegamento). Este proceso es irreversible y reduce la estabilidad microbiológica. Sensorialmente, se percibe como un defecto dominante que altera el equilibrio del vino. Legalmente, la UE limita el contenido total a 1.2 g/L para vinos blancos y tintos, exigiendo control estricto de higiene y niveles de SO2 durante la fermentación y crianza.",
+    "content_en": "Biochemically, *Acetobacter* and *Gluconobacter* bacteria oxidize residual ethanol to acetic acid (vinegar) and subsequently to esters like ethyl acetate (glue smell). This process is irreversible and reduces microbiological stability. Sensorially, it is perceived as a dominant defect that alters the wine's balance. Legally, the EU limits total content to 1.2 g/L for white and red wines, requiring strict hygiene control and SO2 levels during fermentation and aging.",
+    "key_takeaways_es": [
+      "Oxidación microbiana irreversible del etanol",
+      "Aromas característicos: vinagre y disolvente",
+      "Límite legal UE: 1.2 g/L para vinos en botella"
+    ],
+    "key_takeaways_en": [
+      "Irreversible microbial oxidation of ethanol",
+      "Characteristic aromas: vinegar and solvent",
+      "EU legal limit: 1.2 g/L for bottled wines"
+    ],
+    "related_grapes": [
+      "Pinot Noir",
+      "Riesling"
+    ],
+    "related_regions": [
+      "Jerez",
+      "Champagne"
+    ],
+    "tags": [
+      "defecto acidez volatil acetato",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "defecto_oxidacion_acetaldehido",
+    "standard": "WSET3",
+    "category_es": "Defectos & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Oxidación Prematura (Premox) y Acetaldehído: Mecanismo y Relevancia Enológica",
+    "title_en": "Premature Oxidation (Premox) and Acetaldehyde: Mechanism and Enological Significance",
+    "summary_es": "La oxidación prematura surge por la pérdida de SO2 libre y actividad enzimática residual, generando acetaldehído que altera el perfil aromático.",
+    "summary_en": "Premature oxidation arises from free SO2 loss and residual enzymatic activity, generating acetaldehyde that alters the aromatic profile.",
+    "content_es": "El mecanismo bioquímico inicia con la degradación del SO2 libre, permitiendo la oxidación de polifenoles y la formación de acetaldehído a partir del etanol mediante reacciones no enzimáticas. Esto provoca un pardeamiento enzimático visible y notas olfativas de manzana podrida o barniz metálico.\n\nEnológica, esta falla compromete la frescura y estabilidad química del vino, requiriendo intervención inmediata con SO2 libre para detener el proceso antes de que sea irreversible.",
+    "content_en": "The biochemical mechanism initiates with the degradation of free SO2, allowing phenol oxidation and acetaldehyde formation from ethanol via non-enzymatic reactions. This causes visible enzymatic browning and olfactory notes of bruised apple or metallic varnish.\n\nEnologically, this flaw compromises freshness and chemical stability, requiring immediate intervention with free SO2 to stop the process before it becomes irreversible.",
+    "key_takeaways_es": [
+      "Depleción de SO2 libre activa la oxidación",
+      "El acetaldehído confiere notas de manzana oxidada",
+      "Pérdida irreversible de frescura y color"
+    ],
+    "key_takeaways_en": [
+      "Free SO2 depletion activates oxidation",
+      "Acetaldehyde imparts oxidized apple notes",
+      "Irreversible loss of freshness and color"
+    ],
+    "related_grapes": [
+      "Pinot Noir",
+      "Riesling"
+    ],
+    "related_regions": [
+      "Burgundy",
+      "Mosel"
+    ],
+    "tags": [
+      "defecto oxidacion acetaldehido",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "defecto_mousiness_picado_raton",
+    "standard": "WSET3",
+    "category_es": "Defectos & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Mousiness (Sabor a Ratón / Goût de Souris): Mecanismo y Relevancia Enológica",
+    "title_en": "Mousiness (Sabor a Ratón / Goût de Souris): Mechanism and Enological Significance",
+    "summary_es": "Defecto sensorial complejo vinculado a tetrahidropiridinas volátiles derivadas de Brettanomyces y bacterias lácticas bajo pH salival elevado.",
+    "summary_en": "Complex sensory defect linked to volatile tetrahydropyridines derived from Brettanomyces and lactic acid bacteria under elevated salivary pH.",
+    "content_es": "El defecto 'mousiness' se caracteriza por la presencia de tetrahidropiridinas volátiles, compuestos químicos específicos generados principalmente por levaduras Brettanomyces y bacterias lácticas heterofermentativas. Este proceso bioquímico se ve potenciado significativamente en condiciones de pH salival alto, lo que altera la volatilidad y percepción de estas moléculas en el perfil olfativo del vino. La interacción de estos metabolitos secundarios con los receptores humanos evoca notas disonantes a ratón húmedo o almizcle animal, comprometiendo la elegancia del bouquet.",
+    "content_en": "The 'mousiness' defect is characterized by the presence of volatile tetrahydropyridines, specific chemical compounds generated primarily by Brettanomyces yeasts and heterofermentative lactic acid bacteria. This biochemical process is significantly potentiated under high salivary pH conditions, altering the volatility and perception of these molecules in the wine's olfactory profile. The interaction of these secondary metabolites with human receptors evokes dissonant notes of wet mouse or animal musk, compromising the bouquet's elegance.",
+    "key_takeaways_es": [
+      "Las tetrahidropiridinas son el marcador químico principal de este defecto específico.",
+      "El pH salival alto actúa como catalizador en la percepción y volatilidad del aroma.",
+      "La gestión microbiológica post-fermentación es crítica para evitar su formación."
+    ],
+    "key_takeaways_en": [
+      "Tetrahydropyridines are the primary chemical marker for this specific defect.",
+      "High salivary pH acts as a catalyst in aroma perception and volatility.",
+      "Post-fermentation microbiological management is critical to prevent formation."
+    ],
+    "related_grapes": [
+      "Pinot Noir",
+      "Syrah"
+    ],
+    "related_regions": [
+      "Burgundy",
+      "Bordeaux"
+    ],
+    "tags": [
+      "defecto mousiness picado raton",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "terpenos_aroma_moscatel_riesling",
+    "standard": "WSET3",
+    "category_es": "Bioquímica & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Terpenos: Linalool, Geraniol y Nerol: Mecanismo y Relevancia Enológica",
+    "title_en": "Terpenos: Linalool, Geraniol y Nerol: Mechanism and Enological Significance",
+    "summary_es": "Los terpenos linalool, geraniol y nerol definen la identidad floral de variedades como Moscatel y Riesling. Su equilibrio entre formas libres y glicosiladas determina la persistencia aromática y estabilidad oxidativa del vino.",
+    "summary_en": "Terpenes like linalool, geraniol, and nerol define the floral identity of varieties such as Muscat and Riesling. Their balance between free and glycosylated forms determines aromatic persistence and oxidative stability in wine.",
+    "content_es": "Los monoterpenos como el linalool, geraniol y nerol son precursores aromáticos clave en la uva Moscatel, Gewürztraminer y Riesling. En estado libre, aportan notas florales intensas (jazmín, rosa), mientras que las formas glicosiladas actúan como reservorios estables que liberan aroma durante la fermentación o el envejecimiento. La oxidación de estos compuestos genera aldehídos terrosos no deseados, por lo que el control del pH y la protección contra la luz son críticos para preservar su perfil sensorial original.",
+    "content_en": "Monoterpenes such as linalool, geraniol, and nerol are key aromatic precursors in Muscat, Gewürztraminer, and Riesling grapes. In free form, they contribute intense floral notes (jasmine, rose), while glycosylated forms act as stable reservoirs releasing aroma during fermentation or aging. Oxidation of these compounds generates undesired earthy aldehydes, making pH control and light protection critical to preserve their original sensory profile.",
+    "key_takeaways_es": [
+      "El linalool aporta notas cítricas y florales frescas en Riesling.",
+      "El geraniol y nerol dominan la intensidad floral en Moscatel y Gewürztraminer.",
+      "La forma glicosilada protege el aroma frente a la oxidación durante el envejecimiento."
+    ],
+    "key_takeaways_en": [
+      "Linalool contributes fresh citrus and floral notes in Riesling.",
+      "Geraniol and nerol dominate floral intensity in Muscat and Gewürztraminer.",
+      "Glycosylated forms protect aroma against oxidation during aging."
+    ],
+    "related_grapes": [
+      "Moscatel",
+      "Gewürztraminer",
+      "Riesling"
+    ],
+    "related_regions": [
+      "Alsace",
+      "Rhine",
+      "Sicily"
+    ],
+    "tags": [
+      "terpenos aroma moscatel riesling",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "antocianos_copigmentacion_color",
+    "standard": "WSET3",
+    "category_es": "Bioquímica & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Antocianos y Fenómeno de Copigmentación: Mecanismo y Relevancia Enológica",
+    "title_en": "Anthocyanins and Copigmentation Phenomenon: Mechanism and Enological Significance",
+    "summary_es": "Los antocianos (malvidina, petunidina, peonidina) requieren estabilización mediante copigmentación con flavonoides y taninos para mantener la intensidad cromática frente a pH y oxidación.",
+    "summary_en": "Anthocyanins (malvidin, petunidin, peonidin) require stabilization via copigmentation with flavonoids and tannins to maintain chromatic intensity against pH and oxidation.",
+    "content_es": "Los antocianos principales en uvas rojas son la malvidina, petunidina y peonidina. Sin embargo, estos pigmentos son inherentemente inestables frente a cambios de pH y oxidación en solución acuosa. El fenómeno de copigmentación implica interacciones no covalentes entre los antocianos y compuestos fenólicos auxiliares como flavonoides y taninos condensados. Estas interacciones, mediante apilamiento molecular o puentes de hidrógeno, estabilizan la forma catiónica del pigmento, protegiéndolo de la degradación química y térmica.",
+    "content_en": "Major anthocyanins in red grapes are malvidin, petunidin, and peonidin. However, these pigments are inherently unstable against pH changes and oxidation in aqueous solution. The copigmentation phenomenon involves non-covalent interactions between anthocyanins and auxiliary phenolic compounds like flavonoids and condensed tannins. These interactions, via molecular stacking or hydrogen bonds, stabilize the cationic form of the pigment, protecting it from chemical and thermal degradation.",
+    "key_takeaways_es": [
+      "Estabilización del color mediante interacciones no covalentes con taninos.",
+      "Cambio de tono hacia púrpura/azul profundo en botella.",
+      "Impacto directo en la longevidad y evolución aromática."
+    ],
+    "key_takeaways_en": [
+      "Color stabilization via non-covalent interactions with tannins.",
+      "Hue shift towards deep purple/blue in bottle.",
+      "Direct impact on wine longevity and aromatic evolution."
+    ],
+    "related_grapes": [
+      "Nebbiolo",
+      "Cabernet Sauvignon"
+    ],
+    "related_regions": [
+      "Piedmont",
+      "Bordeaux"
+    ],
+    "tags": [
+      "antocianos copigmentacion color",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "portainjertos_sequia_110r_1103p",
+    "standard": "WSET3",
+    "category_es": "Viticultura & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Portainjertos para Sequía y Caliza: 110 Richter y 1103 Paulsen: Mecanismo y Relevancia Enológica",
+    "title_en": "Portainjertos para Sequía y Caliza: 110 Richter y 1103 Paulsen: Mechanism and Enological Significance",
+    "summary_es": "Análisis comparativo de 110R y 1103P en suelos calizos, destacando su arquitectura radicular profunda que optimiza la extracción hídrica bajo estrés climático.",
+    "summary_en": "Comparative analysis of 110R and 1103P on limestone soils, highlighting their deep root architecture optimizing water extraction under climate stress.",
+    "content_es": "El portainjerto 110R (Richter) se distingue por su arquitectura radicular profunda, permitiendo el acceso a acuíferos subterráneos en suelos calizos con baja capacidad de retención hídrica. Su vigor moderado equilibra la producción y la calidad, induciendo un estrés hídrico controlado que concentra fenoles y azúcares en uvas como Tempranillo o Syrah. Por su parte, el 1103P (Paulsen) ofrece una tolerancia extrema a la sequía y resistencia a patógenos del suelo, crucial para viñedos en zonas áridas. Ambos portainjertos modulan la transpiración foliar, reduciendo la carga de agua sin comprometer la maduración fisiológica, lo que se traduce en vinos con mayor estructura tánica y acidez conservada frente al cambio climático.",
+    "content_en": "The 110R (Richter) rootstock is distinguished by its deep root architecture, allowing access to groundwater in limestone soils with low water retention capacity. Its moderate vigor balances production and quality, inducing controlled water stress that concentrates phenols and sugars in grapes such as Tempranillo or Syrah. On the other hand, 1103P (Paulsen) offers extreme drought tolerance and resistance to soil pathogens, crucial for vineyards in arid zones. Both rootstocks modulate foliar transpiration, reducing water load without compromising physiological maturity, resulting in wines with greater tannic structure and preserved acidity against climate change.",
+    "key_takeaways_es": [
+      "Arquitectura radicular profunda en 110R y 1103P maximiza la eficiencia hídrica en calizas.",
+      "El estrés moderado induce maduración fenólica superior y concentración de antocianinas.",
+      "Compatibilidad con variedades sensibles a la sequía como Tempranillo y Syrah."
+    ],
+    "key_takeaways_en": [
+      "Deep root architecture in 110R and 1103P maximizes water efficiency in limestone soils.",
+      "Moderate stress induces superior phenolic maturity and anthocyanin concentration.",
+      "Compatibility with drought-sensitive varieties such as Tempranillo and Syrah."
+    ],
+    "related_grapes": [
+      "Tempranillo",
+      "Syrah"
+    ],
+    "related_regions": [
+      "Ribera del Duero",
+      "Rhone Valley"
+    ],
+    "tags": [
+      "portainjertos sequia 110r 1103p",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "poda_respeto_simonit_sirch",
+    "standard": "WSET3",
+    "category_es": "Viticultura & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Poda de Respeto y Flujo de Savia (Método Simonit & Sirch): Mecanismo y Relevancia Enológica",
+    "title_en": "Poda de Respeto y Flujo de Savia (Método Simonit & Sirch): Mechanism and Enological Significance",
+    "summary_es": "Técnica de poda mínima que preserva la continuidad del flujo de savia, optimizando el estrés hídrico y la longevidad de la cepa para expresar el terroir.",
+    "summary_en": "Minimal pruning technique preserving sap flow continuity, optimizing water stress and vine longevity to express terroir.",
+    "content_es": "El método Simonit & Sirch prioriza cortes precisos que minimizan la pérdida de savia y mantienen la arquitectura del cepellón. Esto reduce el estrés fisiológico post-poda, permitiendo una maduración más equilibrada de los racimos y una mayor longevidad en viñedos antiguos. Bioquímicamente, se favorece la concentración de polifenoles y aromas primarios al limitar la carga vegetativa excesiva.\n\nAdemás, la poda de respeto evita la formación de grandes conos de desecación, preservando la integridad del sistema radicular y la capacidad de reserva. En términos enológicos, esto se traduce en vinos con mayor complejidad aromática y estructura tánica más refinada, reflejando fielmente las características del suelo.",
+    "content_en": "The Simonit & Sirch method prioritizes precise cuts minimizing sap loss and maintaining rootstock architecture. This reduces post-pruning physiological stress, allowing for more balanced cluster ripening and greater longevity in old vineyards. Biochemically, it favors phenolic concentration and primary aromas by limiting excessive vegetative load.\n\nFurthermore, respect pruning avoids forming large desiccation cones, preserving root system integrity and reserve capacity. In enological terms, this translates to wines with greater aromatic complexity and more refined tannic structure, faithfully reflecting soil characteristics.",
+    "key_takeaways_es": [
+      "Minimiza la pérdida de savia para mantener la salud del cepellón.",
+      "Promueve la longevidad en viñedos viejos mediante menor estrés estructural.",
+      "Aumenta la expresión del terroir al limitar la carga vegetativa."
+    ],
+    "key_takeaways_en": [
+      "Minimizes sap loss to maintain rootstock health.",
+      "Promotes longevity in old vineyards through reduced structural stress.",
+      "Increases terroir expression by limiting vegetative load."
+    ],
+    "related_grapes": [
+      "Nebbiolo",
+      "Sangiovese"
+    ],
+    "related_regions": [
+      "Piedmont",
+      "Tuscany"
+    ],
+    "tags": [
+      "poda respeto simonit sirch",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "viticultura_biodinamica_preparados",
+    "standard": "WSET3",
+    "category_es": "Viticultura & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Principios Biodinámicos: Preparados 500 y 501: Mecanismo y Relevancia Enológica",
+    "title_en": "Biodynamic Principles: Preparations 500 and 501: Mechanism and Enological Significance",
+    "summary_es": "Análisis de los preparados 500 (estiércol) y 501 (sílice) en la viticultura biodinámica, enfocándose en la vitalidad del suelo, el ciclo lunar y su impacto en la expresión del terroir.",
+    "summary_en": "Analysis of preparations 500 (manure) and 501 (silica) in biodynamic viticulture, focusing on soil vitality, lunar cycles, and their impact on terroir expression.",
+    "content_es": "El preparado 500, compuesto por estiércol de vaca fermentado en cuernos durante tres años, se aplica en primavera para estimular la actividad microbiana del suelo y mejorar la estructura radicular. Este proceso incrementa la resistencia a estrés abiótico y promueve una mayor densidad celular.\n\nEl preparado 501, que utiliza sílice de cuarzo fermentado en cuerno bajo luz lunar, actúa como regulador energético vegetal. Su aplicación sincronizada con los ciclos lunares busca optimizar el metabolismo de la planta, resultando en uvas con mejor equilibrio fenólico y mayor protección contra radiación UV.\n\nLa certificación Demeter garantiza que estos protocolos se siguen rigurosamente, asegurando una expresión auténtica del terroir sin aditivos sintéticos.",
+    "content_en": "Preparation 500, composed of cow manure fermented in horns for three years, is applied in spring to stimulate soil microbial activity and improve root structure. This process increases resistance to abiotic stress and promotes higher cellular density.\n\nPreparation 501, which uses silica quartz fermented in a horn under lunar light, acts as a plant energy regulator. Its application synchronized with lunar cycles seeks to optimize plant metabolism, resulting in grapes with better phenolic balance and greater protection against UV radiation.\n\nDemeter certification ensures these protocols are followed rigorously, guaranteeing an authentic terroir expression without synthetic additives.",
+    "key_takeaways_es": [
+      "Estimulación de la actividad microbiana del suelo mediante el preparado 500.",
+      "Regulación energética y protección celular con el preparado 501 bajo luz lunar.",
+      "Certificación Demeter garantiza el cumplimiento estricto de estos protocolos."
+    ],
+    "key_takeaways_en": [
+      "Stimulation of soil microbial activity via preparation 500.",
+      "Energy regulation and cellular protection with preparation 501 under lunar light.",
+      "Demeter certification ensures strict compliance with these protocols."
+    ],
+    "related_grapes": [
+      "Pinot Noir",
+      "Chardonnay"
+    ],
+    "related_regions": [
+      "Alsace",
+      "Rheinhessen"
+    ],
+    "tags": [
+      "viticultura biodinamica preparados",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "climas_viticolas_huglin_winkler",
+    "standard": "WSET3",
+    "category_es": "Climatología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Índices Bioclimáticos de Winkler y Huglin: Mecanismo y Relevancia Enológica",
+    "title_en": "Índices Bioclimáticos de Winkler y Huglin: Mechanism and Enological Significance",
+    "summary_es": "Los índices de Winkler y Huglin cuantifican la energía térmica acumulada, determinando el potencial alcohólico, acidez y maduración fenólica para la selección varietal.",
+    "summary_en": "Winkler and Huglin indices quantify accumulated thermal energy, determining potential alcohol, acidity, and phenolic maturity for varietal selection.",
+    "content_es": "Los índices de Winkler (grados-día acumulados sobre 10°C) y Huglin (índice térmico ponderado por latitud y radiación solar) cuantifican la energía disponible para la viticultura. Bioquímicamente, el calor impulsa la respiración foliar, aumentando los azúcares (glucosa/fructosa) y reduciendo la acidez málica mediante degradación enzimática. Esto determina el potencial alcohólico y la maduración fenólica: antocianinas y taninos polimerizan mejor con calor, afectando color y estructura. Sensorialmente, regiones de alto índice (ej. Napa) producen vinos de cuerpo completo y fruta madura, mientras que zonas frías (ej. Mosel) preservan acidez y notas florales. La clasificación térmica es fundamental para la selección varietal y el equilibrio del vino.",
+    "content_en": "Winkler (accumulated degree days above 10°C) and Huglin (thermal index weighted by latitude and solar radiation) quantify available energy for viticulture. Biochemically, heat drives foliar respiration, increasing sugars (glucose/fructose) and reducing malic acid via enzymatic degradation. This determines potential alcohol and phenolic maturity: anthocyanins and tannins polymerize better with heat, affecting color and structure. Sensorially, high index regions (e.g., Napa) produce full-bodied wines with ripe fruit, while cool zones (e.g., Mosel) preserve acidity and floral notes. Thermal classification is fundamental for varietal selection and wine balance.",
+    "key_takeaways_es": [
+      "Acumulación de calor define potencial alcohólico y acidez residual.",
+      "Índice Huglin integra latitud para corrección térmica regional.",
+      "Selección varietal depende del rango bioclimático óptimo."
+    ],
+    "key_takeaways_en": [
+      "Heat accumulation defines potential alcohol and residual acidity.",
+      "Huglin index incorporates latitude for regional thermal correction.",
+      "Varietal selection depends on optimal bioclimatic range."
+    ],
+    "related_grapes": [
+      "Riesling",
+      "Cabernet Sauvignon"
+    ],
+    "related_regions": [
+      "Mosel",
+      "Bordeaux"
+    ],
+    "tags": [
+      "climas viticolas huglin winkler",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "matorrales_aromaticos_garriga",
+    "standard": "WSET3",
+    "category_es": "Vinos de Matorral",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Aromas de Garriga, Tomillar y Maquia: Mecanismo y Relevancia Enológica",
+    "title_en": "Aromas de Garriga, Tomillar y Maquia: Mechanism and Enological Significance",
+    "summary_es": "Deposición aérea de volátiles de matorrales (romero, jara) sobre la pruina uva, generando notas herbáceas complejas en vinos oxidativos o secos.",
+    "summary_en": "Aerial deposition of scrub volatiles (rosemary, heather) onto grape skin generates complex herbal notes in oxidative or dry wines.",
+    "content_es": "La deposición de compuestos volátiles lipofílicos desde la vegetación circundante (garriga) sobre la piel de la uva es un fenómeno fisicoquímico crítico en zonas áridas. Terpenos como el 1,8-cineol y fenoles del romero se adsorben en la pruina cerosa durante la maduración o secado al aire, modificando el perfil aromático final. Esto aporta notas resinadas y herbáceas que definen la identidad de ciertos vinos de zonas áridas, diferenciándolos de los estilos varietales puros mediante una interacción directa con el entorno.",
+    "content_en": "The deposition of lipophilic volatile compounds from surrounding vegetation onto the grape skin is a critical physicochemical phenomenon in arid zones. Terpenes like 1,8-cineol and rosemary phenols adsorb onto the waxy pruina during ripening or air-drying, modifying the final aromatic profile. This adds resinous and herbal notes that define the identity of wines from arid zones, distinguishing them from pure varietal styles through direct interaction with the environment.",
+    "key_takeaways_es": [
+      "Adsorción de terpenos ambientales en la pruina",
+      "Impacto sensorial de notas herbáceas y resinadas",
+      "Definición del perfil de Terroir en vinos secos"
+    ],
+    "key_takeaways_en": [
+      "Adsorption of environmental terpenes onto the pruina",
+      "Sensory impact of herbal and resinous notes",
+      "Definition of Terroir profile in dry wines"
+    ],
+    "related_grapes": [
+      "Tempranillo",
+      "Garnacha"
+    ],
+    "related_regions": [
+      "Priorat",
+      "Ribera del Duero"
+    ],
+    "tags": [
+      "matorrales aromaticos garriga",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "polifenoles_ipt_indice_madurez",
+    "standard": "WSET3",
+    "category_es": "Enología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Índice de Polifenoles Totales (IPT) y Madurez Fenólica: Mecanismo y Relevancia Enológica",
+    "title_en": "Índice de Polifenoles Totales (IPT) y Madurez Fenólica: Mechanism and Enological Significance",
+    "summary_es": "El IPT mide la concentración de flavonoides mediante absorbancia a 280 nm, complementando la madurez azucarada con datos estructurales críticos para el envejecimiento.",
+    "summary_en": "IPT measures flavonoid concentration via 280 nm absorbance, complementing sugar maturity with structural data critical for aging potential.",
+    "content_es": "El Índice de Polifenoles Totales (IPT) cuantifica la densidad óptica a 280 nm, reflejando principalmente antocianinas y taninos flavonoides. A diferencia del Brix, el IPT indica la madurez fenólica necesaria para la estabilidad oxidativa y la estructura tánica. La cata de hollejos y pepitas permite evaluar la polimerización de taninos: una amargor excesivo o astringencia seca en la boca señala inmadurez química, mientras que notas frutales complejas indican equilibrio. Este análisis bioquímico es vital para determinar la fecha óptima de vendimia, asegurando vinos con capacidad de guarda y expresión terroir auténtica.",
+    "content_en": "The Total Polyphenol Index (IPT) quantifies optical density at 280 nm, primarily reflecting anthocyanins and flavonoid tannins. Unlike Brix, IPT indicates phenolic maturity required for oxidative stability and tannic structure. Berry and pit tasting allows evaluation of tannin polymerization: excessive bitterness or dry astringency signals chemical immaturity, while complex fruity notes indicate balance. This biochemical analysis is vital for determining the optimal harvest date, ensuring wines with aging potential and authentic terroir expression.",
+    "key_takeaways_es": [
+      "El IPT a 280 nm es el estándar para medir flavonoides y taninos en la uva fresca.",
+      "La cata de pepitas valida la madurez química antes del análisis instrumental.",
+      "La vendimia se fija cuando el IPT y el Brix alcanzan equilibrio estructural."
+    ],
+    "key_takeaways_en": [
+      "IPT at 280 nm is the standard for measuring flavonoids and tannins in fresh grapes.",
+      "Pit tasting validates chemical maturity before instrumental analysis.",
+      "Harvest is fixed when IPT and Brix reach structural equilibrium."
+    ],
+    "related_grapes": [
+      "Cabernet Sauvignon",
+      "Nebbiolo"
+    ],
+    "related_regions": [
+      "Bordeaux",
+      "Piedmont"
+    ],
+    "tags": [
+      "polifenoles ipt indice madurez",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "geosmina_tierra_humeda_botrytis",
+    "standard": "WSET3",
+    "category_es": "Sanidad Vegetal & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Geosmina y Hongos Parásitos en Vendimia: Mecanismo y Relevancia Enológica",
+    "title_en": "Geosmina and Parasitic Fungi in Harvest: Mechanism and Enological Significance",
+    "summary_es": "La geosmina, compuesta por Streptomyces y hongos como Botrytis/Penicillium, aporta notas de tierra mojada en uvas de vendimia lluviosa.",
+    "summary_en": "Geosmin, produced by bacteria and fungi like Botrytis/Penicillium, imparts wet earth notes in grapes from rainy harvests.",
+    "content_es": "La geosmina es un metabolito secundario responsable de aromas terrosos, producido principalmente por bacterias del género Streptomyces y ciertos hongos como Penicillium expansum y Botrytis cinerea. Durante vendimias lluviosas, la humedad favorece la proliferación de estos patógenos en el racimo, generando defectos de sanidad vegetal que se manifiestan sensorialmente como notas de tierra mojada o remolacha cruda. Enológica, esta compuesta puede aportar complejidad al terroir si está controlada, pero suele indicar estrés hídrico o podredumbre gris no noble en etapas tempranas.\n\nLa presencia de Penicillium expansum (moho azul) introduce riesgos de fermentación espontánea y alteraciones de color, mientras que Botrytis cinerea puede evolucionar hacia la noble rotura si el microclima lo permite. La gestión del terroir debe priorizar la ventilación para minimizar estos compuestos indeseados.",
+    "content_en": "Geosmin is a secondary metabolite responsible for earthy aromas, primarily produced by Streptomyces bacteria and certain fungi like Penicillium expansum and Botrytis cinerea. During rainy harvests, humidity favors the proliferation of these pathogens on the cluster, generating plant health defects that manifest sensorially as wet earth or raw beetroot notes. Enologically, this compound can add complexity to terroir if controlled, but often indicates water stress or grey rot in early stages.\n\nThe presence of Penicillium expansum (blue mold) introduces risks of spontaneous fermentation and color alterations, while Botrytis cinerea can evolve into noble rot if the microclimate allows. Terroir management must prioritize ventilation to minimize these unwanted compounds.",
+    "key_takeaways_es": [
+      "La geosmina es un compuesto volátil clave en la percepción de 'tierra mojada'.",
+      "Penicillium expansum y Botrytis son fuentes fúngicas relevantes en uvas húmedas.",
+      "El control de humedad es vital para evitar defectos de podredumbre gris."
+    ],
+    "key_takeaways_en": [
+      "Geosmin is a key volatile compound in 'wet earth' perception.",
+      "Penicillium expansum and Botrytis are relevant fungal sources in wet grapes.",
+      "Humidity control is vital to avoid grey rot defects."
+    ],
+    "related_grapes": [
+      "Pinot Noir",
+      "Cabernet Sauvignon"
+    ],
+    "related_regions": [
+      "Burgundy",
+      "Bordeaux"
+    ],
+    "tags": [
+      "geosmina tierra humeda botrytis",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "defecto_golpe_luz_riboflavina",
+    "standard": "WSET3",
+    "category_es": "Defectos & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Gusto de Luz (Goût de Lumière) y Riboflavina: Mecanismo y Relevancia Enológica",
+    "title_en": "Gusto de Luz (Goût de Lumière) and Riboflavin: Mechanism and Enological Significance",
+    "summary_es": "La exposición a la luz UV en botellas transparentes induce una fotooxidación de riboflavina y metionina, generando dimetilsulfuro y compuestos sulfúricos que alteran el perfil aromático del vino.",
+    "summary_en": "UV exposure in clear bottles induces photooxidation of riboflavin and methionine, generating dimethyl sulfide and sulfur compounds that alter the wine's aromatic profile.",
+    "content_es": "El 'Gusto de Luz' o Goût de Lumière es un defecto fotoquímico crítico en la enología moderna, donde la luz ultravioleta (UV) actúa como catalizador inicial. La riboflavina (vitamina B2), naturalmente presente en el mosto, absorbe fotones y transfiere energía a la metionina, provocando su descomposición oxidativa. Este proceso libera compuestos volátiles de azufre, principalmente dimetilsulfuro (DMS) según el mecanismo especificado, percibidos sensorialmente como notas a cartón mojado o escopeta. Enológica, esto afecta especialmente a vinos blancos jóvenes en vidrio claro almacenados cerca de ventanas.",
+    "content_en": "Light Strike or Goût de Lumière is a critical photochemical defect in modern enology, where ultraviolet (UV) light acts as the initial catalyst. Riboflavin (Vitamin B2), naturally present in the must, absorbs photons and transfers energy to methionine, causing its oxidative decomposition. This process releases volatile sulfur compounds, primarily dimethyl sulfide (DMS) per the specified mechanism, perceived sensorially as wet cardboard or gunpowder notes. Enologically, this affects young white wines in clear glass stored near windows.",
+    "key_takeaways_es": [
+      "La luz UV es el catalizador inicial de la reacción fotoquímica.",
+      "La riboflavina y metionina son precursores esenciales del defecto.",
+      "El uso de vidrio ámbar bloquea las longitudes de onda dañinas."
+    ],
+    "key_takeaways_en": [
+      "UV light is the initial catalyst for the photochemical reaction.",
+      "Riboflavin and methionine are essential precursors of the defect.",
+      "Amber glass blocks damaging wavelengths."
+    ],
+    "related_grapes": [
+      "Riesling",
+      "Chardonnay"
+    ],
+    "related_regions": [
+      "Alsacia",
+      "Loira"
+    ],
+    "tags": [
+      "defecto golpe luz riboflavina",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "defecto_quercus_lactonas_sobremaduracion",
+    "standard": "WSET3",
+    "category_es": "Enología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Lactonas de Roble y Compuestos de Tostado: Mecanismo y Relevancia Enológica",
+    "title_en": "Lactones de Roble y Compuestos de Tostado: Mecanismo y Relevancia Enológica",
+    "summary_es": "Las lactonas cis/trans y fenoles derivados del roble (vainillina, eugenol) determinan el perfil aromático durante la maduración en barrica, aportando notas a coco, madera tostada y especias que integran la estructura tánica.",
+    "summary_en": "Oak cis/trans lactones and phenolic derivatives (vanillin, eugenol) determine the aromatic profile during barrel aging, contributing coconut, toasted wood, and spice notes that integrate tannic structure.",
+    "content_es": "La extracción de compuestos del roble durante la maduración es un proceso complejo gobernado por la temperatura y el tiempo de tostado. Las lactonas de whiskey (cis-3-metilbutil-lactona y trans-4-metil-2-pentil-lactona) se originan a partir de la hidrólisis de ésteres en la madera, aportando notas frutales (coco/banana) o maderosas (tabaco). La vainillina resulta de la degradación térmica de la lignina, mientras que el guayacol y el eugenol provienen de fenoles preexistentes liberados por pirólisis, generando aromas ahumados y especiados. El equilibrio entre estos compuestos define si el vino muestra integración o dominancia del barril.",
+    "content_en": "Extraction of oak compounds during aging is a complex process governed by temperature and toasting time. Whiskey lactones (cis-3-methylbutyl-lactone and trans-4-methyl-2-pentyl-lactone) originate from ester hydrolysis in the wood, contributing fruity (coconut/banana) or woody (tobacco) notes. Vanillin results from thermal degradation of lignin, while guaiacol and eugenol come from pre-existing phenols released by pyrolysis, generating smoky and spicy aromas. The balance between these compounds defines whether the wine shows integration or barrel dominance.",
+    "key_takeaways_es": [
+      "La proporción cis/trans de las lactonas define la intensidad del aroma a madera versus fruta tropical.",
+      "El tostado controlado es esencial para liberar vainillina sin quemar los fenoles volátiles como el guayacol.",
+      "La integración sensorial requiere que estos compuestos no enmascaren la identidad varietal del vino."
+    ],
+    "key_takeaways_en": [
+      "The cis/trans ratio of lactones defines the intensity of wood versus tropical fruit aroma.",
+      "Controlled toasting is essential for releasing vanillin without burning volatile phenols like guaiacol.",
+      "Sensory integration requires these compounds not to mask the varietal identity of the wine."
+    ],
+    "related_grapes": [
+      "Cabernet Sauvignon",
+      "Pinot Noir"
+    ],
+    "related_regions": [
+      "Bordeaux",
+      "Napa Valley"
+    ],
+    "tags": [
+      "defecto quercus lactonas sobremaduracion",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "defecto_manitol_enfermedad_agridulce",
+    "standard": "WSET3",
+    "category_es": "Defectos & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Fermentación Manítica (Enfermedad Agridulce): Mecanismo y Relevancia Enológica",
+    "title_en": "Mannitic Fermentation (Sour-Sweet Disease): Mechanism and Enological Significance",
+    "summary_es": "La reducción de fructosa a manitol por bacterias lácticas heterofermentativas altera el equilibrio dulce-acidez en vinos calientes.",
+    "summary_en": "Fructose reduction to mannitol by heterofermentative lactic acid bacteria alters the sweet-acid balance in warm climate wines.",
+    "content_es": "Este defecto surge cuando Oenococcus oeni, bajo estrés térmico, reduce fructosa residual a manitol. El manitol aporta un dulzor engañoso que desequilibra la acidez percibida, creando una sensación 'agridulce' atípica. En climas cálidos, la actividad bacteriana persiste tras la fermentación alcohólica, generando notas de fruta podrida o alteración del perfil aromático.",
+    "content_en": "This defect arises when Oenococcus oeni, under thermal stress, reduces residual fructose to mannitol. Mannitol imparts deceptive sweetness that disrupts perceived acidity, creating an atypical 'sour-sweet' sensation. In warm climates, bacterial activity persists after alcoholic fermentation, generating notes of rotten fruit or altering the aromatic profile.",
+    "key_takeaways_es": [
+      "Reducción de fructosa a manitol por bacterias lácticas heterofermentativas",
+      "Desequilibrio sensorial dulce-amargo en vinos secos o calientes",
+      "Gestión crítica de temperatura y pH post-fermentación"
+    ],
+    "key_takeaways_en": [
+      "Fructose reduction to mannitol by heterofermentative lactic acid bacteria",
+      "Sensory sweet-bitter imbalance in dry or warm wines",
+      "Critical management of temperature and pH post-fermentation"
+    ],
+    "related_grapes": [
+      "Zinfandel",
+      "Grenache"
+    ],
+    "related_regions": [
+      "California",
+      "Southern Spain"
+    ],
+    "tags": [
+      "defecto manitol enfermedad agridulce",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "defecto_flores_vino_candida",
+    "standard": "WSET3",
+    "category_es": "Defectos & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Flores del Vino (Candida, Pichia, Hansenula): Mecanismo y Relevancia Enológica",
+    "title_en": "Flores del Vino (Candida, Pichia, Hansenula): Mechanism and Enological Significance",
+    "summary_es": "El crecimiento de levaduras en la superficie del vino genera un velo micelar blanco que induce oxidación reductora y alteraciones sensoriales.",
+    "summary_en": "Yeast growth on the wine surface creates a white mycelial veil inducing oxidative reduction and sensory alterations.",
+    "content_es": "El fenómeno, conocido como 'flores del vino', se manifiesta mediante un velo micelar blanco en depósitos con cámara de aire. Este crecimiento microbiano involucra especies como Candida, Pichia y Hansenula, las cuales metabolizan el etanol residual hacia acetaldehído, generando notas oxidativas indeseables. Bioquímicamente, la actividad enzimática altera el perfil reductivo del vino, provocando aromas a manzana podrida o mantequilla rancia que comprometen la frescura.",
+    "content_en": "The phenomenon, known as 'wine flowers', manifests as a white mycelial veil in tanks with an airlock. This microbial growth involves species such as Candida, Pichia, and Hansenula, which metabolize residual ethanol into acetaldehyde, generating undesirable oxidative notes. Biochemically, enzymatic activity alters the wine's reductive profile, causing aromas of rotten apple or rancid butter that compromise freshness.",
+    "key_takeaways_es": [
+      "Proliferación en superficie con cámara de aire",
+      "Oxidación de etanol a acetaldehído",
+      "Eliminación física o filtrado necesario"
+    ],
+    "key_takeaways_en": [
+      "Surface proliferation with airlock",
+      "Ethanol oxidation to acetaldehyde",
+      "Physical removal or filtration required"
+    ],
+    "related_grapes": [
+      "Syrah",
+      "Pinot Noir"
+    ],
+    "related_regions": [
+      "Ribera del Duero",
+      "Burgundy"
+    ],
+    "tags": [
+      "defecto flores vino candida",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "resveratrol_estilbenos_salud",
+    "standard": "WSET3",
+    "category_es": "Bioquímica & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Resveratrol y Estilbenos en el Hollejo: Mecanismo y Relevancia Enológica",
+    "title_en": "Resveratrol and Stilbenes in the Grapes: Mechanism and Enological Significance",
+    "summary_es": "Los estilbenos, como el resveratrol, son fitoalexinas producidas por la vid ante estrés fúngico, actuando como antioxidantes potentes que influyen en la longevidad del vino y su perfil sensorial.",
+    "summary_en": "Stilbenes, such as resveratrol, are phytoalexins produced by the vine under fungal stress, acting as potent antioxidants that influence wine longevity and sensory profile.",
+    "content_es": "Los estilbenos, principalmente el resveratrol, son metabolitos secundarios sintetizados por la uva vía la ruta del fenilpropanoide como mecanismo de defensa contra patógenos fúngicos y estrés abiótico. Su biosíntesis se activa en la piel del hollejo durante la maduración, especialmente bajo ataque de Botrytis cinerea o exposición solar intensa.\n\nEnológica, su extracción depende de la maceración; sin embargo, son inestables oxidativamente, lo que puede generar compuestos de sabor a madera quemada o precipitados si no se controla el pH y el SO2. Su presencia define parcialmente el perfil de salud percibido del vino.",
+    "content_en": "Stilbenes, primarily resveratrol, are secondary metabolites synthesized by the grape via the phenylpropanoid pathway as a defense mechanism against fungal pathogens and abiotic stress. Their biosynthesis is activated in the grape skin during ripening, particularly under Botrytis cinerea attack or intense solar exposure.\n\nEnologically, their extraction depends on maceration; however, they are oxidatively unstable, which can generate burnt wood flavors or precipitates if pH and SO2 are not controlled. Their presence partially defines the perceived health profile of the wine.",
+    "key_takeaways_es": [
+      "Síntesis inducida por estrés fúngico",
+      "Acumulación preferente en la piel del hollejo",
+      "Impacto en la estabilidad oxidativa y salud"
+    ],
+    "key_takeaways_en": [
+      "Fungal stress-induced synthesis",
+      "Preferential accumulation in grape skin",
+      "Impact on oxidative stability and health"
+    ],
+    "related_grapes": [
+      "Pinot Noir",
+      "Nebbiolo"
+    ],
+    "related_regions": [
+      "Burgundy",
+      "Barolo"
+    ],
+    "tags": [
+      "resveratrol estilbenos salud",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "tdn_aroma_petroleo_riesling",
+    "standard": "WSET3",
+    "category_es": "Bioquímica & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "TDN (1,1,6-Trimetil-1,2-dihidronaftaleno) en Riesling: Mecanismo y Relevancia Enológica",
+    "title_en": "TDN (1,1,6-Trimethyl-1,2-dihydronaphthalene) in Riesling: Mechanism and Enological Significance",
+    "summary_es": "El TDN se forma por la degradación oxidativa de carotenoides bajo alta insolación y estrés hídrico en uvas Riesling, generando notas características de petróleo o keroseno.",
+    "summary_en": "TDN forms via oxidative degradation of carotenoids under high insolation and water stress in Riesling grapes, generating characteristic petrol or kerosene notes.",
+    "content_es": "El 1,1,6-Trimetil-1,2-dihidronaftaleno (TDN) es un compuesto volátil clave en el perfil aromático del Riesling. Su biosíntesis depende de la degradación de precursores carotenoides, específicamente beta-caroteno, inducida por estrés abiótico como alta insolación y déficit hídrico durante la maduración. Este proceso bioquímico convierte los pigmentos vegetales en compuestos aromáticos volátiles que confieren el perfil 'petrolífero'. Enológica, este aroma es altamente valorado en regiones como Mosela o Alsacia, donde se asocia con calidad y autenticidad del terruño.",
+    "content_en": "1,1,6-Trimethyl-1,2-dihydronaphthalene (TDN) is a key volatile compound in Riesling's aromatic profile. Its biosynthesis depends on the oxidative degradation of carotenoid precursors, specifically beta-carotene, induced by abiotic stress such as high insolation and water deficit during ripening. This biochemical process converts plant pigments into volatile aromatic compounds conferring the 'petrol' profile. Enologically, this aroma is highly valued in regions like Mosel or Alsace, where it is associated with quality and terroir authenticity.",
+    "key_takeaways_es": [
+      "El TDN es un marcador de estrés hídrico y luz solar intensa en la uva.",
+      "Se deriva de la oxidación de carotenoides como el beta-caroteno.",
+      "Es un atributo sensorial deseable que define el estilo clásico del Riesling."
+    ],
+    "key_takeaways_en": [
+      "TDN is a marker of high water stress and intense sunlight on the grape.",
+      "It derives from oxidation of carotenoids like beta-carotene.",
+      "It is a desirable sensory attribute defining the classic Riesling style."
+    ],
+    "related_grapes": [
+      "Riesling"
+    ],
+    "related_regions": [
+      "Mosel",
+      "Alsace",
+      "Pfalz"
+    ],
+    "tags": [
+      "tdn aroma petroleo riesling",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "metales_pesados_quiebra_ferrica_cuprica",
+    "standard": "WSET3",
+    "category_es": "Enología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Quiebra Férrica y Quiebra Cúprica: Mecanismo y Relevancia Enológica",
+    "title_en": "Quiebra Férrica y Quiebra Cúprica: Mechanism and Enological Significance",
+    "summary_es": "Análisis técnico sobre la precipitación coloidal de fosfato férrico y sulfuro de cobre, sus causas químicas y efectos en la estabilidad del vino.",
+    "summary_en": "Technical analysis of colloidal precipitation of ferric phosphate and copper sulfide, their chemical causes and effects on wine stability.",
+    "content_es": "La quiebra férrica implica la precipitación de fosfato férrico (FePO4) en medios alcalinos o con exceso de pirofosfatos, generando sedimentos blancos o azulados que afectan la claridad. La quiebra cúprica surge del sulfuro de cobre (CuS), un precipitado negro insoluble formado tras el uso de sulfato de cobre como agente de aclarado, reaccionando con sulfuros hidrogenados en botella. Ambos fenómenos alteran la estabilidad coloidal y pueden impartir notas metálicas indeseables si no se gestionan mediante filtración o ajuste de pH.",
+    "content_en": "Ferric breakdown involves ferric phosphate (FePO4) precipitation in alkaline media or with excess pyrophosphates, generating white or bluish sediments affecting clarity. Copper breakdown arises from copper sulfide (CuS), an insoluble black precipitate formed after using copper sulfate as a fining agent, reacting with hydrogen sulfides in the bottle. Both phenomena alter colloidal stability and can impart undesirable metallic notes if not managed via filtration or pH adjustment.",
+    "key_takeaways_es": [
+      "El control del pH es crítico para evitar la solubilidad de los fosfatos férricos.",
+      "El uso excesivo de sulfato de cobre puede generar precipitados negros en botella.",
+      "La estabilidad coloidal se ve comprometida por la interacción con metales pesados."
+    ],
+    "key_takeaways_en": [
+      "pH control is critical to avoid solubility of ferric phosphates.",
+      "Excessive copper sulfate use can generate black precipitates in the bottle.",
+      "Colloidal stability is compromised by interaction with heavy metals."
+    ],
+    "related_grapes": [
+      "Tempranillo",
+      "Cabernet Sauvignon"
+    ],
+    "related_regions": [
+      "Ribera del Duero",
+      "Bordeaux"
+    ],
+    "tags": [
+      "metales pesados quiebra ferrica cuprica",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "corcho_alcornoque_suberina",
+    "standard": "WSET3",
+    "category_es": "Enología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Fisiología del Alcornoque (Quercus suber) y Suberina: Mecanismo y Relevancia Enológica",
+    "title_en": "Physiology of Cork Oak (Quercus suber) and Suberin: Mechanism and Enological Significance",
+    "summary_es": "La suberina, biopolímero hidrofóbico, garantiza la elasticidad necesaria para la saca y regula el micro-oxígeno en la botella.",
+    "summary_en": "Suberin, a hydrophobic biopolymer, ensures elasticity for harvesting and regulates micro-oxygenation in the bottle.",
+    "content_es": "La corteza del alcornoque se regenera gracias a la suberina, una capa impermeable que protege el floema. Durante la saca, la elasticidad de la suberina permite la apertura sin dañar el árbol. En enología, la micro-permeabilidad al oxígeno es crucial; un corcho con permeabilidad óptima evita reducciones y oxidación excesiva, preservando aromas volátiles.",
+    "content_en": "Cork oak bark regenerates due to suberin, a hydrophobic layer protecting the phloem. During harvesting, suberin elasticity allows opening without damaging the tree. In enology, micro-oxygen permeability is crucial; optimal permeability avoids reduction and excessive oxidation, preserving volatile aromas.",
+    "key_takeaways_es": [
+      "La suberina permite la tala sostenible sin matar el árbol",
+      "Controla la transferencia de oxígeno para evitar TCA y oxidación",
+      "Propiedades físicas determinan la calidad del corcho natural"
+    ],
+    "key_takeaways_en": [
+      "Suberin enables sustainable harvesting without killing the tree",
+      "Controls oxygen transfer to prevent TCA and oxidation",
+      "Physical properties determine natural cork quality"
+    ],
+    "related_grapes": [
+      "Tempranillo",
+      "Cabernet Sauvignon"
+    ],
+    "related_regions": [
+      "Ribera del Duero",
+      "Bordeaux"
+    ],
+    "tags": [
+      "corcho alcornoque suberina",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "tapones_sinteticos_vs_rosca_stelvin",
+    "standard": "WSET3",
+    "category_es": "Enología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Cierres Alternativos: Tapón de Rosca (Stelvin) y Sintéticos: Mecanismo y Relevancia Enológica",
+    "title_en": "Alternative Closures: Stelvin and Synthetic Caps: Mechanism and Enological Significance",
+    "summary_es": "Análisis comparativo del impacto de los cierres alternativos en la permeabilidad al oxígeno, preservación de aromas reductivos y expresión varietal inmediata.",
+    "summary_en": "Comparative analysis of alternative closures' impact on oxygen permeability, preservation of reductive aromas, and immediate varietal expression.",
+    "content_es": "Los tapones de rosca (Stelvin) presentan una Tasa de Transmisión de Oxígeno (OTR) extremadamente baja, similar a los cierres sintéticos de alta densidad. Esta barrera hermética minimiza la oxidación lenta, ideal para vinos jóvenes que requieren frescura varietal intacta y aromas frutales primarios sin evolución oxidativa. Sin embargo, la ausencia de micro-oxigenación puede limitar el desarrollo de complejidad terciaria en añejamientos largos.\n\nLos cierres sintéticos ofrecen consistencia dimensional superior a los corchos naturales, reduciendo defectos de contaminación microbiológica (TCA), pero su OTR es altamente variable según la composición del polímero. En vinos reductivos como Sauvignon Blanc o Riesling, estos cierres protegen mejor el perfil aromático volátil frente a la pérdida por evaporación y oxidación superficial, manteniendo la acidez viva.",
+    "content_en": "Stelvin screw caps exhibit an extremely low Oxygen Transmission Rate (OTR), comparable to high-density synthetic closures. This hermetic barrier minimizes slow oxidation, ideal for young wines requiring intact varietal freshness and primary fruit aromas without oxidative evolution. However, the absence of micro-oxygenation can limit tertiary complexity development during long aging.\n\nSynthetic closures offer superior dimensional consistency compared to natural corks, reducing microbiological contamination defects (TCA), but their OTR is highly variable depending on polymer composition. In reductive wines like Sauvignon Blanc or Riesling, these closures better protect the volatile aromatic profile against evaporation and surface oxidation, maintaining vibrant acidity.",
+    "key_takeaways_es": [
+      "OTR bajo en Stelvin preserva frescura pero limita evolución terciaria.",
+      "Sintéticos ofrecen consistencia dimensional y protección microbiológica superior.",
+      "Críticos para vinos reductivos y blancos jóvenes que requieren aromas volátiles intactos."
+    ],
+    "key_takeaways_en": [
+      "Low OTR in Stelvin preserves freshness but limits tertiary evolution.",
+      "Synthetics offer superior dimensional consistency and microbiological protection.",
+      "Critical for reductive wines and young whites requiring intact volatile aromas."
+    ],
+    "related_grapes": [
+      "Sauvignon Blanc",
+      "Riesling"
+    ],
+    "related_regions": [
+      "Loire Valley",
+      "Mosel"
+    ],
+    "tags": [
+      "tapones sinteticos vs rosca stelvin",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "envero_cambio_color_acumulacion_azucar",
+    "standard": "WSET3",
+    "category_es": "Viticultura & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "El Envero (Véraison): Fisiología y Bioquímica: Mecanismo y Relevancia Enológica",
+    "title_en": "El Envero (Véraison): Fisiología y Bioquímica: Mechanism and Enological Significance",
+    "summary_es": "El véraison marca la transición fisiológica de la uva verde a la maduración, caracterizada por el inicio de la síntesis de antocianinas y la acumulación de azúcares.",
+    "summary_en": "Véraison marks the critical physiological inflection point where berry cell division ceases and vacuolar expansion begins, softening the fruit.",
+    "content_es": "El véraison representa el punto de inflexión crítico donde cesa la división celular del pericarpo y comienza la expansión vacuolar, ablandando la baya. Bioquímicamente, se inicia la translocación activa de sacarosa desde el xilema hacia los frutos, elevando el Brix. Simultáneamente, ocurre la degradación del ácido málico y la síntesis de antocianinas en variedades rojas, cambiando el color verde a rojo/morado. Este proceso define el perfil sensorial final, determinando acidez residual, dulzor y estructura tánica.",
+    "content_en": "Véraison marks the critical physiological inflection point where berry cell division ceases and vacuolar expansion begins, softening the fruit. Biochemically, active sucrose translocation from xylem to berries initiates, elevating Brix levels. Simultaneously, malic acid degradation occurs alongside anthocyanin synthesis in red varieties, shifting color from green to purple/red. This process defines the final sensory profile, determining residual acidity, sweetness, and tannic structure.",
+    "key_takeaways_es": [
+      "Cese de división celular y ablandamiento del pericarpo",
+      "Inicio de acumulación masiva de azúcares (Brix)",
+      "Degradación de ácidos y síntesis de pigmentos"
+    ],
+    "key_takeaways_en": [
+      "Cessation of cell division and berry softening",
+      "Onset of massive sugar accumulation (Brix)",
+      "Acid degradation and pigment synthesis"
+    ],
+    "related_grapes": [
+      "Pinot Noir",
+      "Syrah"
+    ],
+    "related_regions": [
+      "Bordeaux",
+      "Napa Valley"
+    ],
+    "tags": [
+      "envero cambio color acumulacion azucar",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "acidos_organicos_tartarico_malico_citrico",
+    "standard": "WSET3",
+    "category_es": "Bioquímica & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Ácidos Orgánicos: Tartárico, Málico y Succínico: Mecanismo y Relevancia Enológica",
+    "title_en": "Organic Acids: Tartaric, Malic, and Succinic: Mechanism and Enological Significance",
+    "summary_es": "El ácido tartárico es estable térmicamente, mientras que el málico se degrada vía respiración celular en calores extremos, alterando la acidez y el perfil sensorial.",
+    "summary_en": "Tartaric acid remains thermally stable, whereas malic acid degrades via cellular respiration in extreme heat, altering acidity and sensory profiles.",
+    "content_es": "El ácido tartárico es el componente principal del pH y la acidez en uvas, notablemente estable frente a la temperatura. En contraste, el ácido málico sufre una degradación significativa durante los veranos calurosos debido a la actividad metabólica de levaduras y bacterias lácticas, acelerando la respiración celular que convierte el málico en piruvato y luego en dióxido de carbono. El succínico actúa como intermediario menor, influyendo en la textura. Esta dinámica define la acidez residual al final de la maduración.",
+    "content_en": "Tartaric acid is the primary component of pH and acidity in grapes, notably stable against temperature. In contrast, malic acid undergoes significant degradation during hot summers due to metabolic activity of yeasts and lactic bacteria, accelerating cellular respiration that converts malic acid into pyruvate and then carbon dioxide. Succinic acts as a minor intermediate, influencing texture. This dynamic defines residual acidity at the end of ripening.",
+    "key_takeaways_es": [
+      "El tartárico confiere estabilidad estructural frente al calor.",
+      "El málico es volátil y se reduce por respiración celular en altas temperaturas.",
+      "El succínico modula la suavidad sin alterar drásticamente el pH."
+    ],
+    "key_takeaways_en": [
+      "Tartaric provides structural stability against heat.",
+      "Malic is volatile and reduced by cellular respiration at high temperatures.",
+      "Succinic modulates softness without drastically altering pH."
+    ],
+    "related_grapes": [
+      "Pinot Noir",
+      "Chardonnay"
+    ],
+    "related_regions": [
+      "Burgundy",
+      "Champagne"
+    ],
+    "tags": [
+      "acidos organicos tartarico malico citrico",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "taninos_condensados_proantocianidinas",
+    "standard": "WSET3",
+    "category_es": "Bioquímica & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Taninos Condensados: Hollejo vs Pepita vs Raspón: Mecanismo y Relevancia Enológica",
+    "title_en": "Condensed Tannins: Skin vs Seed vs Stem: Mechanism and Enological Significance",
+    "summary_es": "Los taninos condensados (proantocianidinas) difieren estructuralmente según su origen: los del hollejo poseen mayor grado de polimerización (mDP), aportando sedosidad, mientras que los de la pepita son cadenas cortas y amargas.",
+    "summary_en": "Condensed tannins (proanthocyanidins) differ structurally by origin: skin-derived possess higher degree of polymerization (mDP), imparting softness, while seed-derived are short chains and bitter.",
+    "content_es": "Los taninos condensados son proantocianidinas poliméricas. La diferencia crítica reside en el grado de polimerización medio (mDP). Los taninos del hollejo suelen presentar cadenas más largas y complejas, lo que genera una astringencia suave y sedosa al interactuar con la saliva. En contraste, los taninos de la pepita son cadenas cortas (bajo mDP), provocando un amargor intenso y una astringencia áspera que requiere envejecimiento para polimerizarse. El raspón aporta taninos de alto peso molecular o hidrolizables, añadiendo estructura pero riesgo de amargor si la extracción es agresiva.\n\nLa maceración controlada es vital: tiempos cortos y temperaturas moderadas favorecen el hollejo sin extraer excesivamente la pepita. El equilibrio entre estos componentes define la textura del vino. Una alta proporción de taninos de pepita resulta en vinos jóvenes, potentes pero agresivos, mientras que un predominio de hollejo promueve elegancia y longevidad.",
+    "content_en": "Condensed tannins are polymeric proanthocyanidins. The critical difference lies in the medium degree of polymerization (mDP). Skin-derived tannins typically present longer, complex chains, generating soft astringency and silkiness upon interaction with saliva. Conversely, seed-derived tannins are short chains (low mDP), causing intense bitterness and harsh astringency requiring aging to polymerize. Stems contribute high molecular weight or hydrolyzable tannins, adding structure but risking bitterness if extraction is aggressive.\n\nControlled maceration is vital: short times and moderate temperatures favor skin extraction without excessive seed extraction. The balance between these components defines the wine's texture. A high proportion of seed tannins results in young, potent but aggressive wines, while a predominance of skin promotes elegance and longevity.",
+    "key_takeaways_es": [
+      "El mDP del hollejo es superior al de la pepita, determinando suavidad vs amargor.",
+      "La extracción selectiva controla el perfil sensorial y la longevidad del vino.",
+      "Los taninos de raspón aportan estructura pero requieren cuidado en la maceración."
+    ],
+    "key_takeaways_en": [
+      "Skin mDP is higher than seed, determining softness vs bitterness.",
+      "Selective extraction controls sensory profile and wine longevity.",
+      "Stem tannins add structure but require careful maceration management."
+    ],
+    "related_grapes": [
+      "Cabernet Sauvignon",
+      "Tempranillo"
+    ],
+    "related_regions": [
+      "Bordeaux",
+      "Ribera del Duero"
+    ],
+    "tags": [
+      "taninos condensados proantocianidinas",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "precursores_glicosilados_aromas_ocultos",
+    "standard": "WSET3",
+    "category_es": "Bioquímica & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Precursores Glicosilados y Aromas Ocultos: Mecanismo y Relevancia Enológica",
+    "title_en": "Precursores Glicosilados y Aromas Ocultos: Mechanism and Enological Significance",
+    "summary_es": "Los glucósidos de monoterpenos actúan como reservorios aromáticos liberados por beta-glucosidasas durante la fermentación, revelando notas florales y frutales latentes que definen la complejidad del bouquet.",
+    "summary_en": "Monoterpene glycosides serve as aromatic reservoirs released by beta-glucosidases during fermentation, revealing latent floral and fruity notes that define bouquet complexity.",
+    "content_es": "En la uva, los precursores glicosilados de monoterpenos (ej. linalool) están unidos a moléculas glucídicas inactivas. Durante la fermentación alcohólica, las beta-glucosidasas endógenas o exógenas (levaduras) hidrolizan estos enlaces, liberando los terpenos libres volátiles. Este proceso bioquímico es crucial para variedades como Riesling o Gewürztraminer, donde la hidrólisis controlada determina la intensidad floral y cítrica. La maduración en barrica puede modular esta actividad enzimática, influyendo directamente en la persistencia aromática y la percepción de \"terruño\" a través de la expresión de compuestos volátiles específicos.",
+    "content_en": "In the grape, monoterpene glycoside precursors (e.g., linalool) are bound to sugar molecules as inactive forms. During alcoholic fermentation, endogenous or exogenous beta-glucosidases hydrolyze these bonds, releasing free volatile terpenes. This biochemical process is crucial for varieties like Riesling or Gewürztraminer, where controlled hydrolysis determines floral and citrus intensity. Barrel aging can modulate this enzymatic activity, directly influencing aromatic persistence and \"terroir\" perception through specific volatile compound expression.",
+    "key_takeaways_es": [
+      "La hidrólisis enzimática de glucósidos libera aromas latentes durante la fermentación.",
+      "Las beta-glucosidasas son clave para la expresión de notas florales y frutales.",
+      "El control del proceso afecta directamente la complejidad sensorial final."
+    ],
+    "key_takeaways_en": [
+      "Enzymatic hydrolysis of glycosides releases latent aromas during fermentation.",
+      "Beta-glucosidases are key for expressing floral and fruity notes.",
+      "Process control directly affects final sensory complexity."
+    ],
+    "related_grapes": [
+      "Riesling",
+      "Gewürztraminer"
+    ],
+    "related_regions": [
+      "Alsace",
+      "Mosel"
+    ],
+    "tags": [
+      "precursores glicosilados",
+      "beta-glucosidasas",
+      "aromas ocultos",
+      "terruño"
+    ]
+  },
+  {
+    "id": "fototropismo_y_orientacion_hileras",
+    "standard": "WSET3",
+    "category_es": "Viticultura & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Orientación de Hileras: Norte-Sur vs Este-Oeste: Mecanismo y Relevancia Enológica",
+    "title_en": "Orientación de Hileras: Norte-Sur vs Este-Oeste: Mechanism and Enological Significance",
+    "summary_es": "La orientación de las hileras modula la exposición solar directa e indirecta, influyendo decisivamente en el perfil fenólico y el riesgo de quemaduras solares en uvas sensibles como Pinot Noir o Cabernet Sauvignon.",
+    "summary_en": "Row orientation modulates direct and indirect solar exposure, decisively influencing phenolic profiles and sunburn risk in sensitive grapes like Pinot Noir or Cabernet Sauvignon.",
+    "content_es": "Las hileras Norte-Sur maximizan la penetración lumínica entre filas, optimizando la fotosíntesis pero exponiendo los racimos a radiación directa intensa. Esto puede aumentar el estrés oxidativo y engrosar la piel de la baya, incrementando la extracción de antocianinas y taninos. En contraste, las hileras Este-Oeste generan un efecto de sombreo mutuo, reduciendo la temperatura del racimo y protegiendo contra el golpe de sol, aunque pueden limitar la maduración homogénea en climas fríos.",
+    "content_en": "North-South rows maximize light penetration between rows, optimizing photosynthesis but exposing clusters to intense direct radiation. This can increase oxidative stress and thicken berry skins, increasing anthocyanin and tannin extraction. Conversely, East-West rows create a mutual shading effect, reducing cluster temperature and protecting against sunburn, though they may limit uniform ripening in cool climates.",
+    "key_takeaways_es": [
+      "La orientación N-S favorece mayor extracción tánica y cuerpo en climas cálidos.",
+      "La orientación E-O reduce el riesgo de quemaduras solares y preserva acidez.",
+      "El fototropismo afecta la distribución de fenoles en la piel del racimo."
+    ],
+    "key_takeaways_en": [
+      "N-S orientation favors higher tannic extraction and body in warm climates.",
+      "E-W orientation reduces sunburn risk and preserves acidity.",
+      "Phototropism affects phenol distribution on the cluster skin."
+    ],
+    "related_grapes": [
+      "Cabernet Sauvignon",
+      "Pinot Noir"
+    ],
+    "related_regions": [
+      "Bordeaux",
+      "Napa Valley"
+    ],
+    "tags": [
+      "fototropismo y orientacion hileras",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "heladas_inversion_termica_molinos",
+    "standard": "WSET3",
+    "category_es": "Viticultura & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Control de Heladas Primaverales: Torres de Viento y Velas: Mecanismo y Relevancia Enológica",
+    "title_en": "Spring Frost Control: Wind Towers and Candles: Mechanism and Enological Significance",
+    "summary_es": "Análisis técnico de la gestión de heladas mediante mezcla de aire para romper inversiones térmicas y uso de calor latente en aspersión.",
+    "summary_en": "Technical analysis of frost management via air mixing to break thermal inversions and latent heat utilization in sprinkling systems.",
+    "content_es": "Durante la noche, el aire frío se acumula cerca del suelo debido a la radiación terrestre, creando una inversión térmica que puede congelar los brotes. Las torres de viento y velas (candle fans) introducen turbulencia mecánica para mezclar capas de aire, elevando la temperatura mínima local por encima del punto crítico de daño celular (-2°C). Complementariamente, la aspersión de agua aprovecha el calor latente de fusión: al congelarse, el agua liberada protege los tejidos vegetales hasta -4°C. Este control microclimático preserva la fenología temprana y evita la pérdida de rendimiento en uvas sensibles.",
+    "content_en": "During the night, cold air accumulates near the ground due to terrestrial radiation, creating a thermal inversion that can freeze buds. Wind towers and candles introduce mechanical turbulence to mix air layers, raising local minimum temperatures above critical cellular damage thresholds (-2°C). Complementarily, water sprinkling utilizes latent heat of fusion: as water freezes, released heat protects plant tissues down to -4°C. This microclimate control preserves early phenology and prevents yield loss in sensitive grape varieties.",
+    "key_takeaways_es": [
+      "La mezcla de aire rompe la inversión térmica nocturna y eleva la temperatura mínima local.",
+      "El calor latente liberado por el agua congelada protege los tejidos vegetales hasta -4°C.",
+      "Estas técnicas preservan la fenología temprana y evitan daños celulares en brotes sensibles."
+    ],
+    "key_takeaways_en": [
+      "Air mixing breaks nocturnal thermal inversion and raises local minimum temperature.",
+      "Latent heat released by freezing water protects plant tissues down to -4°C.",
+      "These techniques preserve early phenology and prevent cellular damage in sensitive buds."
+    ],
+    "related_grapes": [
+      "Pinot Noir",
+      "Chardonnay"
+    ],
+    "related_regions": [
+      "Burgundy",
+      "Rioja Alta"
+    ],
+    "tags": [
+      "heladas inversion termica molinos",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "sequia_cavitacion_xilema",
+    "standard": "WSET3",
+    "category_es": "Viticultura & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Cavitación del Xilema por Estrés Hídrico Severo: Mecanismo y Relevancia Enológica",
+    "title_en": "Xylem Cavitation by Severe Water Stress: Mechanism and Enological Significance",
+    "summary_es": "La ruptura de columnas de agua en el xilema genera embolios que bloquean la transpiración, provocando marchitamiento y caída foliar basal.",
+    "summary_en": "Water column rupture in the xylem creates embolisms blocking transpiration, causing wilting and basal leaf drop.",
+    "content_es": "La cavitación del xilema ocurre cuando la tensión negativa supera el límite de cohesión-tensión, rompiendo las cadenas de agua y formando burbujas de aire (embolios). Esto reduce drásticamente la conductividad hidráulica, forzando al viñedo a cerrar estomas y abscindir hojas basales para conservar agua. Enológica, este estrés concentra azúcares y fenoles en el grano maduro, elevando el potencial alcohólico y los taninos, pero también incrementa el riesgo de compuestos volátiles oxidativos si la recuperación hídrica es tardía.",
+    "content_en": "Xylem cavitation occurs when negative tension exceeds the cohesion-tension limit, breaking water chains and forming air bubbles (embolisms). This drastically reduces hydraulic conductivity, forcing the vine to close stomata and abscise basal leaves to conserve water. Enologically, this stress concentrates sugars and phenols in ripe berries, raising potential alcohol and tannins, but also increases the risk of oxidative volatile compounds if hydric recovery is delayed.",
+    "key_takeaways_es": [
+      "La cavilación es irreversible en la temporada sin poda de injerto o riego suplementario.",
+      "El marchitamiento indica pérdida de conductividad hidráulica permanente hasta el siguiente ciclo.",
+      "Vinos resultantes muestran mayor intensidad estructural pero riesgo de perfil oxidativo."
+    ],
+    "key_takeaways_en": [
+      "Cavitation is irreversible during the season without grafting or supplemental irrigation.",
+      "Wilting indicates permanent hydraulic conductivity loss until the next cycle.",
+      "Resulting wines show greater structural intensity but risk of oxidative profile."
+    ],
+    "related_grapes": [
+      "Cabernet Sauvignon",
+      "Syrah"
+    ],
+    "related_regions": [
+      "Napa Valley",
+      "Mendoza"
+    ],
+    "tags": [
+      "sequia cavitacion xilema",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "viñas_viejas_equilibrio_rendimiento",
+    "standard": "WSET3",
+    "category_es": "Viticultura & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "La Fisiología de las Viñas Viejas (Old Vines): Mecanismo y Relevancia Enológica",
+    "title_en": "The Physiology of Old Vines: Mechanism and Enological Significance",
+    "summary_es": "Las viñas viejas poseen sistemas radiculares profundos que optimizan el estrés hídrico, induciendo una autorregulación natural de la carga y una maduración fisiológica equilibrada.",
+    "summary_en": "Old vines possess deep root systems optimizing water stress, inducing natural load regulation and balanced physiological ripening.",
+    "content_es": "Las viñas viejas (más de 35 años) desarrollan sistemas radiculares que superan los 5 metros, accediendo a acuíferos profundos y nutrientes limitados. Este estrés moderado activa mecanismos de defensa en la vid, concentrando metabolitos secundarios como polifenoles y aromas volátiles.\n\nLa autorregulación de carga reduce el riesgo de sobrecarga, garantizando una maduración regular del racimo sin dilución azucarada excesiva. Enológico, esto se traduce en vinos con mayor estructura tánica, acidez conservada y complejidad aromática persistente.",
+    "content_en": "Old vines (over 35 years) develop root systems exceeding 5 meters, accessing deep aquifers and limited nutrients. This moderate stress activates defense mechanisms in the vine, concentrating secondary metabolites like polyphenols and volatile aromas.\n\nLoad self-regulation reduces overloading risk, ensuring regular cluster ripening without excessive sugar dilution. Enologically, this translates to wines with greater tannic structure, preserved acidity, and persistent aromatic complexity.",
+    "key_takeaways_es": [
+      "Sistemas radiculares profundos (>5m) aseguran acceso a agua subterránea y estabilidad climática.",
+      "La autorregulación de carga limita el rendimiento por hectárea pero maximiza la concentración de compuestos fenólicos.",
+      "La maduración fisiológica equilibrada preserva acidez natural y desarrolla perfiles aromáticos complejos."
+    ],
+    "key_takeaways_en": [
+      "Deep root systems (>5m) ensure access to groundwater and climatic stability.",
+      "Load self-regulation limits yield per hectare but maximizes phenolic compound concentration.",
+      "Balanced physiological ripening preserves natural acidity and develops complex aromatic profiles."
+    ],
+    "related_grapes": [
+      "Tempranillo",
+      "Cabernet Sauvignon"
+    ],
+    "related_regions": [
+      "Ribera del Duero",
+      "Barossa Valley"
+    ],
+    "tags": [
+      "viñas viejas equilibrio rendimiento",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "suelos_vivos_micorrizas_hongos",
+    "standard": "WSET3",
+    "category_es": "Edafología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Simbiosis Micorrícica en el Viñedo: Mecanismo y Relevancia Enológica",
+    "title_en": "Mycorrhizal Symbiosis in the Vineyard: Mechanism and Enological Significance",
+    "summary_es": "La simbiosis con Glomeromicetos amplía la zona de absorción radicular, mejorando la eficiencia en fósforo y agua.",
+    "summary_en": "Symbiosis with Glomeromycetes expands root absorption zone, enhancing phosphorus and water efficiency.",
+    "content_es": "La asociación con Glomeromicetos (Glomeromycota) establece una red de hifas que extiende la zona de absorción radicular más allá del volumen de suelo inmediato. Esto facilita la movilización de fósforo inorgánico y micronutrientes como zinc y cobre, limitantes en suelos ácidos o calcáreos típicos de grandes denominaciones. Bioquímicamente, el hongo produce ácido orgánico que solubiliza nutrientes y mejora la conductividad hidráulica, mitigando el estrés hídrico. Enológica, esta simbiosis reduce la carga osmótica del racimo, preservando acidez volátil y estabilidad fenólica, resultando en vinos con mayor expresión de terroir y menor necesidad de fertilizantes sintéticos.",
+    "content_en": "Association with Glomeromycetes (Glomeromycota) establishes a hyphal network extending root absorption beyond the immediate soil volume. This facilitates mobilization of inorganic phosphorus and micronutrients like zinc and copper, limiting factors in acidic or calcareous soils typical of major appellations. Biochemically, the fungus produces organic acid that solubilizes nutrients and improves hydraulic conductivity, mitigating water stress. Enologically, this symbiosis reduces osmotic load on the cluster, preserving volatile acidity and phenolic stability, resulting in wines with greater terroir expression and lower need for synthetic fertilizers.",
+    "key_takeaways_es": [
+      "Las hifas micorrícicas aumentan la superficie de absorción en un factor de hasta 10 veces.",
+      "Mejora la eficiencia del uso del agua (WUE) reduciendo el estrés fisiológico durante la maduración.",
+      "Impacta positivamente en la estabilidad fenólica y la complejidad aromática del vino final."
+    ],
+    "key_takeaways_en": [
+      "Mycorrhizal hyphae increase absorption surface area by up to a factor of 10.",
+      "Improves water use efficiency (WUE) reducing physiological stress during ripening.",
+      "Positively impacts phenolic stability and aromatic complexity of the final wine."
+    ],
+    "related_grapes": [
+      "Nebbiolo",
+      "Pinot Noir"
+    ],
+    "related_regions": [
+      "Barolo",
+      "Burgundy"
+    ],
+    "tags": [
+      "suelos vivos micorrizas hongos",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "cubiertas_vegetales_espontaneas_sembradas",
+    "standard": "WSET3",
+    "category_es": "Viticultura & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Cubiertas Vegetales: Gramíneas vs Leguminosas: Mecanismo y Relevancia Enológica",
+    "title_en": "Vegetative Covers: Grasses vs Legumes: Mechanism and Enological Significance",
+    "summary_es": "Las leguminosas fijan nitrógeno vía rizobios, reduciendo estrés hídrico y erosión, mientras que las gramíneas compiten por agua pero estabilizan el suelo con raíces fibrosas, influyendo en la expresión del terroir y la maduración fenólica.",
+    "summary_en": "Legumes fix nitrogen via rhizobia, reducing water stress and erosion, while grasses compete for water but stabilize soil with fibrous roots, influencing terroir expression and phenolic ripening.",
+    "content_es": "La fijación biológica de nitrógeno en leguminosas (ej. vicia) reduce la dependencia de fertilizantes sintéticos, promoviendo suelos más vivos y ácidos que favorecen la expresión aromática pura. En contraste, las gramíneas (ej. centeno) presentan tasas de transpiración altas, compitiendo por humedad; sin embargo, su sistema radicular denso previene la erosión en laderas. La elección afecta el estrés hídrico moderado del viñedo, crucial para concentrar compuestos fenólicos y ácidos orgánicos, determinando así la estructura tánica y la acidez final del vino.",
+    "content_en": "Biological nitrogen fixation in legumes (e.g., vetch) reduces synthetic fertilizer dependency, promoting lively soils and acidity that favor pure aromatic expression. Conversely, grasses (e.g., rye) exhibit high transpiration rates, competing for moisture; however, their dense root systems prevent erosion on slopes. The choice affects vineyard water stress management, crucial for concentrating phenolic compounds and organic acids, thereby determining final tannic structure and acidity.",
+    "key_takeaways_es": [
+      "Las leguminosas enriquecen el suelo con nitrógeno orgánico mediante simbiosis rizobiana.",
+      "La competencia hídrica de las gramíneas puede retrasar la maduración si no se gestiona.",
+      "El control de erosión es crítico en pendientes, independientemente del tipo de cubierta."
+    ],
+    "key_takeaways_en": [
+      "Legumes enrich soil with organic nitrogen via rhizobial symbiosis.",
+      "Grass water competition can delay ripening if not managed properly.",
+      "Erosion control is critical on slopes, regardless of cover type."
+    ],
+    "related_grapes": [
+      "Cabernet Sauvignon",
+      "Pinot Noir"
+    ],
+    "related_regions": [
+      "Bordeaux",
+      "Rioja"
+    ],
+    "tags": [
+      "cubiertas vegetales espontaneas sembradas",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "biodiversidad_islas_vegetacion_setos",
+    "standard": "WSET3",
+    "category_es": "Viticultura & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Corredores Biológicos y Fauna Auxiliar en el Viñedo: Mecanismo y Relevancia Enológica",
+    "title_en": "Corredores Biológicos y Fauna Auxiliar en el Viñedo: Mechanism and Enological Significance",
+    "summary_es": "Estrategia de control biológico de Lobesia botrana mediante hábitats para murciélagos e insectos depredadores, preservando la integridad del racimo y los compuestos fenólicos.",
+    "summary_en": "Biological pest control strategy for Lobesia botrana using habitats for bats and predatory insects, preserving bunch integrity and phenolic compounds.",
+    "content_es": "La implementación de corredores biológicos y setos vivos en el viñedo establece hábitats críticos para murciélagos insectívoros (ej. Pipistrellus) y artrópodos depredadores. Estos agentes reducen drásticamente las poblaciones de la polilla del racimo (Lobesia botrana), principal vector de daño físico y entrada de patógenos oportunistas como Botrytis cinerea. La disminución de la presión biológica evita la rotura prematura del pericarpo, lo cual es crucial para mantener el equilibrio fenólico y evitar la oxidación acelerada de antocianinas y taninos durante la maduración.",
+    "content_en": "Implementing biological corridors and living hedges in the vineyard establishes critical habitats for insectivorous bats (e.g., Pipistrellus) and predatory arthropods. These agents drastically reduce populations of the grapevine moth (Lobesia botrana), a primary vector of physical damage and entry for opportunistic pathogens like Botrytis cinerea. The reduction in biological pressure prevents premature pericarp rupture, which is crucial for maintaining phenolic balance and avoiding accelerated oxidation of anthocyanins and tannins during ripening.",
+    "key_takeaways_es": [
+      "La fauna auxiliar reduce la necesidad de insecticidas químicos, mejorando el perfil organoléptico del vino.",
+      "Menos daño físico en el racimo preserva los compuestos aromáticos volátiles primarios.",
+      "Los corredores biológicos incrementan la resiliencia del viñedo frente a plagas emergentes."
+    ],
+    "key_takeaways_en": [
+      "Auxiliary fauna reduces the need for chemical insecticides, improving the wine's organoleptic profile.",
+      "Less physical damage to the bunch preserves primary volatile aromatic compounds.",
+      "Biological corridors increase vineyard resilience against emerging pests."
+    ],
+    "related_grapes": [
+      "Cabernet Sauvignon",
+      "Pinot Noir"
+    ],
+    "related_regions": [
+      "Bordeaux",
+      "Toscana"
+    ],
+    "tags": [
+      "biodiversidad islas vegetacion setos",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "densidad_plantacion_competencia",
+    "standard": "WSET3",
+    "category_es": "Viticultura & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Densidad de Plantación: 2.000 vs 10.000 cepas/ha: Mecanismo y Relevancia Enológica",
+    "title_en": "Densidad de Plantación: 2.000 vs 10.000 cepas/ha: Mechanism and Enological Significance",
+    "summary_es": "Comparativa técnica entre baja densidad mediterránea (vaso) y alta densidad europea, analizando impacto en arquitectura radicular, estrés hídrico y concentración fenólica.",
+    "summary_en": "Technical comparison between Mediterranean low density (gobelet) and European high density, analyzing impact on root architecture, water stress, and phenolic concentration.",
+    "content_es": "La baja densidad (2.000 cepas/ha), típica del Mediterráneo en vaso, favorece raíces profundas que acceden a acuíferos, mejorando la resistencia a sequía y expresión de terroir profundo. La alta densidad (10.000 cepas/ha), común en Burdeos/Borgoña, induce competencia intra-específica que limita el vigor vegetativo, forzando una maduración fenólica más rápida bajo estrés lumínico controlado. Bioquímicamente, la baja densidad promueve un mayor ratio raíz/tallo y acumulación de antocianinas estables en uvas de calidad premium, mientras la alta densidad exige poda severa para evitar dilución de azúcares y acidez. Sensorialmente, esto se traduce en vinos con mayor estructura tánica y coloración profunda frente a perfiles más frutales pero delicados.",
+    "content_en": "Low density (2,000 vines/ha), typical of Mediterranean gobelet training, promotes deep root systems accessing aquifers, enhancing drought resistance and profound terroir expression. High density (10,000 vines/ha), common in Bordeaux/Burgundy, induces intra-specific competition limiting vegetative vigor, forcing faster phenolic maturation under controlled light stress. Biochemically, low density fosters a higher root-to-shoot ratio and stable anthocyanin accumulation in premium quality grapes, whereas high density requires severe pruning to avoid sugar dilution and acidity loss. Sensorially, this translates to wines with greater tannic structure and deep coloration versus more fruity but delicate profiles.",
+    "key_takeaways_es": [
+      "Raíces profundas en baja densidad mejoran resistencia a sequía y expresión de terroir.",
+      "Alta densidad limita vigor vegetativo, favoreciendo concentración fenólica bajo estrés lumínico.",
+      "La poda es crítica en alta densidad para evitar dilución de compuestos fenólicos."
+    ],
+    "key_takeaways_en": [
+      "Deep roots in low density improve drought resistance and terroir expression.",
+      "High density limits vegetative vigor, favoring phenolic concentration under light stress.",
+      "Pruning is critical in high density to avoid dilution of phenolic compounds."
+    ],
+    "related_grapes": [
+      "Tempranillo",
+      "Pinot Noir"
+    ],
+    "related_regions": [
+      "Ribera del Duero",
+      "Burgundy"
+    ],
+    "tags": [
+      "densidad plantacion competencia",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "poda_en_verde_despunte_desnietado",
+    "standard": "WSET3",
+    "category_es": "Viticultura & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Operaciones en Verde: Despunte, Desnietado y Aclareo de Racimos: Mecanismo y Relevancia Enológica",
+    "title_en": "Operaciones en Verde: Despunte, Desnietado y Aclareo de Racimos: Mechanism and Enological Significance",
+    "summary_es": "Las operaciones en verde optimizan la relación calidad-cantidad mediante la eliminación de carga vegetativa, concentrando asimilados y potenciando la expresión aromática del terroir.",
+    "summary_en": "Green operations optimize the quality-yield ratio by eliminating vegetative load, concentrating assimilates and enhancing the aromatic expression of the terroir.",
+    "content_es": "El despunte regula el vigor apical y la maduración fenólica, mientras que el desnietado y el aclareo reducen el rendimiento por planta para aumentar la concentración de polifenoles y ácidos orgánicos. Estas intervenciones fisiológicas redirigen los carbohidratos desde la vegetación hacia los frutos, mejorando la síntesis de compuestos aromáticos secundarios como terpenos y esteres.\n\nEsto resulta en vinos con mayor estructura, acidez equilibrada y complejidad aromática, fundamentales en regiones como Burdeos o Borgoña.",
+    "content_en": "Shoot thinning regulates apical vigor and phenolic maturation, while cluster thinning and green harvest reduce yield per plant to increase polyphenol and organic acid concentration. These physiological interventions redirect carbohydrates from vegetation to fruit, enhancing the synthesis of secondary aromatic compounds like terpenes and esters.\n\nThis results in wines with greater structure, balanced acidity, and aromatic complexity, fundamental in regions like Bordeaux or Burgundy.",
+    "key_takeaways_es": [
+      "Control de vigor y maduración fenólica",
+      "Concentración de antocianinas y taninos",
+      "Equilibrio acido-alcohólico en la vendimia"
+    ],
+    "key_takeaways_en": [
+      "Vigor control and phenolic maturation",
+      "Anthocyanin and tannin concentration",
+      "Acid-alcohol balance at harvest"
+    ],
+    "related_grapes": [
+      "Cabernet Sauvignon",
+      "Pinot Noir"
+    ],
+    "related_regions": [
+      "Bordeaux",
+      "Burgundy"
+    ],
+    "tags": [
+      "poda en verde despunte desnietado",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "madurez_tecnologica_vs_fenolica_aromatica",
+    "standard": "WSET3",
+    "category_es": "Viticultura & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Las 3 Madureces: Tecnológica, Fenólica y Aromática: Mecanismo y Relevancia Enológica",
+    "title_en": "The 3 Ripe-nesses: Technological, Phenolic, and Aromatic: Mechanism and Enological Significance",
+    "summary_es": "La madurez enológica requiere equilibrar tres parámetros independientes: azúcares, taninos y aromas. El calor extremo acelera el azúcar pero puede degradar taninos verdes antes de la expresión aromática óptima.",
+    "summary_en": "Wine ripeness requires balancing three independent parameters: sugars, tannins, and aromas. Extreme heat accelerates sugar accumulation but may degrade green tannins before optimal aromatic expression.",
+    "content_es": "La madurez tecnológica se define por el equilibrio Brix/Ácido Málico, alcanzado cuando la fotosíntesis supera la respiración. Sin embargo, en veranos cálidos, este parámetro avanza rápidamente, mientras que la maduración fenólica (polimerización de taninos y síntesis de antocianinas) sigue una cinética distinta. El riesgo principal es la 'madurez tecnológica prematura': uvas con alto azúcar pero taninos verdes o astringentes no polimerizados, generando vinos agresivos.\n\nLa maduración aromática depende de la degradación de precursores volátiles y la síntesis de terpenos, proceso más lento que el acumulado de azúcares. Un desfase crítico ocurre cuando se cosecha por Brix, resultando en vinos con alcohol elevado pero falta de estructura tánica y fruta verde. La gestión del estrés hídrico es vital para sincronizar estos ritmos biológicos.",
+    "content_en": "Technological ripeness is defined by the Brix/Malic Acid balance, reached when photosynthesis exceeds respiration. However, in hot summers, this parameter advances rapidly, while phenolic maturation (tannin polymerization and anthocyanin synthesis) follows a distinct kinetics. The main risk is 'premature technological ripeness': grapes with high sugar but green or non-polymerized tannins, generating aggressive wines.\n\nAromatic maturation depends on the degradation of volatile precursors and terpene synthesis, a process slower than sugar accumulation. A critical mismatch occurs when harvesting based on Brix, resulting in wines with high alcohol but lack of tannic structure and green fruit. Water stress management is vital to synchronize these biological rhythms.",
+    "key_takeaways_es": [
+      "El azúcar no es el único indicador de madurez óptima.",
+      "El calor extremo acelera la maduración tecnológica más que la fenólica.",
+      "La cosecha debe priorizar la estabilidad tánica sobre el Brix en climas cálidos."
+    ],
+    "key_takeaways_en": [
+      "Sugar is not the sole indicator of optimal ripeness.",
+      "Extreme heat accelerates technological maturation more than phenolic.",
+      "Harvesting should prioritize tannic stability over Brix in warm climates."
+    ],
+    "related_grapes": [
+      "Cabernet Sauvignon",
+      "Tempranillo"
+    ],
+    "related_regions": [
+      "Ribera del Duero",
+      "Napa Valley"
+    ],
+    "tags": [
+      "madurez tecnologica vs fenolica aromatica",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "microclima_bosques_masas_agua",
+    "standard": "WSET3",
+    "category_es": "Terruño & Viñedo",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Influencia de Masas de Agua y Bosques en el Mesoclima: Mecanismo y Relevancia Enológica",
+    "title_en": "Influencia de Masas de Agua y Bosques en el Mesoclima: Mechanism and Enological Significance",
+    "summary_es": "Las masas de agua moderan la temperatura mediante su alta capacidad calorífica, reduciendo el rango térmico diurno y protegiendo a las uvas del estrés hídrico y lumínico.",
+    "summary_en": "Water masses moderate temperature via high heat capacity, reducing diurnal range and protecting grapes from hydric and light stress.",
+    "content_es": "Las masas de agua (mares, lagos, ríos) poseen una capacidad calorífica específica superior a la del suelo o aire. Esto permite que actúen como amortiguadores térmicos, absorbiendo calor durante el día y liberándolo lentamente por la noche. Este efecto suaviza los extremos térmicos, reduciendo el rango diurno y mitigando el estrés hídrico en las plantas durante periodos de sequía estival. Además, la reflexión de la luz solar sobre superficies acuáticas incrementa la fotosíntesis sin provocar quemaduras directas, favoreciendo una maduración más equilibrada.",
+    "content_en": "Water masses possess a specific heat capacity superior to soil or air. This allows them to act as thermal buffers, absorbing heat during the day and releasing it slowly at night. This effect smooths thermal extremes, reducing the diurnal range and mitigating hydric stress in plants during summer drought periods. Furthermore, light reflection off water surfaces increases photosynthesis without causing direct scorching, favoring more balanced maturation.",
+    "key_takeaways_es": [
+      "La capacidad calorífica del agua reduce el rango térmico diurno, preservando acidez y aromas volátiles.",
+      "Los bosques adyacentes incrementan la humedad ambiental, reduciendo la transpiración excesiva de la vid.",
+      "La reflexión lumínica sobre el agua mejora la fotosíntesis sin riesgo de estrés térmico directo."
+    ],
+    "key_takeaways_en": [
+      "Water heat capacity reduces diurnal range, preserving acidity and volatile aromas.",
+      "Adjacent forests increase ambient humidity, reducing excessive vine transpiration.",
+      "Light reflection on water improves photosynthesis without direct thermal stress risk."
+    ],
+    "related_grapes": [
+      "Riesling",
+      "Pinot Noir"
+    ],
+    "related_regions": [
+      "Bordeaux",
+      "Mosel"
+    ],
+    "tags": [
+      "microclima bosques masas agua",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "viento_mistral_tramontana_cierzo",
+    "standard": "WSET3",
+    "category_es": "Climatología & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Vientos Dominantes en el Viñedo: Mistral, Cierzo y Tramontana: Mecanismo y Relevancia Enológica",
+    "title_en": "Dominant Winds in the Vineyard: Mistral, Cierzo, and Tramontana: Mechanism and Enological Significance",
+    "summary_es": "Los vientos dominantes del Mediterráneo aceleran la maduración fenólica al reducir la humedad relativa y secar el dosel, minimizando riesgos de patógenos y modelando una arquitectura de cepa más resistente.",
+    "summary_en": "Dominant Mediterranean winds accelerate phenolic maturation by reducing relative humidity and drying the canopy, minimizing pathogen risks and modeling a more resilient vine architecture.",
+    "content_es": "Los vientos como el Mistral, Cierzo y Tramontana actúan como factores abióticos críticos en la viticultura mediterránea. Su efecto principal es la reducción drástica de la humedad relativa alrededor del racimo y el dosel foliar, lo que inhibe el desarrollo de hongos necrotróficos como Botrytis cinerea. Bioquímicamente, esta desecación forzada acelera la concentración de azúcares y polifenoles en la bayas, promoviendo una maduración fenólica equilibrada antes del final de la temporada. Además, el estrés hídrico moderado inducido por estos vientos modela un porte de cepa más compacto y resistente a la sequía, optimizando la relación raíz/tallo.",
+    "content_en": "Dominant winds such as the Mistral, Cierzo, and Tramontana act as critical abiotic factors in Mediterranean viticulture. Their primary effect is the drastic reduction of relative humidity around the cluster and foliage, inhibiting the development of necrotrophic fungi like Botrytis cinerea. Biochemically, this forced desiccation accelerates sugar concentration and phenolic compounds within the berries, promoting balanced phenolic maturation before the end of the season. Furthermore, the moderate water stress induced by these winds models a more compact and drought-resistant vine architecture, optimizing the root-to-shoot ratio.",
+    "key_takeaways_es": [
+      "Reducción de humedad relativa previene enfermedades fúngicas como el mildiu y la podredumbre gris.",
+      "Aceleración de la maduración fenólica y concentración de azúcares en las bayas.",
+      "Modelado de arquitectura de cepa más compacta y resistente al estrés hídrico."
+    ],
+    "key_takeaways_en": [
+      "Reduced relative humidity prevents fungal diseases like downy mildew and grey rot.",
+      "Acceleration of phenolic maturation and sugar concentration in berries.",
+      "Modeling of a more compact and drought-resistant vine architecture."
+    ],
+    "related_grapes": [
+      "Grenache",
+      "Syrah"
+    ],
+    "related_regions": [
+      "Rhone Valley",
+      "Priorat"
+    ],
+    "tags": [
+      "viento mistral tramontana cierzo",
+      "enologia",
+      "terruño"
+    ]
   }
 ];
 

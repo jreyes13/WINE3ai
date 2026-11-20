@@ -37905,7 +37905,43 @@
       "blend": 36,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Medio-Alto",
+      "alcohol": "Medio (13-14%)",
+      "body": "Completo",
+      "aromas_primary": [
+        "Frutos rojos",
+        "Cereza",
+        "Fresa",
+        "Arándano"
+      ],
+      "aromas_secondary": [
+        "Tomate",
+        "Hierbas",
+        "Especias",
+        "Pimienta negra"
+      ],
+      "aromas_tertiary": [
+        "Tabaco",
+        "Cuero",
+        "Tierra",
+        "Café"
+      ],
+      "benchmark_appellations": [
+        "AOC Côtes du Roussillon (Francia)",
+        "DO Priorat (España)",
+        "DOC Rioja (España)"
+      ],
+      "ideal_food_pairings": [
+        "Carne roja asada",
+        "Quesos curados",
+        "Estofados de caza"
+      ]
+    },
+    "sommelier_note_es": "Variedad tinta antigua con alta acidez y taninos marcados, ideal para vinos robustos que evolucionan con la madera o el tiempo en botella.",
+    "sommelier_note_en": "An old-school red variety with high acidity and marked tannins, best suited for robust wines that evolve well with oak or bottle age."
   },
   {
     "id": "macabeo-viura",
@@ -49272,7 +49308,42 @@
       "blend": 15,
       "monovarietal_pct": 6.2,
       "blend_pct": 93.8
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Bajo",
+      "alcohol": "Medio (13-14%)",
+      "body": "Medio-Ligero",
+      "aromas_primary": [
+        "Cítricos",
+        "Fresas",
+        "Flores blancas",
+        "Hierba fresca"
+      ],
+      "aromas_secondary": [
+        "Yema de huevo",
+        "Pan tostado",
+        "Levadura",
+        "Miel"
+      ],
+      "aromas_tertiary": [
+        "Nuez",
+        "Especias suaves",
+        "Madera tostada"
+      ],
+      "benchmark_appellations": [
+        "DO Rueda (España)",
+        "DO Rioja (España)",
+        "DO Uclés (España)"
+      ],
+      "ideal_food_pairings": [
+        "Pescado blanco",
+        "Mariscos frescos",
+        "Quesos de cabra"
+      ]
+    },
+    "sommelier_note_es": "Verdejo destaca por su acidez vibrante y aromas florales y herbáceos únicos, evocando cítricos y hierba fresca. Ideal para maridajes ligeros que resalten su frescura natural.",
+    "sommelier_note_en": "Verdejo stands out for its vibrant acidity and unique floral/herbaceous notes, evoking citrus and fresh grass. Ideal for light pairings that highlight its natural freshness."
   },
   {
     "id": "touriga-nacional",
@@ -53079,7 +53150,41 @@
       "blend": 13,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Bajo",
+      "alcohol": "Medio (13-14%)",
+      "body": "Medio-Ligero",
+      "aromas_primary": [
+        "Cítricos",
+        "Pera",
+        "Florales",
+        "Miel"
+      ],
+      "aromas_secondary": [
+        "Levadura",
+        "Brioche",
+        "Pan tostado"
+      ],
+      "aromas_tertiary": [
+        "Fruta seca",
+        "Nueces",
+        "Higos"
+      ],
+      "benchmark_appellations": [
+        "DO Cariñena (España)",
+        "DO Priorat (España)",
+        "Languedoc (Francia)"
+      ],
+      "ideal_food_pairings": [
+        "Pescado blanco",
+        "Mariscos",
+        "Quesos frescos"
+      ]
+    },
+    "sommelier_note_es": "Esta variedad presenta un perfil aromático floral y frutal fresco, destacando por su acidez natural equilibrada. Es ideal para vinos de fermentación en frío que preservan la pureza del fruto.",
+    "sommelier_note_en": "This variety presents a floral and fresh fruity profile, standing out for its balanced natural acidity. It is ideal for cold fermentation wines that preserve the purity of the fruit."
   },
   {
     "id": "castel-o",
@@ -55574,7 +55679,41 @@
       "blend": 11,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Bajo-Medio",
+      "alcohol": "Medio (12-13%)",
+      "body": "Ligero a Medio",
+      "aromas_primary": [
+        "Fresa",
+        "Cereza",
+        "Flor blanca",
+        "Tomate"
+      ],
+      "aromas_secondary": [
+        "Levadura",
+        "Pan tostado",
+        "Miel"
+      ],
+      "aromas_tertiary": [
+        "Tierra",
+        "Fruta seca",
+        "Especias suaves"
+      ],
+      "benchmark_appellations": [
+        "DO Penedès (España)",
+        "DO Empordà (España)",
+        "DO Montsant (España)"
+      ],
+      "ideal_food_pairings": [
+        "Tapas ibéricas",
+        "Carne a la brasa",
+        "Pasta ligera con salsa roja"
+      ]
+    },
+    "sommelier_note_es": "Negramoll ofrece frescura y acidez vibrante con notas frutales rojas, ideal para vinos jóvenes o blends. Su estructura ligera lo hace perfecto para maridajes casuales.",
+    "sommelier_note_en": "Negramoll offers vibrant freshness and acidity with red fruit notes, ideal for young wines or blends. Its light structure makes it perfect for casual pairings."
   },
   {
     "id": "list-n-negro",
@@ -57765,7 +57904,41 @@
       "blend": 10,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Medio-Alto",
+      "alcohol": "Medio-Alto (13-14%)",
+      "body": "Completo",
+      "aromas_primary": [
+        "Fresa",
+        "Arándano",
+        "Ciruela",
+        "Flor"
+      ],
+      "aromas_secondary": [
+        "Vainilla",
+        "Caramelo",
+        "Levadura"
+      ],
+      "aromas_tertiary": [
+        "Cuero",
+        "Tabaco",
+        "Tierra"
+      ],
+      "benchmark_appellations": [
+        "Utiel-Requena (España)",
+        "Alicante (España)",
+        "Valencia (España)"
+      ],
+      "ideal_food_pairings": [
+        "Cordero asado",
+        "Jamón ibérico",
+        "Quesos curados"
+      ]
+    },
+    "sommelier_note_es": "Bobal ofrece una estructura sólida con acidez vibrante y taninos que maduran bien en barrica, mostrando frutos rojos y notas terrosas complejas al envejecer.",
+    "sommelier_note_en": "Bobal delivers a solid structure with vibrant acidity and tannins that mature well in oak, revealing red fruits and complex earthy notes upon aging."
   },
   {
     "id": "tintilla",
@@ -58569,7 +58742,41 @@
       "blend": 9,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Alta",
+      "tannin": "Bajo",
+      "alcohol": "Medio (12-13%)",
+      "body": "Ligero a Medio",
+      "aromas_primary": [
+        "Floreales",
+        "Cítricos verdes",
+        "Manzana verde",
+        "Hiedra"
+      ],
+      "aromas_secondary": [
+        "Levadura",
+        "Pan tostado",
+        "Miel"
+      ],
+      "aromas_tertiary": [
+        "Nueces",
+        "Flor seca",
+        "Mineralidad"
+      ],
+      "benchmark_appellations": [
+        "DO Cava (España)",
+        "DO Penedès (España)",
+        "DO Tarragona (España)"
+      ],
+      "ideal_food_pairings": [
+        "Mariscos frescos",
+        "Ensaladas ligeras",
+        "Quesos de cabra"
+      ]
+    },
+    "sommelier_note_es": "Variedad emblemática del Cava catalán, aporta acidez vibrante y notas florales que equilibran la estructura. Ideal para vinos blancos jóvenes o espumosos con frescura persistente.",
+    "sommelier_note_en": "Iconic Catalan Cava variety providing vibrant acidity and floral notes that balance the structure. Perfect for young white wines or sparkling with persistent freshness."
   },
   {
     "id": "kakhuri-mtsvane",
@@ -59956,7 +60163,43 @@
       "blend": 9,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media",
+      "tannin": "Bajo",
+      "alcohol": "Medio (12-13%)",
+      "body": "Ligero a Medio",
+      "aromas_primary": [
+        "Flores blancas",
+        "Manzana verde",
+        "Cítricos suaves",
+        "Pera"
+      ],
+      "aromas_secondary": [
+        "Pan tostado",
+        "Levadura",
+        "Huevo duro",
+        "Miel"
+      ],
+      "aromas_tertiary": [
+        "Nuez",
+        "Cuero",
+        "Eucalipto",
+        "Almendras"
+      ],
+      "benchmark_appellations": [
+        "DO Jerez-Xérès-Sherry (España)",
+        "DO Cava (España)",
+        "DO La Mancha (España)"
+      ],
+      "ideal_food_pairings": [
+        "Tapas y Pinchos",
+        "Quesos frescos",
+        "Mariscos"
+      ]
+    },
+    "sommelier_note_es": "Airén es la uva blanca más plantada de España, reconocida por su neutralidad y versatilidad en vinos fortificados y espumosos. Su perfil aromático es sutil, permitiendo que el vino refleje principalmente el terroir o la técnica de crianza.",
+    "sommelier_note_en": "Airén is Spain's most planted white grape, renowned for its neutrality and versatility in fortified and sparkling wines. Its subtle aromatic profile allows the wine to reflect more of the terroir or winemaking technique."
   },
   {
     "id": "vermentinu",
@@ -65269,7 +65512,40 @@
       "blend": 7,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Alta",
+      "tannin": "Alto",
+      "alcohol": "Medio (12-13%)",
+      "body": "Medio",
+      "aromas_primary": [
+        "Violeta",
+        "Mirto",
+        "Frambuesa negra",
+        "Pimienta"
+      ],
+      "aromas_secondary": [
+        "Pan tostado",
+        "Caramelo suave"
+      ],
+      "aromas_tertiary": [
+        "Cuero",
+        "Tabaco",
+        "Húmus"
+      ],
+      "benchmark_appellations": [
+        "Rioja DOCa (España)",
+        "Navarra DO (España)",
+        "Mendoza (Argentina)"
+      ],
+      "ideal_food_pairings": [
+        "Queso curado",
+        "Jamón ibérico",
+        "Cordero asado"
+      ]
+    },
+    "sommelier_note_es": "Variedad noble de alta acidez y taninos firmes que aporta complejidad floral y especiada a los blends riojanos. Requiere maduración para suavizar su estructura inicial.",
+    "sommelier_note_en": "Noble variety with high acidity and firm tannins adding floral complexity and spice to Rioja blends. Requires aging to soften its initial structure."
   },
   {
     "id": "garnacha-tintorera",
@@ -65485,7 +65761,40 @@
       "blend": 7,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media",
+      "tannin": "Medio",
+      "alcohol": "Alto (13-15%)",
+      "body": "Completo",
+      "aromas_primary": [
+        "Fresa",
+        "Cereza",
+        "Lavanda",
+        "Regaliz"
+      ],
+      "aromas_secondary": [
+        "Pan tostado",
+        "Especias suaves"
+      ],
+      "aromas_tertiary": [
+        "Cuero",
+        "Tabaco",
+        "Fruta seca"
+      ],
+      "benchmark_appellations": [
+        "DO Priorat (España)",
+        "AOC Châteauneuf-du-Pape (Francia)",
+        "DO Cariñena (España)"
+      ],
+      "ideal_food_pairings": [
+        "Carnes rojas a la brasa",
+        "Quesos curados",
+        "Guisos de caza"
+      ]
+    },
+    "sommelier_note_es": "Variedad noble con cuerpo y alcohol moderado, notas frutales primarias que evolucionan hacia especias y tierra en añejamiento. Ideal para vinos robustos o frescos según el clima.",
+    "sommelier_note_en": "Noble variety with moderate body and alcohol, primary fruity notes evolving into spices and earth upon aging. Ideal for robust wines or fresh styles depending on climate."
   },
   {
     "id": "feteasc-neagr",
@@ -70278,7 +70587,43 @@
       "blend": 5,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Alta",
+      "tannin": "Bajo",
+      "alcohol": "Medio (12-13%)",
+      "body": "Medio",
+      "aromas_primary": [
+        "Flores blancas",
+        "Cítricos",
+        "Manzana verde",
+        "Hiedra"
+      ],
+      "aromas_secondary": [
+        "Levadura",
+        "Miel",
+        "Pan tostado",
+        "Fruta seca"
+      ],
+      "aromas_tertiary": [
+        "Miel de abeja",
+        "Cera",
+        "Nuez",
+        "Cuero suave"
+      ],
+      "benchmark_appellations": [
+        "Rías Baixas (España)",
+        "Ribeiro (España)",
+        "Valdeorras (España)"
+      ],
+      "ideal_food_pairings": [
+        "Pescado blanco",
+        "Mariscos frescos",
+        "Quesos de cabra"
+      ]
+    },
+    "sommelier_note_es": "Variedad aromática dominante en Rías Baixas, aporta frescura y notas florales complejas con buena acidez natural. Requiere maduración temprana para evitar la oxidación y mantener el equilibrio.",
+    "sommelier_note_en": "Aromatic white variety dominant in Rías Baixas, contributing freshness and complex floral notes with natural acidity. Requires early maturity to avoid oxidation and maintain balance."
   },
   {
     "id": "touriga-franca",
@@ -72269,7 +72614,43 @@
       "blend": 5,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Alta",
+      "tannin": "Bajo",
+      "alcohol": "Medio (13-14%)",
+      "body": "Medio",
+      "aromas_primary": [
+        "Limón",
+        "Grapefruit",
+        "Manzana verde",
+        "Flores blancas"
+      ],
+      "aromas_secondary": [
+        "Levadura",
+        "Pan tostado",
+        "Brioche",
+        "Flor de melocotón"
+      ],
+      "aromas_tertiary": [
+        "Almendra",
+        "Miel oxidada",
+        "Caramelo suave",
+        "Fruta seca"
+      ],
+      "benchmark_appellations": [
+        "DO Rioja (España)",
+        "DO Arnedo (España)",
+        "DO Ribera del Duero (España)"
+      ],
+      "ideal_food_pairings": [
+        "Tapas de la zona",
+        "Mariscos a la plancha",
+        "Quesos curados"
+      ]
+    },
+    "sommelier_note_es": "Albillo Real destaca por su acidez vibrante y aromas florales que evocan flores blancas y cítricos frescos. Ideal para vinos jóvenes o con crianza sobre lías que aportan complejidad salina y notas de almendra tostada.",
+    "sommelier_note_en": "Albillo Real stands out for its vibrant acidity and floral aromas reminiscent of white flowers and fresh citrus. Ideal for young wines or lees-aged styles that impart saline complexity and toasted almond notes."
   },
   {
     "id": "xinomavro",
@@ -72959,7 +73340,41 @@
       "blend": 4,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Medio",
+      "alcohol": "Medio (13-14%)",
+      "body": "Medio",
+      "aromas_primary": [
+        "Frutos rojos",
+        "Cereza",
+        "Fresa",
+        "Flor blanca"
+      ],
+      "aromas_secondary": [
+        "Levadura",
+        "Vainilla suave",
+        "Especias finas"
+      ],
+      "aromas_tertiary": [
+        "Cuero",
+        "Tabaco",
+        "Frutos secos tostados"
+      ],
+      "benchmark_appellations": [
+        "DO Uclés (España)",
+        "DO Manchuela (España)",
+        "DO Valdepeñas (España)"
+      ],
+      "ideal_food_pairings": [
+        "Caza y cordero",
+        "Jamón ibérico curado",
+        "Quesos de oveja maduros"
+      ]
+    },
+    "sommelier_note_es": "Vijariego Negro ofrece una estructura equilibrada con notas de frutos rojos frescos y un toque floral distintivo. Su acidez vibrante lo hace ideal para maridajes con carnes rojas y caza.",
+    "sommelier_note_en": "Vijariego Negro delivers a balanced structure with fresh red fruit notes and a distinctive floral touch. Its vibrant acidity makes it ideal for pairing with red meats and game."
   },
   {
     "id": "tram-n-erven",
@@ -73942,7 +74357,43 @@
       "blend": 4,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Alta",
+      "tannin": "Medio-Alto",
+      "alcohol": "Medio (13-14%)",
+      "body": "Medio-Completo",
+      "aromas_primary": [
+        "Frutos rojos",
+        "Cereza",
+        "Fresa",
+        "Florales"
+      ],
+      "aromas_secondary": [
+        "Vainilla",
+        "Especias",
+        "Tabaco",
+        "Madera"
+      ],
+      "aromas_tertiary": [
+        "Cuero",
+        "Higos secos",
+        "Tierra",
+        "Nuez"
+      ],
+      "benchmark_appellations": [
+        "Pico DOP (Azores)",
+        "Madeira DOC",
+        "Ilha do Faial"
+      ],
+      "ideal_food_pairings": [
+        "Pescado azul",
+        "Quesos curados",
+        "Carne asada"
+      ]
+    },
+    "sommelier_note_es": "Rufete ofrece una estructura equilibrada con acidez vibrante y taninos finos, destacando por notas frutales primarias de cereza y fresa que evolucionan hacia maderas nobles en barrica.",
+    "sommelier_note_en": "Rufete presents a balanced structure with vibrant acidity and fine tannins, highlighting primary cherry and strawberry notes that evolve into noble woods in barrel aging."
   },
   {
     "id": "rondinella",
@@ -74641,7 +75092,41 @@
       "blend": 4,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Bajo-Medio",
+      "alcohol": "Medio (12-13%)",
+      "body": "Ligero-Medio",
+      "aromas_primary": [
+        "Fresa",
+        "Arándano",
+        "Flor blanca",
+        "Cítrico"
+      ],
+      "aromas_secondary": [
+        "Levadura",
+        "Fruta seca",
+        "Miel"
+      ],
+      "aromas_tertiary": [
+        "Hierbas secas",
+        "Tierra",
+        "Especias suaves"
+      ],
+      "benchmark_appellations": [
+        "DO Empordà (España)",
+        "DO Costa Brava (España)",
+        "DO Catalunya (España)"
+      ],
+      "ideal_food_pairings": [
+        "Pescado blanco fresco",
+        "Quesos frescos de cabra",
+        "Carnes a la plancha"
+      ]
+    },
+    "sommelier_note_es": "Variedad autóctona catalana de cuerpo ligero y alta acidez, ideal para vinos rosados o tintos jóvenes con notas frutales primarias. Requiere maduración temprana para mantener su frescura sin perder elegancia en boca.",
+    "sommelier_note_en": "Native Catalan variety with light body and high acidity, perfect for rosé or young reds with primary fruity notes. Requires early ripening to maintain freshness without losing elegance on the palate."
   },
   {
     "id": "melon-de-bourgogne",
@@ -76733,7 +77218,41 @@
       "blend": 4,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Medio-Bajo",
+      "alcohol": "Medio (13-14%)",
+      "body": "Medio",
+      "aromas_primary": [
+        "Fresa",
+        "Cereza",
+        "Flor blanca",
+        "Tomate"
+      ],
+      "aromas_secondary": [
+        "Yerba",
+        "Especias suaves",
+        "Fruta cocida"
+      ],
+      "aromas_tertiary": [
+        "Tierra",
+        "Húmedo",
+        "Salado"
+      ],
+      "benchmark_appellations": [
+        "Ribeiro (España)",
+        "Valdeorras (España)",
+        "Monterrei (España)"
+      ],
+      "ideal_food_pairings": [
+        "Carne blanca a la plancha",
+        "Jamón ibérico",
+        "Pulpo a la gallega"
+      ]
+    },
+    "sommelier_note_es": "Baboso Negro ofrece un perfil frutal fresco con acidez vibrante y taninos suaves, ideal para vinos de mesa jóvenes. Su carácter floral y terroso lo distingue dentro del panorama vitivinícola gallego.",
+    "sommelier_note_en": "Baboso Negro delivers a fresh fruity profile with vibrant acidity and soft tannins, perfect for young table wines. Its floral and earthy character distinguishes it within the Galician wine landscape."
   },
   {
     "id": "auxerrois",
@@ -77148,7 +77667,40 @@
       "blend": 4,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Bajo",
+      "alcohol": "Medio (13-14%)",
+      "body": "Medio",
+      "aromas_primary": [
+        "Cítrico",
+        "Flores blancas",
+        "Fruta de hueso",
+        "Mineral"
+      ],
+      "aromas_secondary": [
+        "Levadura",
+        "Pan tostado"
+      ],
+      "aromas_tertiary": [
+        "Miel",
+        "Frutos secos",
+        "Cera"
+      ],
+      "benchmark_appellations": [
+        "DO Rioja (España)",
+        "DO Navarra (España)",
+        "Tierra de Arnedo (Navarra)"
+      ],
+      "ideal_food_pairings": [
+        "Mariscos y tapas",
+        "Carnes blancas a la parrilla",
+        "Quesos curados"
+      ]
+    },
+    "sommelier_note_es": "El Albillo Mayor ofrece una frescura vibrante con acidez media-alta que equilibra su cuerpo medio, destacando notas de cítricos y flores blancas en el perfil primario. Con el tiempo, desarrolla matices terciarios de miel y frutos secos, ideal para maridajes ligeros o envejecidos sobre lías.",
+    "sommelier_note_en": "Albillo Mayor delivers vibrant freshness with medium-high acidity balancing its medium body, highlighting citrus and white flower notes in the primary profile. With time, it develops tertiary nuances of honey and nuts, ideal for light pairings or lees-aged expressions."
   },
   {
     "id": "ametovka",
@@ -77372,7 +77924,41 @@
       "blend": 3,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Bajo",
+      "alcohol": "Medio (12-13.5%)",
+      "body": "Ligero a Medio",
+      "aromas_primary": [
+        "Cítricos verdes",
+        "Manzana verde",
+        "Flores blancas",
+        "Hortensia"
+      ],
+      "aromas_secondary": [
+        "Levadura",
+        "Miel oxidativa",
+        "Flor de acacia"
+      ],
+      "aromas_tertiary": [
+        "Nuez tostada",
+        "Cítricos secos",
+        "Especias suaves"
+      ],
+      "benchmark_appellations": [
+        "DO Jumilla (España)",
+        "DO Yecla (España)",
+        "DO Uclés (España)"
+      ],
+      "ideal_food_pairings": [
+        "Mariscos frescos",
+        "Ensaladas de verano",
+        "Quesos frescos"
+      ]
+    },
+    "sommelier_note_es": "Vijariego Blanco ofrece una estructura fresca con acidez vibrante y notas cítricas primarias, ideal para vinos jóvenes o ligeramente oxidativos. Su perfil floral y mineral destaca en maridajes ligeros.",
+    "sommelier_note_en": "Vijariego Blanco delivers a fresh structure with vibrant acidity and primary citrus notes, perfect for young or lightly oxidative wines. Its floral and mineral profile stands out in light pairings."
   },
   {
     "id": "verdello",
@@ -81094,7 +81680,40 @@
       "blend": 3,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Bajo",
+      "alcohol": "Medio (12-13.5%)",
+      "body": "Ligero-Medio",
+      "aromas_primary": [
+        "Flores blancas",
+        "Cítricos frescos",
+        "Pera",
+        "Hierbas finas"
+      ],
+      "aromas_secondary": [
+        "Levadura",
+        "Miel tostada"
+      ],
+      "aromas_tertiary": [
+        "Nuez",
+        "Fruta seca",
+        "Caramelo suave"
+      ],
+      "benchmark_appellations": [
+        "Rías Baixas (España)",
+        "Ribeiro (España)",
+        "Monterrei (España)"
+      ],
+      "ideal_food_pairings": [
+        "Mariscos",
+        "Pescado blanco",
+        "Ensaladas con queso de cabra"
+      ]
+    },
+    "sommelier_note_es": "Loureira destaca por su acidez vibrante y perfil floral, aportando frescura a los blends gallegos. Ideal para vinos jóvenes o crianza sobre lías que realzan notas cítricas.",
+    "sommelier_note_en": "Loureira stands out for its vibrant acidity and floral profile, adding freshness to Galician blends. Ideal for young wines or lees-aged styles that enhance citrus notes."
   },
   {
     "id": "kotsifali",
@@ -81880,7 +82499,40 @@
       "blend": 3,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Alta",
+      "tannin": "Nulo / Bajo",
+      "alcohol": "Bajo-Medio (10-12%)",
+      "body": "Ligero a Medio",
+      "aromas_primary": [
+        "Limón",
+        "Pomelo",
+        "Manzana verde",
+        "Florales blancos"
+      ],
+      "aromas_secondary": [
+        "Levadura sobre lías",
+        "Nuez",
+        "Caramelo suave"
+      ],
+      "aromas_tertiary": [
+        "Salino",
+        "Rocoso",
+        "Humedad marina"
+      ],
+      "benchmark_appellations": [
+        "DO Getariako Txakolina (España)",
+        "DO Bizkaiko Txakolina (España)"
+      ],
+      "ideal_food_pairings": [
+        "Pintxos de marisco",
+        "Bacalao al pil-pil",
+        "Queso de cabra"
+      ]
+    },
+    "sommelier_note_es": "Variedad autóctona vasca que define el Txakoli con acidez vibrante y notas cítricas frescas, reflejando la influencia atlántica.",
+    "sommelier_note_en": "Indigenous Basque white grape defining the Txakoli profile with vibrant acidity and fresh citrus notes reflecting Atlantic influence."
   },
   {
     "id": "hondarrabi-zuri",
@@ -81992,7 +82644,41 @@
       "blend": 3,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Alta",
+      "tannin": "Bajo",
+      "alcohol": "Medio (12-13%)",
+      "body": "Ligero a Medio",
+      "aromas_primary": [
+        "Cítricos verdes",
+        "Manzana verde",
+        "Mineral",
+        "Florales sutiles"
+      ],
+      "aromas_secondary": [
+        "Levadura",
+        "Oxidativo suave",
+        "Salino"
+      ],
+      "aromas_tertiary": [
+        "Miel",
+        "Cítricos secos",
+        "Piedra pómez"
+      ],
+      "benchmark_appellations": [
+        "Txakoli de Getaria (España)",
+        "Txakoli de Bizkaia (España)",
+        "Txakoli de Álava (España)"
+      ],
+      "ideal_food_pairings": [
+        "Mariscos frescos",
+        "Ostras",
+        "Pintxos bascos"
+      ]
+    },
+    "sommelier_note_es": "Variedad autóctona de alta acidez y carácter mineral, a menudo con notas oxidativas que evocan la costa atlántica. Ideal para mariscos frescos debido a su frescura vibrante y cuerpo ligero.",
+    "sommelier_note_en": "Autumnal native variety with high acidity and distinct minerality, often displaying oxidative notes reminiscent of the Atlantic coast. Ideally paired with fresh seafood due to its vibrant freshness and light body."
   },
   {
     "id": "hondarrabi-beltza",
@@ -83461,7 +84147,40 @@
       "blend": 3,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Medio-Bajo",
+      "alcohol": "Medio (12.5-13.5%)",
+      "body": "Medio-Ligero",
+      "aromas_primary": [
+        "Fresa",
+        "Cereza",
+        "Arándano",
+        "Flor"
+      ],
+      "aromas_secondary": [
+        "Compota de frutos rojos",
+        "Especias suaves"
+      ],
+      "aromas_tertiary": [
+        "Cuero",
+        "Tierra",
+        "Hierbas secas"
+      ],
+      "benchmark_appellations": [
+        "Monterrei (Galicia)",
+        "Ribeira Sacra (Galicia)",
+        "Dão (Portugal)"
+      ],
+      "ideal_food_pairings": [
+        "Cordero asado",
+        "Setas",
+        "Quesos curados"
+      ]
+    },
+    "sommelier_note_es": "Brancellao destaca por su acidez vibrante y aromas frutales rojos puros, ofreciendo una estructura fresca y elegante.",
+    "sommelier_note_en": "Brancellao stands out for its vibrant acidity and pure red fruit aromas, offering a fresh and elegant structure."
   },
   {
     "id": "bastardo",
@@ -87386,7 +88105,42 @@
       "blend": 2,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Alta",
+      "tannin": "Medio",
+      "alcohol": "Medio (13-14%)",
+      "body": "Medio a Completo",
+      "aromas_primary": [
+        "Cereza negra",
+        "Frambuesa",
+        "Arándano",
+        "Flor silvestre"
+      ],
+      "aromas_secondary": [
+        "Fruta roja fermentada",
+        "Especias rojas",
+        "Hongo",
+        "Madera tostada"
+      ],
+      "aromas_tertiary": [
+        "Cuero",
+        "Tabaco",
+        "Tierra húmeda",
+        "Hierbas secas"
+      ],
+      "benchmark_appellations": [
+        "Bierzo (España)",
+        "Ribeira Sacra (España)"
+      ],
+      "ideal_food_pairings": [
+        "Caza",
+        "Carne asada",
+        "Quesos curados"
+      ]
+    },
+    "sommelier_note_es": "Variedad autóctona gallega que ofrece vinos con alta acidez y taninos finos, destacando por notas frutales primarias de cereza y complejidad terrosa en la madurez.",
+    "sommelier_note_en": "Native Galician variety offering high-acid wines with fine tannins, characterized by primary cherry notes and earthy complexity upon maturity."
   },
   {
     "id": "piquepoul-blanc",
@@ -87816,7 +88570,43 @@
       "blend": 2,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Alta",
+      "tannin": "Bajo",
+      "alcohol": "Medio (13-14%)",
+      "body": "Ligero a Medio",
+      "aromas_primary": [
+        "Citrino",
+        "Florales blancos",
+        "Manzana verde",
+        "Almendras"
+      ],
+      "aromas_secondary": [
+        "Pan tostado",
+        "Levadura fresca",
+        "Sal marina",
+        "Húmedo"
+      ],
+      "aromas_tertiary": [
+        "Nuez",
+        "Cuero",
+        "Fruta seca",
+        "Tabaco"
+      ],
+      "benchmark_appellations": [
+        "Jerez-Xérès-Sherry",
+        "Montilla-Moriles",
+        "Sanlúcar de Barrameda"
+      ],
+      "ideal_food_pairings": [
+        "Tapas y mariscos",
+        "Jamón Ibérico",
+        "Queso Manchego"
+      ]
+    },
+    "sommelier_note_es": "Varietal neutra que destaca por su acidez vibrante y baja extracción tánica, ideal para vinos blancos jóvenes o envejecidos bajo flor. Su perfil aromático evoluciona desde notas cítricas hacia matices salinos y de madera noble.",
+    "sommelier_note_en": "Neutral varietal highlighting vibrant acidity and low tannic extraction, perfect for young whites or flor-aged wines. Its aromatic profile evolves from citrus notes to saline nuances and noble wood characteristics."
   },
   {
     "id": "orbois",
@@ -89464,7 +90254,40 @@
       "blend": 2,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Medio",
+      "alcohol": "Medio (13-14%)",
+      "body": "Medio",
+      "aromas_primary": [
+        "Cereza",
+        "Fresa",
+        "Floración",
+        "Tomate verde"
+      ],
+      "aromas_secondary": [
+        "Mermelada de frutos rojos",
+        "Especias suaves"
+      ],
+      "aromas_tertiary": [
+        "Cuero",
+        "Tierra",
+        "Hierbas secas"
+      ],
+      "benchmark_appellations": [
+        "Navarra (España)",
+        "Rioja (España)",
+        "La Rioja (España)"
+      ],
+      "ideal_food_pairings": [
+        "Paella",
+        "Jamón Ibérico",
+        "Carne a la brasa"
+      ]
+    },
+    "sommelier_note_es": "Manto Negro ofrece una estructura equilibrada con notas frutales primarias de cereza y fresa, acompañadas de un cuerpo medio que permite envejecimiento moderado. Su perfil aromático evoluciona hacia matices terrosos y especiado, ideal para vinos de mesa robustos.",
+    "sommelier_note_en": "Manto Negro offers a balanced structure with primary fruity notes of cherry and strawberry, accompanied by a medium body that allows for moderate aging. Its aromatic profile evolves towards earthy and spicy nuances, ideal for robust table wines."
   },
   {
     "id": "mand",
@@ -91813,7 +92636,40 @@
       "blend": 2,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Bajo",
+      "alcohol": "Medio (13-14%)",
+      "body": "Medio",
+      "aromas_primary": [
+        "Cítricos",
+        "Flores blancas",
+        "Frutos del bosque",
+        "Mineral"
+      ],
+      "aromas_secondary": [
+        "Panadería",
+        "Miel",
+        "Levadura"
+      ],
+      "aromas_tertiary": [
+        "Miel tostada",
+        "Nueces",
+        "Hierbas secas"
+      ],
+      "benchmark_appellations": [
+        "Dão (Portugal)",
+        "Lisboa (Portugal)"
+      ],
+      "ideal_food_pairings": [
+        "Mariscos",
+        "Carnes blancas",
+        "Quesos frescos"
+      ]
+    },
+    "sommelier_note_es": "Variedad blanca portuguesa de alta acidez y perfil floral-frutal distintivo. Se recomienda para maridaje con pescados y platos ligeros.",
+    "sommelier_note_en": "Portuguese white variety with high acidity and distinctive floral-fruit profile. Recommended for pairing with seafood and light dishes."
   },
   {
     "id": "enantio",
@@ -92845,7 +93701,38 @@
       "blend": 2,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Alta",
+      "tannin": "Medio",
+      "alcohol": "Medio (13-14%)",
+      "body": "Medio",
+      "aromas_primary": [
+        "Fresa silvestre",
+        "Cereza fresca",
+        "Flor blanca",
+        "Hierbas aromáticas"
+      ],
+      "aromas_secondary": [
+        "Yogur natural",
+        "Pan tostado"
+      ],
+      "aromas_tertiary": [
+        "Especias cálidas",
+        "Cuero suave"
+      ],
+      "benchmark_appellations": [
+        "DO La Palma (Canarias)",
+        "DO Canarias"
+      ],
+      "ideal_food_pairings": [
+        "Carpaccio de cordero",
+        "Queso curado de oveja",
+        "Pescado azul asado"
+      ]
+    },
+    "sommelier_note_es": "Variedad minoritaria y autóctona de Canarias, destaca por su acidez vibrante y aromas frutales frescos. Requiere maduración para expresar su estructura tánica equilibrada y complejidad.",
+    "sommelier_note_en": "Minor Canary Islands variety with vibrant acidity and fresh fruity notes. Needs ripening to express balanced tannic structure and complexity."
   },
   {
     "id": "cadarc",
@@ -94605,7 +95492,40 @@
       "blend": 1,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Alta",
+      "tannin": "Bajo",
+      "alcohol": "Medio (12-13%)",
+      "body": "Medio",
+      "aromas_primary": [
+        "Cítricos",
+        "Flores blancas",
+        "Frutas de hueso",
+        "Hierbas frescas"
+      ],
+      "aromas_secondary": [
+        "Levadura",
+        "Panadería fina"
+      ],
+      "aromas_tertiary": [
+        "Miel",
+        "Frutos secos tostados",
+        "Cera"
+      ],
+      "benchmark_appellations": [
+        "Ribera del Duero (España)",
+        "Campo de Borja (España)",
+        "Extremadura (España)"
+      ],
+      "ideal_food_pairings": [
+        "Pescado blanco",
+        "Mariscos frescos",
+        "Quesos frescos"
+      ]
+    },
+    "sommelier_note_es": "Zalema destaca por su acidez vibrante y perfil aromático floral que recuerda a flores blancas y cítricos, aportando frescura. Es ideal para maridajes con pescados y quesos ligeros.",
+    "sommelier_note_en": "Zalema stands out for its vibrant acidity and floral aromatic profile reminiscent of white flowers and citrus, adding freshness. It is ideal for pairings with fish and light cheeses."
   },
   {
     "id": "yap-ncak",
@@ -95446,7 +96366,39 @@
       "blend": 1,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Alta",
+      "tannin": "Bajo",
+      "alcohol": "Medio (13-14%)",
+      "body": "Medio",
+      "aromas_primary": [
+        "Cítricos frescos",
+        "Hierbas aromáticas",
+        "Frutos de hueso",
+        "Floreación blanca"
+      ],
+      "aromas_secondary": [
+        "Levadura brioche",
+        "Madera leve"
+      ],
+      "aromas_tertiary": [
+        "Miel tostada",
+        "Especias suaves",
+        "Mineralidad"
+      ],
+      "benchmark_appellations": [
+        "Rueda DO (España)",
+        "Ribera del Duero (Varietal local)"
+      ],
+      "ideal_food_pairings": [
+        "Pescado blanco a la plancha",
+        "Quesos frescos de cabra",
+        "Mariscos al vapor"
+      ]
+    },
+    "sommelier_note_es": "Verdejo Negro es una mutación de piel oscura del Verdejo clásico, produciendo vinos blancos con alta acidez y notas cítricas dominantes. Su perfil refleja la frescura herbácea típica de la región de Rueda.",
+    "sommelier_note_en": "Verdejo Negro is a dark-skinned mutation of the classic Verdejo, producing white wines with high acidity and dominant citrus notes. Its profile reflects the characteristic herbal freshness typical of the Rueda region."
   },
   {
     "id": "vasilaki",
@@ -96046,7 +96998,43 @@
       "blend": 1,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media",
+      "tannin": "Medio-Bajo",
+      "alcohol": "Medio (13-14%)",
+      "body": "Medio",
+      "aromas_primary": [
+        "Frutos rojos",
+        "Cereza",
+        "Fresa",
+        "Flor"
+      ],
+      "aromas_secondary": [
+        "Especias",
+        "Vainilla",
+        "Fruta cocida",
+        "Miel"
+      ],
+      "aromas_tertiary": [
+        "Tierra",
+        "Cuero",
+        "Hierbas secas",
+        "Tabaco"
+      ],
+      "benchmark_appellations": [
+        "Priorat (España)",
+        "Empordà (España)",
+        "Montsant (España)"
+      ],
+      "ideal_food_pairings": [
+        "Tapas ibéricas",
+        "Carnes a la brasa",
+        "Pescado asado"
+      ]
+    },
+    "sommelier_note_es": "Es una variedad autóctona catalana de color intenso y cuerpo medio, con notas frutales primarias de cereza y fresa. Evoluciona hacia matices terrosos y especiados con el paso del tiempo.",
+    "sommelier_note_en": "It is a Catalan autochthonous red variety with intense color and medium body, featuring primary cherry and strawberry notes. It evolves into earthy and spicy nuances over time."
   },
   {
     "id": "trebbiano-toscano",
@@ -96766,7 +97754,42 @@
       "blend": 1,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Medio-Alto",
+      "alcohol": "Alto (14-15%)",
+      "body": "Completo",
+      "aromas_primary": [
+        "Frutos rojos",
+        "Cereza",
+        "Arándano",
+        "Florales sutiles"
+      ],
+      "aromas_secondary": [
+        "Especiado",
+        "Levadura",
+        "Madera tostada"
+      ],
+      "aromas_tertiary": [
+        "Tabaco",
+        "Cuero",
+        "Tierra",
+        "Albahaca"
+      ],
+      "benchmark_appellations": [
+        "DO Toro (España)",
+        "DO La Mancha (España)",
+        "Ribera del Duero (España)"
+      ],
+      "ideal_food_pairings": [
+        "Carne asada",
+        "Caza",
+        "Quesos curados"
+      ]
+    },
+    "sommelier_note_es": "Tinta de Toro ofrece vinos potentes y estructurados con notas frutales primarias intensas que evolucionan hacia maderas tostadas en barrica. Su carácter robusto la convierte en una compañera ideal para carnes rojas y caza.",
+    "sommelier_note_en": "Tinta de Toro delivers powerful, structured wines with intense primary fruit notes evolving into toasted oak characteristics upon barrel aging. Its robust character makes it an ideal companion for red meats and game dishes."
   },
   {
     "id": "tinta-amarela",
@@ -97487,7 +98510,41 @@
       "blend": 1,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Bajo",
+      "alcohol": "Medio (12-13%)",
+      "body": "Medio-Ligero",
+      "aromas_primary": [
+        "Cítricos",
+        "Flores blancas",
+        "Piedra",
+        "Limón"
+      ],
+      "aromas_secondary": [
+        "Levadura",
+        "Brioche",
+        "Madera fina"
+      ],
+      "aromas_tertiary": [
+        "Higos",
+        "Nueces",
+        "Miel oxidada"
+      ],
+      "benchmark_appellations": [
+        "Rueda (España)",
+        "Ribera del Duero (España)",
+        "Navarra (España)"
+      ],
+      "ideal_food_pairings": [
+        "Mariscos",
+        "Ensaladas de verano",
+        "Quesos frescos"
+      ]
+    },
+    "sommelier_note_es": "La Tardana destaca por su acidez vibrante y notas florales complejas que recuerdan a cítricos y flores blancas, ideal para vinos jóvenes o con ligero envejecimiento. Su perfil equilibrado la hace perfecta para maridajes ligeros con pescado blanco y quesos frescos.",
+    "sommelier_note_en": "Tardana delivers vibrant acidity and complex floral aromas reminiscent of citrus and white flowers, perfect for young wines or light aging. Its balanced profile makes it ideal for pairing with white fish and fresh cheeses."
   },
   {
     "id": "tamianka",
@@ -97908,7 +98965,41 @@
       "blend": 1,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Bajo",
+      "alcohol": "Medio (12-13%)",
+      "body": "Ligero-Medio",
+      "aromas_primary": [
+        "Cítricos frescos",
+        "Florales blancos",
+        "Piel de limón",
+        "Hortensia"
+      ],
+      "aromas_secondary": [
+        "Miel",
+        "Yerba dulce",
+        "Pan tostado suave"
+      ],
+      "aromas_tertiary": [
+        "Mineralidad salina",
+        "Cristal",
+        "Espeleológico"
+      ],
+      "benchmark_appellations": [
+        "DO Cava (España)",
+        "DO Penedès (España)",
+        "DO Empordà (España)"
+      ],
+      "ideal_food_pairings": [
+        "Mariscos frescos",
+        "Ensaladas de verano",
+        "Quesos blancos suaves"
+      ]
+    },
+    "sommelier_note_es": "Variedad blanca catalana con acidez vibrante y notas florales distintivas, aportando frescura y estructura mineral a los blends.",
+    "sommelier_note_en": "Catalan white variety with vibrant acidity and distinctive floral notes, adding freshness and mineral structure to blends."
   },
   {
     "id": "stavroto",
@@ -100548,7 +101639,39 @@
       "blend": 1,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Alta",
+      "tannin": "Nulo",
+      "alcohol": "Medio-Bajo (12-13%)",
+      "body": "Ligero",
+      "aromas_primary": [
+        "Cítricos verdes",
+        "Manzana verde",
+        "Florales sutiles",
+        "Pomo blanco"
+      ],
+      "aromas_secondary": [
+        "Levadura",
+        "Brioche leve"
+      ],
+      "aromas_tertiary": [
+        "Miel oxidada",
+        "Fruta seca suave"
+      ],
+      "benchmark_appellations": [
+        "DO Cava (España)",
+        "DO Penedès (Cataluña)",
+        "DO Tarragona (Cataluña)"
+      ],
+      "ideal_food_pairings": [
+        "Mariscos frescos",
+        "Ensaladas ligeras",
+        "Quesos de cabra"
+      ]
+    },
+    "sommelier_note_es": "Variedad catalana de alta acidez y bajo alcohol, fundamental en espumosos con notas cítricas y florales. Requiere maduración temprana para preservar frescura y evitar oxidación.",
+    "sommelier_note_en": "Catalan variety with high acidity and low alcohol, fundamental in sparkling wines featuring citrus and floral notes. Requires early ripening to preserve freshness and avoid oxidation."
   },
   {
     "id": "po-ip",
@@ -101749,7 +102872,40 @@
       "blend": 1,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Medio",
+      "alcohol": "Medio (13-14%)",
+      "body": "Medio",
+      "aromas_primary": [
+        "Frutos rojos",
+        "Cereza",
+        "Fresa",
+        "Flor silvestre"
+      ],
+      "aromas_secondary": [
+        "Panadería",
+        "Levadura fresca"
+      ],
+      "aromas_tertiary": [
+        "Tierra volcánica",
+        "Tabaco suave",
+        "Especias"
+      ],
+      "benchmark_appellations": [
+        "DO Tacoronte-Acentejo (La Palma)",
+        "Islas Canarias (Denominación de Origen)",
+        "DO El Hierro"
+      ],
+      "ideal_food_pairings": [
+        "Carnes rojas a la brasa",
+        "Quesos curados de cabra",
+        "Mariscos locales"
+      ]
+    },
+    "sommelier_note_es": "Variedad autóctona de La Palma con frescura vibrante y acidez marcada por el clima insular. Presenta notas frutales primarias de cereza y toques terrosos que evocan su origen volcánico.",
+    "sommelier_note_en": "Native variety from La Palma featuring vibrant freshness and acidity marked by the island climate. Displays primary red fruit notes of cherry with earthy tones evoking its volcanic origin."
   },
   {
     "id": "pardina",
@@ -101809,7 +102965,41 @@
       "blend": 1,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Alta",
+      "tannin": "Bajo",
+      "alcohol": "Medio (12-13%)",
+      "body": "Ligero a Medio",
+      "aromas_primary": [
+        "Cítricos verdes",
+        "Manzana verde",
+        "Floral acacia",
+        "Pera"
+      ],
+      "aromas_secondary": [
+        "Levadura",
+        "Huevos de codorniz",
+        "Miel tostada"
+      ],
+      "aromas_tertiary": [
+        "Mineral",
+        "Hierbas secas",
+        "Caramelo suave"
+      ],
+      "benchmark_appellations": [
+        "DO Empordà (España)",
+        "DO Cava (España)",
+        "DO Montsant (España)"
+      ],
+      "ideal_food_pairings": [
+        "Mariscos frescos",
+        "Quesos de cabra",
+        "Ensaladas con aceite de oliva"
+      ]
+    },
+    "sommelier_note_es": "Pardina destaca por su alta acidez y aromas florales cítricos, ideal para vinos jóvenes o espumosos con notas minerales. Su estructura ligera la hace perfecta para maridajes frutales y mariscos.",
+    "sommelier_note_en": "Pardina stands out for its high acidity and floral citrus aromas, ideal for young wines or sparkling with mineral notes. Its light structure makes it perfect for fruity pairings and seafood."
   },
   {
     "id": "papaskaras",
@@ -103670,7 +104860,40 @@
       "blend": 1,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Alta",
+      "tannin": "Medio-Alto",
+      "alcohol": "Medio (13-14%)",
+      "body": "Medio-Completo",
+      "aromas_primary": [
+        "Fresa",
+        "Cereza",
+        "Violeta",
+        "Arándano"
+      ],
+      "aromas_secondary": [
+        "Pan tostado",
+        "Especias rojas"
+      ],
+      "aromas_tertiary": [
+        "Tierra húmeda",
+        "Cuero",
+        "Hongo"
+      ],
+      "benchmark_appellations": [
+        "Rías Baixas (España)",
+        "Ribeiro (España)",
+        "Valdeorras (España)"
+      ],
+      "ideal_food_pairings": [
+        "Caza menor",
+        "Carne asada",
+        "Quesos curados"
+      ]
+    },
+    "sommelier_note_es": "Variedad autóctona gallega de color intenso y alta acidez, con notas frutales rojas y florales que evolucionan hacia matices terrosos en barrica.",
+    "sommelier_note_en": "Intense red variety from Galicia with high acidity and floral notes. Good tannic structure suitable for aging alongside roasted meats."
   },
   {
     "id": "moravia",
@@ -104451,7 +105674,43 @@
       "blend": 1,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media",
+      "tannin": "Medio",
+      "alcohol": "Medio-Alto (13-14%)",
+      "body": "Medio",
+      "aromas_primary": [
+        "Cereza",
+        "Fresa",
+        "Flor silvestre",
+        "Regaliz"
+      ],
+      "aromas_secondary": [
+        "Vainilla",
+        "Madera tostada",
+        "Especias",
+        "Yema de huevo"
+      ],
+      "aromas_tertiary": [
+        "Cuero",
+        "Fruta seca",
+        "Tierra",
+        "Tabaco"
+      ],
+      "benchmark_appellations": [
+        "DO La Mancha (España)",
+        "DO Cariñena (España)",
+        "DO Somontano (España)"
+      ],
+      "ideal_food_pairings": [
+        "Caza",
+        "Carnes rojas",
+        "Embutidos curados"
+      ]
+    },
+    "sommelier_note_es": "La Maturana Tinta presenta un perfil frutal rojo equilibrado con acidez media y taninos suaves. Es ideal para vinos de guarda en barrica que desarrollan notas de madera y tierra.",
+    "sommelier_note_en": "Maturana Tinta offers a balanced red fruit profile with medium acidity and soft tannins. It is ideal for barrel-aged wines that develop notes of wood and earth."
   },
   {
     "id": "maturana-blanca",
@@ -105893,7 +107152,41 @@
       "blend": 1,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Medio",
+      "alcohol": "Medio (12-13%)",
+      "body": "Medio",
+      "aromas_primary": [
+        "Cereza",
+        "Fresa",
+        "Flor silvestre",
+        "Tomate"
+      ],
+      "aromas_secondary": [
+        "Fruta fermentada",
+        "Especias rojas",
+        "Tierra"
+      ],
+      "aromas_tertiary": [
+        "Cuero",
+        "Madera tostada",
+        "Tabaco"
+      ],
+      "benchmark_appellations": [
+        "Rías Baixas (España)",
+        "Ribeiro (España)",
+        "Valdeorras (España)"
+      ],
+      "ideal_food_pairings": [
+        "Carnes rojas a la brasa",
+        "Estofados de caza",
+        "Quesos curados"
+      ]
+    },
+    "sommelier_note_es": "El Lado presenta un perfil frutal rojo intenso con notas florales sutiles y una acidez equilibrada. Su estructura media lo hace ideal para maridajes robustos sin ser excesivamente tánico.",
+    "sommelier_note_en": "Lado presents an intense red fruit profile with subtle floral notes and balanced acidity. Its medium structure makes it ideal for robust pairings without being excessively tannic."
   },
   {
     "id": "k-v-rsz-l",
@@ -107875,7 +109168,41 @@
       "blend": 1,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media",
+      "tannin": "Medio-Bajo",
+      "alcohol": "Medio (13-14%)",
+      "body": "Medio",
+      "aromas_primary": [
+        "Fresas",
+        "Arándanos",
+        "Florales",
+        "Tomate"
+      ],
+      "aromas_secondary": [
+        "Hierbas",
+        "Alcohol",
+        "Caramelo suave"
+      ],
+      "aromas_tertiary": [
+        "Tierra",
+        "Especias",
+        "Levadura"
+      ],
+      "benchmark_appellations": [
+        "DO Cariñena (España)",
+        "DO Calatayud (España)",
+        "AOC Côtes du Rhône (Francia)"
+      ],
+      "ideal_food_pairings": [
+        "Empanadas",
+        "Carnes a la brasa",
+        "Quesos curados"
+      ]
+    },
+    "sommelier_note_es": "La Garnacha Peluda ofrece vinos de cuerpo medio con acidez fresca y taninos suaves, destacando por notas frutales primarias de baya roja y matices florales sutiles.",
+    "sommelier_note_en": "Garnacha Peluda delivers medium-bodied wines with fresh acidity and soft tannins, highlighted by primary red berry notes and subtle floral nuances."
   },
   {
     "id": "garnacha-gris",
@@ -108835,7 +110162,41 @@
       "blend": 1,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Medio",
+      "alcohol": "Medio (13-14%)",
+      "body": "Medio",
+      "aromas_primary": [
+        "Frutos rojos",
+        "Cereza",
+        "Arándano",
+        "Flor"
+      ],
+      "aromas_secondary": [
+        "Vainilla",
+        "Especias",
+        "Madera tostada"
+      ],
+      "aromas_tertiary": [
+        "Cuero",
+        "Tabaco",
+        "Tierra"
+      ],
+      "benchmark_appellations": [
+        "Dão (Portugal)",
+        "Vinho Verde (Portugal)",
+        "Alentejo (Portugal)"
+      ],
+      "ideal_food_pairings": [
+        "Caza",
+        "Quesos curados",
+        "Carne roja"
+      ]
+    },
+    "sommelier_note_es": "Variedad local poco documentada, probablemente un sinónimo regional de tintas portuguesas. Presenta acidez vibrante y taninos estructurales que evolucionan hacia notas terrosas en el envejecimiento.",
+    "sommelier_note_en": "Obscure varietal likely a synonym for Portuguese reds. Vibrant acidity and structural tannins evolve into earthy notes with aging."
   },
   {
     "id": "fiano",
@@ -111536,7 +112897,41 @@
       "blend": 1,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Nulo",
+      "alcohol": "Medio (12-13%)",
+      "body": "Ligero-Medio",
+      "aromas_primary": [
+        "Cítricos",
+        "Floral",
+        "Pera",
+        "Manzana verde"
+      ],
+      "aromas_secondary": [
+        "Levadura",
+        "Huevos fritos",
+        "Miel"
+      ],
+      "aromas_tertiary": [
+        "Nuez",
+        "Citrinos secos",
+        "Vainilla"
+      ],
+      "benchmark_appellations": [
+        "DO Penedès (España)",
+        "DO Cava (España)",
+        "DO Montsant (España)"
+      ],
+      "ideal_food_pairings": [
+        "Mariscos frescos",
+        "Quesos de cabra",
+        "Ensaladas"
+      ]
+    },
+    "sommelier_note_es": "Variedad catalana con acidez equilibrada y aromas florales que aportan frescura en espumosos y vinos blancos.",
+    "sommelier_note_en": "Catalan variety with balanced acidity and floral notes, adding freshness to sparkling wines and white blends."
   },
   {
     "id": "castet",
@@ -112552,7 +113947,40 @@
       "blend": 1,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Medio",
+      "alcohol": "Medio (12-13%)",
+      "body": "Medio",
+      "aromas_primary": [
+        "Cereza",
+        "Fresa",
+        "Flor",
+        "Tomate"
+      ],
+      "aromas_secondary": [
+        "Panadería",
+        "Levadura"
+      ],
+      "aromas_tertiary": [
+        "Tabaco",
+        "Tierra",
+        "Cuero"
+      ],
+      "benchmark_appellations": [
+        "DO Navarra (España)",
+        "DO Rioja (España)",
+        "Ribera del Duero (España)"
+      ],
+      "ideal_food_pairings": [
+        "Carnes rojas",
+        "Embutidos curados",
+        "Guisos de caza"
+      ]
+    },
+    "sommelier_note_es": "Variedad antigua que aporta frescura y acidez media-alta, con notas primarias de frutos rojos y estructura tánica equilibrada para el envejecimiento.",
+    "sommelier_note_en": "An ancient variety contributing medium-high acidity and fresh red fruit notes, with balanced tannic structure suitable for aging."
   },
   {
     "id": "broad-leaved-melnik",
@@ -113933,7 +115361,39 @@
       "blend": 1,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media",
+      "tannin": "Bajo",
+      "alcohol": "Medio (12-13%)",
+      "body": "Ligero a Medio",
+      "aromas_primary": [
+        "Fresa",
+        "Frambuesa",
+        "Cereza",
+        "Flor"
+      ],
+      "aromas_secondary": [
+        "Pan tostado",
+        "Levadura roja"
+      ],
+      "aromas_tertiary": [
+        "Tierra húmeda",
+        "Tabaco fino"
+      ],
+      "benchmark_appellations": [
+        "Navarra (España)",
+        "Rioja (España)",
+        "Aragón (España)"
+      ],
+      "ideal_food_pairings": [
+        "Tapas",
+        "Carnes blancas",
+        "Quesos frescos"
+      ]
+    },
+    "sommelier_note_es": "La Beba ofrece un perfil ligero con acidez fresca y taninos suaves, destacando por sus aromas a frutos rojos y notas florales. Ideal para vinos jóvenes o rosados que maridan perfectamente con tapas y carnes blancas.",
+    "sommelier_note_en": "Beba delivers a light profile with fresh acidity and soft tannins, characterized by red fruit and floral notes. It is ideal for young wines or rosés that pair perfectly with tapas and white meats."
   },
   {
     "id": "baroque",

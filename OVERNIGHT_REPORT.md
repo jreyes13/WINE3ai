@@ -1,10 +1,11 @@
 # 🍷 WINE³ai — Informe de Generación Nocturna (LM Studio)
 
-- **Fecha y hora de finalización:** 2026-11-19 15:55:04
-- **Consumo de tokens en la nube:** **0 tokens** (100% inferencia local GPU en Apple M3 Pro)
-- **Total artículos técnicos generados:** 34
-- **Total fichas de examen generadas:** 17
-- **Total perfiles de uvas generados:** 18
+- **Fecha y hora de finalización:** 2026-11-20 06:46:06
+- **Consumo de tokens en la nube:** **0 tokens** (100% inferencia local GPU en Apple Silicon)
+- **Total tokens procesados localmente:** **849,857 tokens**
+- **Total artículos técnicos generados:** 119
+- **Total fichas de examen generadas:** 113
+- **Total perfiles de uvas generados:** 96
 
 ## 1. Artículos Nuevos de WINEp3dIA
 
@@ -42,6 +43,91 @@
 - **Metoxipirazinas y Madurez de la Uva: Mecanismo y Relevancia Enológica** (`pirazinas_verdor_cabernet`) — *Las metoxipirazinas, específicamente la IBMP, son compuestos volátiles responsables del aroma a pimiento verde. Su síntesis en la uva depende de la maduración fenólica y se degrada durante la fermentación.*
 - **Enfermedades de Madera: Yesca y Eutiosis: Mecanismo y Relevancia Enológica** (`enfermedades_madera_yesca`) — *Hongos vasculares que colonizan la madera, provocando apoplejía y defectos sensoriales como notas de seta o corcho húmedo en el vino.*
 - **Selección Masal vs Selección Clonal: Mecanismo y Relevancia Enológica** (`seleccion_masal_vs_clonal`) — *Comparación técnica entre la propagación vegetativa masal (alta diversidad genética) y clonal (uniformidad fenotípica), evaluando su impacto en la expresión del terroir y la consistencia productiva.*
+- **Terra Rossa de Coonawarra: Mecanismo y Relevancia Enológica** (`suelo_terra_rossa_coonawarra`) — *La Terra Rossa de Coonawarra es un suelo único en Australia, compuesto por arcilla roja rica en óxido de hierro sobre caliza porosa. Este perfil edafológico confiere estructura y notas terrosas distintivas a los vinos, especialmente al Cabernet Sauvignon.*
+- **Caliza Oolítica de la Côte d'Or: Mecanismo y Relevancia Enológica** (`suelo_caliza_jurassica_bourgogne`) — *La caliza oolítica bajociense y batiense de la Côte d'Or proporciona un sustrato alcalino con excelente drenaje, favoreciendo la acidez natural en Chardonnay y la elegancia estructural en Pinot Noir.*
+- **Terrazas Aluviales y Gravas de Graves: Mecanismo y Relevancia Enológica** (`suelo_aluvial_grava_graves`) — *Las gravas cuarcíticas del Garona facilitan el drenaje profundo, reduciendo la humedad radicular y forzando al Cabernet Sauvignon a profundizar raíces, concentrando antocianinas y taninos.*
+- **Pizarras y Suelos de Ladera en el Bierzo: Mecanismo y Relevancia Enológica** (`suelo_pizarra_bierzo`) — *Los suelos pizarrosos del Bierzo, formados por estratificación de esquistos descompuestos en laderas altas, regulan la temperatura y drenaje, potenciando la acidez y frescura mineral de la Mencía.*
+- **El Flysch Litoral y Areniscas del Cantábrico: Mecanismo y Relevancia Enológica** (`suelo_flysch_txakoli`) — *El Flysch Litoral presenta estratificación alternante de capas duras y blandas que optimizan el drenaje bajo alta pluviometría, influyendo decisivamente en la acidez y mineralidad del Txakoli.*
+- **Suelos Volcánicos del Monte Etna: Mecanismo y Relevancia Enológica** (`suelo_serpentinita_etna`) — *Los estratos de lava basáltica y tufos volcánicos en Etna inducen estrés hídrico moderado, potenciando la acidez natural y la estructura tánica en Nerello Mascalese.*
+- **Calizas del Páramo en Ribera del Duero: Mecanismo y Relevancia Enológica** (`suelo_caliza_paramo_ribera`) — *Horizontes calizos profundos en zonas de alta montaña (>850m) que potencian la acidez y la estructura tánica mediante oscilaciones térmicas extremas.*
+- **Caliza Alberese y Galestro en Chianti: Mecanismo y Relevancia Enológica** (`suelo_caliza_alberese_toscana`) — *El suelo de Galestro (arcilla laminada) y Alberese (caliza densa) en Chianti dictan la estructura del Sangiovese mediante estrés hídrico selectivo y regulación iónica, definiendo acidez, taninos y mineralidad.*
+- **Toba Volcánica de Campania e Irpinia: Mecanismo y Relevancia Enológica** (`suelo_toba_volcanica_campania`) — *Sustrato calcáreo poroso derivado de cenizas piroclásticas compactadas del Vesubio, influyendo decisivamente en la mineralidad y acidez de los vinos.*
+- **Pizarra Devónica Azul del Valle del Mosela: Mecanismo y Relevancia Enológica** (`suelo_pizarras_azules_mosela`) — *La pizarra azul devónica actúa como acumulador térmico diurno, elevando la temperatura de racimos y preservando acidez natural mediante estrés hídrico controlado.*
+- **Grava Aluvial Greywacke de Marlborough: Mecanismo y Relevancia Enológica** (`suelo_grewacke_marlborough`) — *Suelos areniscos metamórficos con alta drenaje y retención térmica en el valle de Wairau, favoreciendo la acidez y aromas herbáceos en Sauvignon Blanc.*
+- **Terres Blanches, Caillottes y Silex en Sancerre: Mecanismo y Relevancia Enológica** (`suelo_pedernal_sancerre_caillottes`) — *Análisis de los tres suelos principales de Sancerre (Kimmeridgiano, Jurásico y Silex) y su influencia directa en la expresión aromática del Sauvignon Blanc.*
+- **Arcillas Calcáreas de Bairrada: Mecanismo y Relevancia Enológica** (`suelo_arcillo_calcario_bairrada`) — *Las arcillas calcáreas de Bairrada aportan frescura y densidad, suavizando los taninos agresivos de la Baga mediante una extracción lenta y equilibrada.*
+- **Arenas Silíceas y Cantos Rodados de Toro: Mecanismo y Relevancia Enológica** (`suelo_arenas_doradas_toro`) — *Suelos arenosos profundos con cantos rodados en la DO Toro favorecen el estrés hídrico controlado, maximizando la concentración de taninos y acidez en Tinta de Toro a 700m.*
+- **Pumita y Ceniza Volcánica de Santorini: Mecanismo y Relevancia Enológica** (`suelo_greda_pumita_santorini`) — *Suelos hiper-porosos sin materia orgánica que confieren resistencia a filoxera y estrés hídrico al Assyrtiko, potenciando acidez y mineralidad.*
+- **Batolito Granítico de los Arribes del Duero: Mecanismo y Relevancia Enológica** (`suelo_granito_arribes_duero`) — *El batolito granítico en Juan García y Rufete define un terroir de drenaje excepcional, favoreciendo la concentración fenólica y el perfil mineral en vinos tintos.*
+- **Suelos Yesíferos y Calizos de Vinos de Madrid: Mecanismo y Relevancia Enológica** (`suelo_yesos_calizos_madrid`) — *Los suelos yesíferos y calizos de Arganda del Rey modulan la acidez y el perfil mineral, favoreciendo la longevidad en Tempranillo y la frescura en Malvar mediante regulación hídrica y térmica.*
+- **Fermentación Maloláctica (FML): Mecanismo y Relevancia Enológica** (`fermentacion_malolactica_diacetilo`) — *La FML transforma el ácido málico en láctico mediante Oenococcus oeni, suavizando la acidez y generando diacetilo para complejidad sensorial.*
+- **Desfangado Estático y Flotación: Mecanismo y Relevancia Enológica** (`desfangado_estatico_mostos`) — *Técnicas de clarificación pre-fermentativa que eliminan sedimentos mediante frío o agentes, reduciendo la turbidez (NTU) para evitar defectos oxidativos y mejorar estabilidad proteica.*
+- **Crianza Biológica bajo Velo de Flor: Mecanismo y Relevancia Enológica** (`crianza_biologica_velo_flor`) — *Proceso enológico donde levaduras no convencionales como S. beticus/cheresiensis modifican el perfil químico mediante consumo de glicerol y síntesis de acetaldehído.*
+- **Fondillón de Alicante y Vinos Rancios: Mecanismo y Relevancia Enológica** (`fondillon_alicante_envejecimiento`) — *El Fondillón de Alicante es un vino rancio autóctono basado en Monastrell, caracterizado por una oxidación controlada y maduración prolongada que transforma el perfil tánico en notas complejas de frutos secos y miel.*
+- **Depósitos Ovoides de Hormigón y Vórtice: Mecanismo y Relevancia Enológica** (`tanques_hormigon_deposito_huevo`) — *Los depósitos ovoides de hormigón aprovechan la forma para generar corrientes de convección naturales que mantienen las lías en suspensión, facilitando una micro-oxigenación controlada y un aislamiento térmico superior al acero inoxidable.*
+- **Maceración Postfermentativa en Caliente: Mecanismo y Relevancia Enológica** (`maceracion_postfermentativa_caliente`) — *Técnica que mantiene el vino a 28-30°C tras la fermentación alcohólica para acelerar la polimerización tánica, suavizando la astringencia y mejorando la estructura en boca.*
+- **Cinética de la Autólisis en Vinos Espumosos: Mecanismo y Relevancia Enológica** (`autolisis_champagne_manoproteinas`) — *La autólisis describe la degradación bioquímica de las células de levadura muertas tras el reposo sobre lías, liberando compuestos que definen la textura y aroma del espumoso.*
+- **Estabilización Microbiológica: Filtración Tangencial vs Lenticular: Mecanismo y Relevancia Enológica** (`filtracion_tangencial_vs_lenticular`) — *Comparativa técnica entre filtración tangencial y lenticular, enfocada en la retención microbiológica sin pérdida de coloides protectores.*
+- **Vins Doux Naturels (VDN) y Mutage: Mecanismo y Relevancia Enológica** (`vinos_dulces_naturales_encabezado`) — *El mutage detiene la fermentación alcohólica mediante adición de alcohol vínico, preservando azúcares residuales y generando vinos dulces estables.*
+- **Corrección de Acidez en Mosto y Vino: Mecanismo y Relevancia Enológica** (`acidificacion_vs_desacidificacion`) — *La acidificación con ácido tartárico compensa la baja acidez en climas cálidos, mientras que el carbonato potásico induce precipitación bitartrática para estabilizar vinos jóvenes.*
+- **Clarificación con Proteínas Vegetales vs Enológicas Clásicas: Mecanismo y Relevancia Enológica** (`clarificacion_vegana_proteinas`) — *Comparativa técnica entre proteínas vegetales (guisante/patata) y agentes clásicos (huevo/ictiocola), analizando su afinidad electrostática con taninos y el impacto en la estabilidad y perfil sensorial del vino.*
+- **Fermentación Espontánea con Levaduras Indígenas: Mecanismo y Relevancia Enológica** (`fermentacion_espontanea_indigenas`) — *La fermentación espontánea aprovecha la flora microbiana natural, iniciada por no-Saccharomyces como Kloeckera y Hanseniaspora, que aportan complejidad aromática antes de ser superadas por Saccharomyces nativo.*
+- **Termovinificación y Flash-Détente: Mecanismo y Relevancia Enológica** (`termo_vinificacion_termomaceracion`) — *Técnica de extracción que combina calor moderado (70-80°C) con vacío instantáneo para maximizar el colorante antocianídico sin liberar taninos astringentes, preservando la frescura.*
+- **Crianza en Foudres y Botti de Gran Capacidad: Mecanismo y Relevancia Enológica** (`uso_fudres_toneles_gran_volumen`) — *Vasos de gran capacidad (2.000-5.000L) minimizan la extracción de taninos madereros y permiten una microoxigenación lenta, preservando la pureza frutal.*
+- **Crianza Submarina de Vinos: Mecanismo y Relevancia Enológica** (`crianza_submarina_presion_luz`) — *La crianza submarina somete al vino a presión hidrostática extrema y oscuridad total, alterando la cinética de oxidación y preservando fenoles sensibles.*
+- **Desalcoholización: Columnas de Conos Rotatorios (SCC): Mecanismo y Relevancia Enológica** (`desalcoholizacion_columna_conos`) — *La técnica SCC utiliza vacío y baja temperatura para separar aromas volátiles del etanol, preservando el perfil sensorial original del vino.*
+- **Síntesis de Glicerol durante la Fermentación: Mecanismo y Relevancia Enológica** (`glicerol_cuerpo_fermentacion`) — *El glicerol, producido vía metabólica en levaduras, aporta cuerpo y sensación de dulzor sin azúcar residual.*
+- **Hiperoxidación de Mostos Blancos: Mecanismo y Relevancia Enológica** (`hiperoxidacion_mostos_blancos`) — *Saturación controlada de oxígeno pre-fermentación para polimerizar fenoles, precipitar taninos y estabilizar el color en vinos blancos con contacto piel.*
+- **Uso de Levaduras No-Saccharomyces en Co-Inoculación: Mecanismo y Relevancia Enológica** (`levaduras_no_saccharomyces`) — *La co-inoculación de levaduras no-Saccharomyces modula la fermentación alcohólica y post-alcohólica, aportando complejidad aromática y estabilidad del color.*
+- **Taninos Enológicos: Gálicos, Elágicos y Proantocianídicos: Mecanismo y Relevancia Enológica** (`taninos_enologicos_adicion`) — *Los taninos hidrolizables (gálicos/elágicos) y condensados (proantocianídicos) regulan la estabilidad oxidativa del mosto y definen la estructura sensorial mediante polimerización con antocianinas.*
+- **Estabilización Tartárica: CMC, Poliaspartato y Frío: Mecanismo y Relevancia Enológica** (`estabilizacion_tartarica_carboximetilcelulosa`) — *La estabilización mediante coloides como CMC y poliaspartato inhibe la nucleación de bitartrato potásico sin alterar el perfil sensorial, ofreciendo una alternativa al método por frío.*
+- **Vin de Paille y Passerillage sur Souche: Mecanismo y Relevancia Enológica** (`vino_de_paja_passerillage`) — *Técnicas de concentración de mosto mediante deshidratación exógena (paja) o endógena (pasificación), determinando el perfil glucídico y fenólico final.*
+- **El SO2 Molecular y el pH del Vino: Mecanismo y Relevancia Enológica** (`sulfitos_so2_libre_molecular`) — *El SO2 molecular es la única forma activa antimicrobiana; su concentración disminuye exponencialmente al aumentar el pH del vino.*
+- **Pét-Nat y el Método Ancestral: Mecanismo y Relevancia Enológica** (`espumosos_petnat_metodo_ancestral`) — *El Pét-Nat se caracteriza por la botella durante la fermentación primaria, generando carbonatación natural y autólisis de lías sin intervención de tiraje.*
+- **Maceración Pelicular en Frío para Blancos Aromáticos: Mecanismo y Relevancia Enológica** (`maceracion_pelicular_frio_blancos`) — *Técnica de contacto breve entre mosto y hollejos a baja temperatura (10°C) que maximiza la extracción de aromas volátiles primarios sin extraer polifenoles indeseables.*
+- **Grados de Tostado en Barricas de Roble: Mecanismo y Relevancia Enológica** (`barricas_tostado_ligero_medio_fuerte`) — *El tostado controla la pirólisis del roble, liberando aromas desde notas florales suaves hasta matices ahumados intensos según la temperatura.*
+- **Tioles Volátiles: Fruta Tropical y Boj: Mecanismo y Relevancia Enológica** (`bioquimia_tioles_volatiles`) — *Los tioles volátiles provienen de precursores cisteínicos en el racimo, liberándose durante la fermentación para generar aromas intensos como maracuyá y boj.*
+- **Mildiu (Plasmopara) vs Oídio (Uncinula): Mecanismo y Relevancia Enológica** (`oidio_vs_mildiu_hongos`) — *Distinción crítica entre mildiu (*Plasmopara*) con manchas de aceite y oídio (*Uncinula/Erysiphe*) con pelusa blanca, gestionando condiciones ambientales y nutricionales para preservar la calidad del vino.*
+- **Brettanomyces: 4-Etilfenol y 4-Etilguayacol: Mecanismo y Relevancia Enológica** (`defecto_brettanomyces_fenoles`) — *La levadura Brettanomyces produce fenoles volátiles que definen defectos como 'sudor de caballo'. Su desarrollo depende críticamente del pH, SO2 libre y temperatura durante la crianza.*
+- **Reducción de Azufre: Sulfhídrico y Mercaptanos: Mecanismo y Relevancia Enológica** (`defecto_reduccion_h2s_mercaptanos`) — *El H2S y los mercaptanos son defectos reductores por metabolismo del azufre en levaduras, generando aromas a huevos podridos o alcachofa que requieren corrección con cobre.*
+- **Tricloroanisol (TCA) y Contaminación de Corcho: Mecanismo y Relevancia Enológica** (`defecto_tca_corcho_anisoles`) — *El 2,4,6-Tricloroanisol es un defecto volátil generado por la reacción de clorofenoles con mohos en corchos húmedos, detectable a niveles inferiores a 1 ng/L y caracterizado por aromas a humedad.*
+- **Acidez Volátil: Ácido Acético y Acetato de Etilo: Mecanismo y Relevancia Enológica** (`defecto_acidez_volatil_acetato`) — *La acidez volátil es un defecto causado por la oxidación del etanol a ácido acético mediante bacterias acéticas, generando aromas de vinagre y disolvente que enmascaran el perfil frutal.*
+- **Oxidación Prematura (Premox) y Acetaldehído: Mecanismo y Relevancia Enológica** (`defecto_oxidacion_acetaldehido`) — *La oxidación prematura surge por la pérdida de SO2 libre y actividad enzimática residual, generando acetaldehído que altera el perfil aromático.*
+- **Mousiness (Sabor a Ratón / Goût de Souris): Mecanismo y Relevancia Enológica** (`defecto_mousiness_picado_raton`) — *Defecto sensorial complejo vinculado a tetrahidropiridinas volátiles derivadas de Brettanomyces y bacterias lácticas bajo pH salival elevado.*
+- **Terpenos: Linalool, Geraniol y Nerol: Mecanismo y Relevancia Enológica** (`terpenos_aroma_moscatel_riesling`) — *Los terpenos linalool, geraniol y nerol definen la identidad floral de variedades como Moscatel y Riesling. Su equilibrio entre formas libres y glicosiladas determina la persistencia aromática y estabilidad oxidativa del vino.*
+- **Antocianos y Fenómeno de Copigmentación: Mecanismo y Relevancia Enológica** (`antocianos_copigmentacion_color`) — *Los antocianos (malvidina, petunidina, peonidina) requieren estabilización mediante copigmentación con flavonoides y taninos para mantener la intensidad cromática frente a pH y oxidación.*
+- **Portainjertos para Sequía y Caliza: 110 Richter y 1103 Paulsen: Mecanismo y Relevancia Enológica** (`portainjertos_sequia_110r_1103p`) — *Análisis comparativo de 110R y 1103P en suelos calizos, destacando su arquitectura radicular profunda que optimiza la extracción hídrica bajo estrés climático.*
+- **Poda de Respeto y Flujo de Savia (Método Simonit & Sirch): Mecanismo y Relevancia Enológica** (`poda_respeto_simonit_sirch`) — *Técnica de poda mínima que preserva la continuidad del flujo de savia, optimizando el estrés hídrico y la longevidad de la cepa para expresar el terroir.*
+- **Principios Biodinámicos: Preparados 500 y 501: Mecanismo y Relevancia Enológica** (`viticultura_biodinamica_preparados`) — *Análisis de los preparados 500 (estiércol) y 501 (sílice) en la viticultura biodinámica, enfocándose en la vitalidad del suelo, el ciclo lunar y su impacto en la expresión del terroir.*
+- **Índices Bioclimáticos de Winkler y Huglin: Mecanismo y Relevancia Enológica** (`climas_viticolas_huglin_winkler`) — *Los índices de Winkler y Huglin cuantifican la energía térmica acumulada, determinando el potencial alcohólico, acidez y maduración fenólica para la selección varietal.*
+- **Aromas de Garriga, Tomillar y Maquia: Mecanismo y Relevancia Enológica** (`matorrales_aromaticos_garriga`) — *Deposición aérea de volátiles de matorrales (romero, jara) sobre la pruina uva, generando notas herbáceas complejas en vinos oxidativos o secos.*
+- **Índice de Polifenoles Totales (IPT) y Madurez Fenólica: Mecanismo y Relevancia Enológica** (`polifenoles_ipt_indice_madurez`) — *El IPT mide la concentración de flavonoides mediante absorbancia a 280 nm, complementando la madurez azucarada con datos estructurales críticos para el envejecimiento.*
+- **Geosmina y Hongos Parásitos en Vendimia: Mecanismo y Relevancia Enológica** (`geosmina_tierra_humeda_botrytis`) — *La geosmina, compuesta por Streptomyces y hongos como Botrytis/Penicillium, aporta notas de tierra mojada en uvas de vendimia lluviosa.*
+- **Gusto de Luz (Goût de Lumière) y Riboflavina: Mecanismo y Relevancia Enológica** (`defecto_golpe_luz_riboflavina`) — *La exposición a la luz UV en botellas transparentes induce una fotooxidación de riboflavina y metionina, generando dimetilsulfuro y compuestos sulfúricos que alteran el perfil aromático del vino.*
+- **Lactonas de Roble y Compuestos de Tostado: Mecanismo y Relevancia Enológica** (`defecto_quercus_lactonas_sobremaduracion`) — *Las lactonas cis/trans y fenoles derivados del roble (vainillina, eugenol) determinan el perfil aromático durante la maduración en barrica, aportando notas a coco, madera tostada y especias que integran la estructura tánica.*
+- **Fermentación Manítica (Enfermedad Agridulce): Mecanismo y Relevancia Enológica** (`defecto_manitol_enfermedad_agridulce`) — *La reducción de fructosa a manitol por bacterias lácticas heterofermentativas altera el equilibrio dulce-acidez en vinos calientes.*
+- **Flores del Vino (Candida, Pichia, Hansenula): Mecanismo y Relevancia Enológica** (`defecto_flores_vino_candida`) — *El crecimiento de levaduras en la superficie del vino genera un velo micelar blanco que induce oxidación reductora y alteraciones sensoriales.*
+- **Resveratrol y Estilbenos en el Hollejo: Mecanismo y Relevancia Enológica** (`resveratrol_estilbenos_salud`) — *Los estilbenos, como el resveratrol, son fitoalexinas producidas por la vid ante estrés fúngico, actuando como antioxidantes potentes que influyen en la longevidad del vino y su perfil sensorial.*
+- **TDN (1,1,6-Trimetil-1,2-dihidronaftaleno) en Riesling: Mecanismo y Relevancia Enológica** (`tdn_aroma_petroleo_riesling`) — *El TDN se forma por la degradación oxidativa de carotenoides bajo alta insolación y estrés hídrico en uvas Riesling, generando notas características de petróleo o keroseno.*
+- **Quiebra Férrica y Quiebra Cúprica: Mecanismo y Relevancia Enológica** (`metales_pesados_quiebra_ferrica_cuprica`) — *Análisis técnico sobre la precipitación coloidal de fosfato férrico y sulfuro de cobre, sus causas químicas y efectos en la estabilidad del vino.*
+- **Fisiología del Alcornoque (Quercus suber) y Suberina: Mecanismo y Relevancia Enológica** (`corcho_alcornoque_suberina`) — *La suberina, biopolímero hidrofóbico, garantiza la elasticidad necesaria para la saca y regula el micro-oxígeno en la botella.*
+- **Cierres Alternativos: Tapón de Rosca (Stelvin) y Sintéticos: Mecanismo y Relevancia Enológica** (`tapones_sinteticos_vs_rosca_stelvin`) — *Análisis comparativo del impacto de los cierres alternativos en la permeabilidad al oxígeno, preservación de aromas reductivos y expresión varietal inmediata.*
+- **El Envero (Véraison): Fisiología y Bioquímica: Mecanismo y Relevancia Enológica** (`envero_cambio_color_acumulacion_azucar`) — *El véraison marca la transición fisiológica de la uva verde a la maduración, caracterizada por el inicio de la síntesis de antocianinas y la acumulación de azúcares.*
+- **Ácidos Orgánicos: Tartárico, Málico y Succínico: Mecanismo y Relevancia Enológica** (`acidos_organicos_tartarico_malico_citrico`) — *El ácido tartárico es estable térmicamente, mientras que el málico se degrada vía respiración celular en calores extremos, alterando la acidez y el perfil sensorial.*
+- **Taninos Condensados: Hollejo vs Pepita vs Raspón: Mecanismo y Relevancia Enológica** (`taninos_condensados_proantocianidinas`) — *Los taninos condensados (proantocianidinas) difieren estructuralmente según su origen: los del hollejo poseen mayor grado de polimerización (mDP), aportando sedosidad, mientras que los de la pepita son cadenas cortas y amargas.*
+- **Precursores Glicosilados y Aromas Ocultos: Mecanismo y Relevancia Enológica** (`precursores_glicosilados_aromas_ocultos`) — *Los glucósidos de monoterpenos actúan como reservorios aromáticos liberados por beta-glucosidasas durante la fermentación, revelando notas florales y frutales latentes que definen la complejidad del bouquet.*
+- **Orientación de Hileras: Norte-Sur vs Este-Oeste: Mecanismo y Relevancia Enológica** (`fototropismo_y_orientacion_hileras`) — *La orientación de las hileras modula la exposición solar directa e indirecta, influyendo decisivamente en el perfil fenólico y el riesgo de quemaduras solares en uvas sensibles como Pinot Noir o Cabernet Sauvignon.*
+- **Control de Heladas Primaverales: Torres de Viento y Velas: Mecanismo y Relevancia Enológica** (`heladas_inversion_termica_molinos`) — *Análisis técnico de la gestión de heladas mediante mezcla de aire para romper inversiones térmicas y uso de calor latente en aspersión.*
+- **Cavitación del Xilema por Estrés Hídrico Severo: Mecanismo y Relevancia Enológica** (`sequia_cavitacion_xilema`) — *La ruptura de columnas de agua en el xilema genera embolios que bloquean la transpiración, provocando marchitamiento y caída foliar basal.*
+- **La Fisiología de las Viñas Viejas (Old Vines): Mecanismo y Relevancia Enológica** (`viñas_viejas_equilibrio_rendimiento`) — *Las viñas viejas poseen sistemas radiculares profundos que optimizan el estrés hídrico, induciendo una autorregulación natural de la carga y una maduración fisiológica equilibrada.*
+- **Simbiosis Micorrícica en el Viñedo: Mecanismo y Relevancia Enológica** (`suelos_vivos_micorrizas_hongos`) — *La simbiosis con Glomeromicetos amplía la zona de absorción radicular, mejorando la eficiencia en fósforo y agua.*
+- **Cubiertas Vegetales: Gramíneas vs Leguminosas: Mecanismo y Relevancia Enológica** (`cubiertas_vegetales_espontaneas_sembradas`) — *Las leguminosas fijan nitrógeno vía rizobios, reduciendo estrés hídrico y erosión, mientras que las gramíneas compiten por agua pero estabilizan el suelo con raíces fibrosas, influyendo en la expresión del terroir y la maduración fenólica.*
+- **Corredores Biológicos y Fauna Auxiliar en el Viñedo: Mecanismo y Relevancia Enológica** (`biodiversidad_islas_vegetacion_setos`) — *Estrategia de control biológico de Lobesia botrana mediante hábitats para murciélagos e insectos depredadores, preservando la integridad del racimo y los compuestos fenólicos.*
+- **Densidad de Plantación: 2.000 vs 10.000 cepas/ha: Mecanismo y Relevancia Enológica** (`densidad_plantacion_competencia`) — *Comparativa técnica entre baja densidad mediterránea (vaso) y alta densidad europea, analizando impacto en arquitectura radicular, estrés hídrico y concentración fenólica.*
+- **Operaciones en Verde: Despunte, Desnietado y Aclareo de Racimos: Mecanismo y Relevancia Enológica** (`poda_en_verde_despunte_desnietado`) — *Las operaciones en verde optimizan la relación calidad-cantidad mediante la eliminación de carga vegetativa, concentrando asimilados y potenciando la expresión aromática del terroir.*
+- **Las 3 Madureces: Tecnológica, Fenólica y Aromática: Mecanismo y Relevancia Enológica** (`madurez_tecnologica_vs_fenolica_aromatica`) — *La madurez enológica requiere equilibrar tres parámetros independientes: azúcares, taninos y aromas. El calor extremo acelera el azúcar pero puede degradar taninos verdes antes de la expresión aromática óptima.*
+- **Influencia de Masas de Agua y Bosques en el Mesoclima: Mecanismo y Relevancia Enológica** (`microclima_bosques_masas_agua`) — *Las masas de agua moderan la temperatura mediante su alta capacidad calorífica, reduciendo el rango térmico diurno y protegiendo a las uvas del estrés hídrico y lumínico.*
+- **Vientos Dominantes en el Viñedo: Mistral, Cierzo y Tramontana: Mecanismo y Relevancia Enológica** (`viento_mistral_tramontana_cierzo`) — *Los vientos dominantes del Mediterráneo aceleran la maduración fenólica al reducir la humedad relativa y secar el dosel, minimizando riesgos de patógenos y modelando una arquitectura de cepa más resistente.*
 
 ## 2. Flashcards de Examen Nuevas
 
@@ -62,6 +148,102 @@
 - **[ASI]** ¿De qué manera la geometría del cáliz en copas Riedel o Zalto modifica físicamente la dispersión de los compuestos volátiles aromáticos hacia el olfato, y por qué es un error técnico servir vinos tintos con bordes excesivamente anchos?
 - **[ASI]** Durante una cata ciega, un vino blanco en botella de vidrio transparente presenta notas de cartón mojado y olor a sherry. ¿Qué fenómeno químico específico ha ocurrido debido a la exposición a la luz UV y cómo afecta esto a la estabilidad del aroma?
 - **[ASI]** ¿De qué manera la influencia de la Corriente de Humboldt define la maduración fenólica y aromática en los vinos blancos de Casablanca y San Antonio, diferenciándolos estructuralmente de las regiones interiores del Valle Central?
+- **[WSET3]** ¿Cómo influyen las nieblas matinales procedentes de la Bahía de San Pablo en el perfil organoléptico de los vinos de Carneros y Napa Valley, específicamente en términos de acidez y maduración fenólica?
+- **[WSET3]** ¿Cómo influye el viento Zonda en Mendoza y el Föhn en Suiza central sobre la maduración fenólica de la uva comparado con climas cálidos húmedos, considerando la presión de enfermedades?
+- **[WSET3]** ¿Cómo dictan los métodos de producción la evolución química y el perfil organoléptico del Amontillado frente al Oloroso en el marco de Jerez?
+- **[WSET3]** Un cliente solicita una botella de 'Saint-Émilion Grand Cru' y otra de 'Pauillac 1855'. ¿Qué implicaciones legales y de calidad existen al comparar estas etiquetas bajo el canon WSET3, considerando que la clasificación de 1855 no abarca Saint-Émilion?
+- **[WSET3]** Analice cómo la geología de pizarra azul y la moderación térmica del río Mosela determinan el perfil aromático y acidez en los Riesling de alta gama de esta región.
+- **[WSET3]** ¿Por qué la caliza albariza permite una retención hídrica excepcional en invierno y desarrolla una costra protectora en verano?
+- **[WSET3]** Un enólogo observa que un Cabernet Sauvignon fermentado a 31°C presenta más amargor y estructura tánica que uno fermentado a 29°C. Explique la relación química entre la temperatura de fermentación y la extracción de taninos, considerando el rol de las semillas.
+- **[WSET3]** Compara la influencia de la fermentación maloláctica y el uso de barricas en Chablis frente a Meursault, explicando cómo estas técnicas definen su perfil sensorial según WSET3.
+- **[WSET3]** Analice las diferencias estilísticas entre Rioja Alta, Rioja Alavesa y Rioja Oriental basándose en los factores climáticos y edafológicos del canon WSET3. ¿Cómo influyen estos elementos en la expresión de la uva Tempranillo y el perfil sensorial resultante en cada subzona?
+- **[WSET3]** En la denominación Barolo, ¿cómo influyen las formaciones geológicas Helvecianas y Tortonianas en el perfil sensorial del Nebbiolo, específicamente en la estructura tánica?
+- **[WSET3]** Describa el proceso técnico del método Ripasso en Valpolicella según el canon WSET3 y explique cómo este proceso altera el perfil sensorial y la estructura comparado con un Valpolicella Classico estándar.
+- **[WSET3]** En una cata comparativa, se presentan tres etiquetas: 'Bourgogne', 'Gevrey-Chambertin' y 'Chambertin'. Según el canon WSET3, ¿qué diferencia legal y de producción define la transición crítica entre la etiqueta del pueblo (Village) y la de parcela específica (Premier Cru o Grand Cru)?
+- **[WSET3]** En el Valle del Ródano Sur, ¿cómo influye el viento Mistral en la viticultura y el perfil organoléptico de los vinos de Châteauneuf-du-Pape?
+- **[WSET3]** En una cata ciega de champagnes no etiquetados, ¿qué indicadores sensoriales y composicionales permiten distinguir técnicamente un Blanc de Blancs de un Rosé d'assemblage, y cómo afecta la declaración de Millésimé a la estructura del perfil aromático?
+- **[WSET3]** Un cliente prefiere vinos espumosos dulces, pero el sommelier recomienda un Brut Nature. Explique técnicamente cómo el dosage afecta la percepción de acidez y por qué esta elección podría fallar en una cata ciega o maridaje.
+- **[WSET3]** Analice la progresión climática y vitícola desde Baixo Corgo hasta Douro Superior. ¿Cómo afecta esta gradiente a la maduración de la uva y el perfil del vino según los criterios WSET3?
+- **[WSET3]** Analiza las diferencias químicas y organolépticas entre un Port Ruby y uno Tawny, enfocándote en el impacto del tamaño del barril y la oxidación.
+- **[WSET3]** Analice cómo la Corriente de Humboldt y el efecto marítimo modifican la maduración en el Valle de Casablanca, justificando la elección de variedades como Sauvignon Blanc frente a Cabernet Sauvignon.
+- **[WSET3]** En el contexto de la viticultura en Cafayate, explique la relación causal entre la alta radiación UV, el grosor del hollejo y la expresión aromática del Torrontés según los principios WSET3.
+- **[WSET3]** Analice la influencia de la geología de Gimblett Gravels en Hawke's Bay sobre la maduración fenólica y el perfil aromático de las Syrah y blends de estilo Bordeaux. ¿Qué implicaciones térmicas tiene este suelo para la expresión varietal?
+- **[WSET3]** ¿Cómo modera el efecto de los Grandes Lagos la viticultura en la Península de Niágara para la producción específica de Icewine, y qué implicaciones climáticas tiene esto sobre la maduración del racimo?
+- **[WSET3]** ¿Cómo influye el suelo de llicorella y la topografía escarpada del Priorat en el perfil sensorial de una Garnacha vieja, y por qué se combina con Cariñena?
+- **[WSET3]** En la DO Rueda, ¿cómo impacta la vendimia nocturna y fermentación a baja temperatura en el perfil aromático del Verdejo? Explique la relación técnica con la preservación de compuestos volátiles como los tioles.
+- **[WSET3]** En la DO Rías Baixas, el Albariño se cultiva mayoritariamente en parral. ¿Cuál es la razón vitícola principal de esta elección y cómo afecta a la calidad del vino frente al clima local?
+- **[WSET3]** Analice el perfil sensorial del Cava tradicional. ¿Cómo influyen las variedades Macabeo, Xarel·lo y Parellada en la estructura y aroma? Además, ¿cuál es el requisito mínimo de crianza sobre lías según el DO?
+- **[WSET3]** Explique la diferencia técnica entre Estufagem y Canteiro en el envejecimiento de Madeira. ¿Cómo imitan ambos procesos las condiciones climáticas históricas de los viajes atlánticos ecuatoriales?
+- **[WSET3]** Un productor de Jerez afirma que su 'Solera' tiene una edad media de 20 años. Sin embargo, observa que la tasa de saca anual es del 15%. Analice técnicamente cómo esta tasa afecta la homogeneidad y calcule conceptualmente el impacto en la vejez media real versus la declarada.
+- **[WSET3]** Un cliente pregunta por qué un Riesling Kabinett puede ser seco mientras que uno Spätlese es dulce. Según el canon WSET3, ¿qué define realmente el nivel Prädikat y cómo se relaciona con el azúcar residual final?
+- **[WSET3]** En una cata comparativa, ¿cómo diferenciaría técnicamente un Riesling del Rheingau frente a uno del Pfalz basándose en la orientación de la ladera y el perfil de suelo?
+- **[WSET3]** En el contexto del Wachau, Kamptal y Kremstal, explique la correlación técnica entre el sistema de clasificación local (Steinfeder, Federspiel, Smaragd) y los niveles de alcohol/volumen. ¿Cómo influye el suelo de loess en las terrazas fluviales en este perfil?
+- **[WSET3]** ¿Cómo influyen los suelos graníticos antiguos en la expresión del Chenin Blanc y el Pinotage en Stellenbosch y Swartland, y qué distinción de estilo se espera entre estas dos regiones?
+- **[WSET3]** En una cata comparativa, ¿cómo define la altitud y el microclima la diferencia estilística entre el Shiraz del Barossa Valley y el Riesling del Eden Valley?
+- **[WSET3]** Analice la evolución sensorial y química de una Semillon de Hunter Valley envejecida 10 años, destacando cómo el bajo alcohol (11%) y la alta acidez natural interactúan con la oxidación para desarrollar notas tostadas.
+- **[WSET3]** En una cata ciega, un vino de Central Otago presenta notas de cereza oscura, especias y tierra húmeda con acidez marcada. ¿Qué factores geográficos del WSET3 explican este perfil distintivo frente a los Pinot Noir de Hawke's Bay?
+- **[WSET3]** ¿Cómo determinan los suelos volcánicos de Jory y la influencia marina el perfil sensorial y el emparejamiento ideal de un Pinot Noir del Valle de Willamette?
+- **[WSET3]** Analice la influencia climática y vitícola del Columbia Valley en Washington. ¿Cómo interactúan la sombra de lluvia de las Cascadas, el riego por goteo y la elección de Merlot o Syrah para definir el perfil sensorial y el estilo de cata según los estándares WSET3?
+- **[WSET3]** En Ribera del Duero, ¿cómo condicionan la altitud de 800m y una oscilación térmica diaria de 20°C el perfil fenólico de la uva Tinto Fino?
+- **[WSET3]** Un vino de Bierzo envejecido 6 meses en roble muestra notas de frutos rojos y mineral. ¿Cómo influye la pizarra y el clima atlántico-continental en esta expresión sensorial frente a otras regiones?
+- **[WSET3]** En el DO Toro, la Tinta de Toro crece sobre suelos arenosos no filoxéricos. Explique cómo esta condición edafológica y biológica histórica impacta en la estructura del vino y su perfil aromático según los estándares WSET3.
+- **[WSET3]** ¿Cómo determinan las características edáficas del margen izquierdo y derecho de Burdeos la expresión varietal dominante, y qué implicaciones tiene esto para el perfil organoléptico y el envejecimiento?
+- **[WSET3]** ¿De qué manera la barrera orográfica de los Vosgos y la alta insolación definen el perfil aromático y la jerarquía de calidad de los vinos de Alsacia, específicamente en relación con los 51 Grands Crus?
+- **[WSET3]** Analice la evolución del perfil sensorial y los suelos predominantes en las cuatro denominaciones del Valle del Loira mencionadas (Sancerre, Vouvray, Chinon, Muscadet). ¿Cómo influye la variedad de uva y la geología específica en la expresión aromática y estructural de cada vino según el canon WSET3?
+- **[WSET3]** En una cata ciega, tres vinos de Toscana presentan perfiles distintos: uno con notas terrosas y cereza, otro con taninos marcados y cuero, y un tercero con fruta oscura y madera nueva. ¿Cómo diferenciar técnicamente Chianti Classico DOCG, Brunello di Montalcino DOCG y Bolgheri DOC según el canon WSET3?
+- **[WSET3]** En una cata ciega, ¿cómo diferenciaría técnicamente un Barolo DOCG de una Barbera d'Asti DOCG y un Dolcetto d'Alba DOCG basándose en la estructura tánica, acidez y aromas primarios?
+- **[WSET3]** Distinga entre Soave Classico y Valpolicella DOCG basándose en el impacto del suelo y la expresión varietal. ¿Cómo influye la breccia volcánica en el perfil de Garganega frente a los suelos aluviales/límite de Corvina?
+- **[WSET3]** ¿Cómo influye la técnica de poda en canasta (kouloura) y el suelo volcánico de Santorini en el perfil organoléptico del Assyrtiko, considerando la protección contra los vientos Meltemi?
+- **[WSET3]** En el contexto del canon WSET3, analice la relación causal entre la confluencia de los ríos Bodrog y Tisza en Tokaj-Hegyalja y la formación de uvas afectadas por Botrytis cinerea. ¿Cómo determina esto el perfil organoléptico del Furmint?
+- **[CMS]** En una cata ciega, ¿qué indicadores sensoriales y técnicos permitirían diferenciar inequívocamente un Pinot Noir de Borgoña de uno de Central Otago?
+- **[CMS]** En una cata ciega, un vino presenta notas de pimiento verde y hierba cortada con taninos finos y fruta roja. ¿Es Cabernet Sauvignon o Cabernet Franc? Justifique basándose en la estructura química y perfil aromático.
+- **[CMS]** ¿Cómo distinguir visual y olfativamente un Barolo de un Brunello di Montalcino en una cata ciega?
+- **[CMS]** En una cata ciega, ¿cómo distinguiría una Syrah de Cornas frente a un Shiraz de Barossa Valley? Identifique los marcadores olfativos y gustativos clave.
+- **[CMS]** Un cliente detecta un aroma a huevo podrido y notas de caucho quemado en una copa. Identifique el defecto químico, explique su origen durante la fermentación/almacenamiento y describa el protocolo inmediato de corrección en copa para salvar la experiencia.
+- **[CMS]** En una cata ciega de un vino tinto envejecido, ¿qué indicadores sensoriales específicos permiten distinguir entre la expresión aromática deseable del 4-etilguayacol (de la madera) y el defecto de Brettanomyces (4-etilfenol), considerando integración y persistencia?
+- **[CMS]** ¿Cómo modifica la presencia de glutamatos en platos ricos en umami (ej. setas, soja) la percepción sensorial del amargor y la acidez en un vino tinto, y cuál es el riesgo estructural principal al maridar?
+- **[CMS]** ¿Por qué el consumo de vinos con alto contenido alcohólico y taninos elevados intensifica la sensación de ardor en platos picantes, desde una perspectiva química y sensorial?
+- **[CMS]** ¿Cómo se reconcilian las notas fúngicas del Roquefort con la botritis del Sauternes a nivel molecular y sensorial?
+- **[CMS]** En una cena formal, un cliente sugiere servir un Chardonnay de barrica a 10°C y un Syrah al 'temperatura de la habitación'. ¿Cómo argumenta técnicamente el sommelier sobre los riesgos sensoriales de estas temperaturas extremas según el Canon CMS?
+- **[CMS]** Dos copas de Sauvignon Blanc presentan perfiles distintos. La A muestra notas de pizarra, cítricos verdes y acidez vibrante; la B, frutas tropicales intensas y cuerpo medio. ¿Cuál es cada vino y qué indica el perfil olfativo sobre su origen?
+- **[CMS]** En una cata ciega, el vino A presenta notas de pizarra y limón verde con acidez vibrante; el B muestra almendra tostada y cítricos maduros; el C tiene mango, vainilla y alcohol elevado. Identifique los orígenes y explique la deducción sensorial.
+- **[CMS]** En una cata ciega, el vino A presenta notas de cereza, vainilla y tierra húmeda con acidez vibrante. El vino B muestra frutos negros intensos, especias tostadas y taninos más agresivos. ¿Cuál es cada uno y por qué?
+- **[CMS]** En una cata ciega, ¿cómo diferenciaría técnicamente un Morgon de Beaujolais Cru de un Pinot Noir de Borgoña Village basándose en la estructura tánica y el perfil aromático?
+- **[CMS]** Al catar dos botellas de Malbec, una con notas frutales suaves y textura sedosa, y otra con estructura tánica marcada y aromas a tierra húmeda. ¿Cómo deduce el origen geográfico basándose en la altitud y el suelo?
+- **[CMS]** En una cata ciega, ¿qué marcadores sensoriales definitivos permitirían distinguir un Chenin Blanc de Vouvray seco/semiseco de un Riesling del Rheingau?
+- **[CMS]** Compare la evolución aromática y la textura en boca de un Albariño joven de Rías Baixas frente a un Grüner Veltliner maduro de Wachau. ¿Cómo influye el terroir en la percepción de acidez y mineralidad?
+- **[CMS]** Al realizar una cata deductiva de un tinto robusto de 15% vol., ¿cómo diferenciaría técnicamente entre un Zinfandel de California y un Primitivo di Manduria basándose en la evolución de los taninos, el perfil aromático de especias y la percepción de dulzura residual?
+- **[CMS]** En una cata ciega, ¿cómo diferenciaría un Carmenère de Colchagua de un Merlot de Burdeos margen derecha basándose en la estructura y aromas primarios?
+- **[CMS]** Analice la interacción química de la cinarina en alcachofas y espárragos con los polifenoles del vino. Justifique técnicamente la elección de un Jerez Fino o un blanco herbáceo sobre un tinto tánico.
+- **[CMS]** Analice la compatibilidad estructural entre cordero lechal asado y Tempranillo de Ribera del Duero. ¿Cómo interactúan los taninos firmes, la acidez viva y las notas terrosas con la grasa animal y el umami del corte?
+- **[CMS]** Analice la interacción química y sensorial entre el foie gras mi-cuit y un vino dulce botritizado. Explique técnicamente cómo la acidez del vino neutraliza los lípidos de la grasa animal y por qué el azúcar residual es necesario en este contexto específico.
+- **[CMS]** Ante un postre de tarta de frutos rojos con crema agria, ¿por qué el Recioto della Valpolicella supera al Brachetto d'Acqui en afinidad estructural?
+- **[CMS]** ¿Cuál es la técnica mecánica precisa para ejecutar 'le soupir de la dame' al abrir un espumoso, evitando el estampido del corcho?
+- **[CMS]** En un menú degustación de 9 pases, ¿cómo gestionas la fatiga paladar y el orden de servicio de copas para asegurar que cada vino destaque sin contaminación cruzada?
+- **[CMS]** Durante la cata de un vino joven, ¿cómo diferenciaría técnicamente una acescencia incipiente (Ácido Acético Volátil) de una alta acidez tartárica natural en el perfil olfativo y gustativo según el Canon CMS?
+- **[CMS]** Durante la cata de servicio, un vino tinto muestra una ligera opacidad. ¿Qué indicadores visuales distinguen una turbidez bacteriana (inestabilidad microbiológica) de los posos naturales de materia colorante (polimerización de taninos)?
+- **[CMS]** Al cata de un Cabernet Sauvignon, notas de fruta confitada y alcohol elevado sugieren una añada cálida. ¿Cómo se manifiesta esto químicamente en la nariz y cómo afecta a la percepción de acidez?
+- **[CMS]** Un cliente pide decantar un Pinot Noir joven y un Burgundy de 1985. ¿Cuál es el protocolo técnico de oxigenación para cada uno y cómo lo comunicas al servicio?
+- **[CMS]** En una cata ciega, dos vinos presentan textura viscosa y acidez baja. ¿Cómo diferenciar un Condrieu de un Gewürztraminer de Alsacia basándose en el perfil aromático y la estructura?
+- **[CMS]** En una cata ciega, ¿cómo diferenciaría técnicamente una Garnacha de Gredos cultivada en granito a gran altitud frente a un Châteauneuf-du-Pape clásico, basándose en la estructura y el perfil aromático?
+- **[CMS]** En una cata ciega de vinos maduros, ¿cómo distinguiría un Barolo de 25 años de una Rioja Gran Reserva de 25 años basándose en la evolución del color y la textura tánica?
+- **[CMS]** ¿Cómo diferenciar sensorialmente un Torrontés de Salta de un Moscatel de Alejandría, enfocándose en la expresión de terpenos y el amargor final?
+- **[CMS]** En una cata ciega, dos copas de Tannat presentan perfiles distintos: A) Notas de cuero, café tostado y taninos sedosos; B) Fruta negra intensa, notas de vainilla y textura pulida. Identifique el origen geográfico y la técnica enológica clave para cada muestra.
+- **[CMS]** ¿Cómo influye la grasa infiltrada en la polimerización tánica durante el consumo de carne a la brasa y qué rol juega la saliva?
+- **[CMS]** Analice la incompatibilidad química entre los polifenoles de un tinto y una vinagreta ácida/salada, y justifique técnicamente la elección de una Manzanilla Pasada como alternativa óptima según el Canon CMS.
+- **[CMS]** Analice la sinergia molecular entre el chocolate amargo (>70%) y vinos oxidados (PX, Rancio, Tawny). ¿Qué compuestos químicos específicos interactúan para mitigar la astringencia del cacao?
+- **[CMS]** ¿Por qué el Sauvignon Blanc o Txakoli son las únicas opciones viables para un ceviche de pescado blanco, considerando la química del maridaje?
+- **[CMS]** ¿Cuál es el protocolo inmediato y discreto para sustituir una copa tras un derrame de vino sobre la mantelería del cliente?
+- **[CMS]** En un servicio de mesa tradicional bajo protocolo estricto, ¿cuál es la secuencia jerárquica y direccional correcta para servir botellas y agua a los comensales, considerando el rol del anfitrión?
+- **[CMS]** ¿Cuál es la postura corporal correcta y el protocolo verbal para presentar la etiqueta de la botella al comensal según el Canon CMS?
+- **[CMS]** En una cata de un vino blanco joven, detectas una nota sutil de barniz o quitaesmaltes que no supera el umbral legal de acetato de etilo. ¿Cómo distingues este defecto de la oxidación leve y cómo afecta a la percepción del cuerpo?
+- **[CMS]** En una cata ciega de un Cabernet Sauvignon, ¿cómo se diferencia sensorialmente la contaminación por humo (guayacol y cresoles libres) de un defecto oxidativo leve, y cuál es el umbral aceptable según el canon?
+- **[CMS]** En una cata ciega, ¿cómo deduce técnicamente si un blanco ha pasado por crianza sobre lías o en barrica de roble nuevo? Identifique marcadores sensoriales clave.
+- **[CMS]** Una muestra de vino presenta notas olfativas dominantes de plátano, chicle y cereza fresca, con una textura suave y baja acidez. ¿Qué proceso de fermentación es responsable de este perfil aromático específico y qué tipo de uva suele asociarse a ello?
+- **[CMS]** Al catar un vino con notas de 'tierra húmeda' y taninos que se perciben como 'arenosos' en lugar de sedosos, ¿cómo deduce técnicamente el origen del barril o ánfora sin depender de la etiqueta?
+- **[CMS]** En el servicio de sala, ¿por qué es imperativo evitar el contacto de la palma con el cuerpo de la botella y cuál es la técnica ergonómica recomendada para mantener la temperatura del vino?
+- **[CMS]** ¿Cómo se controla el goteo en la mesa sin utilizar protectores plásticos, aplicando una técnica de corte preciso en el cuello?
+- **[CMS]** En la evaluación deductiva CMS, ¿cómo se correlaciona la persistencia aromática con la estructura del vino y por qué es un indicador crítico de calidad superior?
 
 ## 3. Variedades de Uva Enriquecidas
 
@@ -83,3 +265,81 @@
 - **Godello**: Acidez: Media-Alta | Tanino: Bajo | Maridaje: Quesos curados de cabra, Mariscos frescos, Carnes blancas a la brasa
 - **Glera**: Acidez: Media-Alta | Tanino: Bajo | Maridaje: Frutos de mar frescos, Antipasti ligeros, Pasta con salsas blancas
 - **Zinfandel**: Acidez: Media-Alta | Tanino: Medio | Maridaje: Costillas BBQ, Chorizo ahumado, Queso curado
+- **Bobal**: Acidez: Media-Alta | Tanino: Medio-Alto | Maridaje: Cordero asado, Jamón ibérico, Quesos curados
+- **Monastrell**: Acidez: Media-Alta | Tanino: Alto | Maridaje: Cordero asado, Quesos curados, Carne de caza
+- **Graciano**: Acidez: Alta | Tanino: Alto | Maridaje: Queso curado, Jamón ibérico, Cordero asado
+- **Carignan**: Acidez: Media-Alta | Tanino: Medio-Alto | Maridaje: Carne roja asada, Quesos curados, Estofados de caza
+- **Prieto Picudo**: Acidez: Alta | Tanino: Medio | Maridaje: Caza, Carne asada, Quesos curados
+- **Rufete**: Acidez: Alta | Tanino: Medio-Alto | Maridaje: Pescado azul, Quesos curados, Carne asada
+- **Juan Garcia**: Acidez: Media-Alta | Tanino: Medio | Maridaje: Queso curado, Carnes rojas a la brasa, Tapas de caza
+- **Souson**: Acidez: Media-Alta | Tanino: Medio-Bajo | Maridaje: Mariscos, Pollo, Quesos de cabra
+- **Brancellao**: Acidez: Media-Alta | Tanino: Medio-Bajo | Maridaje: Cordero asado, Setas, Quesos curados
+- **Caino Tinto**: Acidez: Media-Alta | Tanino: Medio | Maridaje: Carnes rojas a la parrilla, Caza de montaña, Quesos curados
+- **Espadeiro**: Acidez: Media-Alta | Tanino: Bajo | Maridaje: Mariscos, Carnes blancas, Quesos frescos
+- **Listan Negro**: Acidez: Media-Alta | Tanino: Medio | Maridaje: Cordero asado, Quesos curados de oveja, Pescado con especias
+- **Negramoll**: Acidez: Media-Alta | Tanino: Bajo-Medio | Maridaje: Tapas ibéricas, Carne a la brasa, Pasta ligera con salsa roja
+- **Baboso Negro**: Acidez: Media-Alta | Tanino: Medio-Bajo | Maridaje: Carne blanca a la plancha, Jamón ibérico, Pulpo a la gallega
+- **Vijariego Negro**: Acidez: Media-Alta | Tanino: Medio | Maridaje: Caza y cordero, Jamón ibérico curado, Quesos de oveja maduros
+- **Tintilla de Rota**: Acidez: Media-Alta | Tanino: Medio | Maridaje: Jamón Ibérico, Caza salvaje, Carne a la brasa
+- **Maturana Tinta**: Acidez: Media | Tanino: Medio | Maridaje: Caza, Carnes rojas, Embutidos curados
+- **Garnacha Tintorera**: Acidez: Media | Tanino: Medio | Maridaje: Carnes rojas a la brasa, Quesos curados, Guisos de caza
+- **Garnacha Peluda**: Acidez: Media | Tanino: Medio-Bajo | Maridaje: Empanadas, Carnes a la brasa, Quesos curados
+- **Callet**: Acidez: Alta | Tanino: Medio | Maridaje: Carpaccio de cordero, Queso curado de oveja, Pescado azul asado
+- **Fogoneu**: Acidez: Media-Alta | Tanino: Medio | Maridaje: Caza, Quesos curados, Carne roja
+- **Manto Negro**: Acidez: Media-Alta | Tanino: Medio | Maridaje: Paella, Jamón Ibérico, Carne a la brasa
+- **Mando**: Acidez: Media / Alta | Tanino: Bajo | Maridaje: Pescados blancos, Mariscos frescos, Quesos de cabra
+- **Forcallat Tinta**: Acidez: Alta | Tanino: Medio-Alto | Maridaje: Caza, Carnes rojas a la brasa, Quesos curados
+- **Moravia Agria**: Acidez: Alta | Tanino: Nulo | Maridaje: Mariscos frescos, Ensaladas de verano, Quesos frescos
+- **Bruñal**: Acidez: Media-Alta | Tanino: Medio | Maridaje: Carnes rojas, Embutidos curados, Guisos de caza
+- **Gorgollassa**: Acidez: Alta | Tanino: Medio-Alto | Maridaje: Carne roja asada, Queso curado, Tapas de embutido
+- **Castets**: Acidez: Alta | Tanino: Medio-Alto | Maridaje: Caza, Carne roja asada, Quesos curados
+- **Beba**: Acidez: Media | Tanino: Bajo | Maridaje: Tapas, Carnes blancas, Quesos frescos
+- **Verdejo Negro**: Acidez: Alta | Tanino: Bajo | Maridaje: Pescado blanco a la plancha, Quesos frescos de cabra, Mariscos al vapor
+- **Carrasquin**: Acidez: Media-Alta | Tanino: Medio | Maridaje: Caza y embutidos, Quesos maduros, Estofados de carne
+- **Garnatxa Fosca**: Acidez: Media-Alta | Tanino: Medio-Alto | Maridaje: Carnes rojas, Embutidos curados, Quesos maduros
+- **Trepat**: Acidez: Media | Tanino: Medio-Bajo | Maridaje: Tapas ibéricas, Carnes a la brasa, Pescado asado
+- **Ull de Llebre**: Acidez: Media-Alta | Tanino: Medio-Alto | Maridaje: Carne roja a la brasa, Jamón ibérico curado, Quesos maduros de oveja
+- **Tinta de Toro**: Acidez: Media-Alta | Tanino: Medio-Alto | Maridaje: Carne asada, Caza, Quesos curados
+- **Tinta del País**: Acidez: Alta | Tanino: Medio-Alto | Maridaje: Caza, Quesos curados, Carne roja
+- **Cencibel**: Acidez: Media-Alta | Tanino: Medio | Maridaje: Cordero asado, Quesos curados, Tapas de jamón
+- **Tempranillo Peludo**: Acidez: Media-Alta | Tanino: Medio | Maridaje: Cordero asado, Quesos curados, Carne roja a la brasa
+- **Moristel**: Acidez: Alta | Tanino: Medio-Alto | Maridaje: Caza menor, Carne asada, Quesos curados
+- **Parraleta**: Acidez: Media-Alta | Tanino: Medio | Maridaje: Carnes rojas a la brasa, Quesos curados de cabra, Mariscos locales
+- **Albarino**: Acidez: Alta | Tanino: Bajo | Maridaje: Mariscos frescos, Pescado blanco, Ensaladas con aceite de oliva
+- **Verdejo**: Acidez: Media-Alta | Tanino: Bajo | Maridaje: Pescado blanco, Mariscos frescos, Quesos de cabra
+- **Treixadura**: Acidez: Alta | Tanino: Bajo | Maridaje: Pescado blanco, Mariscos frescos, Quesos de cabra
+- **Loureira**: Acidez: Media-Alta | Tanino: Bajo | Maridaje: Mariscos, Pescado blanco, Ensaladas con queso de cabra
+- **Caino Blanco**: Acidez: Media-Alta | Tanino: Bajo | Maridaje: Mariscos frescos, Quesos frescos, Ensaladas ligeras
+- **Torrontes Iberico**: Acidez: Media-Alta | Tanino: Nulo | Maridaje: Mariscos frescos, Pollo a la plancha, Quesos de cabra
+- **Palomino Fino**: Acidez: Alta | Tanino: Bajo | Maridaje: Tapas y mariscos, Jamón Ibérico, Queso Manchego
+- **Pedro Ximenez**: Acidez: Baja | Tanino: Nulo | Maridaje: Queso azul, Postres de chocolate, Frutos secos tostados
+- **Macabeo**: Acidez: Media | Tanino: Bajo | Maridaje: Pescado blanco, Quesos frescos, Tapas con aceite de oliva
+- **Xarello**: Acidez: Media-Alta | Tanino: Bajo | Maridaje: Mariscos frescos, Quesos curados, Tapas catalanas
+- **Parellada**: Acidez: Alta | Tanino: Bajo | Maridaje: Mariscos frescos, Ensaladas ligeras, Quesos de cabra
+- **Garnacha Blanca**: Acidez: Media-Alta | Tanino: Bajo | Maridaje: Pescado blanco, Mariscos, Quesos frescos
+- **Albillo Mayor**: Acidez: Media-Alta | Tanino: Bajo | Maridaje: Mariscos y tapas, Carnes blancas a la parrilla, Quesos curados
+- **Albillo Real**: Acidez: Alta | Tanino: Bajo | Maridaje: Tapas de la zona, Mariscos a la plancha, Quesos curados
+- **Malvasia Volcanica**: Acidez: Media-Alta | Tanino: Bajo | Maridaje: Frutos de mar frescos, Quesos frescos, Pastas ligeras
+- **Malvasia Aromatica**: Acidez: Media-Alta | Tanino: Bajo | Maridaje: Mariscos frescos, Pasta ligera, Queso de cabra
+- **Hondarrabi Zuri**: Acidez: Alta | Tanino: Bajo | Maridaje: Mariscos frescos, Ostras, Pintxos bascos
+- **Albarin Blanco**: Acidez: Alta | Tanino: Bajo | Maridaje: Mariscos frescos, Pescado blanco a la plancha, Quesos de cabra
+- **Dona Blanca**: Acidez: Alta | Tanino: Bajo | Maridaje: Mariscos frescos, Salmón a la plancha, Queso fresco de cabra
+- **Listan Blanco**: Acidez: Alta | Tanino: Bajo | Maridaje: Mariscos frescos, Jamón ibérico, Quesos de cabra
+- **Vijariego Blanco**: Acidez: Media-Alta | Tanino: Bajo | Maridaje: Mariscos frescos, Ensaladas de verano, Quesos frescos
+- **Prensal Blanc**: Acidez: Alta | Tanino: Nulo | Maridaje: Mariscos frescos, Ensaladas ligeras, Quesos de cabra
+- **Giro Ros**: Acidez: Media-Alta | Tanino: Medio | Maridaje: Carnes a la brasa, Quesos curados sardos, Platos de tomate
+- **Merseguera**: Acidez: Media-Alta | Tanino: Bajo-Medio | Maridaje: Pescado blanco fresco, Quesos frescos de cabra, Carnes a la plancha
+- **Airén**: Acidez: Media | Tanino: Bajo | Maridaje: Tapas y Pinchos, Quesos frescos, Mariscos
+- **Zalema**: Acidez: Alta | Tanino: Bajo | Maridaje: Pescado blanco, Mariscos frescos, Quesos frescos
+- **Pardina**: Acidez: Alta | Tanino: Bajo | Maridaje: Mariscos frescos, Quesos de cabra, Ensaladas con aceite de oliva
+- **Montua**: Acidez: Media-Alta | Tanino: Medio | Maridaje: Carnes rojas, Embutidos catalanes, Quesos curados
+- **Cayetana Blanca**: Acidez: Media-Alta | Tanino: Nulo | Maridaje: Mariscos frescos, Quesos de cabra, Ensaladas
+- **Lado**: Acidez: Media-Alta | Tanino: Medio | Maridaje: Carnes rojas a la brasa, Estofados de caza, Quesos curados
+- **Albariño de Rias Baixas**: Acidez: Alta | Tanino: Bajo | Maridaje: Mariscos, Pescado blanco, Queso de cabra
+- **Gobelette**: Acidez: Media-Alta | Tanino: Medio | Maridaje: Cordero asado, Caza de caza, Quesos curados
+- **Hondarrabi Zuri Zerratia**: Acidez: Alta | Tanino: Nulo / Bajo | Maridaje: Pintxos de marisco, Bacalao al pil-pil, Queso de cabra
+- **Forcallat Blanca**: Acidez: Media-Alta | Tanino: Bajo | Maridaje: Pescado blanco, Carpaccio de cordero, Quesos frescos catalanes
+- **Tardana**: Acidez: Media-Alta | Tanino: Bajo | Maridaje: Mariscos, Ensaladas de verano, Quesos frescos
+- **Tortosi**: Acidez: Alta | Tanino: Bajo a Medio | Maridaje: Pescado blanco fresco, Carne a la brasa ligera, Ensaladas de verano
+- **Subirat Parent**: Acidez: Media-Alta | Tanino: Bajo | Maridaje: Mariscos frescos, Ensaladas de verano, Quesos blancos suaves
+- **Malvasia de Sitges**: Acidez: Alta | Tanino: Bajo | Maridaje: Mariscos al vapor, Quesos frescos, Postres de limón

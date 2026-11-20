@@ -499,3 +499,9 @@
 [2026-11-19 15:55:04] Executive report written to /Users/jreyes13/GitHub/WINE3ai/OVERNIGHT_REPORT.md
 [2026-11-19 15:55:04] Auto-compiling generated content into production assets...
 [2026-11-19 15:55:04] Compilation to production files completed successfully.
+[2026-11-19 18:59:32] Starting worker. Target cutoff: 2026-11-20 06:45:00. Total catalog: 270 items.
+[2026-11-19 18:59:32] Time limit reached (06:45 AM). Gracefully halting generator.
+[2026-11-19 18:59:32] Executive report written to /Users/jreyes13/GitHub/wine3ai/OVERNIGHT_REPORT.md
+[2026-11-19 21:25:20] Worker running. Scheduled end: 2026-11-20 06:45:00. Catalog: 400 items.
+[2026-11-20 06:46:06] Hora de corte alcanzada (06:45:00). Finalizando generador con gracia.
+[2026-11-20 06:46:06] Executive report written to /Users/jreyes13/GitHub/WINE3ai/OVERNIGHT_REPORT.md
