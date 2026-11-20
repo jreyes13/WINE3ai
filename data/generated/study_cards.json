@@ -2244,5 +2244,82 @@
     "solution_es": "Mnemotecnia: 'Bitter needs Bright or Sweet'. Evita taninos altos; prioriza acidez o azúcar natural en el vino para contrarrestar la amargura del plato.",
     "solution_en": "Mnemonic: 'Bitter needs Bright or Sweet'. Avoid high tannins; prioritize acidity or natural sugar in the wine to counteract the dish's bitterness.",
     "citation": "Canon oficial CMS & The Oxford Companion to Wine"
+  },
+  {
+    "id": "card_cms_161",
+    "standard": "CMS",
+    "category": "Maridaje Deductivo (CMS)",
+    "category_en": "Deductive Pairing (CMS)",
+    "question_es": "Un cliente pide maridar un ceviche de pescado con vinagreta de lima y cilantro muy intenso. El vino seleccionado es un Sauvignon Blanc seco estándar. ¿Cuál es el fallo técnico en este emparejamiento según el Canon CMS y cómo debe corregirse la acidez para evitar que el vino se perciba como 'agridulce' o plano?",
+    "question_en": "A guest requests to pair a fish ceviche with an intense lime and cilantro vinaigrette. The selected wine is a standard dry Sauvignon Blanc. What is the technical flaw in this pairing according to the CMS Canon, and how must acidity be adjusted to prevent the wine from tasting 'sour' or flat?",
+    "answer_es": "El fallo es la insuficiencia de acidez relativa al plato. La regla deductiva establece que el vino debe igualar o superar la acidez del alimento para evitar que los sabores ácidos dominen la boca, creando una percepción de astringencia falsa o sabor 'limón' en el vino. Solución técnica: Seleccionar un Riesling con residuo (off-dry) o un Albariño con alta acidez natural. El azúcar residual actúa como amortiguador sin anular la frescura, y la acidez del vino debe ser tan vibrante que no se sienta aplastada por el cítrico.",
+    "answer_en": "The flaw is insufficient relative acidity to the dish. The deductive rule states wine must match or exceed food acidity to prevent dominant sour flavors creating false astringency or 'lemon' taste in the wine. Technical solution: Select an off-dry Riesling or high-acid Albariño. Residual sugar acts as a buffer without sacrificing freshness, and wine acidity must be vibrant enough not to feel crushed by citrus.",
+    "solution_es": "Mnemotecnia: 'Ácido contra Ácido'. En sala, si el plato es cítrico, busca vinos con acidez vibrante (pH bajo) o un toque de dulzor para equilibrar la salinidad del pescado.",
+    "solution_en": "Mnemonic: 'Acid meets Acid'. In service, if the dish is citrusy, seek wines with vibrant acidity (low pH) or a touch of sweetness to balance fish salinity."
+  },
+  {
+    "id": "card_cms_162",
+    "standard": "CMS",
+    "category": "Maridaje Deductivo (CMS)",
+    "category_en": "Deductive Pairing (CMS)",
+    "question_es": "En el maridaje de panceta ahumada y jarrete, ¿cómo determina el sommelier si la acidez del vino es más efectiva que los taninos para limpiar el paladar?",
+    "question_en": "When pairing smoked bacon and shank, how does a sommelier determine if wine acidity is more effective than tannins for palate cleansing?",
+    "answer_es": "La acidez alta disuelve la película de grasa en el paladar, reduciendo la percepción de peso. Los taninos limpian mediante precipitación proteica, pero con colágeno denso y grasas saturadas, pueden generar amargor si la acidez no es suficiente para 'cortar' la textura antes del contacto.",
+    "answer_en": "High acidity dissolves the fat film on the palate, reducing weight perception. Tannins cleanse via protein precipitation, but with dense collagen and saturated fats, they can generate bitterness if acidity is insufficient to 'cut' the texture before contact.",
+    "solution_es": "Regla de oro: Grasa extrema = Acidez alta. Taninos altos solo si el vino tiene cuerpo y fruta madura.",
+    "solution_en": "Golden Rule: Extreme Fat = High Acidity. High Tannins only if the wine has body and ripe fruit.",
+    "citation": "Canon oficial CMS & The Oxford Companion to Wine"
+  },
+  {
+    "id": "card_cms_163",
+    "standard": "CMS",
+    "category": "Maridaje Deductivo (CMS)",
+    "category_en": "Deductive Pairing (CMS)",
+    "question_es": "¿Cómo explica la química sensorial que el consumo de jamón ibérico curado (alto en sal y grasa) mitigue la astringencia percibida en un vino tinto joven con taninos elevados?",
+    "question_en": "How does sensory chemistry explain that consuming cured Iberian ham (high in salt and fat) mitigates the perceived astringency in a young red wine with high tannins?",
+    "answer_es": "La sal (NaCl) actúa como surfactante, reduciendo la tensión superficial de la saliva. Esto interfiere con la unión de los taninos a las proteínas salivales (proline-rich), disminuyendo la sensación de sequedad. Además, la grasa recubre el paladar, amortiguando la agresividad tánica.",
+    "answer_en": "Salt (NaCl) acts as a surfactant, reducing saliva surface tension. This interferes with tannin binding to salivary proteins (proline-rich), diminishing dryness sensation. Additionally, fat coats the palate, buffering tannic aggression.",
+    "solution_es": "Recomendar servir el vino ligeramente más fresco si el plato es muy salado para evitar resaltar excesivamente los taninos en la boca seca.",
+    "solution_en": "Recommend serving the wine slightly cooler if the dish is very salty to avoid highlighting excessive tannins in a dry mouth.",
+    "citation": "Canon oficial CMS & The Oxford Companion to Wine"
+  },
+  {
+    "id": "card_cms_164",
+    "standard": "CMS",
+    "category": "Maridaje Deductivo (CMS)",
+    "category_en": "Deductive Pairing (CMS)",
+    "question_es": "¿Por qué el Champagne Brut es una elección errónea para una tarta de boda dulce, y cómo se aplica la regla del nivel de azúcar superior en la copa al maridaje postres-vino?",
+    "question_en": "Why is Champagne Brut a poor choice for sweet wedding cake, and how does the rule of higher sugar level in the glass apply to dessert-wine pairing?",
+    "answer_es": "El Champagne Brut (0-12g/L RS) carece de la densidad de azúcar necesaria para equilibrar la tarta de boda. Según el Canon CMS, si el alimento es más dulce que el vino, este se percibe como ácido. La regla del nivel de azúcar superior en la copa exige que el residuo azucarado del vino iguale o supere al del postre.",
+    "answer_en": "Champagne Brut (0-12g/L RS) lacks the sugar density to balance wedding cake. Per CMS Canon, if food is sweeter than wine, it tastes sour. The rule of higher sugar level in the glass requires the wine's residual sugar to match or exceed the dessert's sweetness.",
+    "solution_es": "Servir Champagne Demi-Sec o Doux. Mnemotecnia: 'Dulce con Dulce'.",
+    "solution_en": "Serve Champagne Demi-Sec or Doux. Mnemonic: 'Sweet with Sweet'.",
+    "citation": "Canon oficial CMS & The Oxford Companion to Wine"
+  },
+  {
+    "id": "card_cms_165",
+    "standard": "CMS",
+    "category": "Maridaje Deductivo (CMS)",
+    "category_en": "Deductive Pairing (CMS)",
+    "question_es": "¿Por qué los vinos maduros con taninos polimerizados son superiores a los jóvenes para platos de alta intensidad umami, y cómo afecta esto la percepción sensorial?",
+    "question_en": "Why are mature wines with polymerized tannins superior to young ones for high-intensity umami dishes, and how does this affect sensory perception?",
+    "answer_es": "Los taninos polimerizados han perdido agresividad astringente, permitiendo que los glutamatos del umami (dashi, setas) se perciban sin amargor. La evolución oxidativa suaviza la estructura, creando un puente entre la salinidad y la fruta madura.",
+    "answer_en": "Polymerized tannins have lost aggressive astringency, allowing glutamates from umami (dashi, mushrooms) to be perceived without bitterness. Oxidative evolution softens structure, creating a bridge between salinity and ripe fruit.",
+    "solution_es": "Sirva el vino ligeramente más frío que lo habitual para potenciar la frescura sin resaltar taninos remanentes.",
+    "solution_en": "Serve the wine slightly cooler than usual to enhance freshness without highlighting residual tannins.",
+    "citation": "Canon oficial CMS & The Oxford Companion to Wine"
+  },
+  {
+    "id": "card_cms_166",
+    "standard": "CMS",
+    "category": "Maridaje Deductivo (CMS)",
+    "category_en": "Deductive Pairing (CMS)",
+    "question_es": "¿Cuál es el mecanismo químico y fisiológico por el cual el alcohol (>14%) y los taninos intensifican la percepción del ardor capsaicino en maridajes con gastronomía picante?",
+    "question_en": "What is the chemical and physiological mechanism by which alcohol (>14%) and tannins intensify capsaicin heat perception in spicy food pairings?",
+    "answer_es": "La capsaicina es lipofílica y se une a receptores TRPV1. El alcohol actúa como solvente, aumentando la absorción mucosa y dañando tejidos. Los taninos precipitan proteínas salivales, creando sequedad física que suma al ardor químico.",
+    "answer_en": "Capsaicin is lipophilic and binds to TRPV1 receptors. Alcohol acts as a solvent, increasing mucosal absorption and damaging tissues. Tannins precipitate salivary proteins, creating physical dryness that adds to chemical heat.",
+    "solution_es": "Evitar vinos tintos jóvenes/alcoholizados. Optar por blancos con acidez o rosados. Mnemotecnia: 'A.T.C.' (Alcohol + Taninos = Conflict).",
+    "solution_en": "Avoid young/high-alcohol reds. Choose acidic whites or rosés. Mnemonic: 'A.T.C.' (Alcohol + Tannins = Conflict).",
+    "citation": "Canon oficial CMS & The Oxford Companion to Wine"
   }
 ]
