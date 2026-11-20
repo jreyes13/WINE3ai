@@ -52,6 +52,28 @@ Diseño de una herramienta interactiva (accesible desde el móvil y el navegador
 
 ---
 
+## 📸 PARTE 3: Pocket Sommelier Sebastián (Módulo de Visión, OCR y Cartas Reales)
+
+**Objetivo:** Desarrollar el pipeline de visión y análisis de imágenes para procesar fotos tomadas en el restaurante con el móvil y cruzarlas con los motores de maridaje molecular:
+
+### 3.1. Pipeline de Fotos de Cartas (Comida + Vinos)
+* **Captura Multi-Foto de Menús:** Subida de 1 a N fotos de la carta de platos/menú degustación y de la carta de vinos.
+* **Extracción OCR Local:**
+  * Identificación de platos, ingredientes principales y preparaciones culinarias (grasas, ácidos, picante, salsas).
+  * Extracción de la carta de vinos: bodega, nombre, añada, denominación, formato (copa/botella) y precio en euros/divisa.
+* **Algoritmo de Cruce de Maridajes Reales:**
+  * En lugar de sugerir denominaciones genéricas, Sebastián puntúa y recomienda las 3 mejores botellas **reales** que existen físicamente en esa carta, distribuidas en 3 presupuestos (Económico, Equilibrado, Prestigio).
+
+### 3.2. Identificador de Botellas & Detector de Errores en Carta
+* **Análisis de Etiqueta Frontal:** Reconocimiento de productor, añada, varietales y D.O.P. oficial mediante visión local.
+* **Motor de Detección de Errores de Carta:**
+  * Inconsistencias geográficas (ej. *"Chablis de Burdeos"* o *"Barolo de Toscana"*).
+  * Añadas erróneas o imposibles para esa denominación.
+  * Faltas ortográficas habituales en productores y uvas.
+* **Modelo Local Recomendado:** `qwen2-vl-7b` o `llava-1.6` ejecutado en LM Studio (0 tokens de pago).
+
+---
+
 ## 🤖 PARTE 2: Banco de Tareas para LM Studio (Momentos Muertos)
 
 Este catálogo de tareas está listo para ser generado por bloques utilizando `scripts/overnight_worker.py` o scripts dedicados, consumiendo **0 tokens externos**.
