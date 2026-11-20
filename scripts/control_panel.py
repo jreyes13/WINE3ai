@@ -281,6 +281,17 @@ class DashboardHandler(BaseHTTPRequestHandler):
         elif url.path == "/api/sync_all":
             results = []
             try:
+                # 0. Pre-Flight Syntax Validation Gate (Zero Broken Deployments)
+                val_res = subprocess.run([sys.executable, "scripts/validate_syntax.py"], cwd=ROOT_DIR, capture_output=True, text=True)
+                if val_res.returncode != 0:
+                    self._send_json({
+                        "ok": False,
+                        "msg": "🚨 DESPLIEGUE BLOQUEADO: Se detectaron errores de sintaxis en los archivos. La web pública ha sido protegida.",
+                        "details": val_res.stdout
+                    })
+                    return
+                results.append("✓ Pre-flight: Sintaxis JS, JSON y Python verificada (0 errores).")
+
                 # 1. Compile generated data
                 res_compile = subprocess.run([sys.executable, "scripts/compile_generated_data.py"], cwd=ROOT_DIR, capture_output=True, text=True)
                 results.append("✓ Compilación local completada.")

@@ -157,6 +157,17 @@ def merge_grapes():
         with open(web_dest, "w", encoding="utf-8") as f:
             json.dump(varieties, f, ensure_ascii=False, indent=2)
 
+    # Also synchronize production JS bundle for zero-latency offline loading
+    js_content = "window.GRAPE_VARIETIES_DATA = " + json.dumps(varieties, ensure_ascii=False) + ";\n"
+    js_dest = os.path.join(ROOT, "data", "grape_varieties.js")
+    with open(js_dest, "w", encoding="utf-8") as f:
+        f.write(js_content)
+
+    web_js_dest = os.path.join(ROOT, "web", "data", "grape_varieties.js")
+    if os.path.exists(os.path.dirname(web_js_dest)):
+        with open(web_js_dest, "w", encoding="utf-8") as f:
+            f.write(js_content)
+
     print(f"Grape Varieties: Enriched {updated} varieties.")
     return updated
 
