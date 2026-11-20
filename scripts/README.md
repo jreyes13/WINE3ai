@@ -10,7 +10,10 @@
 
 | Script | Lenguaje | Propósito Principal | Cuándo Utilizarlo |
 | :--- | :--- | :--- | :--- |
-| [`audit_manager.sh`](file:///Users/jreyes13/GitHub/wine3ai/scripts/audit_manager.sh) | Bash | Gestor de control en segundo plano (start / stop / status / logs / quick). | **Recomendado para el día a día**: arrancar y parar auditorías desatendidas en ratos muertos del portátil. |
+| [`start_panel.sh`](file:///Users/jreyes13/GitHub/wine3ai/scripts/start_panel.sh) | Bash | Lanza el **Panel de Control Web** en segundo plano desacoplado en el puerto 5050. | **Recomendado para uso visual**: control total desde el navegador en `http://localhost:5050`. |
+| [`stop_panel.sh`](file:///Users/jreyes13/GitHub/wine3ai/scripts/stop_panel.sh) | Bash | Detiene el Panel de Control Web liberando el puerto 5050. | Cuando desees apagar el panel administrativo web. |
+| [`control_panel.py`](file:///Users/jreyes13/GitHub/wine3ai/scripts/control_panel.py) | Python 3 | Servidor HTTP del Panel de Control (cero dependencias externas, estándar library). | Invocado automáticamente por `start_panel.sh`. |
+| [`audit_manager.sh`](file:///Users/jreyes13/GitHub/wine3ai/scripts/audit_manager.sh) | Bash | Gestor de control de auditoría por terminal (start / stop / status / logs / quick). | Para arrancar y parar auditorías desatendidas desde terminal sin abrir el navegador. |
 | [`lm_studio_auditor.py`](file:///Users/jreyes13/GitHub/wine3ai/scripts/lm_studio_auditor.py) | Python 3 | Motor analítico de regiones vitivinícolas, pliegos oficiales y geometrías. | Ejecución interactiva por consola, filtros por país o auditorías específicas (ej. MAPA España). |
 | [`overnight_worker.py`](file:///Users/jreyes13/GitHub/wine3ai/scripts/overnight_worker.py) | Python 3 | Generador nocturno autónomo de fichas de estudio (WSET3, CMS) y artículos Winepedia. | Sesiones largas nocturnas programadas por horario o duración. |
 | [`compile_generated_data.py`](file:///Users/jreyes13/GitHub/wine3ai/scripts/compile_generated_data.py) | Python 3 | Compilador atómico mediante `jsc` (JavaScriptCore) de checkpoints JSON a producción. | Tras generar artículos/tarjetas para consolidar en `data/` y `web/data/`. |
@@ -21,27 +24,67 @@
 ## 2. Matriz de Decisión: "¿Qué ejecutar y cuándo?"
 
 ```
-               ¿Qué tarea deseas realizar?
-                            │
-       ┌────────────────────┴────────────────────┐
-       ▼                                         ▼
-[ AUDITAR MAPAS Y PLIEGOS ]            [ GENERAR CONTENIDO EDUCATIVO ]
-       │                                         │
-       ├─ Tengo ratos muertos (2º plano)         ├─ Sesión nocturna (3h por defecto)
-       │  └─> ./scripts/audit_manager.sh start   │  └─> python3 scripts/overnight_worker.py
-       │                                         │
-       ├─ Tengo 2 minutos (sólo pliegos)         ├─ Programar hasta las 07:00 AM
-       │  └─> ./scripts/audit_manager.sh quick   │  └─> python3 scripts/overnight_worker.py --end 07:00
-       │                                         │
-       ├─ Quiero auditar un país concreto        └─ Tras generar, compilar a producción:
-       │  └─> python3 scripts/lm_studio_auditor.py --country Spain --mode spain_mapa
-       │                                            └─> python3 scripts/compile_generated_data.py
-       └─ Quiero parar y guardar estado
-          └─> ./scripts/audit_manager.sh stop
+                         ¿Qué prefieres utilizar?
+                                     │
+           ┌─────────────────────────┴─────────────────────────┐
+           ▼                                                   ▼
+[ INTERFAZ GRÁFICA WEB ]                               [ LÍNEA DE COMANDOS ]
+           │                                                   │
+  1. ./scripts/start_panel.sh                                  ├─ Gestor en 2º plano (auditoría):
+  2. Abrir http://localhost:5050                               │  └─> ./scripts/audit_manager.sh start
+     - Ver estado LM Studio y modelo activo                    │
+     - Lanzar/parar generador de fichas                        ├─ Escaneo instantáneo pliegos (2s):
+     - Lanzar/parar auditor de mapas                           │  └─> ./scripts/audit_manager.sh quick
+     - Ver logs en vivo en pantalla dividida                   │
+     - Sincronización Total (Compilar + Git + VPS IONOS)       ├─ Auditoría MAPA España:
+                                                               │  └─> python3 scripts/lm_studio_auditor.py --country Spain --mode spain_mapa
+                                                               │
+                                                               ├─ Generador nocturno:
+                                                               │  └─> python3 scripts/overnight_worker.py --end 06:45
+                                                               │
+                                                               └─ Detener panel web:
+                                                                  └─> ./scripts/stop_panel.sh
 ```
 
-### Escenario A: Ratos muertos del portátil (Almuerzo, pausas o cuando no lo uses)
-Utiliza el gestor en segundo plano. Corre desatendido, respeta el procesador con pausas entre regiones y es 100% seguro de pausar:
+---
+
+## 3. El Panel de Control Web (`control_panel.py` / `start_panel.sh`)
+
+El **Panel de Control WINE³ai** es un cuadro de mando integral que unifica toda la administración del sistema en una interfaz web limpia, moderna y sin dependencias externas (usa la librería estándar `http.server` de Python).
+
+### 3.1. Cómo iniciarlo y detenerlo
+```bash
+# Iniciar el panel en segundo plano
+./scripts/start_panel.sh
+
+# Detener el panel
+./scripts/stop_panel.sh
+```
+Una vez iniciado, abre en tu navegador:  
+👉 **`http://localhost:5050`**
+
+### 3.2. Capacidades del Panel Web
+1. **Estado en tiempo real de LM Studio:** Comprueba automáticamente la conectividad con `http://127.0.0.1:1234/v1` e identifica el modelo activo cargado en memoria (ej. `qwen/qwen3.5-9b`).
+2. **Control del Generador de Fichas (`overnight_worker.py`):**
+   - Presets directos con un clic: *Hasta las 16:15*, *Hasta las 06:45*, *Indefinido*, o por bloques de *1h*, *3h*, *5h*, *8h* o *Hora personalizada*.
+   - Botón de parada segura (guarda checkpoints y compila automáticamente).
+3. **Control del Auditor de Mapas y Pliegos (`lm_studio_auditor.py`):**
+   - Selección de modo: *Cruce Oficial MAPA España*, *Auditoría Completa con IA*, o *Comprobación Física de Pliegos*.
+   - Filtro por país (España, Francia, Chequia, Argentina, Todos...) y límite de regiones por sesión.
+4. **Sincronización Total ("Sync All"):**
+   - **Compilación local atómica:** Ejecuta `compile_generated_data.py`.
+   - **Git Commit automático:** Registra los cambios generados con marca de tiempo.
+   - **Despliegue a Producción (VPS IONOS):** Ejecuta `rsync` hacia `root@jreyes13.net:/var/www/vhosts/jreyes13.net/wine3ai/` y reajusta permisos a `jreyes169:psaserv`.
+5. **Doble Consola de Logs en Vivo:** Visualiza en streaming tanto el log de generación de fichas como el log del auditor sin tocar la terminal.
+6. **Visor de Informe Markdown en Vivo:** Renderiza directamente el archivo [`reports/AUDIT_WINE_REGIONS_LMSTUDIO.md`](file:///Users/jreyes13/GitHub/wine3ai/reports/AUDIT_WINE_REGIONS_LMSTUDIO.md) en pantalla.
+
+---
+
+## 4. Flujos Alternativos por Consola
+
+Si prefieres la terminal o estás conectado por SSH sin navegador:
+
+### Escenario A: Ratos muertos del portátil (Almuerzo o pausas)
 ```bash
 # Iniciar auditoría en segundo plano
 ./scripts/audit_manager.sh start
@@ -49,7 +92,7 @@ Utiliza el gestor en segundo plano. Corre desatendido, respeta el procesador con
 # Ver progreso actual
 ./scripts/audit_manager.sh status
 
-# Ver razonamiento de LM Studio en vivo (Ctrl+C para salir, el proceso continúa)
+# Ver razonamiento de LM Studio en vivo
 ./scripts/audit_manager.sh logs
 
 # Detener de forma segura (guarda checkpoint automáticamente)
@@ -90,30 +133,21 @@ python3 scripts/overnight_worker.py --end 07:00
 
 ---
 
-## 3. Guía Detallada de Cada Script
+## 5. Guía Detallada de Scripts de Soporte
 
-### 3.1. `audit_manager.sh` (Gestor de Proceso en Segundo Plano)
-Controla el ciclo de vida del auditor sin necesidad de recordar PIDs ni mantener terminales abiertas.
-
-*   `./scripts/audit_manager.sh start [opciones]`
-    *   Arranca `lm_studio_auditor.py` con `nohup` en segundo plano.
-    *   Acepta argumentos adicionales (ej: `./scripts/audit_manager.sh start --country France`).
-    *   Registra el PID en `reports/auditor.pid`.
-*   `./scripts/audit_manager.sh stop`
-    *   Envía la señal `SIGTERM` al proceso. El script atrapa la señal, termina de procesar la región actual, guarda el estado en `reports/audit_state.json` y sale limpiamente.
-*   `./scripts/audit_manager.sh status`
-    *   Informa si el proceso está activo o detenido y muestra el cuadro de mando actualizado con métricas globales.
-*   `./scripts/audit_manager.sh logs`
-    *   Ejecuta `tail -f reports/auditor.log` para monitorear el flujo de análisis en tiempo real.
-*   `./scripts/audit_manager.sh quick`
-    *   Lanza la comprobación física de pliegos y geometrías en 2 segundos.
+### 5.1. `audit_manager.sh` (Gestor CLI en Segundo Plano)
+*   `./scripts/audit_manager.sh start [opciones]`: Arranca `lm_studio_auditor.py` con `nohup`.
+*   `./scripts/audit_manager.sh stop`: Envía señal `SIGTERM`, guarda el estado y sale limpiamente.
+*   `./scripts/audit_manager.sh status`: Muestra métricas globales y estado del proceso.
+*   `./scripts/audit_manager.sh logs`: Streaming en tiempo real del archivo de log.
+*   `./scripts/audit_manager.sh quick`: Comprobación física de pliegos en 2 segundos.
 
 ---
 
-### 3.2. `lm_studio_auditor.py` (Motor de Auditoría Enológica)
-Motor inteligente que audita la coherencia entre el mapa canónico (`data/wine_regions.geojson`), los documentos de pliego de condiciones (`DOWNs/DOCs/`) y los registros oficiales (MAPA, eAmbrosia).
+### 5.2. `lm_studio_auditor.py` (Motor de Auditoría Enológica)
+Motor que audita la coherencia entre el mapa canónico (`data/wine_regions.geojson`), los documentos de pliego de condiciones (`DOWNs/DOCs/`) y los registros oficiales (MAPA, eAmbrosia).
 
-#### Opciones de línea de comandos:
+#### Opciones CLI:
 ```
 python3 scripts/lm_studio_auditor.py [argumentos]
 
@@ -130,27 +164,20 @@ python3 scripts/lm_studio_auditor.py [argumentos]
 ```
 
 #### Salidas generadas:
-1.  [`reports/AUDIT_WINE_REGIONS_LMSTUDIO.md`](file:///Users/jreyes13/GitHub/wine3ai/reports/AUDIT_WINE_REGIONS_LMSTUDIO.md): Informe legible en Markdown con tablas de estado por país y comparativa oficial de España.
-2.  [`reports/audit_findings.json`](file:///Users/jreyes13/GitHub/wine3ai/reports/audit_findings.json): Estructura JSON con todas las anomalías detectadas, optimizada para consumo por Gemini u otras IAs.
-3.  [`reports/audit_state.json`](file:///Users/jreyes13/GitHub/wine3ai/reports/audit_state.json): Registro de progreso que permite pausar y reanudar sin repetir trabajo.
+1.  [`reports/AUDIT_WINE_REGIONS_LMSTUDIO.md`](file:///Users/jreyes13/GitHub/wine3ai/reports/AUDIT_WINE_REGIONS_LMSTUDIO.md): Informe en Markdown con tablas de estado por país y comparativa oficial de España.
+2.  [`reports/audit_findings.json`](file:///Users/jreyes13/GitHub/wine3ai/reports/audit_findings.json): Estructura JSON con todas las anomalías detectadas para consumo por Gemini u otras IAs.
+3.  [`reports/audit_state.json`](file:///Users/jreyes13/GitHub/wine3ai/reports/audit_state.json): Registro de progreso para reanudar sin repetir trabajo.
 
 ---
 
-### 3.3. `overnight_worker.py` (Generador de Contenido)
+### 5.3. `overnight_worker.py` (Generador de Contenido)
 Orquestador que procesa el catálogo de 370 fichas de estudio para sumilleres (WSET3, CMS, ASI) y artículos enciclopédicos.
-
-*   **Argumentos:**
-    *   `--start HH:MM`: Hora de inicio programada (ej. `23:30`).
-    *   `--end HH:MM`: Hora límite de parada (ej. `06:30`).
-    *   `--hours N`: Duración fija en horas (ej. `4.5`).
-    *   `--now`: Iniciar inmediatamente omitiendo el temporizador.
-*   **Resultados:**
-    *   Genera checkpoints en `data/generated/`.
-    *   Al finalizar, invoca automáticamente a `compile_generated_data.py` y redacta `OVERNIGHT_REPORT.md`.
+*   Genera checkpoints en `data/generated/`.
+*   Al finalizar, invoca automáticamente a `compile_generated_data.py` y redacta `OVERNIGHT_REPORT.md`.
 
 ---
 
-### 3.4. `compile_generated_data.py` (Compilador de Producción)
+### 5.4. `compile_generated_data.py` (Compilador de Producción)
 Consolida con seguridad atómica los datos JSON generados hacia los archivos de producción leídos por la interfaz web de WINE³ai:
 *   Utiliza `/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Helpers/jsc` para evaluar y fusionar los arrays JavaScript sin corromper el árbol de sintaxis.
 *   Destinos sincronizados:
@@ -160,30 +187,15 @@ Consolida con seguridad atómica los datos JSON generados hacia los archivos de 
 
 ---
 
-### 3.5. `lm_studio.py` (Librería Conectora Local)
-Módulo ligero para interactuar con la API local de LM Studio (`http://127.0.0.1:1234/v1`).
-
-```python
-from scripts.lm_studio import query_lm
-
-# Consulta básica
-respuesta = query_lm("Explica el terroir de Paraje Altamira en Mendoza.")
-
-# Consulta con desglose de tokens de razonamiento
-respuesta, stats = query_lm(
-    prompt="Diferencias entre DOC Luján de Cuyo y DOC San Rafael",
-    model="qwen/qwen3.5-9b",
-    return_usage=True
-)
-print(f"Tokens generados: {stats['completion_tokens']}, Razonamiento: {stats.get('reasoning_tokens', 0)}")
-```
+### 5.5. `lm_studio.py` (Librería Conectora Local)
+Módulo ligero para interactuar programáticamente con la API local de LM Studio (`http://127.0.0.1:1234/v1`).
 
 ---
 
-## 4. Requisitos y Configuración de LM Studio
+## 6. Requisitos y Configuración de LM Studio
 
 Para garantizar la ejecución sin errores:
-1.  **LM Studio abierto:** El servidor local debe estar activo en `http://127.0.0.1:1234`.
+1.  **LM Studio abierto:** Servidor local activo en `http://127.0.0.1:1234`.
 2.  **Modelo cargado:** Modelo recomendado `qwen/qwen3.5-9b` (o compatible con ventana de contexto >= 8192 tokens).
 3.  **Configuración de tokens:** En modelos con modo "Thinking" (cadena de razonamiento CoT), asegúrate de que el límite de tokens (`max_tokens`) sea de al menos 1200 a 2500 para evitar que la respuesta se corte antes de volcar la conclusión.
 4.  **Cero costes:** Toda la inferencia transcurre exclusivamente en la memoria unificada / GPU del Mac.

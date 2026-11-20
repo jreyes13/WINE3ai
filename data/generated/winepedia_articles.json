@@ -6214,5 +6214,41 @@
       "enologia",
       "terruño"
     ]
+  },
+  {
+    "id": "asi_sommelier_conflict_spoilage_resolution",
+    "standard": "ASI",
+    "category_es": "Servicio & Protocolo de Sala",
+    "category_en": "Sommellerie & Service Protocol",
+    "badge_color": "emerald",
+    "title_es": "Resolución de Disconformidad por Vino Defectuoso en Sala: Mecanismo y Relevancia Enológica",
+    "title_en": "Resolución de Disconformidad por Vino Defectuoso en Sala: Mechanism and Enological Significance",
+    "summary_es": "Protocolo ASI para gestión inmediata de vinos defectuosos, priorizando la experiencia del huésped mediante validación silenciosa y sustitución técnica.",
+    "summary_en": "ASI protocol for immediate management of faulty wines, prioritizing guest experience through silent validation and technical substitution.",
+    "content_es": "La detección de vicios como el corcho o la oxidación requiere acción inmediata. Bioquímicamente, compuestos volátiles como el TCA y el acetaldehído alteran irreversiblemente el perfil aromático. El sommelier valida cortésmente sin debatir, retirando la botella para evitar contaminación cruzada en el servicio. Se sugiere una alternativa óptima del mismo perfil organoléptico, asegurando continuidad de la experiencia gastronómica.",
+    "content_en": "Detection of faults like cork or oxidation requires immediate action. Biochemically, volatile compounds like TCA and acetaldehyde irreversibly alter the aromatic profile. The sommelier validates courteously without debating, removing the bottle to avoid cross-contamination in service. An optimal alternative of the same organoleptic profile is suggested, ensuring continuity of the gastronomic experience.",
+    "key_takeaways_es": [
+      "Validación sin discusión para mantener la elegancia",
+      "Retirada inmediata de botella defectuosa",
+      "Sustitución con alternativa técnica equivalente"
+    ],
+    "key_takeaways_en": [
+      "Validation without discussion to maintain elegance",
+      "Immediate removal of faulty bottle",
+      "Substitution with technically equivalent alternative"
+    ],
+    "related_grapes": [
+      "Cabernet Sauvignon",
+      "Pinot Noir"
+    ],
+    "related_regions": [
+      "Bordeaux",
+      "Napa Valley"
+    ],
+    "tags": [
+      "asi sommelier conflict spoilage resolution",
+      "enologia",
+      "terruño"
+    ]
   }
 ]

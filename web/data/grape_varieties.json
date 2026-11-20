@@ -13244,7 +13244,43 @@
       "blend": 148,
       "monovarietal_pct": 1.3,
       "blend_pct": 98.7
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Medio-Alto",
+      "alcohol": "Alto (13-15%)",
+      "body": "Completo",
+      "aromas_primary": [
+        "Mora",
+        "Cereza negra",
+        "Violeta",
+        "Pimienta negra"
+      ],
+      "aromas_secondary": [
+        "Tostado",
+        "Humo",
+        "Vainilla",
+        "Caramelo"
+      ],
+      "aromas_tertiary": [
+        "Cuero",
+        "Tabaco viejo",
+        "Hierbas secas",
+        "Carne ahumada"
+      ],
+      "benchmark_appellations": [
+        "Hermitage (Francia)",
+        "Côte-Rôtie (Francia)",
+        "Barossa Valley (Australia)"
+      ],
+      "ideal_food_pairings": [
+        "Cordero asado",
+        "Quesos curados",
+        "Carne roja a la parrilla"
+      ]
+    },
+    "sommelier_note_es": "La Syrah ofrece una estructura potente con taninos firmes y notas frutales oscuras como mora y cereza, a menudo acompañadas de especias negras como pimienta. Envejecida en roble, desarrolla matices complejos de tabaco y cuero que la convierten en un vino robusto y elegante.",
+    "sommelier_note_en": "Syrah delivers a powerful structure with firm tannins and dark fruit notes like blackberry and cherry, often accompanied by black spices such as pepper. Aged in oak, it develops complex nuances of tobacco and leather, making it a robust and elegant wine."
   },
   {
     "id": "merlot",
@@ -40401,7 +40437,41 @@
       "blend": 28,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Bajo",
+      "alcohol": "Medio (12-13%)",
+      "body": "Ligero-Medio",
+      "aromas_primary": [
+        "Fresa",
+        "Frambuesa",
+        "Flor de manzana",
+        "Cereza"
+      ],
+      "aromas_secondary": [
+        "Pan tostado",
+        "Yerba",
+        "Fruta cocida"
+      ],
+      "aromas_tertiary": [
+        "Miel",
+        "Especias suaves",
+        "Tierra"
+      ],
+      "benchmark_appellations": [
+        "Beaujolais Villages (Francia)",
+        "Saint-Amour (Francia)",
+        "Bugey (Francia)"
+      ],
+      "ideal_food_pairings": [
+        "Queso de cabra fresco",
+        "Pollo a la plancha",
+        "Ensaladas con vinagreta"
+      ]
+    },
+    "sommelier_note_es": "Variedad frutal y fresca con acidez vibrante y taninos mínimos, ideal para vinos jóvenes que destacan por su jugosidad y aromas primarios de frutos rojos.",
+    "sommelier_note_en": "Fruity and fresh varietal with vibrant acidity and minimal tannins, ideal for young wines highlighting juicy character and primary red fruit aromas."
   },
   {
     "id": "clairette",
@@ -47842,7 +47912,43 @@
       "blend": 14,
       "monovarietal_pct": 22.2,
       "blend_pct": 77.8
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Alta",
+      "tannin": "Medio-Alto",
+      "alcohol": "Medio (13-14%)",
+      "body": "Medio",
+      "aromas_primary": [
+        "Cereza roja",
+        "Ciruela",
+        "Violeta",
+        "Hierbas secas"
+      ],
+      "aromas_secondary": [
+        "Tostado",
+        "Vainilla",
+        "Especias",
+        "Tabaco joven"
+      ],
+      "aromas_tertiary": [
+        "Cuero",
+        "Tierra",
+        "Balsámico",
+        "Leña ahumada"
+      ],
+      "benchmark_appellations": [
+        "Chianti Classico (Italia)",
+        "Brunello di Montalcino (Italia)",
+        "Vino Nobile di Montepulciano (Italia)"
+      ],
+      "ideal_food_pairings": [
+        "Pasta al pomodoro",
+        "Caza de cordero",
+        "Quesos duros madurados"
+      ]
+    },
+    "sommelier_note_es": "Variedad emblemática de Toscana con acidez vibrante y taninos estructurales que evolucionan hacia notas terrosas y frutales secos en añejamiento.",
+    "sommelier_note_en": "Iconic Tuscan variety with vibrant acidity and structural tannins that evolve into earthy notes and dried fruits upon aging."
   },
   {
     "id": "zweigelt",
@@ -48358,7 +48464,41 @@
       "blend": 17,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media",
+      "tannin": "Medio",
+      "alcohol": "Medio (13-14%)",
+      "body": "Medio",
+      "aromas_primary": [
+        "Cereza",
+        "Fresa",
+        "Arándano",
+        "Florales"
+      ],
+      "aromas_secondary": [
+        "Especias rojas",
+        "Vainilla",
+        "Miel"
+      ],
+      "aromas_tertiary": [
+        "Tabaco",
+        "Tierra",
+        "Madera"
+      ],
+      "benchmark_appellations": [
+        "Burgenland (Austria)",
+        "Weinviertel (Austria)",
+        "Steiermark (Austria)"
+      ],
+      "ideal_food_pairings": [
+        "Carne asada",
+        "Embutidos",
+        "Quesos curados"
+      ]
+    },
+    "sommelier_note_es": "Zweigelt ofrece un perfil frutal vibrante con notas de cereza y fresa, equilibrado por taninos suaves y acidez media. Ideal para maridajes con carnes rojas y quesos madurados.",
+    "sommelier_note_en": "Zweigelt delivers a vibrant fruity profile with cherry and strawberry notes, balanced by soft tannins and medium acidity. Ideal for pairing with red meats and aged cheeses."
   },
   {
     "id": "petit-verdot",
@@ -48858,7 +48998,42 @@
       "blend": 17,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Alta",
+      "tannin": "Muy Alto",
+      "alcohol": "Medio-Alto (13.5-14.5%)",
+      "body": "Completo",
+      "aromas_primary": [
+        "Arándano negro",
+        "Violeta",
+        "Grama",
+        "Cereza"
+      ],
+      "aromas_secondary": [
+        "Vainilla",
+        "Especias tostadas",
+        "Hervido de roble"
+      ],
+      "aromas_tertiary": [
+        "Cuero",
+        "Tabaco",
+        "Cedro",
+        "Té negro"
+      ],
+      "benchmark_appellations": [
+        "Bordeaux (Francia)",
+        "Rioja (España)",
+        "Napa Valley (EE.UU.)"
+      ],
+      "ideal_food_pairings": [
+        "Carne de cordero asada",
+        "Estofado de ternera",
+        "Quesos curados duros"
+      ]
+    },
+    "sommelier_note_es": "Es una variedad tardía con taninos robustos y acidez vibrante. Requiere añejamiento en barrica para aportar complejidad mineral y frutal.",
+    "sommelier_note_en": "Late-ripening variety with robust tannins and vibrant acidity. Requires oak barrel aging to impart mineral and fruit complexity."
   },
   {
     "id": "verdejo",
@@ -49797,7 +49972,43 @@
       "blend": 16,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Alto",
+      "alcohol": "Medio-Alto (13-15%)",
+      "body": "Completo",
+      "aromas_primary": [
+        "Violetas",
+        "Frutos rojos negros",
+        "Cerezas negras",
+        "Flor de lavanda"
+      ],
+      "aromas_secondary": [
+        "Caramelo",
+        "Vainilla",
+        "Especias tostadas",
+        "Madera"
+      ],
+      "aromas_tertiary": [
+        "Tabaco",
+        "Cuero",
+        "Tierra húmeda",
+        "Trufa"
+      ],
+      "benchmark_appellations": [
+        "Douro (Portugal)",
+        "Dão (Portugal)",
+        "Alentejo (Portugal)"
+      ],
+      "ideal_food_pairings": [
+        "Carnes rojas a la brasa",
+        "Quesos curados fuertes",
+        "Embutidos ibéricos"
+      ]
+    },
+    "sommelier_note_es": "Variedad tinta noble del Douro con taninos firmes y aromas florales complejos; ideal para vinos de guarda que evolucionan hacia notas terrosas y especias.",
+    "sommelier_note_en": "Noble black grape from the Douro with firm tannins and complex floral aromas; ideal for age-worthy wines evolving into earthy and spicy notes."
   },
   {
     "id": "m-ller-thurgau",
@@ -55009,7 +55220,42 @@
       "blend": 6,
       "monovarietal_pct": 50.0,
       "blend_pct": 50.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Medio-Alto",
+      "alcohol": "Alto (13-14%)",
+      "body": "Completo",
+      "aromas_primary": [
+        "Cereza negra",
+        "Fresa",
+        "Flor de cerezo",
+        "Tomate seco"
+      ],
+      "aromas_secondary": [
+        "Fruta roja fermentada",
+        "Tierra húmeda",
+        "Especias rojas"
+      ],
+      "aromas_tertiary": [
+        "Cuero",
+        "Tabaco",
+        "Hongo",
+        "Caramelo tostado"
+      ],
+      "benchmark_appellations": [
+        "Kakheti (Georgia)",
+        "Kartli (Georgia)",
+        "Imereti (Georgia)"
+      ],
+      "ideal_food_pairings": [
+        "Carne roja asada",
+        "Cordero estofado",
+        "Quesos curados"
+      ]
+    },
+    "sommelier_note_es": "El Saperavi presenta una estructura tánica firme y un color rubí profundo que evoluciona hacia notas terciarias de cuero y tabaco. Su acidez vibrante equilibra el cuerpo completo, ideal para vinos de guarda.",
+    "sommelier_note_en": "Saperavi exhibits firm tannic structure and deep ruby hue evolving into tertiary leather and tobacco notes. Its vibrant acidity balances full body, making it ideal for aging wines."
   },
   {
     "id": "nebbiolo",
@@ -55359,7 +55605,43 @@
       "blend": 5,
       "monovarietal_pct": 58.3,
       "blend_pct": 41.7
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Alta",
+      "tannin": "Muy Alto",
+      "alcohol": "Medio (13-14%)",
+      "body": "Completo",
+      "aromas_primary": [
+        "Rojo cereza",
+        "Rosa",
+        "Violeta",
+        "Pimienta negra"
+      ],
+      "aromas_secondary": [
+        "Tostado",
+        "Huevo duro",
+        "Pan tostado",
+        "Caramelo"
+      ],
+      "aromas_tertiary": [
+        "Cuero",
+        "Tabaco",
+        "Trufa",
+        "Té oxidado"
+      ],
+      "benchmark_appellations": [
+        "Barolo (Italia)",
+        "Barbaresco (Italia)",
+        "Langhe DOC (Italia)"
+      ],
+      "ideal_food_pairings": [
+        "Carnes rojas magras",
+        "Quesos duros curados",
+        "Setas y hongos"
+      ]
+    },
+    "sommelier_note_es": "Nebbiolo es la reina de los vinos del Piamonte, caracterizada por una acidez vibrante y taninos etéreos que requieren largos envejecimientos para revelar complejidad aromática profunda.",
+    "sommelier_note_en": "Nebbiolo is the queen of Piedmontese wines, characterized by vibrant acidity and ethereal tannins that require long aging to reveal deep aromatic complexity."
   },
   {
     "id": "negramoll",
@@ -58474,7 +58756,42 @@
       "blend": 9,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Muy Alto",
+      "alcohol": "Medio-Alto (13-15%)",
+      "body": "Completo / Robusto",
+      "aromas_primary": [
+        "Arándanos negros",
+        "Ciruela negra",
+        "Violeta",
+        "Tomate"
+      ],
+      "aromas_secondary": [
+        "Hervido",
+        "Caramelo",
+        "Especias cálidas"
+      ],
+      "aromas_tertiary": [
+        "Cuero",
+        "Tabaco",
+        "Tierra",
+        "Fruta seca"
+      ],
+      "benchmark_appellations": [
+        "Madiran (Francia)",
+        "Irouléguy (Francia)",
+        "Paysandú (Uruguay)"
+      ],
+      "ideal_food_pairings": [
+        "Cordero asado",
+        "Quesos curados",
+        "Estofados de caza"
+      ]
+    },
+    "sommelier_note_es": "El Tannat es la uva más tánica del mundo, ofreciendo una estructura robusta y notas primarias de frutos negros intensos con toques florales. Requiere maduración o crianza en barrica para suavizar su carácter agresivo inicial.",
+    "sommelier_note_en": "Tannat is the world's most tannic variety, offering a robust structure with intense dark fruit primary notes and floral hints. It requires aging or oak maturation to soften its initial aggressive character."
   },
   {
     "id": "parellada",
@@ -61444,7 +61761,41 @@
       "blend": 8,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Alta",
+      "tannin": "Bajo",
+      "alcohol": "Medio (12-13%)",
+      "body": "Ligero a Medio",
+      "aromas_primary": [
+        "Cítricos frescos",
+        "Floral",
+        "Pomelo",
+        "Manzana verde"
+      ],
+      "aromas_secondary": [
+        "Levadura",
+        "Nuez",
+        "Huevo duro"
+      ],
+      "aromas_tertiary": [
+        "Miel",
+        "Citricos secos",
+        "Flor de acacia"
+      ],
+      "benchmark_appellations": [
+        "DO Tacoronte-Acentejo (España)",
+        "DO La Palma (España)",
+        "DO El Hierro (España)"
+      ],
+      "ideal_food_pairings": [
+        "Pescado blanco",
+        "Mariscos frescos",
+        "Queso cabra"
+      ]
+    },
+    "sommelier_note_es": "Variedad canaria de alta acidez y cuerpo ligero, destacando por notas cítricas y florales en su juventud. Requiere maduración temprana para mantener frescura sin perder elegancia.",
+    "sommelier_note_en": "Canarian variety with high acidity and light body, standing out for citrus and floral notes in youth. Requires early maturity to maintain freshness without losing elegance."
   },
   {
     "id": "malbec",
@@ -61998,7 +62349,43 @@
       "blend": 10,
       "monovarietal_pct": 44.4,
       "blend_pct": 55.6
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media",
+      "tannin": "Medio-Alto",
+      "alcohol": "Alto (14-15%)",
+      "body": "Completo",
+      "aromas_primary": [
+        "Frutos rojos negros",
+        "Moras",
+        "Ciruelas",
+        "Violeta"
+      ],
+      "aromas_secondary": [
+        "Chocolate",
+        "Café",
+        "Especias tostadas",
+        "Tabaco negro"
+      ],
+      "aromas_tertiary": [
+        "Cuero",
+        "Tierra",
+        "Vainilla",
+        "Humedad"
+      ],
+      "benchmark_appellations": [
+        "Mendoza (Argentina)",
+        "Cahors (Francia)",
+        "Languedoc-Roussillon (Francia)"
+      ],
+      "ideal_food_pairings": [
+        "Asado argentino",
+        "Carne roja a la brasa",
+        "Quesos curados"
+      ]
+    },
+    "sommelier_note_es": "El Malbec ofrece una estructura robusta con taninos redondos y notas frutales intensas de frutos del bosque, complementadas por matices de chocolate y especias envejecidas. Es ideal para maridajes con carnes rojas asadas o quesos curados.",
+    "sommelier_note_en": "Malbec delivers a robust structure with rounded tannins and intense black fruit notes, complemented by nuances of chocolate and aged spices. It is ideal for pairings with roasted red meats or aged cheeses."
   },
   {
     "id": "gros-manseng",
@@ -64639,7 +65026,41 @@
       "blend": 7,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Alta",
+      "tannin": "Bajo",
+      "alcohol": "Medio (12-14%)",
+      "body": "Ligero a Medio",
+      "aromas_primary": [
+        "Florales",
+        "Citricos",
+        "Tropical",
+        "Melocoton"
+      ],
+      "aromas_secondary": [
+        "Alcoholico",
+        "Miel",
+        "Caramelo"
+      ],
+      "aromas_tertiary": [
+        "Cuero",
+        "Nuez",
+        "Huevo duro"
+      ],
+      "benchmark_appellations": [
+        "Rueda (España)",
+        "Jerez-Xérès-Sherry (España)",
+        "Madeira (Portugal)"
+      ],
+      "ideal_food_pairings": [
+        "Postres de fruta",
+        "Quesos frescos",
+        "Mariscos con especias"
+      ]
+    },
+    "sommelier_note_es": "Variedad aromática intensa con notas florales y cítricas dominantes, ideal para vinos dulces o espumosos. Acidez vibrante equilibra la dulzura residual sin necesidad de madera.",
+    "sommelier_note_en": "Intensely aromatic variety with dominant floral and citrus notes, perfect for sweet or sparkling wines. Vibrant acidity balances residual sweetness without requiring oak aging."
   },
   {
     "id": "montepulciano",
@@ -68864,7 +69285,41 @@
       "blend": 2,
       "monovarietal_pct": 66.7,
       "blend_pct": 33.3
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Bajo a Medio",
+      "alcohol": "Medio (13-14%)",
+      "body": "Medio-Ligero",
+      "aromas_primary": [
+        "Cereza negra",
+        "Fresa",
+        "Ciruela",
+        "Notas florales"
+      ],
+      "aromas_secondary": [
+        "Vainilla",
+        "Madera tostada",
+        "Especias cálidas"
+      ],
+      "aromas_tertiary": [
+        "Tierra húmeda",
+        "Cuero suave",
+        "Hongo"
+      ],
+      "benchmark_appellations": [
+        "Dogliani DOC (Italia)",
+        "Diano d'Alba DOC (Italia)",
+        "Alba DOC (Italia)"
+      ],
+      "ideal_food_pairings": [
+        "Carnes asadas a la brasa",
+        "Pasta con salsa de tomate",
+        "Trufas y quesos frescos"
+      ]
+    },
+    "sommelier_note_es": "El Dolcetto ofrece una entrada suave con taninos redondos que evocan frutas rojas frescas y cereza. Su carácter accesible lo hace ideal para el consumo joven, aunque puede envejecer mostrando notas terrosas complejas.",
+    "sommelier_note_en": "Dolcetto presents a soft entry with rounded tannins evoking fresh red fruits and cherry. Its accessible character makes it ideal for young consumption, though it can age to show complex earthy notes."
   },
   {
     "id": "canaiolo",
@@ -69434,7 +69889,43 @@
       "blend": 3,
       "monovarietal_pct": 50.0,
       "blend_pct": 50.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Alta",
+      "tannin": "Alto",
+      "alcohol": "Medio-Alto (14-15%)",
+      "body": "Completo",
+      "aromas_primary": [
+        "Cereza",
+        "Arándano",
+        "Tomate",
+        "Hierbas"
+      ],
+      "aromas_secondary": [
+        "Vainilla",
+        "Especias",
+        "Roble tostado",
+        "Caramelo"
+      ],
+      "aromas_tertiary": [
+        "Cuero",
+        "Tabaco",
+        "Hongo",
+        "Tierra"
+      ],
+      "benchmark_appellations": [
+        "Taurasi (Italia)",
+        "Aglianico del Vulture (Italia)",
+        "Aglianico del Taburno (Italia)"
+      ],
+      "ideal_food_pairings": [
+        "Carne de caza",
+        "Quesos curados duros",
+        "Corteza de pan tostada"
+      ]
+    },
+    "sommelier_note_es": "Aglianico es una variedad robusta y longeva, conocida por sus taninos firmes y acidez vibrante que requieren añejamiento. Evoca notas complejas de frutos rojos secos, tierra y especias, ofreciendo una estructura similar al Barolo.",
+    "sommelier_note_en": "Aglianico is a robust and long-lived variety, known for its firm tannins and vibrant acidity that require aging. It evokes complex notes of dried red fruits, earth, and spices, offering a structure reminiscent of Barolo."
   },
   {
     "id": "k-zg-z",
@@ -72788,7 +73279,41 @@
       "blend": 2,
       "monovarietal_pct": 50.0,
       "blend_pct": 50.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Alta",
+      "tannin": "Medio-Alto",
+      "alcohol": "Medio (13-14%)",
+      "body": "Completo",
+      "aromas_primary": [
+        "Limón",
+        "Almendra",
+        "Tomillo",
+        "Higos secos"
+      ],
+      "aromas_secondary": [
+        "Vainilla",
+        "Especias de roble",
+        "Caramelo"
+      ],
+      "aromas_tertiary": [
+        "Cuero",
+        "Tabaco",
+        "Tierra húmeda"
+      ],
+      "benchmark_appellations": [
+        "Naoussa (Grecia)",
+        "Nemea (Grecia)",
+        "Amyndeon (Grecia)"
+      ],
+      "ideal_food_pairings": [
+        "Embutidos curados",
+        "Cordero asado",
+        "Queso feta añejo"
+      ]
+    },
+    "sommelier_note_es": "Xinomavro destaca por su alta acidez y taninos firmes, ofreciendo una estructura elegante similar a un Nebbiolo griego. Notas primarias de cítricos y almendra se integran con matices terrosos en el paladar.",
+    "sommelier_note_en": "Xinomavro stands out for its high acidity and firm tannins, offering an elegant structure reminiscent of a Greek Nebbiolo. Primary notes of citrus and almond integrate with earthy nuances on the palate."
   },
   {
     "id": "xarel-lo",
@@ -74531,7 +75056,43 @@
       "blend": 4,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Medio-Bajo",
+      "alcohol": "Medio (13-14%)",
+      "body": "Medio",
+      "aromas_primary": [
+        "Cereza",
+        "Fresa",
+        "Arándano",
+        "Flor de cerezo"
+      ],
+      "aromas_secondary": [
+        "Hierbas secas",
+        "Tierra",
+        "Especias suaves",
+        "Tomate"
+      ],
+      "aromas_tertiary": [
+        "Cuero",
+        "Tabaco",
+        "Fruta pasa",
+        "Caramelo tostado"
+      ],
+      "benchmark_appellations": [
+        "Valpolicella DOCG (Italia)",
+        "Bardolino DOC (Italia)",
+        "Soave DOC (Italia)"
+      ],
+      "ideal_food_pairings": [
+        "Pasta con salsa de carne",
+        "Carne asada",
+        "Quesos curados"
+      ]
+    },
+    "sommelier_note_es": "Rondinella aporta frescura y acidez equilibrada a las mezclas venecianas, destacando por su estructura ligera y notas frutales rojas que evolucionan hacia matices terrosos con el tiempo.",
+    "sommelier_note_en": "Rondinella contributes balanced acidity and freshness to Venetian blends, standing out for its light structure and red fruit notes that evolve into earthy nuances with age."
   },
   {
     "id": "rolle",
@@ -80206,7 +80767,43 @@
       "blend": 3,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Medio-Alto",
+      "alcohol": "Alto (14-15%)",
+      "body": "Completo",
+      "aromas_primary": [
+        "Cereza negra",
+        "Fresa silvestre",
+        "Ciruela",
+        "Flor de lavanda"
+      ],
+      "aromas_secondary": [
+        "Especias cálidas",
+        "Yerba mate",
+        "Pan tostado",
+        "Vainilla"
+      ],
+      "aromas_tertiary": [
+        "Cuero",
+        "Tabaco",
+        "Caramelo quemado",
+        "Madera ahumada"
+      ],
+      "benchmark_appellations": [
+        "Nero d'Avola DOC (Sicilia)",
+        "Cerasuolo di Vittoria DOCG (Sicilia)",
+        "Etna Rosso DOC (Sicilia)"
+      ],
+      "ideal_food_pairings": [
+        "Carne roja a la parrilla",
+        "Cazuela de caza",
+        "Quesos curados duros"
+      ]
+    },
+    "sommelier_note_es": "Variedad robusta siciliana que ofrece cuerpo, taninos firmes y notas frutales intensas de cereza y especias. Requiere maduración para integrar su alcohol natural y desarrollar complejidad terciaria.",
+    "sommelier_note_en": "Robustic Sicilian variety offering full body, firm tannins, and intense cherry fruit notes with spice. Requires maturity to integrate natural alcohol and develop tertiary complexity."
   },
   {
     "id": "nerello-mascalese",
@@ -80318,7 +80915,41 @@
       "blend": 3,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Alta",
+      "tannin": "Medio-Bajo",
+      "alcohol": "Medio (13-14%)",
+      "body": "Medio a Completo",
+      "aromas_primary": [
+        "Fresa",
+        "Cereza",
+        "Rosa",
+        "Limón"
+      ],
+      "aromas_secondary": [
+        "Hongo",
+        "Especias suaves",
+        "Hierbas secas"
+      ],
+      "aromas_tertiary": [
+        "Cuero",
+        "Tabaco",
+        "Mineral",
+        "Miel"
+      ],
+      "benchmark_appellations": [
+        "Etna DOC (Italia)",
+        "Cerasuolo di Vittoria DOCG (Italia)"
+      ],
+      "ideal_food_pairings": [
+        "Pescado a la brasa",
+        "Carne de caza",
+        "Quesos curados"
+      ]
+    },
+    "sommelier_note_es": "Variedad noble de Etna con acidez vibrante y taninos finos, evocando frutos rojos frescos y notas florales. Requiere maduración para desarrollar complejidad mineral y estructura elegante.",
+    "sommelier_note_en": "Noble varietal from Etna featuring vibrant acidity and fine tannins, evoking fresh red fruits and floral notes. Needs aging to develop mineral complexity and elegant structure."
   },
   {
     "id": "mu-k-t-moravsk",
@@ -88019,7 +88650,42 @@
       "blend": 0,
       "monovarietal_pct": 100.0,
       "blend_pct": 0.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Alto",
+      "alcohol": "Alto (14-15%+)",
+      "body": "Completo",
+      "aromas_primary": [
+        "Frutos rojos maduros",
+        "Cereza negra",
+        "Especias",
+        "Hierbas secas"
+      ],
+      "aromas_secondary": [
+        "Vainilla",
+        "Madera tostada",
+        "Almendras"
+      ],
+      "aromas_tertiary": [
+        "Cuero",
+        "Tabaco",
+        "Hongo",
+        "Tierra"
+      ],
+      "benchmark_appellations": [
+        "Salento (Italia)",
+        "Utiel-Requena (España)",
+        "California (USA) - Zinfandel"
+      ],
+      "ideal_food_pairings": [
+        "Carne roja a la brasa",
+        "Cazador de caza mayor",
+        "Quesos curados duros"
+      ]
+    },
+    "sommelier_note_es": "Variedad temprana con alta concentración de azúcar, resultando en vinos potentes y estructurados. Muestra notas frutales intensas que evolucionan hacia especias y maderas nobles.",
+    "sommelier_note_en": "Early-ripening variety yielding high sugar concentrations, resulting in powerful and structured wines. Displays intense fruit notes evolving into spices and noble woods."
   },
   {
     "id": "prieto-picudo",
@@ -94170,7 +94836,43 @@
       "blend": 2,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Alta",
+      "tannin": "Medio-Alto",
+      "alcohol": "Medio (13-14%)",
+      "body": "Medio",
+      "aromas_primary": [
+        "Frutos rojos",
+        "Fresa",
+        "Cereza",
+        "Florales"
+      ],
+      "aromas_secondary": [
+        "Alcohol",
+        "Yerba mate",
+        "Especias",
+        "Salvia"
+      ],
+      "aromas_tertiary": [
+        "Tierra",
+        "Tabaco",
+        "Cuero",
+        "Hongo"
+      ],
+      "benchmark_appellations": [
+        "Dão (Portugal)",
+        "Bairrada (Portugal)",
+        "Beiras (Portugal)"
+      ],
+      "ideal_food_pairings": [
+        "Caza",
+        "Quesos curados",
+        "Carne asada"
+      ]
+    },
+    "sommelier_note_es": "La Baga destaca por su notable acidez y taninos estructurales que permiten un excelente envejecimiento. Sus perfiles evolucionan desde frutos rojos frescos hacia notas terrosas complejas con la maduración.",
+    "sommelier_note_en": "Baga is defined by its vibrant acidity and structural tannins that facilitate significant aging potential. The profile evolves from fresh red fruits into complex earthy notes with maturity."
   },
   {
     "id": "asuretuli-shala",
@@ -98905,7 +99607,43 @@
       "blend": 1,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Medio",
+      "alcohol": "Medio (13-14%)",
+      "body": "Medio",
+      "aromas_primary": [
+        "Frutos rojos",
+        "Fresa",
+        "Cereza",
+        "Florales"
+      ],
+      "aromas_secondary": [
+        "Alcohol",
+        "Yogur",
+        "Pan tostado",
+        "Miel"
+      ],
+      "aromas_tertiary": [
+        "Tierra",
+        "Especias",
+        "Tabaco",
+        "Humedad"
+      ],
+      "benchmark_appellations": [
+        "Priorat (España)",
+        "Tarragona (España)",
+        "Montsant (España)"
+      ],
+      "ideal_food_pairings": [
+        "Caza",
+        "Quesos curados",
+        "Carne asada"
+      ]
+    },
+    "sommelier_note_es": "Sumoll ofrece una estructura equilibrada con acidez vibrante y taninos finos. Evoluciona hacia notas terrosas y especiadas en barrica, ideal para carnes rojas.",
+    "sommelier_note_en": "Sumoll offers a balanced structure with vibrant acidity and fine tannins. It evolves towards earthy and spicy notes in barrel aging, ideal for red meats."
   },
   {
     "id": "subirat-parent",
@@ -109262,7 +110000,41 @@
       "blend": 1,
       "monovarietal_pct": 0.0,
       "blend_pct": 100.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Bajo-Medio",
+      "alcohol": "Medio (13-14%)",
+      "body": "Ligero a Medio",
+      "aromas_primary": [
+        "Fresas",
+        "Arándanos",
+        "Florales",
+        "Cítricos"
+      ],
+      "aromas_secondary": [
+        "Yogur",
+        "Miel",
+        "Levadura fresca"
+      ],
+      "aromas_tertiary": [
+        "Tierra",
+        "Humedad",
+        "Especias suaves"
+      ],
+      "benchmark_appellations": [
+        "Priorat (España)",
+        "Cariñena (España)",
+        "Somontano (España)"
+      ],
+      "ideal_food_pairings": [
+        "Tapas ibéricas",
+        "Carne a la brasa",
+        "Pescado blanco"
+      ]
+    },
+    "sommelier_note_es": "La Garnacha Gris ofrece una expresión elegante con acidez vibrante y taninos suaves, destacando por notas frutales rojas y matices florales sutiles que evocan su origen grisáceo.",
+    "sommelier_note_en": "Garnacha Gris delivers an elegant expression with vibrant acidity and soft tannins, highlighted by red fruit notes and subtle floral nuances that evoke its greyish origin."
   },
   {
     "id": "gargollassa",
@@ -117255,7 +118027,41 @@
       "blend": 0,
       "monovarietal_pct": 100.0,
       "blend_pct": 0.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Medio",
+      "alcohol": "Medio-Alto (13-14.5%)",
+      "body": "Medio-Completo",
+      "aromas_primary": [
+        "Frutos rojos",
+        "Cereza",
+        "Fresa",
+        "Arándanos"
+      ],
+      "aromas_secondary": [
+        "Especias",
+        "Vainilla",
+        "Almendras tostadas"
+      ],
+      "aromas_tertiary": [
+        "Cuero",
+        "Tierra",
+        "Fruto seco"
+      ],
+      "benchmark_appellations": [
+        "Nemea (Grecia)",
+        "Peloponeso (Grecia)",
+        "Argolis (Grecia)"
+      ],
+      "ideal_food_pairings": [
+        "Carne roja a la parrilla",
+        "Quesos curados de cabra",
+        "Pasta con salsas de tomate"
+      ]
+    },
+    "sommelier_note_es": "Variedad autóctona griega que ofrece frescura y estructura equilibrada, destacando por sus notas frutales primarias de cereza y fresa.",
+    "sommelier_note_en": "Greek indigenous variety offering freshness and balanced structure, standing out for its primary red fruit notes of cherry and strawberry."
   },
   {
     "id": "ac-kara",
@@ -118978,7 +119784,42 @@
       "blend": 0,
       "monovarietal_pct": 100.0,
       "blend_pct": 0.0
-    }
+    },
+    "organoleptic_profile": {
+      "acidity": "Media-Alta",
+      "tannin": "Muy Alto",
+      "alcohol": "Medio-Alto (13-15%)",
+      "body": "Completo / Robusto",
+      "aromas_primary": [
+        "Arándanos negros",
+        "Ciruela negra",
+        "Violeta",
+        "Tomate"
+      ],
+      "aromas_secondary": [
+        "Hervido",
+        "Caramelo",
+        "Especias cálidas"
+      ],
+      "aromas_tertiary": [
+        "Cuero",
+        "Tabaco",
+        "Tierra",
+        "Fruta seca"
+      ],
+      "benchmark_appellations": [
+        "Madiran (Francia)",
+        "Irouléguy (Francia)",
+        "Paysandú (Uruguay)"
+      ],
+      "ideal_food_pairings": [
+        "Cordero asado",
+        "Quesos curados",
+        "Estofados de caza"
+      ]
+    },
+    "sommelier_note_es": "El Tannat es la uva más tánica del mundo, ofreciendo una estructura robusta y notas primarias de frutos negros intensos con toques florales. Requiere maduración o crianza en barrica para suavizar su carácter agresivo inicial.",
+    "sommelier_note_en": "Tannat is the world's most tannic variety, offering a robust structure with intense dark fruit primary notes and floral hints. It requires aging or oak maturation to soften its initial aggressive character."
   },
   {
     "id": "quebranta",
