@@ -187,15 +187,21 @@
         </div>
       </a>
 
-      <nav class="hidden md:flex items-center gap-7 text-sm font-medium">
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
         <a href="map.html" class="text-slate-300 hover:text-amber-400 transition-colors flex items-center gap-1.5 font-medium">
           <span>🗺️</span> Wine Map
         </a>
         <a href="grapes.html" class="text-slate-300 hover:text-rose-400 transition-colors flex items-center gap-1.5 font-medium">
           <span>🍇</span> Grape Varieties
         </a>
-        <a href="winepedia.html" class="text-amber-400 hover:text-amber-300 transition-colors flex items-center gap-1.5 font-bold">
+        <a href="winepedia.html" class="text-slate-300 hover:text-amber-300 transition-colors flex items-center gap-1.5 font-medium">
           <span>📚</span> WINEp3dIA
+        </a>
+        <a href="flashcards.html" class="text-slate-300 hover:text-rose-300 transition-colors flex items-center gap-1.5 font-medium">
+          <span>🎴</span> Flashcards
+        </a>
+        <a href="sebastian.html" class="text-slate-300 hover:text-purple-300 transition-colors flex items-center gap-1.5 font-medium">
+          <span>🍷</span> Sebast<strong class="text-amber-400">IA</strong>n
         </a>
       </nav>
 
@@ -247,15 +253,21 @@
         </p>
 
         <!-- Main Action Launchers -->
-        <div class="flex flex-wrap items-center justify-center gap-4 mb-6">
-          <a href="map.html" class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-rose-700 to-rose-600 text-white font-semibold shadow-lg shadow-rose-900/40 hover:brightness-110 transition-all font-mono text-sm flex items-center gap-2.5">
-            <span>🗺️</span> Launch Interactive Wine Map
+        <div class="flex flex-wrap items-center justify-center gap-3.5 mb-6">
+          <a href="map.html" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-rose-700 to-rose-600 text-white font-semibold shadow-lg shadow-rose-900/40 hover:brightness-110 transition-all font-mono text-xs sm:text-sm flex items-center gap-2">
+            <span>🗺️</span> Interactive Wine Map
           </a>
-          <a href="grapes.html" class="px-7 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/15 transition-all font-mono text-sm flex items-center gap-2.5">
-            <span>🍇</span> Varieties, Aromas &amp; Periodic Table
+          <a href="grapes.html" class="px-6 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/15 transition-all font-mono text-xs sm:text-sm flex items-center gap-2">
+            <span>🍇</span> Grape Varieties &amp; Aromas
           </a>
-          <a href="#winepedia" class="px-7 py-3.5 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 transition-all font-mono text-sm flex items-center gap-2.5">
-            <span>📚</span> WINEp3dIA Hub
+          <a href="winepedia.html" class="px-6 py-3.5 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 transition-all font-mono text-xs sm:text-sm flex items-center gap-2">
+            <span>📚</span> WINEp3dIA Encyclopedia
+          </a>
+          <a href="flashcards.html" class="px-6 py-3.5 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 text-rose-300 border border-rose-500/30 transition-all font-mono text-xs sm:text-sm flex items-center gap-2">
+            <span>🎴</span> Exam Flashcards
+          </a>
+          <a href="sebastian.html" class="px-6 py-3.5 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 text-purple-300 border border-purple-500/30 transition-all font-mono text-xs sm:text-sm flex items-center gap-2">
+            <span>🍷</span> Pocket Sommelier Sebast<strong class="text-amber-400">IA</strong>n
           </a>
         </div>
 
@@ -268,484 +280,96 @@
     <!-- The 3 Pillars Section -->
     <section id="pillars" class="py-20 border-b border-white/5 max-w-7xl mx-auto px-6">
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="text-xs font-mono uppercase tracking-widest text-amber-400 mb-2">Core Architecture</h2>
+        <h2 class="text-xs font-mono uppercase tracking-widest text-amber-400 mb-2 font-bold">Platform Architecture</h2>
         <h3 class="text-3xl sm:text-4xl font-bold font-serif-wine text-white">The Three Pillars of WINE³ai</h3>
-        <p class="text-slate-400 text-sm mt-3">
-          Every dimension answers an essential question: Where does the wine originate? What grape expresses it? And how is it analyzed with global sommelier precision?
+        <p class="text-slate-400 text-sm mt-3 leading-relaxed">
+          Structuring global enological intelligence across three canonical dimensions: geospatial terroir, vine ampelography, and deductive academic theory.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <!-- Pillar 1 -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <!-- Pillar 1: Maps -->
         <div class="bg-[#12141c] border border-white/10 rounded-2xl p-8 flex flex-col justify-between card-hover transition-all">
           <div>
             <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-2xl mb-6 border border-blue-500/20">
               🗺️
             </div>
-            <div class="text-xs font-mono text-blue-400 uppercase tracking-wider mb-2">Pillar I · Geography &amp; Terroir</div>
+            <div class="text-[10px] font-mono text-blue-400 uppercase tracking-wider mb-2 font-bold">Pillar I · Terroir GIS</div>
             <h4 class="text-xl font-bold font-serif-wine text-white mb-3">WINE³ Maps</h4>
             <p class="text-slate-400 text-sm leading-relaxed mb-6">
-              Geospatial atlas featuring official boundaries of protected appellations (DOP, DOCa, AVA, AOC, DOCG), Köppen-Geiger global climate zones, elevation contours, and official legal specifications (*pliegos de condiciones*).
+              Authoritative GIS boundaries for official appellations (DOP, DOCa, AVA, AOC, DOCG), Köppen-Geiger global climate zones, and official specifications (*pliegos de condiciones*).
             </p>
-            <ul class="text-xs font-mono text-slate-300 space-y-2.5 mb-8">
-              <li class="flex items-center gap-2"><span class="text-blue-400">●</span> Authoritative GIS boundary vectors from official agencies</li>
-              <li class="flex items-center gap-2"><span class="text-blue-400">●</span> Macro, meso, and microclimate terrain modeling</li>
-              <li class="flex items-center gap-2"><span class="text-blue-400">●</span> Coverage across 57 sovereign wine-producing nations</li>
-            </ul>
           </div>
-          <a href="map.html" class="w-full py-2.5 px-4 rounded-xl bg-blue-500/10 hover:bg-blue-500/20 text-blue-300 border border-blue-500/30 text-xs font-mono font-semibold text-center transition-colors">
-            Open Interactive Map →
+          <a href="map.html" class="w-full py-3 px-4 rounded-xl bg-blue-500/10 hover:bg-blue-500/20 text-blue-300 border border-blue-500/30 text-xs font-mono font-semibold text-center transition-colors">
+            Launch Wine Map →
           </a>
         </div>
 
-        <!-- Pillar 2 -->
+        <!-- Pillar 2: Ampelography -->
         <div class="bg-[#12141c] border border-white/10 rounded-2xl p-8 flex flex-col justify-between card-hover transition-all">
           <div>
             <div class="w-12 h-12 rounded-xl bg-rose-500/10 text-rose-400 flex items-center justify-center text-2xl mb-6 border border-rose-500/20">
               🍇
             </div>
-            <div class="text-xs font-mono text-rose-400 uppercase tracking-wider mb-2">Pillar II · Biology &amp; Sensory Chemistry</div>
-            <h4 class="text-xl font-bold font-serif-wine text-white mb-3">WINE³ Ampelography</h4>
+            <div class="text-[10px] font-mono text-rose-400 uppercase tracking-wider mb-2 font-bold">Pillar II · Ampelography</div>
+            <h4 class="text-xl font-bold font-serif-wine text-white mb-3">WINE³ Grapes</h4>
             <p class="text-slate-400 text-sm leading-relaxed mb-6">
-              Exhaustive grape catalog powered by the <strong>Periodic Table of Grapes</strong> and the <strong>54 Aromas of Le Nez du Vin</strong> (Jean Lenoir). Phenolic maturity, acidity curves, tannins, and drought resilience.
+              The Periodic Table of Grapes, 54 Aromas of Le Nez du Vin (Jean Lenoir), phenology maturity curves, genetic pedigrees, and climate resilience matrix.
             </p>
-            <ul class="text-xs font-mono text-slate-300 space-y-2.5 mb-8">
-              <li class="flex items-center gap-2"><span class="text-rose-400">●</span> Symmetrical 3x3 Periodic Table ($W^1$ Whites, $W^2$ Reds, $W^3$ Method)</li>
-              <li class="flex items-center gap-2"><span class="text-rose-400">●</span> Masterkit of 54 molecular aromas cross-referenced</li>
-              <li class="flex items-center gap-2"><span class="text-rose-400">●</span> Climate adaptation matrix and drought resistance</li>
-            </ul>
           </div>
-          <a href="grapes.html" class="w-full py-2.5 px-4 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 text-rose-300 border border-rose-500/30 text-xs font-mono font-semibold text-center transition-colors">
-            Explore Grape Varieties →
+          <a href="grapes.html" class="w-full py-3 px-4 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 text-rose-300 border border-rose-500/30 text-xs font-mono font-semibold text-center transition-colors">
+            Explore Grapes →
           </a>
         </div>
 
-        <!-- Pillar 3 -->
+        <!-- Pillar 3: WINEp3dIA & Flashcards -->
         <div class="bg-[#12141c] border border-white/10 rounded-2xl p-8 flex flex-col justify-between card-hover transition-all">
           <div>
             <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-2xl mb-6 border border-amber-500/20">
               📚
             </div>
-            <div class="text-xs font-mono text-amber-400 uppercase tracking-wider mb-2">Pillar III · Sommelier Science &amp; Theory</div>
-            <h4 class="text-xl font-bold font-serif-wine text-white mb-3">WINEp3dIA</h4>
+            <div class="text-[10px] font-mono text-amber-400 uppercase tracking-wider mb-2 font-bold">Pillar III · Encyclopedia &amp; Exam</div>
+            <h4 class="text-xl font-bold font-serif-wine text-white mb-3">WINEp3dIA &amp; Flashcards</h4>
             <p class="text-slate-400 text-sm leading-relaxed mb-6">
-              The encyclopedic knowledge base harmonizing the three international benchmarks of sommelier excellence: <strong>WSET 3</strong>, <strong>CMS</strong>, and <strong>ASI</strong>, reinforced with interactive study flashcards.
-            </p>
-            <ul class="text-xs font-mono text-slate-300 space-y-2.5 mb-8">
-              <li class="flex items-center gap-2"><span class="text-amber-400">●</span> WSET 3: Environmental factors &amp; the SAT method</li>
-              <li class="flex items-center gap-2"><span class="text-amber-400">●</span> CMS: Deductive Blind Tasting Grid</li>
-              <li class="flex items-center gap-2"><span class="text-amber-400">●</span> ASI: International sommelier competition guidelines</li>
-            </ul>
-          </div>
-          <a href="#winepedia" class="w-full py-2.5 px-4 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs font-mono font-semibold text-center transition-colors">
-            Discover WINEp3dIA →
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- WINEp3dIA Deep Dive: The Standards -->
-    <section id="winepedia" class="py-20 border-b border-white/5 bg-[#0e111a]">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-mono mb-4">
-            The 3 Global Gold Standards of Sommellerie
-          </div>
-          <h3 class="text-3xl sm:text-5xl font-bold font-serif-wine text-white mb-4">
-            WINE<span class="text-amber-400">p3dIA</span>
-          </h3>
-          <p class="text-slate-400 text-base leading-relaxed">
-            Professional sommelier education, enological biochemistry, and terroir intelligence structured under the 3 global gold standards (WSET 3, CMS, and ASI), augmented with the definitive treatises of Hugh Johnson &amp; Jancis Robinson, Jamie Goode, Pascaline Lepeltier, and the VIVC international ampelographic catalogue.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-          <!-- WSET 3 -->
-          <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/10 relative overflow-hidden group flex flex-col justify-between">
-            <div>
-              <div class="text-[10px] font-mono text-purple-400 uppercase tracking-widest mb-2 font-bold">01 · Academic Certification</div>
-              <h4 class="text-xl font-bold font-serif-wine text-white mb-1">WSET 3</h4>
-              <div class="text-[11px] text-slate-400 font-mono mb-3">Wine &amp; Spirit Education Trust</div>
-              <p class="text-slate-300 text-xs leading-relaxed mb-4">
-                The international academic benchmark. Details how <strong>natural factors</strong> (climate, soils, aspect) and <strong>human factors</strong> determine wine style, quality, and price.
-              </p>
-            </div>
-            <div class="p-3 rounded-xl bg-black/40 border border-white/5 text-[11px] font-mono text-slate-300">
-              <span class="text-purple-400 font-bold block mb-0.5">Key Tool: SAT</span>
-              <span>Systematic Approach to Tasting: calibrated scoring of color, acidity, tannin, alcohol, and finish.</span>
-            </div>
-          </div>
-
-          <!-- CMS -->
-          <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/10 relative overflow-hidden group flex flex-col justify-between">
-            <div>
-              <div class="text-[10px] font-mono text-rose-400 uppercase tracking-widest mb-2 font-bold">02 · Deductive Tasting Mastery</div>
-              <h4 class="text-xl font-bold font-serif-wine text-white mb-1">CMS</h4>
-              <div class="text-[11px] text-slate-400 font-mono mb-3">Court of Master Sommeliers</div>
-              <p class="text-slate-300 text-xs leading-relaxed mb-4">
-                The pinnacle of blind deductive tasting and hospitality service. Strict formal logic where sensory evidence systematically deduces variety, origin, and vintage.
-              </p>
-            </div>
-            <div class="p-3 rounded-xl bg-black/40 border border-white/5 text-[11px] font-mono text-slate-300">
-              <span class="text-rose-400 font-bold block mb-0.5">Key Tool: Deductive Grid</span>
-              <span>Sight (rim, tears) ➔ Nose (condition, earth, oak) ➔ Palate (structure) ➔ Final Deduction.</span>
-            </div>
-          </div>
-
-          <!-- ASI -->
-          <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/10 relative overflow-hidden group flex flex-col justify-between">
-            <div>
-              <div class="text-[10px] font-mono text-emerald-400 uppercase tracking-widest mb-2 font-bold">03 · Global Standard &amp; Service</div>
-              <h4 class="text-xl font-bold font-serif-wine text-white mb-1">ASI</h4>
-              <div class="text-[11px] text-slate-400 font-mono mb-3">Association de la Sommellerie Int.</div>
-              <p class="text-slate-300 text-xs leading-relaxed mb-4">
-                Global federation uniting sommelier associations across +60 countries. Establishes deontological codes, precision cellar service, temperatures, and the World's Best Sommelier contest.
-              </p>
-            </div>
-            <div class="p-3 rounded-xl bg-black/40 border border-white/5 text-[11px] font-mono text-slate-300">
-              <span class="text-emerald-400 font-bold block mb-0.5">Key Tool: Floor Protocol</span>
-              <span>Universal serving temperatures, candle decanting etiquette, and table psychology.</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- WINEp3dIA Knowledge Engine Box & Hub CTA -->
-        <div class="rounded-2xl bg-gradient-to-r from-amber-950/60 via-purple-950/40 to-black p-8 sm:p-10 border border-amber-800/40 flex flex-col md:flex-row items-center justify-between gap-8 mb-12">
-          <div class="max-w-2xl">
-            <div class="text-xs font-mono text-amber-400 uppercase tracking-wider mb-2">Live Technical Encyclopedia</div>
-            <h4 class="text-2xl font-bold font-serif-wine text-white mb-3">WINEp3dIA Article &amp; Concept Explorer</h4>
-            <p class="text-slate-300 text-sm leading-relaxed">
-              Explore in-depth articles on biological flor yeast dynamics, cynarine food antagonisms, noble grape chemical markers (rotundone, pyrazines, TDN), and world benchmark terroir geology.
+              Knowledge base harmonizing WSET 3, CMS Deductive Blind Tasting Grid, and ASI Global standards, reinforced with +136 interactive exam flashcards.
             </p>
           </div>
-          <div class="flex-shrink-0">
-            <a href="winepedia.html" class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-black font-mono text-xs font-bold uppercase tracking-wider transition-colors shadow-lg shadow-amber-950/40">
-              <span>📖</span> Open Full WINEp3dIA →
+          <div class="space-y-2.5">
+            <a href="winepedia.html" class="block w-full py-2.5 px-4 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs font-mono font-semibold text-center transition-colors">
+              Open WINEp3dIA →
+            </a>
+            <a href="flashcards.html" class="block w-full py-2.5 px-4 rounded-xl bg-white/5 hover:bg-rose-950/60 text-rose-300 border border-white/10 text-xs font-mono font-semibold text-center transition-colors">
+              Train Flashcards 🎴 →
             </a>
           </div>
         </div>
-
-        <!-- Home Mini Concept Explorer -->
-        <div class="home-concept-box bg-[#131622]/90 border border-white/10 rounded-3xl p-6 sm:p-8 backdrop-blur-xl">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-            <div>
-              <h5 class="text-lg font-bold font-serif-wine text-white flex items-center gap-2">
-                <span>🔎</span> Quick Technical Concept Search
-              </h5>
-              <p class="text-xs text-slate-400 font-mono">Type any compound, fermentation process or keyword for instant summaries:</p>
-            </div>
-            <div class="relative w-full sm:w-72">
-              <input type="text" id="home-winepedia-search" placeholder="e.g. cynarine, flor, tca, mlf..." class="w-full pl-9 pr-3 py-2 rounded-xl bg-black/60 border border-white/15 text-white placeholder-slate-500 text-xs font-mono focus:outline-none focus:border-amber-400">
-              <span class="absolute left-3 top-2.5 text-xs text-slate-400">🔍</span>
-            </div>
-          </div>
-
-          <!-- Quick keyword chips -->
-          <div class="flex flex-wrap gap-2 mb-6 text-[11px] font-mono">
-            <span class="text-slate-500 mr-1 py-1">Key concepts:</span>
-            <button class="home-concept-chip px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300 transition-colors" data-term="cinarina">🥬 Cynarine</button>
-            <button class="home-concept-chip px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300 transition-colors" data-term="velo de flor">🍞 Flor Veil</button>
-            <button class="home-concept-chip px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300 transition-colors" data-term="malolactica">🧈 Malolactic MLF</button>
-            <button class="home-concept-chip px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300 transition-colors" data-term="pirazinas">🫑 Pyrazines (CMS)</button>
-            <button class="home-concept-chip px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300 transition-colors" data-term="albariza">🏛️ Albariza &amp; Llicorella</button>
-            <button class="home-concept-chip px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300 transition-colors" data-term="tca">🚫 Faults: TCA &amp; Reduction</button>
-          </div>
-
-          <!-- Live Matching Results Grid -->
-          <div id="home-winepedia-results" class="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <!-- Rendered dynamically -->
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- POCKET SOMMELIER: SCAN & PAIR (3 BUDGET TIERS) -->
-    <section id="sommelier" class="py-24 border-b border-white/5 bg-gradient-to-b from-[#0b0d13] via-[#12080f] to-[#0e111a] relative overflow-hidden">
-      <!-- Glow ambient background -->
-      <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-rose-600/10 rounded-full blur-3xl pointer-events-none"></div>
-
-      <div class="max-w-7xl mx-auto px-6 relative z-10">
-        <div class="text-center max-w-3xl mx-auto mb-12">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-950/80 border border-rose-800/50 text-rose-300 text-xs font-mono mb-4">
-            <span>🍷</span> Sensory Intelligence &amp; Molecular Sommelier
-          </div>
-          <h3 class="text-3xl sm:text-5xl font-bold font-serif-wine text-white mb-4">
-            Pocket Sommelier: <span class="text-amber-400">Scan &amp; Pair</span>
-          </h3>
-          <p class="text-slate-400 text-base leading-relaxed">
-            Pairing science engineered for real life dining. Select your dish or scan any restaurant wine list to receive <strong>3 calibrated recommendations across distinct budgets</strong> governed by WSET 3, CMS, and ASI pairing chemistry.
-          </p>
-        </div>
-
-        <!-- Interactive Sommelier Box -->
-        <div class="max-w-4xl mx-auto bg-[#131622]/90 border border-white/10 rounded-3xl p-6 sm:p-8 backdrop-blur-xl shadow-2xl mb-12">
-          <!-- Dish input and controls -->
-          <div class="mb-6">
-            <label for="dish-input" class="block text-xs font-mono uppercase tracking-wider text-slate-300 mb-2">
-              What are you eating today? (Dish or Ingredients)
-            </label>
-            <div class="relative flex flex-col sm:flex-row gap-3">
-              <input id="dish-input" type="text" value="Lechazo Churro Asado en Horno de Leña" placeholder="e.g. Lobster seafood rice, Artichokes with iberico ham, Grilled ribeye, Fresh oysters..." class="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3.5 text-white placeholder-slate-500 font-sans text-sm focus:outline-none focus:border-rose-500 transition-colors">
-              <button id="btn-pair" class="flex-shrink-0 px-6 py-3.5 rounded-xl bg-gradient-to-r from-rose-700 to-rose-600 hover:from-rose-600 hover:to-rose-500 text-white font-mono text-xs font-bold uppercase tracking-wider transition-all shadow-lg shadow-rose-900/30 flex items-center justify-center gap-2">
-                <span>🪄</span> Pair Dish
-              </button>
-            </div>
-          </div>
-
-          <!-- Quick Dish Pills -->
-          <div class="mb-6">
-            <span class="text-[11px] font-mono text-slate-400 block mb-2">Quick dish presets:</span>
-            <div class="flex flex-wrap gap-2 text-xs font-mono">
-              <button class="dish-chip px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-colors" data-dish="Lechazo Churro Asado en Horno de Leña">🥩 Roast Milk-fed Lamb</button>
-              <button class="dish-chip px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-colors" data-dish="Arroz Caldoso o Paella de Marisco y Bogavante">🥘 Lobster Seafood Rice</button>
-              <button class="dish-chip px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-colors" data-dish="Presa Ibérica a la Brasa con Salsa de Setas">🥓 Charred Ibérico Pork</button>
-              <button class="dish-chip px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-colors" data-dish="Cecina de León I.G.P. con AOVE y Almendras">🍖 Smoked Beef Cecina</button>
-              <button class="dish-chip px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-colors" data-dish="Ostras Frescas / Percebes / Almejas de Carril">🦪 Fresh Briny Oysters</button>
-              <button class="dish-chip px-3 py-1.5 rounded-lg bg-amber-950/40 hover:bg-amber-900/50 border border-amber-800/40 text-amber-300 transition-colors" data-dish="Alcachofas con jamón ibérico (Cinarina)">🥬 Artichokes (Cynarine)</button>
-              <button class="dish-chip px-3 py-1.5 rounded-lg bg-rose-950/40 hover:bg-rose-900/50 border border-rose-800/40 text-rose-300 transition-colors" data-dish="Curry Rojo Tailandés o Tacos de Birria Especiada">🌶️ Spicy Thai Curry</button>
-            </div>
-          </div>
-
-          <!-- Menu OCR Toggle -->
-          <div class="border-t border-white/10 pt-4">
-            <button id="toggle-menu-btn" class="text-xs font-mono text-amber-400 hover:text-amber-300 flex items-center gap-2 transition-colors">
-              <span>📋</span> <span id="toggle-menu-label">Got a restaurant wine list? Paste or OCR it here ▼</span>
-            </button>
-            <div id="menu-input-container" class="mt-3 hidden">
-              <p class="text-xs text-slate-400 mb-2 font-mono">
-                Paste raw wine list text (or OCR scan). The engine parses titles, styles, and prices to select the 3 best real bottles from that menu:
-              </p>
-              <textarea id="menu-text-input" rows="4" placeholder="e.g.
-Viña Zorzal Garnacha 2022 ....... 18€
-Albariño Martín Códax 2023 ..... 24€
-Muga Crianza 2020 ............... 34€
-Pago de Carraovejas 2021 ........ 52€
-Chablis Premier Cru 2020 ........ 78€
-Vega Sicilia Valbuena 5º 2018 .. 160€" class="w-full bg-black/60 border border-white/15 rounded-xl p-3 text-xs font-mono text-slate-200 placeholder-slate-600 focus:outline-none focus:border-amber-400"></textarea>
-            </div>
-          </div>
-        </div>
-
-        <!-- Sommelier Analysis Banner -->
-        <div id="dish-analysis-banner" class="max-w-4xl mx-auto mb-8 p-4 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-start gap-3.5 text-xs text-amber-200 font-mono">
-          <span class="text-lg">🧪</span>
-          <div>
-            <strong class="text-amber-300 block mb-0.5" id="analysis-title">Structural &amp; Sensory Diagnostic:</strong>
-            <span id="analysis-text" class="text-slate-300 font-sans leading-relaxed">
-              The melting fat and gelatinous collagen demand structured tannins that bind to protein alongside balsamic acidity to cleanse the palate.
-            </span>
-          </div>
-        </div>
-
-        <!-- The 3 Budgets Cards Grid -->
-        <div id="results-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          <!-- Rendered dynamically by sommelier engine -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Interactive Study Cards (Wine Folly Inspired) -->
-    <section id="study-cards" class="py-20 border-b border-white/5 max-w-7xl mx-auto px-6">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="text-xs font-mono uppercase tracking-widest text-rose-400 mb-2">Visual Pedagogy inspired by Wine Folly</h2>
-        <h3 class="text-3xl sm:text-4xl font-bold font-serif-wine text-white">Study Cards &amp; Deductive Grids</h3>
-        <p class="text-slate-400 text-sm mt-3">
-          Interactive cards engineered for retention: sensory profiles, environmental terroir factors, and the deductive blind tasting matrix.
-        </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Card 1: Tempranillo -->
-        <div class="bg-[#12141c] border border-white/10 rounded-2xl p-6 relative">
-          <div class="flex items-center justify-between mb-4">
-            <span class="text-[10px] font-mono px-2.5 py-1 rounded bg-rose-950 text-rose-300 border border-rose-800/40 uppercase">Grape Profile</span>
-            <span class="text-xs font-mono text-slate-400">#01</span>
-          </div>
-          <h4 class="text-xl font-bold font-serif-wine text-white">Tempranillo</h4>
-          <div class="text-xs text-slate-400 font-mono mb-6">Tinto Fino · Tinta del País · Cencibel</div>
-
-          <!-- Scales -->
-          <div class="space-y-3.5 mb-6 text-xs font-mono">
-            <div>
-              <div class="flex justify-between text-slate-300 mb-1">
-                <span>Body</span>
-                <span class="text-rose-400">Medium (+)</span>
-              </div>
-              <div class="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
-                <div class="h-full bg-rose-500 rounded-full" style="width: 75%"></div>
-              </div>
+      <!-- Applied Intelligence Layer: SebastIAn -->
+      <div class="rounded-3xl bg-gradient-to-r from-purple-950/70 via-[#160d1b] to-black border border-purple-800/40 p-8 sm:p-12 relative overflow-hidden shadow-2xl">
+        <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-purple-600/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="flex flex-col lg:flex-row items-center justify-between gap-8 relative z-10">
+          <div class="max-w-3xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-900/60 border border-purple-700/50 text-purple-200 text-xs font-mono mb-4">
+              <span>🍷</span> <span>Applied Artificial Intelligence Layer</span>
             </div>
-            <div>
-              <div class="flex justify-between text-slate-300 mb-1">
-                <span>Tannin</span>
-                <span class="text-rose-400">Medium (+) to High</span>
-              </div>
-              <div class="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
-                <div class="h-full bg-rose-500 rounded-full" style="width: 80%"></div>
-              </div>
-            </div>
-            <div>
-              <div class="flex justify-between text-slate-300 mb-1">
-                <span>Acidity</span>
-                <span class="text-rose-400">Medium to Medium (+)</span>
-              </div>
-              <div class="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
-                <div class="h-full bg-rose-500 rounded-full" style="width: 65%"></div>
-              </div>
-            </div>
-            <div>
-              <div class="flex justify-between text-slate-300 mb-1">
-                <span>Alcohol</span>
-                <span class="text-rose-400">13.5% – 15.0% ABV</span>
-              </div>
-              <div class="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
-                <div class="h-full bg-rose-500 rounded-full" style="width: 85%"></div>
-              </div>
+            <h3 class="text-2xl sm:text-4xl font-bold font-serif-wine text-white mb-3">
+              Meet Sebast<span class="text-[#B08D4B] font-black underline decoration-rose-500/60 decoration-4">IA</span>n: Intelligence in Action
+            </h3>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-4">
+              SebastIAn is not a static pillar — he is the autonomous digital sommelier who orchestrates all 3 pillars with intelligence: cross-referencing maps, vine chemistry, and sommelier theory to pair dishes, scan restaurant wine lists from multi-photo OCR, and audit real bottles on the floor.
+            </p>
+            <div class="flex flex-wrap gap-2 text-xs font-mono text-purple-300">
+              <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">3-Tier Molecular Pairing</span>
+              <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">Multi-Photo Menu &amp; Wine List OCR</span>
+              <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">Bottle &amp; Vintage Audit</span>
             </div>
           </div>
-
-          <!-- Aroma wheel chips -->
-          <div class="text-xs font-mono text-slate-300 mb-2">Key Aroma Markers:</div>
-          <div class="flex flex-wrap gap-1.5 mb-6 text-[11px] font-mono">
-            <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-rose-300">Black cherry</span>
-            <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-rose-300">Dried plum</span>
-            <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-amber-300">Leather</span>
-            <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-amber-300">Tobacco</span>
-            <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-yellow-300">Vanilla / Coconut</span>
-          </div>
-
-          <a href="grapes.html" class="block w-full py-2 text-center rounded-xl bg-white/5 hover:bg-white/10 text-xs font-mono text-slate-300 transition-colors">
-            View Complete Profile in Varieties →
-          </a>
-        </div>
-
-        <!-- Card 2: Terroir Ribera del Duero -->
-        <div class="bg-[#12141c] border border-white/10 rounded-2xl p-6 relative">
-          <div class="flex items-center justify-between mb-4">
-            <span class="text-[10px] font-mono px-2.5 py-1 rounded bg-blue-950 text-blue-300 border border-blue-800/40 uppercase">Terroir Profile</span>
-            <span class="text-xs font-mono text-slate-400">#02</span>
-          </div>
-          <h4 class="text-xl font-bold font-serif-wine text-white">Ribera del Duero</h4>
-          <div class="text-xs text-slate-400 font-mono mb-6">Castile and León · Northern Meseta</div>
-
-          <div class="space-y-3.5 mb-6 text-xs leading-relaxed text-slate-300">
-            <div class="p-3 rounded-lg bg-black/40 border border-white/5">
-              <span class="font-bold text-amber-400 font-mono block mb-0.5">Extreme Continental Climate:</span>
-              Harsh winters and dry summers with diurnal temperature swings of up to 20°C (36°F) that preserve fresh acidity in the grape skins.
-            </div>
-            <div class="p-3 rounded-lg bg-black/40 border border-white/5">
-              <span class="font-bold text-amber-400 font-mono block mb-0.5">High Elevation:</span>
-              Vineyards planted between 750 and over 900 meters (2,450–3,000 ft) above sea level on fluvial terraces and limestone moors.
-            </div>
-            <div class="p-3 rounded-lg bg-black/40 border border-white/5">
-              <span class="font-bold text-amber-400 font-mono block mb-0.5">Diverse Soils:</span>
-              Alternating layers of calcareous marl, chalky sands, sedimentary clay, and alluvial gravel terraces.
-            </div>
-          </div>
-
-          <a href="map.html" class="block w-full py-2 text-center rounded-xl bg-white/5 hover:bg-white/10 text-xs font-mono text-slate-300 transition-colors">
-            Locate on Interactive Map →
-          </a>
-        </div>
-
-        <!-- Card 3: Deductive Tasting Matrix -->
-        <div class="bg-[#12141c] border border-white/10 rounded-2xl p-6 relative">
-          <div class="flex items-center justify-between mb-4">
-            <span class="text-[10px] font-mono px-2.5 py-1 rounded bg-amber-950 text-amber-300 border border-amber-800/40 uppercase">Tasting Matrix</span>
-            <span class="text-xs font-mono text-slate-400">#03</span>
-          </div>
-          <h4 class="text-xl font-bold font-serif-wine text-white">CMS Deductive Tasting</h4>
-          <div class="text-xs text-slate-400 font-mono mb-6">Formal Blind Deductive Sequence</div>
-
-          <div class="space-y-3 mb-6 text-xs font-mono">
-            <div class="flex items-start gap-2.5">
-              <span class="w-5 h-5 rounded bg-rose-500/20 text-rose-400 flex items-center justify-center font-bold text-[10px]">1</span>
-              <div>
-                <strong class="text-white block">Sight:</strong>
-                <span class="text-slate-400">Clarity, core color, rim variation, viscosity &amp; tears.</span>
-              </div>
-            </div>
-            <div class="flex items-start gap-2.5">
-              <span class="w-5 h-5 rounded bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-[10px]">2</span>
-              <div>
-                <strong class="text-white block">Nose:</strong>
-                <span class="text-slate-400">Condition, intensity, fruit (fresh/tart/jammy), floral, earth/mineral, oak impact.</span>
-              </div>
-            </div>
-            <div class="flex items-start gap-2.5">
-              <span class="w-5 h-5 rounded bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold text-[10px]">3</span>
-              <div>
-                <strong class="text-white block">Palate:</strong>
-                <span class="text-slate-400">Dryness, acidity level, tannin texture (fine/grainy), alcohol, body, and persistent finish.</span>
-              </div>
-            </div>
-            <div class="flex items-start gap-2.5">
-              <span class="w-5 h-5 rounded bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-[10px]">4</span>
-              <div>
-                <strong class="text-white block">Conclusion:</strong>
-                <span class="text-slate-400">Climate (cool/moderate/warm), grape variety, Old vs New World, country, region, vintage estimate.</span>
-              </div>
-            </div>
-          </div>
-
-          <a href="#winepedia" class="block w-full py-2 text-center rounded-xl bg-white/5 hover:bg-white/10 text-xs font-mono text-slate-300 transition-colors">
-            Explore Deductive Method →
-          </a>
-        </div>
-      </div>
-
-      <!-- Interactive Flashcard Trainer WSET3 / CMS / ASI -->
-      <div class="mt-16 bg-[#131622] border border-white/10 rounded-3xl p-6 sm:p-10 relative overflow-hidden">
-        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
-          <div>
-            <div class="text-[11px] font-mono text-rose-400 uppercase tracking-widest mb-1">Interactive Trainer</div>
-            <h4 class="text-2xl font-bold font-serif-wine text-white">Exam Flashcards &amp; Deductive Blind Tasting</h4>
-          </div>
-          <!-- Filter pills -->
-          <div class="flex flex-wrap items-center gap-2 text-xs font-mono">
-            <button class="deck-filter px-3 py-1.5 rounded-lg bg-rose-950 text-rose-300 border border-rose-800/50" data-filter="all">All (24)</button>
-            <button class="deck-filter px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300" data-filter="WSET3">WSET 3 (8)</button>
-            <button class="deck-filter px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300" data-filter="CMS">CMS Deductive (8)</button>
-            <button class="deck-filter px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300" data-filter="ASI">ASI Global (8)</button>
-          </div>
-        </div>
-
-        <!-- The Flashcard -->
-        <div id="active-flashcard" class="bg-black/50 border border-white/10 rounded-2xl p-6 sm:p-8 relative">
-          <div class="flex items-center justify-between mb-4">
-            <span id="card-standard-badge" class="px-2.5 py-1 rounded text-[11px] font-mono font-bold bg-purple-950 text-purple-300 border border-purple-800/40">WSET 3</span>
-            <span id="card-category" class="text-xs font-mono text-slate-400">Natural Factors of Terroir</span>
-          </div>
-
-          <h5 id="card-question" class="text-lg sm:text-xl font-medium text-white mb-6 leading-snug">
-            ¿Por qué las alcachofas son consideradas un enemigo clásico del maridaje y qué vino recomienda la sumillería?
-          </h5>
-
-          <!-- Hidden Answer Box -->
-          <div id="card-answer-box" class="hidden mb-6 p-5 rounded-xl bg-white/[0.03] border border-white/10 text-sm font-sans space-y-3">
-            <div>
-              <strong class="text-emerald-400 block font-mono text-xs mb-1">Deductive / Technical Rationale:</strong>
-              <p id="card-answer" class="text-slate-300 leading-relaxed"></p>
-            </div>
-            <div class="pt-3 border-t border-white/5">
-              <strong class="text-amber-400 block font-mono text-xs mb-1">Sommelier Master Tip:</strong>
-              <p id="card-solution" class="text-slate-400 italic text-xs leading-relaxed"></p>
-            </div>
-          </div>
-
-          <!-- Card Controls -->
-          <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-white/10">
-            <button id="btn-reveal-answer" class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/15 border border-white/15 text-white text-xs font-mono font-semibold transition-colors flex items-center justify-center gap-2">
-              <span>👁️</span> <span>Reveal Solution</span>
-            </button>
-
-            <div class="flex items-center gap-4 w-full sm:w-auto justify-between sm:justify-end">
-              <span id="card-counter" class="text-xs font-mono text-slate-500">Card 1 of 24</span>
-              <div class="flex items-center gap-2">
-                <button id="btn-prev-card" class="px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-white text-xs font-mono transition-colors">← Prev</button>
-                <button id="btn-next-card" class="px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-white text-xs font-mono transition-colors">Next →</button>
-              </div>
-            </div>
+          <div class="flex-shrink-0 w-full lg:w-auto">
+            <a href="sebastian.html" class="inline-flex items-center justify-center gap-2.5 w-full lg:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-purple-700 via-rose-700 to-amber-600 hover:from-purple-600 hover:to-amber-500 text-white font-mono text-xs font-bold uppercase tracking-wider transition-all shadow-xl shadow-purple-950/50 group">
+              <span>🍷</span> <span>Consult SebastIAn</span>
+              <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </a>
           </div>
         </div>
       </div>
@@ -938,6 +562,8 @@ Vega Sicilia Valbuena 5º 2018 .. 160€" class="w-full bg-black/60 border borde
       </div>
 
       <div class="flex items-center gap-5">
+        <a href="flashcards.html" class="hover:text-white transition-colors text-rose-300">Flashcards</a>
+        <a href="sebastian.html" class="hover:text-white transition-colors text-purple-300">Sebast<strong class="text-amber-400">IA</strong>n</a>
         <a href="https://github.com/jreyes13/wine3ai" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-1.5">
           <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
           <span>GitHub</span>
@@ -949,12 +575,6 @@ Vega Sicilia Valbuena 5º 2018 .. 160€" class="w-full bg-black/60 border borde
     </div>
   </footer>
 
-  <!-- Scripts: Sommelier Engine, Knowledge Base & Study Deck -->
-  <script src="data/winepedia_articles.js?v=20261110_v3"></script>
-  <script src="data/pairing_rules.js?v=20261110_v3"></script>
-  <script src="libs/sommelier_engine.js?v=20261110_v3"></script>
-  <script src="data/study_cards.js?v=20261110_v3"></script>
-  <script src="libs/sommelier_ui.js?v=20261118_v4"></script>
   <script>
     (function() {
       const themeBtn = document.getElementById('btn-theme-toggle');

@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="grapes.css">
+  <link rel="stylesheet" href="grapes.css?v=20261120_v5">
   <script>
     (function() {
       const savedTheme = localStorage.getItem('theme') || localStorage.getItem('jreyes13_theme') || localStorage.getItem('wine3ai_theme') || 'dark';
@@ -49,6 +49,12 @@
         </a>
         <a href="winepedia.html" class="nav-link" id="nav-btn-winepedia" title="WINEp3dIA Knowledge Hub">
           <span>📚</span> <span id="nav-winepedia-text">WINEp3dIA</span>
+        </a>
+        <a href="flashcards.html" class="nav-link" id="nav-btn-flashcards" title="Exam Flashcards">
+          <span>🎴</span> <span>Flashcards</span>
+        </a>
+        <a href="sebastian.html" class="nav-link" id="nav-btn-sommelier" title="Pocket Sommelier SebastIAn">
+          <span>🍷</span> <span>SebastIAn</span>
         </a>
       </nav>
 
@@ -152,27 +158,29 @@
         <!-- Periodic Table Wrapper Section -->
         <div class="periodic-table-wrapper" id="periodic-table-wrapper">
           <div class="periodic-header">
-            <div class="periodic-title-area">
-              <div class="periodic-title-main">
+            <div class="periodic-header-top">
+              <div class="periodic-title-box">
                 <span class="periodic-badge">WINE³ai</span>
                 <h3 class="periodic-title" id="lbl-periodic-main-title">The Periodic Table of Wine &amp; Terroir</h3>
-                <div class="poster-download-group">
-                  <span class="poster-download-label" id="lbl-poster-download">🖨️ DIN-A0:</span>
-                  <a href="print/WINE3ai_Tabla_Periodica_A0_ES.pdf" target="_blank" class="btn-poster-download" id="link-poster-es" title="Descargar Póster DIN-A0 en Español">🇪🇸 PDF (ES)</a>
-                  <a href="print/WINE3ai_Periodic_Table_A0_EN.pdf" target="_blank" class="btn-poster-download" id="link-poster-en" title="Download DIN-A0 Poster in English">🇬🇧 PDF (EN)</a>
-                </div>
               </div>
+              <div class="poster-download-group">
+                <span class="poster-download-label" id="lbl-poster-download">🖨️ DIN-A0:</span>
+                <a href="print/WINE3ai_Tabla_Periodica_A0_ES.pdf" target="_blank" class="btn-poster-download" id="link-poster-es" title="Descargar Póster DIN-A0 en Español">🇪🇸 PDF (ES)</a>
+                <a href="print/WINE3ai_Periodic_Table_A0_EN.pdf" target="_blank" class="btn-poster-download" id="link-poster-en" title="Download DIN-A0 Poster in English">🇬🇧 PDF (EN)</a>
+              </div>
+            </div>
+            <div class="periodic-header-bottom">
               <p class="periodic-desc" id="lbl-periodic-desc">
                 Matriz Atómica 9×9 (81 Elementos = 3 Macro-Estilos × 3 Macro-Climas) calibrada con los 54 Aromas de <em>Le Nez du Vin</em>. Haz clic en un elemento químico para activar su análisis y mapa geoespacial.
               </p>
-            </div>
-            <div class="periodic-legend-summary">
-              <div class="legend-macro-tag w1"><span class="macro-dot"></span> W¹ Blancos (G1-G3)</div>
-              <div class="legend-macro-tag w2"><span class="macro-dot"></span> W² Tintos (G4-G6)</div>
-              <div class="legend-macro-tag w3"><span class="macro-dot"></span> W³ Singular (G7-G9)</div>
-              <div class="legend-macro-tag c1"><span class="macro-dot"></span> C¹ Fresco/Atlántico (P1-P3)</div>
-              <div class="legend-macro-tag c2"><span class="macro-dot"></span> C² Templado/Continental (P4-P6)</div>
-              <div class="legend-macro-tag c3"><span class="macro-dot"></span> C³ Cálido/Mediterráneo (P7-P9)</div>
+              <div class="periodic-legend-summary">
+                <div class="legend-macro-tag w1"><span class="macro-dot"></span> W¹ Blancos (G1-G3)</div>
+                <div class="legend-macro-tag w2"><span class="macro-dot"></span> W² Tintos (G4-G6)</div>
+                <div class="legend-macro-tag w3"><span class="macro-dot"></span> W³ Singular (G7-G9)</div>
+                <div class="legend-macro-tag c1"><span class="macro-dot"></span> C¹ Fresco/Atlántico (P1-P3)</div>
+                <div class="legend-macro-tag c2"><span class="macro-dot"></span> C² Templado/Continental (P4-P6)</div>
+                <div class="legend-macro-tag c3"><span class="macro-dot"></span> C³ Cálido/Mediterráneo (P7-P9)</div>
+              </div>
             </div>
           </div>
 
@@ -503,10 +511,10 @@
   </div>
 
   <!-- Load Data and Core Application Logic -->
-  <script src="data/aromas_nez_du_vin.js?v=20261108"></script>
-  <script src="data/periodic_table_grapes.js?v=20261108"></script>
-  <script src="data/grape_pedigree.js?v=20261108"></script>
-  <script src="data/grape_varieties.js?v=20261108"></script>
-  <script src="grapes.js?v=20261108"></script>
+  <script src="data/aromas_nez_du_vin.js?v=20261120_v5"></script>
+  <script src="data/periodic_table_grapes.js?v=20261120_v5"></script>
+  <script src="data/grape_pedigree.js?v=20261120_v5"></script>
+  <script src="data/grape_varieties.js?v=20261120_v5"></script>
+  <script src="grapes.js?v=20261120_v5"></script>
 </body>
 </html>

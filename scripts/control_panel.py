@@ -317,7 +317,7 @@ class DashboardHandler(BaseHTTPRequestHandler):
                     "rsync -avz -e 'ssh -i ~/.ssh/id_ionos_vps -o StrictHostKeyChecking=no' "
                     "winepedia.html flashcards.html sebastian.html map.html app.js style.css index.html index_es.html "
                     "grapes.html grapes.js grapes.css OVERNIGHT_REPORT.md "
-                    "web/ data/ reports/ "
+                    "web data/ reports/ "
                     "root@jreyes13.net:/var/www/vhosts/jreyes13.net/wine3ai/"
                 )
                 deploy_res = subprocess.run(rsync_cmd, shell=True, cwd=ROOT_DIR, capture_output=True, text=True)
