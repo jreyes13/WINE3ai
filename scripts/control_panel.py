@@ -290,7 +290,7 @@ class DashboardHandler(BaseHTTPRequestHandler):
                 git_add = subprocess.run([
                     "git", "add",
                     "data/", "web/", "reports/", "scripts/",
-                    "winepedia.html", "flashcards.html", "sebastian.html", "sommelier.html",
+                    "winepedia.html", "flashcards.html", "sebastian.html",
                     "map.html", "app.js", "style.css",
                     "index.html", "index_es.html", "grapes.html", "grapes.js", "grapes.css",
                     "OVERNIGHT_REPORT.md", "ROADMAP_TASKS.md"
@@ -304,7 +304,7 @@ class DashboardHandler(BaseHTTPRequestHandler):
                 # 3. Rsync to IONOS VPS (incluye mapas GeoJSON, visualizador map.html, app.js, flashcards, sebastian y fichas)
                 rsync_cmd = (
                     "rsync -avz -e 'ssh -i ~/.ssh/id_ionos_vps -o StrictHostKeyChecking=no' "
-                    "winepedia.html flashcards.html sebastian.html sommelier.html map.html app.js style.css index.html index_es.html "
+                    "winepedia.html flashcards.html sebastian.html map.html app.js style.css index.html index_es.html "
                     "grapes.html grapes.js grapes.css OVERNIGHT_REPORT.md "
                     "web/ data/ reports/ "
                     "root@jreyes13.net:/var/www/vhosts/jreyes13.net/wine3ai/"
