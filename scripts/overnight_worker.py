@@ -667,7 +667,8 @@ def main():
             return False
         return datetime.now() >= end_dt
 
-    log(f"Worker running. Scheduled end: {end_dt.strftime('%Y-%m-%d %H:%M:%S')}. Catalog: {total_catalog} items.", to_file_only=True)
+    scheduled_end_str = end_dt.strftime('%Y-%m-%d %H:%M:%S') if end_dt else "INDEFINIDO (Detención Manual)"
+    log(f"Worker running. Scheduled end: {scheduled_end_str}. Catalog: {total_catalog} items.", to_file_only=True)
 
     generated_articles = []
     generated_cards = []
@@ -709,7 +710,8 @@ def main():
     for topic in WINEPEDIA_TOPICS:
         current_item_counter += 1
         if is_time_up():
-            log(f"Hora de corte alcanzada ({end_dt.strftime('%H:%M:%S')}). Finalizando generador con gracia.")
+            cutoff_msg = f"Hora de corte alcanzada ({end_dt.strftime('%H:%M:%S')}). Finalizando generador con gracia." if end_dt else "Detención solicitada."
+            log(cutoff_msg)
             break
 
         if topic["id"] in existing_article_ids:
@@ -740,7 +742,8 @@ def main():
         for i, card_task in enumerate(STUDY_CARD_TOPICS, 1):
             current_item_counter += 1
             if is_time_up():
-                log(f"Hora de corte alcanzada ({end_dt.strftime('%H:%M:%S')}). Finalizando generador con gracia.")
+                cutoff_msg = f"Hora de corte alcanzada ({end_dt.strftime('%H:%M:%S')}). Finalizando generador con gracia." if end_dt else "Detención solicitada."
+                log(cutoff_msg)
                 break
 
             card_id = f"card_{card_task['standard'].lower()}_{i:03d}"
@@ -771,7 +774,8 @@ def main():
         for grape in GRAPES_TO_ENRICH:
             current_item_counter += 1
             if is_time_up():
-                log(f"Hora de corte alcanzada ({end_dt.strftime('%H:%M:%S')}). Finalizando generador con gracia.")
+                cutoff_msg = f"Hora de corte alcanzada ({end_dt.strftime('%H:%M:%S')}). Finalizando generador con gracia." if end_dt else "Detención solicitada."
+                log(cutoff_msg)
                 break
 
             if grape in existing_grape_names:
