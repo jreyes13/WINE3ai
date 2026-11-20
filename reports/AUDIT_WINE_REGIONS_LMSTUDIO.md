@@ -1,5 +1,5 @@
 # Informe de Auditoría Cartográfica y Pliegos — WINE³ai
-**Generado:** 2026-11-20 10:37:55  
+**Generado:** 2026-11-20 10:43:45  
 **Motor de Auditoría:** LM Studio (Local / 0 Tokens Externos)  
 **Documento Oficial de Referencia España:** MAPA `02_vinos.2026-07-03-13-01-22.pdf`  
 
@@ -9,7 +9,7 @@
 
 - **Regiones en GeoJSON:** 894
 - **Regiones Auditadas:** 894 (100.0%)
-- **Incidencias / Mejoras Registradas:** 871
+- **Incidencias / Mejoras Registradas:** 870
 
 ---
 
@@ -48,7 +48,7 @@
 | **Emporda** | DO | 🟢 Sí (`do_38`) | 🟢 OK | completed | Geometría tosca (caja simplificada de 1 vértices) |
 | **Finca Élez** | Vino de Pago | 🟢 Sí (`do_84`) | 🔴 Faltante | completed | Pliego ausente en disco: No especificado |
 | **Gran Canaria** | DO | 🟢 Sí (`do_18`) | 🟢 OK | completed | Geometría tosca (caja simplificada de 1 vértices) |
-| **Granada** | DO | 🟢 Sí (`do_1`) | 🟢 OK | completed | Geometría tosca (caja simplificada de 6 vértices); Thinking Process:  1.  **Analyze the Request:**     *   **Role:** Sommelier and expert in viticultural geography and European regulations (DOP/IGP).     *   **Task:** Briefly audit the provided wine denomination data (Granada DO).     *   **Input Data:**         *   Denomination: |
+| **Granada** | DO | 🟢 Sí (`do_1`) | 🟢 OK | completed | Geometría tosca (caja simplificada de 6 vértices) |
 | **Heredad de Urueña** | Vino de Pago | 🟢 Sí (`do_85`) | 🔴 Faltante | completed | Pliego ausente en disco: No especificado |
 | **Islas Canarias** | DOP | 🟢 Sí (`do_19`) | 🔴 Faltante | completed | Pliego ausente en disco: DOWNs/DOCs/SPAIN/CANARIAS/Islas_Canarias_2024_06_17.pdf; Geometría tosca (caja simplificada de 1 vértices) |
 | **Jerez** | DO | 🟢 Sí (`do_2`) | 🟢 OK | completed | Geometría tosca (caja simplificada de 1 vértices) |

@@ -5745,5 +5745,474 @@
       "enologia",
       "terruño"
     ]
+  },
+  {
+    "id": "aromas_varietales_tiolicos_precursores",
+    "standard": "WSET3",
+    "category_es": "Bioquímica & Terruño",
+    "category_en": "Enology & Terroir",
+    "badge_color": "amber",
+    "title_es": "Precursores Glicosilados y Aromas Ocultos: Mecanismo y Relevancia Enológica",
+    "title_en": "Glycosylated Precursors and Hidden Aromas: Mechanism and Enological Significance",
+    "summary_es": "Los glucósidos de monoterpenos actúan como reservorios estables en la uva, liberando aromas florales y frutales mediante hidrólisis enzimática durante la fermentación.",
+    "summary_en": "Monoterpene glycosides act as stable reservoirs in grapes, releasing floral and fruity aromas via enzymatic hydrolysis during fermentation.",
+    "content_es": "Los precursores glicosilados de monoterpenos (ej. linalool, geraniol) son compuestos estables almacenados en la piel de la uva que no aportan aroma directo hasta su hidrólisis. Durante la fermentación alcohólica y el macerado, las beta-glucosidasas presentes en la levadura o bacterias hidrolizan los enlaces glicosídicos, liberando agliconas volátiles responsables del bouquet floral y frutal característico. Este mecanismo bioquímico es fundamental para variedades como Riesling o Gewürztraminer, donde la intensidad de estos aromas define el perfil sensorial y la longevidad de la nariz.",
+    "content_en": "Glycosylated monoterpene precursors (e.g., linalool, geraniol) are stable compounds stored in grape skins that do not contribute aroma directly until hydrolysis. During alcoholic fermentation and maceration, beta-glucosidases present in yeast or bacteria hydrolyze glycosidic bonds, releasing volatile aglycones responsible for the characteristic floral and fruity bouquet. This biochemical mechanism is fundamental for varieties like Riesling or Gewürztraminer, where the intensity of these aromas defines the sensory profile and nose longevity.",
+    "key_takeaways_es": [
+      "La hidrólisis enzimática es necesaria para la expresión de aromas varietales ocultos.",
+      "Las beta-glucosidasas liberan agliconas volátiles durante la fermentación.",
+      "El perfil sensorial depende de la actividad enzimática y el tiempo de macerado."
+    ],
+    "key_takeaways_en": [
+      "Enzymatic hydrolysis is necessary for the expression of hidden varietal aromas.",
+      "Beta-glucosidases release volatile aglycones during fermentation.",
+      "The sensory profile depends on enzymatic activity and maceration time."
+    ],
+    "related_grapes": [
+      "Riesling",
+      "Gewürztraminer"
+    ],
+    "related_regions": [
+      "Alsace",
+      "Mosel"
+    ],
+    "tags": [
+      "aromas varietales",
+      "precursores glicosilados",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "asi_viticulture_regenerative_agroforestry",
+    "standard": "ASI",
+    "category_es": "Viticultura Regenerativa",
+    "category_en": "Regenerative Viticulture",
+    "badge_color": "emerald",
+    "title_es": "Viticultura Regenerativa: Captura de Carbono y Suelo Vivo: Mecanismo y Relevancia Enológica",
+    "title_en": "Regenerative Viticulture: Carbon Capture and Living Soil: Mechanism and Enological Significance",
+    "summary_es": "Integración de leguminosas, pastoreo dirigido y labranza cero para secuestrar carbono y revitalizar el microbioma del suelo.",
+    "summary_en": "Integration of legumes, directed grazing, and no-till practices to sequester carbon and revitalize soil microbiome.",
+    "content_es": "La viticultura regenerativa transforma el viñedo en un ecosistema activo. La siembra de leguminosas entre hileras fija nitrógeno atmosférico, reduciendo la dependencia de fertilizantes sintéticos y disminuyendo la huella de carbono operativa. La eliminación del laboreo destructivo preserva la estructura del suelo, incrementando la materia orgánica y permitiendo el secuestro de carbono en el subsuelo. El pastoreo dirigido estimula el crecimiento radicular y fortalece las redes micorrízicas, esenciales para la absorción de nutrientes y la resiliencia hídrica.",
+    "content_en": "Regenerative viticulture transforms the vineyard into an active ecosystem. Planting legumes between rows fixes atmospheric nitrogen, reducing reliance on synthetic fertilizers and lowering operational carbon footprint. Elimination of destructive tillage preserves soil structure, increasing organic matter and enabling subsurface carbon sequestration. Directed grazing stimulates root growth and strengthens mycorrhizal networks, essential for nutrient absorption and water resilience.",
+    "key_takeaways_es": [
+      "El suelo vivo actúa como sumidero de carbono a través de la acumulación de materia orgánica estable.",
+      "La diversidad microbiana del suelo influye directamente en la expresión aromática y la estabilidad fenólica del vino.",
+      "La reducción de insumos químicos mejora la salud del ecosistema y la longevidad del viñedo."
+    ],
+    "key_takeaways_en": [
+      "Living soil acts as a carbon sink through stable organic matter accumulation.",
+      "Soil microbial diversity directly influences wine aromatic expression and phenolic stability.",
+      "Reduced chemical inputs improve ecosystem health and vineyard longevity."
+    ],
+    "related_grapes": [
+      "Cabernet Sauvignon",
+      "Grenache"
+    ],
+    "related_regions": [
+      "Bordeaux",
+      "Napa Valley"
+    ],
+    "tags": [
+      "asi viticulture regenerative agroforestry",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "asi_sommelier_cheese_cart_pairing",
+    "standard": "ASI",
+    "category_es": "Servicio & Protocolo de Sala",
+    "category_en": "Sommellerie & Service Protocol",
+    "badge_color": "emerald",
+    "title_es": "El Carro de Quesos: Armonías de Afinidad y Osmosis: Mecanismo y Relevancia Enológica",
+    "title_en": "The Cheese Cart: Affinity and Osmosis Harmonies: Mechanism and Enological Significance",
+    "summary_es": "Análisis técnico del servicio de carro de quesos bajo el estándar ASI, enfocándose en las interacciones bioquímicas entre grasas lácteas y acidez volátil para optimizar la experiencia sensorial.",
+    "summary_en": "Technical analysis of cheese cart service under ASI standards, focusing on biochemical interactions between dairy fats and volatile acidity to optimize the sensory experience.",
+    "content_es": "La gestión del carro de quesos bajo el estándar ASI prioriza la mitigación de grasas saturadas mediante acidez volátil y osmosis salina controlada. Quesos de pasta blanda (Brie) se maridan con blancos ácidos para cortar cremosidad; los lavados (Epoisses) requieren espumosos o dulces nobles para equilibrar su salinidad intensa. Los azules (Roquefort) necesitan vinos con residual azúcar y acidez elevada para neutralizar compuestos volátiles de amoníaco, evitando la fatiga olfativa del comensal.",
+    "content_en": "Cheese cart management under ASI standards prioritizes mitigating saturated fats via volatile acidity and controlled salinity osmosis. Soft pastes (Brie) pair with acidic whites to cut creaminess; washed-rinds (Epoisses) require sparkling or noble sweet wines to balance intense salinity. Blues (Roquefort) need wines with residual sugar and high acidity to neutralize ammonia volatiles, preventing olfactory fatigue for the diner.",
+    "key_takeaways_es": [
+      "La acidez del vino actúa como solvente para la grasa del queso blando.",
+      "El azúcar residual es crucial para contrarrestar la salinidad de los quesos lavados.",
+      "La osmosis inversa equilibra la percepción salina y dulzura en el paladar."
+    ],
+    "key_takeaways_en": [
+      "Wine acidity acts as a solvent for the fat in soft cheese.",
+      "Residual sugar is crucial to counteract the salinity of washed-rind cheeses.",
+      "Reverse osmosis balances salt and sweetness perception on the palate."
+    ],
+    "related_grapes": [
+      "Albariño",
+      "Riesling"
+    ],
+    "related_regions": [
+      "Rías Baixas",
+      "Alsace"
+    ],
+    "tags": [
+      "asi sommelier cheese cart pairing",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "asi_sensory_trpv1_capsaicin",
+    "standard": "ASI",
+    "category_es": "Servicio & Protocolo de Sala",
+    "category_en": "Sommellerie & Service Protocol",
+    "badge_color": "emerald",
+    "title_es": "Receptores TRPV1 y Comida Picante ante el Vino Tánico: Mecanismo y Relevancia Enológica",
+    "title_en": "TRPV1 Receptors and Spicy Food with Tannic Wine: Mechanism and Enological Significance",
+    "summary_es": "La capsaicina activa los canales TRPV1, generando sensación térmica que se suma a la astringencia del vino tánico, potenciando el efecto de sequedad y quemazón oral.",
+    "summary_en": "Capsaicin activates TRPV1 channels, generating thermal sensation that adds to tannic wine astringency, potentiating the drying and burning oral effect.",
+    "content_es": "La capsaicina activa los canales iónicos TRPV1 en las terminaciones nerviosas orales, interpretados por el cerebro como calor y dolor. Esta activación provoca vasodilatación local y una sensación térmica inmediata que compite con la percepción de astringencia del vino tánico. Los taninos precipitan proteínas salivales, generando sequedad, pero en presencia de TRPV1 sensibilizados, esta sequedad se percibe como una textura áspera y quemante exacerbada, alterando el equilibrio sensorial.",
+    "content_en": "Capsaicin activates TRPV1 ion channels on oral nerve endings, interpreted by the brain as heat and pain. This activation causes local vasodilation and immediate thermal sensation competing with tannic wine astringency perception. Tannins precipitate salivary proteins, generating dryness, but in the presence of sensitized TRPV1, this dryness is perceived as exacerbated rough and burning texture, altering sensory balance.",
+    "key_takeaways_es": [
+      "La activación de TRPV1 amplifica la percepción de astringencia tánica.",
+      "Vinos de alta tanicidad requieren menor intensidad picante para evitar sobrecarga sensorial.",
+      "La vasodilatación altera el flujo salival, afectando la dinámica del tacto en boca."
+    ],
+    "key_takeaways_en": [
+      "TRPV1 activation amplifies tannic astringency perception.",
+      "High-tannin wines require lower spice intensity to avoid sensory overload.",
+      "Vasodilation alters saliva flow rate, affecting mouthfeel dynamics."
+    ],
+    "related_grapes": [
+      "Cabernet Sauvignon",
+      "Nebbiolo"
+    ],
+    "related_regions": [
+      "Bordeaux",
+      "Piedmont"
+    ],
+    "tags": [
+      "asi sensory trpv1 capsaicin",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "asi_sensory_salt_acid_tannin_balance",
+    "standard": "ASI",
+    "category_es": "Servicio & Protocolo de Sala",
+    "category_en": "Sommellerie & Service Protocol",
+    "badge_color": "emerald",
+    "title_es": "El Rol de la Sal en la Supresión del Amargor y la Acidez: Mecanismo y Relevancia Enológica",
+    "title_en": "The Role of Salt in Suppressing Bitterness and Acidity: Mechanism and Enological Significance",
+    "summary_es": "El cloruro sódico modula la percepción gustativa mediante iones Na+ y Cl-, reduciendo umbrales de amargor y suavizando astringencia vía interacciones salivales.",
+    "summary_en": "Sodium chloride modulates taste perception via Na+ and Cl- ions, reducing bitterness thresholds and softening astringency through salivary interactions.",
+    "content_es": "El mecanismo iónico del cloruro sódico en la boca es fundamental para el equilibrio sensorial. Los cationes sodio (Na+) bloquean parcialmente los receptores T2R responsables de la percepción del amargor, elevando su umbral de detección. Simultáneamente, el aumento de fuerza iónica en la saliva altera la unión proteína-polifenol, reduciendo la precipitación que causa astringencia y redondeando vinos tánicos. El anión cloruro (Cl-) interactúa con los receptores ácidos, amortiguando la sensación punzante de la acidez al modificar la sensibilidad a los protones H+.",
+    "content_en": "The ionic mechanism of sodium chloride in the mouth is fundamental for sensory balance. Sodium cations (Na+) partially block T2R receptors responsible for bitterness perception, raising their detection threshold. Simultaneously, increased ionic strength in saliva alters protein-polyphenol binding, reducing precipitation that causes astringency and rounding tannic wines. The chloride anion (Cl-) interacts with acidic receptors, buffering the stinging sensation of acidity by modifying sensitivity to H+ protons.",
+    "key_takeaways_es": [
+      "El Na+ suprime el amargor mediante bloqueo de receptores T2R.",
+      "La fuerza iónica reduce la astringencia al afectar la unión proteína-tanino.",
+      "La sal es crucial en maridaje para equilibrar acidez alta."
+    ],
+    "key_takeaways_en": [
+      "Na+ suppresses bitterness via T2R receptor blocking.",
+      "Ionic strength reduces astringency by affecting protein-tannin binding.",
+      "Salt is crucial in pairing to balance high acidity."
+    ],
+    "related_grapes": [
+      "Tempranillo",
+      "Cabernet Sauvignon"
+    ],
+    "related_regions": [
+      "Ribera del Duero",
+      "Bordeaux"
+    ],
+    "tags": [
+      "asi sensory salt acid tannin balance",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "asi_sommelier_cigar_fortified_pairing",
+    "standard": "ASI",
+    "category_es": "Servicio & Protocolo de Sala",
+    "category_en": "Sommellerie & Service Protocol",
+    "badge_color": "emerald",
+    "title_es": "Protocolo de Servicio de Puros con Vinos Fortificados: Mecanismo y Relevancia Enológica",
+    "title_en": "Protocolo de Servicio de Puros con Vinos Fortificados: Mechanism and Enological Significance",
+    "summary_es": "El corte guillotina preserva la integridad del papiro, mientras que el fósforo de cedro evita compuestos azufrados. Los vinos fortificados oxidados equilibran los fenoles del tabaco mediante su dulzura y alto alcohol.",
+    "summary_en": "Guillotine cut preserves paper integrity, while cedar phosphorus avoids sulfur compounds. Oxidized fortified wines balance tobacco phenols via sweetness and high alcohol.",
+    "content_es": "El corte con guillotina asegura una combustión uniforme al mantener la integridad estructural del papiro y el anillo de humo. El fósforo de cedro, libre de azufre, evita notas químicas que compitan con los aromas terrosos del tabaco.\n\nEnológica, la maridaje con Rancio, Tawny o PX se basa en la oxidación controlada: los vinos fortificados presentan altos niveles de alcohol (17-20%) y azúcares residuales que contrarrestan la amargura y astringencia del tabaco. Los polifenoles del vino interactúan con los compuestos volátiles del humo, creando una sinergia sensorial donde el cuerpo del vino soporta la densidad del papiro.",
+    "content_en": "Guillotine cut ensures uniform combustion by maintaining structural integrity of the wrapper and smoke ring. Cedar phosphorus, free of sulfur, avoids chemical notes competing with earthy tobacco aromas.\n\nEnologically, pairing with Rancio, Tawny, or PX relies on controlled oxidation: fortified wines present high alcohol levels (17-20%) and residual sugars that counteract tobacco bitterness and astringency. Wine polyphenols interact with smoke volatile compounds, creating a sensory synergy where the wine's body supports the cigar's density.",
+    "key_takeaways_es": [
+      "El corte guillotina optimiza la combustión y evita deformaciones estructurales en el papiro.",
+      "El fósforo de cedro elimina interferencias azufradas en la experiencia olfativa.",
+      "Los vinos fortificados oxidados equilibran fenoles del tabaco mediante dulzura y alcohol."
+    ],
+    "key_takeaways_en": [
+      "Guillotine cut optimizes combustion and avoids structural deformations in the cigar.",
+      "Cedar phosphorus eliminates sulfur interference in the olfactory experience.",
+      "Oxidized fortified wines balance tobacco phenols via sweetness and alcohol."
+    ],
+    "related_grapes": [
+      "Pedro Ximénez",
+      "Malvasía"
+    ],
+    "related_regions": [
+      "Jerez-Xérès-Sherry",
+      "Madeira"
+    ],
+    "tags": [
+      "asi sommelier cigar fortified pairing",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "asi_service_table_presentation_drill",
+    "standard": "ASI",
+    "category_es": "Servicio & Protocolo de Sala",
+    "category_en": "Sommellerie & Service Protocol",
+    "badge_color": "emerald",
+    "title_es": "Presentación Canónica de la Botella al Comensal: Mecanismo y Relevancia Enológica",
+    "title_en": "Presentación Canónica de la Botella al Comensal: Mechanism and Enological Significance",
+    "summary_es": "Protocolo técnico para presentar la botella a la izquierda, con etiqueta visible y anuncio claro de bodega, denominación y añada, seguido de confirmación del anfitrión.",
+    "summary_en": "Technical protocol for presenting the bottle on the left with visible label and clear announcement of winery, denomination, and vintage, followed by host confirmation.",
+    "content_es": "La presentación canónica exige colocar la botella en el lado izquierdo del comensal, con la etiqueta orientada hacia el anfitrión y los invitados para garantizar la visibilidad inmediata. El sommelier debe anunciar verbalmente la bodega, denominación y añada, elementos críticos que definen la expresión del terroir y establecen las expectativas sensoriales antes del descorche. Esta comunicación previene errores de servicio y asegura que el vino sea degustado bajo las condiciones correctas.",
+    "content_en": "Canonical presentation requires placing the bottle on the left side of the diner, with the label oriented towards the host and guests to ensure immediate visibility. The sommelier must verbally announce the winery, denomination, and vintage, critical elements defining terroir expression and setting sensory expectations before opening. This communication prevents service errors and ensures the wine is tasted under correct conditions.",
+    "key_takeaways_es": [
+      "Etiqueta visible en el lado izquierdo del comensal",
+      "Anuncio verbal obligatorio de bodega, añada y denominación",
+      "Confirmación explícita del anfitrión antes de abrir"
+    ],
+    "key_takeaways_en": [
+      "Label visible on the left side of the diner",
+      "Mandatory verbal announcement of winery, vintage, and denomination",
+      "Explicit host confirmation before opening"
+    ],
+    "related_grapes": [
+      "Cabernet Sauvignon",
+      "Pinot Noir"
+    ],
+    "related_regions": [
+      "Bordeaux",
+      "Burgundy"
+    ],
+    "tags": [
+      "asi service table presentation drill",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "asi_service_cork_inspection",
+    "standard": "ASI",
+    "category_es": "Servicio & Protocolo de Sala",
+    "category_en": "Sommellerie & Service Protocol",
+    "badge_color": "emerald",
+    "title_es": "Inspección Canónica del Corcho en Sala: Mecanismo y Relevancia Enológica",
+    "title_en": "Cork Inspection in Room: Mechanism and Enological Significance",
+    "summary_es": "Protocolo ASI para evaluar integridad física, humedad y aromas del corcho antes de la apertura definitiva frente al anfitrión.",
+    "summary_en": "ASI protocol to evaluate cork physical integrity, moisture, and aromas before final opening in front of the host.",
+    "content_es": "La inspección canónica bajo el estándar ASI exige verificar la humedad relativa del corcho, idealmente entre 8-10%, para asegurar una expansión hidrostática que selle herméticamente el vino y prevenga la oxidación por oxígeno residual. Tactilmente, se comprueba la elasticidad mediante presión lateral; un material frágil o quebradizo indica desecación extrema o contaminación microbiana, comprometiendo la barrera protectora.",
+    "content_en": "Canonical inspection under ASI standards requires verifying cork relative humidity, ideally between 8-10%, to ensure hydrostatic expansion that hermetically seals the wine and prevents oxidation from residual oxygen. Tactilely, elasticity is checked via lateral pressure; brittle or crumbly material indicates extreme desiccation or microbial contamination, compromising the protective barrier.",
+    "key_takeaways_es": [
+      "Verificar elasticidad para descartar fragilidad estructural del corcho.",
+      "Detectar aromas de TCA (cartón mojado) antes de la apertura total.",
+      "Depositar en platillo auxiliar si hay duda, sin contaminar botella."
+    ],
+    "key_takeaways_en": [
+      "Check elasticity to rule out structural cork fragility.",
+      "Detect TCA aromas (wet cardboard) before full opening.",
+      "Deposit on auxiliary plate if doubtful, without contaminating bottle."
+    ],
+    "related_grapes": [
+      "Tempranillo",
+      "Cabernet Sauvignon"
+    ],
+    "related_regions": [
+      "Ribera del Duero",
+      "Bordeaux"
+    ],
+    "tags": [
+      "asi service cork inspection",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "asi_blind_tasting_competition_format",
+    "standard": "ASI",
+    "category_es": "Servicio & Protocolo de Sala",
+    "category_en": "Sommellerie & Service Protocol",
+    "badge_color": "emerald",
+    "title_es": "La Cuadrícula de Cata de Competición ASI: Mecanismo y Relevancia Enológica",
+    "title_en": "La Cuadrícula de Cata de Competición ASI: Mechanism and Enological Significance",
+    "summary_es": "Protocolo estandarizado para cata ciega en competición, optimizando la percepción sensorial bajo presión temporal mediante análisis organoléptico riguroso.",
+    "summary_en": "Standardized protocol for blind tasting in competition, optimizing sensory perception under time pressure through rigorous organoleptic analysis.",
+    "content_es": "La Cuadrícula de Cata ASI establece un marco temporal estricto de cuatro minutos por copa, diseñado para maximizar la retención de memoria olfativa y gustativa. Este límite cronometrado obliga al cataador a priorizar la identificación de compuestos volátiles primarios (terpenos, ésteres) frente a los secundarios, influenciando directamente la percepción del equilibrio químico entre ácidos, taninos y alcohol. La gestión del tiempo afecta la liberación de aromas reductores y la oxidación superficial, requiriendo una evaluación rápida de la frescura y la integridad fenólica.",
+    "content_en": "The ASI Tasting Grid establishes a strict temporal framework of four minutes per glass, designed to maximize olfactory and gustatory memory retention. This timed limit forces the taster to prioritize the identification of primary volatile compounds (terpenes, esters) over secondary ones, directly influencing the perception of chemical balance between acids, tannins, and alcohol. Time management affects the release of reductive aromas and surface oxidation, requiring rapid evaluation of freshness and phenolic integrity.",
+    "key_takeaways_es": [
+      "Gestión de 4 minutos optimiza la memoria olfativa inmediata.",
+      "Vocabulario OIV asegura comunicación sensorial universal.",
+      "Sugerencia comercial basada en perfil de acidez y taninos."
+    ],
+    "key_takeaways_en": [
+      "4-minute management optimizes immediate olfactory memory.",
+      "OIV vocabulary ensures universal sensory communication.",
+      "Commercial suggestion based on acidity and tannin profile."
+    ],
+    "related_grapes": [
+      "Cabernet Sauvignon",
+      "Tempranillo"
+    ],
+    "related_regions": [
+      "Bordeaux",
+      "Rioja Alta"
+    ],
+    "tags": [
+      "asi blind tasting competition format",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "asi_beverage_vermouth_aromatized_wines",
+    "standard": "ASI",
+    "category_es": "Servicio & Protocolo de Sala",
+    "category_en": "Sommellerie & Service Protocol",
+    "badge_color": "emerald",
+    "title_es": "Vinos Aromatizados y Vermut: El Ritual del Aperitivo: Mecanismo y Relevancia Enológica",
+    "title_en": "Aromatized Wines and Vermouth: The Aperitif Ritual: Mechanism and Enological Significance",
+    "summary_es": "Los vinos aromatizados y vermouths combinan fermentación alcohólica con maceración botánica, donde el Artemisia absinthium aporta amargor clorofílico equilibrado por azúcar residual.",
+    "summary_en": "Aromatized wines and vermouths combine alcoholic fermentation with botanical maceration, where Artemisia absinthium provides chlorophyll bitterness balanced by residual sugar.",
+    "content_es": "La bioquímica de estos vinos implica la extracción de compuestos fenólicos y terpenos durante la maceración en frío o fermentación conjunta. El azúcar (dextrosa) no solo endulza, sino que actúa como solvente para los aceites esenciales volátiles. El ritual del servicio con piel de cítrico es crucial: el limoneno y linalool se liberan al contacto térmico y mecánico, creando una 'cabeza' aromática compleja que define la experiencia del aperitivo.",
+    "content_en": "The biochemistry of these wines involves extraction of phenolic compounds and terpenes during cold maceration or co-fermentation. Sugar (dextrose) not only sweetens but acts as a solvent for volatile essential oils. The service ritual with citrus peel is crucial: limonene and linalool are released upon thermal and mechanical contact, creating a complex aromatic 'head' that defines the aperitif experience.",
+    "key_takeaways_es": [
+      "El Artemisia absinthium define el perfil amargo y clorofílico característico.",
+      "La dosificación de azúcar modula la percepción de acidez y cuerpo.",
+      "El servicio con piel de cítrico amplifica los terpenos volátiles."
+    ],
+    "key_takeaways_en": [
+      "Artemisia absinthium defines the characteristic bitter and chlorophyll profile.",
+      "Sugar dosage modulates acidity perception and body.",
+      "Serving with citrus peel amplifies volatile terpenes."
+    ],
+    "related_grapes": [
+      "Muscat",
+      "Riesling"
+    ],
+    "related_regions": [
+      "Francia",
+      "España"
+    ],
+    "tags": [
+      "asi beverage vermouth aromatized wines",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "asi_beverage_tea_sommellerie",
+    "standard": "ASI",
+    "category_es": "Servicio & Protocolo de Sala",
+    "category_en": "Sommellerie & Service Protocol",
+    "badge_color": "emerald",
+    "title_es": "Sumillería de Infusiones y Té en la Mesa Gastronómica: Mecanismo y Relevancia Enológica",
+    "title_en": "Tea Sommelier at the Gastronomic Table: Mechanism and Enological Significance",
+    "summary_es": "Análisis técnico de tés verdes, fermentados y semifermentados como sustitutos enológicos, evaluando polifenoles, acidez y perfil umami para el emparejamiento gastronómico.",
+    "summary_en": "Technical analysis of green, fermented, and semi-fermented teas as enological substitutes, evaluating polyphenols, acidity, and umami profiles for gastronomic pairing.",
+    "content_es": "La sumillería de té se fundamenta en la química de los polifenoles y la oxidación controlada. El Sencha (verde) conserva catequinas frescas con alta acidez cítrica, ideal para mariscos. El Oolong (semifermentado) presenta notas florales y astringencia moderada, similar al Pinot Noir joven. El Pu-erh (fermentado) ofrece taninos maduros y cuerpo, comparable al Cabernet Sauvignon añejo. La extracción térmica altera la liberación de compuestos volátiles; un servicio impreciso arruina el perfil terroso del 'terruño' en taza.",
+    "content_en": "Tea sommelier is founded on polyphenol chemistry and controlled oxidation. Sencha (green) retains fresh catechins with high citric acidity, ideal for seafood. Oolong (semi-fermented) presents floral notes and moderate astringency, similar to young Pinot Noir. Pu-erh (fermented) offers mature tannins and body, comparable to aged Cabernet Sauvignon. Thermal extraction alters volatile compound release; imprecise service ruins the 'terroir' profile in the cup.",
+    "key_takeaways_es": [
+      "El grado de oxidación define la estructura tánica y el perfil aromático principal.",
+      "La temperatura de infusión es crítica para preservar compuestos volátiles y acidez.",
+      "El emparejamiento debe equilibrar la umami del té con proteínas o grasas."
+    ],
+    "key_takeaways_en": [
+      "Oxidation degree defines tannic structure and primary aromatic profile.",
+      "Infusion temperature is critical for preserving volatile compounds and acidity.",
+      "Pairing must balance tea umami with proteins or fats."
+    ],
+    "related_grapes": [
+      "Riesling",
+      "Cabernet Sauvignon"
+    ],
+    "related_regions": [
+      "Uji",
+      "Yunnan"
+    ],
+    "tags": [
+      "asi beverage tea sommellerie",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "asi_beverage_coffee_specialty",
+    "standard": "ASI",
+    "category_es": "Servicio & Protocolo de Sala",
+    "category_en": "Sommellerie & Service Protocol",
+    "badge_color": "emerald",
+    "title_es": "Café de Especialidad y Protocolo de Cierre de Sala: Mecanismo y Relevancia Enológica",
+    "title_en": "Specialty Coffee and Room Closing Protocol: Mechanism and Enological Significance",
+    "summary_es": "Análisis bioquímico del procesamiento del Arábica (lavado, natural, honey) aplicado al protocolo de cierre de sala, optimizando la digestión y el equilibrio sensorial con petit fours.",
+    "summary_en": "Biochemical analysis of Arabica processing (washed, natural, honey) applied to room closing protocol, optimizing digestion and sensory balance with petit fours.",
+    "content_es": "El procesamiento del grano de Arábica determina la matriz química del extracto soluble. En el método lavado, la acidez orgánica es preservada para limpiar el paladar; en natural y honey, los azúcares residuales aportan dulzor que contrarresta la amargura post-alcohol. Bioquímicamente, estos compuestos volátiles actúan como agentes digestivos suaves, facilitando la descomposición de grasas tras una cena enológica.",
+    "content_en": "Arabica grain processing determines the chemical matrix of the soluble extract. In washed methods, organic acidity is preserved to cleanse the palate; in natural and honey, residual sugars provide sweetness countering post-alcohol bitterness. Biochemically, these volatile compounds act as mild digestive agents, facilitating fat breakdown after an enological dinner.",
+    "key_takeaways_es": [
+      "El procesamiento del grano define el perfil de acidez y dulzor para el cierre de sala.",
+      "La extracción controlada optimiza la digestión post-comida sin alterar el paladar.",
+      "El maridaje con petit fours requiere equilibrio entre acidez residual y dulzor."
+    ],
+    "key_takeaways_en": [
+      "Grain processing defines acidity and sweetness profile for room closing.",
+      "Controlled extraction optimizes post-meal digestion without altering the palate.",
+      "Pairing with petit fours requires balance between residual acidity and sweetness."
+    ],
+    "related_grapes": [
+      "Arabica",
+      "Caturra"
+    ],
+    "related_regions": [
+      "Colombia",
+      "Ethiopia"
+    ],
+    "tags": [
+      "asi beverage coffee specialty",
+      "enologia",
+      "terruño"
+    ]
+  },
+  {
+    "id": "asi_cellar_wine_preservation_systems",
+    "standard": "ASI",
+    "category_es": "Servicio & Protocolo de Sala",
+    "category_en": "Sommellerie & Service Protocol",
+    "badge_color": "emerald",
+    "title_es": "Sistemas de Conservación por Copas: Gas Inerte y Coravin: Mecanismo y Relevancia Enológica",
+    "title_en": "Cup Conservation Systems: Inert Gas and Coravin: Mechanism and Enological Significance",
+    "summary_es": "El uso de argón grado enológico crea una barrera física contra el oxígeno, preservando la frescura y evitando la oxidación prematura en vinos de alta gama.",
+    "summary_en": "The use of enological-grade argon creates a physical barrier against oxygen, preserving freshness and preventing premature oxidation in high-end wines.",
+    "content_es": "La oxidación es la principal enemiga del vino abierto; el oxígeno reacciona con los polifenoles y alcoholes, generando acetaldehído y pérdida de frescura. El argón, gas noble más denso que el aire, forma una capa protectora sobre la superficie del líquido al inyectarse, desplazando el oxígeno residual. La técnica Coravin combina esta barrera gaseosa con una aguja microscópica que extrae vino sin remover el corcho, manteniendo la integridad de la botella sellada.\n\nEl impacto sensorial es crítico: se preserva la volatilidad aromática y la estabilidad del color en variedades tintas como Cabernet o Pinot Noir. En sala, esto permite servir vinos premium durante horas sin degradación química perceptible, elevando la experiencia del paladar y cumpliendo con los estándares de ASI para conservación técnica rigurosa.",
+    "content_en": "Oxidation is the primary enemy of opened wine; oxygen reacts with polyphenols and alcohols, generating acetaldehyde and loss of freshness. Argon, a noble gas denser than air, forms a protective layer over the liquid surface upon injection, displacing residual oxygen. The Coravin technique combines this gaseous barrier with a microscopic needle that extracts wine without removing the cork, maintaining the integrity of the sealed bottle.\n\nSensory impact is critical: aromatic volatility and color stability are preserved in red varieties like Cabernet or Pinot Noir. In service, this allows serving premium wines for hours without perceptible chemical degradation, elevating the palate experience and meeting ASI standards for rigorous technical preservation.",
+    "key_takeaways_es": [
+      "El argón desplaza el oxígeno por su mayor densidad específica.",
+      "Coravin permite extracción sin abrir la botella completamente.",
+      "Preserva perfil aromático y color en vinos de alta gama."
+    ],
+    "key_takeaways_en": [
+      "Argon displaces oxygen due to higher specific density.",
+      "Coravin allows extraction without fully opening the bottle.",
+      "Preserves aromatic profile and color in high-end wines."
+    ],
+    "related_grapes": [
+      "Cabernet Sauvignon",
+      "Pinot Noir"
+    ],
+    "related_regions": [
+      "Bordeaux",
+      "Burgundy"
+    ],
+    "tags": [
+      "asi cellar wine preservation systems",
+      "enologia",
+      "terruño"
+    ]
   }
 ]

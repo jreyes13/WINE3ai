@@ -1,14 +1,16 @@
 #!/usr/bin/env python3
 """
-WINE³ai — Local Web Control Panel & Script Manager
+WINE³ai — Local Web Control Panel & Multi-Script Manager
+========================================================
 Lightweight administrative dashboard running on http://localhost:5050.
 Zero dependencies (uses standard library http.server).
-Allows:
-  - Monitoring local worker status (LM Studio inference progress, PID, tokens)
-  - Starting and stopping generation workers with flexible schedules
-  - One-click compilation and production deployment (IONOS VPS)
-  - Running map and GeoJSON compilation tasks
-  - Live console streaming of logs
+
+Features:
+  - Real-time LM Studio readiness & active model indicator
+  - Generation Worker control (Presets: 16:15, 06:45, Indefinido, Custom)
+  - Map & Region Auditor control (lm_studio_auditor.py)
+  - Full Synchronization (Compile + Git Commit/Push + IONOS VPS Rsync)
+  - Dual live console streaming (Fichas log vs Auditoría log)
 """
 
 import os
@@ -17,41 +19,57 @@ import json
 import time
 import signal
 import subprocess
+import urllib.request
 from datetime import datetime
 from http.server import HTTPServer, BaseHTTPRequestHandler
-from urllib.parse import urlparse, parse_qs
+from urllib.parse import urlparse
 
 PORT = 5050
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-LOG_FILE = os.path.join(ROOT_DIR, "logs", "overnight_generation.log")
-PID_FILE = os.path.join(ROOT_DIR, "logs", "worker.pid")
+LOG_FILE_WORKER = os.path.join(ROOT_DIR, "logs", "overnight_generation.log")
+LOG_FILE_AUDITOR = os.path.join(ROOT_DIR, "reports", "auditor.log")
+PID_FILE_WORKER = os.path.join(ROOT_DIR, "logs", "worker.pid")
+PID_FILE_AUDITOR = os.path.join(ROOT_DIR, "reports", "auditor.pid")
 GEN_DIR = os.path.join(ROOT_DIR, "data", "generated")
+REPORTS_DIR = os.path.join(ROOT_DIR, "reports")
+LM_STUDIO_URL = "http://127.0.0.1:1234/v1"
 
 os.makedirs(os.path.join(ROOT_DIR, "logs"), exist_ok=True)
+os.makedirs(REPORTS_DIR, exist_ok=True)
 os.makedirs(GEN_DIR, exist_ok=True)
 
-def is_worker_running():
-    if not os.path.exists(PID_FILE):
+def check_process_alive(pid_path, script_pattern=None):
+    if not os.path.exists(pid_path):
         return False, None
     try:
-        with open(PID_FILE, "r") as f:
+        with open(pid_path, "r") as f:
             pid = int(f.read().strip())
-        # Check if process is alive
         os.kill(pid, 0)
         return True, pid
     except (OSError, ValueError):
-        # Process dead or invalid PID
-        if os.path.exists(PID_FILE):
+        if os.path.exists(pid_path):
             try:
-                os.remove(PID_FILE)
+                os.remove(pid_path)
             except Exception:
                 pass
         return False, None
+
+def check_lm_studio_health():
+    try:
+        req = urllib.request.Request(f"{LM_STUDIO_URL}/models", headers={"Content-Type": "application/json"})
+        with urllib.request.urlopen(req, timeout=2.5) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+            models = [m.get("id") for m in data.get("data", [])]
+            active = models[0] if models else "Desconocido"
+            return True, active, models
+    except Exception as e:
+        return False, None, []
 
 def get_stats():
     articles_count = 0
     cards_count = 0
     grapes_count = 0
+    audit_findings_count = 0
 
     art_file = os.path.join(GEN_DIR, "winepedia_articles.json")
     if os.path.exists(art_file):
@@ -77,17 +95,26 @@ def get_stats():
         except Exception:
             pass
 
+    findings_file = os.path.join(REPORTS_DIR, "audit_findings.json")
+    if os.path.exists(findings_file):
+        try:
+            with open(findings_file, "r", encoding="utf-8") as f:
+                audit_findings_count = len(json.load(f))
+        except Exception:
+            pass
+
     return {
         "articles": articles_count,
         "cards": cards_count,
-        "grapes": grapes_count
+        "grapes": grapes_count,
+        "audit_findings": audit_findings_count
     }
 
-def get_recent_logs(lines=50):
-    if not os.path.exists(LOG_FILE):
-        return "Sin registros en logs/overnight_generation.log."
+def get_recent_logs(log_path, lines=50):
+    if not os.path.exists(log_path):
+        return f"Sin registros en {os.path.basename(log_path)}."
     try:
-        with open(LOG_FILE, "r", encoding="utf-8", errors="ignore") as f:
+        with open(log_path, "r", encoding="utf-8", errors="ignore") as f:
             all_lines = f.readlines()
             return "".join(all_lines[-lines:])
     except Exception as e:
@@ -121,17 +148,35 @@ class DashboardHandler(BaseHTTPRequestHandler):
         if url.path == "/" or url.path == "/index.html":
             self._send_html(HTML_TEMPLATE)
         elif url.path == "/api/status":
-            running, pid = is_worker_running()
+            worker_running, worker_pid = check_process_alive(PID_FILE_WORKER)
+            auditor_running, auditor_pid = check_process_alive(PID_FILE_AUDITOR)
+            lm_ok, lm_active, lm_models = check_lm_studio_health()
+
             self._send_json({
-                "running": running,
-                "pid": pid,
+                "worker": {"running": worker_running, "pid": worker_pid},
+                "auditor": {"running": auditor_running, "pid": auditor_pid},
+                "lm_studio": {"ok": lm_ok, "active_model": lm_active, "models": lm_models},
                 "stats": get_stats(),
                 "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             })
         elif url.path == "/api/logs":
+            params = url.query
+            target = "worker"
+            if "target=auditor" in params:
+                target = "auditor"
+
+            log_file = LOG_FILE_AUDITOR if target == "auditor" else LOG_FILE_WORKER
             self._send_json({
-                "logs": get_recent_logs(60)
+                "target": target,
+                "logs": get_recent_logs(log_file, 60)
             })
+        elif url.path == "/api/report_markdown":
+            md_path = os.path.join(REPORTS_DIR, "AUDIT_WINE_REGIONS_LMSTUDIO.md")
+            if os.path.exists(md_path):
+                with open(md_path, "r", encoding="utf-8") as f:
+                    self._send_json({"ok": True, "content": f.read()})
+            else:
+                self._send_json({"ok": False, "content": "# Aún no se ha generado el informe de auditoría."})
         else:
             self.send_error(404, "Not Found")
 
@@ -146,85 +191,143 @@ class DashboardHandler(BaseHTTPRequestHandler):
             except Exception:
                 pass
 
-        if url.path == "/api/start":
-            running, pid = is_worker_running()
+        # ---------------- WORKER (FICHAS) START / STOP ----------------
+        if url.path == "/api/worker/start":
+            running, pid = check_process_alive(PID_FILE_WORKER)
             if running:
-                self._send_json({"ok": False, "msg": f"El worker ya está en ejecución (PID {pid})."})
+                self._send_json({"ok": False, "msg": f"El generador ya está en ejecución (PID {pid})."})
                 return
 
-            args_mode = data.get("mode", "hours_3")
+            mode = data.get("mode", "end_1615")
             worker_cmd = [sys.executable, "scripts/overnight_worker.py"]
 
-            if args_mode == "hours_1":
-                worker_cmd += ["--hours", "1"]
-            elif args_mode == "hours_3":
-                worker_cmd += ["--hours", "3"]
-            elif args_mode == "hours_5":
-                worker_cmd += ["--hours", "5"]
-            elif args_mode == "hours_8":
-                worker_cmd += ["--hours", "8"]
-            elif args_mode == "end_1830":
-                worker_cmd += ["--end", "18:30"]
-            elif args_mode == "end_0645":
+            if mode == "indefinite":
+                worker_cmd += ["--indefinite"]
+            elif mode == "end_1615":
+                worker_cmd += ["--end", "16:15"]
+            elif mode == "end_0645":
                 worker_cmd += ["--end", "06:45"]
-            elif args_mode == "custom" and data.get("custom_end"):
+            elif mode == "hours_1":
+                worker_cmd += ["--hours", "1"]
+            elif mode == "hours_3":
+                worker_cmd += ["--hours", "3"]
+            elif mode == "hours_5":
+                worker_cmd += ["--hours", "5"]
+            elif mode == "hours_8":
+                worker_cmd += ["--hours", "8"]
+            elif mode == "custom" and data.get("custom_end"):
                 worker_cmd += ["--end", data["custom_end"]]
 
-            log_out = open(LOG_FILE, "a", encoding="utf-8")
+            log_out = open(LOG_FILE_WORKER, "a", encoding="utf-8")
             proc = subprocess.Popen(worker_cmd, cwd=ROOT_DIR, stdout=log_out, stderr=subprocess.STDOUT)
-            with open(PID_FILE, "w") as f:
+            with open(PID_FILE_WORKER, "w") as f:
                 f.write(str(proc.pid))
 
-            self._send_json({"ok": True, "msg": f"Worker iniciado correctamente con PID {proc.pid}.", "pid": proc.pid})
+            self._send_json({"ok": True, "msg": f"Generador de fichas iniciado (PID {proc.pid}).", "pid": proc.pid})
 
-        elif url.path == "/api/stop":
-            running, pid = is_worker_running()
+        elif url.path == "/api/worker/stop":
+            running, pid = check_process_alive(PID_FILE_WORKER)
             if not running:
-                self._send_json({"ok": False, "msg": "El worker no está en ejecución."})
+                self._send_json({"ok": False, "msg": "El generador no está en ejecución."})
                 return
 
             try:
                 os.kill(pid, signal.SIGTERM)
                 time.sleep(1)
-                if os.path.exists(PID_FILE):
-                    os.remove(PID_FILE)
-                self._send_json({"ok": True, "msg": f"Worker (PID {pid}) detenido correctamente."})
+                if os.path.exists(PID_FILE_WORKER):
+                    os.remove(PID_FILE_WORKER)
+                self._send_json({"ok": True, "msg": f"Generador (PID {pid}) detenido correctamente."})
             except Exception as e:
                 self._send_json({"ok": False, "msg": f"Error deteniendo PID {pid}: {e}"})
 
-        elif url.path == "/api/deploy":
+        # ---------------- AUDITOR (MAPAS) START / STOP ----------------
+        elif url.path == "/api/auditor/start":
+            running, pid = check_process_alive(PID_FILE_AUDITOR)
+            if running:
+                self._send_json({"ok": False, "msg": f"El auditor de mapas ya está corriendo (PID {pid})."})
+                return
+
+            audit_mode = data.get("mode", "spain_mapa")
+            country = data.get("country", "all")
+            limit = data.get("limit", None)
+
+            auditor_cmd = [sys.executable, "scripts/lm_studio_auditor.py", "--mode", audit_mode, "--country", country]
+            if limit and str(limit).isdigit() and int(limit) > 0:
+                auditor_cmd += ["--limit", str(limit)]
+
+            log_out = open(LOG_FILE_AUDITOR, "a", encoding="utf-8")
+            proc = subprocess.Popen(auditor_cmd, cwd=ROOT_DIR, stdout=log_out, stderr=subprocess.STDOUT)
+            with open(PID_FILE_AUDITOR, "w") as f:
+                f.write(str(proc.pid))
+
+            self._send_json({"ok": True, "msg": f"Auditor de mapas iniciado (PID {proc.pid}).", "pid": proc.pid})
+
+        elif url.path == "/api/auditor/stop":
+            running, pid = check_process_alive(PID_FILE_AUDITOR)
+            if not running:
+                self._send_json({"ok": False, "msg": "El auditor de mapas no está en ejecución."})
+                return
+
             try:
-                # 1. Compile
-                compile_res = subprocess.run([sys.executable, "scripts/compile_generated_data.py"], cwd=ROOT_DIR, capture_output=True, text=True)
-                # 2. Rsync to IONOS
-                rsync_cmd = "rsync -avz -e 'ssh -i ~/.ssh/id_ionos_vps -o StrictHostKeyChecking=no' winepedia.html OVERNIGHT_REPORT.md web/ data/ root@jreyes13.net:/var/www/vhosts/jreyes13.net/wine3ai/"
+                os.kill(pid, signal.SIGTERM)
+                time.sleep(1)
+                if os.path.exists(PID_FILE_AUDITOR):
+                    os.remove(PID_FILE_AUDITOR)
+                self._send_json({"ok": True, "msg": f"Auditor (PID {pid}) detenido correctamente."})
+            except Exception as e:
+                self._send_json({"ok": False, "msg": f"Error deteniendo auditor PID {pid}: {e}"})
+
+        # ---------------- SYNC TOTAL (COMPILE + GIT + IONOS) ----------------
+        elif url.path == "/api/sync_all":
+            results = []
+            try:
+                # 1. Compile generated data
+                res_compile = subprocess.run([sys.executable, "scripts/compile_generated_data.py"], cwd=ROOT_DIR, capture_output=True, text=True)
+                results.append("✓ Compilación local completada.")
+
+                # 2. Git commit
+                timestamp = datetime.now().strftime("%Y-%m-%d %H:%M")
+                git_add = subprocess.run([
+                    "git", "add",
+                    "data/", "web/", "reports/", "scripts/",
+                    "winepedia.html", "flashcards.html", "sommelier.html",
+                    "map.html", "app.js", "style.css",
+                    "index.html", "index_es.html", "grapes.html", "grapes.js", "grapes.css",
+                    "OVERNIGHT_REPORT.md", "ROADMAP_TASKS.md"
+                ], cwd=ROOT_DIR, capture_output=True, text=True)
+                git_commit = subprocess.run(["git", "commit", "-m", f"chore(sync): automated sync via control panel at {timestamp}"], cwd=ROOT_DIR, capture_output=True, text=True)
+                if git_commit.returncode == 0:
+                    results.append("✓ Commit local registrado en Git.")
+                else:
+                    results.append("ℹ Git: Sin cambios pendientes para commitear.")
+
+                # 3. Rsync to IONOS VPS (incluye mapas GeoJSON, visualizador map.html, app.js, flashcards, sommelier y fichas)
+                rsync_cmd = (
+                    "rsync -avz -e 'ssh -i ~/.ssh/id_ionos_vps -o StrictHostKeyChecking=no' "
+                    "winepedia.html flashcards.html sommelier.html map.html app.js style.css index.html index_es.html "
+                    "grapes.html grapes.js grapes.css OVERNIGHT_REPORT.md "
+                    "web/ data/ reports/ "
+                    "root@jreyes13.net:/var/www/vhosts/jreyes13.net/wine3ai/"
+                )
                 deploy_res = subprocess.run(rsync_cmd, shell=True, cwd=ROOT_DIR, capture_output=True, text=True)
-                # 3. Permissions
+                if deploy_res.returncode == 0:
+                    results.append("✓ Sincronización con servidor IONOS (VPS) completada.")
+                else:
+                    results.append("⚠️ Rsync IONOS terminó con advertencias.")
+
+                # 4. Set remote permissions
                 perm_cmd = "ssh -i ~/.ssh/id_ionos_vps -o StrictHostKeyChecking=no root@jreyes13.net 'find /var/www/vhosts/jreyes13.net/wine3ai -type f -exec chmod 644 {} + && find /var/www/vhosts/jreyes13.net/wine3ai -type d -exec chmod 755 {} + && chown -R jreyes169:psaserv /var/www/vhosts/jreyes13.net/wine3ai/'"
-                perm_res = subprocess.run(perm_cmd, shell=True, capture_output=True, text=True)
+                subprocess.run(perm_cmd, shell=True, capture_output=True, text=True)
+                results.append("✓ Permisos web (644/755) aplicados.")
 
                 self._send_json({
                     "ok": True,
-                    "msg": "Compilación y despliegue a producción completados con éxito.",
-                    "compile_output": compile_res.stdout,
-                    "deploy_output": deploy_res.stdout
+                    "msg": " | ".join(results),
+                    "details": deploy_res.stdout
                 })
             except Exception as e:
-                self._send_json({"ok": False, "msg": f"Error en despliegue: {e}"})
+                self._send_json({"ok": False, "msg": f"Error durante la sincronización: {e}"})
 
-        elif url.path == "/api/build_maps":
-            try:
-                map_script = os.path.join(ROOT_DIR, "scratch", "build_web_geojson.py")
-                if not os.path.exists(map_script):
-                    map_script = os.path.join(ROOT_DIR, "scratch", "build_world_web_geojson.py")
-
-                if os.path.exists(map_script):
-                    res = subprocess.run([sys.executable, map_script], cwd=ROOT_DIR, capture_output=True, text=True)
-                    self._send_json({"ok": True, "msg": "Script de mapas ejecutado con éxito.", "output": res.stdout})
-                else:
-                    self._send_json({"ok": False, "msg": "No se encontró el script de mapas."})
-            except Exception as e:
-                self._send_json({"ok": False, "msg": f"Error compilando mapas: {e}"})
         else:
             self.send_error(404, "Not Found")
 
@@ -233,7 +336,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WINE³ai — Panel de Control Local</title>
+  <title>WINE³ai — Panel de Control y Orquestador Local</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
@@ -245,10 +348,10 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 </head>
 <body class="min-h-screen p-4 sm:p-8 flex flex-col items-center">
 
-  <div class="max-w-5xl w-full space-y-6">
+  <div class="max-w-6xl w-full space-y-6">
     
-    <!-- Header -->
-    <header class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-6 rounded-3xl bg-[#12141c] border border-white/10 shadow-xl">
+    <!-- Top Bar with Brand and Dual Readiness Indicators -->
+    <header class="flex flex-col md:flex-row md:items-center justify-between gap-4 p-6 rounded-3xl bg-[#12141c] border border-white/10 shadow-xl">
       <div class="flex items-center gap-4">
         <span class="text-3xl">🍷</span>
         <div>
@@ -256,117 +359,237 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             WINE<span class="text-amber-400">³</span>ai — Panel de Control
           </h1>
           <p class="text-xs text-slate-400 font-mono mt-0.5">
-            Gestor de Procesos Locales · LM Studio (Apple Silicon) · Despliegue en 1 Clic
+            Orquestador Local · LM Studio Inferencia Offline · Auditoría de Mapas · Sincronización
           </p>
         </div>
       </div>
-      <div id="status-pill" class="flex items-center gap-2 px-4 py-2 rounded-2xl bg-white/5 border border-white/10 text-xs font-mono">
-        <span class="w-2.5 h-2.5 rounded-full bg-slate-500 animate-pulse" id="status-dot"></span>
-        <span id="status-text" class="text-slate-300">Consultando estado...</span>
+
+      <!-- Live Readiness Badges -->
+      <div class="flex flex-wrap items-center gap-3 text-xs font-mono">
+        <!-- LM Studio Ready Badge -->
+        <div id="lm-studio-badge" class="flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-white/5 border border-white/10 transition-colors">
+          <span class="w-2.5 h-2.5 rounded-full bg-slate-500" id="lm-dot"></span>
+          <span id="lm-text" class="text-slate-300">Verificando LM Studio...</span>
+        </div>
+
+        <!-- System Clock -->
+        <div class="px-3.5 py-2 rounded-2xl bg-white/5 border border-white/10 text-slate-400 hidden sm:block" id="system-clock">
+          --:--:--
+        </div>
       </div>
     </header>
 
-    <!-- Stats Row -->
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 font-mono">
-      <div class="p-5 rounded-2xl bg-[#12141c]/80 border border-white/10">
-        <div class="text-xs text-slate-400 uppercase tracking-wider mb-1">📚 Artículos WINEp3dIA</div>
-        <div class="text-3xl font-bold text-amber-300" id="stat-articles">--</div>
-        <div class="text-[11px] text-slate-500 mt-1">Suelos, Enología, Bioquímica, CMS, ASI</div>
+    <!-- Stats Counter Bar -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 font-mono">
+      <div class="p-4 sm:p-5 rounded-2xl bg-[#12141c]/80 border border-white/10">
+        <div class="text-[11px] text-slate-400 uppercase tracking-wider mb-1">📚 WINEp3dIA</div>
+        <div class="text-2xl sm:text-3xl font-bold text-amber-300" id="stat-articles">--</div>
+        <div class="text-[10px] text-slate-500 mt-1">Artículos Canónicos</div>
       </div>
-      <div class="p-5 rounded-2xl bg-[#12141c]/80 border border-white/10">
-        <div class="text-xs text-slate-400 uppercase tracking-wider mb-1">🎴 Flashcards de Examen</div>
-        <div class="text-3xl font-bold text-purple-300" id="stat-cards">--</div>
-        <div class="text-[11px] text-slate-500 mt-1">WSET 3, CMS Deductive y ASI Global</div>
+      <div class="p-4 sm:p-5 rounded-2xl bg-[#12141c]/80 border border-white/10">
+        <div class="text-[11px] text-slate-400 uppercase tracking-wider mb-1">🎴 Flashcards</div>
+        <div class="text-2xl sm:text-3xl font-bold text-purple-300" id="stat-cards">--</div>
+        <div class="text-[10px] text-slate-500 mt-1">WSET 3, CMS y ASI</div>
       </div>
-      <div class="p-5 rounded-2xl bg-[#12141c]/80 border border-white/10">
-        <div class="text-xs text-slate-400 uppercase tracking-wider mb-1">🍇 Variedades de Uva</div>
-        <div class="text-3xl font-bold text-rose-300" id="stat-grapes">--</div>
-        <div class="text-[11px] text-slate-500 mt-1">Perfiles organolépticos y maridaje molecular</div>
+      <div class="p-4 sm:p-5 rounded-2xl bg-[#12141c]/80 border border-white/10">
+        <div class="text-[11px] text-slate-400 uppercase tracking-wider mb-1">🍇 Uvas</div>
+        <div class="text-2xl sm:text-3xl font-bold text-rose-300" id="stat-grapes">--</div>
+        <div class="text-[10px] text-slate-500 mt-1">Perfiles de Cata</div>
+      </div>
+      <div class="p-4 sm:p-5 rounded-2xl bg-[#12141c]/80 border border-white/10">
+        <div class="text-[11px] text-slate-400 uppercase tracking-wider mb-1">🗺️ Auditoría Mapas</div>
+        <div class="text-2xl sm:text-3xl font-bold text-emerald-300" id="stat-audit">--</div>
+        <div class="text-[10px] text-slate-500 mt-1">Incidencias / Pliegos</div>
       </div>
     </div>
 
-    <!-- Main Controls Grid -->
+    <!-- Alert Banner when LM Studio is disconnected -->
+    <div id="lm-alert-banner" class="hidden p-4 rounded-2xl bg-rose-950/40 border border-rose-500/50 text-rose-200 text-xs font-mono flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="text-lg">⚠️</span>
+        <span><strong>LM Studio no está activo en http://127.0.0.1:1234.</strong> Inicia la aplicación LM Studio y carga el modelo <code class="bg-black/50 px-1 py-0.5 rounded text-amber-300">qwen/qwen3.5-9b</code> para arrancar los procesos.</span>
+      </div>
+      <button onclick="fetchStatus()" class="px-2.5 py-1 rounded-lg bg-rose-900/60 hover:bg-rose-800 text-white transition-colors">Reintentar</button>
+    </div>
+
+    <!-- Action Boxes Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       
-      <!-- Worker Control Box -->
-      <div class="p-6 rounded-3xl bg-[#12141c] border border-white/10 shadow-lg space-y-5">
+      <!-- Box 1: Generador de Fichas (WINEp3dIA & Flashcards) -->
+      <div class="p-6 rounded-3xl bg-[#12141c] border border-white/10 shadow-lg space-y-4">
         <div class="flex items-center justify-between border-b border-white/10 pb-3">
-          <h2 class="text-lg font-bold font-serif-wine text-white flex items-center gap-2">
-            <span>⚙️</span> Inferencia LM Studio
-          </h2>
-          <span class="text-xs font-mono text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800/40">0 Tokens Nube</span>
+          <div class="flex items-center gap-2.5">
+            <span class="text-xl">🍷</span>
+            <h2 class="text-base font-bold font-serif-wine text-white">Generador de Fichas</h2>
+          </div>
+          <span id="worker-status-badge" class="text-xs font-mono px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-white/10">
+            ⚪ Detenido
+          </span>
         </div>
 
         <div>
-          <label class="block text-xs font-mono text-slate-400 mb-2">Duración programada:</label>
-          <select id="worker-mode" class="w-full px-4 py-3 rounded-xl bg-black/40 border border-white/15 text-white font-mono text-xs focus:outline-none focus:border-amber-400">
+          <label class="block text-xs font-mono text-slate-400 mb-1.5">Programación y Límite de Tiempo:</label>
+          <select id="worker-preset" onchange="toggleCustomTime()" class="w-full px-3.5 py-2.5 rounded-xl bg-black/50 border border-white/15 text-white font-mono text-xs focus:outline-none focus:border-amber-400">
+            <option value="end_1615" selected>💼 Hasta las 16:15 (Jornada laboral)</option>
+            <option value="end_0645">🌙 Hasta las 06:45 (Overnight nocturno)</option>
+            <option value="indefinite">♾️ Modo Indefinido (Hasta pulsar Detener)</option>
             <option value="hours_1">⏱️ 1 Hora (Prueba rápida)</option>
-            <option value="hours_3" selected>⏱️ 3 Horas (Sesión moderada)</option>
+            <option value="hours_3">⏱️ 3 Horas (Sesión estándar)</option>
             <option value="hours_5">⏱️ 5 Horas (Sesión extendida)</option>
-            <option value="hours_8">💼 8 Horas (Jornada laboral completa)</option>
-            <option value="end_1830">🌇 Hasta las 18:30 (Salida de oficina)</option>
-            <option value="end_0645">🌙 Toda la noche (Hasta las 06:45 AM)</option>
+            <option value="hours_8">⏱️ 8 Horas continuas</option>
+            <option value="custom">🕒 Hora personalizada (HH:MM)...</option>
           </select>
+          <input type="text" id="custom-time-input" placeholder="Ej: 19:45" class="hidden mt-2 w-full px-3.5 py-2 rounded-xl bg-black/50 border border-white/15 text-white font-mono text-xs focus:outline-none focus:border-amber-400">
         </div>
 
         <div class="flex items-center gap-3 pt-2">
-          <button id="btn-start" onclick="startWorker()" class="flex-1 py-3.5 px-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-black font-mono text-xs font-bold transition-all shadow-lg flex items-center justify-center gap-2 active:scale-95">
+          <button id="btn-worker-start" onclick="startWorker()" class="flex-1 py-3 px-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-black font-mono text-xs font-bold transition-all shadow-lg flex items-center justify-center gap-2 active:scale-95">
             <span>▶</span> Iniciar Generador
           </button>
-          <button id="btn-stop" onclick="stopWorker()" class="py-3.5 px-5 rounded-xl bg-red-950 hover:bg-red-900 text-red-200 border border-red-800/50 font-mono text-xs font-semibold transition-all flex items-center justify-center gap-2 active:scale-95 disabled:opacity-40" disabled>
+          <button id="btn-worker-stop" onclick="stopWorker()" class="py-3 px-5 rounded-xl bg-red-950 hover:bg-red-900 text-red-200 border border-red-800/50 font-mono text-xs font-semibold transition-all flex items-center justify-center gap-2 active:scale-95 disabled:opacity-30" disabled>
             <span>⏹</span> Detener
           </button>
         </div>
-
-        <p class="text-[11px] text-slate-500 font-mono leading-relaxed">
-          * Los artículos ya generados se saltan automáticamente. Al pulsar Iniciar, el proceso arranca en segundo plano y continúa de forma segura.
+        <p class="text-[11px] text-slate-500 font-mono">
+          * Salta automáticamente temas completados. Genera WINEp3dIA, CMS, ASI y Uvas con 0 tokens externos.
         </p>
       </div>
 
-      <!-- Deployment & Tools Box -->
-      <div class="p-6 rounded-3xl bg-[#12141c] border border-white/10 shadow-lg space-y-5">
+      <!-- Box 2: Auditor de Mapas y Pliegos con LM Studio -->
+      <div class="p-6 rounded-3xl bg-[#12141c] border border-white/10 shadow-lg space-y-4">
         <div class="flex items-center justify-between border-b border-white/10 pb-3">
-          <h2 class="text-lg font-bold font-serif-wine text-white flex items-center gap-2">
-            <span>🚀</span> Publicación y Mapas
-          </h2>
-          <span class="text-xs font-mono text-blue-400 bg-blue-950/60 px-2 py-0.5 rounded border border-blue-800/40">IONOS VPS</span>
+          <div class="flex items-center gap-2.5">
+            <span class="text-xl">🗺️</span>
+            <h2 class="text-base font-bold font-serif-wine text-white">Auditor de Mapas Vitícolas</h2>
+          </div>
+          <span id="auditor-status-badge" class="text-xs font-mono px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-white/10">
+            ⚪ Detenido
+          </span>
         </div>
 
-        <div class="space-y-3">
-          <button onclick="deployProduction()" id="btn-deploy" class="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-mono text-xs font-bold transition-all shadow-lg flex items-center justify-center gap-2 active:scale-95">
-            <span>🚀</span> Compilar y Publicar en Producción (IONOS)
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-mono text-slate-400 mb-1.5">Modo de Auditoría:</label>
+            <select id="auditor-mode" class="w-full px-3 py-2 rounded-xl bg-black/50 border border-white/15 text-white font-mono text-xs focus:outline-none focus:border-amber-400">
+              <option value="spain_mapa" selected>🇪🇸 España vs MAPA Oficial</option>
+              <option value="full">🌍 Mundial Completo (Full AI)</option>
+              <option value="pliegos">📄 Pliegos de Condiciones</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-mono text-slate-400 mb-1.5">Límite de Regiones:</label>
+            <select id="auditor-limit" class="w-full px-3 py-2 rounded-xl bg-black/50 border border-white/15 text-white font-mono text-xs focus:outline-none focus:border-amber-400">
+              <option value="0" selected>♾️ Indefinido (todas)</option>
+              <option value="10">10 Regiones</option>
+              <option value="25">25 Regiones</option>
+              <option value="50">50 Regiones</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3 pt-2">
+          <button id="btn-auditor-start" onclick="startAuditor()" class="flex-1 py-3 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-mono text-xs font-bold transition-all shadow-lg flex items-center justify-center gap-2 active:scale-95">
+            <span>▶</span> Iniciar Auditoría
           </button>
-          <p class="text-[11px] text-slate-400 font-mono">
-            Fusiona los JSON locales con la base oficial y sincroniza con el servidor web vía SSH/Rsync.
+          <button id="btn-auditor-stop" onclick="stopAuditor()" class="py-3 px-5 rounded-xl bg-red-950 hover:bg-red-900 text-red-200 border border-red-800/50 font-mono text-xs font-semibold transition-all flex items-center justify-center gap-2 active:scale-95 disabled:opacity-30" disabled>
+            <span>⏹</span> Detener
+          </button>
+        </div>
+        <p class="text-[11px] text-slate-500 font-mono">
+          * Analiza polígonos GeoJSON, municipios y pliegos. Guarda estado en <code>reports/audit_state.json</code>.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Master Synchronization Bar (Compile + Git + IONOS) -->
+    <div class="p-6 rounded-3xl bg-gradient-to-r from-purple-950/30 via-[#131622] to-indigo-950/30 border border-purple-500/30 shadow-xl space-y-4">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div>
+          <h2 class="text-base font-bold font-serif-wine text-white flex items-center gap-2">
+            <span>🚀</span> Sincronización Total con 1 Clic (Producción)
+          </h2>
+          <p class="text-xs text-slate-400 font-mono mt-0.5">
+            Compila los datos generados, registra commit en Git y sincroniza en caliente con el VPS de IONOS.
           </p>
         </div>
 
-        <div class="pt-3 border-t border-white/10">
-          <button onclick="buildMaps()" id="btn-maps" class="w-full py-2.5 px-4 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 font-mono text-xs font-semibold transition-all flex items-center justify-center gap-2 active:scale-95">
-            <span>🗺️</span> Compilar Capas GeoJSON de Mapas
+        <button onclick="syncAllProduction()" id="btn-sync-all" class="px-6 py-3 rounded-2xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-mono text-xs font-bold shadow-lg transition-transform active:scale-95 shrink-0 flex items-center gap-2">
+          <span>🚀</span> Sincronizar con GitHub y Servidor IONOS
+        </button>
+      </div>
+
+      <div id="sync-feedback" class="hidden p-3.5 rounded-xl bg-black/60 border border-white/10 text-xs font-mono text-amber-300"></div>
+    </div>
+
+    <!-- Dual Live Console Log Viewer -->
+    <div class="p-6 rounded-3xl bg-[#12141c] border border-white/10 shadow-lg space-y-3">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/10 pb-3">
+        <!-- Log Selector Tabs -->
+        <div class="flex items-center gap-2 text-xs font-mono">
+          <button id="tab-log-worker" onclick="switchLogTab('worker')" class="px-3.5 py-1.5 rounded-xl bg-amber-500/20 text-amber-300 border border-amber-500/40 font-bold transition-all">
+            🍷 Generador de Fichas
+          </button>
+          <button id="tab-log-auditor" onclick="switchLogTab('auditor')" class="px-3.5 py-1.5 rounded-xl bg-white/5 text-slate-400 hover:text-white border border-white/10 transition-all">
+            🗺️ Auditoría de Mapas
           </button>
         </div>
 
-        <div id="action-feedback" class="hidden p-3 rounded-xl bg-white/5 border border-white/10 text-xs font-mono text-amber-300"></div>
+        <div class="flex items-center gap-2">
+          <button onclick="refreshLogs()" class="text-xs font-mono text-slate-400 hover:text-white px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">
+            🔄 Refrescar
+          </button>
+          <button onclick="viewMarkdownReport()" class="text-xs font-mono text-amber-300 hover:text-amber-200 px-2.5 py-1 rounded-lg bg-amber-500/10 border border-amber-500/30">
+            📄 Ver Informe Auditoría
+          </button>
+        </div>
       </div>
-    </div>
 
-    <!-- Live Console Log Viewer -->
-    <div class="p-6 rounded-3xl bg-[#12141c] border border-white/10 shadow-lg space-y-3">
-      <div class="flex items-center justify-between">
-        <h3 class="text-sm font-bold font-mono text-slate-300 flex items-center gap-2">
-          <span>📟</span> Consola de Registro en Vivo (overnight_generation.log)
-        </h3>
-        <button onclick="refreshLogs()" class="text-xs font-mono text-slate-400 hover:text-white px-2 py-1 rounded bg-white/5 border border-white/10">
-          🔄 Actualizar
-        </button>
-      </div>
-      <pre id="log-console" class="w-full p-4 rounded-2xl bg-black/60 border border-white/10 text-[11px] font-mono text-slate-400 overflow-x-auto max-h-64 overflow-y-auto leading-relaxed">Cargando registros...</pre>
+      <pre id="log-console" class="w-full p-4 rounded-2xl bg-black/70 border border-white/10 text-[11px] font-mono text-slate-300 overflow-x-auto max-h-72 overflow-y-auto leading-relaxed">Cargando registros...</pre>
     </div>
 
   </div>
 
+  <!-- Markdown Report Modal -->
+  <div id="report-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-[#12141c] border border-white/15 rounded-3xl max-w-4xl w-full max-h-[88vh] flex flex-col p-6 shadow-2xl relative">
+      <div class="flex items-center justify-between border-b border-white/10 pb-3 mb-4">
+        <h3 class="text-lg font-bold font-serif-wine text-white">📄 Informe de Auditoría de Mapas (Markdown)</h3>
+        <button onclick="closeReportModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-sm">✕</button>
+      </div>
+      <div class="overflow-y-auto flex-1 text-xs font-mono text-slate-300 whitespace-pre-wrap leading-relaxed bg-black/40 p-4 rounded-2xl border border-white/5" id="report-content">
+        Cargando informe...
+      </div>
+    </div>
+  </div>
+
   <script>
+    let currentLogTab = 'worker';
+
+    function toggleCustomTime() {
+      const preset = document.getElementById('worker-preset').value;
+      const input = document.getElementById('custom-time-input');
+      if (preset === 'custom') {
+        input.classList.remove('hidden');
+      } else {
+        input.classList.add('hidden');
+      }
+    }
+
+    function switchLogTab(tab) {
+      currentLogTab = tab;
+      const tabWorker = document.getElementById('tab-log-worker');
+      const tabAuditor = document.getElementById('tab-log-auditor');
+      if (tab === 'worker') {
+        tabWorker.className = "px-3.5 py-1.5 rounded-xl bg-amber-500/20 text-amber-300 border border-amber-500/40 font-bold transition-all";
+        tabAuditor.className = "px-3.5 py-1.5 rounded-xl bg-white/5 text-slate-400 hover:text-white border border-white/10 transition-all";
+      } else {
+        tabAuditor.className = "px-3.5 py-1.5 rounded-xl bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-bold transition-all";
+        tabWorker.className = "px-3.5 py-1.5 rounded-xl bg-white/5 text-slate-400 hover:text-white border border-white/10 transition-all";
+      }
+      fetchLogs();
+    }
+
     async function fetchStatus() {
       try {
         const res = await fetch('/api/status');
@@ -375,27 +598,67 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         document.getElementById('stat-articles').textContent = data.stats.articles;
         document.getElementById('stat-cards').textContent = data.stats.cards;
         document.getElementById('stat-grapes').textContent = data.stats.grapes;
+        document.getElementById('stat-audit').textContent = data.stats.audit_findings;
+        document.getElementById('system-clock').textContent = data.time.split(' ')[1];
 
-        const dot = document.getElementById('status-dot');
-        const text = document.getElementById('status-text');
-        const btnStart = document.getElementById('btn-start');
-        const btnStop = document.getElementById('btn-stop');
+        // LM Studio Readiness
+        const lmBadge = document.getElementById('lm-studio-badge');
+        const lmDot = document.getElementById('lm-dot');
+        const lmText = document.getElementById('lm-text');
+        const lmAlert = document.getElementById('lm-alert-banner');
 
-        if (data.running) {
-          dot.className = "w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]";
-          text.textContent = `🟢 En Ejecución (PID ${data.pid})`;
-          text.className = "text-emerald-400 font-bold";
-          btnStart.disabled = true;
-          btnStart.classList.add('opacity-40');
-          btnStop.disabled = false;
+        if (data.lm_studio.ok) {
+          lmDot.className = "w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]";
+          lmText.textContent = `LM Studio Listo (${data.lm_studio.active_model})`;
+          lmText.className = "text-emerald-300 font-bold";
+          lmBadge.className = "flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-emerald-950/40 border border-emerald-800/40";
+          lmAlert.classList.add('hidden');
         } else {
-          dot.className = "w-2.5 h-2.5 rounded-full bg-slate-500";
-          text.textContent = "⚪ Detenido (Inactivo)";
-          text.className = "text-slate-400";
-          btnStart.disabled = false;
-          btnStart.classList.remove('opacity-40');
-          btnStop.disabled = true;
+          lmDot.className = "w-2.5 h-2.5 rounded-full bg-rose-500";
+          lmText.textContent = "LM Studio Desconectado";
+          lmText.className = "text-rose-400 font-bold";
+          lmBadge.className = "flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-rose-950/40 border border-rose-800/40";
+          lmAlert.classList.remove('hidden');
         }
+
+        // Worker Status
+        const wBadge = document.getElementById('worker-status-badge');
+        const btnWStart = document.getElementById('btn-worker-start');
+        const btnWStop = document.getElementById('btn-worker-stop');
+
+        if (data.worker.running) {
+          wBadge.textContent = `🟢 En Ejecución (PID ${data.worker.pid})`;
+          wBadge.className = "text-xs font-mono px-2.5 py-0.5 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-800/50 font-bold";
+          btnWStart.disabled = true;
+          btnWStart.classList.add('opacity-40');
+          btnWStop.disabled = false;
+        } else {
+          wBadge.textContent = "⚪ Detenido";
+          wBadge.className = "text-xs font-mono px-2.5 py-0.5 rounded-full bg-white/5 text-slate-400 border border-white/10";
+          btnWStart.disabled = false;
+          btnWStart.classList.remove('opacity-40');
+          btnWStop.disabled = true;
+        }
+
+        // Auditor Status
+        const aBadge = document.getElementById('auditor-status-badge');
+        const btnAStart = document.getElementById('btn-auditor-start');
+        const btnAStop = document.getElementById('btn-auditor-stop');
+
+        if (data.auditor.running) {
+          aBadge.textContent = `🟢 En Ejecución (PID ${data.auditor.pid})`;
+          aBadge.className = "text-xs font-mono px-2.5 py-0.5 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-800/50 font-bold";
+          btnAStart.disabled = true;
+          btnAStart.classList.add('opacity-40');
+          btnAStop.disabled = false;
+        } else {
+          aBadge.textContent = "⚪ Detenido";
+          aBadge.className = "text-xs font-mono px-2.5 py-0.5 rounded-full bg-white/5 text-slate-400 border border-white/10";
+          btnAStart.disabled = false;
+          btnAStart.classList.remove('opacity-40');
+          btnAStop.disabled = true;
+        }
+
       } catch (err) {
         console.error('Error fetching status:', err);
       }
@@ -403,7 +666,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
     async function fetchLogs() {
       try {
-        const res = await fetch('/api/logs');
+        const res = await fetch(`/api/logs?target=${currentLogTab}`);
         const data = await res.json();
         const el = document.getElementById('log-console');
         el.textContent = data.logs || "Sin registros recientes.";
@@ -416,77 +679,112 @@ HTML_TEMPLATE = """<!DOCTYPE html>
     }
 
     async function startWorker() {
-      const mode = document.getElementById('worker-mode').value;
-      const fb = document.getElementById('action-feedback');
+      const mode = document.getElementById('worker-preset').value;
+      const customEnd = document.getElementById('custom-time-input').value;
+      const fb = document.getElementById('sync-feedback');
       fb.classList.remove('hidden');
-      fb.textContent = "Iniciando worker con LM Studio...";
+      fb.textContent = "Iniciando generador de fichas con LM Studio...";
 
       try {
-        const res = await fetch('/api/start', {
+        const res = await fetch('/api/worker/start', {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify({ mode })
+          body: JSON.stringify({ mode, custom_end: customEnd })
         });
         const data = await res.json();
         fb.textContent = data.msg;
         fetchStatus();
         fetchLogs();
       } catch (e) {
-        fb.textContent = "Error al iniciar: " + e;
+        fb.textContent = "Error al iniciar generador: " + e;
       }
     }
 
     async function stopWorker() {
-      const fb = document.getElementById('action-feedback');
+      const fb = document.getElementById('sync-feedback');
       fb.classList.remove('hidden');
-      fb.textContent = "Deteniendo worker...";
-
+      fb.textContent = "Deteniendo generador de fichas...";
       try {
-        const res = await fetch('/api/stop', { method: 'POST' });
+        const res = await fetch('/api/worker/stop', { method: 'POST' });
         const data = await res.json();
         fb.textContent = data.msg;
         fetchStatus();
-        fetchLogs();
       } catch (e) {
         fb.textContent = "Error al detener: " + e;
       }
     }
 
-    async function deployProduction() {
-      const fb = document.getElementById('action-feedback');
-      const btn = document.getElementById('btn-deploy');
+    async function startAuditor() {
+      const mode = document.getElementById('auditor-mode').value;
+      const limit = document.getElementById('auditor-limit').value;
+      const fb = document.getElementById('sync-feedback');
       fb.classList.remove('hidden');
-      fb.textContent = "Compilando y desplegando a IONOS VPS... Espera unos segundos.";
-      btn.disabled = true;
-      btn.classList.add('opacity-50');
+      fb.textContent = "Iniciando auditor de mapas con LM Studio...";
 
       try {
-        const res = await fetch('/api/deploy', { method: 'POST' });
+        const res = await fetch('/api/auditor/start', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({ mode, limit: parseInt(limit) || 0 })
+        });
+        const data = await res.json();
+        fb.textContent = data.msg;
+        fetchStatus();
+        switchLogTab('auditor');
+      } catch (e) {
+        fb.textContent = "Error al iniciar auditor: " + e;
+      }
+    }
+
+    async function stopAuditor() {
+      const fb = document.getElementById('sync-feedback');
+      fb.classList.remove('hidden');
+      fb.textContent = "Deteniendo auditor de mapas...";
+      try {
+        const res = await fetch('/api/auditor/stop', { method: 'POST' });
         const data = await res.json();
         fb.textContent = data.msg;
         fetchStatus();
       } catch (e) {
-        fb.textContent = "Error en despliegue: " + e;
+        fb.textContent = "Error al detener: " + e;
+      }
+    }
+
+    async function syncAllProduction() {
+      const fb = document.getElementById('sync-feedback');
+      const btn = document.getElementById('btn-sync-all');
+      fb.classList.remove('hidden');
+      fb.textContent = "Compilando datos, registrando en Git y sincronizando con IONOS VPS... Espera unos segundos.";
+      btn.disabled = true;
+      btn.classList.add('opacity-50');
+
+      try {
+        const res = await fetch('/api/sync_all', { method: 'POST' });
+        const data = await res.json();
+        fb.textContent = data.msg;
+        fetchStatus();
+      } catch (e) {
+        fb.textContent = "Error en sincronización: " + e;
       } finally {
         btn.disabled = false;
         btn.classList.remove('opacity-50');
       }
     }
 
-    async function buildMaps() {
-      const fb = document.getElementById('action-feedback');
-      fb.classList.remove('hidden');
-      fb.textContent = "Ejecutando script de mapas GeoJSON...";
+    async function viewMarkdownReport() {
       try {
-        const res = await fetch('/api/build_maps', { method: 'POST' });
+        const res = await fetch('/api/report_markdown');
         const data = await res.json();
-        fb.textContent = data.msg;
-      } catch (e) {
-        fb.textContent = "Error en mapas: " + e;
-      }
+        document.getElementById('report-content').textContent = data.content;
+        document.getElementById('report-modal').classList.remove('hidden');
+      } catch (e) {}
     }
 
-    // Auto-refresh loops
+    function closeReportModal() {
+      document.getElementById('report-modal').classList.add('hidden');
+    }
+
+    // Polling intervals
     fetchStatus();
     fetchLogs();
     setInterval(fetchStatus, 3000);
@@ -500,9 +798,8 @@ def main():
     server_address = ("127.0.0.1", PORT)
     httpd = HTTPServer(server_address, DashboardHandler)
     print(f"\n==========================================================")
-    print(f"🍷 WINE³ai — Panel de Control Local Activo")
+    print(f"🍷 WINE³ai — Panel de Control y Orquestador Local Activo")
     print(f"👉 Abre en tu navegador: http://localhost:{PORT}")
-    print(f"Presiona Ctrl+C para detener el panel.")
     print(f"==========================================================\n")
     try:
         httpd.serve_forever()

@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="es" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flashcards de Examen & Cata Deductiva — WSET 3 · CMS · ASI | WINE³ai</title>
+  <meta name="description" content="Entrenador interactivo de fichas de examen y cata deductiva ciega basado en los cánones WSET Nivel 3, Court of Master Sommeliers (CMS) y ASI.">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg?v=20261119_v2">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#5E1C37">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="WINE³ai Flashcards">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            wine: {
+              950: '#1a050b',
+              900: '#2b0711',
+              800: '#4c0c1e',
+              700: '#72122c',
+              600: '#9b183b',
+              500: '#be123c',
+              400: '#e11d48'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0d13; color: #e2e8f0; }
+    .font-serif-wine { font-family: 'Cinzel', serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+    /* 3D Flip Card Effect */
+    .perspective-1000 { perspective: 1000px; }
+    .transform-style-3d { transform-style: preserve-3d; }
+    .backface-hidden { backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+    .rotate-y-180 { transform: rotateY(180deg); }
+
+    /* Light mode adaptations */
+    [data-theme="light"] body { background-color: #f8fafc !important; color: #0f172a !important; }
+    [data-theme="light"] header { background-color: rgba(255, 255, 255, 0.95) !important; border-bottom-color: #e2e8f0 !important; }
+    [data-theme="light"] footer { background-color: #ffffff !important; border-top-color: #e2e8f0 !important; color: #64748b !important; }
+    [data-theme="light"] .text-white { color: #0f172a !important; }
+    [data-theme="light"] .text-slate-300 { color: #334155 !important; }
+    [data-theme="light"] .text-slate-400 { color: #64748b !important; }
+    [data-theme="light"] .card-container { background-color: #ffffff !important; border-color: #e2e8f0 !important; box-shadow: 0 10px 30px rgba(0,0,0,0.06) !important; }
+    [data-theme="light"] .card-solution-box { background-color: #f8fafc !important; border-color: #e2e8f0 !important; }
+    [data-theme="light"] input#card-search { background-color: #ffffff !important; border-color: #cbd5e1 !important; color: #0f172a !important; }
+  </style>
+
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme') || localStorage.getItem('jreyes13_theme') || localStorage.getItem('wine3ai_theme') || 'dark';
+      if (savedTheme === 'light') {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.setAttribute('data-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
+</head>
+<body class="min-h-screen flex flex-col bg-[#0b0d13] selection:bg-rose-600 selection:text-white">
+
+  <!-- Sticky Header -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-[#0b0d13]/90 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3.5 group">
+        <img src="assets/logo.svg?v=20261119_v2" alt="WINE³ai" class="w-11 h-11 group-hover:scale-105 transition-transform drop-shadow-[0_4px_12px_rgba(94,28,55,0.4)]">
+        <div>
+          <div class="text-xl font-black tracking-tight flex items-baseline gap-1" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+            <span class="text-[#B08D4B] font-extrabold tracking-tight">WINE<sup class="text-xs font-black ml-0.5">3</sup></span>
+            <span class="bg-[#5E1C37] text-white text-[11px] font-black px-1.5 py-0.5 rounded border border-[#B08D4B]/40 shadow-sm ml-0.5 uppercase tracking-wider">ai</span>
+          </div>
+          <div class="text-[10px] tracking-wider uppercase text-slate-400 font-mono">Entrenador · Flashcards</div>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center gap-6 text-sm font-medium">
+        <a href="map.html" class="text-slate-300 hover:text-amber-400 transition-colors flex items-center gap-1.5">
+          <span>🗺️</span> <span>Mapa</span>
+        </a>
+        <a href="grapes.html" class="text-slate-300 hover:text-rose-400 transition-colors flex items-center gap-1.5">
+          <span>🍇</span> <span>Uvas</span>
+        </a>
+        <a href="winepedia.html" class="text-slate-300 hover:text-amber-300 transition-colors flex items-center gap-1.5">
+          <span>📚</span> <span>WINEp3dIA</span>
+        </a>
+        <a href="flashcards.html" class="text-rose-400 font-bold border-b border-rose-400 pb-0.5 flex items-center gap-1.5">
+          <span>🎴</span> <span>Flashcards</span>
+        </a>
+        <a href="sommelier.html" class="text-slate-300 hover:text-rose-300 transition-colors flex items-center gap-1.5">
+          <span>🍷</span> <span>Sebastián</span>
+        </a>
+      </nav>
+
+      <!-- Right Controls -->
+      <div class="flex items-center gap-3">
+        <!-- Lang Toggle -->
+        <div class="flex items-center bg-white/5 border border-white/10 rounded-lg p-0.5 text-xs font-mono">
+          <button id="btn-lang-es" class="px-2.5 py-1 rounded bg-rose-950 text-rose-300 font-bold border border-rose-800/40">ES</button>
+          <button id="btn-lang-en" class="px-2.5 py-1 text-slate-400 hover:text-white transition-colors">EN</button>
+        </div>
+
+        <!-- Theme Toggle -->
+        <button type="button" id="btn-theme-toggle" class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 text-slate-200 hover:bg-white/10 transition-colors text-base" title="Cambiar tema">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-1 max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-12 w-full">
+
+    <!-- Top Breadcrumb & Switcher -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+      <div class="flex items-center gap-2 text-xs font-mono text-slate-400">
+        <a href="winepedia.html" class="hover:text-amber-400 transition-colors flex items-center gap-1">
+          <span>📚</span> <span>WINEp3dIA</span>
+        </a>
+        <span>/</span>
+        <span class="text-rose-400 font-bold">🎴 Entrenador de Flashcards</span>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <a href="winepedia.html" class="px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-mono text-slate-300 transition-colors flex items-center gap-1.5">
+          <span>📖</span> <span id="lbl-switch-encyclopedia">Ver Artículos de la Enciclopedia</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Hero Title -->
+    <div class="text-center mb-8">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-950/80 border border-rose-800/50 text-rose-300 text-xs font-mono mb-3">
+        <span>🎓</span> <span id="hero-badge">Cánones WSET 3 · CMS Deductive · ASI Global</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-2 font-serif-wine">
+        Flashcards de <span class="text-rose-400">Examen & Cata</span>
+      </h1>
+      <p class="text-slate-400 text-sm max-w-2xl mx-auto leading-relaxed" id="hero-subtitle">
+        Banco interactivo de preguntas y razonamientos deductivos estructurados para la preparación de certificaciones internacionales de sumillería.
+      </p>
+    </div>
+
+    <!-- Controls Bar: Filter by Standard + Search + Shuffle -->
+    <div class="bg-[#12141c] border border-white/10 rounded-2xl p-4 sm:p-5 mb-8 shadow-xl">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <!-- Filter Tabs -->
+        <div class="flex flex-wrap items-center gap-2 text-xs font-mono" id="filter-tabs">
+          <button class="filter-btn px-3 py-1.5 rounded-xl bg-rose-950 text-rose-300 border border-rose-800/60 font-semibold" data-standard="all">
+            <span id="tab-all">Todas</span> (<span id="count-all">0</span>)
+          </button>
+          <button class="filter-btn px-3 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10" data-standard="WSET3">
+            WSET 3 (<span id="count-wset">0</span>)
+          </button>
+          <button class="filter-btn px-3 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10" data-standard="CMS">
+            CMS Deductive (<span id="count-cms">0</span>)
+          </button>
+          <button class="filter-btn px-3 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10" data-standard="ASI">
+            ASI Global (<span id="count-asi">0</span>)
+          </button>
+        </div>
+
+        <!-- Search & Shuffle -->
+        <div class="flex items-center gap-2.5 w-full md:w-auto">
+          <div class="relative flex-1 md:w-56">
+            <input type="text" id="card-search" placeholder="Buscar concepto o uva..." class="w-full pl-8 pr-3 py-2 rounded-xl bg-black/50 border border-white/15 text-white placeholder-slate-500 text-xs font-mono focus:outline-none focus:border-rose-400">
+            <span class="absolute left-2.5 top-2.5 text-xs text-slate-400">🔍</span>
+          </div>
+          <button id="btn-shuffle" class="px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-mono text-amber-300 flex items-center gap-1.5 transition-colors flex-shrink-0" title="Barajar tarjetas">
+            <span>🔀</span> <span class="hidden sm:inline" id="lbl-shuffle">Barajar</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Active Flashcard Container -->
+    <div class="card-container bg-[#131622] border border-white/10 rounded-3xl p-6 sm:p-10 relative overflow-hidden shadow-2xl mb-8 min-h-[380px] flex flex-col justify-between">
+      <!-- Card Header -->
+      <div>
+        <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+          <div class="flex items-center gap-2.5">
+            <span id="active-standard-badge" class="px-3 py-1 rounded-lg text-xs font-mono font-bold bg-purple-950 text-purple-300 border border-purple-800/40">
+              WSET 3
+            </span>
+            <span id="active-category" class="text-xs font-mono text-slate-400">
+              Factores Naturales del Terruño
+            </span>
+          </div>
+          <span id="card-progress-pill" class="text-xs font-mono text-slate-400 bg-white/5 px-2.5 py-1 rounded-lg border border-white/10">
+            Ficha 1 de 100
+          </span>
+        </div>
+
+        <!-- Question -->
+        <h2 id="active-question" class="text-xl sm:text-2xl font-bold text-white mb-6 leading-relaxed font-serif-wine">
+          Cargando pregunta...
+        </h2>
+
+        <!-- Answer / Solution Box (Hidden by default) -->
+        <div id="solution-box" class="hidden mb-6 p-6 rounded-2xl bg-black/40 border border-white/10 space-y-4 card-solution-box animate-fadeIn">
+          <div>
+            <div class="flex items-center gap-2 text-xs font-mono text-emerald-400 uppercase tracking-wider font-bold mb-2">
+              <span>✓</span> <span id="lbl-solution-title">Razonamiento Técnico & Deductivo</span>
+            </div>
+            <p id="active-answer" class="text-slate-200 text-sm leading-relaxed whitespace-pre-line"></p>
+          </div>
+
+          <div id="active-tip-container" class="pt-4 border-t border-white/10">
+            <div class="flex items-center gap-2 text-xs font-mono text-amber-300 uppercase tracking-wider font-bold mb-1.5">
+              <span>💡</span> <span id="lbl-tip-title">Consejo Maestro de Sumiller (Clave de Examen)</span>
+            </div>
+            <p id="active-tip" class="text-slate-300 text-xs italic leading-relaxed"></p>
+          </div>
+
+          <div id="active-citation-container" class="pt-3 border-t border-white/5 text-[11px] font-mono text-slate-400 flex items-center gap-1.5">
+            <span>📚</span> <span id="active-citation"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card Action Footer -->
+      <div class="pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <!-- Reveal / Hide Button -->
+        <button id="btn-toggle-solution" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-rose-700 to-rose-600 hover:from-rose-600 hover:to-rose-500 text-white font-mono text-xs font-bold uppercase tracking-wider transition-all shadow-lg shadow-rose-900/30 flex items-center justify-center gap-2">
+          <span>👁️</span> <span id="lbl-reveal-btn">Mostrar Respuesta & Solución</span>
+        </button>
+
+        <!-- Navigation Buttons -->
+        <div class="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end">
+          <button id="btn-prev" class="px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white text-xs font-mono transition-colors flex items-center gap-1.5">
+            <span>←</span> <span id="lbl-prev">Anterior</span>
+          </button>
+          <button id="btn-next" class="px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white text-xs font-mono font-bold transition-colors flex items-center gap-1.5">
+            <span id="lbl-next">Siguiente</span> <span>→</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Keyboard Shortcuts Helper -->
+    <div class="text-center text-xs font-mono text-slate-400 hidden sm:block">
+      Atajos de teclado: <kbd class="px-1.5 py-0.5 rounded bg-white/10 text-slate-300">Espacio</kbd> Mostrar/Ocultar · <kbd class="px-1.5 py-0.5 rounded bg-white/10 text-slate-300">←</kbd> Anterior · <kbd class="px-1.5 py-0.5 rounded bg-white/10 text-slate-300">→</kbd> Siguiente
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 bg-[#07090e] py-8 text-xs font-mono text-slate-400 mt-12">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <img src="assets/logo.svg?v=20261119_v2" alt="WINE³ai" class="w-6 h-6">
+        <span>WINE³ai · Entrenador Oficial de Flashcards</span>
+      </div>
+      <div class="flex items-center gap-5">
+        <a href="winepedia.html" class="hover:text-white transition-colors">WINEp3dIA</a>
+        <a href="sommelier.html" class="hover:text-white transition-colors">Sebastián</a>
+        <a href="map.html" class="hover:text-white transition-colors">Mapa</a>
+        <a href="grapes.html" class="hover:text-white transition-colors">Uvas</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="data/study_cards.js?v=20261120_v1"></script>
+  <script>
+    (function() {
+      'use strict';
+
+      var allCards = window.STUDY_CARDS || [];
+      var currentStandard = 'all';
+      var currentQuery = '';
+      var activeList = allCards.slice();
+      var currentIndex = 0;
+      var isEnglish = localStorage.getItem('wine3ai_lang') === 'en';
+
+      // Elements
+      var elStandardBadge = document.getElementById('active-standard-badge');
+      var elCategory = document.getElementById('active-category');
+      var elProgress = document.getElementById('card-progress-pill');
+      var elQuestion = document.getElementById('active-question');
+      var elAnswer = document.getElementById('active-answer');
+      var elTip = document.getElementById('active-tip');
+      var elTipContainer = document.getElementById('active-tip-container');
+      var elCitation = document.getElementById('active-citation');
+      var elCitationContainer = document.getElementById('active-citation-container');
+      var elSolutionBox = document.getElementById('solution-box');
+      var btnToggleSolution = document.getElementById('btn-toggle-solution');
+      var btnNext = document.getElementById('btn-next');
+      var btnPrev = document.getElementById('btn-prev');
+      var btnShuffle = document.getElementById('btn-shuffle');
+      var searchInput = document.getElementById('card-search');
+      var filterBtns = document.querySelectorAll('.filter-btn');
+
+      // Update counters
+      function updateCounters() {
+        var wsetCount = allCards.filter(c => (c.standard || '').includes('WSET')).length;
+        var cmsCount = allCards.filter(c => (c.standard || '').includes('CMS')).length;
+        var asiCount = allCards.filter(c => (c.standard || '').includes('ASI')).length;
+
+        document.getElementById('count-all').textContent = allCards.length;
+        document.getElementById('count-wset').textContent = wsetCount;
+        document.getElementById('count-cms').textContent = cmsCount;
+        document.getElementById('count-asi').textContent = asiCount;
+      }
+
+      function filterCards() {
+        var q = currentQuery.toLowerCase().trim();
+        activeList = allCards.filter(function(c) {
+          var matchStd = (currentStandard === 'all') || (c.standard || '').includes(currentStandard);
+          if (!matchStd) return false;
+          if (!q) return true;
+
+          var text = [
+            c.question_es, c.question_en,
+            c.answer_es, c.answer_en,
+            c.category, c.category_en,
+            c.solution_es, c.solution_en
+          ].join(' ').toLowerCase();
+
+          return text.indexOf(q) !== -1;
+        });
+
+        currentIndex = 0;
+        renderCard();
+      }
+
+      function renderCard() {
+        if (!activeList.length) {
+          elQuestion.textContent = isEnglish ? "No flashcards found matching your filter." : "No se encontraron fichas con los filtros actuales.";
+          elStandardBadge.textContent = "—";
+          elCategory.textContent = "";
+          elProgress.textContent = "0 / 0";
+          elSolutionBox.classList.add('hidden');
+          btnToggleSolution.classList.add('hidden');
+          return;
+        }
+
+        btnToggleSolution.classList.remove('hidden');
+        var card = activeList[currentIndex];
+
+        // Standard styling
+        var std = card.standard || 'WSET3';
+        elStandardBadge.textContent = std === 'WSET3' ? 'WSET 3' : (std === 'CMS' ? 'CMS Deductive' : 'ASI Global');
+        if (std.includes('CMS')) {
+          elStandardBadge.className = "px-3 py-1 rounded-lg text-xs font-mono font-bold bg-rose-950 text-rose-300 border border-rose-800/50";
+        } else if (std.includes('ASI')) {
+          elStandardBadge.className = "px-3 py-1 rounded-lg text-xs font-mono font-bold bg-emerald-950 text-emerald-300 border border-emerald-800/50";
+        } else {
+          elStandardBadge.className = "px-3 py-1 rounded-lg text-xs font-mono font-bold bg-purple-950 text-purple-300 border border-purple-800/50";
+        }
+
+        // Category
+        elCategory.textContent = isEnglish ? (card.category_en || card.category || '') : (card.category || '');
+
+        // Progress
+        elProgress.textContent = isEnglish
+          ? ("Card " + (currentIndex + 1) + " of " + activeList.length)
+          : ("Ficha " + (currentIndex + 1) + " de " + activeList.length);
+
+        // Question
+        elQuestion.textContent = isEnglish ? (card.question_en || card.question_es) : card.question_es;
+
+        // Answer
+        var ans = isEnglish ? (card.answer_en || card.answer_es) : card.answer_es;
+        elAnswer.textContent = ans || '';
+
+        // Tip
+        var tip = isEnglish ? (card.solution_en || card.solution_es) : (card.solution_es || card.solution_en);
+        if (tip) {
+          elTipContainer.classList.remove('hidden');
+          elTip.textContent = tip;
+        } else {
+          elTipContainer.classList.add('hidden');
+        }
+
+        // Citation
+        if (card.citation) {
+          elCitationContainer.classList.remove('hidden');
+          elCitation.textContent = card.citation;
+        } else {
+          elCitationContainer.classList.add('hidden');
+        }
+
+        // Reset solution state
+        elSolutionBox.classList.add('hidden');
+        btnToggleSolution.innerHTML = isEnglish ? "<span>👁️</span> <span>Reveal Answer & Solution</span>" : "<span>👁️</span> <span>Mostrar Respuesta & Solución</span>";
+      }
+
+      // Toggle solution
+      btnToggleSolution.addEventListener('click', function() {
+        var isHidden = elSolutionBox.classList.contains('hidden');
+        if (isHidden) {
+          elSolutionBox.classList.remove('hidden');
+          btnToggleSolution.innerHTML = isEnglish ? "<span>🙈</span> <span>Hide Solution</span>" : "<span>🙈</span> <span>Ocultar Solución</span>";
+        } else {
+          elSolutionBox.classList.add('hidden');
+          btnToggleSolution.innerHTML = isEnglish ? "<span>👁️</span> <span>Reveal Answer & Solution</span>" : "<span>👁️</span> <span>Mostrar Respuesta & Solución</span>";
+        }
+      });
+
+      // Next / Prev
+      btnNext.addEventListener('click', function() {
+        if (activeList.length <= 1) return;
+        currentIndex = (currentIndex + 1) % activeList.length;
+        renderCard();
+      });
+
+      btnPrev.addEventListener('click', function() {
+        if (activeList.length <= 1) return;
+        currentIndex = (currentIndex - 1 + activeList.length) % activeList.length;
+        renderCard();
+      });
+
+      // Shuffle
+      btnShuffle.addEventListener('click', function() {
+        for (var i = activeList.length - 1; i > 0; i--) {
+          var j = Math.floor(Math.random() * (i + 1));
+          var temp = activeList[i];
+          activeList[i] = activeList[j];
+          activeList[j] = temp;
+        }
+        currentIndex = 0;
+        renderCard();
+      });
+
+      // Search
+      searchInput.addEventListener('input', function(e) {
+        currentQuery = e.target.value;
+        filterCards();
+      });
+
+      // Tabs
+      filterBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          currentStandard = btn.getAttribute('data-standard');
+          filterBtns.forEach(function(b) {
+            b.className = "filter-btn px-3 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10";
+          });
+          btn.className = "filter-btn px-3 py-1.5 rounded-xl bg-rose-950 text-rose-300 border border-rose-800/60 font-semibold";
+          filterCards();
+        });
+      });
+
+      // Keyboard navigation
+      window.addEventListener('keydown', function(e) {
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+        if (e.key === ' ' || e.code === 'Space') {
+          e.preventDefault();
+          btnToggleSolution.click();
+        } else if (e.key === 'ArrowRight') {
+          btnNext.click();
+        } else if (e.key === 'ArrowLeft') {
+          btnPrev.click();
+        }
+      });
+
+      // Theme toggle
+      var themeBtn = document.getElementById('btn-theme-toggle');
+      if (themeBtn) {
+        var updateIcon = function(t) { themeBtn.innerHTML = t === 'light' ? '☀️' : '🌙'; };
+        var currentT = localStorage.getItem('theme') || 'dark';
+        updateIcon(currentT);
+
+        themeBtn.addEventListener('click', function() {
+          var isLight = document.documentElement.getAttribute('data-theme') === 'light';
+          var nextT = isLight ? 'dark' : 'light';
+          if (nextT === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            document.documentElement.classList.remove('dark');
+          } else {
+            document.documentElement.removeAttribute('data-theme');
+            document.documentElement.classList.add('dark');
+          }
+          localStorage.setItem('theme', nextT);
+          updateIcon(nextT);
+        });
+      }
+
+      // Language buttons
+      var btnEs = document.getElementById('btn-lang-es');
+      var btnEn = document.getElementById('btn-lang-en');
+
+      function setLanguage(lang) {
+        isEnglish = lang === 'en';
+        localStorage.setItem('wine3ai_lang', lang);
+        if (isEnglish) {
+          btnEn.className = "px-2.5 py-1 rounded bg-rose-950 text-rose-300 font-bold border border-rose-800/40";
+          btnEs.className = "px-2.5 py-1 text-slate-400 hover:text-white transition-colors";
+          document.getElementById('lbl-switch-encyclopedia').textContent = "View Encyclopedia Articles";
+          document.getElementById('hero-subtitle').textContent = "Interactive database of questions and deductive reasoning structured for international sommelier certification exams.";
+          document.getElementById('tab-all').textContent = "All";
+          document.getElementById('lbl-shuffle').textContent = "Shuffle";
+          document.getElementById('lbl-solution-title').textContent = "Technical & Deductive Rationale";
+          document.getElementById('lbl-tip-title').textContent = "Master Sommelier Exam Tip";
+          document.getElementById('lbl-prev').textContent = "Prev";
+          document.getElementById('lbl-next').textContent = "Next";
+          searchInput.placeholder = "Search concept or grape...";
+        } else {
+          btnEs.className = "px-2.5 py-1 rounded bg-rose-950 text-rose-300 font-bold border border-rose-800/40";
+          btnEn.className = "px-2.5 py-1 text-slate-400 hover:text-white transition-colors";
+          document.getElementById('lbl-switch-encyclopedia').textContent = "Ver Artículos de la Enciclopedia";
+          document.getElementById('hero-subtitle').textContent = "Banco interactivo de preguntas y razonamientos deductivos estructurados para la preparación de certificaciones internacionales de sumillería.";
+          document.getElementById('tab-all').textContent = "Todas";
+          document.getElementById('lbl-shuffle').textContent = "Barajar";
+          document.getElementById('lbl-solution-title').textContent = "Razonamiento Técnico & Deductivo";
+          document.getElementById('lbl-tip-title').textContent = "Consejo Maestro de Sumiller (Clave de Examen)";
+          document.getElementById('lbl-prev').textContent = "Anterior";
+          document.getElementById('lbl-next').textContent = "Siguiente";
+          searchInput.placeholder = "Buscar concepto o uva...";
+        }
+        renderCard();
+      }
+
+      if (btnEs && btnEn) {
+        btnEs.addEventListener('click', function() { setLanguage('es'); });
+        btnEn.addEventListener('click', function() { setLanguage('en'); });
+        if (isEnglish) setLanguage('en');
+      }
+
+      // Initial load
+      updateCounters();
+      filterCards();
+    })();
+  </script>
+</body>
+</html>

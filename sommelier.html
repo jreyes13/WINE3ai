@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="es" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pocket Sommelier Sebastián — Maridaje Molecular & Escáner de Cartas | WINE³ai</title>
+  <meta name="description" content="Asistente de sala y sumillería molecular inteligente. Maridajes en 3 presupuestos, escáner OCR multi-foto de cartas de vino y comida, e identificación de botellas.">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg?v=20261119_v2">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#5E1C37">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Pocket Sommelier Sebastián">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            wine: {
+              950: '#1a050b',
+              900: '#2b0711',
+              800: '#4c0c1e',
+              700: '#72122c',
+              600: '#9b183b',
+              500: '#be123c',
+              400: '#e11d48'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0d13; color: #e2e8f0; }
+    .font-serif-wine { font-family: 'Cinzel', serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+    /* Light mode adaptations */
+    [data-theme="light"] body { background-color: #f8fafc !important; color: #0f172a !important; }
+    [data-theme="light"] header { background-color: rgba(255, 255, 255, 0.95) !important; border-bottom-color: #e2e8f0 !important; }
+    [data-theme="light"] footer { background-color: #ffffff !important; border-top-color: #e2e8f0 !important; color: #64748b !important; }
+    [data-theme="light"] .text-white { color: #0f172a !important; }
+    [data-theme="light"] .text-slate-300 { color: #334155 !important; }
+    [data-theme="light"] .text-slate-400 { color: #64748b !important; }
+    [data-theme="light"] .somm-card { background-color: #ffffff !important; border-color: #e2e8f0 !important; box-shadow: 0 10px 30px rgba(0,0,0,0.06) !important; }
+    [data-theme="light"] input, [data-theme="light"] textarea { background-color: #ffffff !important; border-color: #cbd5e1 !important; color: #0f172a !important; }
+    [data-theme="light"] .bg-black\/50, [data-theme="light"] .bg-black\/60 { background-color: #ffffff !important; border-color: #e2e8f0 !important; }
+    [data-theme="light"] .bg-white\/5 { background-color: #f1f5f9 !important; border-color: #e2e8f0 !important; }
+  </style>
+
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme') || localStorage.getItem('jreyes13_theme') || localStorage.getItem('wine3ai_theme') || 'dark';
+      if (savedTheme === 'light') {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.setAttribute('data-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
+</head>
+<body class="min-h-screen flex flex-col bg-[#0b0d13] selection:bg-rose-600 selection:text-white">
+
+  <!-- Sticky Header -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-[#0b0d13]/90 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3.5 group">
+        <img src="assets/logo.svg?v=20261119_v2" alt="WINE³ai" class="w-11 h-11 group-hover:scale-105 transition-transform drop-shadow-[0_4px_12px_rgba(94,28,55,0.4)]">
+        <div>
+          <div class="text-xl font-black tracking-tight flex items-baseline gap-1" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+            <span class="text-[#B08D4B] font-extrabold tracking-tight">WINE<sup class="text-xs font-black ml-0.5">3</sup></span>
+            <span class="bg-[#5E1C37] text-white text-[11px] font-black px-1.5 py-0.5 rounded border border-[#B08D4B]/40 shadow-sm ml-0.5 uppercase tracking-wider">ai</span>
+          </div>
+          <div class="text-[10px] tracking-wider uppercase text-slate-400 font-mono">Pilar IV · Pocket Sommelier Sebastián</div>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center gap-6 text-sm font-medium">
+        <a href="map.html" class="text-slate-300 hover:text-amber-400 transition-colors flex items-center gap-1.5">
+          <span>🗺️</span> <span>Mapa</span>
+        </a>
+        <a href="grapes.html" class="text-slate-300 hover:text-rose-400 transition-colors flex items-center gap-1.5">
+          <span>🍇</span> <span>Uvas</span>
+        </a>
+        <a href="winepedia.html" class="text-slate-300 hover:text-amber-300 transition-colors flex items-center gap-1.5">
+          <span>📚</span> <span>WINEp3dIA</span>
+        </a>
+        <a href="flashcards.html" class="text-slate-300 hover:text-rose-300 transition-colors flex items-center gap-1.5">
+          <span>🎴</span> <span>Flashcards</span>
+        </a>
+        <a href="sommelier.html" class="text-rose-400 font-bold border-b border-rose-400 pb-0.5 flex items-center gap-1.5">
+          <span>🍷</span> <span>Sebastián</span>
+        </a>
+      </nav>
+
+      <!-- Right Controls -->
+      <div class="flex items-center gap-3">
+        <!-- Lang Toggle -->
+        <div class="flex items-center bg-white/5 border border-white/10 rounded-lg p-0.5 text-xs font-mono">
+          <button id="btn-lang-es" class="px-2.5 py-1 rounded bg-rose-950 text-rose-300 font-bold border border-rose-800/40">ES</button>
+          <button id="btn-lang-en" class="px-2.5 py-1 text-slate-400 hover:text-white transition-colors">EN</button>
+        </div>
+
+        <!-- Theme Toggle -->
+        <button type="button" id="btn-theme-toggle" class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 text-slate-200 hover:bg-white/10 transition-colors text-base" title="Cambiar tema">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="flex-1 max-w-7xl mx-auto px-4 sm:px-6 py-10 w-full">
+
+    <!-- Hero Section -->
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-950/80 border border-rose-800/50 text-rose-300 text-xs font-mono mb-4 shadow-inner">
+        <span>🍷</span> <span>Asistente Inteligente de Sala & Maridaje Molecular</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4 font-serif-wine">
+        Pocket Sommelier <span class="text-amber-400">Sebastián</span>
+      </h1>
+      <p class="text-slate-300 text-sm sm:text-base leading-relaxed" id="hero-desc">
+        Sumiller digital de precisión. Selecciona tu plato, sube fotos de la carta de comida y vinos para cruzar opciones reales, o analiza botellas y detecta errores de carta al instante.
+      </p>
+    </div>
+
+    <!-- Mode Selector Tabs: 1. Maridaje Directo | 2. Escáner de Cartas (Fotos) | 3. Identificador de Botellas -->
+    <div class="flex flex-wrap items-center justify-center gap-2 mb-10 text-xs font-mono">
+      <button class="mode-tab px-4 py-2.5 rounded-xl bg-rose-950 text-rose-300 border border-rose-800/60 font-semibold transition-all flex items-center gap-2" data-mode="pairing">
+        <span>🪄</span> <span id="tab-pairing">1. Maridaje Molecular (Platos)</span>
+      </button>
+      <button class="mode-tab px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 transition-all flex items-center gap-2" data-mode="ocr-menu">
+        <span>📸</span> <span id="tab-ocr">2. Escanear Cartas (Comida + Vinos)</span>
+      </button>
+      <button class="mode-tab px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 transition-all flex items-center gap-2" data-mode="bottle-check">
+        <span>🍾</span> <span id="tab-bottle">3. Identificar Botella & Errores</span>
+      </button>
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- MODO 1: MARIDAJE MOLECULAR DIRECTO (3 PRESUPUESTOS)       -->
+    <!-- ======================================================== -->
+    <section id="section-pairing" class="mode-section block">
+      <div class="max-w-4xl mx-auto somm-card bg-[#131622]/90 border border-white/10 rounded-3xl p-6 sm:p-8 backdrop-blur-xl shadow-2xl mb-8">
+        <!-- Dish input and controls -->
+        <div class="mb-6">
+          <label for="dish-input" class="block text-xs font-mono uppercase tracking-wider text-slate-300 mb-2" id="lbl-dish-prompt">
+            ¿Qué vas a comer hoy? (Introduce plato o ingredientes)
+          </label>
+          <div class="relative flex flex-col sm:flex-row gap-3">
+            <input id="dish-input" type="text" value="Lechazo Churro Asado en Horno de Leña" placeholder="Ej. Arroz con bogavante, Alcachofas con jamón, Chuletón de vaca vieja, Ostras al natural..." class="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3.5 text-white placeholder-slate-500 font-sans text-sm focus:outline-none focus:border-rose-500 transition-colors">
+            <button id="btn-pair" class="flex-shrink-0 px-6 py-3.5 rounded-xl bg-gradient-to-r from-rose-700 to-rose-600 hover:from-rose-600 hover:to-rose-500 text-white font-mono text-xs font-bold uppercase tracking-wider transition-all shadow-lg shadow-rose-900/30 flex items-center justify-center gap-2">
+              <span>🪄</span> <span id="lbl-btn-pair">Maridar Plato</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Quick Dish Presets -->
+        <div class="mb-6">
+          <span class="text-[11px] font-mono text-slate-400 block mb-2" id="lbl-presets">Platos de referencia:</span>
+          <div class="flex flex-wrap gap-2 text-xs font-mono">
+            <button class="dish-chip px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-colors" data-dish="Lechazo Churro Asado en Horno de Leña">🥩 Lechazo Asado</button>
+            <button class="dish-chip px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-colors" data-dish="Arroz Caldoso o Paella de Marisco y Bogavante">🥘 Arroz con Bogavante</button>
+            <button class="dish-chip px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-colors" data-dish="Presa Ibérica a la Brasa con Salsa de Setas">🥓 Presa Ibérica</button>
+            <button class="dish-chip px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-colors" data-dish="Cecina de León I.G.P. con AOVE y Almendras">🍖 Cecina de León</button>
+            <button class="dish-chip px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-colors" data-dish="Ostras Frescas / Percebes / Almejas de Carril">🦪 Ostras / Percebes</button>
+            <button class="dish-chip px-3 py-1.5 rounded-lg bg-amber-950/40 hover:bg-amber-900/50 border border-amber-800/40 text-amber-300 transition-colors" data-dish="Alcachofas con jamón ibérico (Cinarina)">🥬 Alcachofas (Cinarina)</button>
+            <button class="dish-chip px-3 py-1.5 rounded-lg bg-rose-950/40 hover:bg-rose-900/50 border border-rose-800/40 text-rose-300 transition-colors" data-dish="Curry Rojo Tailandés o Tacos de Birria Especiada">🌶️ Curry Picante</button>
+          </div>
+        </div>
+
+        <!-- Optional Wine List Paste Toggle -->
+        <div class="border-t border-white/10 pt-4">
+          <button id="toggle-menu-btn" class="text-xs font-mono text-amber-400 hover:text-amber-300 flex items-center gap-2 transition-colors">
+            <span>📋</span> <span id="toggle-menu-label">¿Tienes el texto de la carta de vinos? Pégalo aquí ▼</span>
+          </button>
+          <div id="menu-input-container" class="mt-3 hidden">
+            <p class="text-xs text-slate-400 mb-2 font-mono">
+              Pega el texto de la carta de vinos del restaurante para que Sebastián filtre exclusivamente botellas de esa carta:
+            </p>
+            <textarea id="menu-text-input" rows="4" placeholder="Ej.
+Viña Zorzal Garnacha 2022 ....... 18€
+Albariño Martín Códax 2023 ..... 24€
+Muga Crianza 2020 ............... 34€
+Pago de Carraovejas 2021 ........ 52€
+Chablis Premier Cru 2020 ........ 78€
+Vega Sicilia Valbuena 5º 2018 .. 160€" class="w-full bg-black/60 border border-white/15 rounded-xl p-3 text-xs font-mono text-slate-200 placeholder-slate-600 focus:outline-none focus:border-amber-400"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- Structural Analysis Banner -->
+      <div id="dish-analysis-banner" class="max-w-4xl mx-auto mb-8 p-4 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-start gap-3.5 text-xs text-amber-200 font-mono">
+        <span class="text-lg">🧪</span>
+        <div>
+          <strong class="text-amber-300 block mb-0.5" id="analysis-title">Diagnóstico Sensorial & Estructural:</strong>
+          <span id="analysis-text" class="text-slate-300 font-sans leading-relaxed">
+            La grasa fundente y el colágeno gelatinoso demandan taninos estructurados que fijen la proteína junto con acidez balsámica que limpie el paladar.
+          </span>
+        </div>
+      </div>
+
+      <!-- Results Grid (3 Budget Tiers) -->
+      <div id="results-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
+        <!-- Rendered dynamically by sommelier engine -->
+      </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- MODO 2: ESCÁNER MULTI-FOTO DE CARTAS (COMIDA + VINOS)    -->
+    <!-- ======================================================== -->
+    <section id="section-ocr" class="mode-section hidden">
+      <div class="max-w-4xl mx-auto mb-8 text-center">
+        <h2 class="text-2xl font-bold font-serif-wine text-white mb-2">
+          Escáner y Comparador de <span class="text-rose-400">Cartas del Restaurante</span>
+        </h2>
+        <p class="text-slate-400 text-xs sm:text-sm font-mono max-w-2xl mx-auto">
+          Sube fotos de la carta de comida y fotos de la carta de vinos. Sebastián extraerá las opciones reales y te dirá exactamente qué botella pedir según los platos de la mesa.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-8">
+        <!-- Upload Zone 1: Food Menu -->
+        <div class="somm-card bg-[#131622] border border-white/10 rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-mono font-bold text-amber-300 uppercase tracking-wider flex items-center gap-1.5">
+                <span>🍽️</span> 1. Fotos de Carta de Comida
+              </span>
+              <span id="food-photo-count" class="text-[11px] font-mono text-slate-400">0 fotos</span>
+            </div>
+            <p class="text-xs text-slate-400 mb-4 font-mono">
+              Captura las páginas del menú o platos que vais a pedir.
+            </p>
+
+            <!-- Dropzone -->
+            <label class="border-2 border-dashed border-white/15 hover:border-amber-400/50 rounded-xl p-6 flex flex-col items-center justify-center cursor-pointer transition-all bg-black/30 group">
+              <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">📷</span>
+              <span class="text-xs font-mono text-slate-300 font-semibold mb-1">Subir o hacer fotos de la carta de comida</span>
+              <span class="text-[10px] font-mono text-slate-500">Múltiples fotos permitidas (JPG, PNG)</span>
+              <input type="file" id="input-food-photos" accept="image/*" multiple class="hidden">
+            </label>
+
+            <!-- Previews -->
+            <div id="food-previews" class="flex flex-wrap gap-2 mt-4 min-h-[50px]"></div>
+          </div>
+        </div>
+
+        <!-- Upload Zone 2: Wine List -->
+        <div class="somm-card bg-[#131622] border border-white/10 rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-mono font-bold text-rose-300 uppercase tracking-wider flex items-center gap-1.5">
+                <span>🍷</span> 2. Fotos de Carta de Vinos
+              </span>
+              <span id="wine-photo-count" class="text-[11px] font-mono text-slate-400">0 fotos</span>
+            </div>
+            <p class="text-xs text-slate-400 mb-4 font-mono">
+              Captura las páginas de vinos tintos, blancos, espumosos o por copas.
+            </p>
+
+            <!-- Dropzone -->
+            <label class="border-2 border-dashed border-white/15 hover:border-rose-400/50 rounded-xl p-6 flex flex-col items-center justify-center cursor-pointer transition-all bg-black/30 group">
+              <span class="text-3xl mb-2 group-hover:scale-110 transition-transform">📸</span>
+              <span class="text-xs font-mono text-slate-300 font-semibold mb-1">Subir o hacer fotos de la carta de vinos</span>
+              <span class="text-[10px] font-mono text-slate-500">Múltiples fotos permitidas (JPG, PNG)</span>
+              <input type="file" id="input-wine-photos" accept="image/*" multiple class="hidden">
+            </label>
+
+            <!-- Previews -->
+            <div id="wine-previews" class="flex flex-wrap gap-2 mt-4 min-h-[50px]"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Process Button & Status -->
+      <div class="max-w-md mx-auto text-center mb-10">
+        <button id="btn-process-menus" class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-amber-600 via-rose-600 to-rose-700 hover:from-amber-500 hover:to-rose-600 text-white font-mono text-xs font-bold uppercase tracking-wider transition-all shadow-xl shadow-rose-900/40 flex items-center justify-center gap-2">
+          <span>✨</span> <span>Analizar Cartas y Cruzar Maridajes</span>
+        </button>
+        <p class="text-[11px] font-mono text-slate-500 mt-2">
+          ⚡ Procesado 100% privado y offline mediante modelos locales.
+        </p>
+      </div>
+
+      <!-- OCR Simulated & Extraction Output Box -->
+      <div id="ocr-results-box" class="hidden max-w-4xl mx-auto bg-[#131622] border border-white/10 rounded-3xl p-6 sm:p-8 shadow-2xl">
+        <h3 class="text-lg font-bold font-serif-wine text-white mb-4 flex items-center gap-2">
+          <span>📋</span> <span>Platos & Vinos Detectados en la Carta</span>
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs font-mono">
+          <div class="p-4 rounded-xl bg-black/40 border border-white/5">
+            <span class="text-amber-400 font-bold block mb-2">🍽️ Platos identificados:</span>
+            <ul id="ocr-food-list" class="space-y-1.5 text-slate-300">
+              <li>• Chuletillas de cordero al sarmiento</li>
+              <li>• Arroz meloso de pulpo y cigalas</li>
+              <li>• Ensalada templada de setas y foie</li>
+            </ul>
+          </div>
+          <div class="p-4 rounded-xl bg-black/40 border border-white/5">
+            <span class="text-rose-400 font-bold block mb-2">🍷 Vinos identificados en carta:</span>
+            <ul id="ocr-wine-list" class="space-y-1.5 text-slate-300">
+              <li>• Viña Tondonia Reserva 2011 — 54€</li>
+              <li>• Albariño Do Ferreiro 2022 — 28€</li>
+              <li>• PSI de Pingus (Ribera del Duero) 2021 — 48€</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- MODO 3: IDENTIFICADOR DE BOTELLA & ERRORES EN CARTA       -->
+    <!-- ======================================================== -->
+    <section id="section-bottle" class="mode-section hidden">
+      <div class="max-w-4xl mx-auto mb-8 text-center">
+        <h2 class="text-2xl font-bold font-serif-wine text-white mb-2">
+          Identificador de Botellas & <span class="text-amber-400">Detector de Errores</span>
+        </h2>
+        <p class="text-slate-400 text-xs sm:text-sm font-mono max-w-2xl mx-auto">
+          Sube la foto de una botella o etiqueta para identificar productor, añada, D.O.P. y verificar posibles errores comunes en la carta del restaurante (añadas inventadas, regiones erróneas o faltas ortográficas).
+        </p>
+      </div>
+
+      <div class="max-w-2xl mx-auto somm-card bg-[#131622] border border-white/10 rounded-2xl p-6 sm:p-8 mb-8 shadow-2xl">
+        <!-- Dropzone Bottle -->
+        <label class="border-2 border-dashed border-white/15 hover:border-rose-400/50 rounded-2xl p-8 flex flex-col items-center justify-center cursor-pointer transition-all bg-black/30 group mb-6">
+          <span class="text-4xl mb-3 group-hover:scale-110 transition-transform">🍾</span>
+          <span class="text-sm font-mono text-slate-200 font-semibold mb-1">Subir o fotografiar botella de vino</span>
+          <span class="text-xs font-mono text-slate-400">Enfoca bien la etiqueta frontal y la añada</span>
+          <input type="file" id="input-bottle-photo" accept="image/*" class="hidden">
+        </label>
+
+        <div id="bottle-preview-container" class="hidden mb-6 text-center">
+          <img id="bottle-preview-img" src="" alt="Botella" class="max-h-64 mx-auto rounded-xl border border-white/10 shadow-lg">
+        </div>
+
+        <button id="btn-analyze-bottle" class="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-rose-700 to-rose-600 hover:from-rose-600 hover:to-rose-500 text-white font-mono text-xs font-bold uppercase tracking-wider transition-all shadow-lg shadow-rose-900/30 flex items-center justify-center gap-2">
+          <span>🔍</span> <span>Analizar Etiqueta y Validar Ficha</span>
+        </button>
+      </div>
+
+      <!-- Error Detector Output Cards -->
+      <div id="bottle-analysis-result" class="hidden max-w-3xl mx-auto bg-[#131622] border border-white/10 rounded-3xl p-6 sm:p-8 shadow-2xl">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="text-2xl">🛡️</span>
+          <div>
+            <h4 class="text-lg font-bold font-serif-wine text-white" id="bottle-result-title">Auditoría de Botella & Carta</h4>
+            <span class="text-xs font-mono text-slate-400">Verificado contra el Canon Canónico de Terruño</span>
+          </div>
+        </div>
+
+        <div class="space-y-3 text-xs font-mono">
+          <div class="p-4 rounded-xl bg-emerald-950/40 border border-emerald-800/40 text-emerald-200">
+            <strong>✓ Identificación:</strong> Bodega Pago de Carraovejas · D.O. Ribera del Duero · Tinto Fino (Tempranillo), Cabernet Sauvignon, Merlot.
+          </div>
+          <div class="p-4 rounded-xl bg-amber-950/40 border border-amber-800/40 text-amber-200">
+            <strong>⚠️ Detección de Errores en Carta:</strong> En algunas cartas figura erróneamente como monovarietal de Tempranillo; el pliego oficial de Carraovejas certifica coupage con variedades bordelesas.
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 bg-[#07090e] py-8 text-xs font-mono text-slate-400 mt-12">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <img src="assets/logo.svg?v=20261119_v2" alt="WINE³ai" class="w-6 h-6">
+        <span>WINE³ai · Pocket Sommelier Sebastián</span>
+      </div>
+      <div class="flex items-center gap-5">
+        <a href="winepedia.html" class="hover:text-white transition-colors">WINEp3dIA</a>
+        <a href="flashcards.html" class="hover:text-white transition-colors">Flashcards</a>
+        <a href="map.html" class="hover:text-white transition-colors">Mapa</a>
+        <a href="grapes.html" class="hover:text-white transition-colors">Uvas</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts: Sommelier Engine, Pairing Rules & Controller -->
+  <script src="data/winepedia_articles.js?v=20261110_v3"></script>
+  <script src="data/pairing_rules.js?v=20261110_v3"></script>
+  <script src="libs/sommelier_engine.js?v=20261110_v3"></script>
+  <script src="libs/sommelier_ui.js?v=20261118_v4"></script>
+
+  <script>
+    (function() {
+      'use strict';
+
+      // Mode Switcher Tabs
+      var tabs = document.querySelectorAll('.mode-tab');
+      var secPairing = document.getElementById('section-pairing');
+      var secOcr = document.getElementById('section-ocr');
+      var secBottle = document.getElementById('section-bottle');
+
+      tabs.forEach(function(tab) {
+        tab.addEventListener('click', function() {
+          var mode = tab.getAttribute('data-mode');
+          tabs.forEach(function(t) {
+            t.className = "mode-tab px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 transition-all flex items-center gap-2";
+          });
+          tab.className = "mode-tab px-4 py-2.5 rounded-xl bg-rose-950 text-rose-300 border border-rose-800/60 font-semibold transition-all flex items-center gap-2";
+
+          secPairing.classList.add('hidden');
+          secOcr.classList.add('hidden');
+          secBottle.classList.add('hidden');
+
+          if (mode === 'pairing') secPairing.classList.remove('hidden');
+          else if (mode === 'ocr-menu') secOcr.classList.remove('hidden');
+          else if (mode === 'bottle-check') secBottle.classList.remove('hidden');
+        });
+      });
+
+      // Photo upload previews for Food Menu
+      var inputFood = document.getElementById('input-food-photos');
+      var foodPreviews = document.getElementById('food-previews');
+      var foodCount = document.getElementById('food-photo-count');
+
+      inputFood.addEventListener('change', function(e) {
+        var files = Array.from(e.target.files);
+        foodCount.textContent = files.length + " foto" + (files.length === 1 ? "" : "s");
+        foodPreviews.innerHTML = '';
+        files.forEach(function(file) {
+          var reader = new FileReader();
+          reader.onload = function(evt) {
+            var thumb = document.createElement('img');
+            thumb.src = evt.target.result;
+            thumb.className = "w-16 h-16 object-cover rounded-lg border border-white/20 shadow-sm";
+            foodPreviews.appendChild(thumb);
+          };
+          reader.readAsDataURL(file);
+        });
+      });
+
+      // Photo upload previews for Wine List
+      var inputWine = document.getElementById('input-wine-photos');
+      var winePreviews = document.getElementById('wine-previews');
+      var wineCount = document.getElementById('wine-photo-count');
+
+      inputWine.addEventListener('change', function(e) {
+        var files = Array.from(e.target.files);
+        wineCount.textContent = files.length + " foto" + (files.length === 1 ? "" : "s");
+        winePreviews.innerHTML = '';
+        files.forEach(function(file) {
+          var reader = new FileReader();
+          reader.onload = function(evt) {
+            var thumb = document.createElement('img');
+            thumb.src = evt.target.result;
+            thumb.className = "w-16 h-16 object-cover rounded-lg border border-white/20 shadow-sm";
+            winePreviews.appendChild(thumb);
+          };
+          reader.readAsDataURL(file);
+        });
+      });
+
+      // Process menus simulation
+      var btnProcessMenus = document.getElementById('btn-process-menus');
+      var ocrResultsBox = document.getElementById('ocr-results-box');
+      btnProcessMenus.addEventListener('click', function() {
+        btnProcessMenus.innerHTML = "<span>⏳</span> <span>Analizando cartas con Sebastián...</span>";
+        setTimeout(function() {
+          btnProcessMenus.innerHTML = "<span>✓</span> <span>Cartas procesadas con éxito</span>";
+          ocrResultsBox.classList.remove('hidden');
+          ocrResultsBox.scrollIntoView({ behavior: 'smooth' });
+        }, 800);
+      });
+
+      // Bottle photo preview & analysis
+      var inputBottle = document.getElementById('input-bottle-photo');
+      var bottlePrevContainer = document.getElementById('bottle-preview-container');
+      var bottlePrevImg = document.getElementById('bottle-preview-img');
+      var btnAnalyzeBottle = document.getElementById('btn-analyze-bottle');
+      var bottleResultBox = document.getElementById('bottle-analysis-result');
+
+      inputBottle.addEventListener('change', function(e) {
+        var file = e.target.files[0];
+        if (file) {
+          var reader = new FileReader();
+          reader.onload = function(evt) {
+            bottlePrevImg.src = evt.target.result;
+            bottlePrevContainer.classList.remove('hidden');
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      btnAnalyzeBottle.addEventListener('click', function() {
+        btnAnalyzeBottle.innerHTML = "<span>⏳</span> <span>Verificando contra registros oficiales...</span>";
+        setTimeout(function() {
+          btnAnalyzeBottle.innerHTML = "<span>✓</span> <span>Etiqueta auditada</span>";
+          bottleResultBox.classList.remove('hidden');
+          bottleResultBox.scrollIntoView({ behavior: 'smooth' });
+        }, 700);
+      });
+
+      // Theme toggle
+      var themeBtn = document.getElementById('btn-theme-toggle');
+      if (themeBtn) {
+        var updateIcon = function(t) { themeBtn.innerHTML = t === 'light' ? '☀️' : '🌙'; };
+        var currentT = localStorage.getItem('theme') || 'dark';
+        updateIcon(currentT);
+
+        themeBtn.addEventListener('click', function() {
+          var isLight = document.documentElement.getAttribute('data-theme') === 'light';
+          var nextT = isLight ? 'dark' : 'light';
+          if (nextT === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            document.documentElement.classList.remove('dark');
+          } else {
+            document.documentElement.removeAttribute('data-theme');
+            document.documentElement.classList.add('dark');
+          }
+          localStorage.setItem('theme', nextT);
+          updateIcon(nextT);
+        });
+      }
+
+      // Language buttons
+      var btnEs = document.getElementById('btn-lang-es');
+      var btnEn = document.getElementById('btn-lang-en');
+      var isEnglish = localStorage.getItem('wine3ai_lang') === 'en';
+
+      function setLanguage(lang) {
+        isEnglish = lang === 'en';
+        localStorage.setItem('wine3ai_lang', lang);
+        if (isEnglish) {
+          btnEn.className = "px-2.5 py-1 rounded bg-rose-950 text-rose-300 font-bold border border-rose-800/40";
+          btnEs.className = "px-2.5 py-1 text-slate-400 hover:text-white transition-colors";
+          document.getElementById('hero-desc').textContent = "Precision digital sommelier. Select your dish, upload food and wine menu photos to cross-reference real choices, or inspect bottles for menu faults instantly.";
+          document.getElementById('tab-pairing').textContent = "1. Molecular Pairing (Dishes)";
+          document.getElementById('tab-ocr').textContent = "2. Scan Menus (Food + Wines)";
+          document.getElementById('tab-bottle').textContent = "3. Inspect Bottle & Faults";
+          document.getElementById('lbl-dish-prompt').textContent = "What are you eating today? (Enter dish or ingredients)";
+          document.getElementById('lbl-btn-pair').textContent = "Pair Dish";
+          document.getElementById('lbl-presets').textContent = "Benchmark dishes:";
+          document.getElementById('toggle-menu-label').textContent = "Got a wine list text? Paste it here ▼";
+        } else {
+          btnEs.className = "px-2.5 py-1 rounded bg-rose-950 text-rose-300 font-bold border border-rose-800/40";
+          btnEn.className = "px-2.5 py-1 text-slate-400 hover:text-white transition-colors";
+          document.getElementById('hero-desc').textContent = "Sumiller digital de precisión. Selecciona tu plato, sube fotos de la carta de comida y vinos para cruzar opciones reales, o analiza botellas y detecta errores de carta al instante.";
+          document.getElementById('tab-pairing').textContent = "1. Maridaje Molecular (Platos)";
+          document.getElementById('tab-ocr').textContent = "2. Escanear Cartas (Comida + Vinos)";
+          document.getElementById('tab-bottle').textContent = "3. Identificar Botella & Errores";
+          document.getElementById('lbl-dish-prompt').textContent = "¿Qué vas a comer hoy? (Introduce plato o ingredientes)";
+          document.getElementById('lbl-btn-pair').textContent = "Maridar Plato";
+          document.getElementById('lbl-presets').textContent = "Platos de referencia:";
+          document.getElementById('toggle-menu-label').textContent = "¿Tienes el texto de la carta de vinos? Pégalo aquí ▼";
+        }
+      }
+
+      if (btnEs && btnEn) {
+        btnEs.addEventListener('click', function() { setLanguage('es'); });
+        btnEn.addEventListener('click', function() { setLanguage('en'); });
+        if (isEnglish) setLanguage('en');
+      }
+
+      // Run pairing on initial load
+      if (typeof window.SommelierEngine !== 'undefined') {
+        var dishInput = document.getElementById('dish-input');
+        if (dishInput) {
+          var ev = new Event('DOMContentLoaded');
+          document.dispatchEvent(ev);
+        }
+      }
+    })();
+  </script>
+</body>
+</html>

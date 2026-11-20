@@ -1,158 +1,189 @@
-# Documentación Técnica: Scripts de WINE³ai
+# Guía y Manual Operativo de Scripts — WINE³ai
 
-**Versión:** 1.0.3  
-**Directorio:** `/scripts/`  
-**Proyecto:** WINE³ai (Sistema de Inteligencia Artificial Local para Enología)  
-**Estado:** Estable / Producción  
-
----
-
-## 1. Introducción
-
-El directorio `scripts/` contiene la infraestructura de orquestación local para el procesamiento de datos enológicos y la inferencia de modelos de lenguaje (LLM). Todos los componentes están diseñados para operar **offline**, garantizando la privacidad de las recetas, análisis sensoriales y metadatos vitivinícolas sin dependencia de APIs externas.
+> **English version available:** [README.en.md](file:///Users/jreyes13/GitHub/wine3ai/scripts/README.en.md)  
+> **Directorio:** `/scripts/`  
+> **Filosofía del Sistema:** 100% Local, Privacidad Total, **0 Tokens Externos** (Inferencia exclusiva mediante LM Studio local en `http://127.0.0.1:1234/v1`).
 
 ---
 
-## 2. `lm_studio.py`
-**Conector Cliente Local con LM Studio**
+## 1. Mapa de Scripts y Componentes
 
-Este script actúa como interfaz de aplicación (API Client) hacia una instancia local de LM Studio. Su función principal es encapsular la comunicación HTTP para gestionar inferencias de texto, asegurando que el procesamiento de tokens se realice estrictamente en hardware local (GPU/CPU), eliminando cualquier latencia o costo asociado a servicios en la nube.
-
-### 2.1. Funcionalidades Clave
-*   **Cero Consumo en la Nube:** Todas las peticiones se enrutan a `http://localhost:1234/v1`.
-*   **Gestión de Tokens Granular:** Permite desglosar el consumo de tokens en tres categorías críticas para modelos de razonamiento:
-    1.  **Prompt:** Tokens de entrada (instrucción + contexto).
-    2.  **Gen:** Tokens generados por el modelo (respuesta directa).
-    3.  **Reasoning:** Tokens dedicados a la cadena de pensamiento (Chain-of-Thought) interna del modelo.
-*   **Control de Temperatura y Top-P:** Configuración dinámica para ajustar la creatividad vs. precisión en descripciones de cata o análisis de suelo.
-
-### 2.2. Firma de la Función Principal (`query_lm`)
-
-```python
-def query_lm(prompt, system_prompt=None, model="qwen/qwen3.5-9b", max_tokens=5000, temperature=0.2, return_usage=False):
-    """
-    Envía una petición al endpoint local http://localhost:1234/v1/chat/completions.
-    
-    Retorna:
-      - Si return_usage=False: str (contenido de la respuesta)
-      - Si return_usage=True: tuple (content, token_stats_dict)
-    """
-```
-
-| Parámetro | Tipo | Descripción | Valor por Defecto |
+| Script | Lenguaje | Propósito Principal | Cuándo Utilizarlo |
 | :--- | :--- | :--- | :--- |
-| `prompt` | str | Instrucción del usuario para la tarea enológica. | *(Requerido)* |
-| `system_prompt` | str | Rol enológico / de sumiller asignado al modelo. | `None` |
-| `model` | str | ID del modelo cargado en LM Studio. | `"qwen/qwen3.5-9b"` |
-| `max_tokens` | int | Límite de tokens (evita truncamiento en modelos con CoT). | `5000` |
-| `temperature` | float | Control de aleatoriedad (bajo para fidelidad técnica). | `0.2` |
-| `return_usage` | bool | Devuelve el desglose detallado de tokens de LM Studio. | `False` |
-
-### 2.3. Ejemplo de Uso desde Terminal o Python
-
-```bash
-# Invocación directa desde terminal
-python3 scripts/lm_studio.py "Analiza la estructura tánica y mineral de la variedad Mencía en el Bierzo."
-```
-
-```python
-# Uso programático con desglose de tokens
-from scripts.lm_studio import query_lm
-
-contenido, usage = query_lm(
-    prompt="Genera ficha técnica para Tempranillo",
-    system_prompt="Eres un Master Sommelier.",
-    return_usage=True
-)
-print(f"Tokens invertidos: {usage['total_tokens']} (Razonamiento: {usage['reasoning_tokens']})")
-```
+| [`audit_manager.sh`](file:///Users/jreyes13/GitHub/wine3ai/scripts/audit_manager.sh) | Bash | Gestor de control en segundo plano (start / stop / status / logs / quick). | **Recomendado para el día a día**: arrancar y parar auditorías desatendidas en ratos muertos del portátil. |
+| [`lm_studio_auditor.py`](file:///Users/jreyes13/GitHub/wine3ai/scripts/lm_studio_auditor.py) | Python 3 | Motor analítico de regiones vitivinícolas, pliegos oficiales y geometrías. | Ejecución interactiva por consola, filtros por país o auditorías específicas (ej. MAPA España). |
+| [`overnight_worker.py`](file:///Users/jreyes13/GitHub/wine3ai/scripts/overnight_worker.py) | Python 3 | Generador nocturno autónomo de fichas de estudio (WSET3, CMS) y artículos Winepedia. | Sesiones largas nocturnas programadas por horario o duración. |
+| [`compile_generated_data.py`](file:///Users/jreyes13/GitHub/wine3ai/scripts/compile_generated_data.py) | Python 3 | Compilador atómico mediante `jsc` (JavaScriptCore) de checkpoints JSON a producción. | Tras generar artículos/tarjetas para consolidar en `data/` y `web/data/`. |
+| [`lm_studio.py`](file:///Users/jreyes13/GitHub/wine3ai/scripts/lm_studio.py) | Python 3 | Módulo conector / cliente HTTP hacia la API de LM Studio. | Como librería reutilizable en otros scripts o pruebas rápidas por consola. |
 
 ---
 
-## 3. `overnight_worker.py`
-**Generador Autónomo Local de Contenido Enológico**
+## 2. Matriz de Decisión: "¿Qué ejecutar y cuándo?"
 
-Script diseñado para ejecutarse en segundo plano (cron jobs) durante periodos inactivos del sistema. Genera contenido estructurado para la base de conocimiento WINE³ai, incluyendo fichas de producto, tarjetas de estudio y perfiles varietales.
+```
+               ¿Qué tarea deseas realizar?
+                            │
+       ┌────────────────────┴────────────────────┐
+       ▼                                         ▼
+[ AUDITAR MAPAS Y PLIEGOS ]            [ GENERAR CONTENIDO EDUCATIVO ]
+       │                                         │
+       ├─ Tengo ratos muertos (2º plano)         ├─ Sesión nocturna (3h por defecto)
+       │  └─> ./scripts/audit_manager.sh start   │  └─> python3 scripts/overnight_worker.py
+       │                                         │
+       ├─ Tengo 2 minutos (sólo pliegos)         ├─ Programar hasta las 07:00 AM
+       │  └─> ./scripts/audit_manager.sh quick   │  └─> python3 scripts/overnight_worker.py --end 07:00
+       │                                         │
+       ├─ Quiero auditar un país concreto        └─ Tras generar, compilar a producción:
+       │  └─> python3 scripts/lm_studio_auditor.py --country Spain --mode spain_mapa
+       │                                            └─> python3 scripts/compile_generated_data.py
+       └─ Quiero parar y guardar estado
+          └─> ./scripts/audit_manager.sh stop
+```
 
-### 3.1. Catálogo de Datos
-El worker procesa automáticamente un catálogo interno de **370 fichas** enológicas, cubriendo:
-*   **WINEp3dIA:** Base de datos interna de productos.
-*   **Flashcards WSET3:** Material de estudio para el Diploma de Sommelier (Nivel 3).
-*   **CMS (Certified Master Sommelier):** Datos avanzados de cata y gestión.
-*   **ASI (Análisis Sensorial Integrado):** Perfiles de uva y terroir.
-
-### 3.2. Argumentos CLI y Comportamiento
-
-| Argumento | Formato | Descripción | Valor por Defecto |
-| :--- | :--- | :--- | :--- |
-| `--start` | `HH:MM` | Hora de inicio programada (ej. `22:30`). Si ya pasó, asume mañana. | Ahora mismo |
-| `--end` | `HH:MM` | Hora de corte/finalización (ej. `06:45`). Si cruza medianoche, se programa para mañana. | Ahora + 3 horas |
-| `--hours` | float/int | Duración en horas de la sesión (ej. `5` u `8.5`). | `3` horas |
-| `--now` | flag | Fuerza el arranque inmediato sin esperas. | `False` |
-
-### 3.3. Comportamiento por Defecto
-Al ejecutarse sin argumentos:
-1. Inicia inmediatamente.
-2. Opera durante un bloque predeterminado de **3 horas**.
-3. Visualiza el progreso ficha a ficha con desglose de tokens de LM Studio y tiempo en segundos.
-4. Al terminar o alcanzar la hora límite, auto-compila la producción y genera `OVERNIGHT_REPORT.md`.
-
-### 3.4. Ejemplos de Invocación
-
+### Escenario A: Ratos muertos del portátil (Almuerzo, pausas o cuando no lo uses)
+Utiliza el gestor en segundo plano. Corre desatendido, respeta el procesador con pausas entre regiones y es 100% seguro de pausar:
 ```bash
-# 1. Modo rápido por defecto (arranca ya, corre 3 horas)
+# Iniciar auditoría en segundo plano
+./scripts/audit_manager.sh start
+
+# Ver progreso actual
+./scripts/audit_manager.sh status
+
+# Ver razonamiento de LM Studio en vivo (Ctrl+C para salir, el proceso continúa)
+./scripts/audit_manager.sh logs
+
+# Detener de forma segura (guarda checkpoint automáticamente)
+./scripts/audit_manager.sh stop
+```
+
+### Escenario B: Escaneo instantáneo de pliegos y geometrías (2 segundos)
+Comprueba las 894 regiones del mapa en disco, reportando qué pliegos faltan o están vacíos y qué polígonos son toscos:
+```bash
+./scripts/audit_manager.sh quick
+# o directamente:
+python3 scripts/lm_studio_auditor.py --mode pliegos
+```
+
+### Escenario C: Auditoría específica de España (Cruce con Registro Oficial MAPA)
+Cruza el GeoJSON contra el documento oficial del Ministerio de Agricultura (`DOWNs/SPAIN/02_vinos.2026-07-03-13-01-22.pdf`), auditando municipios por provincia y variedades de uva:
+```bash
+python3 scripts/lm_studio_auditor.py --country Spain --mode spain_mapa
+```
+
+### Escenario D: Auditoría de un país concreto (Chequia, Argentina, Francia...)
+```bash
+# Auditar regiones de Chequia (detecta pliegos débiles y geometrías simplificadas)
+python3 scripts/lm_studio_auditor.py --country Czechia --mode full
+
+# Auditar las 26 IGs/DOCs de Argentina recién actualizadas
+python3 scripts/lm_studio_auditor.py --country Argentina --mode full
+```
+
+### Escenario E: Sesión nocturna de generación de fichas y artículos
+```bash
+# Arranca de inmediato y corre 3 horas:
 python3 scripts/overnight_worker.py
 
-# 2. Modo noche completa hasta la mañana
-python3 scripts/overnight_worker.py --end 06:45
-
-# 3. Sesión con duración fija (ej. 8 horas)
-python3 scripts/overnight_worker.py --hours 8
-
-# 4. Programado para arrancar tarde y parar antes del desayuno
-python3 scripts/overnight_worker.py --start 23:00 --end 06:45
+# Dejar corriendo toda la noche hasta una hora fija:
+python3 scripts/overnight_worker.py --end 07:00
 ```
 
 ---
 
-## 4. `compile_generated_data.py`
-**Compilador Seguro de Checkpoints JSON**
+## 3. Guía Detallada de Cada Script
 
-Este script es responsable de la etapa final del pipeline: consolidar los datos generados en formato JSON (almacenados temporalmente en `data/generated/`) hacia los archivos de producción de WINE³ai. Utiliza el motor **JavaScriptCore (`jsc`)** para garantizar integridad y seguridad durante la escritura de archivos masivos.
+### 3.1. `audit_manager.sh` (Gestor de Proceso en Segundo Plano)
+Controla el ciclo de vida del auditor sin necesidad de recordar PIDs ni mantener terminales abiertas.
 
-### 4.1. Mecanismo de Seguridad
-Para evitar colisiones de archivos (race conditions) y sobrescrituras accidentales, el compilador implementa un mecanismo de bloqueo basado en `jsc`:
-*   **Atomic Writes:** Los datos se escriben en un archivo temporal antes de renombrarlo al destino final.
-*   **Checksum Validation:** Verificación de integridad del hash SHA-256 tras la compilación.
-*   **Locking:** Bloqueo exclusivo sobre el directorio de salida durante el proceso.
+*   `./scripts/audit_manager.sh start [opciones]`
+    *   Arranca `lm_studio_auditor.py` con `nohup` en segundo plano.
+    *   Acepta argumentos adicionales (ej: `./scripts/audit_manager.sh start --country France`).
+    *   Registra el PID en `reports/auditor.pid`.
+*   `./scripts/audit_manager.sh stop`
+    *   Envía la señal `SIGTERM` al proceso. El script atrapa la señal, termina de procesar la región actual, guarda el estado en `reports/audit_state.json` y sale limpiamente.
+*   `./scripts/audit_manager.sh status`
+    *   Informa si el proceso está activo o detenido y muestra el cuadro de mando actualizado con métricas globales.
+*   `./scripts/audit_manager.sh logs`
+    *   Ejecuta `tail -f reports/auditor.log` para monitorear el flujo de análisis en tiempo real.
+*   `./scripts/audit_manager.sh quick`
+    *   Lanza la comprobación física de pliegos y geometrías en 2 segundos.
 
-### 4.2. Flujo de Trabajo y Destinos de Producción
-1. Escanea `data/generated/` para leer los checkpoints JSON generados por el worker.
-2. Carga los archivos JavaScript existentes mediante el motor nativo `jsc` de macOS (`/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Helpers/jsc`) para interpretar de forma segura los objetos globales `WINEPEDIA_ARTICLES` y `STUDY_CARDS`.
-3. Realiza un merge incremental por identificador único (`id` o nombre de uva), evitando duplicados.
-4. Escribe sincrónicamente los activos tanto en el backend como en la aplicación web:
-   - `data/winepedia_articles.js` y `web/data/winepedia_articles.js`
-   - `data/study_cards.js` y `web/data/study_cards.js`
-   - `data/grape_varieties.json` y `web/data/grape_varieties.json`
+---
 
-### 4.3. Ejemplo de Uso
+### 3.2. `lm_studio_auditor.py` (Motor de Auditoría Enológica)
+Motor inteligente que audita la coherencia entre el mapa canónico (`data/wine_regions.geojson`), los documentos de pliego de condiciones (`DOWNs/DOCs/`) y los registros oficiales (MAPA, eAmbrosia).
 
-```bash
-# Compilación manual (también se ejecuta automáticamente al finalizar overnight_worker)
-python3 scripts/compile_generated_data.py
+#### Opciones de línea de comandos:
+```
+python3 scripts/lm_studio_auditor.py [argumentos]
+
+  --country COUNTRY     País a auditar (ej. Spain, France, Czechia, Argentina o all)
+  --mode MODO           Modo de trabajo:
+                        - full: Auditoría completa (física + consulta a LM Studio)
+                        - spain_mapa: Cruce específico contra el PDF oficial del MAPA
+                        - pliegos: Comprobación física ultrarrápida sin LLM
+  --limit N             Procesar como máximo N regiones en esta tanda (ideal para pausas cortas)
+  --delay S             Segundos de enfriamiento entre llamadas (por defecto 1.5s)
+  --status              Muestra el resumen de métricas y sale
+  --reset               Reinicia el archivo de estado para comenzar de cero
+  --force               Vuelve a auditar regiones previamente marcadas como completadas
+```
+
+#### Salidas generadas:
+1.  [`reports/AUDIT_WINE_REGIONS_LMSTUDIO.md`](file:///Users/jreyes13/GitHub/wine3ai/reports/AUDIT_WINE_REGIONS_LMSTUDIO.md): Informe legible en Markdown con tablas de estado por país y comparativa oficial de España.
+2.  [`reports/audit_findings.json`](file:///Users/jreyes13/GitHub/wine3ai/reports/audit_findings.json): Estructura JSON con todas las anomalías detectadas, optimizada para consumo por Gemini u otras IAs.
+3.  [`reports/audit_state.json`](file:///Users/jreyes13/GitHub/wine3ai/reports/audit_state.json): Registro de progreso que permite pausar y reanudar sin repetir trabajo.
+
+---
+
+### 3.3. `overnight_worker.py` (Generador de Contenido)
+Orquestador que procesa el catálogo de 370 fichas de estudio para sumilleres (WSET3, CMS, ASI) y artículos enciclopédicos.
+
+*   **Argumentos:**
+    *   `--start HH:MM`: Hora de inicio programada (ej. `23:30`).
+    *   `--end HH:MM`: Hora límite de parada (ej. `06:30`).
+    *   `--hours N`: Duración fija en horas (ej. `4.5`).
+    *   `--now`: Iniciar inmediatamente omitiendo el temporizador.
+*   **Resultados:**
+    *   Genera checkpoints en `data/generated/`.
+    *   Al finalizar, invoca automáticamente a `compile_generated_data.py` y redacta `OVERNIGHT_REPORT.md`.
+
+---
+
+### 3.4. `compile_generated_data.py` (Compilador de Producción)
+Consolida con seguridad atómica los datos JSON generados hacia los archivos de producción leídos por la interfaz web de WINE³ai:
+*   Utiliza `/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Helpers/jsc` para evaluar y fusionar los arrays JavaScript sin corromper el árbol de sintaxis.
+*   Destinos sincronizados:
+    *   `data/winepedia_articles.js` y `web/data/winepedia_articles.js`
+    *   `data/study_cards.js` y `web/data/study_cards.js`
+    *   `data/grape_varieties.json` y `web/data/grape_varieties.json`
+
+---
+
+### 3.5. `lm_studio.py` (Librería Conectora Local)
+Módulo ligero para interactuar con la API local de LM Studio (`http://127.0.0.1:1234/v1`).
+
+```python
+from scripts.lm_studio import query_lm
+
+# Consulta básica
+respuesta = query_lm("Explica el terroir de Paraje Altamira en Mendoza.")
+
+# Consulta con desglose de tokens de razonamiento
+respuesta, stats = query_lm(
+    prompt="Diferencias entre DOC Luján de Cuyo y DOC San Rafael",
+    model="qwen/qwen3.5-9b",
+    return_usage=True
+)
+print(f"Tokens generados: {stats['completion_tokens']}, Razonamiento: {stats.get('reasoning_tokens', 0)}")
 ```
 
 ---
 
-## 5. Buenas Prácticas de Ejecución Nocturna
+## 4. Requisitos y Configuración de LM Studio
 
-Para maximizar la eficiencia del sistema WINE³ai durante las ventanas de mantenimiento nocturno, se recomienda seguir los siguientes protocolos:
-
-1.  **Orquestación:** Utilice `cron` o un scheduler similar para invocar `overnight_worker.py` entre las 02:00 y 05:00 AM, cuando la carga del sistema es mínima.
-2.  **Monitoreo de Tokens:** Verifique el log de salida de `lm_studio.py`. Si el consumo de tokens supera el umbral de memoria RAM disponible, reduzca `--max-gen-tokens` en la siguiente ejecución.
-3.  **Integridad de Datos:** Ejecute `compile_generated_data.py` inmediatamente después de que `overnight_worker.py` finalice con éxito (código de salida 0). Nunca fuerce una compilación si el directorio `data/generated/` está vacío.
-4.  **Persistencia:** Asegúrese de que el servicio LM Studio esté persistente y en modo "Server" antes de iniciar cualquier script de inferencia.
-
----
-
-**Nota Legal:** Todos los scripts operan exclusivamente bajo licencia local. No se establecen conexiones salientes a servidores externos salvo la API local de LM Studio.
+Para garantizar la ejecución sin errores:
+1.  **LM Studio abierto:** El servidor local debe estar activo en `http://127.0.0.1:1234`.
+2.  **Modelo cargado:** Modelo recomendado `qwen/qwen3.5-9b` (o compatible con ventana de contexto >= 8192 tokens).
+3.  **Configuración de tokens:** En modelos con modo "Thinking" (cadena de razonamiento CoT), asegúrate de que el límite de tokens (`max_tokens`) sea de al menos 1200 a 2500 para evitar que la respuesta se corte antes de volcar la conclusión.
+4.  **Cero costes:** Toda la inferencia transcurre exclusivamente en la memoria unificada / GPU del Mac.

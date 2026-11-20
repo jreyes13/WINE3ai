@@ -134,7 +134,7 @@ WINEPEDIA_TOPICS = [
     {"id": "delestage_vs_remontado_pigeage", "title": "Gestión del Sombrero: Délestage vs Remontado vs Pigeage", "area": "Enología", "focus": "Oxigenación de mosto, rotura del sombrero, dispersión térmica y extracción suave de color"},
     {"id": "maceracion_postfermentativa_caliente", "title": "Maceración Postfermentativa en Caliente", "area": "Enología", "focus": "Mantenimiento a 28-30°C post-fermentación alcohólica para polimerización tánica y redondez en boca"},
     {"id": "autolisis_champagne_manoproteinas", "title": "Cinética de la Autólisis en Vinos Espumosos", "area": "Enología", "focus": "Degradación celular tras 15-36 meses, liberación de aminoácidos, persistencia y finura de burbuja"},
-    {"id": "pasteurizacion_flash_vs_filtracion", "title": "Estabilización Microbiológica: Filtración Tangencial vs Lenticular", "area": "Enología", "focus": "Porosidad en micras, retención de levaduras y bacterias sin despojar coloides protectores"},
+    {"id": "filtracion_tangencial_vs_lenticular", "title": "Estabilización Microbiológica: Filtración Tangencial vs Lenticular", "area": "Enología", "focus": "Porosidad en micras, retención de levaduras y bacterias sin despojar coloides protectores"},
     {"id": "vinos_dulces_naturales_encabezado", "title": "Vins Doux Naturels (VDN) y Mutage", "area": "Enología", "focus": "Adición de alcohol neutro a 96% durante fermentación (mutage sur grain) en Roussillon y Banyuls"},
     {"id": "acidificacion_vs_desacidificacion", "title": "Corrección de Acidez en Mosto y Vino", "area": "Enología", "focus": "Adición de ácido tartárico en climas cálidos vs precipitación de bitartratos con carbonato potásico"},
     {"id": "clarificacion_vegana_proteinas", "title": "Clarificación con Proteínas Vegetales vs Enológicas Clásicas", "area": "Enología", "focus": "Proteína de guisante y patata vs albúmina de huevo e ictiocola, afinidad electrostática con taninos"},
@@ -588,8 +588,9 @@ Ejemplos de uso:
         """
     )
     parser.add_argument("--start", type=str, default=None, help="Hora de inicio en formato HH:MM (por defecto: ahora mismo)")
-    parser.add_argument("--end", type=str, default=None, help="Hora de fin en formato HH:MM (ej: 06:45 o 07:00)")
+    parser.add_argument("--end", type=str, default=None, help="Hora de fin en formato HH:MM (ej: 06:45 o 16:15)")
     parser.add_argument("--hours", type=float, default=None, help="Duración en horas (por defecto: 3 horas)")
+    parser.add_argument("--indefinite", action="store_true", help="Ejecutar de forma continua e indefinida hasta detener manualmente")
     parser.add_argument("--now", action="store_true", help="Iniciar inmediatamente")
     
     args = parser.parse_args()
@@ -609,14 +610,16 @@ Ejemplos de uso:
         start_dt = now
 
     # 2. Determinar hora de fin
-    if args.end:
+    if args.indefinite:
+        end_dt = None
+    elif args.end:
         try:
             eh, em = map(int, args.end.split(":"))
             end_dt = start_dt.replace(hour=eh, minute=em, second=0, microsecond=0)
             if end_dt <= start_dt:
                 end_dt += timedelta(days=1)
         except Exception:
-            print(f"Error en formato --end '{args.end}'. Use HH:MM (ej: 06:45).")
+            print(f"Error en formato --end '{args.end}'. Use HH:MM (ej: 06:45 o 16:15).")
             sys.exit(1)
     elif args.hours is not None:
         end_dt = start_dt + timedelta(hours=args.hours)
@@ -633,13 +636,16 @@ Ejemplos de uso:
 def main():
     start_dt, end_dt = parse_schedule()
     total_catalog = len(WINEPEDIA_TOPICS) + len(STUDY_CARD_TOPICS) + len(GRAPES_TO_ENRICH)
-    duration_planned = end_dt - start_dt
 
     print("\n" + "=" * 78, flush=True)
     print("🍷 WINE³ai — GENERADOR AUTÓNOMO LOCAL CON LM STUDIO (OFFLINE)", flush=True)
     print("=" * 78, flush=True)
     print(f"⏰ HORA DE INICIO           : {start_dt.strftime('%Y-%m-%d %H:%M:%S')}", flush=True)
-    print(f"🛑 FINALIZACIÓN PROGRAMADA : {end_dt.strftime('%Y-%m-%d %H:%M:%S')} (Duración: {duration_planned})", flush=True)
+    if end_dt is None:
+        print(f"🛑 FINALIZACIÓN PROGRAMADA : INDEFINIDA (Modo continuo hasta detención manual)", flush=True)
+    else:
+        duration_planned = end_dt - start_dt
+        print(f"🛑 FINALIZACIÓN PROGRAMADA : {end_dt.strftime('%Y-%m-%d %H:%M:%S')} (Duración: {duration_planned})", flush=True)
     print(f"💻 MOTOR LOCAL             : LM Studio (http://localhost:1234/v1) · qwen/qwen3.5-9b", flush=True)
     print(f"⚡ ACELERACIÓN              : Apple Metal GPU (Inferencia Local en Mac)", flush=True)
     print(f"💰 CONSUMO EN NUBE         : 0 tokens (100% gratuito y privado)", flush=True)
@@ -657,6 +663,8 @@ def main():
             time.sleep(min(5, (start_dt - datetime.now()).total_seconds()))
 
     def is_time_up():
+        if end_dt is None:
+            return False
         return datetime.now() >= end_dt
 
     log(f"Worker running. Scheduled end: {end_dt.strftime('%Y-%m-%d %H:%M:%S')}. Catalog: {total_catalog} items.", to_file_only=True)
@@ -716,6 +724,7 @@ def main():
         elapsed = time.time() - start_t
 
         if res and isinstance(res, dict) and "title_es" in res:
+            res["id"] = topic["id"]
             generated_articles.append(res)
             existing_article_ids.add(topic["id"])
             save_checkpoint("winepedia_articles", generated_articles)

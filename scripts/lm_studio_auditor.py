@@ -443,17 +443,23 @@ def run_auditor(args):
 
     # Mostrar dashboard si se pide solo --status
     if args.status:
-        audited = sum(1 for r in state["regions_state"].values() if r["status"] == "completed")
+        pliego_checked = sum(1 for r in state["regions_state"].values() if r.get("pliego_checked"))
+        ai_audited = sum(1 for r in state["regions_state"].values() if r.get("ai_audited"))
         issues = sum(len(r["issues"]) for r in state["regions_state"].values())
         missing_pliegos = sum(1 for r in state["regions_state"].values() if r.get("pliego_status") == "missing")
-        print("\n--- ESTADO DE AUDITORÍA ACTUAL ---")
-        print(f"Total regiones registradas : {len(state['regions_state'])}")
-        print(f"Auditadas con éxito        : {audited} ({audited*100.0/len(state['regions_state']):.1f}%)")
-        print(f"Pendientes de auditar      : {len(state['regions_state']) - audited}")
-        print(f"Pliegos ausentes en disco  : {missing_pliegos}")
-        print(f"Incidencias registradas    : {issues}")
-        print(f"Última actualización       : {state.get('last_updated')}")
-        print(f"Reporte Markdown           : {MARKDOWN_REPORT_FILE}\n")
+        total = len(state["regions_state"])
+        print("\n" + "=" * 60)
+        print("         PANEL DE ESTADO — AUDITORÍA WINE³ai")
+        print("=" * 60)
+        print(f"Total regiones registradas   : {total}")
+        print(f"Pliegos comprobados en disco : {pliego_checked}/{total} ({pliego_checked*100.0/total:.1f}%)")
+        print(f"Pliegos ausentes en disco    : {missing_pliegos}")
+        print(f"Auditadas con LM Studio (IA) : {ai_audited}/{total} ({ai_audited*100.0/total:.1f}%)")
+        print(f"Pendientes de auditar por IA : {total - ai_audited}")
+        print(f"Incidencias registradas      : {issues}")
+        print(f"Última actualización         : {state.get('last_updated')}")
+        print(f"Reporte Markdown en vivo     : {MARKDOWN_REPORT_FILE}")
+        print("=" * 60 + "\n")
         return
 
     # 4. Modo específico España MAPA
@@ -488,9 +494,16 @@ def run_auditor(args):
         if args.country and not match_country(args.country, f.get("properties", {}).get("country"), f.get("properties", {}).get("country_code")):
             continue
 
-        # Si ya está completada y no forzamos re-análisis, saltar
-        if reg_state["status"] == "completed" and not args.force:
-            continue
+        # Si el modo es "full" o "spain_mapa", comprobar si ya tiene auditoría de IA
+        if args.mode in ["full", "spain_mapa"]:
+            if reg_state.get("ai_audited") and not args.force:
+                continue
+        elif args.mode == "pliegos":
+            if reg_state.get("pliego_checked") and not args.force:
+                continue
+        else:
+            if reg_state.get("status") == "completed" and not args.force:
+                continue
             
         candidates.append(f)
 
@@ -541,8 +554,11 @@ def run_auditor(args):
             print(" [Pliego ✓]", end="", flush=True)
 
         # Actualizar estado
+        is_ai = (args.mode != "pliegos" and lm_ok)
         state["regions_state"][fid].update({
             "pliego_status": pliego_status,
+            "pliego_checked": True,
+            "ai_audited": is_ai or state["regions_state"][fid].get("ai_audited", False),
             "status": "completed",
             "issues": issues,
             "last_audited": datetime.now().isoformat()
