@@ -6339,3 +6339,8 @@
 127.0.0.1 - - [21/Nov/2026 11:50:27] "GET /api/status HTTP/1.1" 200 -
 127.0.0.1 - - [21/Nov/2026 11:50:30] "GET /api/status HTTP/1.1" 200 -
 127.0.0.1 - - [21/Nov/2026 11:50:30] "GET /api/logs?target=worker HTTP/1.1" 200 -
+127.0.0.1 - - [21/Nov/2026 11:50:33] "GET /api/status HTTP/1.1" 200 -
+127.0.0.1 - - [21/Nov/2026 11:50:34] "GET /api/logs?target=worker HTTP/1.1" 200 -
+127.0.0.1 - - [21/Nov/2026 11:50:36] "GET /api/status HTTP/1.1" 200 -
+127.0.0.1 - - [21/Nov/2026 11:50:38] "GET /api/logs?target=worker HTTP/1.1" 200 -
+127.0.0.1 - - [21/Nov/2026 11:50:39] "GET /api/status HTTP/1.1" 200 -
