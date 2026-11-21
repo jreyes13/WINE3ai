@@ -3,7 +3,9 @@
 WINE³ai — Automated Pre-Flight Syntax & Integrity Validator
 ============================================================
 Checks all JavaScript, JSON, HTML, and Python files in the repository.
-Runs natively on macOS using JavaScriptCore (jsc) without requiring Node.js.
+Cross-platform (macOS + Windows + Linux):
+  - Uses JavaScriptCore (jsc) natively on macOS when available.
+  - Falls back to Node.js (`node --check`) on Windows/Linux.
 
 Exit codes:
   0: All files passed validation cleanly.
@@ -14,11 +16,27 @@ import os
 import sys
 import json
 import glob
+import shutil
 import py_compile
 import subprocess
 
+for _stream in (sys.stdout, sys.stderr):
+    if hasattr(_stream, "reconfigure"):
+        try:
+            _stream.reconfigure(encoding="utf-8", errors="replace")
+        except Exception:
+            pass
+
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 JSC_BIN = "/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Helpers/jsc"
+
+def detect_js_validator():
+    if os.path.exists(JSC_BIN):
+        return "jsc", JSC_BIN
+    node_bin = shutil.which("node")
+    if node_bin:
+        return "node", node_bin
+    return None, None
 
 def validate_js_files():
     errors = []
@@ -35,18 +53,25 @@ def validate_js_files():
 
     js_files = sorted(list(set(js_files)))
 
-    if not os.path.exists(JSC_BIN):
-        return [f"JavaScriptCore interpreter not found at {JSC_BIN}"]
+    engine, engine_bin = detect_js_validator()
+    if not engine:
+        return [
+            f"No JavaScript engine found (tried macOS jsc at {JSC_BIN} and 'node' in PATH). "
+            "Install Node.js LTS to enable JS syntax validation on Windows/Linux."
+        ]
 
     for js_path in js_files:
         rel_path = os.path.relpath(js_path, ROOT_DIR)
-        cmd = [JSC_BIN, "--dumpException", "-e", f'checkSyntax("{js_path}");']
-        res = subprocess.run(cmd, capture_output=True, text=True)
+        if engine == "jsc":
+            cmd = [engine_bin, "--dumpException", "-e", f'checkSyntax("{js_path}");']
+        else:
+            cmd = [engine_bin, "--check", js_path]
+        res = subprocess.run(cmd, capture_output=True, text=True, encoding="utf-8", errors="replace")
         if res.returncode != 0:
             err_msg = res.stdout.strip() or res.stderr.strip() or f"Syntax error (exit {res.returncode})"
             errors.append(f"❌ JS Syntax Error in {rel_path}:\n   {err_msg}")
         else:
-            print(f"  ✓ {rel_path} (Valid JS)")
+            print(f"  ✓ {rel_path} (Valid JS via {engine})")
 
     return errors
 

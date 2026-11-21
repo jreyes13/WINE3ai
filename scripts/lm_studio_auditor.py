@@ -27,6 +27,13 @@ import urllib.request
 import urllib.error
 from datetime import datetime
 
+for _stream in (sys.stdout, sys.stderr):
+    if hasattr(_stream, "reconfigure"):
+        try:
+            _stream.reconfigure(encoding="utf-8", errors="replace")
+        except Exception:
+            pass
+
 # Rutas base relativas al proyecto WINE³ai
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 GEOJSON_PATH = os.path.join(BASE_DIR, "data", "wine_regions.geojson")

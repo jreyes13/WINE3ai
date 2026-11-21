@@ -10,6 +10,13 @@ import json
 import urllib.request
 import urllib.error
 
+for _stream in (sys.stdout, sys.stderr):
+    if hasattr(_stream, "reconfigure"):
+        try:
+            _stream.reconfigure(encoding="utf-8", errors="replace")
+        except Exception:
+            pass
+
 LM_STUDIO_URL = "http://localhost:1234/v1/chat/completions"
 DEFAULT_MODEL = "qwen/qwen3.5-9b"
 

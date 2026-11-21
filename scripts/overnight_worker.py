@@ -18,8 +18,16 @@ import os
 import json
 import time
 import re
+import platform
 import argparse
 from datetime import datetime, timedelta
+
+for _stream in (sys.stdout, sys.stderr):
+    if hasattr(_stream, "reconfigure"):
+        try:
+            _stream.reconfigure(encoding="utf-8", errors="replace")
+        except Exception:
+            pass
 
 # Add project root to sys.path
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -1684,10 +1692,15 @@ def main():
     print("=" * 78 + "\n", flush=True)
 
     # Generate Markdown Summary Report
+    if platform.system() == "Darwin" and platform.machine() == "arm64":
+        local_hw = "Apple Silicon"
+    else:
+        local_hw = f"{platform.system()} ({platform.machine()})"
+
     with open(REPORT_FILE, "w", encoding="utf-8") as f:
         f.write(f"# 🍷 WINE³ai — Informe de Generación Nocturna (LM Studio)\n\n")
         f.write(f"- **Fecha y hora de finalización:** {now_end.strftime('%Y-%m-%d %H:%M:%S')}\n")
-        f.write(f"- **Consumo de tokens en la nube:** **0 tokens** (100% inferencia local GPU en Apple Silicon)\n")
+        f.write(f"- **Consumo de tokens en la nube:** **0 tokens** (100% inferencia local en {local_hw})\n")
         f.write(f"- **Total tokens procesados localmente:** **{stats['total_tokens']:,} tokens**\n")
         f.write(f"- **Total artículos técnicos generados:** {len(generated_articles)}\n")
         f.write(f"- **Total fichas de examen generadas:** {len(generated_cards)}\n")

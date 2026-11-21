@@ -17,12 +17,23 @@ import os
 import sys
 import json
 import time
+import glob
+import shutil
 import signal
 import subprocess
 import urllib.request
 from datetime import datetime
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from urllib.parse import urlparse
+
+for _stream in (sys.stdout, sys.stderr):
+    if hasattr(_stream, "reconfigure"):
+        try:
+            _stream.reconfigure(encoding="utf-8", errors="replace")
+        except Exception:
+            pass
+
+IS_WINDOWS = (os.name == "nt")
 
 PORT = 5050
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -38,21 +49,88 @@ os.makedirs(os.path.join(ROOT_DIR, "logs"), exist_ok=True)
 os.makedirs(REPORTS_DIR, exist_ok=True)
 os.makedirs(GEN_DIR, exist_ok=True)
 
+def build_subprocess_env():
+    env = os.environ.copy()
+    env["PYTHONUTF8"] = "1"
+    env["PYTHONIOENCODING"] = "utf-8"
+    return env
+
+def background_popen_kwargs():
+    kwargs = {"env": build_subprocess_env()}
+    if IS_WINDOWS and hasattr(subprocess, "CREATE_NO_WINDOW"):
+        kwargs["creationflags"] = subprocess.CREATE_NO_WINDOW
+    return kwargs
+
+def find_git_executable():
+    git_bin = shutil.which("git")
+    if git_bin:
+        return git_bin
+    if IS_WINDOWS:
+        local_app = os.environ.get("LOCALAPPDATA", "")
+        candidates = sorted(
+            glob.glob(os.path.join(local_app, "GitHubDesktop", "app-*", "resources", "app", "git", "cmd", "git.exe")),
+            reverse=True,
+        )
+        if candidates:
+            return candidates[0]
+    return "git"
+
+def is_pid_running(pid):
+    if pid <= 0:
+        return False
+    if IS_WINDOWS:
+        import ctypes
+        PROCESS_QUERY_LIMITED_INFORMATION = 0x1000
+        STILL_ACTIVE = 259
+        handle = ctypes.windll.kernel32.OpenProcess(PROCESS_QUERY_LIMITED_INFORMATION, False, int(pid))
+        if not handle:
+            return False
+        try:
+            exit_code = ctypes.c_ulong()
+            if ctypes.windll.kernel32.GetExitCodeProcess(handle, ctypes.byref(exit_code)):
+                return exit_code.value == STILL_ACTIVE
+            return False
+        finally:
+            ctypes.windll.kernel32.CloseHandle(handle)
+    else:
+        try:
+            os.kill(pid, 0)
+            return True
+        except OSError:
+            return False
+
+def terminate_pid(pid):
+    if IS_WINDOWS:
+        res = subprocess.run(
+            ["taskkill", "/PID", str(pid), "/T", "/F"],
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+            **background_popen_kwargs(),
+        )
+        if res.returncode != 0:
+            os.kill(pid, signal.SIGTERM)
+    else:
+        os.kill(pid, signal.SIGTERM)
+
 def check_process_alive(pid_path, script_pattern=None):
     if not os.path.exists(pid_path):
         return False, None
     try:
-        with open(pid_path, "r") as f:
+        with open(pid_path, "r", encoding="utf-8") as f:
             pid = int(f.read().strip())
-        os.kill(pid, 0)
-        return True, pid
+        if is_pid_running(pid):
+            return True, pid
     except (OSError, ValueError):
-        if os.path.exists(pid_path):
-            try:
-                os.remove(pid_path)
-            except Exception:
-                pass
-        return False, None
+        pass
+
+    if os.path.exists(pid_path):
+        try:
+            os.remove(pid_path)
+        except Exception:
+            pass
+    return False, None
 
 def check_lm_studio_health():
     try:
@@ -219,8 +297,8 @@ class DashboardHandler(BaseHTTPRequestHandler):
                 worker_cmd += ["--end", data["custom_end"]]
 
             log_out = open(LOG_FILE_WORKER, "a", encoding="utf-8")
-            proc = subprocess.Popen(worker_cmd, cwd=ROOT_DIR, stdout=log_out, stderr=subprocess.STDOUT)
-            with open(PID_FILE_WORKER, "w") as f:
+            proc = subprocess.Popen(worker_cmd, cwd=ROOT_DIR, stdout=log_out, stderr=subprocess.STDOUT, **background_popen_kwargs())
+            with open(PID_FILE_WORKER, "w", encoding="utf-8") as f:
                 f.write(str(proc.pid))
 
             self._send_json({"ok": True, "msg": f"Generador de fichas iniciado (PID {proc.pid}).", "pid": proc.pid})
@@ -232,7 +310,7 @@ class DashboardHandler(BaseHTTPRequestHandler):
                 return
 
             try:
-                os.kill(pid, signal.SIGTERM)
+                terminate_pid(pid)
                 time.sleep(1)
                 if os.path.exists(PID_FILE_WORKER):
                     os.remove(PID_FILE_WORKER)
@@ -256,8 +334,8 @@ class DashboardHandler(BaseHTTPRequestHandler):
                 auditor_cmd += ["--limit", str(limit)]
 
             log_out = open(LOG_FILE_AUDITOR, "a", encoding="utf-8")
-            proc = subprocess.Popen(auditor_cmd, cwd=ROOT_DIR, stdout=log_out, stderr=subprocess.STDOUT)
-            with open(PID_FILE_AUDITOR, "w") as f:
+            proc = subprocess.Popen(auditor_cmd, cwd=ROOT_DIR, stdout=log_out, stderr=subprocess.STDOUT, **background_popen_kwargs())
+            with open(PID_FILE_AUDITOR, "w", encoding="utf-8") as f:
                 f.write(str(proc.pid))
 
             self._send_json({"ok": True, "msg": f"Auditor de mapas iniciado (PID {proc.pid}).", "pid": proc.pid})
@@ -269,7 +347,7 @@ class DashboardHandler(BaseHTTPRequestHandler):
                 return
 
             try:
-                os.kill(pid, signal.SIGTERM)
+                terminate_pid(pid)
                 time.sleep(1)
                 if os.path.exists(PID_FILE_AUDITOR):
                     os.remove(PID_FILE_AUDITOR)
@@ -280,61 +358,111 @@ class DashboardHandler(BaseHTTPRequestHandler):
         # ---------------- SYNC TOTAL (COMPILE + GIT + IONOS) ----------------
         elif url.path == "/api/sync_all":
             results = []
+            deploy_details = ""
+            sub_env = build_subprocess_env()
             try:
                 # 0. Pre-Flight Syntax Validation Gate (Zero Broken Deployments)
-                val_res = subprocess.run([sys.executable, "scripts/validate_syntax.py"], cwd=ROOT_DIR, capture_output=True, text=True)
+                val_res = subprocess.run(
+                    [sys.executable, "scripts/validate_syntax.py"],
+                    cwd=ROOT_DIR,
+                    capture_output=True,
+                    text=True,
+                    encoding="utf-8",
+                    errors="replace",
+                    env=sub_env,
+                )
                 if val_res.returncode != 0:
                     self._send_json({
                         "ok": False,
                         "msg": "🚨 DESPLIEGUE BLOQUEADO: Se detectaron errores de sintaxis en los archivos. La web pública ha sido protegida.",
-                        "details": val_res.stdout
+                        "details": val_res.stdout or val_res.stderr
                     })
                     return
                 results.append("✓ Pre-flight: Sintaxis JS, JSON y Python verificada (0 errores).")
 
                 # 1. Compile generated data
-                res_compile = subprocess.run([sys.executable, "scripts/compile_generated_data.py"], cwd=ROOT_DIR, capture_output=True, text=True)
+                subprocess.run(
+                    [sys.executable, "scripts/compile_generated_data.py"],
+                    cwd=ROOT_DIR,
+                    capture_output=True,
+                    text=True,
+                    encoding="utf-8",
+                    errors="replace",
+                    env=sub_env,
+                )
                 results.append("✓ Compilación local completada.")
 
                 # 2. Git commit
                 timestamp = datetime.now().strftime("%Y-%m-%d %H:%M")
-                git_add = subprocess.run([
-                    "git", "add",
+                git_bin = find_git_executable()
+                subprocess.run([
+                    git_bin, "add",
                     "data/", "web/", "reports/", "scripts/",
                     "winepedia.html", "flashcards.html", "sebastian.html",
                     "map.html", "app.js", "style.css",
                     "index.html", "index_es.html", "grapes.html", "grapes.js", "grapes.css",
                     "OVERNIGHT_REPORT.md", "ROADMAP_TASKS.md"
-                ], cwd=ROOT_DIR, capture_output=True, text=True)
-                git_commit = subprocess.run(["git", "commit", "-m", f"chore(sync): automated sync via control panel at {timestamp}"], cwd=ROOT_DIR, capture_output=True, text=True)
+                ], cwd=ROOT_DIR, capture_output=True, text=True, encoding="utf-8", errors="replace", env=sub_env)
+                git_commit = subprocess.run(
+                    [git_bin, "commit", "-m", f"chore(sync): automated sync via control panel at {timestamp}"],
+                    cwd=ROOT_DIR,
+                    capture_output=True,
+                    text=True,
+                    encoding="utf-8",
+                    errors="replace",
+                    env=sub_env,
+                )
                 if git_commit.returncode == 0:
                     results.append("✓ Commit local registrado en Git.")
                 else:
                     results.append("ℹ Git: Sin cambios pendientes para commitear.")
 
-                # 3. Rsync to IONOS VPS (incluye mapas GeoJSON, visualizador map.html, app.js, flashcards, sebastian y fichas)
-                rsync_cmd = (
-                    "rsync -avz -e 'ssh -i ~/.ssh/id_ionos_vps -o StrictHostKeyChecking=no' "
-                    "winepedia.html flashcards.html sebastian.html map.html app.js style.css index.html index_es.html "
-                    "grapes.html grapes.js grapes.css OVERNIGHT_REPORT.md "
-                    "web data/ reports/ "
-                    "root@jreyes13.net:/var/www/vhosts/jreyes13.net/wine3ai/"
-                )
-                deploy_res = subprocess.run(rsync_cmd, shell=True, cwd=ROOT_DIR, capture_output=True, text=True)
-                if deploy_res.returncode == 0:
-                    results.append("✓ Sincronización con servidor IONOS (VPS) completada.")
-                else:
-                    results.append("⚠️ Rsync IONOS terminó con advertencias.")
+                # 3. Rsync to IONOS VPS (cuando rsync y la clave SSH estén disponibles)
+                rsync_bin = shutil.which("rsync")
+                ssh_bin = shutil.which("ssh")
+                ssh_key = os.path.expanduser("~/.ssh/id_ionos_vps")
+                if rsync_bin and ssh_bin and os.path.exists(ssh_key):
+                    rsync_args = [
+                        rsync_bin, "-avz",
+                        "-e", f"ssh -i {ssh_key} -o StrictHostKeyChecking=no",
+                        "winepedia.html", "flashcards.html", "sebastian.html", "map.html",
+                        "app.js", "style.css", "index.html", "index_es.html",
+                        "grapes.html", "grapes.js", "grapes.css", "OVERNIGHT_REPORT.md",
+                        "web", "data/", "reports/",
+                        "root@jreyes13.net:/var/www/vhosts/jreyes13.net/wine3ai/",
+                    ]
+                    deploy_res = subprocess.run(
+                        rsync_args,
+                        cwd=ROOT_DIR,
+                        capture_output=True,
+                        text=True,
+                        encoding="utf-8",
+                        errors="replace",
+                        env=sub_env,
+                    )
+                    deploy_details = deploy_res.stdout or deploy_res.stderr
+                    if deploy_res.returncode == 0:
+                        results.append("✓ Sincronización con servidor IONOS (VPS) completada.")
+                    else:
+                        results.append("⚠️ Rsync IONOS terminó con advertencias.")
 
-                # 4. Set remote permissions
-                perm_cmd = "ssh -i ~/.ssh/id_ionos_vps -o StrictHostKeyChecking=no root@jreyes13.net 'find /var/www/vhosts/jreyes13.net/wine3ai -type f -exec chmod 644 {} + && find /var/www/vhosts/jreyes13.net/wine3ai -type d -exec chmod 755 {} + && chown -R jreyes169:psaserv /var/www/vhosts/jreyes13.net/wine3ai/'"
-                subprocess.run(perm_cmd, shell=True, capture_output=True, text=True)
-                results.append("✓ Permisos web (644/755) aplicados.")
+                    # 4. Set remote permissions
+                    perm_args = [
+                        ssh_bin, "-i", ssh_key, "-o", "StrictHostKeyChecking=no",
+                        "root@jreyes13.net",
+                        "find /var/www/vhosts/jreyes13.net/wine3ai -type f -exec chmod 644 {} + && "
+                        "find /var/www/vhosts/jreyes13.net/wine3ai -type d -exec chmod 755 {} + && "
+                        "chown -R jreyes169:psaserv /var/www/vhosts/jreyes13.net/wine3ai/",
+                    ]
+                    subprocess.run(perm_args, capture_output=True, text=True, encoding="utf-8", errors="replace", env=sub_env)
+                    results.append("✓ Permisos web (644/755) aplicados.")
+                else:
+                    results.append("ℹ Despliegue IONOS omitido en este equipo (requiere rsync y clave ~/.ssh/id_ionos_vps).")
 
                 self._send_json({
                     "ok": True,
                     "msg": " | ".join(results),
-                    "details": deploy_res.stdout
+                    "details": deploy_details
                 })
             except Exception as e:
                 self._send_json({"ok": False, "msg": f"Error durante la sincronización: {e}"})

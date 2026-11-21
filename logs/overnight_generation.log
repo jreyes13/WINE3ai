@@ -4367,3 +4367,30 @@ IndentationError: unexpected indent
    📈 Acumulado sesión : 1,065,469 tokens locales | Fichas nuevas: 308
 ──────────────────────────────────────────────────────────────────────────────
 
+
+==============================================================================
+🍷 WINE³ai — GENERADOR AUTÓNOMO LOCAL CON LM STUDIO (OFFLINE)
+==============================================================================
+⏰ HORA DE INICIO           : 2026-11-22 00:21:32
+🛑 FINALIZACIÓN PROGRAMADA : INDEFINIDA (Modo continuo hasta detención manual)
+💻 MOTOR LOCAL             : LM Studio (http://localhost:1234/v1) · qwen/qwen3.5-9b
+⚡ ACELERACIÓN              : Apple Metal GPU (Inferencia Local en Mac)
+💰 CONSUMO EN NUBE         : 0 tokens (100% gratuito y privado)
+📋 CATÁLOGO DISPONIBLE     : 1450 fichas en cola:
+   ├─ WINEp3dIA Articles   : 400 artículos enciclopédicos
+   ├─ Study Flashcards     : 550 fichas de examen (WSET 3, CMS, ASI)
+   └─ Grape Varieties      : 500 variedades de uva mundiales
+==============================================================================
+
+▶ INICIANDO COLA 1: WINEp3dIA (400 artículos)...
+[LM Studio Error] TimeoutError: timed out
+
+──────────────────────────────────────────────────────────────────────────────
+📦 [FICHA #333/1450] Tokaj: Furmint, Hárslevelű y Sárgamuskotály [WINEp3dIA]
+   Estado: ⚠️ FALLO / REINTENTO (302.1s)
+   📊 Tokens LM Studio : 0 tokens (Prompt: 0 | Gen: 0 | Razonamiento: 0)
+   📈 Acumulado sesión : 0 tokens locales | Fichas nuevas: 0
+──────────────────────────────────────────────────────────────────────────────
+
+
+▶ INICIANDO COLA 2: Flashcards de Examen (550 temas)...

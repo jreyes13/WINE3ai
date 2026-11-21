@@ -8,23 +8,77 @@ Safely merges:
 """
 
 import os
+import sys
 import json
 import subprocess
 import shutil
+
+for _stream in (sys.stdout, sys.stderr):
+    if hasattr(_stream, "reconfigure"):
+        try:
+            _stream.reconfigure(encoding="utf-8", errors="replace")
+        except Exception:
+            pass
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 GEN_DIR = os.path.join(ROOT, "data", "generated")
 JSC_BIN = "/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Helpers/jsc"
 
-def load_js_via_jsc(rel_path, var_name):
-    cmd = [JSC_BIN, "-e", f'var window={{}}; load("{rel_path}"); print(JSON.stringify(window.{var_name}));']
-    res = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True)
-    if res.returncode == 0 and res.stdout.strip():
-        try:
-            return json.loads(res.stdout)
-        except Exception:
-            pass
+def load_js_array(rel_path, var_name):
+    abs_path = os.path.join(ROOT, rel_path)
+    if not os.path.exists(abs_path):
+        return []
+
+    # 1. Native macOS JavaScriptCore (jsc)
+    if os.path.exists(JSC_BIN):
+        cmd = [JSC_BIN, "-e", f'var window={{}}; load("{rel_path}"); print(JSON.stringify(window.{var_name}));']
+        res = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True, encoding="utf-8", errors="replace")
+        if res.returncode == 0 and res.stdout.strip():
+            try:
+                return json.loads(res.stdout)
+            except Exception:
+                pass
+
+    # 2. Cross-platform Node.js (Windows / Linux / macOS)
+    node_bin = shutil.which("node")
+    if node_bin:
+        node_script = (
+            "const fs=require('fs'), vm=require('vm');"
+            "const code=fs.readFileSync(process.argv[1],'utf8');"
+            "const sandbox={}; sandbox.window=sandbox; sandbox.globalThis=sandbox;"
+            "vm.runInNewContext(code, sandbox);"
+            "const val=sandbox[process.argv[2]];"
+            "if (val !== undefined) process.stdout.write(JSON.stringify(val));"
+        )
+        res = subprocess.run(
+            [node_bin, "-e", node_script, abs_path, var_name],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+        )
+        if res.returncode == 0 and res.stdout.strip():
+            try:
+                return json.loads(res.stdout)
+            except Exception:
+                pass
+
+    # 3. Pure-Python JSON array fallback (zero external dependencies)
+    try:
+        with open(abs_path, "r", encoding="utf-8") as f:
+            txt = f.read()
+        start = txt.find("[")
+        end = txt.rfind("]")
+        if start != -1 and end != -1 and end > start:
+            return json.loads(txt[start:end + 1])
+    except Exception:
+        pass
+
     return []
+
+# Backwards-compatible alias
+load_js_via_jsc = load_js_array
 
 def merge_winepedia():
     gen_file = os.path.join(GEN_DIR, "winepedia_articles.json")
@@ -35,9 +89,9 @@ def merge_winepedia():
     with open(gen_file, "r", encoding="utf-8") as f:
         new_articles = json.load(f)
 
-    existing_articles = load_js_via_jsc("data/winepedia_articles.js", "WINEPEDIA_ARTICLES")
+    existing_articles = load_js_array("data/winepedia_articles.js", "WINEPEDIA_ARTICLES")
     if not existing_articles:
-        print("Warning: could not load existing articles via JSC; aborting to prevent overwrite.")
+        print("Warning: could not load existing articles from data/winepedia_articles.js; aborting to prevent overwrite.")
         return 0
 
     existing_ids = set(a.get("id") for a in existing_articles)
@@ -86,9 +140,9 @@ def merge_cards():
     with open(gen_file, "r", encoding="utf-8") as f:
         new_cards = json.load(f)
 
-    existing_cards = load_js_via_jsc("data/study_cards.js", "STUDY_CARDS")
+    existing_cards = load_js_array("data/study_cards.js", "STUDY_CARDS")
     if not existing_cards:
-        print("Warning: could not load existing cards via JSC; aborting to prevent overwrite.")
+        print("Warning: could not load existing cards from data/study_cards.js; aborting to prevent overwrite.")
         return 0
 
     existing_ids = set(c.get("id") for c in existing_cards)
